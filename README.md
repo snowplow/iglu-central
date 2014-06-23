@@ -33,8 +33,8 @@ limitations under the License.
 [contributing-image]: https://d3i6fms1cm1j0i.cloudfront.net/github/images/contributing.png
 
 [techdocs]: https://github.com/snowplow/iglu/wiki/Iglu-Central
-[setup]: https://github.com/snowplow/iglu/wiki/Iglu-Central-Setup
-[roadmap]: https://github.com/snowplow/iglu/wiki/Iglu-Central-Roadmap
+[setup]: https://github.com/snowplow/iglu/wiki/Iglu-Central-setup
+[roadmap]: https://github.com/snowplow/iglu/wiki/Iglu-Central-roadmap
 [contributing]: https://github.com/snowplow/iglu/wiki/Contributing-to-Iglu-Central
 
 [license]: http://www.apache.org/licenses/LICENSE-2.0
