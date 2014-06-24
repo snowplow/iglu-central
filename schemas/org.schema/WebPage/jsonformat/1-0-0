@@ -2,8 +2,8 @@
 	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
 	"description": "Schema for a schema.org WebPage (http://schema.org/WebPage). This is a very limited subset of fields - in future ADDITIONs to this schema we can add more fields. This attempts to be a faithful mapping with a few improvements for analytics - for example, breadcrumbs and keywords become an array of strings not a single string with arbitrary divider. Where we don't want to drill into a type (e.g. author as a Person or Organization), we simply set to string.",
 	"self": {
-		"vendor": "com.snowplowanalytics.website",
-		"name": "page_context",
+		"vendor": "org.schema",
+		"name": "WebPage",
 		"format": "jsonschema",
 		"version": "1-0-0"
 	},
