@@ -24,15 +24,15 @@
 		},
 		"dateCreated": {
 			"type": "string",
-			"format": "date"
+			"format": "datetime"
 		},
 		"dateModified": {
 			"type": "string",
-			"format": "date"
+			"format": "datetime"
 		},
 		"datePublished": {
 			"type": "string",
-			"format": "date"
+			"format": "datetime"
 		},
 		"inLanguage": {
 			"type": "string"

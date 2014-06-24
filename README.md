@@ -24,6 +24,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 [iglu-central-website]: http://iglucentral.com
+[snowplow-repo]: https://github.com/snowplow/snowplow
 [snowplow-wiki]: https://github.com/snowplow/snowplow/wiki
 [snowplow-website]: http://snowplowanalytics.com
 
