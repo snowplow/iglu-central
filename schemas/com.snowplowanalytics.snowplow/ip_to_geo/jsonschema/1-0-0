@@ -27,7 +27,7 @@
 				},
 				"maxmindUri": {
 					"type": "string"
-				},
+				}
 			},
 			"required": ["maxmindDatabase", "maxmindUri"],
 			"additionalProperties": false
