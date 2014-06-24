@@ -28,9 +28,9 @@
 				"maxmindUri": {
 					"type": "string"
 				},
-				"required": ["maxmindDatabase", "maxmindUri"],
-				"additionalProperties": false
-			}
+			},
+			"required": ["maxmindDatabase", "maxmindUri"],
+			"additionalProperties": false
 		}
 	},
 	"required": ["name", "vendor", "enabled", "parameters"],
