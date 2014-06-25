@@ -3,6 +3,7 @@ Release 2 (2014-XX-XX)
 Added: com.snowplowanalytics.snowplow/enrichments/jsonschema/1-0-0
 Added: com.snowplowanalytics.snowplow/anon_ip/jsonschema/1-0-0
 Added: com.snowplowanalytics.snowplow/ip_to_geo/jsonschema/1-0-0
+Added: com.snowplowanalytics.snowplow/referer_parsing/jsonschema/1-0-0
 
 Release 1 (2014-06-26)
 ----------------------
