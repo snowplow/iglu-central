@@ -23,7 +23,7 @@
 			"type": "object",
 			"properties": {
 				"maxmindDatabase": {
-					"type": "string"
+					"enum": ["GeoLiteCity.dat", "GeoIPCity.dat"]
 				},
 				"maxmindUri": {
 					"type": "string"
