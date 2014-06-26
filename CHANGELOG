@@ -1,9 +1,9 @@
 Release 1 (2014-06-XX)
 ----------------------
+Added: com.snowplowanalytics.iglu/resolver-config/jsonschema/1-0-0
 Added: com.snowplowanalytics.self-desc/instance/jsonschema/1-0-0
 Added: com.snowplowanalytics.self-desc/instance-iglu-only/jsonschema/1-0-0
 Added: com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0
-Added: com.snowplowanalytics.website/page_context/jsonschema/1-0-0
 Added: com.snowplowanalytics.snowplow/ad_click/jsonschema/1-0-0
 Added: com.snowplowanalytics.snowplow/ad_conversion/jsonschema/1-0-0
 Added: com.snowplowanalytics.snowplow/ad_impression/jsonschema/1-0-0
@@ -12,3 +12,4 @@ Added: com.snowplowanalytics.snowplow/link_click/jsonschema/1-0-0
 Added: com.snowplowanalytics.snowplow/payload_data/jsonschema/1-0-0
 Added: com.snowplowanalytics.snowplow/screen_view/jsonschema/1-0-0
 Added: com.snowplowanalytics.snowplow/unstruct_event/jsonschema/1-0-0
+Added: org.schema/WebPage/jsonschema/1-0-0
