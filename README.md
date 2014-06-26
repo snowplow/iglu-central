@@ -35,7 +35,7 @@ limitations under the License.
 
 [techdocs]: https://github.com/snowplow/iglu/wiki/Iglu-Central
 [setup]: https://github.com/snowplow/iglu/wiki/Iglu-Central-setup
-[roadmap]: https://github.com/snowplow/iglu/wiki/Iglu-Central-roadmap
+[roadmap]: https://github.com/snowplow/iglu/wiki/Product-roadmap
 [contributing]: https://github.com/snowplow/iglu/wiki/Contributing-to-Iglu-Central
 
 [license]: http://www.apache.org/licenses/LICENSE-2.0
