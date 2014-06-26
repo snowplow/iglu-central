@@ -3,7 +3,7 @@
 	"description": "Schema for referer-parser customization enrichment",
 	"self": {
 		"vendor": "com.snowplowanalytics.snowplow",
-		"name": "referer_parsing",
+		"name": "referer_parser",
 		"format": "jsonschema",
 		"version": "1-0-0"
 	},
