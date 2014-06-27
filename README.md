@@ -1,8 +1,10 @@
 # Iglu Central
 
-Iglu Central (**[webite] [iglu-central-website]**) is a central repository for storing JSON Schemas, maintained and hosted by the team at **[Snowplow Analytics] [snowplow-website]**. Think of it like RubyGems.org or Maven Central but for storing data schemas instead of code.
+Iglu Central (**[webite] [iglucentral-website]**) is a central repository for storing JSON Schemas, maintained and hosted by the team at **[Snowplow Analytics] [snowplow-website]**. Think of it like RubyGems.org or Maven Central but for storing data schemas instead of code.
 
 All of the schemas for **[Snowplow] [snowplow-repo]** (amongst other systems) are stored in Iglu Central.
+
+![iglucentral-img] [iglucentral-img]
 
 ## Find out more
 
@@ -23,10 +25,12 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-[iglu-central-website]: http://iglucentral.com
+[iglucentral-website]: http://iglucentral.com
 [snowplow-repo]: https://github.com/snowplow/snowplow
 [snowplow-wiki]: https://github.com/snowplow/snowplow/wiki
 [snowplow-website]: http://snowplowanalytics.com
+
+[iglucentral-img]: https://github.com/snowplow/iglu/wiki/technical-documentation/images/iglu-central.png
 
 [techdocs-image]: https://d3i6fms1cm1j0i.cloudfront.net/github/images/techdocs.png
 [setup-image]: https://d3i6fms1cm1j0i.cloudfront.net/github/images/setup.png
