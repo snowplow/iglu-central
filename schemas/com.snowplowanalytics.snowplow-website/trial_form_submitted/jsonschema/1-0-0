@@ -22,6 +22,6 @@
 			"enum": ["< 1 million", "1 - 10 million", "10 - 100 million", "100 million - 1 billion", "1 billion +"]
 		}
 	},
-	"minProperties": 1,
+	"required": ["name", "email"],
 	"additionalProperties": false
 }
