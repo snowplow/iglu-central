@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/schema#",
-	"description": "Schema for an IP-to-geographical location enrichment",
+	"description": "Schema for MaxMind IP-based lookups enrichment",
 	"self": {
 		"vendor": "com.snowplowanalytics.snowplow",
 		"name": "ip_lookups",
