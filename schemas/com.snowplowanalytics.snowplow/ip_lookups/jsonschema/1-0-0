@@ -73,7 +73,20 @@
 						}
 					},
 					"required": ["database", "uri"]					
-				}
+				},
+
+				"netspeed": {
+					"type": "object",
+					"properties": {
+						"database": {
+							"enum": ["GeoIPNetSpeed.dat", "GeoIPNetSpeedCell.dat"]
+						},
+						"uri": {
+							"type": "string"
+						}
+					},
+					"required": ["database", "uri"]					
+				}				
 
 			},
 			"additionalProperties": false
