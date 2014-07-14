@@ -2,7 +2,7 @@
 	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
 	"description": "Schema for a submit webform event.",
 	"self": {
-		"vendor": "com.snowplowanalytics.snowplowanalytics.github.com",
+		"vendor": "com.snowplowanalytics.website",
 		"name": "trial_form_submitted",
 		"format": "jsonschema",
 		"version": "1-0-0"
