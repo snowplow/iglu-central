@@ -1,0 +1,97 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"description": "Schema for MaxMind IP-based lookups enrichment",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow",
+		"name": "ip_lookups",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"vendor": {
+			"type": "string"
+		},
+		"name": {
+			"type": "string"
+		},		
+		"enabled": {
+			"type": "boolean"
+		},
+		"parameters": {
+			"type": "object",
+			"properties": {
+
+				"geo": {
+					"type": "object",
+					"properties": {
+						"database": {
+							"enum": ["GeoLiteCity.dat", "GeoIPCity.dat"]
+						},
+						"uri": {
+							"type": "string"
+						}
+					},
+					"required": ["database", "uri"]
+				},
+
+				"isp": {
+					"type": "object",
+					"properties": {
+						"database": {
+							"enum": ["GeoIPISP.dat"]
+						},
+						"uri": {
+							"type": "string"
+						}
+					},
+					"required": ["database", "uri"]					
+				},
+
+				"organization": {
+					"type": "object",
+					"properties": {
+						"database": {
+							"enum": ["GeoIPOrg.dat"]
+						},
+						"uri": {
+							"type": "string"
+						}
+					},
+					"required": ["database", "uri"]
+				},
+
+				"domain": {
+					"type": "object",
+					"properties": {
+						"database": {
+							"enum": ["GeoIPDomain.dat"]
+						},
+						"uri": {
+							"type": "string"
+						}
+					},
+					"required": ["database", "uri"]					
+				},
+
+				"netspeed": {
+					"type": "object",
+					"properties": {
+						"database": {
+							"enum": ["GeoIPNetSpeed.dat", "GeoIPNetSpeedCell.dat"]
+						},
+						"uri": {
+							"type": "string"
+						}
+					},
+					"required": ["database", "uri"]					
+				}				
+
+			},
+			"additionalProperties": false
+		}
+	},
+	"required": ["name", "vendor", "enabled", "parameters"],
+	"additionalProperties": false
+}

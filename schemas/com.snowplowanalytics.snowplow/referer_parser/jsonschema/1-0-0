@@ -1,0 +1,38 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"description": "Schema for referer-parser customization enrichment",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow",
+		"name": "referer_parser",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"vendor": {
+			"type": "string"
+		},
+		"name": {
+			"type": "string"
+		},		
+		"enabled": {
+			"type": "boolean"
+		},
+		"parameters": {
+			"type": "object",
+			"properties": {
+				"internalDomains": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				}
+			},
+			"required": ["internalDomains"],
+			"additionalProperties": false
+		}
+	},
+	"required": ["name", "vendor", "enabled", "parameters"],
+	"additionalProperties": false
+}
