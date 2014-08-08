@@ -19,7 +19,7 @@
 		"altitude": {
 			"type": "string"
 		},
-		"accuracy": {
+		"latitudeLongitudeAccuracy": {
 			"type": "string"
 		},
 		"altitudeAccuracy": { 
