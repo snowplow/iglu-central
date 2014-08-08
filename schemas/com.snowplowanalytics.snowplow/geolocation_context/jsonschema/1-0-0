@@ -15,8 +15,23 @@
                 },
                 "longitude": {
                         "type": "string"
-                }
+                },
+		"altitude": {
+			"type": "string"
+		},
+		"accuracy": {
+			"type": "string"
+		},
+		"altitudeAccuracy": { 
+			"type": "string"
+		},
+		"heading": {
+			"type": "string"
+		},
+		"speed": {
+			"type": "string"
+		}
         },
-        "required": ["osType", "osVersion"],
+        "required": ["latitude", "longitude"],
         "additionalProperties": false
 }
