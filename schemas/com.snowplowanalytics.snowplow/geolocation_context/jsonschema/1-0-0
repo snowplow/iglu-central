@@ -13,7 +13,7 @@
                 "latitude": {
                         "type": "string"
                 },
-                "longtitude": {
+                "longitude": {
                         "type": "string"
                 }
         },
