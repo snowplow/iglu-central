@@ -30,6 +30,9 @@
 		},
 		"appleIdfa": {
 			"type": "string"
+		},
+		"androidIdfa": {
+			"type": "string"
 		}
 	},
 	"required": ["osType", "osVersion", "deviceVendor", "deviceModel"],
