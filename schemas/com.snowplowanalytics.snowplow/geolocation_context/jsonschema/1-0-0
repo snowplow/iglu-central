@@ -25,7 +25,7 @@
 		"altitudeAccuracy": { 
 			"type": "string"
 		},
-		"heading": {
+		"bearing": {
 			"type": "string"
 		},
 		"speed": {
