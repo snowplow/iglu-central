@@ -16,10 +16,10 @@
                 "longitude": {
                         "type": "string"
                 },
-		"altitude": {
+		"latitudeLongitudeAccuracy": {
 			"type": "string"
 		},
-		"latitudeLongitudeAccuracy": {
+		"altitude": {
 			"type": "string"
 		},
 		"altitudeAccuracy": { 
