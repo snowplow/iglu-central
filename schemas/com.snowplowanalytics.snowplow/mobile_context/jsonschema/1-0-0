@@ -16,7 +16,7 @@
 		"osVersion": {
 			"type": "string"
 		},
-		"deviceVendor": {
+		"deviceManufacturer": {
 			"type": "string"
 		},
 		"deviceModel": {
