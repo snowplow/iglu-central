@@ -38,6 +38,6 @@
 			"type": "string"
 		}
 	},
-	"required": ["osType", "osVersion", "deviceVendor", "deviceModel"],
+	"required": ["osType", "osVersion", "deviceManufacturer", "deviceModel"],
 	"additionalProperties": false
 }
