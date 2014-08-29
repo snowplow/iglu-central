@@ -1,6 +1,7 @@
 Release 4 (2014-08-29)
 ----------------------
 Added: com.snowplowanalytics.snowplow/mobile_context/jsonschema/1-0-0
+Added: com.snowplowanalytics.snowplow/geolocation_context/jsonschema/1-0-0
 
 Release 3 (2014-07-25)
 ----------------------
