@@ -11,25 +11,25 @@
         "type": "object",
         "properties": {
                 "latitude": {
-                        "type": "string"
+                        "type": "number"
                 },
                 "longitude": {
-                        "type": "string"
+                        "type": "number"
                 },
 		"latitudeLongitudeAccuracy": {
-			"type": "string"
+			"type": "number"
 		},
 		"altitude": {
-			"type": "string"
+			"type": "number"
 		},
 		"altitudeAccuracy": { 
-			"type": "string"
+			"type": "number"
 		},
 		"bearing": {
-			"type": "string"
+			"type": "number"
 		},
 		"speed": {
-			"type": "string"
+			"type": "number"
 		}
         },
         "required": ["latitude", "longitude"],
