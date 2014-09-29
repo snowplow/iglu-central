@@ -1,3 +1,7 @@
+Release 6 (2014-xx-xx)
+---------------------
+Added payload_data 1-0-1 with new optional user agent field (#25)
+
 Release 5 (2014-09-08)
 ----------------------
 Updated: com.snowplowanalytics.snowplow/geolocation_context/jsonschema/1-0-0
