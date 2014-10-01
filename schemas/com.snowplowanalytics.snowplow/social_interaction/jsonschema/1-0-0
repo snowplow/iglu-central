@@ -1,0 +1,25 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a social interaction event",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow",
+		"name": "social_interaction",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"action": {
+			"type": "string"
+		},
+		"network": {
+			"type": "string"
+		},
+		"target": {
+			"type": "string"
+		}
+	},
+	"required": ["action", "network"],
+	"additionalProperties": false
+}
