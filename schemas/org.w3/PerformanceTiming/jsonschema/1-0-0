@@ -1,0 +1,76 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for page performance, based on the window.performance.timing object (see https://dvcs.w3.org/hg/webperf/raw-file/tip/specs/NavigationTiming/Overview.html)",
+	"self": {
+		"vendor": "org.w3",
+		"name": "PerformanceTiming",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"navigationStart": {
+			"type": "number"
+		},
+		"redirectStart": {
+			"type": "number"
+		},
+		"fetchStart": {
+			"type": "number"
+		},
+		"domainLookupStart": {
+			"type": "number"
+		},
+		"domainLookupEnd": {
+			"type": "number"
+		},
+		"connectStart": {
+			"type": "number"
+		},
+		"secureConnectionStart": {
+			"type": "number"
+		},
+		"connectEnd": {
+			"type": "number"
+		},
+		"requestStart": {
+			"type": "number"
+		},
+		"responseStart": {
+			"type": "number"
+		},
+		"responseEnd": {
+			"type": "number"
+		},
+		"unloadEventStart": {
+			"type": "number"
+		},
+		"unloadEventEnd": {
+			"type": "number"
+		},
+		"domLoading": {
+			"type": "number"
+		},
+		"domInteractive": {
+			"type": "number"
+		},
+		"domContentLoadedEventStart": {
+			"type": "number"
+		},
+		"domContentLoadedEventEnd": {
+			"type": "number"
+		},
+		"domComplete": {
+			"type": "number"
+		},
+		"loadEventStart": {
+			"type": "number"
+		},
+		"loadEventEnd": {
+			"type": "number"
+		}
+	},
+	"minProperties": 1,
+	"additionalProperties": false
+}
