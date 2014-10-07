@@ -16,7 +16,7 @@
 		"name": {
 			"type": "string"
 		},
-		"category" {
+		"category": {
 			"type": "string"
 		},
 		"price": {
