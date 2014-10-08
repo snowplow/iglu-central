@@ -18,9 +18,12 @@
 			"minItems": 1
 		},
 		"filters": {
-			"type": "array",
-			"items": {
-				"type": "string"
+			"type": "object",
+			"properties": {
+				"type": "object",
+				"additionalProperties": {
+					"type": ["string", "boolean"]
+				}
 			}
 		},
 		"totalResults": {
