@@ -19,7 +19,7 @@
 		"category": {
 			"type": "string"
 		},
-		"price": {
+		"unitPrice": {
 			"type": "number"
 		},
 		"quantity": {
@@ -29,6 +29,6 @@
 			"type": "string"
 		}
 	},
-	"required": ["sku", "price", "quantity"],
+	"required": ["sku", "quantity"],
 	"additionalProperties": false
 }
