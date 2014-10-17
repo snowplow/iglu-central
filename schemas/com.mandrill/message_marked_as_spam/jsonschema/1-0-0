@@ -1,0 +1,90 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.mandrill/message_marked_as_spam/jsonschema/1-0-0#",
+	"description": "Schema for a Mandrill message marked as spam event",
+	"self": {
+		"vendor": "com.mandrill",
+		"name": "message_marked_as_spam",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"_id": {
+			"type": "string"
+		},
+		"event": {
+			"type": "string"
+		},
+		"msg": {
+			"type": "object",
+			"properties": {
+				"_id": {
+					"type": "string"
+				},
+				"_version": {
+					"type": "string"
+				},
+				"clicks": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"ts": {
+								"type": "number"
+							},
+							"url": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"email": {
+					"type": "string"
+				},
+				"metadata": {
+					"type": "object",
+					"properties": {
+						"user_id": {
+							"type": "number"
+						}
+					}
+				},
+				"opens": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"ts": {
+								"type": "number"
+							}
+						}
+					}
+				},
+				"sender": {
+					"type": "string"
+				},
+				"state": {
+					"type": "string"
+				},
+				"subject": {
+					"type": "string"
+				},
+				"tags": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"ts": {
+					"type": "number"
+				}
+			}
+		},
+		"ts": {
+			"type": "number"
+		}
+	},
+	"required": false,
+	"additionalProperties": false
+}
