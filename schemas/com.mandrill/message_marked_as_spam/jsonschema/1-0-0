@@ -36,7 +36,8 @@
 							"url": {
 								"type": "string"
 							}
-						}
+						},
+						"additionalProperties": false
 					}
 				},
 				"email": {
@@ -48,7 +49,8 @@
 						"user_id": {
 							"type": "number"
 						}
-					}
+					},
+					"additionalProperties": false
 				},
 				"opens": {
 					"type": "array",
@@ -58,7 +60,8 @@
 							"ts": {
 								"type": "number"
 							}
-						}
+						},
+						"additionalProperties": false
 					}
 				},
 				"sender": {
@@ -79,12 +82,12 @@
 				"ts": {
 					"type": "number"
 				}
-			}
+			},
+			"additionalProperties": false
 		},
 		"ts": {
 			"type": "number"
 		}
 	},
-	"required": false,
 	"additionalProperties": false
 }

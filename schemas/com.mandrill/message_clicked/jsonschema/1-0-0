@@ -46,7 +46,8 @@
 				"timezone": {
 					"type": "string"
 				}
-			}
+			},
+			"additionalProperties": false
 		},
 		"msg": {
 			"type": "object",
@@ -68,7 +69,8 @@
 							"url": {
 								"type": "string"
 							}
-						}
+						},
+						"additionalProperties": false
 					}
 				},
 				"email": {
@@ -80,7 +82,8 @@
 						"user_id": {
 							"type": "number"
 						}
-					}
+					},
+					"additionalProperties": false
 				},
 				"opens": {
 					"type": "array",
@@ -90,7 +93,8 @@
 							"ts": {
 								"type": "number"
 							}
-						}
+						},
+						"additionalProperties": false
 					}
 				},
 				"sender": {
@@ -111,7 +115,8 @@
 				"ts": {
 					"type": "number"
 				}
-			}
+			},
+			"additionalProperties": false
 		},
 		"ts": {
 			"type": "number"
@@ -167,12 +172,12 @@
 				"ua_version": {
 					"type": "string"
 				}
-			}
+			},
+			"additionalProperties": false
 		},
 		"user_agent": {
 			"type": "string"
 		}
 	},
-	"required": false,
 	"additionalProperties": false
 }

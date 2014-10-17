@@ -37,7 +37,8 @@
 						"user_id": {
 							"type": "number"
 						}
-					}
+					},
+					"additionalProperties": false
 				},
 				"opens": {
 					"type": "array"
@@ -68,7 +69,8 @@
 							"type": {
 								"type": "string"
 							}
-						}
+						},
+						"additionalProperties": false
 					}
 				},
 				"state": {
@@ -86,12 +88,12 @@
 				"ts": {
 					"type": "number"
 				}
-			}
+			},
+			"additionalProperties": false
 		},
 		"ts": {
 			"type": "number"
 		}
 	},
-	"required": false,
 	"additionalProperties": false
 }

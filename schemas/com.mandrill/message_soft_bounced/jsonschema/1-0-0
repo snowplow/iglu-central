@@ -43,7 +43,8 @@
 						"user_id": {
 							"type": "number"
 						}
-					}
+					},
+					"additionalProperties": false
 				},
 				"sender": {
 					"type": "string"
@@ -62,12 +63,13 @@
 				},
 				"ts": {
 					"type": "number"
-			}
+				}
+			},
+			"additionalProperties": false
 		},
 		"ts": {
 			"type": "number"
 		}
 	},
-	"required": false,
 	"additionalProperties": false
 }

@@ -38,12 +38,13 @@
 					"type": "string"
 				},
 				"metadata": {
-					"type": "object"
+					"type": "object",
 					"properties": {
 						"user_id": {
 							"type": "number"
 						}
-					}
+					},
+					"additionalProperties": false
 				},
 				"sender": {
 					"type": "string"
@@ -55,7 +56,7 @@
 					"type": "string"
 				},
 				"tags": {
-					"type": "array"
+					"type": "array",
 					"items": {
 						"type": "string"
 					}
@@ -63,12 +64,12 @@
 				"ts": {
 					"type": "number"
 				}
-			}
+			},
+			"additionalProperties": false
 		},
 		"ts": {
 			"type": "number"
 		}
 	},
-	"required": false,
 	"additionalProperties": false
 }
