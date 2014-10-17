@@ -1,0 +1,73 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.mandrill/message_soft_bounced/jsonschema/1-0-0#",
+	"description": "Schema for a Mandrill message soft bounced event",
+	"self": {
+		"vendor": "com.mandrill",
+		"name": "message_soft_bounced",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"_id": {
+			"type": "string"
+		},
+		"event": {
+			"type": "string"
+		},
+		"msg": {
+			"type": "object",
+			"properties": {
+				"_id": {
+					"type": "string"
+				},
+				"_version": {
+					"type": "string"
+				},
+				"bgtools_code": {
+					"type": "number"
+				},
+				"bounce_description": {
+					"type": "string"
+				},
+				"diag": {
+					"type": "string"
+				},
+				"email": {
+					"type": "string"
+				},
+				"metadata": {
+					"type": "object",
+					"properties": {
+						"user_id": {
+							"type": "number"
+						}
+					}
+				},
+				"sender": {
+					"type": "string"
+				},
+				"state": {
+					"type": "string"
+				},
+				"subject": {
+					"type": "string"
+				},
+				"tags": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"ts": {
+					"type": "number"
+			}
+		},
+		"ts": {
+			"type": "number"
+		}
+	},
+	"required": false,
+	"additionalProperties": false
+}
