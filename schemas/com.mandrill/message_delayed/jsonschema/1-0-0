@@ -1,0 +1,97 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.mandrill/message_delayed/jsonschema/1-0-0#",
+	"description": "Schema for a Mandrill message delayed event",
+	"self": {
+		"vendor": "com.mandrill",
+		"name": "message_delayed",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"_id": {
+			"type": "string"
+		},
+		"event": {
+			"type": "string"
+		},
+		"msg": {
+			"type": "object",
+			"properties": {
+				"_id": {
+					"type": "string"
+				},
+				"_version": {
+					"type": "string"
+				},
+				"clicks": {
+					"type": "array"
+				},
+				"email": {
+					"type": "string"
+				},
+				"metadata": {
+					"type": "object",
+					"properties": {
+						"user_id": {
+							"type": "number"
+						}
+					}
+				},
+				"opens": {
+					"type": "array"
+				},
+				"sender": {
+					"type": "string"
+				},
+				"smtp_events": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"destination_ip": {
+								"type": "string"
+							},
+							"diag": {
+								"type": "string"
+							},
+							"size": {
+								"type": "number"
+							},
+							"source_ip": {
+								"type": "string"
+							},
+							"ts": {
+								"type": "number"
+							},
+							"type": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"state": {
+					"type": "string"
+				},
+				"subject": {
+					"type": "string"
+				},
+				"tags": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"ts": {
+					"type": "number"
+				}
+			}
+		},
+		"ts": {
+			"type": "number"
+		}
+	},
+	"required": false,
+	"additionalProperties": false
+}
