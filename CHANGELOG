@@ -1,3 +1,8 @@
+Release 8 (2014-10-17)
+----------------------
+Added: com.callrail/call_complete/jsonschema/1-0-0
+Added: com.snowplowanalytics.snowplow/campaign_attribution/jsonschema/1-0-0
+
 Release 7 (2014-10-17)
 ----------------------
 Added: com.adxtracking/app_install/jsonschema/1-0-0
