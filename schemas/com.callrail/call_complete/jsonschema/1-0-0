@@ -1,0 +1,122 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a CallRail call completion event",
+	"self": {
+		"vendor": "com.callrail",
+		"name": "call_complete",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"answered": {
+			"type": "boolean"
+		},
+		"callercity": {
+			"type": "string"
+		},
+		"callercountry": {
+			"type": "string"
+		},
+		"callername": {
+			"type": "string"
+		},
+		"callernum": {
+			"type": "string"
+		},
+		"callerstate": {
+			"type": "string"
+		},
+		"callerzip": {
+			"type": "string"
+		},
+		"callsource": {
+			"type": "string"
+		},
+		"datetime": {
+			"type": "string",
+			"format": "date-time"
+		},
+		"destinationnum": {
+			"type": "string"
+		},
+		"duration": {
+			"type": "string"
+		},
+		"first_call": {
+			"type": "boolean"
+		},
+		"ga": {
+			"type": "string"
+		},
+		"gclid": {
+			"type": "string"
+		},
+		"id": {
+			"type": "string"
+		},
+		"ip": {
+			"type": "string"
+		},
+		"keywords": {
+			"type": "string"
+		},
+		"kissmetrics_id": {
+			"type": "string"
+		},
+		"landingpage": {
+			"type": "string"
+		},
+		"recording": {
+			"type": "string"
+		},
+		"referrer": {
+			"type": "string"
+		},
+		"referrermedium": {
+			"type": "string"
+		},
+		"trackingnum": {
+			"type": "string"
+		},
+		"transcription": {
+			"type": "string"
+		},
+		"utm_campaign": {
+			"type": "string"
+		},
+		"utm_content": {
+			"type": "string"
+		},
+		"utm_medium": {
+			"type": "string"
+		},
+		"utm_source": {
+			"type": "string"
+		},
+		"utm_term": {
+			"type": "string"
+		},
+		"utma": {
+			"type": "string"
+		},
+		"utmb": {
+			"type": "string"
+		},
+		"utmc": {
+			"type": "string"
+		},
+		"utmv": {
+			"type": "string"
+		},
+		"utmx": {
+			"type": "string"
+		},
+		"utmz": {
+			"type": "string"
+		}
+	},
+	"required": ["datetime", "id"],
+	"additionalProperties": false
+}
