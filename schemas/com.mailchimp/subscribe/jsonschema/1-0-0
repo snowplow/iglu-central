@@ -1,0 +1,51 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a Mailchimp subscribe event",
+	"self": {
+		"vendor": "com.mailchimp",
+		"name": "subscribe",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"data[email]": {
+			"type": "string"
+		},
+		"data[email_type]": {
+			"type": "string"
+		},
+		"data[id]": {
+			"type": "string"
+		},
+		"data[ip_opt]": {
+			"type": "string"
+		},
+		"data[ip_signup]": {
+			"type": "string"
+		},
+		"data[list_id]": {
+			"type": "string"
+		},
+		"data[merges][EMAIL]": {
+			"type": "string"
+		},
+		"data[merges][FNAME]": {
+			"type": "string"
+		},
+		"data[merges][INTERESTS]": {
+			"type": "string"
+		},
+		"data[merges][LNAME]": {
+			"type": "string"
+		},
+		"fired_at": {
+			"type": "string"
+		},
+		"type": {
+			"type": "string"
+		}
+	},
+	"additionalProperties": false
+}
