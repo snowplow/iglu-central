@@ -1,0 +1,72 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a Mandrill message rejected event",
+	"self": {
+		"vendor": "com.mandrill",
+		"name": "message_rejected",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"_id": {
+			"type": "string"
+		},
+		"event": {
+			"type": "string"
+		},
+		"msg": {
+			"type": "object",
+			"properties": {
+				"_id": {
+					"type": "string"
+				},
+				"_version": {
+					"type": "string"
+				},
+				"clicks": {
+					"type": "array"
+				},
+				"email": {
+					"type": "string"
+				},
+				"metadata": {
+					"type": "object",
+					"properties": {
+						"user_id": {
+							"type": "number"
+						}
+					},
+					"additionalProperties": false
+				},
+				"opens": {
+					"type": "array"
+				},
+				"sender": {
+					"type": "string"
+				},
+				"state": {
+					"type": "string"
+				},
+				"subject": {
+					"type": "string"
+				},
+				"tags": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"ts": {
+					"type": "number"
+				}
+			},
+			"additionalProperties": false
+		},
+		"ts": {
+			"type": "number"
+		}
+	},
+	"additionalProperties": false
+}
