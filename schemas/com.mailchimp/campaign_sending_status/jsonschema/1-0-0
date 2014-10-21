@@ -10,20 +10,26 @@
 
 	"type": "object",
 	"properties": {
-		"data[id]": {
-			"type": "string"
-		},
-		"data[list_id]": {
-			"type": "string"
-		},
-		"data[reason]": {
-			"type": "string"
-		},
-		"data[status]": {
-			"type": "string"
-		},
-		"data[subject]": {
-			"type": "string"
+		"data": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "string"
+				},
+				"list_id": {
+					"type": "string"
+				},
+				"reason": {
+					"type": "string"
+				},
+				"status": {
+					"type": "string"
+				},
+				"subject": {
+					"type": "string"
+				}
+			},
+			"additionalProperties": false
 		},
 		"fired_at": {
 			"type": "string"
