@@ -10,17 +10,23 @@
 
 	"type": "object",
 	"properties": {
-		"data[campaign_id]": {
-			"type": "string"
-		},
-		"data[email]": {
-			"type": "string"
-		},
-		"data[list_id]": {
-			"type": "string"
-		},
-		"data[reason]": {
-			"type": "string"
+		"data": {
+			"type": "object",
+			"properties": {
+				"campaign_id": {
+					"type": "string"
+				},
+				"email": {
+					"type": "string"
+				},
+				"list_id": {
+					"type": "string"
+				},
+				"reason": {
+					"type": "string"
+				}
+			},
+			"additionalProperties": false
 		},
 		"fired_at": {
 			"type": "string"

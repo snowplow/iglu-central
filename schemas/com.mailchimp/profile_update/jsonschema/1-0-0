@@ -10,32 +10,44 @@
 
 	"type": "object",
 	"properties": {
-		"data[email]": {
-			"type": "string"
-		},
-		"data[email_type]": {
-			"type": "string"
-		},
-		"data[id]": {
-			"type": "string"
-		},
-		"data[ip_opt]": {
-			"type": "string"
-		},
-		"data[list_id]": {
-			"type": "string"
-		},
-		"data[merges][EMAIL]": {
-			"type": "string"
-		},
-		"data[merges][FNAME]": {
-			"type": "string"
-		},
-		"data[merges][INTERESTS]": {
-			"type": "string"
-		},
-		"data[merges][LNAME]": {
-			"type": "string"
+		"data": {
+			"type": "object",
+			"properties": {
+				"email": {
+					"type": "string"
+				},
+				"email_type": {
+					"type": "string"
+				},
+				"id": {
+					"type": "string"
+				},
+				"ip_opt": {
+					"type": "string"
+				},
+				"list_id": {
+					"type": "string"
+				},
+				"merges": {
+					"type": "object",
+					"properties": {
+						"EMAIL": {
+							"type": "string"
+						},
+						"FNAME": {
+							"type": "string"
+						},
+						"LNAME": {
+							"type": "string"
+						},
+						"INTERESTS": {
+							"type": "string"
+						}
+					},
+					"additionalProperties": false
+				}
+			},
+			"additionalProperties": false
 		},
 		"fired_at": {
 			"type": "string"

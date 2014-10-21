@@ -10,41 +10,53 @@
 
 	"type": "object",
 	"properties": {
-		"data[action]": {
-			"type": "string"
-		},
-		"data[campaign_id]": {
-			"type": "string"
-		},
-		"data[email]": {
-			"type": "string"
-		},
-		"data[email_type]": {
-			"type": "string"
-		},
-		"data[id]": {
-			"type": "string"
-		},
-		"data[ip_opt]": {
-			"type": "string"
-		},
-		"data[list_id]": {
-			"type": "string"
-		},
-		"data[merges][EMAIL]": {
-			"type": "string"
-		},
-		"data[merges][FNAME]": {
-			"type": "string"
-		},
-		"data[merges][INTERESTS]": {
-			"type": "string"
-		},
-		"data[merges][LNAME]": {
-			"type": "string"
-		},
-		"data[reason]": {
-			"type": "string"
+		"data": {
+			"type": "object",
+			"properties": {
+				"action": {
+					"type": "string"
+				},
+				"campaign_id": {
+					"type": "string"
+				},
+				"email": {
+					"type": "string"
+				},
+				"email_type": {
+					"type": "string"
+				},
+				"id": {
+					"type": "string"
+				},
+				"ip_opt": {
+					"type": "string"
+				},
+				"list_id": {
+					"type": "string"
+				},
+				"reason": {
+					"type": "string"
+				},
+				"merges": {
+					"type": "object",
+					"properties": {
+						"EMAIL": {
+							"type": "string"
+						},
+						"FNAME": {
+							"type": "string"
+						},
+						"LNAME": {
+							"type": "string"
+						},
+						"INTERESTS": {
+							"type": "string"
+						}
+					},
+					"additionalProperties": false
+				}
+			},
+			"additionalProperties": false
 		},
 		"fired_at": {
 			"type": "string"

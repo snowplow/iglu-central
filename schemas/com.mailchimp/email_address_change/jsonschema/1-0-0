@@ -10,17 +10,23 @@
 
 	"type": "object",
 	"properties": {
-		"data[list_id]": {
-			"type": "string"
-		},
-		"data[new_email]": {
-			"type": "string"
-		},
-		"data[new_id]": {
-			"type": "string"
-		},
-		"data[old_email]": {
-			"type": "string"
+		"data": {
+			"type": "object",
+			"properties": {
+				"list_id": {
+					"type": "string"
+				},
+				"new_email": {
+					"type": "string"
+				},
+				"new_id": {
+					"type": "string"
+				},
+				"old_email": {
+					"type": "string"
+				}
+			},
+			"additionalProperties": false
 		},
 		"fired_at": {
 			"type": "string"
