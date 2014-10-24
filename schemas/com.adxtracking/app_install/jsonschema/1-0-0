@@ -16,13 +16,13 @@
 			"type": "string"
 		},
 		"sub_campaign": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"tracking_id": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"sub_adgroup": {
-			"type": "string"
+			"type": ["string", "null"]
 		}
 	},
 	"required": ["user", "publisher_name"],
