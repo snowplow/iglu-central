@@ -42,7 +42,7 @@
 			"type": "string"
 		},
 		"duration": {
-			"type": "string"
+			"type": "number"
 		},
 		"first_call": {
 			"type": "boolean"
