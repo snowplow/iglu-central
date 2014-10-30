@@ -11,110 +11,110 @@
 	"type": "object",
 	"properties": {
 		"answered": {
-			"type": "boolean"
+			"type": ["boolean", "null"]
 		},
 		"callercity": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"callercountry": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"callername": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"callernum": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"callerstate": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"callerzip": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"callsource": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"datetime": {
 			"type": "string",
 			"format": "date-time"
 		},
 		"destinationnum": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"duration": {
-			"type": "number"
+			"type": ["number", "null"]
 		},
 		"first_call": {
-			"type": "boolean"
+			"type": ["boolean", "null"]
 		},
 		"ga": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"gclid": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"id": {
 			"type": "string"
 		},
 		"ip": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"keywords": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"kissmetrics_id": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"landingpage": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"recording": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"referrer": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"referrermedium": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"trackingnum": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"transcription": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"utm_campaign": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"utm_content": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"utm_medium": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"utm_source": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"utm_term": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"utma": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"utmb": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"utmc": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"utmv": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"utmx": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"utmz": {
-			"type": "string"
+			"type": ["string", "null"]
 		}
 	},
 	"required": ["datetime", "id"],
