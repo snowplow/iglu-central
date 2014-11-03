@@ -1,0 +1,339 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"description": "Schema for a successfully enriched event",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow",
+		"name": "enriched_event",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"app_id": {
+			"type": "string"
+		},
+		"platform": {
+			"type": "string"
+		},
+		"etl_tstamp": {
+			"type": "string"
+		},
+		"collector_tstamp": {
+			"type": "string"
+		},
+		"dvce_tstamp": {
+			"type": "string"
+		},
+		"event": {
+			"type": "string"
+		},
+		"event_id": {
+			"type": "string"
+		},
+		"txn_id": {
+			"type": "string"
+		},
+		"name_tracker": {
+			"type": "string"
+		},
+		"v_tracker": {
+			"type": "string"
+		},
+		"v_collector": {
+			"type": "string"
+		},
+		"v_etl": {
+			"type": "string"
+		},
+		"user_id": {
+			"type": "string"
+		},
+		"user_ipaddress": {
+			"type": "string"
+		},
+		"user_fingerprint": {
+			"type": "string"
+		},
+		"domain_userid": {
+			"type": "string"
+		},
+		"domain_sessionidx": {
+			"type": "string"
+		},
+		"network_userid": {
+			"type": "string"
+		},
+		"geo_country": {
+			"type": "string"
+		},
+		"geo_region": {
+			"type": "string"
+		},
+		"geo_city": {
+			"type": "string"
+		},
+		"geo_zipcode": {
+			"type": "string"
+		},
+		"geo_latitude": {
+			"type": "string"
+		},
+		"geo_longitude": {
+			"type": "string"
+		},
+		"geo_region_name": {
+			"type": "string"
+		},
+		"ip_isp": {
+			"type": "string"
+		},
+		"ip_org": {
+			"type": "string"
+		},
+		"ip_domain": {
+			"type": "string"
+		},
+		"ip_netspeed": {
+			"type": "string"
+		},
+		"page_url": {
+			"type": "string"
+		},
+		"page_title": {
+			"type": "string"
+		},
+		"page_referrer": {
+			"type": "string"
+		},
+		"page_urlscheme": {
+			"type": "string"
+		},
+		"page_urlhost": {
+			"type": "string"
+		},
+		"page_urlport": {
+			"type": "string"
+		},
+		"page_urlpath": {
+			"type": "string"
+		},
+		"page_urlquery": {
+			"type": "string"
+		},
+		"page_urlfragment": {
+			"type": "string"
+		},
+		"refr_urlscheme": {
+			"type": "string"
+		},
+		"refr_urlhost": {
+			"type": "string"
+		},
+		"refr_urlport": {
+			"type": "string"
+		},
+		"refr_urlpath": {
+			"type": "string"
+		},
+		"refr_urlquery": {
+			"type": "string"
+		},
+		"refr_urlfragment": {
+			"type": "string"
+		},
+		"refr_medium": {
+			"type": "string"
+		},
+		"refr_source": {
+			"type": "string"
+		},
+		"refr_term": {
+			"type": "string"
+		},
+		"mkt_medium": {
+			"type": "string"
+		},
+		"mkt_source": {
+			"type": "string"
+		},
+		"mkt_term": {
+			"type": "string"
+		},
+		"mkt_content": {
+			"type": "string"
+		},
+		"mkt_campaign": {
+			"type": "string"
+		},
+		"contexts": {
+			"type": "string"
+		},
+		"se_category": {
+			"type": "string"
+		},
+		"se_action": {
+			"type": "string"
+		},
+		"se_label": {
+			"type": "string"
+		},
+		"se_property": {
+			"type": "string"
+		},
+		"se_value": {
+			"type": "string"
+		},
+		"unstruct_event": {
+			"type": "string"
+		},
+		"tr_orderid": {
+			"type": "string"
+		},
+		"tr_affiliation": {
+			"type": "string"
+		},
+		"tr_total": {
+			"type": "string"
+		},
+		"tr_tax": {
+			"type": "string"
+		},
+		"tr_shipping": {
+			"type": "string"
+		},
+		"tr_city": {
+			"type": "string"
+		},
+		"tr_state": {
+			"type": "string"
+		},
+		"tr_country": {
+			"type": "string"
+		},
+		"ti_orderid": {
+			"type": "string"
+		},
+		"ti_sku": {
+			"type": "string"
+		},
+		"ti_name": {
+			"type": "string"
+		},
+		"ti_category": {
+			"type": "string"
+		},
+		"ti_price": {
+			"type": "string"
+		},
+		"ti_quantity": {
+			"type": "string"
+		},
+		"pp_xoffset_min": {
+			"type": "string"
+		},
+		"pp_xoffset_max": {
+			"type": "string"
+		},
+		"pp_yoffset_min": {
+			"type": "string"
+		},
+		"pp_yoffset_max": {
+			"type": "string"
+		},
+		"useragent": {
+			"type": "string"
+		},
+		"br_name": {
+			"type": "string"
+		},
+		"br_family": {
+			"type": "string"
+		},
+		"br_version": {
+			"type": "string"
+		},
+		"br_type": {
+			"type": "string"
+		},
+		"br_renderengine": {
+			"type": "string"
+		},
+		"br_lang": {
+			"type": "string"
+		},
+		"br_features_pdf": {
+			"type": "string"
+		},
+		"br_features_flash": {
+			"type": "string"
+		},
+		"br_features_java": {
+			"type": "string"
+		},
+		"br_features_director": {
+			"type": "string"
+		},
+		"br_features_quicktime": {
+			"type": "string"
+		},
+		"br_features_realplayer": {
+			"type": "string"
+		},
+		"br_features_windowsmedia": {
+			"type": "string"
+		},
+		"br_features_gears": {
+			"type": "string"
+		},
+		"br_features_silverlight": {
+			"type": "string"
+		},
+		"br_cookies": {
+			"type": "string"
+		},
+		"br_colordepth": {
+			"type": "string"
+		},
+		"br_viewwidth": {
+			"type": "string"
+		},
+		"br_viewheight": {
+			"type": "string"
+		},
+		"os_name": {
+			"type": "string"
+		},
+		"os_family": {
+			"type": "string"
+		},
+		"os_manufacturer": {
+			"type": "string"
+		},
+		"os_timezone": {
+			"type": "string"
+		},
+		"dvce_type": {
+			"type": "string"
+		},
+		"dvce_ismobile": {
+			"type": "string"
+		},
+		"dvce_screenwidth": {
+			"type": "string"
+		},
+		"dvce_screenheight": {
+			"type": "string"
+		},
+		"doc_charset": {
+			"type": "string"
+		},
+		"doc_width": {
+			"type": "string"
+		},
+		"doc_height": {
+			"type": "string"
+		}
+	},
+	"additionalProperties": false
+}
