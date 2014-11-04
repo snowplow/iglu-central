@@ -16,6 +16,9 @@
 		"redirectStart": {
 			"type": "number"
 		},
+		"redirectEnd": {
+			"type": "number"
+		},
 		"fetchStart": {
 			"type": "number"
 		},
