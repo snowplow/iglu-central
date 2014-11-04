@@ -11,328 +11,328 @@
 	"type": "object",
 	"properties": {
 		"app_id": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"platform": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"etl_tstamp": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"collector_tstamp": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"dvce_tstamp": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"event": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"event_id": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"txn_id": {
-			"type": "string"
+			"type": ["integer", "null"]
 		},
 		"name_tracker": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"v_tracker": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"v_collector": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"v_etl": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"user_id": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"user_ipaddress": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"user_fingerprint": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"domain_userid": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"domain_sessionidx": {
-			"type": "string"
+			"type": ["integer", "null"]
 		},
 		"network_userid": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"geo_country": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"geo_region": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"geo_city": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"geo_zipcode": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"geo_latitude": {
-			"type": "string"
+			"type": ["number", "null"]
 		},
 		"geo_longitude": {
-			"type": "string"
+			"type": ["number", "null"]
 		},
 		"geo_region_name": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"ip_isp": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"ip_org": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"ip_domain": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"ip_netspeed": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"page_url": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"page_title": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"page_referrer": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"page_urlscheme": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"page_urlhost": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"page_urlport": {
-			"type": "string"
+			"type": ["integer", "null"]
 		},
 		"page_urlpath": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"page_urlquery": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"page_urlfragment": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"refr_urlscheme": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"refr_urlhost": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"refr_urlport": {
-			"type": "string"
+			"type": ["integer", "null"]
 		},
 		"refr_urlpath": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"refr_urlquery": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"refr_urlfragment": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"refr_medium": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"refr_source": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"refr_term": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"mkt_medium": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"mkt_source": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"mkt_term": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"mkt_content": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"mkt_campaign": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"contexts": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"se_category": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"se_action": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"se_label": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"se_property": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"se_value": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"unstruct_event": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"tr_orderid": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"tr_affiliation": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"tr_total": {
-			"type": "string"
+			"type": ["number", "null"]
 		},
 		"tr_tax": {
-			"type": "string"
+			"type": ["number", "null"]
 		},
 		"tr_shipping": {
-			"type": "string"
+			"type": ["number", "null"]
 		},
 		"tr_city": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"tr_state": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"tr_country": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"ti_orderid": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"ti_sku": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"ti_name": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"ti_category": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"ti_price": {
-			"type": "string"
+			"type": ["number", "null"]
 		},
 		"ti_quantity": {
-			"type": "string"
+			"type": ["integer", "null"]
 		},
 		"pp_xoffset_min": {
-			"type": "string"
+			"type": ["integer", "null"]
 		},
 		"pp_xoffset_max": {
-			"type": "string"
+			"type": ["integer", "null"]
 		},
 		"pp_yoffset_min": {
-			"type": "string"
+			"type": ["integer", "null"]
 		},
 		"pp_yoffset_max": {
-			"type": "string"
+			"type": ["integer", "null"]
 		},
 		"useragent": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"br_name": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"br_family": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"br_version": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"br_type": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"br_renderengine": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"br_lang": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"br_features_pdf": {
-			"type": "string"
+			"type": ["boolean", "null"]
 		},
 		"br_features_flash": {
-			"type": "string"
+			"type": ["boolean", "null"]
 		},
 		"br_features_java": {
-			"type": "string"
+			"type": ["boolean", "null"]
 		},
 		"br_features_director": {
-			"type": "string"
+			"type": ["boolean", "null"]
 		},
 		"br_features_quicktime": {
-			"type": "string"
+			"type": ["boolean", "null"]
 		},
 		"br_features_realplayer": {
-			"type": "string"
+			"type": ["boolean", "null"]
 		},
 		"br_features_windowsmedia": {
-			"type": "string"
+			"type": ["boolean", "null"]
 		},
 		"br_features_gears": {
-			"type": "string"
+			"type": ["boolean", "null"]
 		},
 		"br_features_silverlight": {
-			"type": "string"
+			"type": ["boolean", "null"]
 		},
 		"br_cookies": {
-			"type": "string"
+			"type": ["boolean", "null"]
 		},
 		"br_colordepth": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"br_viewwidth": {
-			"type": "string"
+			"type": ["integer", "null"]
 		},
 		"br_viewheight": {
-			"type": "string"
+			"type": ["integer", "null"]
 		},
 		"os_name": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"os_family": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"os_manufacturer": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"os_timezone": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"dvce_type": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"dvce_ismobile": {
-			"type": "string"
+			"type": ["boolean", "null"]
 		},
 		"dvce_screenwidth": {
-			"type": "string"
+			"type": ["integer", "null"]
 		},
 		"dvce_screenheight": {
-			"type": "string"
+			"type": ["integer", "null"]
 		},
 		"doc_charset": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"doc_width": {
-			"type": "string"
+			"type": ["integer", "null"]
 		},
 		"doc_height": {
-			"type": "string"
+			"type": ["integer", "null"]
 		}
 	},
 	"additionalProperties": false
