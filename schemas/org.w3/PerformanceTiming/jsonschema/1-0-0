@@ -72,6 +72,12 @@
 		},
 		"loadEventEnd": {
 			"type": "number"
+		},
+		"msFirstPaint": {
+			"type": "number"
+		},
+		"chromeFirstPaint": {
+			"type": "number"
 		}
 	},
 	"minProperties": 1,
