@@ -59,7 +59,8 @@
 			"additionalProperties": false
 		},
 		"fired_at": {
-			"type": "string"
+			"type": "string",
+			"format": "date-time"
 		},
 		"type": {
 			"type": "string"
