@@ -1,3 +1,14 @@
+Release 11 (2014-11-05)
+-----------------------
+Added: com.snowplowanalytics.snowplow/link_click/jsonschema/1-0-1
+Added: com.snowplowanalytics.snowplow/social_interaction/jsonschema/1-0-0
+Added: com.snowplowanalytics.snowplow/site_search/jsonschema/1-0-0
+Added: com.snowplowanalytics.snowplow/add_to_cart/jsonschema/1-0-0
+Added: com.snowplowanalytics.snowplow/remove_from_cart/jsonschema/1-0-0
+Added: com.snowplowanalytics.snowplow/submit_form/jsonschema/1-0-0
+Added: com.snowplowanalytics.snowplow/change_form/jsonschema/1-0-0
+Added: org.w3/PerformanceTiming/jsonschema/1-0-0
+
 Release 10 (2014-10-30)
 -----------------------
 Updated: com.callrail/call_complete/jsonschema/1-0-0

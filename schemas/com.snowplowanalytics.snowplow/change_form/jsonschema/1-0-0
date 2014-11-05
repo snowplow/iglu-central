@@ -1,0 +1,37 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a form field's value being changed",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow",
+		"name": "change_form",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"formId": {
+			"type": "string"
+		},
+		"elementId": {
+			"type": "string"
+		},
+		"nodeName": {
+			"enum": ["INPUT", "TEXTAREA", "SELECT"]
+		},
+		"type": {
+			"enum": ["button", "checkbox", "color", "date", "datetime", "datetime-local", "email", "file", "hidden", "image", "month", "number", "password", "radio", "range", "reset", "search", "submit", "tel", "text", "time", "url", "week"]
+		},
+		"elementClasses": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"value": {
+			"type": ["string", "null"]
+		}
+	},
+	"required": ["formId", "elementId", "nodeName", "value"],
+	"additionalProperties": false
+}

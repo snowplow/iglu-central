@@ -1,0 +1,34 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for an add-to-cart event",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow",
+		"name": "add_to_cart",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"sku": {
+			"type": "string"
+		},
+		"name": {
+			"type": "string"
+		},
+		"category": {
+			"type": "string"
+		},
+		"unitPrice": {
+			"type": "number"
+		},
+		"quantity": {
+			"type": "number"
+		},
+		"currency": {
+			"type": "string"
+		}
+	},
+	"required": ["sku", "quantity"],
+	"additionalProperties": false
+}
