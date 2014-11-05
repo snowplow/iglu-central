@@ -167,7 +167,7 @@
 			"type": ["string", "null"]
 		},
 		"contexts": {
-			"type": ["string", "null"]
+			"type": ["array", "null"]
 		},
 		"se_category": {
 			"type": ["string", "null"]
@@ -185,7 +185,7 @@
 			"type": ["string", "null"]
 		},
 		"unstruct_event": {
-			"type": ["string", "null"]
+			"type": ["object", "null"]
 		},
 		"tr_orderid": {
 			"type": ["string", "null"]
