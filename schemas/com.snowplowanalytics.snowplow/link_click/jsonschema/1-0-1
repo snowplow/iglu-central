@@ -19,15 +19,15 @@
 				"type": "string"
 			}
 		},
-		"elementContent": {
-			"type": "string"
-		},
 		"elementTarget": {
 			"type": "string"
 		},
 		"targetUrl": {
 			"type": "string",
 			"minLength": 1
+		},
+		"elementContent": {
+			"type": "string"
 		}
 	},
 	"required": ["targetUrl"],
