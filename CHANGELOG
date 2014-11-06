@@ -1,3 +1,7 @@
+Release 12 (2014-11-06)
+-----------------------
+Updated: org.w3/PerformanceTiming/jsonschema/1-0-0
+
 Release 11 (2014-11-05)
 -----------------------
 Added: com.snowplowanalytics.snowplow/link_click/jsonschema/1-0-1
