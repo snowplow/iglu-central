@@ -11,73 +11,73 @@
 	"type": "object",
 	"properties": {
 		"navigationStart": {
-			"type": "number"
+			"type": "integer"
 		},
 		"redirectStart": {
-			"type": "number"
+			"type": "integer"
 		},
 		"redirectEnd": {
-			"type": "number"
+			"type": "integer"
 		},
 		"fetchStart": {
-			"type": "number"
+			"type": "integer"
 		},
 		"domainLookupStart": {
-			"type": "number"
+			"type": "integer"
 		},
 		"domainLookupEnd": {
-			"type": "number"
+			"type": "integer"
 		},
 		"connectStart": {
-			"type": "number"
+			"type": "integer"
 		},
 		"secureConnectionStart": {
-			"type": "number"
+			"type": "integer"
 		},
 		"connectEnd": {
-			"type": "number"
+			"type": "integer"
 		},
 		"requestStart": {
-			"type": "number"
+			"type": "integer"
 		},
 		"responseStart": {
-			"type": "number"
+			"type": "integer"
 		},
 		"responseEnd": {
-			"type": "number"
+			"type": "integer"
 		},
 		"unloadEventStart": {
-			"type": "number"
+			"type": "integer"
 		},
 		"unloadEventEnd": {
-			"type": "number"
+			"type": "integer"
 		},
 		"domLoading": {
-			"type": "number"
+			"type": "integer"
 		},
 		"domInteractive": {
-			"type": "number"
+			"type": "integer"
 		},
 		"domContentLoadedEventStart": {
-			"type": "number"
+			"type": "integer"
 		},
 		"domContentLoadedEventEnd": {
-			"type": "number"
+			"type": "integer"
 		},
 		"domComplete": {
-			"type": "number"
+			"type": "integer"
 		},
 		"loadEventStart": {
-			"type": "number"
+			"type": "integer"
 		},
 		"loadEventEnd": {
-			"type": "number"
+			"type": "integer"
 		},
 		"msFirstPaint": {
-			"type": "number"
+			"type": "integer"
 		},
 		"chromeFirstPaint": {
-			"type": "number"
+			"type": "integer"
 		}
 	},
 	"minProperties": 1,
