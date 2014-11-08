@@ -1,3 +1,7 @@
+Release 13 (2014-11-08)
+-----------------------
+Removed: com.adxtracking/app_install/jsonschema/1-0-0
+
 Release 12 (2014-11-06)
 -----------------------
 Updated: org.w3/PerformanceTiming/jsonschema/1-0-0
