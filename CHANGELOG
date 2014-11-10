@@ -1,3 +1,13 @@
+
+Release 14 (2014-11-10)
+-----------------------
+Added: com.mailchimp/campaign_sending_status/jsonschema/1-0-0
+Added: com.mailchimp/cleaned_email/jsonschema/1-0-0
+Added: com.mailchimp/email_address_change/jsonschema/1-0-0
+Added: com.mailchimp/profile_update/jsonschema/1-0-0
+Added: com.mailchimp/unsubscribe/jsonschema/1-0-0
+Added: com.mailchimp/subscribe/jsonschema/1-0-0
+
 Release 13 (2014-11-08)
 -----------------------
 Removed: com.adxtracking/app_install/jsonschema/1-0-0
