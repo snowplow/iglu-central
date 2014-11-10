@@ -28,6 +28,9 @@
 				"id": {
 					"type": "string"
 				},
+				"web_id": {
+					"type": "string"
+				},
 				"ip_opt": {
 					"type": "string"
 				},
