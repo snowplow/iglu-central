@@ -1,0 +1,40 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a Mailchimp email address change event",
+	"self": {
+		"vendor": "com.mailchimp",
+		"name": "email_address_change",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "object",
+			"properties": {
+				"list_id": {
+					"type": "string"
+				},
+				"new_email": {
+					"type": "string"
+				},
+				"new_id": {
+					"type": "string"
+				},
+				"old_email": {
+					"type": "string"
+				}
+			},
+			"additionalProperties": false
+		},
+		"fired_at": {
+			"type": "string",
+			"format": "date-time"
+		},
+		"type": {
+			"type": "string"
+		}
+	},
+	"additionalProperties": false
+}

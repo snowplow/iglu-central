@@ -1,0 +1,40 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a Mailchimp cleaned email event",
+	"self": {
+		"vendor": "com.mailchimp",
+		"name": "cleaned_email",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "object",
+			"properties": {
+				"campaign_id": {
+					"type": "string"
+				},
+				"email": {
+					"type": "string"
+				},
+				"list_id": {
+					"type": "string"
+				},
+				"reason": {
+					"type": "string"
+				}
+			},
+			"additionalProperties": false
+		},
+		"fired_at": {
+			"type": "string",
+			"format": "date-time"
+		},
+		"type": {
+			"type": "string"
+		}
+	},
+	"additionalProperties": false
+}
