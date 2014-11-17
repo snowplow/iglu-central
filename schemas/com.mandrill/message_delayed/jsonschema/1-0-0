@@ -64,7 +64,8 @@
 								"type": "string"
 							},
 							"ts": {
-								"type": "number"
+								"type": "string",
+								"format": "date-time"
 							},
 							"type": {
 								"type": "string"
@@ -86,13 +87,15 @@
 					}
 				},
 				"ts": {
-					"type": "number"
+					"type": "string",
+					"format": "date-time"
 				}
 			},
 			"additionalProperties": false
 		},
 		"ts": {
-			"type": "number"
+			"type": "string",
+			"format": "date-time"
 		}
 	},
 	"additionalProperties": false

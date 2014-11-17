@@ -31,7 +31,8 @@
 						"type": "object",
 						"properties": {
 							"ts": {
-								"type": "number"
+								"type": "string",
+								"format": "date-time"
 							},
 							"url": {
 								"type": "string"
@@ -58,7 +59,8 @@
 						"type": "object",
 						"properties": {
 							"ts": {
-								"type": "number"
+								"type": "string",
+								"format": "date-time"
 							}
 						},
 						"additionalProperties": false
@@ -80,13 +82,15 @@
 					}
 				},
 				"ts": {
-					"type": "number"
+					"type": "string",
+					"format": "date-time"
 				}
 			},
 			"additionalProperties": false
 		},
 		"ts": {
-			"type": "number"
+			"type": "string",
+			"format": "date-time"
 		}
 	},
 	"additionalProperties": false
