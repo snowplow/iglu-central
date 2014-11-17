@@ -20,7 +20,7 @@
 					"type": "string"
 				},
 				"reason": {
-					"type": "string"
+				    "type": ["string","null"]
 				},
 				"status": {
 					"type": "string"
