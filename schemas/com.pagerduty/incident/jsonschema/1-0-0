@@ -1,6 +1,6 @@
 {
 	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
-	"description": "Schema for a Pagerduty incident event",
+	"description": "Schema for a PagerDuty incident event",
 	"self": {
 		"vendor": "com.pagerduty",
 		"name": "incident",
@@ -14,7 +14,8 @@
 			"type": "string"
 		},
 		"created_on": {
-			"type": "string"
+			"type": "string",
+			"format": "date-time"
 		},
 		"type": {
 			"type": "string"
@@ -32,7 +33,8 @@
 							"type": "integer"
 						},
 						"created_on": {
-							"type": "string"
+							"type": "string",
+							"format": "date-time"
 						},
 						"status": {
 							"type": "string"
@@ -107,7 +109,8 @@
 							"type": "string"
 						},
 						"last_status_change_on": {
-							"type": "string"
+							"type": "string",
+							"format": "date-time"
 						},
 						"last_status_change_by": {
 							"type": [ "object", "null" ],
