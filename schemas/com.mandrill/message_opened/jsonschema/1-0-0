@@ -13,9 +13,6 @@
 		"_id": {
 			"type": "string"
 		},
-		"event": {
-			"type": "string"
-		},
 		"ip": {
 			"type": "string"
 		},

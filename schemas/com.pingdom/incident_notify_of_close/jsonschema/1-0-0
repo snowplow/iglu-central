@@ -19,9 +19,6 @@
 		"host": {
 			"type": "string"
 		},
-		"action": {
-			"type": "string"
-		},
 		"incidentid": {
 			"type": "integer"
 		},
