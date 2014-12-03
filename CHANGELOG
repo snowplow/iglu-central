@@ -1,6 +1,8 @@
 Release 17 (2014-12-03)
 -----------------------
 Added: com.snowplowanalytics.snowplow/payload_data/jsonschema/1-0-2
+Patched: com.snowplowanalytics.snowplow/payload_data/jsonschema/1-0-0
+Patched: com.snowplowanalytics.snowplow/payload_data/jsonschema/1-0-1
 
 Release 16 (2014-11-24)
 -----------------------
@@ -8,7 +10,7 @@ Added: com.snowplowanalytics.snowplow/contexts/jsonschema/1-0-1
 
 Release 15 (2014-11-17)
 -----------------------
-Updated: com.mailchimp/campaign_sending_status/jsonschema/1-0-0
+Patched: com.mailchimp/campaign_sending_status/jsonschema/1-0-0
 
 Release 14 (2014-11-10)
 -----------------------
@@ -25,7 +27,7 @@ Removed: com.adxtracking/app_install/jsonschema/1-0-0
 
 Release 12 (2014-11-06)
 -----------------------
-Updated: org.w3/PerformanceTiming/jsonschema/1-0-0
+Patched: org.w3/PerformanceTiming/jsonschema/1-0-0
 
 Release 11 (2014-11-05)
 -----------------------
@@ -40,12 +42,12 @@ Added: org.w3/PerformanceTiming/jsonschema/1-0-0
 
 Release 10 (2014-10-30)
 -----------------------
-Updated: com.callrail/call_complete/jsonschema/1-0-0
+Patched: com.callrail/call_complete/jsonschema/1-0-0
 
 Release 9 (2014-10-24)
 ----------------------
-Updated: com.adxtracking/app_install/jsonschema/1-0-0
-Updated: com.callrail/call_complete/jsonschema/1-0-0
+Patched: com.adxtracking/app_install/jsonschema/1-0-0
+Patched: com.callrail/call_complete/jsonschema/1-0-0
 
 Release 8 (2014-10-17)
 ----------------------
@@ -62,7 +64,7 @@ Added: com.snowplowanalytics.snowplow/payload_data/jsonschema/1-0-1
 
 Release 5 (2014-09-08)
 ----------------------
-Updated: com.snowplowanalytics.snowplow/geolocation_context/jsonschema/1-0-0
+Patched: com.snowplowanalytics.snowplow/geolocation_context/jsonschema/1-0-0
 
 Release 4 (2014-08-29)
 ----------------------
