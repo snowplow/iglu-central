@@ -1,3 +1,7 @@
+Release 17 (2014-12-03)
+-----------------------
+Added: com.snowplowanalytics.snowplow/payload_data/jsonschema/1-0-2
+
 Release 16 (2014-11-24)
 -----------------------
 Added: com.snowplowanalytics.snowplow/contexts/jsonschema/1-0-1
