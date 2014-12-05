@@ -1,0 +1,141 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a PagerDuty incident event",
+	"self": {
+		"vendor": "com.pagerduty",
+		"name": "incident",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "string"
+		},
+		"created_on": {
+			"type": "string",
+			"format": "date-time"
+		},
+		"type": {
+			"type": "string"
+		},
+		"data": {
+			"type": "object",
+			"properties": {
+				"incident": {
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "string"
+						},
+						"incident_number": {
+							"type": "integer"
+						},
+						"created_on": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"status": {
+							"type": "string"
+						},
+						"html_url": {
+							"type": "string"
+						},
+						"incident_key": {
+							"type": [ "string", "null" ]
+						},
+						"service": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string"
+								},
+								"name": {
+									"type": "string"
+								},
+								"html_url": {
+									"type": "string"
+								}
+							},
+							"additionalProperties": false
+						},
+						"assigned_to_user": {
+							"type": [ "object", "null" ],
+							"properties": {
+								"id": {
+									"type": "string"
+								},
+								"name": {
+									"type": "string"
+								},
+								"email": {
+									"type": "string"
+								},
+								"html_url": {
+									"type": "string"
+								}
+							},
+							"additionalProperties": false
+						},
+						"resolved_by_user": {
+							"type": "object",
+							"properties": {
+								"id": {
+									"type": "string"
+								},
+								"name": {
+									"type": "string"
+								},
+								"email": {
+									"type": "string"
+								},
+								"html_url": {
+									"type": "string"
+								}
+							},
+							"additionalProperties": false
+						},
+						"trigger_summary_data": {
+							"type": "object",
+							"properties": {
+								"subject": {
+									"type": "string"
+								}
+							},
+							"additionalProperties": false
+						},
+						"trigger_details_html_url": {
+							"type": "string"
+						},
+						"last_status_change_on": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"last_status_change_by": {
+							"type": [ "object", "null" ],
+							"properties": {
+								"id": {
+									"type": "string"
+								},
+								"name": {
+									"type": "string"
+								},
+								"email": {
+									"type": "string"
+								},
+								"html_url": {
+									"type": "string"
+								}
+							},
+							"additionalProperties": false
+						}
+					},
+					"additionalProperties": false
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}

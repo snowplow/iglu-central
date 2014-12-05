@@ -1,0 +1,30 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a Pingdom incident assigned event",
+	"self": {
+		"vendor": "com.pingdom",
+		"name": "incident_assign",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+	
+	"type": "object",
+	"properties": {
+		"check": {
+			"type": "string"
+		},
+		"checkname": {
+			"type": "string"
+		},
+		"host": {
+			"type": "string"
+		},
+		"incidentid": {
+			"type": "integer"
+		},
+		"description": {
+			"type": "string"
+		}
+	},
+	"additionalProperties": false
+}
