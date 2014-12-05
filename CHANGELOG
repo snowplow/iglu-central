@@ -1,3 +1,18 @@
+Release 18 (2014-12-05)
+-----------------------
+Added: com.mandrill/message_bounced/jsonschema/1-0-0
+Added: com.mandrill/message_clicked/jsonschema/1-0-0
+Added: com.mandrill/message_delayed/jsonschema/1-0-0
+Added: com.mandrill/message_marked_as_spam/jsonschema/1-0-0
+Added: com.mandrill/message_opened/jsonschema/1-0-0
+Added: com.mandrill/message_rejected/jsonschema/1-0-0
+Added: com.mandrill/message_sent/jsonschema/1-0-0
+Added: com.mandrill/message_soft_bounced/jsonschema/1-0-0
+Added: com.mandrill/recipient_unsubscribed/jsonschema/1-0-0
+Added: com.pingdom/incident_assign/jsonschema/1-0-0
+Added: com.pingdom/incident_notify_of_close/jsonschema/1-0-0
+Added: com.pagerduty/incident/jsonschema/1-0-0
+
 Release 17 (2014-12-03)
 -----------------------
 Added: com.snowplowanalytics.snowplow/payload_data/jsonschema/1-0-2
