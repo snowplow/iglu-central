@@ -1,3 +1,7 @@
+Release 19 (2014-12-10)
+-----------------------
+Patched: com.pagerduty/incident/jsonschema/1-0-0
+
 Release 18 (2014-12-05)
 -----------------------
 Added: com.mandrill/message_bounced/jsonschema/1-0-0
