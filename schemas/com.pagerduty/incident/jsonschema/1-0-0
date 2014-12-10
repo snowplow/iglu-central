@@ -10,15 +10,15 @@
 
 	"type": "object",
 	"properties": {
+		"type": {
+			"type": "string"
+		},
 		"id": {
 			"type": "string"
 		},
 		"created_on": {
 			"type": "string",
 			"format": "date-time"
-		},
-		"type": {
-			"type": "string"
 		},
 		"data": {
 			"type": "object",
@@ -56,12 +56,15 @@
 								},
 								"html_url": {
 									"type": "string"
+								},
+								"deleted_at": {
+									"type": "null"
 								}
 							},
 							"additionalProperties": false
 						},
-						"assigned_to_user": {
-							"type": [ "object", "null" ],
+						"escalation_policy": {
+							"type": "object",
 							"properties": {
 								"id": {
 									"type": "string"
@@ -69,17 +72,14 @@
 								"name": {
 									"type": "string"
 								},
-								"email": {
-									"type": "string"
-								},
-								"html_url": {
-									"type": "string"
+								"deleted_at": {
+									"type": "null"
 								}
 							},
 							"additionalProperties": false
 						},
-						"resolved_by_user": {
-							"type": "object",
+						"assigned_to_user": {
+							"type": [ "object", "null", "string" ],
 							"properties": {
 								"id": {
 									"type": "string"
@@ -99,6 +99,9 @@
 						"trigger_summary_data": {
 							"type": "object",
 							"properties": {
+								"description": {
+									"type": "string"
+								},
 								"subject": {
 									"type": "string"
 								}
@@ -108,12 +111,69 @@
 						"trigger_details_html_url": {
 							"type": "string"
 						},
+						"trigger_type": {
+							"type": "string"
+						},
 						"last_status_change_on": {
 							"type": "string",
 							"format": "date-time"
 						},
 						"last_status_change_by": {
-							"type": [ "object", "null" ],
+							"type": [ "null", "object", "string" ],
+							"properties": {
+								"id": {
+									"type": "string"
+								},
+								"name": {
+									"type": "string"
+								},
+								"email": {
+									"type": "string"
+								},
+								"html_url": {
+									"type": "string"
+								}
+							},
+							"additionalProperties": false
+						},
+						"number_of_escalations": {
+							"type": "integer"
+						},
+						"assigned_to": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"at": {
+										"type": "string"
+									},
+									"object": {
+										"type": "object",
+										"properties": {
+											"id": {
+												"type": "string"
+											},
+											"name": {
+												"type": "string"
+											},
+											"email": {
+												"type": "string"
+											},
+											"html_url": {
+												"type": "string"
+											},
+											"type": {
+												"type": "string"
+											}
+										},
+										"additionalProperties": false
+									}
+								},
+								"additionalProperties": false
+							}
+						},
+						"resolved_by_user": {
+							"type": "object",
 							"properties": {
 								"id": {
 									"type": "string"
