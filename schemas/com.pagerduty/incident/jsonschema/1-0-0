@@ -104,6 +104,9 @@
 								},
 								"subject": {
 									"type": "string"
+								},
+								"client": {
+									"type": "string"
 								}
 							},
 							"additionalProperties": false
