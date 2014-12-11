@@ -79,7 +79,7 @@
 							"additionalProperties": false
 						},
 						"assigned_to_user": {
-							"type": [ "object", "null", "string" ],
+							"type": [ "object", "null" ],
 							"properties": {
 								"id": {
 									"type": "string"
@@ -119,7 +119,7 @@
 							"format": "date-time"
 						},
 						"last_status_change_by": {
-							"type": [ "null", "object", "string" ],
+							"type": [ "object", "null" ],
 							"properties": {
 								"id": {
 									"type": "string"
