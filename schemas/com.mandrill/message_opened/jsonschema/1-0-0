@@ -91,6 +91,15 @@
 							"ts": {
 								"type": "string",
 								"format": "date-time"
+							},
+							"ip": {
+								"type": "string"
+							},
+							"location": {
+								"type": "string"
+							},
+							"ua": {
+								"type": "string"
 							}
 						},
 						"additionalProperties": false
@@ -202,7 +211,7 @@
 					"type": "string"
 				},
 				"ua_version": {
-					"type": "string"
+					"type": ["string", "null"]
 				}
 			},
 			"additionalProperties": false
