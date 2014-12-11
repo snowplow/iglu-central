@@ -89,6 +89,12 @@
 						},
 						"additionalProperties": false
 					}
+				},
+				"resends": {
+					"type": "array"
+				},
+				"template": {
+					"type": ["string", "null"]
 				}
 			},
 			"additionalProperties": false
