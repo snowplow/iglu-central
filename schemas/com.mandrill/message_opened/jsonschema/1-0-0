@@ -175,6 +175,9 @@
 		},
 		"user_agent": {
 			"type": "string"
+		},
+		"resends": {
+			"type": "array"
 		}
 	},
 	"additionalProperties": false
