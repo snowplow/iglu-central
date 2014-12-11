@@ -61,6 +61,40 @@
 				"ts": {
 					"type": "string",
 					"format": "date-time"
+				},
+				"resends": {
+					"type": "array"
+				},
+				"smtp_events": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"ts": {
+								"type": "string",
+								"format": "date-time"
+							},
+							"type": {
+								"type": "string"
+							},
+							"diag": {
+								"type": "string"
+							},
+							"source_ip": {
+								"type": "string"
+							},
+							"destination_ip": {
+								"type": "string"
+							},
+							"size": {
+								"type": "integer"
+							}					
+						},
+						"additionalProperties": false
+					}
+				},
+				"template": {
+					"type": ["string", "null"]
 				}
 			},
 			"additionalProperties": false
