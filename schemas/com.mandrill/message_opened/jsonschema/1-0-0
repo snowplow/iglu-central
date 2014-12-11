@@ -206,6 +206,9 @@
 				},
 				"additionalProperties": false
 			}
+		},
+		"template": {
+			"type": ["string", "null"]
 		}		
 	},
 	"additionalProperties": false
