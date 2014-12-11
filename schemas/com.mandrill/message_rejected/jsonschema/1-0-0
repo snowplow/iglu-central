@@ -58,6 +58,21 @@
 				"ts": {
 					"type": "string",
 					"format": "date-time"
+				},
+				"reject": {
+					"type": ["string", "null"]
+				},
+				"resends": {
+					"type": "array"
+				},
+				"smtp_events": {
+					"type": "array"
+				},
+				"subaccount": {
+					"type": ["string", "null"]
+				},
+				"template": {
+					"type": ["string", "null"]
 				}
 			},
 			"additionalProperties": false
