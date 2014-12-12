@@ -1,0 +1,11 @@
+{
+	"description": "Schema the self-describing Thrift schema sniffer",
+	"self": {
+		"vendor": "com.snowplowanalytics.iglu",
+		"name": "SchemaSniffer",
+		"format": "thrift",
+		"version": "1-0-0"
+	},
+
+	"idl": "namespace java com.snowplowanalytics.snowplow.SchemaSniffer.thrift.v1\nstruct SchemaSniffer {\n  31337: string schema\n}"
+}
