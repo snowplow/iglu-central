@@ -1,0 +1,11 @@
+{
+	"description": "Schema for a Snowplow collector payload",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow",
+		"name": "CollectorPayload",
+		"format": "thrift",
+		"version": "1-0-0"
+	},
+
+	"idl": "namespace java com.snowplowanalytics.snowplow.CollectorPayload.thrift.v1\nstruct CollectorPayload {\31337: string schema\n10: optional string querystring\n20: string collector\n30: string encoding\n40: optional string hostname\n50: i64 timestamp\n60: string ipAddress\n70: optional string userAgent\n80: optional string refererUri\n90: optional list<string> headers\n100: optional string networkUserId\n110: string path\n120: optional string contentType\n130: optional string body\n}\n"
+}
