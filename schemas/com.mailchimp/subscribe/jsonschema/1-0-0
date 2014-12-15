@@ -48,9 +48,75 @@
 						},
 						"INTERESTS": {
 							"type": "string"
+						},
+						"GROUPINGS": {
+							"type": "object",
+							"properties": {
+								"1": {
+									"type": "object",
+									"properties": {
+										"groups": {
+											"type": ["string", "null"]
+										},
+										"name": {
+											"type": "string"
+										},
+										"id": {
+											"type": "string"
+										}
+									},
+									"additionalProperties": false
+								},
+								"2": {
+									"type": "object",
+									"properties": {
+										"groups": {
+											"type": ["string", "null"]
+										},
+										"name": {
+											"type": "string"
+										},
+										"id": {
+											"type": "string"
+										}
+									},
+									"additionalProperties": false
+								},
+								"3": {
+									"type": "object",
+									"properties": {
+										"groups": {
+											"type": ["string", "null"]
+										},
+										"name": {
+											"type": "string"
+										},
+										"id": {
+											"type": "string"
+										}
+									},
+									"additionalProperties": false
+								},
+								"4": {
+									"type": "object",
+									"properties": {
+										"groups": {
+											"type": ["string", "null"]
+										},
+										"name": {
+											"type": "string"
+										},
+										"id": {
+											"type": "string"
+										}
+									},
+									"additionalProperties": false
+								}
+							},
+							"additionalProperties": true
 						}
 					},
-					"additionalProperties": false
+					"additionalProperties": true
 				}
 			},
 			"additionalProperties": false
