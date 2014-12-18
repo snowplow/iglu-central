@@ -93,6 +93,9 @@
 		"ts": {
 			"type": "string",
 			"format": "date-time"
+		},
+		"diag": {
+			"type": "string"
 		}
 	},
 	"additionalProperties": false
