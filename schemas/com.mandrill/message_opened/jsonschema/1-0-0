@@ -66,6 +66,15 @@
 							},
 							"url": {
 								"type": "string"
+							},
+							"ip": {
+								"type": "string"
+							},
+							"location": {
+								"type": "string"
+							},
+							"ua": {
+								"type": "string"
 							}
 						},
 						"additionalProperties": false
