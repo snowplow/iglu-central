@@ -8,7 +8,7 @@ Patched: com.mandrill/message_rejected/jsonschema/1-0-0
 Patched: com.mandrill/message_sent/jsonschema/1-0-0
 Patched: com.mandrill/message_soft_bounced/jsonschema/1-0-0
 Patched: com.pagerduty/incident/jsonschema/1-0-0
-Patched: com.pingdom/incident_notify_user/jsonschema/1-0-0
+Added: com.pingdom/incident_notify_user/jsonschema/1-0-0
 
 Release 19 (2014-12-10)
 -----------------------
