@@ -75,7 +75,7 @@
 							},
 							"ua": {
 								"type": "string"
-							},
+							}
 						},
 						"additionalProperties": false
 					}
@@ -181,43 +181,43 @@
 					"type": "boolean"
 				},
 				"os_company_url": {
-					"type": "string"
+					"type": ["string", "null"]
 				},
 				"os_company": {
-					"type": "string"
+					"type": ["string", "null"]
 				},
 				"os_family": {
-					"type": "string"
+					"type": ["string", "null"]
 				},
 				"os_icon": {
-					"type": "string"
+					"type": ["string", "null"]
 				},
 				"os_name": {
-					"type": "string"
+					"type": ["string", "null"]
 				},
 				"os_url": {
-					"type": "string"
+					"type": ["string", "null"]
 				},
 				"type": {
-					"type": "string"
+					"type": ["string", "null"]
 				},
 				"ua_company_url": {
-					"type": "string"
+					"type": ["string", "null"]
 				},
 				"ua_company": {
-					"type": "string"
+					"type": ["string", "null"]
 				},
 				"ua_family": {
-					"type": "string"
+					"type": ["string", "null"]
 				},
 				"ua_icon": {
-					"type": "string"
+					"type": ["string", "null"]
 				},
 				"ua_name": {
-					"type": "string"
+					"type": ["string", "null"]
 				},
 				"ua_url": {
-					"type": "string"
+					"type": ["string", "null"]
 				},
 				"ua_version": {
 					"type": ["string", "null"]
