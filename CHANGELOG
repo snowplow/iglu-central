@@ -3,6 +3,7 @@ Release 20 (2014-12-17)
 Patched: com.mailchimp/subscribe/jsonschema/1-0-0
 Patched: com.mandrill/message_bounced/jsonschema/1-0-0
 Patched: com.mandrill/message_clicked/jsonschema/1-0-0
+Patched: com.mandrill/message_delayed/jsonschema/1-0-0
 Patched: com.mandrill/message_opened/jsonschema/1-0-0
 Patched: com.mandrill/message_rejected/jsonschema/1-0-0
 Patched: com.mandrill/message_sent/jsonschema/1-0-0
