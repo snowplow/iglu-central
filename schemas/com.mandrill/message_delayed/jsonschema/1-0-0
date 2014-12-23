@@ -68,7 +68,7 @@
 								"type": "string"
 							}
 						},
-						"additionalProperties": false
+						"additionalProperties": true
 					}
 				},
 				"state": {
@@ -86,6 +86,12 @@
 				"ts": {
 					"type": "string",
 					"format": "date-time"
+				},
+				"resends": {
+					"type": "array"
+				},
+				"template": {
+					"type": ["string", "null"]
 				}
 			},
 			"additionalProperties": false
@@ -93,6 +99,9 @@
 		"ts": {
 			"type": "string",
 			"format": "date-time"
+		},
+		"diag": {
+			"type": "string"
 		}
 	},
 	"additionalProperties": false

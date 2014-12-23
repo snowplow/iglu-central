@@ -77,7 +77,7 @@
 								"type": "string"
 							}
 						},
-						"additionalProperties": false
+						"additionalProperties": true
 					}
 				},
 				"email": {
@@ -100,9 +100,18 @@
 							"ts": {
 								"type": "string",
 								"format": "date-time"
+							},
+							"ip": {
+								"type": "string"
+							},
+							"location": {
+								"type": ["string", "null"]
+							},
+							"ua": {
+								"type": "string"
 							}
 						},
-						"additionalProperties": false
+						"additionalProperties": true
 					}
 				},
 				"sender": {
@@ -123,6 +132,40 @@
 				"ts": {
 					"type": "string",
 					"format": "date-time"
+				},
+				"resends": {
+					"type": "array"
+				},
+				"smtp_events": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"ts": {
+								"type": "string",
+								"format": "date-time"
+							},
+							"type": {
+								"type": "string"
+							},
+							"diag": {
+								"type": "string"
+							},
+							"source_ip": {
+								"type": "string"
+							},
+							"destination_ip": {
+								"type": "string"
+							},
+							"size": {
+								"type": "integer"
+							}					
+						},
+						"additionalProperties": true
+					}
+				},
+				"template": {
+					"type": ["string", "null"]
 				}
 			},
 			"additionalProperties": false
@@ -138,53 +181,53 @@
 					"type": "boolean"
 				},
 				"os_company_url": {
-					"type": "string"
+					"type": ["string", "null"]
 				},
 				"os_company": {
-					"type": "string"
+					"type": ["string", "null"]
 				},
 				"os_family": {
-					"type": "string"
+					"type": ["string", "null"]
 				},
 				"os_icon": {
-					"type": "string"
+					"type": ["string", "null"]
 				},
 				"os_name": {
-					"type": "string"
+					"type": ["string", "null"]
 				},
 				"os_url": {
-					"type": "string"
+					"type": ["string", "null"]
 				},
 				"type": {
-					"type": "string"
+					"type": ["string", "null"]
 				},
 				"ua_company_url": {
-					"type": "string"
+					"type": ["string", "null"]
 				},
 				"ua_company": {
-					"type": "string"
+					"type": ["string", "null"]
 				},
 				"ua_family": {
-					"type": "string"
+					"type": ["string", "null"]
 				},
 				"ua_icon": {
-					"type": "string"
+					"type": ["string", "null"]
 				},
 				"ua_name": {
-					"type": "string"
+					"type": ["string", "null"]
 				},
 				"ua_url": {
-					"type": "string"
+					"type": ["string", "null"]
 				},
 				"ua_version": {
-					"type": "string"
+					"type": ["string", "null"]
 				}
 			},
 			"additionalProperties": false
 		},
 		"user_agent": {
 			"type": "string"
-		}
+		}		
 	},
 	"additionalProperties": false
 }

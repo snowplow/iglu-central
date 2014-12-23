@@ -58,6 +58,46 @@
 				"ts": {
 					"type": "string",
 					"format": "date-time"
+				},
+				"reject": {
+					"type": ["string", "null"]
+				},
+				"resends": {
+					"type": "array"
+				},
+				"smtp_events": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"ts": {
+								"type": "string",
+								"format": "date-time"
+							},
+							"type": {
+								"type": "string"
+							},
+							"diag": {
+								"type": "string"
+							},
+							"source_ip": {
+								"type": "string"
+							},
+							"destination_ip": {
+								"type": "string"
+							},
+							"size": {
+								"type": "integer"
+							}					
+						},
+						"additionalProperties": true
+					}
+				},
+				"subaccount": {
+					"type": ["string", "null"]
+				},
+				"template": {
+					"type": ["string", "null"]
 				}
 			},
 			"additionalProperties": false
