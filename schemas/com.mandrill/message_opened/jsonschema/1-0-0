@@ -166,6 +166,9 @@
 				},
 				"template": {
 					"type": ["string", "null"]
+				},
+				"subaccount": {
+					"type": ["string", "null"]
 				}
 			},
 			"additionalProperties": false
