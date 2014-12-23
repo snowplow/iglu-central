@@ -35,7 +35,7 @@
 								"type": "string"
 							}
 						},
-						"additionalProperties": false
+						"additionalProperties": true
 					}
 				},
 				"email": {
@@ -60,7 +60,7 @@
 								"format": "date-time"
 							}
 						},
-						"additionalProperties": false
+						"additionalProperties": true
 					}
 				},
 				"sender": {
