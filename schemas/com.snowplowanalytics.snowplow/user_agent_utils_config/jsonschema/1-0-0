@@ -1,0 +1,30 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"description": "Schema for configuration of user-agent-utils enrichment",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow",
+		"name": "user_agent_utils_config",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"vendor": {
+			"type": "string"
+		},
+		"name": {
+			"type": "string"
+		},		
+		"enabled": {
+			"type": "boolean"
+		},
+		"parameters": {
+			"type": "object",
+			"maxProperties": 0
+		}
+	},
+	"required": ["name", "vendor", "enabled"],
+	"additionalProperties": false
+}
+

@@ -20,7 +20,7 @@
 			"type": "number"
 		},
 		"useragentPatch": {
-			"type": "number"
+			"type": ["number", "null"]
 		},
 		"useragentVersion": {
 			"type": "number"
@@ -29,16 +29,16 @@
 			"type": "string"
 		},
 		"osMajor": {
-			"type": "number"
+			"type": ["number", "null"]
 		},
 		"osMinor": {
-			"type": "number"
+			"type": ["number", "null"]
 		},
 		"osPatch": {
-			"type": "number"
+			"type": ["number", "null"]
 		},
-		"ospatchMinor": {
-			"type": "number"
+		"osPatchMinor": {
+			"type": ["number", "null"]
 		},
 		"osVersion": {
 			"type": "number"
