@@ -1,9 +1,9 @@
 {
 	"$schema": "http://json-schema.org/schema#",
-	"description": "Schema for a successfully enriched event",
+	"description": "Schema for an event which has been successfully enriched and stored in Elasticsearch",
 	"self": {
 		"vendor": "com.snowplowanalytics.snowplow",
-		"name": "enriched_event",
+		"name": "elasticsearch_enriched_event",
 		"format": "jsonschema",
 		"version": "1-0-0"
 	},
