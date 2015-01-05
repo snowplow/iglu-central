@@ -1,3 +1,8 @@
+Release 21 (2015-01-05)
+-----------------------
+Added: com.snowplowanalytics.snowplow/elasticsearch_enriched_event/jsonschema/1-0-0
+Added: com.snowplowanalytics.snowplow/bad_raw_event/jsonschema/1-0-0
+
 Release 20 (2014-12-23)
 -----------------------
 Patched: com.mailchimp/subscribe/jsonschema/1-0-0

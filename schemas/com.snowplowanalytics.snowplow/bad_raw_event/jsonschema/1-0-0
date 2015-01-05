@@ -1,0 +1,26 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a bad raw event",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow",
+		"name": "bad_raw_event",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"line": {
+			"type": "string"
+		},
+		"errors": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"minItems": 1
+		}
+	},
+	"required": ["line", "errors"],
+	"additionalProperties": false
+}
