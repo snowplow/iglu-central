@@ -1,3 +1,10 @@
+Release 22 (2015-01-07)
+-----------------------
+Added Release button to README (#104)
+Added dedicated Vagrant setup (#100)
+Added Travis support to project (#99)
+Implemented vagrant push scripting for deployment (#101)
+
 Release 21 (2015-01-05)
 -----------------------
 Added: com.snowplowanalytics.snowplow/elasticsearch_enriched_event/jsonschema/1-0-0
