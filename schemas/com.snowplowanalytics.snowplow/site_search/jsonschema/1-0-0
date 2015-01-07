@@ -19,11 +19,8 @@
 		},
 		"filters": {
 			"type": "object",
-			"properties": {
-				"type": "object",
-				"additionalProperties": {
-					"type": ["string", "boolean"]
-				}
+			"additionalProperties": {
+				"type": ["string", "boolean"]
 			}
 		},
 		"totalResults": {
