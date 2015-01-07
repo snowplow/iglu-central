@@ -1,0 +1,4 @@
+# Only project- and language-specific ignores in here. Use global .gitignore for editors etc
+
+# Vagrant
+.vagrant/
