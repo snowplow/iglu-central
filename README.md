@@ -2,7 +2,7 @@
 
 [ ![Build Status] [travis-image] ] [travis] [ ![Release] [release-image] ] [releases]
 
-Iglu Central (**[webite] [iglucentral-website]**) is a central repository for storing JSON Schemas, maintained and hosted by the team at **[Snowplow Analytics] [snowplow-website]**. Think of it like RubyGems.org or Maven Central but for storing data schemas instead of code.
+Iglu Central (**[website] [iglucentral-website]**) is a central repository for storing JSON Schemas, maintained and hosted by the team at **[Snowplow Analytics] [snowplow-website]**. Think of it like RubyGems.org or Maven Central but for storing data schemas instead of code.
 
 All of the schemas for **[Snowplow] [snowplow-repo]** (amongst other systems) are stored in Iglu Central.
 
