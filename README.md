@@ -1,6 +1,6 @@
 # Iglu Central
 
-[ ![Build Status] [travis-image] ] [travis] [ ![Release] [release-image] ] [releases]
+[ ![Build Status] [travis-image] ] [travis] [ ![Release] [release-image] ] [releases] [ ![License] [license-image] ] [license]
 
 Iglu Central (**[webite] [iglucentral-website]**) is a central repository for storing JSON Schemas, maintained and hosted by the team at **[Snowplow Analytics] [snowplow-website]**. Think of it like RubyGems.org or Maven Central but for storing data schemas instead of code.
 
@@ -33,6 +33,9 @@ limitations under the License.
 [release-image]: http://img.shields.io/badge/release-24-ff69b4.svg?style=flat
 [releases]: https://github.com/snowplow/iglu-central/releases
 
+[license-image]: http://img.shields.io/badge/license-Apache--2-blue.svg?style=flat
+[license]: http://www.apache.org/licenses/LICENSE-2.0
+
 [iglucentral-website]: http://iglucentral.com
 [snowplow-repo]: https://github.com/snowplow/snowplow
 [snowplow-wiki]: https://github.com/snowplow/snowplow/wiki
@@ -50,4 +53,4 @@ limitations under the License.
 [roadmap]: https://github.com/snowplow/iglu/wiki/Product-roadmap
 [contributing]: https://github.com/snowplow/iglu/wiki/Contributing-to-Iglu-Central
 
-[license]: http://www.apache.org/licenses/LICENSE-2.0
+
