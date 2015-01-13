@@ -1,3 +1,7 @@
+Release 24 (2015-01-13)
+-----------------------
+Added: com.snowplowanalytics.snowplow/flash_context/jsonschema/1-0-0
+
 Release 23 (2015-01-07)
 -----------------------
 Patched: com.snowplowanalytics.snowplow/site_search/jsonschema/1-0-0
