@@ -17,7 +17,15 @@
 			"type": "string"
 		},
 		"stageSize": {
-			"type": "string"
+			"type": "object",
+			"properties": {
+				"width": {
+					"type": "integer"
+				},
+				"height": {
+					"type": "integer"
+				}
+			}
 		},
 		"isDebugger": {
 			"type": "boolean"
