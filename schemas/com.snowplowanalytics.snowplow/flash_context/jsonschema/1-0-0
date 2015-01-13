@@ -1,0 +1,33 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for Flash context",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow",
+		"name": "flash_context",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"playerType": {
+			"enum": ["ActiveX", "Desktop", "External", "PlugIn", "StandAlone"]
+		},
+		"version": {
+			"type": "string"
+		},
+		"stageSize": {
+			"type": "string"
+		},
+		"isDebugger": {
+			"type": "boolean"
+		},
+		"hasLocalStorage": {
+			"type": "boolean"
+		},
+		"hasScriptAccess": {
+			"type": "boolean"
+		}
+	},
+	"additionalProperties": false
+}
