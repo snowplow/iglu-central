@@ -25,7 +25,8 @@
 				"height": {
 					"type": "integer"
 				}
-			}
+			},
+			"required": ["width", "height"]
 		},
 		"isDebugger": {
 			"type": "boolean"
