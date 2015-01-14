@@ -17,7 +17,16 @@
 			"type": "string"
 		},
 		"stageSize": {
-			"type": "string"
+			"type": "object",
+			"properties": {
+				"width": {
+					"type": "integer"
+				},
+				"height": {
+					"type": "integer"
+				}
+			},
+			"required": ["width", "height"]
 		},
 		"isDebugger": {
 			"type": "boolean"
@@ -29,5 +38,6 @@
 			"type": "boolean"
 		}
 	},
+	"required": ["playerType", "version", "isDebugger", "hasLocalStorage", "hasScriptAccess"],
 	"additionalProperties": false
 }
