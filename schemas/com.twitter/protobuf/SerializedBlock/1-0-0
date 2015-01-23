@@ -1,0 +1,12 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "IDL for a Protocol Buffer array of bytes",
+	"self": {
+		"vendor": "com.twitter",
+		"name": "SerializedBlock",
+		"format": "protobuf",
+		"version": "1-0-0"
+	},
+
+	"idl": 	"package com.twitter.SerializedBlock.protobuf.model1;message SerializedBlock {\noptional int32 version = 1;\noptional string proto_class_name = 2;\nrepeated bytes proto_blobs = 3;\n};"
+}

@@ -1,3 +1,17 @@
+Release 26 (2015-01-23)
+-----------------------
+Patched: com.snowplowanalytics.snowplow/elasticsearch_enriched_event/jsonschema/1-0-0
+Added: com.snowplowanalytics.snowplow/ua_parser_context/jsonschema/1-0-0
+Added: com.snowplowanalytics.snowplow/ua_parser_config/jsonschema/1-0-0
+Added: com.snowplowanalytics.snowplow/user_agent_utils_config/jsonschema/1-0-0
+Added: com.snowplowanalytics.iglu/SchemaSniffer/thrift/1-0-0
+Added: com.snowplowanalytics.snowplow/CollectorPayload/thrift/1-0-0
+Added: com.twitter/protobuf/SerializedBlock/1-0-0
+Added: com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-0
+Added: com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-1
+Added: com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-2
+Added: com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-3
+
 Release 25 (2015-01-14)
 -----------------------
 Patched: com.snowplowanalytics.snowplow/flash_context/jsonschema/1-0-0

@@ -331,11 +331,9 @@
 	},
 	"patternProperties": {
 		"^contexts_.*": {
-			"type": "object"
-		},
-		"^unstruct_event_.*": {
 			"type": "array"
-		}
+		},
+		"^unstruct_event_.*": {}
 	},
 	"additionalProperties": false
 }
