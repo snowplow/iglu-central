@@ -36,6 +36,15 @@
 		},
 		"hasScriptAccess": {
 			"type": "boolean"
+		},
+		"domainSessionIndex": {
+			"type": "number"
+		},
+		"domainUserId": {
+			"type": "string"
+		},
+		"userFingerprint": {
+			"type": "number"
 		}
 	},
 	"required": ["playerType", "version", "isDebugger", "hasLocalStorage", "hasScriptAccess"],
