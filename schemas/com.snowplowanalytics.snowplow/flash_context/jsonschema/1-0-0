@@ -26,7 +26,8 @@
 					"type": "integer"
 				}
 			},
-			"required": ["width", "height"]
+			"required": ["width", "height"],
+			"additionalProperties": false
 		},
 		"isDebugger": {
 			"type": "boolean"
