@@ -45,7 +45,7 @@
 			"type": "string"
 		},
 		"userFingerprint": {
-			"type": "number"
+			"type": "string"
 		}
 	},
 	"required": ["playerType", "version", "isDebugger", "hasLocalStorage", "hasScriptAccess"],
