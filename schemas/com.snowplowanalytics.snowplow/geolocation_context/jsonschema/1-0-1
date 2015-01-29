@@ -1,0 +1,40 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "description": "Schema for client geolocation contexts",
+        "self": {
+                "vendor": "com.snowplowanalytics.snowplow",
+                "name": "geolocation_context",
+                "format": "jsonschema",
+                "version": "1-0-0"
+        },
+
+        "type": "object",
+        "properties": {
+                "latitude": {
+                        "type": "number"
+                },
+                "longitude": {
+                        "type": "number"
+                },
+		"latitudeLongitudeAccuracy": {
+			"type": "number"
+		},
+		"altitude": {
+			"type": "number"
+		},
+		"altitudeAccuracy": { 
+			"type": "number"
+		},
+		"bearing": {
+			"type": "number"
+		},
+		"speed": {
+			"type": "number"
+		},
+                "timestampe": {
+                        "type": "number"
+                }
+        },
+        "required": ["latitude", "longitude"],
+        "additionalProperties": false
+}
