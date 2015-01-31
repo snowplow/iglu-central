@@ -1,6 +1,5 @@
 Release 27 (2015-01-31)
 -----------------------
-Infrastructure: changed release button to update automatically (#125)
 Added: com.google/ga_cookies/jsonschema/1-0-0
 Added: com.snowplowanalytics.snowplow/flash_context/jsonschema/1-0-0, thanks @ephraimtabackman!
 Added: com.snowplowanalytics.snowplow/currency_conversion_config/jsonschema/1-0-0
