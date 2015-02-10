@@ -1,5 +1,6 @@
 Release 28 (2015-02-XX)
 -----------------------
+Added: com.snowplowanalytics.snowplow/timing/jsonschema/1-0-0
 Patched: com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-0
 Patched: com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-1
 Patched: com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-2

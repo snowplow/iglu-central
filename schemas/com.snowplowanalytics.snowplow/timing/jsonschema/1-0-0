@@ -1,0 +1,28 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a user timing event",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow",
+		"name": "timing",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"category": {
+			"type": "string"
+		},
+		"variable": {
+			"type": "string"
+		},
+		"time": {
+			"type": "number"
+		},
+		"label": {
+			"type": "string"
+		}
+	},
+	"required": ["category", "variable", "time"],
+	"additionalProperties": false
+}
