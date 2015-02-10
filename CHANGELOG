@@ -1,3 +1,10 @@
+Release 28 (2015-02-XX)
+-----------------------
+Patched: com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-0
+Patched: com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-1
+Patched: com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-2
+Patched: com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-3
+
 Release 27 (2015-01-31)
 -----------------------
 Added: com.google/ga_cookies/jsonschema/1-0-0

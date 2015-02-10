@@ -33,6 +33,10 @@
 			"type": ["string", "null"],
 			"maxLength": 2000
 		},
+		"csUriStem": {
+			"type": ["string", "null"],
+			"maxLength": 8192
+		},
 		"scStatus": {
 			"type": ["string", "null"]
 		},
