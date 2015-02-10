@@ -4,6 +4,9 @@ Patched: com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-0
 Patched: com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-1
 Patched: com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-2
 Patched: com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-3
+Patched: com.snowplowanalytics.snowplow/payload_data/jsonschema/1-0-0
+Patched: com.snowplowanalytics.snowplow/payload_data/jsonschema/1-0-1
+Patched: com.snowplowanalytics.snowplow/payload_data/jsonschema/1-0-2
 
 Release 27 (2015-01-31)
 -----------------------

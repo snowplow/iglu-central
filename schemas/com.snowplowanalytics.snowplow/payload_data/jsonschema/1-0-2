@@ -181,6 +181,9 @@
 			"ti_nm": {
 				"type": "string"
 			},
+			"ti_na": {
+				"type": "string"
+			},
 			"ti_ca": {
 				"type": "string"
 			},
