@@ -16,13 +16,13 @@
 		"variable": {
 			"type": "string"
 		},
-		"time": {
+		"timing": {
 			"type": "number"
 		},
 		"label": {
 			"type": "string"
 		}
 	},
-	"required": ["category", "variable", "time"],
+	"required": ["category", "variable", "timing"],
 	"additionalProperties": false
 }

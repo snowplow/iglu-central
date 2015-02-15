@@ -1,0 +1,37 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for context related to a desktop computer",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow",
+		"name": "desktop_context",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"osType": {
+			"type": "string"
+		},
+		"osVersion": {
+			"type": "string"
+		},
+		"osServicePack": {
+			"type": "string"
+		},
+		"osIs64Bit": {
+			"type": "boolean"
+		},
+		"deviceManufacturer": {
+			"type": "string"
+		},
+		"deviceModel": {
+			"type": "string"
+		},
+		"deviceProcessorCount": {
+			"type": "number"
+		}
+	},
+	"required": ["osType", "osVersion"],
+	"additionalProperties": false
+}
