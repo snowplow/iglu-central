@@ -1,3 +1,11 @@
+Release 29 (2015-02-15)
+-----------------------
+Added: com.snowplowanalytics.snowplow/desktop_context/jsonschema/1-0-0
+Added: com.google.analytics/cookies/jsonschema/1-0-0
+Removed: com.google/ga_cookies/jsonschema/1-0-0
+Patched: com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-3
+Patched: com.snowplowanalytics.snowplow/timing/jsonschema/1-0-0
+
 Release 28 (2015-02-10)
 -----------------------
 Added: com.snowplowanalytics.snowplow/timing/jsonschema/1-0-0
