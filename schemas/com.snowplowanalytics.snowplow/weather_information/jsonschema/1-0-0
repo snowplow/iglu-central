@@ -1,0 +1,26 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "description": "Schema for information of weather enrichment",
+        "self": {
+                "vendor": "com.snowplowanalytics.snowplow",
+                "name": "weather_information",
+                "format": "jsonschema",
+                "version": "1-0-0"
+        },
+
+        "type": "object",
+        "properties": {
+                "latitude": {
+                        "type": "number"
+                },
+                "longitude": {
+                        "type": "number"
+                },
+		"timestamp": {
+			"type": "number"
+		}
+        },
+        "required": ["latitude", "longitude", "timestamp"],
+        "additionalProperties": false
+}
+
