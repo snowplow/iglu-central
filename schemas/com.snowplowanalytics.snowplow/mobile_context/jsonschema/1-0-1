@@ -1,0 +1,49 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for mobile contexts",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow",
+		"name": "mobile_context",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"osType": {
+			"type": "string"
+		},
+		"osVersion": {
+			"type": "string"
+		},
+		"osFlavor": {
+		    "type": "string"
+		},
+		"deviceManufacturer": {
+			"type": "string"
+		},
+		"deviceModel": {
+			"type": "string"
+		},
+		"carrier": {
+			"type": "string"
+		},
+		"networkType": {
+		    "type": "string"
+		},
+		"openIdfa": {
+			"type": "string"
+		},
+		"appleIdfa": {
+			"type": "string"
+		},
+		"appleIdfv": {
+			"type": "string"
+		},
+		"androidIdfa": {
+			"type": "string"
+		}
+	},
+	"required": ["osType", "osVersion", "deviceManufacturer", "deviceModel"],
+	"additionalProperties": false
+}
