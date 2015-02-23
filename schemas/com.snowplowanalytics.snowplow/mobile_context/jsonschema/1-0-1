@@ -16,7 +16,7 @@
 		"osVersion": {
 			"type": "string"
 		},
-		"osFlavor": {
+		"buildFlavor": {
 		    "type": "string"
 		},
 		"deviceManufacturer": {
