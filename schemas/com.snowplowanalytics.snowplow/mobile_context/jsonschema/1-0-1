@@ -26,7 +26,7 @@
 			"type": "string"
 		},
 		"networkType": {
-		    "type": "string"
+				"enum": [ "mobile", "wifi"]
 		},
 		"openIdfa": {
 			"type": "string"
