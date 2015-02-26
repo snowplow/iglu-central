@@ -16,9 +16,6 @@
 		"osVersion": {
 			"type": "string"
 		},
-		"androidFlavor": {
-		    "type": "string"
-		},
 		"deviceManufacturer": {
 			"type": "string"
 		},
