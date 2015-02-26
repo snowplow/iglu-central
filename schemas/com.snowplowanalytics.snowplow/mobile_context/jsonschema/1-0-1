@@ -28,6 +28,9 @@
 		"networkType": {
 				"enum": [ "mobile", "wifi"]
 		},
+		"networkTechnology": {
+				"type": "string"
+    },
 		"openIdfa": {
 			"type": "string"
 		},
