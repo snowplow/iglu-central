@@ -19,7 +19,7 @@
     "build": {
       "type": "string"
     },
-    "buildFlavor": {
+    "buildVariant": {
       "type": "string"
     },
     "buildIsRelease": {
