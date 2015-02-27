@@ -19,7 +19,7 @@
     "build": {
       "type": "string"
     },
-    "androidFlavor": {
+    "buildFlavor": {
       "type": "string"
     },
     "buildIsRelease": {
