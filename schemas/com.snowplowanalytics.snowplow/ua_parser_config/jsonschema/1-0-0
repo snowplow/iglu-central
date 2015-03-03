@@ -21,10 +21,17 @@
 		},
 		"parameters": {
 			"type": "object",
-			"maxProperties": 0
+			"properties": {
+				"accountType": {
+					"type": "string",
+					"enum": ["developer", "enterprise", "unlimited"]
+				}
+			},
+			"required": ["accountLevel"],
+			"additionalProperties": false
 		}
 	},
-	"required": ["name", "vendor", "enabled"],
+	"required": ["name", "vendor", "enabled", "parameters"],
 	"additionalProperties": false
 }
 
