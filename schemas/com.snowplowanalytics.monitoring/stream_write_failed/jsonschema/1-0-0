@@ -1,0 +1,33 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a stream write failure",
+	"self": {
+		"vendor": "com.snowplowanalytics.monitoring",
+		"name": "stream_write_failed",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"errorType": {
+			"type": "string"
+		},
+		"errorMessage": {
+			"type": "string"
+		},
+		"streamName": {
+			"type": "string"
+		},
+		"appName": {
+			"type": "string"
+		},
+		"retryCount": {
+			"type": "number"
+		},
+		"putSize": {
+			"type": "number"
+		}
+	},
+	"additionalProperties": false
+}
