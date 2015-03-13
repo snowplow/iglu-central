@@ -30,9 +30,13 @@
 				},
 				"rateAt": {
 					"enum": ["EOD_PRIOR"]
+				},
+				"accountType": {
+					"type": "string",
+					"enum": ["DEVELOPER", "ENTERPRISE", "UNLIMITED"]
 				}
 			},
-			"required": ["apiKey", "baseCurrency", "rateAt"],
+			"required": ["apiKey", "baseCurrency", "rateAt", "accountType"],
 			"additionalProperties": false
 		}
 	},
