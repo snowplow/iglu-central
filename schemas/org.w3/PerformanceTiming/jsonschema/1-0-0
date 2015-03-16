@@ -11,73 +11,119 @@
 	"type": "object",
 	"properties": {
 		"navigationStart": {
-			"type": "integer"
+			"type": "integer",
+			"maximum": 9223372036854775807,
+			"minimum": 0
 		},
 		"redirectStart": {
-			"type": "integer"
+			"type": "integer",
+			"maximum": 9223372036854775807,
+			"minimum": 0
 		},
 		"redirectEnd": {
-			"type": "integer"
+			"type": "integer",
+			"maximum": 9223372036854775807,
+			"minimum": 0
 		},
 		"fetchStart": {
-			"type": "integer"
+			"type": "integer",
+			"maximum": 9223372036854775807,
+			"minimum": 0
 		},
 		"domainLookupStart": {
-			"type": "integer"
+			"type": "integer",
+			"maximum": 9223372036854775807,
+			"minimum": 0
 		},
 		"domainLookupEnd": {
-			"type": "integer"
+			"type": "integer",
+			"maximum": 9223372036854775807,
+			"minimum": 0
 		},
 		"connectStart": {
-			"type": "integer"
+			"type": "integer",
+			"maximum": 9223372036854775807,
+			"minimum": 0
 		},
 		"secureConnectionStart": {
-			"type": "integer"
+			"type": "integer",
+			"maximum": 9223372036854775807,
+			"minimum": 0
 		},
 		"connectEnd": {
-			"type": "integer"
+			"type": "integer",
+			"maximum": 9223372036854775807,
+			"minimum": 0
 		},
 		"requestStart": {
-			"type": "integer"
+			"type": "integer",
+			"maximum": 9223372036854775807,
+			"minimum": 0
 		},
 		"responseStart": {
-			"type": "integer"
+			"type": "integer",
+			"maximum": 9223372036854775807,
+			"minimum": 0
 		},
 		"responseEnd": {
-			"type": "integer"
+			"type": "integer",
+			"maximum": 9223372036854775807,
+			"minimum": 0
 		},
 		"unloadEventStart": {
-			"type": "integer"
+			"type": "integer",
+			"maximum": 9223372036854775807,
+			"minimum": 0
 		},
 		"unloadEventEnd": {
-			"type": "integer"
+			"type": "integer",
+			"maximum": 9223372036854775807,
+			"minimum": 0
 		},
 		"domLoading": {
-			"type": "integer"
+			"type": "integer",
+			"maximum": 9223372036854775807,
+			"minimum": 0
 		},
 		"domInteractive": {
-			"type": "integer"
+			"type": "integer",
+			"maximum": 9223372036854775807,
+			"minimum": 0
 		},
 		"domContentLoadedEventStart": {
-			"type": "integer"
+			"type": "integer",
+			"maximum": 9223372036854775807,
+			"minimum": 0
 		},
 		"domContentLoadedEventEnd": {
-			"type": "integer"
+			"type": "integer",
+			"maximum": 9223372036854775807,
+			"minimum": 0
 		},
 		"domComplete": {
-			"type": "integer"
+			"type": "integer",
+			"maximum": 9223372036854775807,
+			"minimum": 0
 		},
 		"loadEventStart": {
-			"type": "integer"
+			"type": "integer",
+			"maximum": 9223372036854775807,
+			"minimum": 0
 		},
 		"loadEventEnd": {
-			"type": "integer"
+			"type": "integer",
+			"maximum": 9223372036854775807,
+			"minimum": 0
 		},
 		"msFirstPaint": {
-			"type": "integer"
+			"type": "integer",
+			"maximum": 9223372036854775807,
+			"minimum": 0
 		},
 		"chromeFirstPaint": {
-			"type": "integer"
+			"type": "integer",
+			"maximum": 9223372036854775807,
+			"minimum": 0
 		}
 	},
 	"minProperties": 1,
