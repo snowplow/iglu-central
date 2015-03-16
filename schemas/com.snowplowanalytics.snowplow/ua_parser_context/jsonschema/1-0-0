@@ -14,34 +14,34 @@
 			"type": "string"
 		},
 		"useragentMajor": {
-			"type": "number"
+			"type": "string"
 		},
 		"useragentMinor": {
-			"type": "number"
+			"type": "string"
 		},
 		"useragentPatch": {
-			"type": ["number", "null"]
+			"type": ["string", "null"]
 		},
 		"useragentVersion": {
-			"type": "number"
+			"type": "string"
 		},
 		"osFamily": {
 			"type": "string"
 		},
 		"osMajor": {
-			"type": ["number", "null"]
+			"type": ["string", "null"]
 		},
 		"osMinor": {
-			"type": ["number", "null"]
+			"type": ["string", "null"]
 		},
 		"osPatch": {
-			"type": ["number", "null"]
+			"type": ["string", "null"]
 		},
 		"osPatchMinor": {
-			"type": ["number", "null"]
+			"type": ["string", "null"]
 		},
 		"osVersion": {
-			"type": "number"
+			"type": "string"
 		},
 		"deviceFamily": {
 			"type": "string"
