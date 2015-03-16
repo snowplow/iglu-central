@@ -17,22 +17,22 @@
 			"type": "number"
 		},
 		"latitudeLongitudeAccuracy": {
-			"type": "number"
+			"type": ["number", "null"]
 		},
 		"altitude": {
-			"type": "number"
+			"type": ["number", "null"]
 		},
 		"altitudeAccuracy": {
-			"type": "number"
+			"type": ["number", "null"]
 		},
 		"bearing": {
-			"type": "number"
+			"type": ["number", "null"]
 		},
 		"speed": {
-			"type": "number"
+			"type": ["number", "null"]
 		},
 		"timestamp": {
-			"type": "integer"
+			"type": ["integer", "null"]
 		}
 	},
 	"required": ["latitude", "longitude"],
