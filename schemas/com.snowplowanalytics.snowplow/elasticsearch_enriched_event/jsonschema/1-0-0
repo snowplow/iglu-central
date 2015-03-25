@@ -85,6 +85,10 @@
 		"geo_region_name": {
 			"type": "string"
 		},
+		"geo_location": {
+			"type": "string",
+			"pattern": "-?[0-9]+(?:\\.[0-9+])?,-?[0-9]+(?:\\.[0-9+])?"
+		},
 		"ip_isp": {
 			"type": "string"
 		},
