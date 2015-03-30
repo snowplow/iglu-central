@@ -1,3 +1,14 @@
+Release 32 (2015-03-30)
+-----------------------
+Added: com.snowplowanalytics.snowplow/payload_data/jsonschema/1-0-3
+Added: com.snowplowanalytics.snowplow/elasticsearch_enriched_event/jsonschema/1-0-1
+Patched: com.snowplowanalytics.snowplow/elasticsearch_enriched_event/jsonschema/1-0-0
+Patched: com.mailchimp/profile_update/jsonschema/1-0-0
+Patched: com.mailchimp/subscribe/jsonschema/1-0-0
+Patched: com.mailchimp/unsubscribe/jsonschema/1-0-0
+Patched: com.snowplowanalytics.snowplow/mobile_context/jsonschema/1-0-1
+Patched: org.w3/PerformanceTiming/jsonschema/1-0-0
+
 Release 31 (2015-03-15)
 -----------------------
 Added: com.snowplowanalytics.monitoring/stream_write_failed/jsonschema/1-0-0

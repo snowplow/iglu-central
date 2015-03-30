@@ -16,7 +16,7 @@ All of the schemas for **[Snowplow] [snowplow-repo]** (amongst other systems) ar
 
 ## Copyright and license
 
-Iglu Central is copyright 2014 Snowplow Analytics Ltd.
+Iglu Central is copyright 2014-2015 Snowplow Analytics Ltd.
 
 Licensed under the **[Apache License, Version 2.0] [license]** (the "License");
 you may not use this software except in compliance with the License.
@@ -30,7 +30,7 @@ limitations under the License.
 [travis]: https://travis-ci.org/snowplow/iglu-central
 [travis-image]: https://travis-ci.org/snowplow/iglu-central.png?branch=master
 
-[release-image]: http://img.shields.io/badge/release-31-ff69b4.svg?style=flat
+[release-image]: http://img.shields.io/badge/release-32-ff69b4.svg?style=flat
 [releases]: https://github.com/snowplow/iglu-central/releases
 
 [license-image]: http://img.shields.io/badge/license-Apache--2-blue.svg?style=flat
