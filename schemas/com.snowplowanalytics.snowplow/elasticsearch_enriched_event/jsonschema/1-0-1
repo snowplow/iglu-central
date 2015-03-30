@@ -5,7 +5,7 @@
 		"vendor": "com.snowplowanalytics.snowplow",
 		"name": "elasticsearch_enriched_event",
 		"format": "jsonschema",
-		"version": "1-0-0"
+		"version": "1-0-1"
 	},
 
 	"type": "object",
@@ -331,6 +331,99 @@
 		},
 		"doc_height": {
 			"type": "integer"
+		},
+		"doc_height": {
+			"type": "integer"
+		},
+		"doc_height": {
+			"type": "integer"
+		},
+		"doc_height": {
+			"type": "integer"
+		},
+		"doc_height": {
+			"type": "integer"
+		},
+		"doc_height": {
+			"type": "integer"
+		},
+		"doc_height": {
+			"type": "integer"
+		},
+		"doc_height": {
+			"type": "integer"
+		},
+		"doc_height": {
+			"type": "integer"
+		},
+		"doc_height": {
+			"type": "integer"
+		},
+		"doc_height": {
+			"type": "integer"
+		},
+		"doc_height": {
+			"type": "integer"
+		},
+		"doc_height": {
+			"type": "integer"
+		},
+		"doc_height": {
+			"type": "integer"
+		},
+		"doc_height": {
+			"type": "integer"
+		},
+		"doc_height": {
+			"type": "integer"
+		},
+		"doc_height": {
+			"type": "integer"
+		},
+		"tr_currency": {
+			"type": "string"
+		},
+		"tr_total_base": {
+			"type": "number"
+		},
+		"tr_tax_base": {
+			"type": "number"
+		},
+		"tr_shipping_base": {
+			"type": "number"
+		},
+		"ti_currency": {
+			"type": "string"
+		},
+		"ti_price_base": {
+			"type": "number"
+		},
+		"base_currency": {
+			"type": "string"
+		},
+		"geo_timezone": {
+			"type": "string"
+		},
+		"mkt_clickid": {
+			"type": "string"
+		},
+		"mkt_network": {
+			"type": "string"
+		},
+		"etl_tags": {
+			"type": "string"
+		},
+		"dvce_sent_tstamp": {
+			"type": "string"
+		},
+		"refr_domain_userid": {
+			"type": "string"
+		},
+		"refr_dvce_tstamp": {
+			"type": "string"
+		},
+		"session_id": {
+			"type": "string"
 		}
 	},
 	"patternProperties": {

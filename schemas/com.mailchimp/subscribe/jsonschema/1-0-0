@@ -38,16 +38,16 @@
 					"type": "object",
 					"properties": {
 						"EMAIL": {
-							"type": "string"
+							"type": ["string", "null"]
 						},
 						"FNAME": {
-							"type": "string"
+							"type": ["string", "null"]
 						},
 						"LNAME": {
-							"type": "string"
+							"type": ["string", "null"]
 						},
 						"INTERESTS": {
-							"type": "string"
+							"type": ["string", "null"]
 						}
 					},
 					"additionalProperties": true

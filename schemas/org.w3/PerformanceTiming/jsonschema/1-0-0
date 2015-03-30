@@ -124,6 +124,21 @@
 			"type": "integer",
 			"maximum": 9223372036854775807,
 			"minimum": 0
+		},
+		"requestEnd": {
+			"type": "integer",
+			"maximum": 9223372036854775807,
+			"minimum": 0
+		},
+		"proxyStart": {
+			"type": "integer",
+			"maximum": 9223372036854775807,
+			"minimum": 0
+		},
+		"proxyEnd": {
+			"type": "integer",
+			"maximum": 9223372036854775807,
+			"minimum": 0
 		}
 	},
 	"minProperties": 1,
