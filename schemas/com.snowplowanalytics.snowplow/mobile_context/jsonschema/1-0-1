@@ -26,7 +26,7 @@
 			"type": "string"
 		},
 		"networkType": {
-			"enum": [ "mobile", "wifi" ]
+			"enum": [ "mobile", "wifi", "offline" ]
 		},
 		"networkTechnology": {
 			"type": "string"
