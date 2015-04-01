@@ -14,10 +14,10 @@
 			"type": "string"
 		},
 		"useragentMajor": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"useragentMinor": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"useragentPatch": {
 			"type": ["string", "null"]
