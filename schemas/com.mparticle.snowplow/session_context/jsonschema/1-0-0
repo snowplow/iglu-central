@@ -1,0 +1,18 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "description": "Schema for an app event",
+        "self": {
+                "vendor": "com.mparticle.snowplow",
+                "name": "session_context",
+                "format": "jsonschema",
+                "version": "1-0-0"
+        },
+        "type": "object",
+        "properties": {
+                "id": {
+                        "type": "string"
+                }
+        },
+        "required": ["id"],
+        "additionalProperties": false
+}
