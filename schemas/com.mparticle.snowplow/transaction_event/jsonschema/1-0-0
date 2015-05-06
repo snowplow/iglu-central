@@ -1,0 +1,55 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "description": "Schema for a transaction event",
+        "self": {
+                "vendor": "com.mparticle.snowplow",
+                "name": "transaction_event",
+                "format": "jsonschema",
+                "version": "1-0-0"
+        },
+
+        "type": "object",
+        "properties": {
+                "name": {
+                        "type": "string"
+                },
+                "sku": {
+                        "type": "string"
+                },
+                "category": {
+                        "type": "string"
+                },
+                "affiliation": {
+                        "type": "string"
+                },
+                "unitPrice": {
+                        "type": "number",
+                        "minimum": 0
+                },
+                "quantity": {
+                        "type": "number",
+                        "minimum": 0
+                },
+                "revenue": {
+                        "type": "number",
+                        "minimum": 0
+                },
+                "tax": {
+                        "type": "number",
+                        "minimum": 0
+                },
+                "shipping": {
+                        "type": "number",
+                        "minimum": 0
+                },
+                "currency": {
+                        "type": "string"
+                },
+                "transactionId": {
+                        "type": "string"
+                }
+        },
+        "required": ["name", "sku"],
+        "additionalProperties": false
+}
+
