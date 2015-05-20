@@ -1,0 +1,14 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for an application shutdown event",
+	"self": {
+		"vendor": "com.snowplowanalytics.monitoring",
+		"name": "application_shutdown",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+
+	"additionalProperties": false
+}
