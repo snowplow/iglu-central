@@ -1,0 +1,24 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "description": "Schema for a social event",
+        "self": {
+                "vendor": "com.mparticle.snowplow",
+                "name": "social_event",
+                "format": "jsonschema",
+                "version": "1-0-0"
+        },
+        "type": "object",
+        "properties": {
+                "network": {
+                        "type": "string"
+                },
+                "action": {
+                        "type": "string"
+                },
+                "target": {
+                        "type": "string"
+                }
+        },
+        "required": ["network", "action"],
+        "additionalProperties": false
+}
