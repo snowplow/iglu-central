@@ -1,3 +1,11 @@
+Release 34 (2015-05-29)
+-----------------------
+Added: com.mparticle.snowplow/session_context/jsonschema/1-0-0
+Added: com.mparticle.snowplow/app_event/jsonschema/1-0-0
+Added: com.mparticle.snowplow/social_event/jsonschema/1-0-0
+Added: com.mparticle.snowplow/transaction_event/jsonschema/1-0-0
+Removed: com.snowplowanalytics.snowplow-website/trial_form_submitted/jsonschema/1-0-0
+
 Release 33 (2015-04-01)
 -----------------------
 Patched: com.snowplowanalytics.snowplow/ua_parser_context/jsonschema/1-0-0
