@@ -1,3 +1,7 @@
+Release 35 (2015-06-16)
+-----------------------
+Added: com.snowplowanalytics.snowplow/javascript_script_config/jsonschema/1-0-0
+
 Release 34 (2015-05-29)
 -----------------------
 Added: com.mparticle.snowplow/session_context/jsonschema/1-0-0
