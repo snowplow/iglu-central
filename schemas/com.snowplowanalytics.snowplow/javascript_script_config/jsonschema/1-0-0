@@ -1,0 +1,36 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"description": "Schema for configuration of a JavaScript dynamic scripting enrichment",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow",
+		"name": "javascript_script_config",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"vendor": {
+			"type": "string"
+		},
+		"name": {
+			"type": "string"
+		},		
+		"enabled": {
+			"type": "boolean"
+		},
+		"parameters": {
+			"type": "object",
+			"properties": {
+				"script": {
+					"type": "string"
+				}
+			},
+			"required": ["script"],
+			"additionalProperties": false
+		}
+	},
+	"required": ["name", "vendor", "enabled", "parameters"],
+	"additionalProperties": false
+}
+
