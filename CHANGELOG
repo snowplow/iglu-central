@@ -1,3 +1,13 @@
+Release 36 (2015-07-01)
+-----------------------
+Added: com.snowplowanalytics.snowplow/web_page/jsonschema/1-0-0
+Added: com.snowplowanalytics.monitoring.kinesis/app_heartbeat/jsonschema/1-0-0
+Added: com.snowplowanalytics.monitoring.kinesis/app_initialized/jsonschema/1-0-0
+Added: com.snowplowanalytics.monitoring.kinesis/app_shutdown/jsonschema/1-0-0
+Added: com.snowplowanalytics.monitoring.kinesis/app_warning/jsonschema/1-0-0
+Added: com.snowplowanalytics.monitoring.kinesis/storage_write_failed/jsonschema/1-0-0
+Added: com.snowplowanalytics.monitoring.kinesis/stream_write_failed/jsonschema/1-0-0
+
 Release 35 (2015-06-16)
 -----------------------
 Added: com.snowplowanalytics.snowplow/javascript_script_config/jsonschema/1-0-0
