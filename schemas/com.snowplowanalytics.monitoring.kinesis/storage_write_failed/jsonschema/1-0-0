@@ -11,7 +11,7 @@
 	"type": "object",
 
 	"properties": {
-		"sink": {
+		"storage": {
 			"enum": [ "AMAZON_S3", "ELASTICSEARCH" ]
 		},
 		"failureCount": {
