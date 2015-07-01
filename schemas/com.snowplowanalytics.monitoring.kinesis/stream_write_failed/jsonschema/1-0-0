@@ -2,7 +2,7 @@
 	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
 	"description": "Schema for a stream write failure",
 	"self": {
-		"vendor": "com.snowplowanalytics.monitoring",
+		"vendor": "com.snowplowanalytics.monitoring.kinesis",
 		"name": "stream_write_failed",
 		"format": "jsonschema",
 		"version": "1-0-0"

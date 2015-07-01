@@ -1,20 +1,14 @@
 {
 	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
-	"description": "Schema for heartbeat event",
+	"description": "Schema for an application shutdown event",
 	"self": {
-		"vendor": "com.snowplowanalytics.monitoring",
-		"name": "heartbeat",
+		"vendor": "com.snowplowanalytics.monitoring.kinesis",
+		"name": "app_shutdown",
 		"format": "jsonschema",
 		"version": "1-0-0"
 	},
 
 	"type": "object",
-
-	"properties": {
-		"interval": {
-			"type": "number"
-		}
-	},
 
 	"additionalProperties": false
 }
