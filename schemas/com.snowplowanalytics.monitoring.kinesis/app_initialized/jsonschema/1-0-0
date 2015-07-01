@@ -1,0 +1,18 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for an application initialization event",
+	"self": {
+		"vendor": "com.snowplowanalytics.monitoring.kinesis",
+		"name": "app_initialized",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"applicationName": {
+			"type": "string"
+		}
+	},
+	"additionalProperties": false
+}
