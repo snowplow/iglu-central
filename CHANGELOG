@@ -1,3 +1,10 @@
+Release 37 (2015-07-22)
+-----------------------
+Added: com.snowplowanalytics.snowplow/client_session/jsonschema/1-0-0
+Added: com.snowplowanalytics.snowplow/elasticsearch_enriched_event/jsonschema/2-0-0
+Added: com.amazon.aws.redshift/jsonpaths_file/jsonschema/1-0-0
+Patched: com.pagerduty/incident/jsonschema/1-0-0
+
 Release 36 (2015-07-01)
 -----------------------
 Added: com.snowplowanalytics.snowplow/web_page/jsonschema/1-0-0
