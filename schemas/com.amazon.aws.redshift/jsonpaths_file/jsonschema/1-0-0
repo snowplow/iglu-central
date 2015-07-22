@@ -1,0 +1,22 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a JSON Paths file for loading Redshift from JSON or Avro, http://docs.aws.amazon.com/redshift/latest/dg/copy-parameters-data-format.html#copy-json-jsonpaths",
+	"self": {
+		"vendor": "com.amazon.aws.redshift",
+		"name": "jsonpaths_file",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+	"type": "object",
+	"properties": {
+		"jsonpaths": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"minItems": 1
+		}
+	},
+	"required": [ "jsonpaths" ],
+	"additionalProperties": false
+}

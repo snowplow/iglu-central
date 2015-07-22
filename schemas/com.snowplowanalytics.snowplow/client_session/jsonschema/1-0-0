@@ -1,0 +1,38 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a client-generated user session",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow",
+		"name": "client_session",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+	"type": "object",
+	"properties": {
+		"userId": {
+			"type": "string",
+			"pattern": "^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$|^[0-9a-f]{16}$"
+		},
+		"sessionId": {
+			"type": "string",
+			"format": "uuid"
+		},
+		"sessionIndex": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647
+		},
+		"previousSessionId": {
+			"type": [
+				"null",
+				"string"
+			],
+			"format": "uuid"
+		},
+		"storageMechanism": {
+			"enum": [ "SQLITE", "COOKIE_1", "COOKIE_3", "LOCAL_STORAGE", "FLASH_LSO" ]
+		}
+	},
+	"required": [ "userId", "sessionId", "sessionIndex", "previousSessionId", "storageMechanism" ],
+	"additionalProperties": false
+}
