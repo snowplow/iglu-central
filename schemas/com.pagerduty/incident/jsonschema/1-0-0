@@ -39,6 +39,9 @@
 						"status": {
 							"type": "string"
 						},
+						"pending_actions": {
+							"type": "array"
+						},
 						"html_url": {
 							"type": "string"
 						},
