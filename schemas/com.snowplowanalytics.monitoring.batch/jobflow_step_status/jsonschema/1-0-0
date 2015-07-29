@@ -18,15 +18,15 @@
 		},
 		"created_at": {
 			"type": ["string", "null"],
-			"pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}$"
+			"format": "date-time"
 		},
 		"started_at": {
 			"type": ["string", "null"],
-			"pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}$"
+			"format": "date-time"
 		},
 		"ended_at": {
 			"type": ["string", "null"],
-			"pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}$"
+			"format": "date-time"
 		}
 	},
 	"required": ["name", "state"],
