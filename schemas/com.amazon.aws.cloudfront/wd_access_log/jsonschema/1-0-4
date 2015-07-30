@@ -38,7 +38,8 @@
 			"maxLength": 8192
 		},
 		"scStatus": {
-			"type": ["string", "null"]
+			"type": ["string", "null"],
+			"maxLength": 3
 		},
 		"csReferer": {
 			"type": ["string", "null"],
@@ -53,7 +54,8 @@
 			"maxLength": 8192
 		},
 		"csCookie": {
-			"type": ["string", "null"]
+			"type": ["string", "null"],
+			"maxLength": 4096
 		},
 		"xEdgeResultType": {
 			"type": ["string", "null"],
@@ -81,10 +83,12 @@
 			"maxLength": 45
 		},
 		"sslProtocol": {
-			"type": ["string", "null"]
+			"type": ["string", "null"],
+			"maxLength": 32
 		},
 		"sslCipher": {
-			"type": ["string", "null"]
+			"type": ["string", "null"],
+			"maxLength": 64
 		},
 		"xEdgeResponseResultType": {
 			"type": ["string", "null"],
