@@ -1,0 +1,19 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a data load succeeding",
+	"self": {
+		"vendor": "com.snowplowanalytics.monitoring.batch",
+		"name": "load_failed",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"error": {
+			"type": "string",
+			"maxLength": 255
+		}
+	},
+	"additionalProperties": false
+}
