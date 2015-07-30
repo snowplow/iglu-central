@@ -18,6 +18,7 @@
 		},
 		"state": {
 			"type": "string"
+			"enum": ["STARTING", "BOOTSTRAPPING", "RUNNING", "WAITING", "TERMINATING", "TERMINATED", "TERMINATED_WITH_ERRORS"]
 		},
 		"created_at": {
 			"type": "string",
