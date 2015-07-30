@@ -14,7 +14,8 @@
 			"type": "string"
 		},
 		"state": {
-			"type": "string"
+			"type": "string",
+			"enum": ["PENDING", "RUNNING", "COMPLETED", "CANCELLED", "FAILED"]
 		},
 		"created_at": {
 			"type": ["string", "null"],
