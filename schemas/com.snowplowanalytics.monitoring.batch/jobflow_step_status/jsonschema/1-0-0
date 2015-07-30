@@ -2,7 +2,7 @@
 	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
 	"description": "Schema for an EMR job step status context",
 	"self": {
-		"vendor": "com.snowplowanalytics.snowplow.batch",
+		"vendor": "com.snowplowanalytics.monitoring.batch",
 		"name": "jobflow_step_status",
 		"format": "jsonschema",
 		"version": "1-0-0"

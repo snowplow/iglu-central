@@ -2,7 +2,7 @@
 	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
 	"description": "Schema for an EMR job failing",
 	"self": {
-		"vendor": "com.snowplowanalytics.snowplow.batch",
+		"vendor": "com.snowplowanalytics.monitoring.batch",
 		"name": "emr_job_failed",
 		"format": "jsonschema",
 		"version": "1-0-0"
