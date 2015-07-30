@@ -11,13 +11,16 @@
 	"type": "object",
 	"properties": {
 		"name": {
-			"type": "string"
+			"type": "string",
+			"maxLength": 64
 		},
 		"version": {
-			"type": "string"
+			"type": "string",
+			"maxLength": 64
 		},
 		"logLevel": {
-			"type": "string"
+			"type": "string",
+			"maxLength": 64
 		},
 		"tags": {
 			"type": "object",
