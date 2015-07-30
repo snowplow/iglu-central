@@ -11,7 +11,8 @@
 	"type": "object",
 	"properties": {
 		"error": {
-			"type": "string"
+			"type": "string",
+			"maxLength": 255
 		}
 	},
 	"additionalProperties": false

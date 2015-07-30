@@ -11,10 +11,12 @@
 	"type": "object",
 	"properties": {
 		"name": {
-			"type": "string"
+			"type": "string",
+			"maxLength": 255
 		},
 		"jobflow_id": {
-			"type": "string"
+			"type": "string",
+			"maxLength": 32
 		},
 		"state": {
 			"type": "string",
@@ -29,7 +31,8 @@
 			"format": "date-time"
 		},
 		"last_state_change_reason": {
-			"type": "string"
+			"type": "string",
+			"maxLength": 255
 		}
 	},
 	"required": ["name", "jobflow_id", "state", "created_at"],
