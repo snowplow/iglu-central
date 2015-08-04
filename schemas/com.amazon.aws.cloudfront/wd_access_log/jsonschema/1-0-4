@@ -1,11 +1,11 @@
 {
 	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
-	"description": "Schema for a AWS CloudFront web distribution access log event. Version released 21 Oct 2013",
+	"description": "Schema for a AWS CloudFront web distribution access log event. Version released 01 Jul 2014",
 	"self": {
 		"vendor": "com.amazon.aws.cloudfront",
 		"name": "wd_access_log",
 		"format": "jsonschema",
-		"version": "1-0-2"
+		"version": "1-0-4"
 	},
 
 	"type": "object",
@@ -74,6 +74,25 @@
 		},
 		"csBytes": {
 			"type": ["number", "null"]
+		},
+		"timeTaken": {
+			"type": ["number", "null"]
+		},
+		"xForwardedFor": {
+			"type": ["string", "null"],
+			"maxLength": 45
+		},
+		"sslProtocol": {
+			"type": ["string", "null"],
+			"maxLength": 32
+		},
+		"sslCipher": {
+			"type": ["string", "null"],
+			"maxLength": 64
+		},
+		"xEdgeResponseResultType": {
+			"type": ["string", "null"],
+			"maxLength": 32
 		}
 	},
 	"required": ["dateTime"],
