@@ -38,7 +38,8 @@
 			"maxLength": 8192
 		},
 		"scStatus": {
-			"type": ["string", "null"]
+			"type": ["string", "null"],
+			"maxLength": 3
 		},
 		"csReferer": {
 			"type": ["string", "null"],
