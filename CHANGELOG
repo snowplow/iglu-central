@@ -1,3 +1,20 @@
+Release 38 (2015-08-06)
+-----------------------
+Added: com.snowplowanalytics.snowplow/uri_redirect/jsonschema/1-0-0
+Added: com.snowplowanalytics.monitoring.batch/application_context/jsonschema/1-0-0
+Added: com.snowplowanalytics.monitoring.batch/emr_job_failed/jsonschema/1-0-0
+Added: com.snowplowanalytics.monitoring.batch/emr_job_started/jsonschema/1-0-0
+Added: com.snowplowanalytics.monitoring.batch/emr_job_status/jsonschema/1-0-0
+Added: com.snowplowanalytics.monitoring.batch/emr_job_succeeded/jsonschema/1-0-0
+Added: com.snowplowanalytics.monitoring.batch/jobflow_step_status/jsonschema/1-0-0
+Added: com.snowplowanalytics.monitoring.batch/load_failed/jsonschema/1-0-0
+Added: com.snowplowanalytics.monitoring.batch/load_succeeded/jsonschema/1-0-0
+Added: com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-4
+Patched: com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-0
+Patched: com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-1
+Patched: com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-2
+Patched: com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-3
+
 Release 37 (2015-07-22)
 -----------------------
 Added: com.snowplowanalytics.snowplow/client_session/jsonschema/1-0-0
