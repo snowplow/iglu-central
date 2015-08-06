@@ -1,0 +1,40 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for an EMR job status context",
+	"self": {
+		"vendor": "com.snowplowanalytics.monitoring.batch",
+		"name": "emr_job_status",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"name": {
+			"type": "string",
+			"maxLength": 255
+		},
+		"jobflow_id": {
+			"type": "string",
+			"maxLength": 32
+		},
+		"state": {
+			"type": "string",
+			"enum": ["STARTING", "BOOTSTRAPPING", "RUNNING", "WAITING", "TERMINATING", "TERMINATED", "TERMINATED_WITH_ERRORS"]
+		},
+		"created_at": {
+			"type": "string",
+			"format": "date-time"
+		},
+		"ended_at": {
+			"type": ["string", "null"],
+			"format": "date-time"
+		},
+		"last_state_change_reason": {
+			"type": "string",
+			"maxLength": 255
+		}
+	},
+	"required": ["name", "jobflow_id", "state", "created_at"],
+	"additionalProperties": false
+}
