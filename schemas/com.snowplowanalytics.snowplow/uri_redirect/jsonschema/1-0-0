@@ -1,0 +1,21 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"description": "Schema for a URI redirect through a Snowplow event collector",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow",
+		"name": "uri_redirect",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"uri": {
+			"type": "string",
+			"format": "uri",
+			"maxLength": 8192
+		}
+	},
+	"required": ["uri"],
+	"additionalProperties": false
+}
