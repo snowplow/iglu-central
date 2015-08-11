@@ -31,7 +31,7 @@
 			"format": "date-time"
 		},
 		"last_state_change_reason": {
-			"type": "string",
+			"type": ["string", "null"],
 			"maxLength": 255
 		}
 	},
