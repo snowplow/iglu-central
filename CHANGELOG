@@ -1,3 +1,8 @@
+Release 39 (2015-08-11)
+-----------------------
+Patched: com.twitter/SerializedBlock/protobuf/1-0-0
+Patched: com.snowplowanalytics.monitoring.batch/emr_job_status/jsonschema/1-0-0
+
 Release 38 (2015-08-06)
 -----------------------
 Added: com.snowplowanalytics.snowplow/uri_redirect/jsonschema/1-0-0
