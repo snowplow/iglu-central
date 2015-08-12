@@ -1,0 +1,49 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for the minimal subset of properties in an Augur device and consumer recognition payload",
+  "self": {
+    "vendor": "io.augur.snowplow",
+    "name": "identity_lite",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+
+  "type": "object",
+  "properties": {
+    "consumer": {
+      "type": "object",
+      "properties": {
+        "UUID": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uuid"
+        }
+      },
+      "additionalProperties": false
+    },
+    "device": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "type": "string",
+          "pattern": "^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{4}|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "webTraffic": {
+      "type": "object",
+      "properties": {
+        "isBot": {
+          "type": "boolean"
+        },
+        "isTor": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
