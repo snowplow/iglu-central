@@ -1,3 +1,9 @@
+Release 40 (2015-08-12)
+-----------------------
+Infrastructure: updated vagrant up guidance
+Infrastructure: updated vagrant up to work with latest Peru version
+Added: io.augur.snowplow/identity_lite/jsonschema/1-0-0
+
 Release 39 (2015-08-11)
 -----------------------
 Patched: com.twitter/SerializedBlock/protobuf/1-0-0
