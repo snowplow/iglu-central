@@ -1,3 +1,9 @@
+Release 41 (2015-08-19)
+-----------------------
+Added: com.snowplowanalytics.snowplow/client_session/jsonschema/1-0-1
+Added: com.snowplowanalytics.snowplow/event_fingerprint_config/jsonschema/1-0-0
+Patched: io.augur.snowplow/identity_lite/jsonschema/1-0-0
+
 Release 40 (2015-08-12)
 -----------------------
 Infrastructure: updated vagrant up guidance
