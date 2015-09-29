@@ -1,0 +1,22 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for single http cookie. As defined in RFC 6265.",
+	"self": {
+		"vendor": "org.ietf",
+		"name": "http_cookie",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"name": {
+			"type": "string"
+		},
+		"value": {
+			"type": "string"
+		}
+	},
+	"required": ["name", "value"],
+	"additionalProperties": false
+}
