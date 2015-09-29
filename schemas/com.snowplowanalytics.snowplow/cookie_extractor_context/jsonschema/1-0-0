@@ -10,16 +10,13 @@
 
 	"type": "object",
 	"properties": {
-		"cookies": {
-			"type": "object",
-			"properties": {
-				"name": "string",
-				"value": "string"
-			},
-			"required": ["name", "value"]
+		"name": {
+			"type": "string"
+		},
+		"value": {
+			"type": "string"
 		}
 	},
-	"required": ["cookies"],
+	"required": ["name", "value"],
 	"additionalProperties": false
 }
-
