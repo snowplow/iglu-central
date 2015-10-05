@@ -43,9 +43,14 @@
         },
         "isTor": {
           "type": "boolean"
+        },
+        "isProxied": {
+          "type": "boolean"
+        },
+        "isIncognito": {
+          "type": "boolean"
         }
       },
-      "required": ["isBot", "isTor"],
       "additionalProperties": false
     }
   },

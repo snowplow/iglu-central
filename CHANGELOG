@@ -1,3 +1,10 @@
+Release 42 (2015-10-05)
+-----------------------
+Added: com.snowplowanalytics.snowplow/cookie_extractor_config/jsonschema/1-0-0
+Added: org.ietf/http_cookie/jsonschema/1-0-0
+Patched: com.snowplowanalytics.snowplow/CollectorPayload/thrift/1-0-0
+Patched: io.augur.snowplow/identity_lite/jsonschema/1-0-0
+
 Release 41 (2015-08-19)
 -----------------------
 Added: com.snowplowanalytics.snowplow/client_session/jsonschema/1-0-1
