@@ -1,0 +1,73 @@
+{
+  "$schema" : "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self" : {
+    "vendor" : "com.amazon.aws.ec2",
+    "name" : "instance_identity_document",
+    "version" : "1-0-0",
+    "format" : "jsonschema"
+  },
+  "type" : "object",
+  "properties" : {
+    "instanceId" : {
+      "type" : "string",
+      "minLength" : 10,
+      "maxLength" : 10
+    },
+    "devpayProductCodes" : {
+      "type" : [ "array", "null" ],
+      "items" : {
+        "type" : "string"
+      }
+    },
+    "billingProducts" : {
+      "type" : [ "array", "null" ],
+      "items" : {
+        "type" : "string"
+      }
+    },
+    "availabilityZone" : {
+      "type" : "string"
+    },
+    "accountId" : {
+      "type" : "string"
+    },
+    "ramdiskId" : {
+      "type" : [ "string", "null" ],
+      "minLength" : 12,
+      "maxLength" : 12
+    },
+    "architecture" : {
+      "type" : "string"
+    },
+    "instanceType" : {
+      "type" : "string"
+    },
+    "version" : {
+      "type" : "string"
+    },
+    "pendingTime" : {
+      "type" : "string",
+      "format" : "date-time"
+    },
+    "imageId" : {
+      "type" : "string",
+      "minLength" : 12,
+      "maxLength" : 12
+    },
+    "privateIp" : {
+      "type" : "string",
+      "format" : "ipv4",
+      "minLength" : 11,
+      "maxLength" : 15
+    },
+    "region" : {
+      "type" : "string"
+    },
+    "kernelId" : {
+      "type" : [ "string", "null" ],
+      "minLength" : 12,
+      "maxLength" : 12
+    }
+  },
+  "additionalProperties" : false
+}
