@@ -11,10 +11,12 @@
 	"type": "object",
 	"properties": {
 		"name": {
-			"type": "string"
+			"type": "string",
+			"maxLength" : 4096
 		},
 		"value": {
-			"type": ["string", "null"]
+			"type": ["string", "null"],
+			"maxLength" : 4096
 		}
 	},
 	"required": ["name", "value"],
