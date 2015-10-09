@@ -1,3 +1,8 @@
+Release 43 (2015-10-09)
+-----------------------
+Added: com.amazon.aws.ec2/instance_identity_document/jsonschema/1-0-0
+Patched: org.ietf/http_cookie/jsonschema/1-0-0
+
 Release 42 (2015-10-05)
 -----------------------
 Added: com.snowplowanalytics.snowplow/cookie_extractor_config/jsonschema/1-0-0
