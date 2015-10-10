@@ -1,0 +1,36 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "description": "Schema for Segment's context fields, https://segment.com/docs/spec/common/#context",
+        "self": {
+                "vendor": "com.segment",
+                "name": "context",
+                "format": "jsonschema",
+                "version": "1-0-0"
+        },
+        "type": "object",
+        "properties": {
+                "ip": {
+                        "type": "string",
+                        "format": "ipv4"
+                },
+                "library": {
+                        "type": "object",
+                        "properties": {
+                                "name": {
+                                        "type": "string",
+                                        "maxLength": 512
+                                },
+                                "version": {
+                                        "type": "string",
+                                        "maxLength": 512
+                                }
+                        },
+                        "additionalProperties": true
+                },
+                "userAgent": {
+                        "type": "string",
+                        "maxLength": 4096
+                }
+        },
+        "additionalProperties": true
+}

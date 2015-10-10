@@ -1,0 +1,35 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "description": "Schema for Segment page entity (via webhook), https://segment.com/docs/spec/page/#properties",
+        "self": {
+                "vendor": "com.segment",
+                "name": "page",
+                "format": "jsonschema",
+                "version": "1-0-0"
+        },
+        "type": "object",
+        "properties": {
+                "name": {
+                        "type": "string"
+                },
+                "path": {
+                        "type": "string",
+                        "maxLength": 8192
+                },
+                "referrer": {
+                        "type": "string"
+                },
+                "search": {
+                        "type": "string"
+                },
+                "title": {
+                        "type": "string"
+                },
+                "url": {
+                        "type": "string",
+                        "format": "uri",
+                        "maxLength": 8192
+                }
+        },
+        "additionalProperties": true
+}

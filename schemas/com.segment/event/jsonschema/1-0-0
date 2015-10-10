@@ -1,0 +1,57 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "description": "Schema for Segment's common event fields, https://segment.com/docs/spec/common/",
+        "self": {
+                "vendor": "com.segment",
+                "name": "common",
+                "format": "jsonschema",
+                "version": "1-0-0"
+        },
+        "type": "object",
+        "properties": {
+                "type": {
+                        "type": "string",
+                        "maxLength": 512
+                },
+                "version": {
+                        "type": "string",
+                        "maxLength": 128
+                },
+                "userId": {
+                        "type": "string",
+                        "maxLength": 36
+                },
+                "anonymousId": {
+                        "type": "string",
+                        "format": "uuid"
+                },
+                "channel": {
+                        "enum": [ "server", "browser", "mobile" ]
+                },
+                "messageId": {
+                        "type": "string",
+                        "maxLength": 36
+                },
+                "projectId": {
+                        "type": "string",
+                        "maxLength": 36
+                },
+                "originalTimestamp": {
+                        "type": "string",
+                        "format": "date-time"
+                },
+                "receivedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                },
+                "sentAt": {
+                        "type": "string",
+                        "format": "date-time"
+                },
+                "timestamp": {
+                        "type": "string",
+                        "format": "date-time"
+                }
+        },
+        "additionalProperties": true
+}
