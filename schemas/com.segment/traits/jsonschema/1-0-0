@@ -1,0 +1,84 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "description": "Schema for Segment traits (via webhook), https://segment.com/docs/spec/identify/#traits",
+        "self": {
+                "vendor": "com.segment",
+                "name": "traits",
+                "format": "jsonschema",
+                "version": "1-0-0"
+        },
+        "type": "object",
+        "properties": {
+                "address": {
+                        "type": "object",
+                        "properties": {
+                                "city": {
+                                        "type": "string",
+                                        "maxLength": 512
+                                },
+                                "country": {
+                                        "type": "string"
+                                },
+                                "postalCode": {
+                                        "type": "string"
+                                },
+                                "state": {
+                                        "type": "string"
+                                },
+                                "street": {
+                                        "type": "string"
+                                }
+                        },
+                        "additionalProperties": true
+                },
+                "age": {
+                        "type": "integer"
+                },
+                "avatar": {
+                        "type": "string",
+                        "format": "uri",
+                        "maxLength": 8192
+                },
+                "birthday": {
+                        "type": "string",
+                        "format": "date-time"
+                },
+                "createdAt": {
+                        "type": "string",
+                        "format": "date-time"                
+                },
+                "description": {
+                        "type": "string"
+                },
+                "email": {
+                        "type": "string",
+                        "format": "email",
+                        "maxLength": 512
+                },
+                "firstName": {
+                        "type": "string"
+                },
+                "id": {
+                        "type": "string"
+                },
+                "lastName": {
+                        "type": "string"
+                },
+                "phone": {
+                        "type": "string",
+                        "maxLength": 128
+                },
+                "title": {
+                        "type": "string"
+                },
+                "username": {
+                        "type": "string"
+                },
+                "website": {
+                        "type": "string",
+                        "format": "uri",
+                        "maxLength": 8192
+                }
+        },
+        "additionalProperties": true
+}

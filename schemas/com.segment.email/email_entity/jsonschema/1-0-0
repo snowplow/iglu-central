@@ -1,0 +1,25 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "description": "Schema for Segment email used in email semantic events, https://segment.com/docs/spec/email/",
+        "self": {
+                "vendor": "com.segment.email",
+                "name": "email_entity",
+                "format": "jsonschema",
+                "version": "1-0-0"
+        },
+        "type": "object",
+        "properties": {
+                "id": {
+                        "type": "string"
+                },
+                "body": {
+                        "type": "string",
+                        "maxLength": 64000
+                },
+                "subject": {
+                        "type": "string"
+                }
+        },
+        "minItems": 1,
+        "additionalProperties": false
+}
