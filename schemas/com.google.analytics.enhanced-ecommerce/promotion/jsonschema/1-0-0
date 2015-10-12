@@ -1,0 +1,31 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a GA promotion",
+	"self": {
+		"vendor": "com.google.analytics.enhanced-ecommerce",
+		"name": "promotion",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "string",
+			"maxLength": 256
+		},
+		"name": {
+			"type": "string",
+			"maxLength": 256
+		},
+		"creative": {
+			"type": "string",
+			"maxLength": 256
+		},
+		"position": {
+			"type": "string",
+			"maxLength": 256
+		}
+	},
+	"additionalProperties": false
+}
