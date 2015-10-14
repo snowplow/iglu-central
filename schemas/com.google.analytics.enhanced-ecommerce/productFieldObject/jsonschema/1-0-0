@@ -1,9 +1,9 @@
 {
 	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
-	"description": "Schema for a GA ecommerce-related action",
+	"description": "Schema for a GA product",
 	"self": {
 		"vendor": "com.google.analytics.enhanced-ecommerce",
-		"name": "action-data",
+		"name": "productFieldObject",
 		"format": "jsonschema",
 		"version": "1-0-0"
 	},
@@ -14,40 +14,39 @@
 			"type": "string",
 			"maxLength": 256
 		},
-		"affiliation": {
+		"name": {
 			"type": "string",
 			"maxLength": 256
 		},
-		"revenue": {
+		"list": {
+			"type": "string",
+			"maxLength": 256
+		},
+		"brand": {
+			"type": "string",
+			"maxLength": 256
+		},
+		"category": {
+			"type": "string",
+			"maxLength": 256
+		},
+		"variant": {
+			"type": "string",
+			"maxLength": 256
+		},
+		"price": {
 			"type": "string",
 			"maxLength": 32
 		},
-		"tax": {
-			"type": "string",
-			"maxLength": 32
-		},
-		"shipping": {
-			"type": "string",
-			"maxLength": 32
+		"quantity": {
+			"type": "integer"
 		},
 		"coupon": {
 			"type": "string",
 			"maxLength": 256
 		},
-		"list": {
-			"type": "string",
-			"maxLength": 256
-		},
-		"step": {
+		"position": {
 			"type": "integer"
-		},
-		"list": {
-			"type": "string",
-			"maxLength": 256
-		},
-		"option": {
-			"type": "string",
-			"maxLength": 256
 		}
 	},
 	"additionalProperties": false

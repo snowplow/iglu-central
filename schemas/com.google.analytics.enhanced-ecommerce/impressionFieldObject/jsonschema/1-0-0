@@ -3,7 +3,7 @@
 	"description": "Schema for a GA product impression",
 	"self": {
 		"vendor": "com.google.analytics.enhanced-ecommerce",
-		"name": "impression",
+		"name": "impressionFieldObject",
 		"format": "jsonschema",
 		"version": "1-0-0"
 	},
