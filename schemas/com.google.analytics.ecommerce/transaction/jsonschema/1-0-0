@@ -1,0 +1,39 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a GA transaction",
+	"self": {
+		"vendor": "com.google.analytics.ecommerce",
+		"name": "transaction",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "string",
+			"maxLength": 500
+		},
+		"affiliation": {
+			"type": "string",
+			"maxLength": 500
+		},
+		"revenue": {
+			"type": "string",
+			"maxLength": 32
+		},
+		"shipping": {
+			"type": "string",
+			"maxLength": 32
+		},
+		"tax": {
+			"type": "string",
+			"maxLength": 32
+		},
+		"currency": {
+			"type": "string",
+			"maxLength": 16
+		}
+	},
+	"additionalProperties": false
+}
