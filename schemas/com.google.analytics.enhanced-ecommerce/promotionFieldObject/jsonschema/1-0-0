@@ -25,6 +25,10 @@
 		"position": {
 			"type": "string",
 			"maxLength": 256
+		},
+		"currency": {
+			"type": "string",
+			"maxLength": 16
 		}
 	},
 	"additionalProperties": false

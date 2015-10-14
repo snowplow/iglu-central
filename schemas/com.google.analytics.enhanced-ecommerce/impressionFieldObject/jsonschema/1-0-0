@@ -40,6 +40,10 @@
 		"price": {
 			"type": "string",
 			"maxLength": 32
+		},
+		"currency": {
+			"type": "string",
+			"maxLength": 16
 		}
 	},
 	"additionalProperties": false

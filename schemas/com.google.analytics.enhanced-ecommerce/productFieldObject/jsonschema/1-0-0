@@ -47,6 +47,10 @@
 		},
 		"position": {
 			"type": "integer"
+		},
+		"currency": {
+			"type": "string",
+			"maxLength": 16
 		}
 	},
 	"additionalProperties": false
