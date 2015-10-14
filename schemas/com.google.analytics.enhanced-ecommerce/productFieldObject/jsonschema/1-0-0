@@ -12,27 +12,27 @@
 	"properties": {
 		"id": {
 			"type": "string",
-			"maxLength": 256
+			"maxLength": 500
 		},
 		"name": {
 			"type": "string",
-			"maxLength": 256
+			"maxLength": 500
 		},
 		"list": {
 			"type": "string",
-			"maxLength": 256
+			"maxLength": 500
 		},
 		"brand": {
 			"type": "string",
-			"maxLength": 256
+			"maxLength": 500
 		},
 		"category": {
 			"type": "string",
-			"maxLength": 256
+			"maxLength": 500
 		},
 		"variant": {
 			"type": "string",
-			"maxLength": 256
+			"maxLength": 500
 		},
 		"price": {
 			"type": "string",
@@ -43,7 +43,7 @@
 		},
 		"coupon": {
 			"type": "string",
-			"maxLength": 256
+			"maxLength": 500
 		},
 		"position": {
 			"type": "integer"

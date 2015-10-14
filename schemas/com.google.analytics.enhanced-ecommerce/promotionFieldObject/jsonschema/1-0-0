@@ -12,19 +12,19 @@
 	"properties": {
 		"id": {
 			"type": "string",
-			"maxLength": 256
+			"maxLength": 500
 		},
 		"name": {
 			"type": "string",
-			"maxLength": 256
+			"maxLength": 500
 		},
 		"creative": {
 			"type": "string",
-			"maxLength": 256
+			"maxLength": 500
 		},
 		"position": {
 			"type": "string",
-			"maxLength": 256
+			"maxLength": 500
 		},
 		"currency": {
 			"type": "string",

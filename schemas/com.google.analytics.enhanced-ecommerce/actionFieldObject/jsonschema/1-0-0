@@ -12,11 +12,11 @@
 	"properties": {
 		"id": {
 			"type": "string",
-			"maxLength": 256
+			"maxLength": 500
 		},
 		"affiliation": {
 			"type": "string",
-			"maxLength": 256
+			"maxLength": 500
 		},
 		"revenue": {
 			"type": "string",
@@ -32,22 +32,22 @@
 		},
 		"coupon": {
 			"type": "string",
-			"maxLength": 256
+			"maxLength": 500
 		},
 		"list": {
 			"type": "string",
-			"maxLength": 256
+			"maxLength": 500
 		},
 		"step": {
 			"type": "integer"
 		},
 		"list": {
 			"type": "string",
-			"maxLength": 256
+			"maxLength": 500
 		},
 		"option": {
 			"type": "string",
-			"maxLength": 256
+			"maxLength": 500
 		},
 		"currency": {
 			"type": "string",
