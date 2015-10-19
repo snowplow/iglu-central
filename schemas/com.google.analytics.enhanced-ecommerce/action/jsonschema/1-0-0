@@ -1,6 +1,6 @@
 {
 	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
-	"description": "Schema for an enhanced ecommerce action",
+	"description": "Schema for a Google Analytics Enhanced Ecommerce action",
 	"self": {
 		"vendor": "com.google.analytics.enhanced-ecommerce",
 		"name": "action",

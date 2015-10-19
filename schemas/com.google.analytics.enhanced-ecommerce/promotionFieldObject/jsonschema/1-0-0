@@ -1,6 +1,6 @@
 {
 	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
-	"description": "Schema for a GA promotion",
+	"description": "Schema for Google Analytics Enhanced Ecommerce promotion data",
 	"self": {
 		"vendor": "com.google.analytics.enhanced-ecommerce",
 		"name": "promotionFieldObject",
