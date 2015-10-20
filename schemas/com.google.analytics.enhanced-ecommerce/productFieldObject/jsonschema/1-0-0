@@ -35,8 +35,8 @@
 			"maxLength": 500
 		},
 		"price": {
-			"type": "string",
-			"maxLength": 32
+			"type": "number",
+			"multipleOf": 0.01
 		},
 		"quantity": {
 			"type": "integer"

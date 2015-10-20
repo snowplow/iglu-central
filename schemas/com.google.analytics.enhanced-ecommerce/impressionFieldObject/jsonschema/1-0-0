@@ -38,8 +38,8 @@
 			"type": "integer"
 		},
 		"price": {
-			"type": "string",
-			"maxLength": 32
+			"type": "number",
+			"multipleOf": 0.01
 		},
 		"currency": {
 			"type": "string",
