@@ -3,7 +3,7 @@
 	"description": "Schema for Google Analytics Enhanced Ecommerce promotion data",
 	"self": {
 		"vendor": "com.google.analytics.enhanced-ecommerce",
-		"name": "promotionFieldObject",
+		"name": "promoFieldObject",
 		"format": "jsonschema",
 		"version": "1-0-0"
 	},
