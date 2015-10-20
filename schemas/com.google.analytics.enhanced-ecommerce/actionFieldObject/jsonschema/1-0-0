@@ -41,10 +41,6 @@
 		"step": {
 			"type": "integer"
 		},
-		"list": {
-			"type": "string",
-			"maxLength": 500
-		},
 		"option": {
 			"type": "string",
 			"maxLength": 500
