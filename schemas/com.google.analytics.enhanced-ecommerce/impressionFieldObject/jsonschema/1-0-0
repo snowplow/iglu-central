@@ -43,7 +43,8 @@
 		},
 		"currency": {
 			"type": "string",
-			"maxLength": 16
+			"maxLength": 3,
+			"minLength": 3
 		}
 	},
 	"additionalProperties": false
