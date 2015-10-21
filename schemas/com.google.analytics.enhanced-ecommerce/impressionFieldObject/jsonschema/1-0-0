@@ -35,7 +35,9 @@
 			"maxLength": 500
 		},
 		"position": {
-			"type": "integer"
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647
 		},
 		"price": {
 			"type": "number",

@@ -39,7 +39,9 @@
 			"maxLength": 500
 		},
 		"step": {
-			"type": "integer"
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647
 		},
 		"option": {
 			"type": "string",
