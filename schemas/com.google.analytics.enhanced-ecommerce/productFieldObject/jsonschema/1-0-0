@@ -1,0 +1,60 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for Google Analytics Enhanced Ecommerce product data",
+	"self": {
+		"vendor": "com.google.analytics.enhanced-ecommerce",
+		"name": "productFieldObject",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "string",
+			"maxLength": 500
+		},
+		"name": {
+			"type": "string",
+			"maxLength": 500
+		},
+		"list": {
+			"type": "string",
+			"maxLength": 500
+		},
+		"brand": {
+			"type": "string",
+			"maxLength": 500
+		},
+		"category": {
+			"type": "string",
+			"maxLength": 500
+		},
+		"variant": {
+			"type": "string",
+			"maxLength": 500
+		},
+		"price": {
+			"type": "number",
+			"multipleOf": 0.01
+		},
+		"quantity": {
+			"type": "integer"
+		},
+		"coupon": {
+			"type": "string",
+			"maxLength": 500
+		},
+		"position": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647
+		},
+		"currency": {
+			"type": "string",
+			"maxLength": 3,
+			"minLength": 3
+		}
+	},
+	"additionalProperties": false
+}
