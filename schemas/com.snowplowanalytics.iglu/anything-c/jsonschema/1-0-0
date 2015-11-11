@@ -1,0 +1,9 @@
+{
+	"description": "Wildcard schema #3 to match any valid JSON instance",
+	"self": {
+		"vendor": "com.snowplowanalytics.iglu",
+		"name": "anything-c",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	}
+}
