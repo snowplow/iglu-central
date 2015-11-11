@@ -1,0 +1,17 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for Segment screen entity (via webhook), https://segment.com/docs/spec/screen/#properties",
+	"self": {
+		"vendor": "com.segment",
+		"name": "screen",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+	"type": "object",
+	"properties": {
+		"name": {
+			"type": "string"
+		}
+	},
+	"additionalProperties": true
+}
