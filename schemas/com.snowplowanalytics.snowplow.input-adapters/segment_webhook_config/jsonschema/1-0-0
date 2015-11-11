@@ -1,0 +1,37 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"description": "Schema to configure the Segment webhook adapter",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow.input-adapters",
+		"name": "segment_webhook_config",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"vendor": {
+			"type": "string"
+		},
+		"name": {
+			"type": "string"
+		},
+		"parameters": {
+			"type": "object",
+			"properties": {
+				"mappings": {
+					"type": "object",
+					"patternProperties": {
+						".*": {
+							"type": "string"
+						}
+					}
+				}
+			},
+			"required": ["mappings"],
+			"additionalProperties": false
+		}
+	},
+	"required": ["name", "vendor", "parameters"],
+	"additionalProperties": false
+}
