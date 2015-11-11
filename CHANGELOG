@@ -1,3 +1,17 @@
+Release 45 (2015-11-10)
+-----------------------
+Added: com.snowplowanalytics.iglu/anything-c (closes #250)
+Added: com.snowplowanalytics.iglu/anything-b (closes #249)
+Added: com.snowplowanalytics.iglu/anything-a (closes #248)
+Added: com.snowplowanalytics.snowplow.input-adapters/segment_webhook_config/jsonschema/1-0-0 (closes #228)
+Added: com.segment/traits/jsonschema/1-0-0 (closes #188)
+Added: com.segment/screen/jsonschema/1-0-0 (closes #223)
+Added: com.segment/page/jsonschema/1-0-0 (closes #226)
+Added: com.segment/group/jsonschema/1-0-0 (closes #224)
+Added: com.segment/event/jsonschema/1-0-0 (closes #176)
+Added: com.segment/context/jsonschema/1-0-0 (closes #225)
+Added: com.segment/alias/jsonschema/1-0-0 (closes #175)
+
 Release 44 (2015-10-22)
 -----------------------
 Added: com.google.analytics.ecommerce/item/jsonschema/1-0-0
