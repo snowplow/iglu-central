@@ -1,0 +1,232 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for Segment's context fields, https://segment.com/docs/spec/common/#context",
+	"self": {
+		"vendor": "com.segment",
+		"name": "context",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+	"type": "object",
+	"properties": {
+		"ip": {
+			"type": "string",
+			"format": "ipv4"
+		},
+		"app": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string",
+					"maxLength": 512
+				},
+				"version": {
+					"type": "string",
+					"maxLength": 1024
+				},
+				"build": {
+					"type": "string",
+					"maxLength": 1024
+				}
+			},
+			"additionalProperties": true
+		},
+		"campaign": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string",
+					"maxLength": 1024
+				},
+				"source": {
+					"type": "string",
+					"maxLength": 512
+				},
+				"medium": {
+					"type": "string",
+					"maxLength": 512
+				},
+				"term": {
+					"type": "string",
+					"maxLength": 4096
+				},
+				"content": {
+					"type": "string",
+					"maxLength": 8192
+				}
+			},
+			"additionalProperties": true
+		},
+		"location": {
+			"type": "object",
+			"properties": {
+				"city": {
+					"type": "string",
+					"maxLength": 512
+				},
+				"country": {
+					"type": "string",
+					"maxLength": 512
+				},
+				"latitude": {
+					"type": "number"
+				},
+				"longitude": {
+					"type": "number"
+				},
+				"speed": {
+					"type": "integer",
+					"maximum": 9223372036854775807,
+					"minimum": 0
+				}
+			},
+			"additionalProperties": true
+		},
+		"device": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "string",
+					"format": "uuid"
+				},
+				"advertisingId": {
+					"type": "string",
+					"format": "uuid"
+				},
+				"adTrackingEnabled": {
+					"type": "boolean"
+				},
+				"manufacturer": {
+					"type": "string",
+					"maxLength": 512
+				},
+				"model": {
+					"type": "string",
+					"maxLength": 512
+				},
+				"name": {
+					"type": "string",
+					"maxLength": 1024
+				},
+				"type": {
+					"type": "string",
+					"maxLength": 128
+				},
+				"token": {
+					"type": "string",
+					"maxLength": 128
+				}
+			},
+			"additionalProperties": true
+		},
+		"library": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string",
+					"maxLength": 512
+				},
+				"version": {
+					"type": "string",
+					"maxLength": 512
+				}
+			},
+			"additionalProperties": true
+		},
+		"referrer": {
+			"type": "object",
+			"properties": {
+				"type": {
+					"type": "string",
+					"maxLength": 512
+				},
+				"id": {
+					"type": "string",
+					"maxLength": 1024
+				},
+				"name": {
+					"type": "string",
+					"maxLength": 1024
+				},
+				"url": {
+					"type": "string",
+					"format": "uri",
+					"maxLength": 8192
+				},
+				"link": {
+					"type": "string",
+					"format": "uri",
+					"maxLength": 8192
+				}
+			},
+			"additionalProperties": true
+		},
+		"network": {
+			"type": "object",
+			"properties": {
+				"bluetooth": {
+					"type": "boolean"
+				},
+				"cellular": {
+					"type": "boolean"
+				},
+				"wifi": {
+					"type": "boolean"
+				},
+				"carrier": {
+					"type": "string",
+					"maxLength": 1024
+				}
+			},
+			"additionalProperties": true
+		},
+		"os": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string",
+					"maxLength": 512
+				},
+				"version": {
+					"type": "string",
+					"maxLength": 1024
+				}
+			},
+			"additionalProperties": true
+		},
+		"screen": {
+			"type": "object",
+			"properties": {
+				"density": {
+					"type": "integer",
+					"maximum": 2147483647,
+					"minimum": 0
+				},
+				"height": {
+					"type": "integer",
+					"maximum": 9223372036854775807,
+					"minimum": 0
+				},
+				"width": {
+					"type": "integer",
+					"maximum": 9223372036854775807,
+					"minimum": 0
+				}
+			},
+			"additionalProperties": true
+		},
+		"userAgent": {
+			"type": "string",
+			"maxLength": 4096
+		},
+		"locale": {
+			"type": "string",
+			"maxLength": 512
+		},
+		"timezone": {
+			"type": "string",
+			"maxLength": 128
+		}
+	},
+	"additionalProperties": true
+}
