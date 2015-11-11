@@ -1,0 +1,20 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for Segment alias event (via webhook), https://segment.com/docs/integrations/webhooks/#alias",
+	"self": {
+		"vendor": "com.segment",
+		"name": "alias",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+	"type": "object",
+	"properties": {
+		"from": {
+				"type": "string"
+		},
+		"to": {
+				"type": "string"
+		}
+	},
+	"additionalProperties": true
+}
