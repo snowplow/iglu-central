@@ -1,0 +1,150 @@
+{
+  "$schema" : "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self" : {
+    "vendor" : "org.openweathermap",
+    "name" : "weather",
+    "version" : "1-0-0",
+    "format" : "jsonschema"
+  },
+  "type" : "object",
+  "properties" : {
+    "dt" : {
+      "type" : "string",
+      "format" : "date-time"
+    },
+    "main" : {
+      "type" : "object",
+      "properties" : {
+        "temp_min" : {
+          "type" : "number",
+          "minimum" : 0
+        },
+        "pressure" : {
+          "type" : "number",
+          "minimum" : 0
+        },
+        "sea_level" : {
+          "type" : "number",
+          "minimum" : 0
+        },
+        "grnd_level" : {
+          "type" : "number",
+          "minimum" : 0
+        },
+        "humidity" : {
+          "type" : "number",
+          "minimum" : 0
+        },
+        "temp" : {
+          "type" : "number",
+          "minimum" : 0
+        },
+        "temp_max" : {
+          "type" : "number",
+          "minimum" : 0
+        }
+      },
+      "required": ["temp", "temp_min", "temp_max", "pressure", "humidity"],
+      "additionalProperties" : false
+    },
+    "rain" : {
+      "type" : "object",
+      "properties" : {
+        "1h" : {
+          "type" : "number",
+          "minimum" : 0
+        },
+        "3h" : {
+          "type" : "number",
+          "minimum" : 0
+        }
+      },
+      "additionalProperties" : false
+    },
+    "snow" : {
+      "type" : "object",
+      "properties" : {
+        "1h" : {
+          "type" : "number",
+          "minimum" : 0
+        },
+        "3h" : {
+          "type" : "number",
+          "minimum" : 0
+        }
+      },
+      "additionalProperties" : false
+    },
+    "wind" : {
+      "type" : "object",
+      "properties" : {
+        "speed" : {
+          "type" : "number",
+          "minimum" : 0
+        },
+        "deg" : {
+          "type" : "number",
+          "minimum" : 0
+        },
+        "gust" : {
+            "type" : "number",
+            "minimum" : 0
+        },
+        "var_end" : {
+            "type" : "integer",
+            "maximum" : 32767,
+            "minimum" : 0
+        },
+        "var_beg" : {
+            "type" : "integer",
+            "maximum" : 32767,
+            "minimum" : 0
+        }
+      },
+      "required": ["speed", "deg"],
+      "additionalProperties" : false
+    },
+    "clouds" : {
+      "type" : "object",
+      "properties" : {
+        "all" : {
+          "type" : "integer",
+          "maximum" : 32767,
+          "minimum" : 0
+        }
+      },
+      "required": ["all"],
+      "additionalProperties" : false
+    },
+    "weather" : {
+      "type" : "array",
+      "items" : {
+        "type" : "object",
+        "properties" : {
+          "main" : {
+            "type" : "string",
+            "maxLength" : 32
+          },
+          "description" : {
+            "type" : "string",
+            "maxLength" : 128
+          },
+          "id": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 32767
+          },
+          "icon": {
+              "type": "string",
+              "minLength": 3,
+              "maxLength": 3
+          }
+        },
+        "required": ["main", "description"],
+        "additionalProperties" : false
+      }
+    }
+  },
+  "required": ["dt", "main", "clouds"],
+  "additionalProperties" : false
+}
