@@ -1,0 +1,340 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self": {
+    "vendor": "com.urbanairship.connect",
+    "name": "TAG_CHANGE",
+    "version": "1-0-0",
+    "format": "jsonschema"
+  },
+  "type": "object",
+  "properties": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "add": {
+          "type": "object",
+          "properties": {
+            "ua_android_app_version": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_ios_sdk_version": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_ios_version": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "timezone": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_background_enabled": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_location_enabled": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_locale_country": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "i15729": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_locale_language": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_ios_app_version": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_android_version": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_ios_model": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "device": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_android_sdk_version": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_opt_in": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": true
+        },
+        "remove": {
+          "type": "object",
+          "properties": {
+            "ua_android_app_version": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_ios_sdk_version": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_ios_version": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "timezone": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_background_enabled": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_location_enabled": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_locale_country": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_locale_language": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_ios_app_version": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_android_version": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_ios_model": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "device": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_android_sdk_version": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_opt_in": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": true
+        },
+        "current": {
+          "type": "object",
+          "properties": {
+            "ua_android_app_version": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_ios_sdk_version": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_ios_version": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "timezone": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_background_enabled": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_location_enabled": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_locale_country": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "i15729": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_locale_language": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_ios_app_version": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_android_version": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_ios_model": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "device": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_android_sdk_version": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ua_opt_in": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "offset": {
+      "type": "string"
+    },
+    "processed": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "occurred": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "type": {
+      "type": "string"
+    },
+    "device": {
+      "type": "object",
+      "properties": {
+        "android_channel": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "ios_channel": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "amazon_channel": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "named_user_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
