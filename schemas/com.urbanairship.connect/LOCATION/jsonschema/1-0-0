@@ -1,0 +1,73 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self": {
+    "vendor": "com.urbanairship.connect",
+    "name": "LOCATION",
+    "version": "1-0-0",
+    "format": "jsonschema"
+  },
+  "type": "object",
+  "properties": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "latitude": {
+          "type": "string"
+        },
+        "longitude": {
+          "type": "string"
+        },
+        "foreground": {
+          "type": "boolean"
+        },
+        "session_id": {
+          "type": "string",
+          "format": "uuid"
+        }
+      },
+      "additionalProperties": true
+    },
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "offset": {
+      "type": "string"
+    },
+    "processed": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "occurred": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "type": {
+      "type": "string",
+      "pattern": "^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{4}|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)$"
+    },
+    "device": {
+      "type": "object",
+      "properties": {
+        "android_channel": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "named_user_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "ios_channel": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "amazon_channel": {
+          "type": "string",
+          "format": "uuid"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
