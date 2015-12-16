@@ -1,0 +1,63 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self": {
+    "vendor": "com.urbanairship.connect",
+    "name": "IN_APP_MESSAGE_DISPLAY",
+    "version": "1-0-0",
+    "format": "jsonschema"
+  },
+  "type": "object",
+  "properties": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "push_id": {
+          "type": "string",
+          "format": "uuid"
+        }
+      },
+      "additionalProperties": true
+    },
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "offset": {
+      "type": "string"
+    },
+    "processed": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "occurred": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "type": {
+      "type": "string"
+    },
+    "device": {
+      "type": "object",
+      "properties": {
+        "amazon_channel": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "ios_channel": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "android_channel": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "named_user_id": {
+          "type": "string",
+          "format": "uuid"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
