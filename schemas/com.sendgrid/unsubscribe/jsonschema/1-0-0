@@ -1,0 +1,43 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self": {
+    "vendor": "com.sendgrid",
+    "name": "unsubscribe",
+    "version": "1-0-0",
+    "format": "jsonschema"
+  },
+  "type": "object",
+  "properties": {
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "email": {
+      "type": "string"
+    },
+    "sg_event_id": {
+      "type": "string"
+    },
+    "smtp-id": {
+      "type": "string"
+    },
+    "category": {
+      "type": [
+        "array",
+        "string"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "asm_group_id": {
+      "type": "integer",
+      "maximum": 32767,
+      "minimum": 0
+    },
+    "sg_message_id": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

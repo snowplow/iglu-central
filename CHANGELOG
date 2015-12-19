@@ -1,16 +1,48 @@
+Release 46 (2015-12-19)
+-----------------------
+Added: org.openweathermap/weather/jsonschema/1-0-0
+Added: com.snowplowanalytics.snowplow.enrichments/weather_enrichment_config/jsonschema/1-0-0
+Added: com.sendgrid/bounce/jsonschema/1-0-0
+Added: com.sendgrid/click/jsonschema/1-0-0
+Added: com.sendgrid/deferred/jsonschema/1-0-0
+Added: com.sendgrid/delivered/jsonschema/1-0-0
+Added: com.sendgrid/dropped/jsonschema/1-0-0
+Added: com.sendgrid/group_resubscribe/jsonschema/1-0-0
+Added: com.sendgrid/group_unsubscribe/jsonschema/1-0-0
+Added: com.sendgrid/open/jsonschema/1-0-0
+Added: com.sendgrid/processed/jsonschema/1-0-0
+Added: com.sendgrid/spamreport/jsonschema/1-0-0
+Added: com.sendgrid/unsubscribe/jsonschema/1-0-0
+Added: com.urbanairship.connect/CLOSE/jsonschema/1-0-0
+Added: com.urbanairship.connect/CUSTOM/jsonschema/1-0-0
+Added: com.urbanairship.connect/FIRST_OPEN/jsonschema/1-0-0
+Added: com.urbanairship.connect/IN_APP_MESSAGE_DISPLAY/jsonschema/1-0-0
+Added: com.urbanairship.connect/IN_APP_MESSAGE_EXPIRATION/jsonschema/1-0-0
+Added: com.urbanairship.connect/IN_APP_MESSAGE_RESOLUTION/jsonschema/1-0-0
+Added: com.urbanairship.connect/LOCATION/jsonschema/1-0-0
+Added: com.urbanairship.connect/OPEN/jsonschema/1-0-0
+Added: com.urbanairship.connect/PUSH_BODY/jsonschema/1-0-0
+Added: com.urbanairship.connect/REGION/jsonschema/1-0-0
+Added: com.urbanairship.connect/RICH_DELETE/jsonschema/1-0-0
+Added: com.urbanairship.connect/RICH_DELIVERY/jsonschema/1-0-0
+Added: com.urbanairship.connect/RICH_READ/jsonschema/1-0-0
+Added: com.urbanairship.connect/SEND/jsonschema/1-0-0
+Added: com.urbanairship.connect/TAG_CHANGE/jsonschema/1-0-0
+Added: com.urbanairship.connect/UNINSTALL/jsonschema/1-0-0
+
 Release 45 (2015-11-10)
 -----------------------
-Added: com.snowplowanalytics.iglu/anything-c (closes #250)
-Added: com.snowplowanalytics.iglu/anything-b (closes #249)
-Added: com.snowplowanalytics.iglu/anything-a (closes #248)
-Added: com.snowplowanalytics.snowplow.input-adapters/segment_webhook_config/jsonschema/1-0-0 (closes #228)
-Added: com.segment/traits/jsonschema/1-0-0 (closes #188)
-Added: com.segment/screen/jsonschema/1-0-0 (closes #223)
-Added: com.segment/page/jsonschema/1-0-0 (closes #226)
-Added: com.segment/group/jsonschema/1-0-0 (closes #224)
-Added: com.segment/event/jsonschema/1-0-0 (closes #176)
-Added: com.segment/context/jsonschema/1-0-0 (closes #225)
-Added: com.segment/alias/jsonschema/1-0-0 (closes #175)
+Added: com.snowplowanalytics.iglu/anything-c/jsonschema/1-0-0
+Added: com.snowplowanalytics.iglu/anything-b/jsonschema/1-0-0
+Added: com.snowplowanalytics.iglu/anything-a/jsonschema/1-0-0
+Added: com.snowplowanalytics.snowplow.input-adapters/segment_webhook_config/jsonschema/1-0-0
+Added: com.segment/traits/jsonschema/1-0-0
+Added: com.segment/screen/jsonschema/1-0-0
+Added: com.segment/page/jsonschema/1-0-0
+Added: com.segment/group/jsonschema/1-0-0
+Added: com.segment/event/jsonschema/1-0-0
+Added: com.segment/context/jsonschema/1-0-0
+Added: com.segment/alias/jsonschema/1-0-0
 
 Release 44 (2015-10-22)
 -----------------------

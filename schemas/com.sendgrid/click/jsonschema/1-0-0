@@ -1,0 +1,69 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self": {
+    "vendor": "com.sendgrid",
+    "name": "click",
+    "version": "1-0-0",
+    "format": "jsonschema"
+  },
+  "type": "object",
+  "properties": {
+    "ip": {
+      "type": "string",
+      "format": "ipv4"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "email": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "newsletter": {
+      "type": "object",
+      "properties": {
+        "newsletter_user_list_id": {
+          "type": "string"
+        },
+        "newsletter_id": {
+          "type": "string"
+        },
+        "newsletter_send_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "sg_event_id": {
+      "type": "string"
+    },
+    "smtp-id": {
+      "type": "string"
+    },
+    "useragent": {
+      "type": "string"
+    },
+    "category": {
+      "type": [
+        "array",
+        "string"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "asm_group_id": {
+      "type": "integer",
+      "maximum": 32767,
+      "minimum": 0
+    },
+    "sg_message_id": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
