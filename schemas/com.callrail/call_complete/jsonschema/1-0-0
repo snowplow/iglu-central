@@ -47,6 +47,9 @@
 		"first_call": {
 			"type": ["boolean", "null"]
 		},
+		"device_type": {
+			"type": ["string", "null"]
+		},
 		"ga": {
 			"type": ["string", "null"]
 		},
