@@ -41,7 +41,7 @@
       "type": "string"
     },
     "tls": {
-      "type": "string"
+      "type": ["string", "integer"]
     },
     "response": {
       "type": "string"
