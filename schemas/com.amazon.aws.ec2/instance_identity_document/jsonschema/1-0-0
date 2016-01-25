@@ -11,7 +11,7 @@
     "instanceId" : {
       "type" : "string",
       "minLength" : 10,
-      "maxLength" : 10
+      "maxLength" : 19
     },
     "devpayProductCodes" : {
       "type" : [ "array", "null" ],
