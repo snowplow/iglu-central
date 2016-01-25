@@ -1,0 +1,125 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a CallRail call completion event",
+	"self": {
+		"vendor": "com.callrail",
+		"name": "call_complete",
+		"format": "jsonschema",
+		"version": "1-0-1"
+	},
+
+	"type": "object",
+	"properties": {
+		"answered": {
+			"type": ["boolean", "null"]
+		},
+		"callercity": {
+			"type": ["string", "null"]
+		},
+		"callercountry": {
+			"type": ["string", "null"]
+		},
+		"callername": {
+			"type": ["string", "null"]
+		},
+		"callernum": {
+			"type": ["string", "null"]
+		},
+		"callerstate": {
+			"type": ["string", "null"]
+		},
+		"callerzip": {
+			"type": ["string", "null"]
+		},
+		"callsource": {
+			"type": ["string", "null"]
+		},
+		"datetime": {
+			"type": "string",
+			"format": "date-time"
+		},
+		"destinationnum": {
+			"type": ["string", "null"]
+		},
+		"duration": {
+			"type": ["number", "null"]
+		},
+		"first_call": {
+			"type": ["boolean", "null"]
+		},
+		"device_type": {
+			"type": ["string", "null"]
+		},
+		"ga": {
+			"type": ["string", "null"]
+		},
+		"gclid": {
+			"type": ["string", "null"]
+		},
+		"id": {
+			"type": "string"
+		},
+		"ip": {
+			"type": ["string", "null"]
+		},
+		"keywords": {
+			"type": ["string", "null"]
+		},
+		"kissmetrics_id": {
+			"type": ["string", "null"]
+		},
+		"landingpage": {
+			"type": ["string", "null"]
+		},
+		"recording": {
+			"type": ["string", "null"]
+		},
+		"referrer": {
+			"type": ["string", "null"]
+		},
+		"referrermedium": {
+			"type": ["string", "null"]
+		},
+		"trackingnum": {
+			"type": ["string", "null"]
+		},
+		"transcription": {
+			"type": ["string", "null"]
+		},
+		"utm_campaign": {
+			"type": ["string", "null"]
+		},
+		"utm_content": {
+			"type": ["string", "null"]
+		},
+		"utm_medium": {
+			"type": ["string", "null"]
+		},
+		"utm_source": {
+			"type": ["string", "null"]
+		},
+		"utm_term": {
+			"type": ["string", "null"]
+		},
+		"utma": {
+			"type": ["string", "null"]
+		},
+		"utmb": {
+			"type": ["string", "null"]
+		},
+		"utmc": {
+			"type": ["string", "null"]
+		},
+		"utmv": {
+			"type": ["string", "null"]
+		},
+		"utmx": {
+			"type": ["string", "null"]
+		},
+		"utmz": {
+			"type": ["string", "null"]
+		}
+	},
+	"required": ["datetime", "id"],
+	"additionalProperties": false
+}
