@@ -1,3 +1,10 @@
+Release 47 (2016-01-24)
+-----------------------
+Added: com.callrail/call_complete/jsonschema/1-0-1
+Patched: com.sendgrid/bounce/jsonschema/1-0-0
+Patched: com.sendgrid/deferred/jsonschema/1-0-0
+Patched: com.sendgrid/delivered/jsonschema/1-0-0
+
 Release 46 (2015-12-19)
 -----------------------
 Added: org.openweathermap/weather/jsonschema/1-0-0
