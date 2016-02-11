@@ -1,0 +1,24 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a single HTTP header",
+	"self": {
+		"vendor": "org.ietf",
+		"name": "http_header",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"name": {
+			"type": "string",
+			"maxLength" : 4096
+		},
+		"value": {
+			"type": "string",
+			"maxLength" : 4096
+		}
+	},
+	"required": ["name", "value"],
+	"additionalProperties": false
+}
