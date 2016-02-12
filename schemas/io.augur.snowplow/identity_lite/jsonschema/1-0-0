@@ -25,15 +25,6 @@
     "device": {
       "type": "object",
       "properties": {
-        "ID": {
-          "type": ["string", "null"]
-        }
-      },
-      "additionalProperties": true
-    },
-    "webTraffic": {
-      "type": "object",
-      "properties": {
         "isBot": {
           "type": ["boolean", "null"]
         },
@@ -45,6 +36,9 @@
         },
         "isIncognito": {
           "type": ["boolean", "null"]
+        },
+        "ID": {
+          "type": ["string", "null"]
         }
       },
       "additionalProperties": true
