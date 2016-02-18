@@ -1,0 +1,57 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for an Optimizely visitor context (http://developers.optimizely.com/javascript/reference/#experiments)",
+  "self": {
+    "vendor": "com.optimizely",
+    "name": "visitor",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+
+  "type": "object",
+  "properties": {
+    "browser": {
+      "type": ["string", "null"]
+    },
+    "browserVersion": {
+      "type": ["string", "null"]
+    },
+    "device": {
+      "type": ["string", "null"]
+    },
+    "deviceType": {
+      "type": ["string", "null"]
+    },
+    "ip": {
+      "type": ["string", "null"]
+    },
+    "platformId": {
+      "type": ["string", "null"]
+    },
+    "platformVersion": {
+      "type": ["string", "null"]
+    },
+    "locationCity": {
+      "type": ["string", "null"]
+    },
+    "locationRegion": {
+      "type": ["string", "null"]
+    },
+    "locationCountry": {
+      "type": ["string", "null"]
+    },
+    "mobile": {
+      "type": ["boolean", "null"]
+    },
+    "mobileId": {
+      "type": ["string", "null"]
+    },
+    "referrer": {
+      "type": ["string", "null"]
+    },
+    "os": {
+      "type": ["string", "null"]
+    }
+  },
+  "additionalProperties": true
+}
