@@ -1,0 +1,21 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for an Optimizely visitor_audience context",
+  "self": {
+    "vendor": "com.optimizely",
+    "name": "visitor_audience",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": ["string", "null"]
+    },
+    "isMember": {
+      "type": ["boolean", "null"]
+    }
+  },
+  "additionalProperties": true
+}

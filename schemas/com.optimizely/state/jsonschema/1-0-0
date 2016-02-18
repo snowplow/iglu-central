@@ -1,0 +1,31 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for an Optimizely state context (http://developers.optimizely.com/javascript/reference/#state)",
+  "self": {
+    "vendor": "com.optimizely",
+    "name": "state",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+
+  "type": "object",
+  "properties": {
+    "experimentId": {
+      "type": ["string", "null"]
+    },
+    "isActive": {
+      "type": ["boolean", "null"]
+    },
+    "variationIndex": {
+      "type": ["integer", "null"],
+      "maxValue": 32767
+    },
+    "variationId": {
+      "type": ["string", "null"]
+    },
+    "variationName": {
+      "type": ["string", "null"]
+    }
+  },
+  "additionalProperties": true
+}

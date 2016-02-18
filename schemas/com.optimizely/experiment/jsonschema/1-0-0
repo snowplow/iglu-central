@@ -1,0 +1,36 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for an Optimizely experiment context (http://developers.optimizely.com/javascript/reference/#experiments)",
+  "self": {
+    "vendor": "com.optimizely",
+    "name": "experiment",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": ["string", "null"]
+    },
+    "code": {
+      "type": ["string", "null"]
+    },
+    "manual": {
+      "type": ["boolean", "null"]
+    },
+    "conditional": {
+      "type": ["boolean", "null"]
+    },
+    "name": {
+      "type": ["string", "null"]
+    },
+    "variationIds": {
+      "type": "array",
+      "items": {
+        "type": ["string", "null"]
+      }
+    }
+  },
+  "additionalProperties": true
+}
