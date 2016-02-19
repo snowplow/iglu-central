@@ -1,0 +1,24 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for an Optimizely variation context (http://developers.optimizely.com/javascript/reference/#variations)",
+  "self": {
+    "vendor": "com.optimizely",
+    "name": "variation",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": ["string", "null"]
+    },
+    "name": {
+      "type": ["string", "null"]
+    },
+    "code": {
+      "type": ["string", "null"]
+    }
+  },
+  "additionalProperties": true
+}
