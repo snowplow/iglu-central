@@ -1,3 +1,18 @@
+Release 48 (2016-02-18)
+-----------------------
+Added: com.optimizely/visitor_dimension/jsonschema/1-0-0
+Added: com.optimizely/visitor_audience/jsonschema/1-0-0
+Added: com.optimizely/visitor/jsonschema/1-0-0
+Added: com.optimizely/variation/jsonschema/1-0-0
+Added: com.optimizely/state/jsonschema/1-0-0
+Added: com.optimizely/experiment/jsonschema/1-0-0
+Added: com.snowplowanalytics.snowplow.enrichments/http_header_extractor_config/jsonschema/1-0-0
+Added: org.ietf/http_header/jsonschema/1-0-0
+Patched: org.w3/PerformanceTiming/jsonschema/1-0-0
+Patched: io.augur.snowplow/identity_lite/jsonschema/1-0-0
+Patched: com.amazon.aws.ec2/instance_identity_document/jsonschema/1-0-0
+Removed: index.html from root
+
 Release 47 (2016-01-24)
 -----------------------
 Added: com.callrail/call_complete/jsonschema/1-0-1
