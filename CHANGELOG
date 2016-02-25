@@ -1,3 +1,8 @@
+Release 49 (2016-02-25)
+-----------------------
+Added: com.snowplowanalytics.iglu/resolver-config/jsonschema/1-0-1
+Added: com.snowplowanalytics.snowplow.enrichments/api_request_enrichment_config/jsonschema/1-0-0
+
 Release 48 (2016-02-18)
 -----------------------
 Added: com.optimizely/visitor_dimension/jsonschema/1-0-0
