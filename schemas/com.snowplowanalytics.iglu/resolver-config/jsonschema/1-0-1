@@ -67,7 +67,7 @@
 												"format": "uri"
 											},
 											"apikey": {
-												"type": "string"
+												"type": ["string", "null"]
 											}
 										},
 										"required": ["uri"],
