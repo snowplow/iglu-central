@@ -1,3 +1,7 @@
+Release 50 (2016-02-28)
+-----------------------
+Patched: com.snowplowanalytics.iglu/resolver-config/jsonschema/1-0-1
+
 Release 49 (2016-02-25)
 -----------------------
 Added: com.snowplowanalytics.iglu/resolver-config/jsonschema/1-0-1
