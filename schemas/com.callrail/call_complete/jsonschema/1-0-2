@@ -31,6 +31,24 @@
 		"customer_zip": {
 			"type": ["string", "null"]
 		},
+		"callercity": {
+			"type": ["string", "null"]
+		},
+		"callercountry": {
+			"type": ["string", "null"]
+		},
+		"callername": {
+			"type": ["string", "null"]
+		},
+		"callernum": {
+			"type": ["string", "null"]
+		},
+		"callerstate": {
+			"type": ["string", "null"]
+		},
+		"callerzip": {
+			"type": ["string", "null"]
+		},
 		"callsource": {
 			"type": ["string", "null"]
 		},
