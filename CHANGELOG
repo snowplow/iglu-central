@@ -1,3 +1,16 @@
+Release 51 (2016-03-29)
+-----------------------
+Added: com.snowplowanalytics.factotum/factfile/jsonschema/1-0-0
+Added: com.amazon.aws.lambda/java_context/jsonschema/1-0-0
+Patched: com.mandrill/message_bounced/jsonschema/1-0-0
+Patched: com.mandrill/message_clicked/jsonschema/1-0-0
+Patched: com.mandrill/message_delayed/jsonschema/1-0-0
+Patched: com.mandrill/message_marked_as_spam/jsonschema/1-0-0
+Patched: com.mandrill/message_opened/jsonschema/1-0-0
+Patched: com.mandrill/message_rejected/jsonschema/1-0-0
+Patched: com.mandrill/message_sent/jsonschema/1-0-0
+Patched: com.mandrill/message_soft_bounced/jsonschema/1-0-0
+
 Release 50 (2016-02-28)
 -----------------------
 Patched: com.snowplowanalytics.iglu/resolver-config/jsonschema/1-0-1
