@@ -90,7 +90,7 @@
 							"type": "number"
 						}
 					},
-					"additionalProperties": false
+					"additionalProperties": true
 				},
 				"opens": {
 					"type": "array",

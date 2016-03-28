@@ -41,7 +41,7 @@
 							"type": "number"
 						}
 					},
-					"additionalProperties": false
+					"additionalProperties": true
 				},
 				"sender": {
 					"type": "string"
