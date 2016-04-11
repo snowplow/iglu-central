@@ -53,7 +53,8 @@
 									  "pattern": "^iglu:[a-zA-Z0-9-_.]+/[a-zA-Z0-9-_]+/[a-zA-Z0-9-_]+/[0-9]+-([0-9]+|\\*)-([0-9]+|\\*)$"
 								  },
 								  "jsonPath": {
-									  "type": "string"
+									  "type": "string",
+                                      "pattern": "^\\$.*$"
 								  }
 								},
 								"additionalProperties": false
@@ -125,7 +126,8 @@
 								"type": "object",
 								"properties": {
 									"jsonPath": {
-										"type": "string"
+										"type": "string",
+                                        "pattern": "^\\$.*$"
 									}
 								},
 								"required": ["jsonPath"],
