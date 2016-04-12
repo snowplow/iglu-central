@@ -18,7 +18,7 @@
 				"name": {
 					"type": "string"
 				},
-				"steps": {
+				"tasks": {
 					"type": "array",
 					"items": {
 						"type": "object",
@@ -85,7 +85,7 @@
 			},
 			"required": [
 				"name",
-				"steps"
+				"tasks"
 			],
 			"additionalProperties": false
 		}
