@@ -1,3 +1,10 @@
+Release 52 (2016-04-14)
+-----------------------
+Added: com.amazon.aws.lambda/s3_notification_event/jsonschema/1-0-0
+Added: com.callrail/call_complete/jsonschema/1-0-2
+Patched: com.snowplowanalytics.factotum/factfile/jsonschema/1-0-0
+Patched: com.snowplowanalytics.snowplow.enrichments/api_request_enrichment_config/jsonschema/1-0-0
+
 Release 51 (2016-03-29)
 -----------------------
 Added: com.snowplowanalytics.factotum/factfile/jsonschema/1-0-0
