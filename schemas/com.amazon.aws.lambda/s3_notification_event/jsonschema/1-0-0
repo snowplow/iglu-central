@@ -1,0 +1,119 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"self": {
+		"vendor": "com.amazon.aws.lambda",
+		"name": "s3_notification_event",
+		"version": "1-0-0",
+		"format": "jsonschema"
+	},
+	"type": "object",
+	"properties": {
+		"eventName": {
+			"type": "string"
+		},
+		"requestParameters": {
+			"type": "object",
+			"properties": {
+				"sourceIPAddress": {
+					"type": "string",
+					"format": "ipv4"
+				}
+			},
+			"additionalProperties": false
+		},
+		"s3": {
+			"type": "object",
+			"properties": {
+				"configurationId": {
+					"type": "string"
+				},
+				"bucket": {
+					"type": "object",
+					"properties": {
+						"name": {
+							"type": "string"
+						},
+						"ownerIdentity": {
+							"type": "object",
+							"properties": {
+								"principalId": {
+									"type": "string"
+								}
+							},
+							"additionalProperties": false
+						},
+						"arn": {
+							"type": "string"
+						}
+					},
+					"additionalProperties": false
+				},
+				"object": {
+					"type": "object",
+					"properties": {
+						"key": {
+							"type": "string"
+						},
+						"size": {
+							"type": [
+								"integer",
+								"null"
+							],
+							"maximum": 32767,
+							"minimum": 0
+						},
+						"eTag": {
+							"type": [
+								"string",
+								"null"
+							]
+						},
+						"versionId": {
+							"type": "null"
+						}
+					},
+					"additionalProperties": false
+				},
+				"s3SchemaVersion": {
+					"type": "string"
+				}
+			},
+			"additionalProperties": false
+		},
+		"eventSource": {
+			"type": "string"
+		},
+		"userIdentity": {
+			"type": "object",
+			"properties": {
+				"principalId": {
+					"type": "string"
+				}
+			},
+			"additionalProperties": false
+		},
+		"eventVersion": {
+			"type": "string"
+		},
+		"responseElements": {
+			"type": "object",
+			"properties": {
+				"x-amz-id-2": {
+					"type": "string"
+				},
+				"x-amz-request-id": {
+					"type": "string"
+				}
+			},
+			"additionalProperties": false
+		},
+		"awsRegion": {
+			"type": "string"
+		},
+		"eventTime": {
+			"type": "string",
+			"format": "date-time"
+		}
+	},
+	"additionalProperties": false
+}
