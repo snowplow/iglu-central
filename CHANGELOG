@@ -1,3 +1,7 @@
+Release 53 (2016-04-24)
+-----------------------
+Added: com.snowplowanalytics.snowplow/payload_data/jsonschema/1-0-4
+
 Release 52 (2016-04-14)
 -----------------------
 Added: com.amazon.aws.lambda/s3_notification_event/jsonschema/1-0-0
