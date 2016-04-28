@@ -1,0 +1,278 @@
+{
+  "$schema" : "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self" : {
+    "vendor" : "com.clearbit",
+    "name" : "company",
+    "version" : "1-0-0",
+    "format" : "jsonschema"
+  },
+  "type" : "object",
+  "properties" : {
+    "name" : {
+      "type" : "string"
+    },
+    "crunchbase" : {
+      "type" : "object",
+      "properties" : {
+        "handle" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : true
+    },
+    "location" : {
+      "type" : "string"
+    },
+    "url" : {
+      "type" : "string",
+      "format" : "uri"
+    },
+    "description" : {
+      "type" : "string"
+    },
+    "foundedDate" : {
+      "type" : "string"
+    },
+    "tags" : {
+      "type" : "array",
+      "items" : {
+        "type" : "string"
+      }
+    },
+    "linkedin" : {
+      "type" : "object",
+      "properties" : {
+        "handle" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : true
+    },
+    "geo" : {
+      "type" : "object",
+      "properties" : {
+        "city" : {
+          "type" : "string"
+        },
+        "stateCode" : {
+          "type" : "string"
+        },
+        "lng" : {
+          "type" : "number"
+        },
+        "state" : {
+          "type" : "string"
+        },
+        "country" : {
+          "type" : "string"
+        },
+        "streetName" : {
+          "type" : "string"
+        },
+        "postalCode" : {
+          "type" : "string"
+        },
+        "subPremise" : {
+          "type" : "null"
+        },
+        "countryCode" : {
+          "type" : "string"
+        },
+        "streetNumber" : {
+          "type" : "string"
+        },
+        "lat" : {
+          "type" : "number",
+          "minimum" : 0
+        }
+      },
+      "additionalProperties" : true
+    },
+    "domain" : {
+      "type" : "string"
+    },
+    "angellist" : {
+      "type" : "object",
+      "properties" : {
+        "description" : {
+          "type" : "string"
+        },
+        "followers" : {
+          "type" : "integer",
+          "maximum" : 32767,
+          "minimum" : 0
+        },
+        "blogUrl" : {
+          "type" : "string",
+          "format" : "uri"
+        },
+        "id" : {
+          "type" : "integer",
+          "maximum" : 32767,
+          "minimum" : 0
+        },
+        "handle" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : true
+    },
+    "site" : {
+      "type" : "object",
+      "properties" : {
+        "metaDescription" : {
+          "type" : "null"
+        },
+        "url" : {
+          "type" : "string",
+          "format" : "uri"
+        },
+        "emailAddresses" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "phoneNumbers" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "h1" : {
+          "type" : "null"
+        },
+        "title" : {
+          "type" : "null"
+        },
+        "metaAuthor" : {
+          "type" : "null"
+        }
+      },
+      "additionalProperties" : true
+    },
+    "domainAliases" : {
+      "type" : "array",
+      "items" : { }
+    },
+    "emailProvider" : {
+      "type" : "boolean"
+    },
+    "logo" : {
+      "type" : "string",
+      "format" : "uri"
+    },
+    "id" : {
+      "type" : "string",
+      "format" : "uuid"
+    },
+    "legalName" : {
+      "type" : "string"
+    },
+    "facebook" : {
+      "type" : "object",
+      "properties" : {
+        "handle" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : true
+    },
+    "tech" : {
+      "type" : "array",
+      "items" : {
+        "type" : "string"
+      }
+    },
+    "metrics" : {
+      "type" : "object",
+      "properties" : {
+        "employees" : {
+          "type" : "integer",
+          "maximum" : 32767,
+          "minimum" : 0
+        },
+        "marketCap" : {
+          "type" : "null"
+        },
+        "googleRank" : {
+          "type" : "integer",
+          "maximum" : 32767,
+          "minimum" : 0
+        },
+        "raised" : {
+          "type" : "integer",
+          "maximum" : 9223372036854775807,
+          "minimum" : 0
+        },
+        "alexaUsRank" : {
+          "type" : "integer",
+          "maximum" : 32767,
+          "minimum" : 0
+        },
+        "alexaGlobalRank" : {
+          "type" : "integer",
+          "maximum" : 32767,
+          "minimum" : 0
+        },
+        "annualRevenue" : {
+          "type" : "null"
+        }
+      },
+      "additionalProperties" : true
+    },
+    "utcOffset" : {
+      "type" : "integer",
+      "maximum" : 32767,
+      "minimum" : -32768
+    },
+    "twitter" : {
+      "type" : "object",
+      "properties" : {
+        "avatar" : {
+          "type" : "string",
+          "format" : "uri"
+        },
+        "location" : {
+          "type" : "string"
+        },
+        "followers" : {
+          "type" : "integer",
+          "maximum" : 2147483647,
+          "minimum" : 0
+        },
+        "site" : {
+          "type" : "string",
+          "format" : "uri"
+        },
+        "following" : {
+          "type" : "integer",
+          "maximum" : 32767,
+          "minimum" : 0
+        },
+        "bio" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "integer",
+          "maximum" : 2147483647,
+          "minimum" : 0
+        },
+        "handle" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : true
+    },
+    "type" : {
+      "type" : "string"
+    },
+    "timeZone" : {
+      "type" : "string"
+    },
+    "phone" : {
+      "type" : "string"
+    }
+  },
+  "additionalProperties" : true
+}
