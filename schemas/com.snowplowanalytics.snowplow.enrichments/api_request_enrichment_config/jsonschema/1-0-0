@@ -48,14 +48,14 @@
 										"type": "string",
 										"enum": ["unstruct_event", "contexts", "derived_contexts"]
 									},
-								  "schemaCriterion": {
-									  "type": "string",
-									  "pattern": "^iglu:[a-zA-Z0-9-_.]+/[a-zA-Z0-9-_]+/[a-zA-Z0-9-_]+/[0-9]+-([0-9]+|\\*)-([0-9]+|\\*)$"
-								  },
-								  "jsonPath": {
-									  "type": "string",
-                                      "pattern": "^\\$.*$"
-								  }
+									"schemaCriterion": {
+										"type": "string",
+										"pattern": "^iglu:[a-zA-Z0-9-_.]+/[a-zA-Z0-9-_]+/[a-zA-Z0-9-_]+/([1-9][0-9]*|\\*)-((?:0|[1-9][0-9]*)|\\*)-((?:0|[1-9][0-9]*)|\\*)$"
+									},
+									"jsonPath": {
+										"type": "string",
+										"pattern": "^\\$.*$"
+									}
 								},
 								"additionalProperties": false
 							}
@@ -120,14 +120,14 @@
 						"properties": {
 							"schema": {
 								"type": "string",
-								"pattern": "^iglu:[a-zA-Z0-9-_.]+/[a-zA-Z0-9-_]+/[a-zA-Z0-9-_]+/[0-9]+-[0-9]+-[0-9]+$"
+								"pattern": "^iglu:([a-zA-Z0-9-_.]+)/([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)/([1-9][0-9]*(?:-(?:0|[1-9][0-9]*)){2})$"
 							},
 							"json": {
 								"type": "object",
 								"properties": {
 									"jsonPath": {
 										"type": "string",
-                                        "pattern": "^\\$.*$"
+ 										"pattern": "^\\$.*$"
 									}
 								},
 								"required": ["jsonPath"],
