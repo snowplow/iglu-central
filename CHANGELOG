@@ -1,3 +1,8 @@
+Release 55 (2016-05-01)
+-----------------------
+Patched: com.clearbit/person/jsonschema/1-0-0
+Patched: com.clearbit/company/jsonschema/1-0-0
+
 Release 54 (2016-04-29)
 -----------------------
 Added: com.clearbit/person/jsonschema/1-0-0
