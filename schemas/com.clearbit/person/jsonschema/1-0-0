@@ -12,28 +12,28 @@
       "type" : "object",
       "properties" : {
         "avatar" : {
-          "type" : "string",
+          "type" : ["string", "null"],
           "format" : "uri"
         },
         "followers" : {
-          "type" : "integer",
-          "maximum" : 32767,
+          "type" : ["integer", "null"],
+          "maximum" : 2147483647,
           "minimum" : 0
         },
         "following" : {
-          "type" : "integer",
-          "maximum" : 32767,
+          "type" : ["integer", "null"],
+          "maximum" : 2147483647,
           "minimum" : 0
         },
         "company" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "blog" : {
-          "type" : "string",
+          "type" : ["string", "null"],
           "format" : "uri"
         },
         "handle" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         }
       },
       "additionalProperties" : true
@@ -42,32 +42,32 @@
       "type" : "object",
       "properties" : {
         "fullName" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "givenName" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "familyName" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         }
       },
       "additionalProperties" : true
     },
     "avatar" : {
-      "type" : "string",
+      "type" : ["string", "null"],
       "format" : "uri"
     },
     "location" : {
-      "type" : "string"
+      "type" : ["string", "null"]
     },
     "email" : {
-      "type" : "string"
+      "type" : ["string", "null"]
     },
     "linkedin" : {
       "type" : "object",
       "properties" : {
         "handle" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         }
       },
       "additionalProperties" : true
@@ -76,25 +76,25 @@
       "type" : "object",
       "properties" : {
         "city" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "stateCode" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "lng" : {
-          "type" : "number"
+          "type" : ["number", "null"]
         },
         "state" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "country" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "countryCode" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "lat" : {
-          "type" : "number",
+          "type" : ["number", "null"],
           "minimum" : 0
         }
       },
@@ -104,40 +104,40 @@
       "type" : "object",
       "properties" : {
         "avatar" : {
-          "type" : "string",
+          "type" : ["string", "null"],
           "format" : "uri"
         },
         "followers" : {
-          "type" : "integer",
-          "maximum" : 32767,
+          "type" : ["integer", "null"],
+          "maximum" : 2147483647,
           "minimum" : 0
         },
         "site" : {
-          "type" : "string",
+          "type" : ["string", "null"],
           "format" : "uri"
         },
         "bio" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "blog" : {
-          "type" : "string",
+          "type" : ["string", "null"],
           "format" : "uri"
         },
         "handle" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         }
       },
       "additionalProperties" : true
     },
     "site" : {
-      "type" : "string",
+      "type" : ["string", "null"],
       "format" : "uri"
     },
     "gravatar" : {
       "type" : "object",
       "properties" : {
         "handle" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "urls" : {
           "type" : "array",
@@ -145,18 +145,18 @@
             "type" : "object",
             "properties" : {
               "value" : {
-                "type" : "string",
+                "type" : ["string", "null"],
                 "format" : "uri"
               },
               "title" : {
-                "type" : "string"
+                "type" : ["string", "null"]
               }
             },
             "additionalProperties" : true
           }
         },
         "avatar" : {
-          "type" : "string",
+          "type" : ["string", "null"],
           "format" : "uri"
         },
         "avatars" : {
@@ -165,11 +165,11 @@
             "type" : "object",
             "properties" : {
               "url" : {
-                "type" : "string",
+                "type" : ["string", "null"],
                 "format" : "uri"
               },
               "type" : {
-                "type" : "string"
+                "type" : ["string", "null"]
               }
             },
             "additionalProperties" : true
@@ -185,29 +185,29 @@
       "type" : "object",
       "properties" : {
         "handle" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "bio" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "avatar" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         }
       },
       "additionalProperties" : true
     },
     "bio" : {
-      "type" : "string"
+      "type" : ["string", "null"]
     },
     "id" : {
-      "type" : "string",
+      "type" : ["string", "null"],
       "format" : "uuid"
     },
     "facebook" : {
       "type" : "object",
       "properties" : {
         "handle" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         }
       },
       "additionalProperties" : true
@@ -216,7 +216,7 @@
       "type" : "object",
       "properties" : {
         "handle" : {
-          "type" : "null"
+          "type" : ["string", "null"]
         }
       },
       "additionalProperties" : true
@@ -225,25 +225,25 @@
       "type" : "object",
       "properties" : {
         "name" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "role" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "domain" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "seniority" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "title" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         }
       },
       "additionalProperties" : true
     },
     "utcOffset" : {
-      "type" : "integer",
+      "type" : ["integer", "null"],
       "maximum" : 32767,
       "minimum" : -32768
     },
@@ -251,43 +251,43 @@
       "type" : "object",
       "properties" : {
         "avatar" : {
-          "type" : "string",
+          "type" : ["string", "null"],
           "format" : "uri"
         },
         "location" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "followers" : {
-          "type" : "integer",
-          "maximum" : 32767,
+          "type" : ["integer", "null"],
+          "maximum" : 2147483647,
           "minimum" : 0
         },
         "site" : {
-          "type" : "string",
+          "type" : ["string", "null"],
           "format" : "uri"
         },
         "following" : {
-          "type" : "integer",
-          "maximum" : 32767,
+          "type" : ["integer", "null"],
+          "maximum" : 2147483647,
           "minimum" : 0
         },
         "bio" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "id" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "handle" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         }
       },
       "additionalProperties" : true
     },
     "timeZone" : {
-      "type" : "string"
+      "type" : ["string", "null"]
     },
     "gender" : {
-      "type" : "string"
+      "type" : ["string", "null"]
     }
   },
   "additionalProperties" : true

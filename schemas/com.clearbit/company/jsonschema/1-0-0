@@ -9,41 +9,41 @@
   "type" : "object",
   "properties" : {
     "name" : {
-      "type" : "string"
+      "type" : ["string", "null"]
     },
     "crunchbase" : {
       "type" : "object",
       "properties" : {
         "handle" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         }
       },
       "additionalProperties" : true
     },
     "location" : {
-      "type" : "string"
+      "type" : ["string", "null"]
     },
     "url" : {
-      "type" : "string",
+      "type" : ["string", "null"],
       "format" : "uri"
     },
     "description" : {
-      "type" : "string"
+      "type" : ["string", "null"]
     },
     "foundedDate" : {
-      "type" : "string"
+      "type" : ["string", "null"]
     },
     "tags" : {
       "type" : "array",
       "items" : {
-        "type" : "string"
+        "type" : ["string", "null"]
       }
     },
     "linkedin" : {
       "type" : "object",
       "properties" : {
         "handle" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         }
       },
       "additionalProperties" : true
@@ -52,67 +52,67 @@
       "type" : "object",
       "properties" : {
         "city" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "stateCode" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "lng" : {
-          "type" : "number"
+          "type" : ["number", "null"]
         },
         "state" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "country" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "streetName" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "postalCode" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "subPremise" : {
-          "type" : "null"
+          "type" : ["string", "null"]
         },
         "countryCode" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "streetNumber" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "lat" : {
-          "type" : "number",
+          "type" : ["number", "null"],
           "minimum" : 0
         }
       },
       "additionalProperties" : true
     },
     "domain" : {
-      "type" : "string"
+      "type" : ["string", "null"]
     },
     "angellist" : {
       "type" : "object",
       "properties" : {
         "description" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "followers" : {
-          "type" : "integer",
-          "maximum" : 32767,
+          "type" : ["integer", "null"],
+          "maximum" : 2147483647,
           "minimum" : 0
         },
         "blogUrl" : {
-          "type" : "string",
+          "type" : ["string", "null"],
           "format" : "uri"
         },
         "id" : {
-          "type" : "integer",
-          "maximum" : 32767,
+          "type" : ["integer", "null"],
+          "maximum" : 2147483647,
           "minimum" : 0
         },
         "handle" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         }
       },
       "additionalProperties" : true
@@ -121,10 +121,10 @@
       "type" : "object",
       "properties" : {
         "metaDescription" : {
-          "type" : "null"
+          "type" : ["string", "null"]
         },
         "url" : {
-          "type" : "string",
+          "type" : ["string", "null"],
           "format" : "uri"
         },
         "emailAddresses" : {
@@ -140,13 +140,13 @@
           }
         },
         "h1" : {
-          "type" : "null"
+          "type" : ["string", "null"]
         },
         "title" : {
-          "type" : "null"
+          "type" : ["string", "null"]
         },
         "metaAuthor" : {
-          "type" : "null"
+          "type" : ["string", "null"]
         }
       },
       "additionalProperties" : true
@@ -159,21 +159,21 @@
       "type" : "boolean"
     },
     "logo" : {
-      "type" : "string",
+      "type" : ["string", "null"],
       "format" : "uri"
     },
     "id" : {
-      "type" : "string",
+      "type" : ["string", "null"],
       "format" : "uuid"
     },
     "legalName" : {
-      "type" : "string"
+      "type" : ["string", "null"]
     },
     "facebook" : {
       "type" : "object",
       "properties" : {
         "handle" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         }
       },
       "additionalProperties" : true
@@ -181,48 +181,52 @@
     "tech" : {
       "type" : "array",
       "items" : {
-        "type" : "string"
+        "type" : ["string", "null"]
       }
     },
     "metrics" : {
       "type" : "object",
       "properties" : {
         "employees" : {
-          "type" : "integer",
-          "maximum" : 32767,
+          "type" : ["integer", "null"],
+          "maximum" : 2147483647,
           "minimum" : 0
         },
         "marketCap" : {
-          "type" : "null"
+          "type" : ["integer", "null"],
+          "maximum" : 9223372036854775807,
+          "minimum" : 0
         },
         "googleRank" : {
-          "type" : "integer",
-          "maximum" : 32767,
+          "type" : ["integer", "null"],
+          "maximum" : 9223372036854775807,
           "minimum" : 0
         },
         "raised" : {
-          "type" : "integer",
+          "type" : ["integer", "null"],
           "maximum" : 9223372036854775807,
           "minimum" : 0
         },
         "alexaUsRank" : {
-          "type" : "integer",
-          "maximum" : 32767,
+          "type" : ["integer", "null"],
+          "maximum" : 9223372036854775807,
           "minimum" : 0
         },
         "alexaGlobalRank" : {
-          "type" : "integer",
-          "maximum" : 32767,
+          "type" : ["integer", "null"],
+          "maximum" : 9223372036854775807,
           "minimum" : 0
         },
         "annualRevenue" : {
-          "type" : "null"
+          "type" : ["integer", "null"],
+          "maximum" : 9223372036854775807,
+          "minimum" : 0
         }
       },
       "additionalProperties" : true
     },
     "utcOffset" : {
-      "type" : "integer",
+      "type" : ["integer", "null"],
       "maximum" : 32767,
       "minimum" : -32768
     },
@@ -230,48 +234,48 @@
       "type" : "object",
       "properties" : {
         "avatar" : {
-          "type" : "string",
+          "type" : ["string", "null"],
           "format" : "uri"
         },
         "location" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         },
         "followers" : {
-          "type" : "integer",
+          "type" : ["integer", "null"],
           "maximum" : 2147483647,
           "minimum" : 0
         },
         "site" : {
-          "type" : "string",
+          "type" : ["string", "null"],
           "format" : "uri"
         },
         "following" : {
-          "type" : "integer",
-          "maximum" : 32767,
-          "minimum" : 0
-        },
-        "bio" : {
-          "type" : "string"
-        },
-        "id" : {
-          "type" : "integer",
+          "type" : ["integer", "null"],
           "maximum" : 2147483647,
           "minimum" : 0
         },
+        "bio" : {
+          "type" : ["string", "null"]
+        },
+        "id" : {
+          "type" : ["integer", "null"],
+          "maximum" : 9223372036854775807,
+          "minimum" : 0
+        },
         "handle" : {
-          "type" : "string"
+          "type" : ["string", "null"]
         }
       },
       "additionalProperties" : true
     },
     "type" : {
-      "type" : "string"
+      "type" : ["string", "null"]
     },
     "timeZone" : {
-      "type" : "string"
+      "type" : ["string", "null"]
     },
     "phone" : {
-      "type" : "string"
+      "type" : ["string", "null"]
     }
   },
   "additionalProperties" : true
