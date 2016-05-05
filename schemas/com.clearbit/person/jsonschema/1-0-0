@@ -275,7 +275,9 @@
           "type" : ["string", "null"]
         },
         "id" : {
-          "type" : ["string", "null"]
+          "type" : ["integer", "null"],
+          "maximum" : 9223372036854775807,
+          "minimum" : 0
         },
         "handle" : {
           "type" : ["string", "null"]
