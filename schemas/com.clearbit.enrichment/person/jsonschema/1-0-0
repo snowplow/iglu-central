@@ -1,0 +1,296 @@
+{
+  "$schema" : "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self" : {
+    "vendor" : "com.clearbit.enrichment",
+    "name" : "person",
+    "version" : "1-0-0",
+    "format" : "jsonschema"
+  },
+  "type" : "object",
+  "properties" : {
+    "github" : {
+      "type" : "object",
+      "properties" : {
+        "avatar" : {
+          "type" : ["string", "null"],
+          "format" : "uri"
+        },
+        "followers" : {
+          "type" : ["integer", "null"],
+          "maximum" : 2147483647,
+          "minimum" : 0
+        },
+        "following" : {
+          "type" : ["integer", "null"],
+          "maximum" : 2147483647,
+          "minimum" : 0
+        },
+        "company" : {
+          "type" : ["string", "null"]
+        },
+        "blog" : {
+          "type" : ["string", "null"],
+          "format" : "uri"
+        },
+        "handle" : {
+          "type" : ["string", "null"]
+        }
+      },
+      "additionalProperties" : true
+    },
+    "name" : {
+      "type" : "object",
+      "properties" : {
+        "fullName" : {
+          "type" : ["string", "null"]
+        },
+        "givenName" : {
+          "type" : ["string", "null"]
+        },
+        "familyName" : {
+          "type" : ["string", "null"]
+        }
+      },
+      "additionalProperties" : true
+    },
+    "avatar" : {
+      "type" : ["string", "null"],
+      "format" : "uri"
+    },
+    "location" : {
+      "type" : ["string", "null"]
+    },
+    "email" : {
+      "type" : ["string", "null"]
+    },
+    "linkedin" : {
+      "type" : "object",
+      "properties" : {
+        "handle" : {
+          "type" : ["string", "null"]
+        }
+      },
+      "additionalProperties" : true
+    },
+    "geo" : {
+      "type" : "object",
+      "properties" : {
+        "city" : {
+          "type" : ["string", "null"]
+        },
+        "stateCode" : {
+          "type" : ["string", "null"]
+        },
+        "lng" : {
+          "type" : ["number", "null"]
+        },
+        "state" : {
+          "type" : ["string", "null"]
+        },
+        "country" : {
+          "type" : ["string", "null"]
+        },
+        "countryCode" : {
+          "type" : ["string", "null"]
+        },
+        "lat" : {
+          "type" : ["number", "null"],
+          "minimum" : 0
+        }
+      },
+      "additionalProperties" : true
+    },
+    "angellist" : {
+      "type" : "object",
+      "properties" : {
+        "avatar" : {
+          "type" : ["string", "null"],
+          "format" : "uri"
+        },
+        "followers" : {
+          "type" : ["integer", "null"],
+          "maximum" : 2147483647,
+          "minimum" : 0
+        },
+        "site" : {
+          "type" : ["string", "null"],
+          "format" : "uri"
+        },
+        "bio" : {
+          "type" : ["string", "null"]
+        },
+        "blog" : {
+          "type" : ["string", "null"],
+          "format" : "uri"
+        },
+        "handle" : {
+          "type" : ["string", "null"]
+        }
+      },
+      "additionalProperties" : true
+    },
+    "site" : {
+      "type" : ["string", "null"],
+      "format" : "uri"
+    },
+    "gravatar" : {
+      "type" : "object",
+      "properties" : {
+        "handle" : {
+          "type" : ["string", "null"]
+        },
+        "urls" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "value" : {
+                "type" : ["string", "null"],
+                "format" : "uri"
+              },
+              "title" : {
+                "type" : ["string", "null"]
+              }
+            },
+            "additionalProperties" : true
+          }
+        },
+        "avatar" : {
+          "type" : ["string", "null"],
+          "format" : "uri"
+        },
+        "avatars" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "url" : {
+                "type" : ["string", "null"],
+                "format" : "uri"
+              },
+              "type" : {
+                "type" : ["string", "null"]
+              }
+            },
+            "additionalProperties" : true
+          }
+        }
+      },
+      "additionalProperties" : true
+    },
+    "fuzzy" : {
+      "type" : "boolean"
+    },
+    "aboutme" : {
+      "type" : "object",
+      "properties" : {
+        "handle" : {
+          "type" : ["string", "null"]
+        },
+        "bio" : {
+          "type" : ["string", "null"]
+        },
+        "avatar" : {
+          "type" : ["string", "null"]
+        }
+      },
+      "additionalProperties" : true
+    },
+    "bio" : {
+      "type" : ["string", "null"]
+    },
+    "id" : {
+      "type" : ["string", "null"],
+      "format" : "uuid"
+    },
+    "facebook" : {
+      "type" : "object",
+      "properties" : {
+        "handle" : {
+          "type" : ["string", "null"]
+        }
+      },
+      "additionalProperties" : true
+    },
+    "googleplus" : {
+      "type" : "object",
+      "properties" : {
+        "handle" : {
+          "type" : ["string", "null"]
+        }
+      },
+      "additionalProperties" : true
+    },
+    "employment" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : ["string", "null"]
+        },
+        "role" : {
+          "type" : ["string", "null"]
+        },
+        "domain" : {
+          "type" : ["string", "null"]
+        },
+        "seniority" : {
+          "type" : ["string", "null"]
+        },
+        "title" : {
+          "type" : ["string", "null"]
+        }
+      },
+      "additionalProperties" : true
+    },
+    "utcOffset" : {
+      "type" : ["integer", "null"],
+      "maximum" : 32767,
+      "minimum" : -32768
+    },
+    "twitter" : {
+      "type" : "object",
+      "properties" : {
+        "avatar" : {
+          "type" : ["string", "null"],
+          "format" : "uri"
+        },
+        "location" : {
+          "type" : ["string", "null"]
+        },
+        "followers" : {
+          "type" : ["integer", "null"],
+          "maximum" : 2147483647,
+          "minimum" : 0
+        },
+        "site" : {
+          "type" : ["string", "null"],
+          "format" : "uri"
+        },
+        "following" : {
+          "type" : ["integer", "null"],
+          "maximum" : 2147483647,
+          "minimum" : 0
+        },
+        "bio" : {
+          "type" : ["string", "null"]
+        },
+        "id" : {
+          "type" : ["string", "integer", "null"],
+          "maximum" : 9223372036854775807,
+          "minimum" : 0
+        },
+        "handle" : {
+          "type" : ["string", "null"]
+        }
+      },
+      "additionalProperties" : true
+    },
+    "timeZone" : {
+      "type" : ["string", "null"]
+    },
+    "gender" : {
+      "type" : ["string", "null"]
+    }
+  },
+  "additionalProperties" : true
+}
