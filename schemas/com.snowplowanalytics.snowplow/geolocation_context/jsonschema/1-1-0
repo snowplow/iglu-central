@@ -11,10 +11,14 @@
 	"type": "object",
 	"properties": {
 		"latitude": {
-			"type": "number"
+			"type": "number",
+			"minimum": -90,
+			"maximum": 90
 		},
 		"longitude": {
-			"type": "number"
+			"type": "number",
+			"minimum": -180,
+			"maximum": 180
 		},
 		"latitudeLongitudeAccuracy": {
 			"type": ["number", "null"]
