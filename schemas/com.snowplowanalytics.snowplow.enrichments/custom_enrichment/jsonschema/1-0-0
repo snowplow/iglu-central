@@ -1,0 +1,51 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"description": "Schema for MaxMind IP-based lookups enrichment",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow.enrichments",
+		"name": "custom_enrichment",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"vendor": {
+			"type": "string"
+		},
+		"name": {
+			"type": "string"
+		},		
+		"enabled": {
+			"type": "boolean"
+		},
+		"parameters": {
+			"type": "object",
+			"properties": {
+				"classes": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"qualifiedClassname": {
+								"type": "string"
+							},
+							"url": {
+								"type": "string"
+							},
+							"enabled": {
+								"type": "boolean"
+							},
+							"configuration": {
+								"type": "object"
+							}
+						}
+					}
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"required": ["name", "vendor", "enabled", "parameters"],
+	"additionalProperties": false
+}
