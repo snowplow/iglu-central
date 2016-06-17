@@ -1,3 +1,12 @@
+Release 58 (2016-06-17)
+-----------------------
+Add com.snowplowanalytics.snowplow.enrichments/sql_query_enrichment_config/jsonschema/1-0-0 (#285)
+Patch com.mandrill/message_rejected/jsonschema/1-0-0 (#348)
+Patch com.snowplowanalytics.snowplow/geolocation_context/jsonschema/1-1-0 (#339)
+Patch com.snowplowanalytics.snowplow/geolocation_context/jsonschema/1-0-0 (#338)
+Patch com.snowplowanalytics.iglu/resolver-config/jsonschema/1-0-1 (#351)
+Patch com.snowplowanalytics.iglu/resolver-config/jsonschema/1-0-0 (#345)
+
 Release 57 (2016-05-07)
 -----------------------
 Added: com.clearbit.enrichment/person/jsonschema/1-0-0
