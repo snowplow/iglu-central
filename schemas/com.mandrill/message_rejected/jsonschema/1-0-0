@@ -60,7 +60,7 @@
 					"format": "date-time"
 				},
 				"reject": {
-					"type": ["string", "null"]
+					"type": ["string", "null", "object"]
 				},
 				"resends": {
 					"type": "array"
