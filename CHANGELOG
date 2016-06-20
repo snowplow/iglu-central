@@ -1,3 +1,7 @@
+Release 59 (2016-06-20)
+-----------------------
+Patch com.snowplowanalytics.snowplow/geolocation_context/jsonschema/1-0-0 (#355)
+
 Release 58 (2016-06-17)
 -----------------------
 Add com.snowplowanalytics.snowplow.enrichments/sql_query_enrichment_config/jsonschema/1-0-0 (#285)
