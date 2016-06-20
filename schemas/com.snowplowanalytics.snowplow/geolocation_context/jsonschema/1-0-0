@@ -12,8 +12,8 @@
         "properties": {
                 "latitude": {
                         "type": "number",
-                        "minimum": 90,
-                        "maximum": -90
+                        "minimum": -90,
+                        "maximum": 90
                 },
                 "longitude": {
                         "type": "number",
