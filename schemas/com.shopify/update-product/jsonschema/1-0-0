@@ -1,0 +1,272 @@
+{
+  "$schema" : "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self" : {
+    "vendor" : "com.shopify",
+    "name" : "update-product",
+    "version" : "1-0-0",
+    "format" : "jsonschema"
+  },
+  "type" : "object",
+  "properties" : {
+    "body_html" : {
+      "type" : "string"
+    },
+    "image" : {
+      "type" : [ "object", "null" ],
+      "properties" : {
+        "variant_ids" : {
+          "type" : "array",
+          "items" : {
+            "type" : "integer",
+            "maximum" : 9223372036854775807,
+            "minimum" : 0
+          }
+        },
+        "id" : {
+          "type" : "integer",
+          "maximum" : 9223372036854775807,
+          "minimum" : 0
+        },
+        "src" : {
+          "type" : "string",
+          "format" : "uri"
+        },
+        "product_id" : {
+          "type" : "integer",
+          "maximum" : 9223372036854775807,
+          "minimum" : 0
+        },
+        "position" : {
+          "type" : "integer",
+          "maximum" : 32767,
+          "minimum" : 0
+        },
+        "created_at" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "updated_at" : {
+          "type" : "string",
+          "format" : "date-time"
+        }
+      },
+      "additionalProperties" : false
+    },
+    "published_scope" : {
+      "type" : "string"
+    },
+    "tags" : {
+      "type" : "string"
+    },
+    "product_type" : {
+      "type" : "string"
+    },
+    "options" : {
+      "type" : "array",
+      "items" : {
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "id" : {
+            "type" : "integer",
+            "maximum" : 9223372036854775807,
+            "minimum" : 0
+          },
+          "product_id" : {
+            "type" : "integer",
+            "maximum" : 9223372036854775807,
+            "minimum" : 0
+          },
+          "values" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "position" : {
+            "type" : "integer",
+            "maximum" : 32767,
+            "minimum" : 0
+          }
+        },
+        "additionalProperties" : false
+      }
+    },
+    "id" : {
+      "type" : "integer",
+      "maximum" : 9223372036854775807,
+      "minimum" : 0
+    },
+    "created_at" : {
+      "type" : "string",
+      "format" : "date-time"
+    },
+    "title" : {
+      "type" : "string"
+    },
+    "template_suffix" : {
+      "type" : "null"
+    },
+    "vendor" : {
+      "type" : "string"
+    },
+    "updated_at" : {
+      "type" : "string",
+      "format" : "date-time"
+    },
+    "images" : {
+      "type" : "array",
+      "items" : {
+        "type" : "object",
+        "properties" : {
+          "variant_ids" : {
+            "type" : "array",
+            "items" : {
+              "type" : "integer",
+              "maximum" : 9223372036854775807,
+              "minimum" : 0
+            }
+          },
+          "id" : {
+            "type" : "integer",
+            "maximum" : 9223372036854775807,
+            "minimum" : 0
+          },
+          "src" : {
+            "type" : "string",
+            "format" : "uri"
+          },
+          "product_id" : {
+            "type" : "integer",
+            "maximum" : 9223372036854775807,
+            "minimum" : 0
+          },
+          "position" : {
+            "type" : "integer",
+            "maximum" : 32767,
+            "minimum" : 0
+          },
+          "created_at" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "updated_at" : {
+            "type" : "string",
+            "format" : "date-time"
+          }
+        },
+        "additionalProperties" : false
+      }
+    },
+    "published_at" : {
+      "type" : [ "string", "null" ],
+      "format" : "date-time"
+    },
+    "variants" : {
+      "type" : "array",
+      "items" : {
+        "type" : "object",
+        "properties" : {
+          "weight" : {
+            "type" : "number",
+            "minimum" : 0
+          },
+          "inventory_policy" : {
+            "type" : "string",
+            "pattern" : "^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{4}|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)$"
+          },
+          "sku" : {
+            "type" : "string"
+          },
+          "barcode" : {
+            "type" : "string"
+          },
+          "image_id" : {
+            "type" : [ "integer", "null" ],
+            "maximum" : 9223372036854775807,
+            "minimum" : 0
+          },
+          "option1" : {
+            "type" : "string"
+          },
+          "price" : {
+            "type" : "string"
+          },
+          "weight_unit" : {
+            "type" : "string",
+            "enum" : [ "g", "kg", "oz", "lb" ]
+          },
+          "inventory_management" : {
+            "type" : [ "string", "null" ]
+          },
+          "requires_shipping" : {
+            "type" : "boolean"
+          },
+          "compare_at_price" : {
+            "type" : [ "string", "null" ]
+          },
+          "old_inventory_quantity" : {
+            "type" : "integer",
+            "maximum" : 32767,
+            "minimum" : -32768
+          },
+          "id" : {
+            "type" : "integer",
+            "maximum" : 9223372036854775807,
+            "minimum" : 0
+          },
+          "fulfillment_service" : {
+            "type" : "string"
+          },
+          "taxable" : {
+            "type" : "boolean"
+          },
+          "option3" : {
+            "type" : "null"
+          },
+          "product_id" : {
+            "type" : "integer",
+            "maximum" : 9223372036854775807,
+            "minimum" : 0
+          },
+          "position" : {
+            "type" : "integer",
+            "maximum" : 32767,
+            "minimum" : 0
+          },
+          "created_at" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "option2" : {
+            "type" : [ "string", "null" ]
+          },
+          "title" : {
+            "type" : "string"
+          },
+          "updated_at" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "grams" : {
+            "type" : "integer",
+            "maximum" : 32767,
+            "minimum" : 0
+          },
+          "inventory_quantity" : {
+            "type" : "integer",
+            "maximum" : 32767,
+            "minimum" : -32768
+          }
+        },
+        "additionalProperties" : false
+      }
+    },
+    "handle" : {
+      "type" : "string"
+    }
+  },
+  "additionalProperties" : false
+}
