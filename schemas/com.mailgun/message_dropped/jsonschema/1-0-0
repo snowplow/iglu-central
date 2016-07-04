@@ -1,0 +1,65 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a Mailgun message dropped event",
+	"self": {
+		"vendor": "com.mailgun",
+		"name": "message_dropped",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"recipient": {
+			"type": "string"
+		},
+		"message-headers": {
+			"type": "string"
+		},
+		"body-plain": {
+			"type": "string"
+		},
+		"timestamp": {
+			"type": "string"
+		},
+		"event": {
+			"type": "string"
+		},
+		"description": {
+			"type": "string"
+		},
+		"domain": {
+			"type": "string"
+		},
+		"signature": {
+			"type": "string",
+			"pattern": "^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{4}|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)$"
+		},
+		"reason": {
+			"type": "string"
+		},
+		"code": {
+			"type": "string"
+		},
+		"token": {
+			"type": "string"
+		},
+		"attachment-count": {
+			"type": "string"
+		},
+		"X-Mailgun-Sid": {
+			"type": "string",
+			"pattern": "^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{4}|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)$"
+		},
+		"my_var_1": {
+			"type": "string"
+		},
+		"my-var-2": {
+			"type": "string"
+		},
+		"MessageId": {
+			"type": "string"
+		}
+	},
+	"additionalProperties": false
+}
