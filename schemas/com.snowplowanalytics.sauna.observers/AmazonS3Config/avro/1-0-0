@@ -1,0 +1,43 @@
+{
+  "namespace": "com.snowplowanalytics.sauna.observers",
+  "name": "AmazonS3Config",
+  "type": "record",
+  "fields": [
+    {
+      "name": "enabled",
+      "type": "boolean"
+    },
+    {
+      "name": "vendor",
+      "type": "string"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+    { "name": "parameters",
+      "type": {
+        "name": "AmazonS3ConfigParameters",
+        "type": "record",
+        "fields": [
+          {
+            "name": "awsRegion",
+            "type": "string"
+          },
+          {
+            "name": "awsAccessKeyId",
+            "type": "string"
+          },
+          {
+            "name": "awsSecretAccessKey",
+            "type": "string"
+          },
+          {
+            "name": "sqsQueueName",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ]
+}
