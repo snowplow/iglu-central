@@ -1,0 +1,43 @@
+{
+  "namespace": "com.snowplowanalytics.sauna.loggers",
+  "name": "AmazonDynamodbConfig",
+  "type": "record",
+  "fields": [
+    {
+      "name": "enabled",
+      "type": "boolean"
+    },
+    {
+      "name": "vendor",
+      "type": "string"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+    { "name": "parameters",
+      "type": {
+        "name": "AmazonDynamodbConfigParameters",
+        "type": "record",
+        "fields": [
+          {
+            "name": "awsRegion",
+            "type": "string"
+          },
+          {
+            "name": "awsAccessKeyId",
+            "type": "string"
+          },
+          {
+            "name": "awsSecretAccessKey",
+            "type": "string"
+          },
+          {
+            "name": "dynamodbTableName",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ]
+}
