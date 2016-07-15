@@ -59,7 +59,6 @@
 								"integer",
 								"null"
 							],
-							"maximum": 32767,
 							"minimum": 0
 						},
 						"eTag": {
