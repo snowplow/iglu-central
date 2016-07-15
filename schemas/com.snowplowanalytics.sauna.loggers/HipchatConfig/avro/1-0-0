@@ -1,0 +1,35 @@
+{
+  "namespace": "com.snowplowanalytics.sauna.loggers",
+  "name": "HipchatConfig",
+  "type": "record",
+  "fields": [
+    {
+      "name": "enabled",
+      "type": "boolean"
+    },
+    {
+      "name": "vendor",
+      "type": "string"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+    { "name": "parameters",
+      "type": {
+        "name": "HipchatConfigParameters",
+        "type": "record",
+        "fields": [
+          {
+            "name": "token",
+            "type": "string"
+          },
+          {
+            "name": "roomId",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ]
+}
