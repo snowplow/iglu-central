@@ -1,0 +1,43 @@
+{
+  "namespace": "com.snowplowanalytics.sauna.responders",
+  "name": "OptimizelyConfig",
+  "type": "record",
+  "fields": [
+    {
+      "name": "enabled",
+      "type": "boolean"
+    },
+    {
+      "name": "vendor",
+      "type": "string"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+    { "name": "parameters",
+      "type": {
+        "name": "OptimizelyConfigParameters",
+        "type": "record",
+        "fields": [
+          {
+            "name": "targetingListEnabled",
+            "type": "boolean"
+          },
+          {
+            "name": "dynamicClientProfilesEnabled",
+            "type": "boolean"
+          },
+          {
+            "name": "token",
+            "type": "string"
+          },
+          {
+            "name": "awsRegion",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ]
+}
