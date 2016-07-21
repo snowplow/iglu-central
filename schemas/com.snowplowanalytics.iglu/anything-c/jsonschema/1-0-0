@@ -1,4 +1,5 @@
 {
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
 	"description": "Wildcard schema #3 to match any valid JSON instance",
 	"self": {
 		"vendor": "com.snowplowanalytics.iglu",
