@@ -3,7 +3,7 @@
         "description": "Schema for Segment's common event fields, https://segment.com/docs/spec/common/",
         "self": {
                 "vendor": "com.segment",
-                "name": "common",
+                "name": "event",
                 "format": "jsonschema",
                 "version": "1-0-0"
         },
