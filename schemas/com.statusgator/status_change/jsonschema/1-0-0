@@ -1,0 +1,40 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a StatusGator status change event",
+	"self": {
+		"vendor": "com.statusgator",
+		"name": "status_change",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+	        "service_name": {
+			"type": "string"
+		},
+		"favicon_url": {
+			"type": "string",
+			"format": "uri"
+		},
+		"status_page_url": {
+			"type": "string",
+			"format": "uri"
+		},
+		"home_page_url": {
+			"type": "string",
+			"format": "uri"
+		},
+		"current_status": {
+			"type": "string"
+		},
+		"last_status": {
+			"type": "string"
+		},
+		"occurred_at": {
+			"type": "string",
+			"format": "date-time"
+		}	
+	},
+	"additionalProperties": true
+}
