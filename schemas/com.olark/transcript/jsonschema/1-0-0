@@ -1,0 +1,187 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for an Olark transcript event",
+	"self": {
+		"vendor": "com.olark",
+		"name": "transcript",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"tags": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"items": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"body": {
+						"type": "string"
+					},
+					"timestamp": {
+						"type": "string"
+					},
+					"operatorId": {
+						"type": "string"
+					},
+					"kind": {
+						"type": "string"
+					},
+					"nickname": {
+						"type": "string"
+					}
+				},
+				"additionalProperties": false
+			}
+		},
+		"groups": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"kind": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"id": {
+						"type": "string"
+					}
+				},
+				"additionalProperties": false
+			}
+		},
+		"visitor": {
+			"type": "object",
+			"properties": {
+				"organization": {
+					"type": "string"
+				},
+				"city": {
+					"type": "string"
+				},
+				"ip": {
+					"type": "string",
+					"format": "ipv4"
+				},
+				"phoneNumber": {
+					"type": "string"
+				},
+				"browser": {
+					"type": "string"
+				},
+				"fullName": {
+					"type": "string"
+				},
+				"emailAddress": {
+					"type": "string"
+				},
+				"customFields": {
+					"type": "object",
+					"properties": {
+						"favoriteColor": {
+							"type": "string"
+						},
+						"myInternalCustomerId": {
+							"type": "string"
+						}
+					},
+					"additionalProperties": false
+				},
+				"country": {
+					"type": "string"
+				},
+				"operatingSystem": {
+					"type": "string"
+				},
+				"id": {
+					"type": "string"
+				},
+				"countryCode": {
+					"type": "string"
+				},
+				"region": {
+					"type": "string"
+				},
+				"conversationBeginPage": {
+					"type": "string",
+					"format": "uri"
+				},
+				"chat_feedback": {
+					"type": "object",
+					"properties": {
+						"knowledge": {
+							"type": "integer",
+							"maximum": 32767,
+							"minimum": 0
+						},
+						"friendliness": {
+							"type": "integer",
+							"maximum": 32767,
+							"minimum": 0
+						},
+						"responsiveness": {
+							"type": "integer",
+							"maximum": 32767,
+							"minimum": 0
+						},
+						"overall_chat": {
+							"type": "integer",
+							"maximum": 32767,
+							"minimum": 0
+						},
+						"comments": {
+							"type": "string"
+						}
+					},
+					"additionalProperties": false
+				},
+				"kind": {
+					"type": "string"
+				}
+			},
+			"additionalProperties": false
+		},
+		"id": {
+			"type": "string"
+		},
+		"kind": {
+			"type": "string"
+		},
+		"operators": {
+			"type": "object",
+			"properties": {
+				"1234": {
+					"type": "object",
+					"properties": {
+						"username": {
+							"type": "string"
+						},
+						"emailAddress": {
+							"type": "string"
+						},
+						"id": {
+							"type": "string"
+						},
+						"kind": {
+							"type": "string"
+						},
+						"nickname": {
+							"type": "string"
+						}
+					},
+					"additionalProperties": false
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}
