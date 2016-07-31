@@ -18,7 +18,7 @@
     },
     "variationIndex": {
       "type": ["integer", "null"],
-      "maxValue": 32767
+      "maximum": 32767
     },
     "variationId": {
       "type": ["string", "null"]
