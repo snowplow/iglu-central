@@ -3,7 +3,7 @@ set -e
 
 # Constants
 install_dir="/tmp"
-validator_v="0.1.0_rc1"
+validator_v="0.1.0"
 validator_zip="igluctl_${validator_v}.zip"
 validator_uri="http://dl.bintray.com/snowplow/snowplow-generic/${validator_zip}"
 validator_jar="igluctl"
