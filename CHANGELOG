@@ -1,3 +1,17 @@
+Release 61 (2016-08-24)
+-----------------------
+Patch com.amazon.aws.lambda/s3_notification_event/jsonschema/1-0-0 (#353)
+Add com.snowplowanalytics.snowplow/application_foreground/jsonschema/1-0-0 (#363)
+Add com.snowplowanalytics.snowplow/application_background/jsonschema/1-0-0 (#364)
+Add com.snowplowanalytics.snowplow/application_crash/jsonschema/1-0-0 (#360)
+Add com.snowplowanalytics.sauna.responders/SendgridConfig/avro/1-0-0 (#373)
+Add com.snowplowanalytics.sauna.responders/OptimizelyConfig/avro/1-0-0 (#374)
+Add com.snowplowanalytics.sauna.loggers/AmazonDynamodbConfig/avro/1-0-0 (#375)
+Add com.snowplowanalytics.sauna.observers/AmazonS3Config/avro/1-0-0 (#369)
+Add com.snowplowanalytics.sauna.observers/LocalFilesystemConfig/avro/1-0-0 (#370)
+Add com.snowplowanalytics.sauna.loggers/HipchatConfig/avro/1-0-0 (#372)
+Infrastructure: bump igluctl to 0.1.0 (#387)
+
 Release 60 (2016-07-31)
 -----------------------
 Patch com.segment/event/jsonschema/1-0-0 self-describing info (#368)

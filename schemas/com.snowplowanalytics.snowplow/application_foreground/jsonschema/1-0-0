@@ -1,0 +1,20 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for an application foreground event",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow",
+    "name": "application_foreground",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+
+  "type": "object",
+  "properties": {
+    "foregroundIndex": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    }
+  },
+  "additionalProperties": false
+}
