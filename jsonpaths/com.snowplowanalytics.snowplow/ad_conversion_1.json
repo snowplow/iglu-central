@@ -1,0 +1,22 @@
+{
+    "jsonpaths": [
+        "$.schema.vendor",
+        "$.schema.name",
+        "$.schema.format",
+        "$.schema.version",
+        "$.hierarchy.rootId",
+        "$.hierarchy.rootTstamp",
+        "$.hierarchy.refRoot",
+        "$.hierarchy.refTree",
+        "$.hierarchy.refParent",
+        "$.data.action",
+        "$.data.advertiserId",
+        "$.data.campaignId",
+        "$.data.category",
+        "$.data.conversionId",
+        "$.data.cost",
+        "$.data.costModel",
+        "$.data.initialValue",
+        "$.data.property"
+    ]
+}

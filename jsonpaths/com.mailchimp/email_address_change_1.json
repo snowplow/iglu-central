@@ -1,0 +1,19 @@
+{
+    "jsonpaths": [
+        "$.schema.vendor",
+        "$.schema.name",
+        "$.schema.format",
+        "$.schema.version",
+        "$.hierarchy.rootId",
+        "$.hierarchy.rootTstamp",
+        "$.hierarchy.refRoot",
+        "$.hierarchy.refTree",
+        "$.hierarchy.refParent",
+        "$.data.data.list_id",
+        "$.data.data.new_email",
+        "$.data.data.new_id",
+        "$.data.data.old_email",
+        "$.data.fired_at",
+        "$.data.type"
+    ]
+}

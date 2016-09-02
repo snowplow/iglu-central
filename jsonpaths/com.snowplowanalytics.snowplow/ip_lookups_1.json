@@ -1,0 +1,26 @@
+{
+    "jsonpaths": [
+        "$.schema.vendor",
+        "$.schema.name",
+        "$.schema.format",
+        "$.schema.version",
+        "$.hierarchy.rootId",
+        "$.hierarchy.rootTstamp",
+        "$.hierarchy.refRoot",
+        "$.hierarchy.refTree",
+        "$.hierarchy.refParent",
+        "$.data.enabled",
+        "$.data.name",
+        "$.data.vendor",
+        "$.data.parameters.domain.database",
+        "$.data.parameters.domain.uri",
+        "$.data.parameters.geo.database",
+        "$.data.parameters.geo.uri",
+        "$.data.parameters.isp.database",
+        "$.data.parameters.isp.uri",
+        "$.data.parameters.netspeed.database",
+        "$.data.parameters.netspeed.uri",
+        "$.data.parameters.organization.database",
+        "$.data.parameters.organization.uri"
+    ]
+}

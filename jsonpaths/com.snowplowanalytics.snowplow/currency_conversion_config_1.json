@@ -1,0 +1,20 @@
+{
+    "jsonpaths": [
+        "$.schema.vendor",
+        "$.schema.name",
+        "$.schema.format",
+        "$.schema.version",
+        "$.hierarchy.rootId",
+        "$.hierarchy.rootTstamp",
+        "$.hierarchy.refRoot",
+        "$.hierarchy.refTree",
+        "$.hierarchy.refParent",
+        "$.data.enabled",
+        "$.data.name",
+        "$.data.parameters.accountType",
+        "$.data.parameters.apiKey",
+        "$.data.parameters.baseCurrency",
+        "$.data.parameters.rateAt",
+        "$.data.vendor"
+    ]
+}
