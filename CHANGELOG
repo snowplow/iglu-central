@@ -1,3 +1,7 @@
+Release 62 (2016-09-05)
+-----------------------
+Patch com.snowplowanalytics.sauna.responders/SendgridConfig/avro/1-0-0 (#392)
+
 Release 61 (2016-08-24)
 -----------------------
 Patch com.amazon.aws.lambda/s3_notification_event/jsonschema/1-0-0 (#353)
