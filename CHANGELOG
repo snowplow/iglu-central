@@ -1,3 +1,11 @@
+Release 63 (2016-09-13)
+-----------------------
+Add com.parrable/decrypted_payload/jsonschema/1-0-0 (#396)
+Add com.parrable/encrypted_payload/jsonschema/1-0-0 (#395)
+Add com.snowplowanalytics.kinesistee.config/Configuration/avro/1-0-0 (#394)
+Redshift JSON Path: transfer all Redshift JSON Path files from snowplow/snowplow (#402)
+Redshift SQL: transfer all Redshift SQL files from snowplow/snowplow (#401)
+
 Release 62 (2016-09-05)
 -----------------------
 Patch com.snowplowanalytics.sauna.responders/SendgridConfig/avro/1-0-0 (#392)
