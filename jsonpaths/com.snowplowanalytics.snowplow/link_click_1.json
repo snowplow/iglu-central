@@ -15,6 +15,7 @@
     "$.data.elementId",
     "$.data.elementClasses",
     "$.data.elementTarget",
-    "$.data.targetUrl"
+    "$.data.targetUrl",
+    "$.data.elementContent"
     ]
 }
