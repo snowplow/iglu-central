@@ -1,3 +1,11 @@
+Release 64 (2016-10-01)
+-----------------------
+Patch com.parrable/encrypted_payload/jsonschema/1-0-0 (#404)
+Redshift SQL: add for com.parrable/encrypted_payload/jsonschema/1-0-0 (#410)
+Redshift SQL: add for com.parrable/decrypted_payload/jsonschema/1-0-0 (#409)
+Redshift JSON Path: add for com.parrable/encrypted_payload/jsonschema/1-0-0 (#407)
+Redshift JSON Path: add for com.parrable/decrypted_payload/jsonschema/1-0-0 (#408)
+
 Release 63 (2016-09-13)
 -----------------------
 Add com.parrable/decrypted_payload/jsonschema/1-0-0 (#396)
