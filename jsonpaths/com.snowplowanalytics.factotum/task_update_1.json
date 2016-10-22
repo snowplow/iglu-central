@@ -1,0 +1,25 @@
+{
+    "jsonpaths": [
+        "$.schema.vendor",
+        "$.schema.name",
+        "$.schema.format",
+        "$.schema.version",
+        "$.hierarchy.rootId",
+        "$.hierarchy.rootTstamp",
+        "$.hierarchy.refRoot",
+        "$.hierarchy.refTree",
+        "$.hierarchy.refParent",
+        "$.data.applicationContext.name",
+        "$.data.applicationContext.version",
+        "$.data.factfile",
+        "$.data.jobName",
+        "$.data.jobReference",
+        "$.data.runDuration",
+        "$.data.runReference",
+        "$.data.runState",
+        "$.data.startTime",
+        "$.data.tags",
+        "$.data.taskStates",
+        "$.data.taskTransitions"
+    ]
+}
