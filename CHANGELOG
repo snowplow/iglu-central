@@ -1,3 +1,10 @@
+Release 67 (2016-11-07)
+-----------------------
+Add com.snowplowanalytics.snowplow/application_error/jsonschema/1-0-1 (#431)
+Add com.optimizely.snowplow/optimizely_summary/jsonschema/1-0-0 (#426)
+Redshift SQL: add for com.optimizely.snowplow/optimizely_summary/jsonschema/1-0-0 (#427)
+Redshift JSON Path: add for com.optimizely.snowplow/optimizely_summary/jsonschema/1-0-0 (#428)
+
 Release 66 (2016-10-26)
 -----------------------
 Patch com.snowplowanalytics.factotum/job_update/jsonschema/1-0-0 (#420)
