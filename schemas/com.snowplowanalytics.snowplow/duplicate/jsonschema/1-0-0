@@ -1,0 +1,20 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Context containing first duplicated event id",
+    "self": {
+        "vendor": "com.snowplowanalytics.snowplow",
+        "name": "duplicate",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+
+    "type": "object",
+    "properties": {
+        "originalEventId": {
+            "type": "string",
+            "format": "uuid"
+        }
+    },
+    "required": ["originalEventId"],
+    "additionalProperties": false
+}
