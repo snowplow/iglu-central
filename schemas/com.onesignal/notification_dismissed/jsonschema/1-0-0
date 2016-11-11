@@ -1,0 +1,33 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a OneSignal notification dismissed event",
+	"self": {
+		"vendor": "com.onesignal",
+		"name": "notification_dismissed",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"event": {
+			"type": "string"
+		},
+		"id": {
+			"type": "string"
+		},
+		"userId": {
+			"type": "string"
+		},
+		"url": {
+			"type": "string"
+		},
+		"heading": {
+			"type": "string"
+		},
+		"content": {
+			"type": "string"
+		}
+	},
+	"additionalProperties": false
+}
