@@ -1,3 +1,10 @@
+Release 68 (2016-12-03)
+-----------------------
+Add com.snowplowanalytics.snowplow/duplicate/jsonschema/1-0-0 (#439)
+Redshift SQL: add for com.snowplowanalytics.snowplow/duplicate/jsonschema/1-0-0 (#440)
+Redshift JSON Path: add for com.snowplowanalytics.snowplow/duplicate/jsonschema/1-0-0 (#441)
+Infrastructure: use AWS environment variables for vagrant push (#447)
+
 Release 67 (2016-11-07)
 -----------------------
 Add com.snowplowanalytics.snowplow/application_error/jsonschema/1-0-1 (#431)
