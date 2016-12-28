@@ -1,3 +1,13 @@
+Release 69 (2016-12-28)
+-----------------------
+Add com.snowplowanalytics.snowplow.storage/amazon_dynamodb_config/jsonschema/1-0-0 (#451)
+Add com.snowplowanalytics.snowplow.storage/elastic_config/jsonschema/1-0-0 (#450)
+Add com.snowplowanalytics.snowplow.storage/postgresql_config/jsonschema/1-0-0 (#449)
+Add com.snowplowanalytics.snowplow.storage/redshift_config/jsonschema/1-0-0 (#448)
+Add com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-5 (#455)
+Redshift SQL: update for com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-5 (#457)
+Redshift JSON Path: add for com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-5 (#456)
+
 Release 68 (2016-12-03)
 -----------------------
 Add com.snowplowanalytics.snowplow/duplicate/jsonschema/1-0-0 (#439)
