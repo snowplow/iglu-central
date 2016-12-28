@@ -1,0 +1,56 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Snowplow Redshift storage configuration",
+    "self": {
+        "vendor": "com.snowplowanalytics.snowplow.storage",
+        "name": "redshift_config",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string"
+        },
+        "host": {
+            "type": "string"
+        },
+        "database": {
+            "type": "string"
+        },
+        "port": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 65535
+        },
+        "sslMode": {
+            "type": "string",
+            "enum": ["DISABLE", "REQUIRE", "VERIFY_CA", "VERIFY_FULL"]
+        },
+        "schema": {
+            "type": "string"
+        },
+        "username": {
+            "type": "string"
+        },
+        "password": {
+            "type": "string"
+        },
+        "maxError": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 10000
+        },
+        "compRows": {
+            "type": "integer",
+            "minimum": 1000,
+            "maximum": 1000000000
+        },
+        "purpose": {
+            "type": "string",
+            "enum": ["ENRICHED_EVENTS"]
+        }
+    },
+    "additionalProperties": false,
+    "required": ["name", "host", "database", "port", "sslMode", "schema", "username", "password", "maxError", "compRows", "purpose"]
+}
