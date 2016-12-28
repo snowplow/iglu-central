@@ -1,0 +1,39 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Snowplow Elasticsearch storage configuration",
+    "self": {
+        "vendor": "com.snowplowanalytics.snowplow.storage",
+        "name": "elastic_config",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string"
+        },
+        "host": {
+            "type": "string"
+        },
+        "index": {
+            "type": "string"
+        },
+        "port": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 65535
+        },
+        "type": {
+            "type": "string"
+        },
+        "nodesWanOnly": {
+            "type": "boolean"
+        },
+        "purpose": {
+            "type": "string",
+            "enum": ["FAILED_EVENTS"]
+        }
+    },
+    "additionalProperties": false,
+    "required": ["name", "host", "index", "port", "type", "nodesWanOnly", "purpose"]
+}
