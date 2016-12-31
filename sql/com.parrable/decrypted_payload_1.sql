@@ -14,8 +14,8 @@ CREATE TABLE IF NOT EXISTS atomic.com_parrable_decrypted_payload_1 (
     "ref_root"       VARCHAR(255)  ENCODE RUNLENGTH NOT NULL,
     "ref_tree"       VARCHAR(1500) ENCODE RUNLENGTH NOT NULL,
     "ref_parent"     VARCHAR(255)  ENCODE RUNLENGTH NOT NULL,
-    "browser_id"     CHAR(36)      ENCODE LZO       NOT NULL,
-    "device_id"      VARCHAR(36)   ENCODE LZO       NOT NULL,
+    "browserid"      CHAR(36)      ENCODE LZO       NOT NULL,
+    "deviceid"       VARCHAR(36)   ENCODE LZO       NOT NULL,
     FOREIGN KEY (root_id) REFERENCES atomic.events(event_id)
 )
 DISTSTYLE KEY
