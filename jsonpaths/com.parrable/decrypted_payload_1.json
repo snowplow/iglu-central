@@ -9,7 +9,7 @@
         "$.hierarchy.refRoot",
         "$.hierarchy.refTree",
         "$.hierarchy.refParent",
-        "$.data.browserId",
-        "$.data.deviceId"
+        "$.data.browserid",
+        "$.data.deviceid"
     ]
 }

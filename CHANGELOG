@@ -1,3 +1,10 @@
+Release 70 (2016-12-31)
+-----------------------
+Patch com.parrable/decrypted_payload/jsonschema/1-0-0 (#460)
+Redshift SQL: patch org.schema/WebPage/jsonschema/1-0-0 (#452)
+Redshift SQL: patch com.parrable/decrypted_payload/jsonschema/1-0-0 (#461)
+Redshift JSON Path: patch com.parrable/decrypted_payload/jsonschema/1-0-0 (#463)
+
 Release 69 (2016-12-28)
 -----------------------
 Add com.snowplowanalytics.snowplow.storage/amazon_dynamodb_config/jsonschema/1-0-0 (#451)
