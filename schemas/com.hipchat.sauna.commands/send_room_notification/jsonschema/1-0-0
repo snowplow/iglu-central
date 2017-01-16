@@ -1,0 +1,47 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for a Hipchat room notification command",
+    "self":{
+        "vendor": "com.hipchat.sauna.commands",
+        "name": "send_room_notification",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "roomIdOrName": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+        },
+        "color": {
+            "enum": [
+                "YELLOW",
+                "GREEN",
+                "RED",
+                "PURPLE",
+                "GRAY",
+                "RANDOM"
+            ]
+        },
+        "message": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 10000
+        },
+        "notify": {
+            "type": "boolean"
+        },
+        "messageFormat": {
+            "enum": [
+                "HTML",
+                "TEXT"
+            ]
+        }
+    },
+    "required": [
+        "roomIdOrName",
+        "message"
+    ],
+    "additionalProperties": false
+}
