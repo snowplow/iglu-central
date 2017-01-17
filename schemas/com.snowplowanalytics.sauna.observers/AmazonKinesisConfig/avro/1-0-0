@@ -1,0 +1,76 @@
+{
+  "namespace": "com.snowplowanalytics.sauna.observers",
+  "name": "AmazonKinesisConfig",
+  "type": "record",
+  "fields": [
+    {
+      "name": "enabled",
+      "type": "boolean"
+    },
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "parameters",
+      "type": {
+        "name": "AmazonKinesisObserverParameters",
+        "type": "record",
+        "fields": [
+          {
+            "name": "aws",
+            "type": {
+              "name": "AwsConfigParameters",
+              "type": "record",
+              "fields": [
+                {
+                  "name": "accessKeyId",
+                  "type": "string"
+                },
+                {
+                  "name": "secretAccessKey",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          {
+            "name": "kinesis",
+            "type": {
+              "name": "AmazonKinesisConfigParameters",
+              "type": "record",
+              "fields": [
+                {
+                  "name": "region",
+                  "type": "string"
+                },
+                {
+                  "name": "streamName",
+                  "type": "string"
+                },
+                {
+                  "name": "maxRecords",
+                  "type": "int"
+                },
+                {
+                  "name": "initialPosition",
+                  "type": {
+                    "name": "ShardIteratorType",
+                    "type": "enum",
+                    "symbols": [
+                      "AFTER_SEQUENCE_NUMBER",
+                      "AT_SEQUENCE_NUMBER",
+                      "AT_TIMESTAMP",
+                      "LATEST",
+                      "TRIM_HORIZON"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
