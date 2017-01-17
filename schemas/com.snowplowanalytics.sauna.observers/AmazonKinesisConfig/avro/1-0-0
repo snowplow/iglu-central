@@ -65,6 +65,35 @@
                       "TRIM_HORIZON"
                     ]
                   }
+                },
+                {
+                  "name": "initialPositionModifiers",
+                  "type": [
+                    {
+                      "name": "InitialPositionModifiers",
+                      "type": "record",
+                      "fields": [
+                        {
+                          "name": "timestamp",
+                          "type": [
+                            {
+                              "type": "long",
+                              "logicalType": "timestamp-millis"
+                            },
+                            "null"
+                          ]
+                        },
+                        {
+                          "name": "startingSequenceNumber",
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        }
+                      ]
+                    },
+                    "null"
+                  ]
                 }
               ]
             }
