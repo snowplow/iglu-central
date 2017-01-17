@@ -1,3 +1,11 @@
+Release 71 (2017-01-17)
+-----------------------
+Add com.hipchat.sauna.commands/send_room_notification/jsonschema/1-0-0 (#469)
+Add com.snowplowanalytics.sauna.commands/command/jsonschema/1-0-0 (#470)
+Add com.snowplowanalytics.sauna.commands/envelope/jsonschema/1-0-0 (#471)
+Add com.snowplowanalytics.sauna.responders/HipchatConfig/avro/1-0-0 (#472)
+Add com.snowplowanalytics.sauna.observers/AmazonKinesisConfig/avro/1-0-0 (#466)
+
 Release 70 (2016-12-31)
 -----------------------
 Patch com.parrable/decrypted_payload/jsonschema/1-0-0 (#460)
