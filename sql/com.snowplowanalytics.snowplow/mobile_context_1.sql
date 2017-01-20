@@ -32,6 +32,8 @@ CREATE TABLE atomic.com_snowplowanalytics_snowplow_mobile_context_1 (
 	os_version          varchar(255)  encode text32k not null,
 	device_manufacturer varchar(255)  encode text255 not null,
 	device_model        varchar(255)  encode text32k not null,
+	network_type        varchar(255)  encode text32k not null,
+	network_technology  varchar(255)  encode text32k not null,
 	carrier             varchar(255)  encode text32k,
 	open_idfa           varchar(128)  encode runlength,
 	apple_idfa          varchar(128)  encode runlength,
