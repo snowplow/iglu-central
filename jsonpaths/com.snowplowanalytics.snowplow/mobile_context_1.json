@@ -17,11 +17,11 @@
     "$.data.deviceManufacturer",
     "$.data.deviceModel",
     "$.data.carrier",
-    "$.data.networkType",
-    "$.data.networkTechnology",
     "$.data.openIdfa",
     "$.data.appleIdfa",
     "$.data.appleIdfv",
-    "$.data.androidIdfa"
+    "$.data.androidIdfa",
+    "$.data.networkType",
+    "$.data.networkTechnology"
     ]
 }
