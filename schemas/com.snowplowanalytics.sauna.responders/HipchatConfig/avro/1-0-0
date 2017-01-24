@@ -18,6 +18,10 @@
                 "type": "record",
                 "fields": [
                     {
+                        "name": "sendRoomNotificationEnabled",
+                        "type": "boolean"
+                    },
+                    {
                         "name": "authToken",
                         "type": "string"
                     }
