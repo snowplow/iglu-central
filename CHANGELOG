@@ -1,3 +1,12 @@
+Release 72 (2017-01-26)
+-----------------------
+Add com.snowplowanalytics.iglu/resolver-config/jsonschema/1-0-2 (#343)
+Add io.redash.webhooks/event/jsonschema/1-0-0 (#453)
+Patch com.snowplowanalytics.sauna.observers/AmazonKinesisConfig/avro/1-0-0 (#476)
+Patch com.snowplowanalytics.sauna.responders/HipchatConfig/avro/1-0-0 (#481)
+Redshift SQL: add for io.redash.webhooks/event/jsonschema/1-0-0 (#473)
+Redshift JSON Path: add for io.redash.webhooks/event/jsonschema/1-0-0 (#474)
+
 Release 71 (2017-01-17)
 -----------------------
 Add com.hipchat.sauna.commands/send_room_notification/jsonschema/1-0-0 (#469)
