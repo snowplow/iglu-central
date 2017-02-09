@@ -1,3 +1,9 @@
+Release 73 (2017-02-09)
+-----------------------
+Add com.snowplowanalytics.dataflowrunner/PlaybookConfig/avro/1-0-0 (#486)
+Add com.snowplowanalytics.dataflowrunner/ClusterConfig/avro/1-0-0 (#485)
+Patch com.snowplowanalytics.sauna.observers/AmazonKinesisConfig/avro/1-0-0 (#488)
+
 Release 72 (2017-01-26)
 -----------------------
 Add com.snowplowanalytics.iglu/resolver-config/jsonschema/1-0-2 (#343)
