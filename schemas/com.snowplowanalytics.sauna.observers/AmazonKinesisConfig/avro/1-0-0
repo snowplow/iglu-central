@@ -58,8 +58,6 @@
                     "name": "ShardIteratorType",
                     "type": "enum",
                     "symbols": [
-                      "AFTER_SEQUENCE_NUMBER",
-                      "AT_SEQUENCE_NUMBER",
                       "AT_TIMESTAMP",
                       "LATEST",
                       "TRIM_HORIZON"
@@ -80,13 +78,6 @@
                               "type": "long",
                               "logicalType": "timestamp-millis"
                             },
-                            "null"
-                          ]
-                        },
-                        {
-                          "name": "startingSequenceNumber",
-                          "type": [
-                            "string",
                             "null"
                           ]
                         }

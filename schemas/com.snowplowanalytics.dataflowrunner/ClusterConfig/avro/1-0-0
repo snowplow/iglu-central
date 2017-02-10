@@ -1,0 +1,244 @@
+{
+  "namespace": "com.snowplowanalytics.dataflowrunner",
+  "name": "ClusterConfig", 
+  "type": "record",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "logUri",
+      "type": "string"
+    },
+    {
+      "name": "region",
+      "type": "string"
+    },
+    {
+      "name": "credentials",
+      "type": {
+        "name": "CredentialsRecord",
+        "type": "record",
+        "fields": [
+          {
+            "name": "accessKeyId",
+            "type": "string"
+          }, 
+          {
+            "name": "secretAccessKey",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "roles",
+      "type": {
+        "name": "RolesRecord",
+        "type": "record",
+        "fields": [
+          {
+            "name": "jobflow",
+            "type": "string"
+          }, 
+          {
+            "name": "service",
+            "type": "string"
+          }
+        ]
+      }
+    }, 
+    {
+      "name": "ec2",
+      "type": {
+        "name": "Ec2Record",
+        "type": "record",
+        "fields": [
+          {
+            "name": "amiVersion",
+            "type": "string"
+          }, 
+          {
+            "name": "keyName",
+            "type": "string"
+          }, 
+          {
+            "name": "location",
+            "type": {
+              "name": "LocationRecord",
+              "type": "record",
+              "fields": [
+                {
+                  "name": "classic",
+                  "type": [{
+                    "name": "ClassicRecord",
+                    "type": "record",
+                    "fields": [
+                      {
+                        "name": "availabilityZone",
+                        "type": "string"
+                      }
+                    ]
+                  }, "null"]
+                },
+                {
+                  "name": "vpc",
+                  "type": [{
+                    "name": "VPCRecord",
+                    "type": "record",
+                    "fields": [
+                      {
+                        "name": "subnetId",
+                        "type": "string"
+                      }
+                    ]
+                  }, "null"]
+                }
+              ]
+            }
+          },
+          {
+            "name": "instances",
+            "type": {
+              "name": "InstancesRecord",
+              "type": "record",
+              "fields": [
+                {
+                  "name": "master",
+                  "type": {
+                    "name": "MasterRecord",
+                    "type": "record",
+                    "fields": [
+                      {
+                        "name": "type",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "core",
+                  "type": {
+                    "name": "CoreRecord",
+                    "type": "record",
+                    "fields": [
+                      {
+                        "name": "type",
+                        "type": "string"
+                      },
+                      {
+                        "name": "count",
+                        "type": "long"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "name": "task",
+                  "type": {
+                    "name": "TaskRecord",
+                    "type": "record",
+                    "fields": [
+                      {
+                        "name": "type",
+                        "type": "string"
+                      },
+                      {
+                        "name": "count",
+                        "type": "long"
+                      },
+                      {
+                        "name": "bid",
+                        "type": "string"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "tags",
+      "type": [{
+        "type": "array",
+        "items": {
+          "name": "TagsRecord",
+          "type": "record",
+          "fields": [
+            {
+              "name": "key",
+              "type": "string"
+            }, 
+            {
+              "name": "value",
+              "type": "string"
+            }
+          ]
+        }
+      }, "null"]
+    },
+    {
+      "name": "bootstrapActionConfigs",
+      "type": [{
+        "type": "array",
+        "items": {
+          "name": "BootstrapActionConfigsRecord",
+          "type": "record",
+          "fields": [
+            {
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "name": "scriptBootstrapAction",
+              "type": {
+                "name": "ScriptBootstrapActionRecord",
+                "type": "record",
+                "fields": [
+                  {
+                    "name": "args",
+                    "type": {
+                      "type": "array",
+                      "items": "string"
+                    }
+                  },
+                  {
+                    "name": "path",
+                    "type": "string"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }, "null"]
+    },
+    {
+      "name": "configurations",
+      "type": [{
+        "type": "array",
+        "items": {
+          "name": "ConfigurationRecord",
+          "type": "record",
+          "fields": [
+            {
+              "name": "classification",
+              "type": "string"
+            },
+            {
+              "name": "properties",
+              "type": {
+                "type": "map",
+                "values": "string"
+              }
+            }
+          ]
+        }
+      }, "null"]
+    }
+  ]
+}
