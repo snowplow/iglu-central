@@ -1,0 +1,21 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for the minimal subset of properties in shorty link conversion payload",
+  "self": {
+    "vendor": "io.popmetrics.snowplow",
+    "name": "shorty",
+    "format": "jsonschema",
+    "version": "0-1-0"
+  },
+
+  "type": "object",
+  "properties": {
+    "link": {
+        "type": ["string", "null"]
+    },
+    "pageType": {
+      "type": ["string","null"]
+      }
+  },
+  "additionalProperties": true
+}
