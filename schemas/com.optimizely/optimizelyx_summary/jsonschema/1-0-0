@@ -1,0 +1,32 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for an Optimizely X summary context",
+  "self": {
+    "vendor": "com.optimizely",
+    "name": "optimizelyx_summary",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "experimentId": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "maximum": 9223372036854775807
+    },
+    "variationName": {
+      "type": ["string", "null"],
+      "maxLength": 255
+    },
+    "variation": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "maximum": 9223372036854775807
+    },
+    "visitorId": {
+      "type": ["string", "null"],
+      "maxLength": 100
+    }
+  },
+  "additionalProperties": true
+}
