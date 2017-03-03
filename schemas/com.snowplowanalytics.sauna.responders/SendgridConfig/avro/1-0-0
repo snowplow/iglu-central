@@ -21,6 +21,10 @@
             "type": "boolean"
           },
           {
+            "name": "emailsEnabled",
+            "type": "boolean"
+          },
+          {
             "name": "apiKeyId",
             "type": "string"
           }
