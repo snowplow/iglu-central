@@ -1,0 +1,35 @@
+{
+  "namespace": "com.snowplowanalytics.sauna.responders",
+  "name": "SendgridConfig_1_0_1",
+  "type": "record",
+  "fields": [
+    {
+      "name": "enabled",
+      "type": "boolean"
+    },
+    {
+      "name": "id",
+      "type": "string"
+    },
+    { "name": "parameters",
+      "type": {
+        "name": "SendgridConfigParameters_1_0_1",
+        "type": "record",
+        "fields": [
+          {
+            "name": "recipientsEnabled",
+            "type": "boolean"
+          },
+          {
+            "name": "emailsEnabled",
+            "type": "boolean"
+          },
+          {
+            "name": "apiKeyId",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ]
+}
