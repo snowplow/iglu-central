@@ -1,0 +1,337 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a Sendgrid send email command",
+  "self": {
+    "vendor": "com.sendgrid.sauna.commands",
+    "name": "send_email",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "definitions": {
+    "arbitrary_object": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": true
+    },
+    "email_object": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "properties": {
+    "personalizations": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "to": {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/email_object"
+                }
+              ]
+            },
+            "cc": {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/email_object"
+                }
+              ]
+            },
+            "bcc": {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/email_object"
+                }
+              ]
+            },
+            "subject": {
+              "type": "string"
+            },
+            "headers": {
+              "$ref": "#/definitions/arbitrary_object"
+            },
+            "substitutions": {
+              "$ref": "#/definitions/arbitrary_object"
+            },
+            "custom_args": {
+              "$ref": "#/definitions/arbitrary_object"
+            },
+            "send_at": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "to"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "from": {
+      "$ref": "#/definitions/email_object"
+    },
+    "reply_to": {
+      "$ref": "#/definitions/email_object"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "content": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "value"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "attachments": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "content": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "filename": {
+              "type": "string"
+            },
+            "disposition": {
+              "type": "string"
+            },
+            "content_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "content",
+            "filename"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "template_id": {
+      "type": "string"
+    },
+    "sections": {
+      "$ref": "#/definitions/arbitrary_object"
+    },
+    "headers": {
+      "$ref": "#/definitions/arbitrary_object"
+    },
+    "categories": {
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "send_at": {
+      "type": "integer"
+    },
+    "batch_id": {
+      "type": "string"
+    },
+    "asm": {
+      "type": "object",
+      "properties": {
+        "group_id": {
+          "type": "integer"
+        },
+        "groups_to_display": {
+          "type": "array",
+          "items": [
+            {
+              "type": "integer"
+            }
+          ]
+        }
+      },
+      "required": [
+        "group_id"
+      ],
+      "additionalProperties": false
+    },
+    "ip_pool_name": {
+      "type": "string"
+    },
+    "mail_settings": {
+      "type": "object",
+      "properties": {
+        "bcc": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "type": "boolean"
+            },
+            "email": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "bypass_list_management": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
+        "footer": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "type": "boolean"
+            },
+            "text": {
+              "type": "string"
+            },
+            "html": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "sandbox_mode": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
+        "spam_check": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "type": "boolean"
+            },
+            "threshold": {
+              "type": "integer"
+            },
+            "post_to_url": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "tracking_settings": {
+      "type": "object",
+      "properties": {
+        "click_tracking": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "type": "boolean"
+            },
+            "enable_text": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
+        "open_tracking": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "type": "boolean"
+            },
+            "substitution_tag": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "subscription_tracking": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "type": "boolean"
+            },
+            "text": {
+              "type": "string"
+            },
+            "html": {
+              "type": "string"
+            },
+            "substitution_tag": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "ganalytics": {
+          "type": "object",
+          "properties": {
+            "enable": {
+              "type": "boolean"
+            },
+            "utm_source": {
+              "type": "string"
+            },
+            "utm_medium": {
+              "type": "string"
+            },
+            "utm_term": {
+              "type": "string"
+            },
+            "utm_content": {
+              "type": "string"
+            },
+            "utm_campaign": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "personalizations",
+    "from"
+  ],
+  "additionalProperties": false
+}
