@@ -1,3 +1,10 @@
+Release 74 (2017-03-31)
+-----------------------
+Add com.slack.sauna.commands/send_message/jsonschema/1-0-0 (#497)
+Add com.snowplowanalytics.sauna.responders/SlackConfig/avro/1-0-0 (#496)
+Add com.snowplowanalytics.dataflowrunner/ClusterConfig/avro/1-1-0 (#515)
+Update README markdown in according with CommonMark (#517)
+
 Release 73 (2017-02-09)
 -----------------------
 Add com.snowplowanalytics.dataflowrunner/PlaybookConfig/avro/1-0-0 (#486)
