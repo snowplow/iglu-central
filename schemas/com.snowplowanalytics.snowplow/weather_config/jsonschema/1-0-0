@@ -1,0 +1,33 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for configuration of weather enrichment",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow",
+		"name": “weather_config",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"vendor": {
+			"type": "string"
+		},
+		"name": {
+			"type": "string"
+		},		
+		"enabled": {
+			"type": "boolean"
+		},
+		"parameters": {
+			"apiKey": {
+				"type": "string"
+			},
+			"required": ["apiKey"],
+			"additionalProperties": false
+		}
+	},
+	"required": ["name", "vendor", "enabled"],
+	"additionalProperties": false
+}
+
