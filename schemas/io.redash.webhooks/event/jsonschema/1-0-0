@@ -1,0 +1,49 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for the webhook emitted by a Redash installation",
+  "self": {
+    "vendor": "io.redash.webhooks",
+    "name": "event",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "maximum" : 2147483647,
+      "minimum" : -2147483648
+    },
+    "user_id": {
+      "type": ["integer", "null"],
+      "maximum" : 2147483647,
+      "minimum" : -2147483648
+    },
+    "action": {
+      "type": "string",
+      "maxLength" : 255
+    },
+    "object_type": {
+      "type": "string",
+      "maxLength" : 255
+    },
+    "object_id": {
+      "type": ["string", "null"],
+      "maxLength" : 255
+    },
+    "additional_properties": {
+      "type": ["string", "null"]
+    },
+    "created_at": {
+      "type": "string",
+      "format" : "date-time"
+    },
+    "org_id": {
+      "type": "integer",
+      "maximum" : 2147483647,
+      "minimum" : -2147483648
+    }
+  },
+  "required": ["id", "action", "object_id", "created_at", "org_id"],
+  "additionalProperties": true
+}

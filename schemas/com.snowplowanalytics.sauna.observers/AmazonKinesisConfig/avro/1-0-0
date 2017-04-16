@@ -58,13 +58,33 @@
                     "name": "ShardIteratorType",
                     "type": "enum",
                     "symbols": [
-                      "AFTER_SEQUENCE_NUMBER",
-                      "AT_SEQUENCE_NUMBER",
                       "AT_TIMESTAMP",
                       "LATEST",
                       "TRIM_HORIZON"
                     ]
                   }
+                },
+                {
+                  "name": "initialPositionModifiers",
+                  "type": [
+                    {
+                      "name": "InitialPositionModifiers",
+                      "type": "record",
+                      "fields": [
+                        {
+                          "name": "timestamp",
+                          "type": [
+                            {
+                              "type": "long",
+                              "logicalType": "timestamp-millis"
+                            },
+                            "null"
+                          ]
+                        }
+                      ]
+                    },
+                    "null"
+                  ]
                 }
               ]
             }

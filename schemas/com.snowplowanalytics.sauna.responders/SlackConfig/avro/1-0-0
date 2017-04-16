@@ -1,6 +1,6 @@
 {
     "namespace": "com.snowplowanalytics.sauna.responders",
-    "name": "HipchatConfig",
+    "name": "SlackConfig_1_0_0",
     "type": "record",
     "fields": [
         {
@@ -14,15 +14,15 @@
         {
             "name": "parameters",
             "type": {
-                "name": "HipchatConfigParameters",
+                "name": "SlackConfigParameters_1_0_0",
                 "type": "record",
                 "fields": [
                     {
-                        "name": "sendRoomNotificationEnabled",
+                        "name": "sendMessageEnabled",
                         "type": "boolean"
                     },
                     {
-                        "name": "authToken",
+                        "name": "webhookUrl",
                         "type": "string"
                     }
                 ]
