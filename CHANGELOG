@@ -1,3 +1,12 @@
+Release 75 (2017-04-16)
+-----------------------
+Add com.pagerduty.sauna.commands/create_event/jsonschema/1-0-0 (#502)
+Add com.snowplowanalytics.sauna.responders/PagerDutyConfig/avro/1-0-0 (#500)
+Add com.sendgrid.sauna.commands/send_email/jsonschema/1-0-0 (#507)
+Add com.optimizely.optimizelyx/summary/jsonschema/1-0-0 (#545)
+Redshift SQL: add for com.optimizely.optimizelyx/summary/jsonschema/1-0-0 (#546)
+Redshift JSON Path: add for com.optimizely.optimizelyx/summary/jsonschema/1-0-0 (#547)
+
 Release 74 (2017-03-31)
 -----------------------
 Add com.slack.sauna.commands/send_message/jsonschema/1-0-0 (#497)
