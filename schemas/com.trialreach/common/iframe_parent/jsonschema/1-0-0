@@ -1,0 +1,19 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for an iframe context, contains information about parent window of iframe",
+    "self": {
+        "vendor": "com.snowplowanalytics.snowplow",
+        "name": "iframe_parent",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+
+    "type": "object",
+    "properties": {
+        "url": {
+            "type": "string",
+        }
+    },
+    "required": ["url"],
+    "additionalProperties": false
+}
