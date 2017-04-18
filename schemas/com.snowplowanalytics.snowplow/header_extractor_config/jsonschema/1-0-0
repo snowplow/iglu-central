@@ -1,0 +1,35 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"description": "Schema for header extractor enrichment",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow",
+		"name": "header_extractor_config",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"vendor": {
+			"type": "string"
+		},
+		"name": {
+			"type": "string"
+		},
+		"enabled": {
+			"type": "boolean"
+		},
+		"parameters": {
+			"type": "object",
+			"properties": {
+				"headersPattern": {
+					"type": "string"
+				}
+			},
+			"required": ["headersPattern"],
+			"additionalProperties": false
+		}
+	},
+	"required": ["name", "vendor", "enabled", "parameters"],
+	"additionalProperties": false
+}
