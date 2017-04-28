@@ -1,0 +1,32 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a Google Analytics enhanced e-commerce promotion entity",
+  "self": {
+    "vendor": "com.google.analytics.measurement-protocol",
+    "name": "promotion",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+
+  "type": "object",
+  "properties": {
+    "index": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 200
+    },
+    "id": {
+      "type": ["string", "null"]
+    },
+    "name": {
+      "type": ["string", "null"]
+    },
+    "creative": {
+      "type": ["string", "null"]
+    },
+    "position": {
+      "type": ["string", "null"]
+    }
+  },
+  "additionalProperties": false
+}
