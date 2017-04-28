@@ -1,0 +1,32 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a Google Analytics event hit",
+  "self": {
+    "vendor": "com.google.analytics.measurement-protocol",
+    "name": "event",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+
+  "type": "object",
+  "properties": {
+    "category": {
+      "type": "string",
+      "maxLength": 150
+    },
+    "action": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "label": {
+      "type": ["string", "null"],
+      "maxLength": 500
+    },
+    "value": {
+      "type": ["integer", "null"],
+      "minimum": 0
+    }
+  },
+  "required": ["category", "action"],
+  "additionalProperties": false
+}
