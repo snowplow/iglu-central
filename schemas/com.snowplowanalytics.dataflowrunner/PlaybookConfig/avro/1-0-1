@@ -1,0 +1,83 @@
+{
+  "namespace": "com.snowplowanalytics.dataflowrunner",
+  "name": "PlaybookConfig",
+  "type": "record",
+  "fields": [
+    {
+      "name": "region",
+      "type": "string"
+    },
+    {
+      "name": "credentials",
+      "type": {
+        "name": "CredentialsRecord",
+        "type": "record",
+        "fields": [
+          {
+            "name": "accessKeyId",
+            "type": "string"
+          }, 
+          {
+            "name": "secretAccessKey",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "steps",
+      "type": {
+        "type": "array",
+        "items": {
+          "name": "StepsRecord",
+          "type": "record",
+          "fields": [
+            {
+              "name": "name",
+              "type": "string"
+            }, 
+            {
+              "name": "type",
+              "type": "string"
+            }, 
+            {
+              "name": "actionOnFailure",
+              "type": "string"
+            }, 
+            {
+              "name": "jar",
+              "type": "string"
+            }, 
+            {
+              "name": "arguments",
+              "type": {
+                "type": "array",
+                "items": "string"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "tags",
+      "type": [{
+        "type": "array",
+        "items": {
+          "name": "TagsRecord",
+          "type": "record",
+          "fields": [
+            {
+              "name": "key",
+              "type": "string"
+            },
+            {
+              "name": "value",
+              "type": "string"
+            }
+          ]
+        }
+      }, "null"]
+    }
+  ]
+}
