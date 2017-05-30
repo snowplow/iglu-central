@@ -1,6 +1,6 @@
 {
   "namespace": "com.snowplowanalytics.sauna.observers",
-  "name": "AmazonS3Config",
+  "name": "AmazonS3Config_1_0_0",
   "type": "record",
   "fields": [
     {
@@ -13,7 +13,7 @@
     },
     { "name": "parameters",
       "type": {
-        "name": "AmazonS3ConfigParameters",
+        "name": "AmazonS3ConfigParameters_1_0_0",
         "type": "record",
         "fields": [
           {
