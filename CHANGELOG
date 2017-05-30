@@ -1,3 +1,9 @@
+Release 76 (2017-05-30)
+-----------------------
+Add com.snowplowanalytics.dataflowrunner/PlaybookConfig/avro/1-0-1 (#579)
+Add com.snowplowanalytics.sauna.responders/SendgridConfig/avro/1-0-1 (#505)
+Patch com.snowplowanalytics.sauna.responders/SendgridConfig/avro/1-0-0 (#509)
+
 Release 75 (2017-04-16)
 -----------------------
 Add com.pagerduty.sauna.commands/create_event/jsonschema/1-0-0 (#502)
