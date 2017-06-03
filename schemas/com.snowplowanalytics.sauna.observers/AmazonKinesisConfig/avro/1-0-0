@@ -1,6 +1,6 @@
 {
   "namespace": "com.snowplowanalytics.sauna.observers",
-  "name": "AmazonKinesisConfig",
+  "name": "AmazonKinesisConfig_1_0_0",
   "type": "record",
   "fields": [
     {
@@ -14,13 +14,13 @@
     {
       "name": "parameters",
       "type": {
-        "name": "AmazonKinesisObserverParameters",
+        "name": "AmazonKinesisObserverParameters_1_0_0",
         "type": "record",
         "fields": [
           {
             "name": "aws",
             "type": {
-              "name": "AwsConfigParameters",
+              "name": "AwsConfigParameters_1_0_0",
               "type": "record",
               "fields": [
                 {
@@ -37,7 +37,7 @@
           {
             "name": "kinesis",
             "type": {
-              "name": "AmazonKinesisConfigParameters",
+              "name": "AmazonKinesisConfigParameters_1_0_0",
               "type": "record",
               "fields": [
                 {
@@ -55,7 +55,7 @@
                 {
                   "name": "initialPosition",
                   "type": {
-                    "name": "ShardIteratorType",
+                    "name": "ShardIteratorType_1_0_0",
                     "type": "enum",
                     "symbols": [
                       "AT_TIMESTAMP",
@@ -68,7 +68,7 @@
                   "name": "initialPositionModifiers",
                   "type": [
                     {
-                      "name": "InitialPositionModifiers",
+                      "name": "InitialPositionModifiers_1_0_0",
                       "type": "record",
                       "fields": [
                         {
