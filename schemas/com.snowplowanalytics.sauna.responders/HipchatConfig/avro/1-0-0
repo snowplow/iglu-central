@@ -1,6 +1,6 @@
 {
     "namespace": "com.snowplowanalytics.sauna.responders",
-    "name": "HipchatConfig",
+    "name": "HipchatConfig_1_0_0",
     "type": "record",
     "fields": [
         {
@@ -14,7 +14,7 @@
         {
             "name": "parameters",
             "type": {
-                "name": "HipchatConfigParameters",
+                "name": "HipchatConfigParameters_1_0_0",
                 "type": "record",
                 "fields": [
                     {
