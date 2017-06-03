@@ -1,6 +1,6 @@
 {
   "namespace": "com.snowplowanalytics.sauna.loggers",
-  "name": "AmazonDynamodbConfig",
+  "name": "AmazonDynamodbConfig_1_0_0",
   "type": "record",
   "fields": [
     {
@@ -13,7 +13,7 @@
     },
     { "name": "parameters",
       "type": {
-        "name": "AmazonDynamodbConfigParameters",
+        "name": "AmazonDynamodbConfigParameters_1_0_0",
         "type": "record",
         "fields": [
           {
