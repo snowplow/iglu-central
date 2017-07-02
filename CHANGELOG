@@ -1,3 +1,13 @@
+Release 77 (2017-07-02)
+-----------------------
+Patch com.snowplowanalytics.sauna.responders/OptimizelyConfig/avro/1-0-0 (#588)
+Patch com.snowplowanalytics.sauna.responders/HipchatConfig/avro/1-0-0 (#587)
+Patch com.snowplowanalytics.sauna.observers/LocalFilesystemConfig/avro/1-0-0 (#586)
+Patch com.snowplowanalytics.sauna.observers/AmazonS3Config/avro/1-0-0 (#585)
+Patch com.snowplowanalytics.sauna.observers/AmazonKinesisConfig/avro/1-0-0 (#584)
+Patch com.snowplowanalytics.sauna.loggers/HipchatConfig/avro/1-0-0 (#583)
+Patch com.snowplowanalytics.sauna.loggers/AmazonDynamodbConfig/avro/1-0-0 (#582)
+
 Release 76 (2017-05-30)
 -----------------------
 Add com.snowplowanalytics.dataflowrunner/PlaybookConfig/avro/1-0-1 (#579)
