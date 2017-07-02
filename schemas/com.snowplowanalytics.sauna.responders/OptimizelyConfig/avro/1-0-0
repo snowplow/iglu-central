@@ -1,6 +1,6 @@
 {
   "namespace": "com.snowplowanalytics.sauna.responders",
-  "name": "OptimizelyConfig",
+  "name": "OptimizelyConfig_1_0_0",
   "type": "record",
   "fields": [
     {
@@ -13,7 +13,7 @@
     },
     { "name": "parameters",
       "type": {
-        "name": "OptimizelyConfigParameters",
+        "name": "OptimizelyConfigParameters_1_0_0",
         "type": "record",
         "fields": [
           {
