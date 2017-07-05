@@ -1,3 +1,10 @@
+Release 78 (2017-07-05)
+-----------------------
+Add com.snowplowanalytics.snowplow.storage/amazon_dynamodb_config/jsonschema/1-0-1 (#621)
+Add com.snowplowanalytics.snowplow.storage/elastic_config/jsonschema/1-0-1 (#622)
+Add com.snowplowanalytics.snowplow.storage/postgresql_config/jsonschema/1-0-1 (#620)
+Add com.snowplowanalytics.snowplow.storage/redshift_config/jsonschema/2-0-0 (#616)
+
 Release 77 (2017-07-02)
 -----------------------
 Patch com.snowplowanalytics.sauna.responders/OptimizelyConfig/avro/1-0-0 (#588)
