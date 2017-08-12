@@ -1,0 +1,111 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a Mandrill message delayed event",
+	"self": {
+		"vendor": "com.mandrill",
+		"name": "message_delayed",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"_id": {
+			"type": "string"
+		},
+		"msg": {
+			"type": "object",
+			"properties": {
+				"_id": {
+					"type": "string"
+				},
+				"_version": {
+					"type": "string"
+				},
+				"clicks": {
+					"type": "array"
+				},
+				"email": {
+					"type": "string"
+				},
+				"metadata": {
+					"type": "object",
+					"properties": {
+						"user_id": {
+							"type": "number"
+						}
+					},
+					"additionalProperties": true
+				},
+				"opens": {
+					"type": "array"
+				},
+				"sender": {
+					"type": "string"
+				},
+				"smtp_events": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"destination_ip": {
+								"type": "string"
+							},
+							"diag": {
+								"type": "string"
+							},
+							"size": {
+								"type": "number"
+							},
+							"source_ip": {
+								"type": "string"
+							},
+							"ts": {
+								"type": "string",
+								"format": "date-time"
+							},
+							"type": {
+								"type": "string"
+							}
+						},
+						"additionalProperties": true
+					}
+				},
+				"state": {
+					"type": "string"
+				},
+				"subaccount": {
+					"type": ["string", "null"]
+				},
+				"subject": {
+					"type": "string"
+				},
+				"tags": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"ts": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"resends": {
+					"type": "array"
+				},
+				"template": {
+					"type": ["string", "null"]
+				}
+			},
+			"additionalProperties": false
+		},
+		"ts": {
+			"type": "string",
+			"format": "date-time"
+		},
+		"diag": {
+			"type": "string"
+		}
+	},
+	"additionalProperties": false
+}

@@ -1,0 +1,111 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a Mandrill hard bounce event",
+	"self": {
+		"vendor": "com.mandrill",
+		"name": "message_bounced",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"_id": {
+			"type": "string"
+		},
+		"msg": {
+			"type": "object",
+			"properties": {
+				"_id": {
+					"type": "string"
+				},
+				"_version": {
+					"type": "string"
+				},
+				"bgtools_code": {
+					"type": "number"
+				},
+				"bounce_description": {
+					"type": "string"
+				},
+				"diag": {
+					"type": "string"
+				},
+				"email": {
+					"type": "string"
+				},
+				"metadata": {
+					"type": "object",
+					"properties": {
+						"user_id": {
+							"type": "number"
+						}
+					},
+					"additionalProperties": true
+				},
+				"sender": {
+					"type": "string"
+				},
+				"state": {
+					"type": "string"
+				},
+				"subaccount": {
+					"type": ["string", "null"]
+				},
+				"subject": {
+					"type": "string"
+				},
+				"tags": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"ts": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"smtp_events": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"ts": {
+								"type": "string",
+								"format": "date-time"
+							},
+							"type": {
+								"type": "string"
+							},
+							"diag": {
+								"type": "string"
+							},
+							"source_ip": {
+								"type": "string"
+							},
+							"destination_ip": {
+								"type": "string"
+							},
+							"size": {
+								"type": "integer"
+							}					
+						},
+						"additionalProperties": true
+					}
+				},
+				"resends": {
+					"type": "array"
+				},
+				"template": {
+					"type": ["string", "null"]
+				}
+			},
+			"additionalProperties": false
+		},
+		"ts": {
+			"type": "string",
+			"format": "date-time"
+		}
+	},
+	"additionalProperties": false
+}
