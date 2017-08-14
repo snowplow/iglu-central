@@ -5,7 +5,7 @@
 		"vendor": "com.mandrill",
 		"name": "recipient_unsubscribed",
 		"format": "jsonschema",
-		"version": "1-0-0"
+		"version": "1-0-1"
 	},
 
 	"type": "object",
