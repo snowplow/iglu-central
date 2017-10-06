@@ -1,0 +1,44 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a promotion event",
+	"self": {
+		"vendor": "com.mparticle.snowplow",
+		"name": "promotion_event",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+	"definitions": {
+		"promotion_object": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				},
+				"creative": {
+					"type": "string"
+				},
+				"position": {
+					"type": "string"
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+
+	"type": "object",
+	"properties": {
+		"action": {
+			"type": "string"
+		},
+		"promotions": {
+			"type": "array",
+			"items": [{
+				"$ref": "#/definitions/promotion_object"
+			}]
+		}
+	},
+	"additionalProperties": false
+}
