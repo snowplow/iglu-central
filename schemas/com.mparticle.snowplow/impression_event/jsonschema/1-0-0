@@ -1,0 +1,68 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for an impression event",
+	"self": {
+		"vendor": "com.mparticle.snowplow",
+		"name": "impression_event",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+	"definitions": {
+		"product_object": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				},
+				"brand": {
+					"type": "string"
+				},
+				"category": {
+					"type": "string"
+				},
+				"variant": {
+					"type": "string"
+				},
+				"position": {
+					"type": "integer"
+				},
+				"unitPrice": {
+					"type": "number"
+				},
+				"quantity": {
+					"type": "number"
+				},
+				"couponCode": {
+					"type": "string"
+				},
+				"totalProductAmount": {
+					"type": "number"
+				},
+				"addedToCartTimestamp": {
+					"type": "integer",
+					"maximum": 9223372036854775807,
+					"minimum": 0
+				},
+				"attributes": {}
+			},
+			"additionalProperties": false
+		}
+	},
+
+	"type": "object",
+	"properties": {
+		"list": {
+			"type": "string"
+		},
+		"products": {
+			"type": "array",
+			"items": [{
+				"$ref": "#/definitions/product_object"
+			}]
+		}
+	},
+	"additionalProperties": false
+}
