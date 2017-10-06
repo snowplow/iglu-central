@@ -1,0 +1,40 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for an app state transition event",
+	"self": {
+		"vendor": "com.mparticle.snowplow",
+		"name": "appstatetransition_event",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+	"type": "object",
+	"properties": {
+		"transitionType": {
+			"type": "string"
+		},
+		"isFirstRun": {
+			"type": "boolean"
+		},
+		"isUpgrade": {
+			"type": "boolean"
+		},
+		"launchParams": {
+			"type": "string"
+		},
+		"launchReferral": {
+			"type": "string"
+		},
+		"successfullyClosed": {
+			"type": "boolean"
+		},
+		"jsonPayload": {
+			"type": "string"
+		},
+		"referralApplication": {
+			"type": "string"
+		},
+		"attributes": {}
+	},
+	"required": ["transitionType"],
+	"additionalProperties": false
+}
