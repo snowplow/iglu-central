@@ -1,0 +1,57 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Snowplow Snowflake storage configuration",
+    "self": {
+        "vendor": "com.snowplowanalytics.snowplow.storage",
+        "name": "snowflake_config",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string"
+        },
+        "accessKeyId": {
+            "type": "string"
+        },
+        "secretAccessKey": {
+            "type": "string"
+        },
+        "awsRegion": {
+            "type": "string"
+        },
+        "manifest": {
+            "type": "string"
+        },
+        "snowflakeRegion": {
+            "type": "string"
+        },
+        "database": {
+            "type": "string"
+        },
+        "stage": {
+            "type": "string"
+        },
+        "stageUrl": {
+            "type": "string",
+            "format": "uri"
+        },
+        "username": {
+            "type": "string"
+        },
+        "password": {
+            "type": "string"
+        },
+        "id": {
+            "type": "string",
+            "format": "uuid"
+        },
+        "purpose": {
+            "type": "string",
+            "enum": ["ENRICHED_EVENTS"]
+        }
+    },
+    "additionalProperties": false,
+    "required": ["name", "accessKeyId", "secretAccessKey", "awsRegion", "manifest", "snowflakeRegion", "database", "stage", "stageUrl", "username", "password", "purpose"]
+}
