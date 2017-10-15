@@ -1,3 +1,18 @@
+Release 79 (2017-10-15)
+-----------------------
+Add com.snowplowanalytics.snowplow.storage/postgresql_config/jsonschema/1-1-0 (#646)
+Add com.snowplowanalytics.snowplow.storage/redshift_config/jsonschema/2-1-0 (#645)
+Add com.snowplowanalytics.snowplow.storage/snowflake_config/jsonschema/1-0-0 (#634)
+Add com.mparticle.snowplow/useridentitychange_event/jsonschema/1-0-0 (#644)
+Add com.mparticle.snowplow/userattributechange_event/jsonschema/1-0-0 (#643)
+Add com.mparticle.snowplow/pushregistration_event/jsonschema/1-0-0 (#641)
+Add com.mparticle.snowplow/pushmessage_event/jsonschema/1-0-0 (#640)
+Add com.mparticle.snowplow/promotion_event/jsonschema/1-0-0 (#639)
+Add com.mparticle.snowplow/product_event/jsonschema/1-0-0 (#638)
+Add com.mparticle.snowplow/impression_event/jsonschema/1-0-0 (#637)
+Add com.mparticle.snowplow/appstatetransition_event/jsonschema/1-0-0 (#636)
+Patch com.mparticle.snowplow/session_context/jsonschema/1-0-0 (#642)
+
 Release 78 (2017-07-05)
 -----------------------
 Add com.snowplowanalytics.snowplow.storage/amazon_dynamodb_config/jsonschema/1-0-1 (#621)
