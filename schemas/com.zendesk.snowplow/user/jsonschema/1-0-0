@@ -1,0 +1,95 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for Zendesk users",
+	"self": {
+		"vendor": "com.zendesk.snowplow",
+		"name": "user",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"ticketId": {
+			"type": "integer"
+		},
+		"updatedAt": {
+			"type": "string",
+			"format": "date-time"
+		},
+		"type": {
+			"type": "string"
+		},
+		"firstName": {
+			"type": ["string", "null"]
+		},
+		"lastName": {
+			"type": ["string", "null"]
+		},
+		"email": {
+			"type": ["string", "null"]
+		},
+		"language": {
+			"type": ["string", "null"]
+		},
+		"phone": {
+			"type": ["string", "null"]
+		},
+		"externalId": {
+			"type": ["string", "null"]
+		},
+		"details": {
+			"type": ["string", "null"]
+		},
+		"notes": {
+			"type": ["string", "null"]
+		},
+		"timeZone": {
+			"type": ["string", "null"]
+		},
+		"role": {
+			"type": ["string", "null"]
+		},
+		"extendedRole": {
+			"type": ["string", "null"]
+		},
+		"userId": {
+			"type": ["integer", "null"]
+		},
+		"locale": {
+			"type": ["string", "null"]
+		},
+		"signature": {
+			"type": ["string", "null"]
+		},
+		"organization": {
+			"type": ["string", "null"]
+		},
+		"tags": {
+			"type": ["string", "null"]
+		}
+	},
+
+	"required": [
+		"ticketId",
+		"type",
+		"updatedAt",
+		"details",
+		"email",
+		"extendedRole",
+		"externalId",
+		"firstName",
+		"language",
+		"lastName",
+		"locale",
+		"notes",
+		"organization",
+		"phone",
+		"role",
+		"signature",
+		"tags",
+		"timeZone",
+		"userId"
+	],
+	"additionalProperties": false
+}
