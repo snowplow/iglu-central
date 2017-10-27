@@ -1,0 +1,151 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a ticket being closed",
+	"self": {
+		"vendor": "com.zendesk",
+		"name": "ticket_closed",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"account": {
+			"type": "string"
+		},
+		"cc_names": {
+			"type": "string"
+		},
+		"created_at": {
+			"type": "string"
+		},
+		"created_at_with_timestamp": {
+			"type": "string"
+		},
+		"due_date": {
+			"type": "string"
+		},
+		"due_date_with_timestamp": {
+			"type": "string"
+		},
+		"external_id": {
+			"type": "string"
+		},
+		"group.name": {
+			"type": "string"
+		},
+		"id": {
+			"type": "string"
+		},
+		"in_business_hours": {
+			"type": "boolean"
+		},
+		"organization.name": {
+			"type": "string"
+		},
+		"priority": {
+			"enum": ["Low", "Normal", "High", "Urgent"]
+		},
+		"score": {
+			"type": "number"
+		},
+		"status": {
+			"enum": ["New", "Open", "Pending", "Solved"]
+		},
+		"tags": {
+			"type": "string"
+		},
+		"ticket_type": {
+			"enum": ["Question", "Incident", "Problem", "Task"]
+		},
+		"title": {
+			"type": "string"
+		},
+		"updated_at": {
+			"type": "string"
+		},
+		"updated_at_with_timestamp": {
+			"type": "string"
+		},
+		"url": {
+			"type": "string",
+		},
+		"url_with_protocol": {
+			"type": "string",
+		},
+		"via": {
+			"type": "string"
+		},
+		"assignee": {
+			"$ref": "#/definitions/user"
+		},
+		"requester": {
+			"$ref": "#/definitions/user"
+		},
+		"current_user": {
+			"$ref": "#/definitions/user"
+		}
+	},
+
+	"definitions": {
+		"user": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"first_name": {
+					"type": "string"
+				},				
+				"last_name": {
+					"type": "string"
+				},				
+				"email": {
+					"type": "string"
+				},
+				"language": {
+					"type": "string"
+				},
+				"phone": {
+					"type": "string"
+				},
+				"external_id": {
+					"type": "string"
+				},
+				"details": {
+					"type": "string"
+				},
+				"notes": {
+					"type": "string"
+				},
+				"time_zone": {
+					"type": "string"
+				},				
+				"role": {
+					"type": "string"
+				},		
+				"extended_role": {
+					"type": "string"
+				},
+				"id": {
+					"type": "string"
+				},		
+				"locale": {
+					"type": "string"
+				},
+				"signature": {
+					"type": "string"
+				},
+				"organization": {
+					"type": "string"
+				},				
+				"tags": {
+					"type": "string"
+				}		
+			}
+		}
+	},
+
+	"minProperties": 1,
+	"additionalProperties": false
+}
