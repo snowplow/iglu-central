@@ -1,0 +1,110 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a ticket status flow",
+	"self": {
+		"vendor": "com.zendesk.snowplow",
+		"name": "ticket_updated",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"account": {
+			"type": "string"
+		},
+		"brand": {
+			"type": "string"
+		},
+		"ccNames": {
+			"type": "string"
+		},
+		"createdAt": {
+			"type": "string"
+		},
+		"updatedAt": {
+			"type": "string",
+			"format": "date-time"
+		},
+		"dueDate": {
+			"type": ["string", "null"],
+			"format": "date-time"
+		},
+		"groupAssigned": {
+			"type": ["string", "null"]
+		},
+		"ticketId": {
+			"type": "integer"
+		},
+		"externalId": {
+			"type": ["string", "null"]
+		},
+		"inBusinessHours": {
+			"type": "boolean"
+		},
+		"organizationName": {
+			"type": ["string", "null"]
+		},
+		"organizationId": {
+			"type": ["integer", "null"]
+		},
+		"priority": {
+			"type": ["string", "null"],
+			"enum": ["Low", "Normal", "High", "Urgent", null]
+		},
+		"status": {
+			"enum": ["New", "Open", "Pending", "On-hold", "Solved", "Closed"]
+		},
+		"tags": {
+			"type": ["string", "null"]
+		},
+		"ticketType": {
+			"type": ["string", "null"],
+			"enum": ["Question", "Incident", "Problem", "Task", "Ticket", null]
+		},
+		"ticketTitle": {
+			"type": "string"
+		},
+		"url": {
+			"type": "string"
+		},
+		"via": {
+			"type": "string"
+		},
+		"latestCommentAuthorName": {
+			"type": "string"
+		},
+		"latestComment": {
+			"type": "string"
+		},
+		"latestCommentIsPublic": {
+			"type": "boolean"
+		}
+	},
+
+	"required": [
+		"ticketId",
+		"updatedAt",
+		"account",
+		"brand",
+		"ccNames",
+		"createdAt",
+		"dueDate",
+		"externalId",
+		"groupAssigned",
+		"inBusinessHours",
+		"latestComment",
+		"latestCommentAuthorName",
+		"latestCommentIsPublic",
+		"organizationId",
+		"organizationName",
+		"priority",
+		"status",
+		"tags",
+		"ticketTitle",
+		"ticketType",
+		"url",
+		"via"
+	],
+	"additionalProperties": false
+}

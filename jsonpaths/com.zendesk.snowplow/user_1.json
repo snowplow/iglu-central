@@ -1,0 +1,32 @@
+{
+    "jsonpaths": [
+        "$.schema.vendor",
+        "$.schema.name",
+        "$.schema.format",
+        "$.schema.version",
+        "$.hierarchy.rootId",
+        "$.hierarchy.rootTstamp",
+        "$.hierarchy.refRoot",
+        "$.hierarchy.refTree",
+        "$.hierarchy.refParent",
+        "$.data.ticketId",
+        "$.data.type",
+        "$.data.updatedAt",
+        "$.data.details",
+        "$.data.email",
+        "$.data.extendedRole",
+        "$.data.externalId",
+        "$.data.firstName",
+        "$.data.language",
+        "$.data.lastName",
+        "$.data.locale",
+        "$.data.notes",
+        "$.data.organization",
+        "$.data.phone",
+        "$.data.role",
+        "$.data.signature",
+        "$.data.tags",
+        "$.data.timeZone",
+        "$.data.userId"
+    ]
+}
