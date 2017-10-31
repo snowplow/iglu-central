@@ -1,0 +1,124 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for an Olark offline message event",
+	"self": {
+		"vendor": "com.olark",
+		"name": "offline_message",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"schema": {
+			"type": "string"
+		},
+		"data": {
+			"type": "object",
+			"properties": {
+				"items": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"kind": {
+								"type": "string"
+							},
+							"timestamp": {
+								"type": "string"
+							},
+							"body": {
+								"type": "string"
+							}
+						},
+						"additionalProperties": false
+					}
+				},
+				"groups": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"name": {
+								"type": "string"
+							},
+							"id": {
+								"type": "string"
+							},
+							"kind": {
+								"type": "string"
+							}
+						},
+						"additionalProperties": false
+					}
+				},
+				"visitor": {
+					"type": "object",
+					"properties": {
+						"organization": {
+							"type": "string"
+						},
+						"city": {
+							"type": "string"
+						},
+						"ip": {
+							"type": "string",
+							"format": "ipv4"
+						},
+						"phoneNumber": {
+							"type": "string"
+						},
+						"browser": {
+							"type": "string"
+						},
+						"fullName": {
+							"type": "string"
+						},
+						"emailAddress": {
+							"type": "string"
+						},
+						"customFields": {
+							"type": "object",
+							"properties": {
+								"myInternalCustomerId": {
+									"type": "string"
+								},
+								"favoriteColor": {
+									"type": "string"
+								}
+							},
+							"additionalProperties": false
+						},
+						"country": {
+							"type": "string"
+						},
+						"operatingSystem": {
+							"type": "string"
+						},
+						"id": {
+							"type": "string"
+						},
+						"countryCode": {
+							"type": "string"
+						},
+						"region": {
+							"type": "string"
+						},
+						"kind": {
+							"type": "string"
+						}
+					},
+					"additionalProperties": false
+				},
+				"id": {
+					"type": "string"
+				},
+				"kind": {
+					"type": "string"
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false
+}
