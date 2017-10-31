@@ -1,0 +1,28 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for Unbounce event context",
+	"self": {
+		"vendor": "com.unbounce",
+		"name": "event_context",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"page_id": {
+			"type": "string"
+		},
+		"page_name": {
+			"type": "string"
+		},
+		"variant": {
+			"type": "string"
+		},
+		"page_url": {
+			"type": "string",
+			"format": "uri"
+		}
+	},
+	"additionalProperties": false
+}
