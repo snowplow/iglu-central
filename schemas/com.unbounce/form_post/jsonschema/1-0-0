@@ -9,12 +9,12 @@
   },
   "type": "object",
   "properties": {
-    "page_id": {
+    "pageId": {
       "description": "The identifier Unbounce uses to uniquely identify your page. Eventually you’ll be able to use this with our API to manipulate and get information about your page. This is a 36-character UUID, for example, 'a2838d98-4cf4-11df-a3fd-00163e372d58'.",
       "type": "string",
       "maxLength": 36
     },
-    "page_name": {
+    "pageName": {
       "description": "The name you gave your page, for example 'My Guaranteed to Convert Landing Page'.",
       "type": "string"
     },
@@ -23,7 +23,7 @@
       "type": "string",
       "maxLength": 8
     },
-    "page_url": {
+    "pageUrl": {
       "description": "The URL of the page that contains your form.",
       "type": "string",
       "format": "uri",
@@ -32,11 +32,6 @@
     "data.json": {
       "type": "object",
       "additionalProperties": true
-    },
-    "data.xml": {
-      "type": "string",
-      "description": "The submitted form data in XML format.",
-      "maxLength": 65535
     }
   },
   "additionalProperties": false
