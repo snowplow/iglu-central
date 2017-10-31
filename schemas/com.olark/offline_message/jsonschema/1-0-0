@@ -1,0 +1,123 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for an Olark offline message event",
+  "self": {
+    "vendor": "com.olark",
+    "name": "offline_message",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "maxLength": 64
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "body": {
+            "type": "string",
+            "maxLength": 64
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 128
+          },
+          "id": {
+            "type": "string",
+            "maxLength": 128
+          },
+          "kind": {
+            "type": "string",
+            "maxLength": 64
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "visitor": {
+      "type": "object",
+      "properties": {
+        "organization": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "city": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "ip": {
+          "type": "string",
+          "format": "ipv4"
+        },
+        "phoneNumber": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "browser": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "fullName": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "emailAddress": {
+          "type": "string",
+          "format": "email",
+          "maxLength": 512
+        },
+        "country": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "operatingSystem": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "id": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "countryCode": {
+          "type": "string",
+          "maxLength": 8
+        },
+        "region": {
+          "type": "string",
+          "maxLength": 8
+        },
+        "kind": {
+          "type": "string",
+          "maxLength": 64
+        }
+      },
+      "additionalProperties": true
+    },
+    "id": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "kind": {
+      "type": "string",
+      "maxLength": 64 
+    }
+  },
+  "additionalProperties": false
+}
