@@ -1,0 +1,71 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a Mailgun message opened event",
+	"self": {
+		"vendor": "com.mailgun",
+		"name": "message_opened",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"recipient": {
+			"type": "string"
+		},
+		"city": {
+			"type": "string"
+		},
+		"ip": {
+			"type": "string",
+			"format": "ipv4"
+		},
+		"body-plain": {
+			"type": "string"
+		},
+		"timestamp": {
+			"type": "string"
+		},
+		"event": {
+			"type": "string"
+		},
+		"user-agent": {
+			"type": "string"
+		},
+		"domain": {
+			"type": "string"
+		},
+		"signature": {
+			"type": "string",
+			"pattern": "^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{4}|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)$"
+		},
+		"country": {
+			"type": "string"
+		},
+		"client-type": {
+			"type": "string"
+		},
+		"client-os": {
+			"type": "string"
+		},
+		"token": {
+			"type": "string"
+		},
+		"client-name": {
+			"type": "string"
+		},
+		"region": {
+			"type": "string"
+		},
+		"device-type": {
+			"type": "string"
+		},
+		"my_var_1": {
+			"type": "string"
+		},
+		"my-var-2": {
+			"type": "string"
+		}
+	},
+	"additionalProperties": false
+}
