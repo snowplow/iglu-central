@@ -1,0 +1,72 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a Mailgun message complained event",
+  "self": {
+    "vendor": "com.mailgun",
+    "name": "message_complained",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "attachmentCount": {
+      "description": "Number of attachments in attachment-x (where x is a number) fields.",
+      "type": "integer",
+      "maximum": 65535
+    },
+    "recipient": {
+      "description": "Recipient that complained.",
+      "type": "string",
+      "format": "email",
+      "maxLength": 256
+    },
+    "domain": {
+      "description": "Domain that sent the original message.",
+      "type": "string",
+      "format": "hostname",
+      "maxLength": 256
+    },
+    "messageHeaders": {
+      "description": "String list of all MIME headers of the original message dumped to a JSON string (order of headers preserved).",
+      "type": "string"
+    },
+    "campaignId": {
+      "description": "The id of campaign triggering the event.",
+      "type": "string"
+    },
+    "campaignName": {
+      "description": "The name of campaign triggering the event.",
+      "type": "string"
+    },
+    "tag": {
+      "description": "Message tag, if it was tagged. See Tagging.",
+      "type": "string"
+    },
+    "mailingList": {
+      "description": "The address of mailing list the original message was sent to.",
+      "type": "string"
+    },
+    "messageId": {
+      "description": "The Id of the message that complained.",
+      "type": "string",
+      "maxLength": 1024
+    },
+    "timestamp": {
+      "description": "Timestamp in ISO8601 format.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "token": {
+      "description": "Randomly generated string with length 50 (see securing webhooks).",
+      "type": "string",
+      "maxLength": 50,
+      "minLength": 50
+    },
+    "signature": {
+      "description": "String with hexadecimal digits generate by HMAC algorithm (see securing webhooks).",
+      "type": "string",
+      "maxLength": 128
+    }
+  },
+  "additionalProperties": true
+}
