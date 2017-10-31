@@ -1,3 +1,17 @@
+Release 82 (2017-12-13)
+-----------------------
+Add com.unbounce/form_post/jsonschema/1-0-0 (#359)
+Add com.statusgator/status_change/jsonschema/1-0-0 (#350)
+Add com.olark/transcript/jsonschema/1-0-0 (#537)
+Add com.olark/offline_message/jsonschema/1-0-0 (#536)
+Add com.mailgun/recipient_unsubscribed/jsonschema/1-0-0 (#542)
+Add com.mailgun/message_opened/jsonschema/1-0-0 (#665)
+Add com.mailgun/message_dropped/jsonschema/1-0-0 (#543)
+Add com.mailgun/message_delivered/jsonschema/1-0-0 (#659)
+Add com.mailgun/message_complained/jsonschema/1-0-0 (#657)
+Add com.mailgun/message_clicked/jsonschema/1-0-0 (#541)
+Add com.mailgun/message_bounced/jsonschema/1-0-0 (#540)
+
 Release 81 (2017-12-12)
 -----------------------
 Patch com.snowplowanalytics.snowplow.storage/snowflake_config/jsonschema/1-0-0 (#671)
