@@ -1,0 +1,37 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for an ad click event",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow",
+		"name": "ad_click",
+		"format": "jsonschema",
+		"version": "2-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"productId": {
+			"type": "string"
+		},
+		"category": {
+			"type": "string"
+		},
+		"brand": {
+			"type": "string"
+		},
+		"returning": {
+			"type": "string"
+		},
+		"price": {
+			"type": "string"
+		},
+
+		"sizes": {
+			"enum": ["xs", "s", "l","xl","xxl"]
+		},
+		"availableSince": {
+			"type": "string"
+		}
+	}
+	
+}
