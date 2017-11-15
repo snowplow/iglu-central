@@ -1,0 +1,30 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a submit webform event.",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow-website",
+		"name": "signup_form_submitted",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+	"type": "object",
+	"properties": {
+		"name": {
+			"type": "string"
+		},
+		"email": {
+			"type": "string"
+		},
+		"company": {
+			"type": "string"
+		},
+		"eventsPerMonth": {
+			"enum": ["< 1 million", "1 - 10 million", "10 - 100 million", "100 million - 1 billion", "1 billion +"]
+		},
+		"serviceType": {
+			"enum": ["managed", "hosted", "unsure"]
+		}
+	},
+	"required": ["name", "email"],
+	"additionalProperties": false
+}
