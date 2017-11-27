@@ -13,10 +13,10 @@
             "type": "string"
         },
         "accessKeyId": {
-            "type": "string"
+            "type": ["string", "null"]
         },
         "secretAccessKey": {
-            "type": "string"
+            "type": ["string", "null"]
         },
         "awsRegion": {
             "type": "string"
@@ -53,5 +53,5 @@
         }
     },
     "additionalProperties": false,
-    "required": ["name", "accessKeyId", "secretAccessKey", "awsRegion", "manifest", "snowflakeRegion", "database", "stage", "stageUrl", "username", "password", "purpose"]
+    "required": ["name", "awsRegion", "manifest", "snowflakeRegion", "database", "stage", "stageUrl", "username", "password", "purpose"]
 }
