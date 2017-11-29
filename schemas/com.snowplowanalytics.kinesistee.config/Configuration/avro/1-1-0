@@ -12,8 +12,12 @@
          "type":"int",
          "minimum":1,
          "maximum":500
-      },
-      {
+       },
+       {
+         "name":"configCacheDurationSecs",
+         "type":"int"
+       },
+       {
          "name":"targetStream",
          "type":{
             "name":"TargetStream",
