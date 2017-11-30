@@ -1,3 +1,7 @@
+Release 81 (2017-12-12)
+-----------------------
+Patch com.snowplowanalytics.snowplow.storage/snowflake_config/jsonschema/1-0-0 (#671)
+
 Release 80 (2017-10-27)
 -----------------------
 Add com.zendesk.snowplow/user/jsonschema/1-0-0 (#653)

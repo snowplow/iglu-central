@@ -30,7 +30,7 @@ limitations under the License.
 [travis]: https://travis-ci.org/snowplow/iglu-central
 [travis-image]: https://travis-ci.org/snowplow/iglu-central.png?branch=master
 
-[release-image]: http://img.shields.io/badge/release-80-orange.svg?style=flat
+[release-image]: http://img.shields.io/badge/release-81-orange.svg?style=flat
 [releases]: https://github.com/snowplow/iglu-central/releases
 
 [license-image]: http://img.shields.io/badge/license-Apache--2-blue.svg?style=flat
