@@ -23,7 +23,7 @@
 			"type": "string"
 		},
 		"carrier": {
-			"type": "string"
+			"type": ["string", "null"]
 		},
 		"openIdfa": {
 			"type": "string"
