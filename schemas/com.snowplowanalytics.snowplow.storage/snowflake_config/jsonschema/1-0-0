@@ -13,10 +13,10 @@
             "type": "string"
         },
         "accessKeyId": {
-            "type": "string"
+            "type": ["string", "null"]
         },
         "secretAccessKey": {
-            "type": "string"
+            "type": ["string", "null"]
         },
         "awsRegion": {
             "type": "string"
@@ -29,6 +29,19 @@
         },
         "database": {
             "type": "string"
+        },
+        "account": {
+            "type": "string"
+        },
+        "warehouse": {
+            "type": "string"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "input": {
+            "type": "string",
+            "format": "uri"
         },
         "stage": {
             "type": "string"
@@ -53,5 +66,5 @@
         }
     },
     "additionalProperties": false,
-    "required": ["name", "accessKeyId", "secretAccessKey", "awsRegion", "manifest", "snowflakeRegion", "database", "stage", "stageUrl", "username", "password", "purpose"]
+    "required": ["name", "awsRegion", "manifest", "snowflakeRegion", "database", "account", "warehouse", "input", "stage", "stageUrl", "username", "password", "purpose"]
 }
