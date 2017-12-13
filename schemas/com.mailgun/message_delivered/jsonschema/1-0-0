@@ -1,0 +1,56 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a Mailgun message delivered event",
+  "self": {
+    "vendor": "com.mailgun",
+    "name": "message_delivered",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "event": {
+      "description": "Event name ('delivered').",
+      "type": "string",
+      "maxLength": 16
+    },
+    "recipient": {
+      "description": "Intended recipient.",
+      "type": "string",
+      "format": "email",
+      "maxLength": 256
+    },
+    "domain": {
+      "description": "Domain that sent the original message.",
+      "type": "string",
+      "format": "hostname",
+      "maxLength": 256
+    },
+    "messageHeaders": {
+      "description": "String list of all MIME headers of the original message dumped to a JSON string (order of headers preserved).",
+      "type": "string"
+    },
+    "messageId": {
+      "description": "The Id of the message that delivered.",
+      "type": "string",
+      "maxLength": 1024
+    },
+    "timestamp": {
+      "description": "Timestamp in ISO8601 format.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "token": {
+      "description": "Randomly generated string with length 50 (see securing webhooks).",
+      "type": "string",
+      "maxLength": 50,
+      "minLength": 50
+    },
+    "signature": {
+      "description": "String with hexadecimal digits generate by HMAC algorithm (see securing webhooks).",
+      "type": "string",
+      "maxLength": 128
+    }
+  },
+  "additionalProperties": true
+}
