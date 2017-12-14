@@ -12,11 +12,39 @@
         "name": {
             "type": "string"
         },
-        "accessKeyId": {
-            "type": ["string", "null"]
-        },
-        "secretAccessKey": {
-            "type": ["string", "null"]
+        "auth": {
+            "description": "Authentication method for Snowflake Load",
+            "oneOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "accessKeyId": {
+                            "type": "string"
+                        },
+                        "secretAccessKey": {
+                            "type": "string"
+                        }
+                    },
+                    "required": ["accessKeyId", "secretAccessKey"]
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "roleArn": {
+                            "type": ["string", "null"],
+                            "minLength": 20
+                        },
+                        "sessionDuration": {
+                            "type": "integer",
+                            "minimum": 900
+                        }
+                    },
+                    "required": ["roleArn", "sessionDuration"]
+                },
+                {
+                    "type": "null"
+                }
+            ]
         },
         "awsRegion": {
             "type": "string"
@@ -54,7 +82,19 @@
             "type": "string"
         },
         "password": {
-            "type": "string"
+            "type": ["string", "object"],
+            "properties": {
+                "ec2ParameterStore": {
+                    "type": "object",
+                    "properties": {
+                        "parameterName": {
+                            "type": "string"
+                        }
+                    },
+                    "required": ["parameterName"]
+                }
+            },
+            "required": ["ec2ParameterStore"]
         },
         "id": {
             "type": "string",
@@ -66,5 +106,5 @@
         }
     },
     "additionalProperties": false,
-    "required": ["name", "awsRegion", "manifest", "snowflakeRegion", "database", "account", "warehouse", "input", "stage", "stageUrl", "username", "password", "purpose"]
+    "required": ["name", "auth", "awsRegion", "manifest", "snowflakeRegion", "database", "account", "warehouse", "input", "stage", "stageUrl", "username", "password", "purpose"]
 }
