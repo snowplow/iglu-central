@@ -1,0 +1,32 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for consent document context",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow",
+		"name": "consent_document",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "string",
+			"maxLength": 36
+		},
+		"version": {
+			"type": "string",
+			"maxLength": 36
+		},
+		"name": {
+			"type": "string",
+			"maxLength": 60
+		},
+		"description": {
+			"type": "string",
+			"maxLength": 10000
+		}
+	},
+	"required": ["id", "version"],
+	"additionalProperties": false
+}
