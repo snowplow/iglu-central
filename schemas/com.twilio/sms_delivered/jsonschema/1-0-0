@@ -1,0 +1,50 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for Twilio SMS delivered webhook event",
+    "self": {
+        "vendor": "com.twilio",
+        "name": "sms_delivered",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "To": {
+            "type": "string",
+            "maxLength": 64
+        },
+        "ApiVersion": {
+            "type": "string",
+            "maxLength": 10
+        },
+        "MessageSid": {
+            "type": "string",
+            "maxLength": 34
+        },
+        "AccountSid": {
+            "type": "string",
+            "maxLength": 34
+        },
+        "SmsSid": {
+            "type": "string",
+            "maxLength": 34
+        },
+        "SmsStatus": {
+            "type": "string",
+            "enum": ["delivered"]
+        },
+        "MessageStatus": {
+            "type": "string",
+            "enum": ["delivered"]
+        },
+        "From": {
+            "type": "string",
+            "maxLength": 64
+        },
+        "MessagingServiceSid": {
+            "type": ["string", "null"],
+            "maxLength": 34
+        }
+    },
+    "additionalProperties": true
+}
