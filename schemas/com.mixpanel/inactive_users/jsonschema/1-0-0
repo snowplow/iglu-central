@@ -1,0 +1,50 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a Mixpanel inactive users notification event",
+	"self": {
+		"vendor": "com.mixpanel",
+		"name": "inactive_users",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+	"type": "object",
+	"properties": {
+		"$distinct_id": {
+			"type": "string"
+		},
+		"$properties": {
+			"type": "object",
+			"properties": {
+				"$region": {
+					"type" : "string"
+				},
+				"$email": {
+					"type" : "string",
+					"format": "email"
+				},
+				"$last_name": {
+					"type" : "string"
+				},
+				"$created": {
+					"type" : "string",
+					"format": "date-time"
+				},
+				"$country_code": {
+					"type" : "string"
+				},
+				"$first_name": {
+					"type" : "string"
+				},
+				"$city": {
+					"type" : "string"
+				},
+				"$last_seen": {
+					"type": "string",
+					"format": "date-time"
+				}
+			},
+			"additionalProperties": true
+		}
+	},
+	"additionalProperties": true
+}
