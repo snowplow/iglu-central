@@ -1,0 +1,52 @@
+{
+  "$schema" : "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self" : {
+    "vendor" : "com.google.cloud.gce",
+    "name" : "instance_metadata",
+    "format" : "jsonschema",
+    "version" : "1-0-0"
+  },
+  "type" : "object",
+  "properties" : {
+    "cpuPlatform" : {
+      "type" : "string",
+      "maxLength" : 64
+    },
+    "hostname" : {
+      "type" : "string",
+      "format": "hostname",
+      "maxLength": 255
+    },
+    "tags" : {
+      "type" : ["array", "null"],
+      "items" : {
+        "type" : "string"
+      }
+    },
+    "id" : {
+      "type" : "string",
+      "maxLength": 32
+    },
+    "image" : {
+      "type" : "string",
+      "maxLength": 128
+    },
+    "machineType" : {
+      "type" : "string",
+      "maxLength": 64
+    },
+    "name" : {
+      "type" : "string",
+      "maxLength": 64
+    },
+    "zone" : {
+      "type" : "string",
+      "maxLength" : 64
+    },
+    "attributes": {
+      "type" : ["object", "null"]
+    }
+  },
+  "required": ["cpuPlatform", "hostname", "id", "image", "machineType", "name", "zone", "attributes", "tags"],
+  "additionalProperties" : false
+}
