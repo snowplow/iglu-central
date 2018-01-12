@@ -1,0 +1,50 @@
+{
+   "$schema":"http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+   "description":"Schema for a Convertro tracking parameters context",
+   "self":{
+      "vendor":"com.convertro",
+      "name":"tracking_parameters",
+      "format":"jsonschema",
+      "version":"1-0-0"
+   },
+   "type":"object",
+   "properties":{
+      "source1":{
+         "type": ["string", "null"],
+         "maxLength": 255
+      },
+      "source2":{
+         "type": ["string", "null"],
+         "maxLength": 255
+      },
+      "source3":{
+         "type": ["string", "null"],
+         "maxLength": 255
+      },
+      "creativeId":{
+         "type": ["string", "null"],
+         "maxLength": 255
+      },
+      "creativeName":{
+         "type": ["string", "null"],
+         "maxLength": 255
+      },
+      "campaignId":{
+         "type": ["string", "null"],
+         "maxLength": 255
+      },
+      "campaignName":{
+         "type": ["string", "null"],
+         "maxLength": 255
+      },
+      "placementId":{
+         "type": ["string", "null"],
+         "maxLength": 255
+      },
+      "placementName":{
+         "type": ["string", "null"],
+         "maxLength": 255
+      }
+   },
+   "additionalProperties": false
+}
