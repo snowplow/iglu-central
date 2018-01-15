@@ -1,0 +1,162 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a PII enrichment original values",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow",
+    "name": "pii_transformation",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "pii": {
+      "type": "object",
+      "properties": {
+        "pojo": {
+          "description": "A scalar field replacement from the EnrichedEvent POJO (e.g. user_id)",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "fieldName": {
+                "enum": [
+                  "user_id",
+                  "user_ipaddress",
+                  "user_fingerprint",
+                  "domain_userid",
+                  "network_userid",
+                  "ip_organization",
+                  "ip_domain",
+                  "tr_orderid",
+                  "ti_orderid",
+                  "mkt_term",
+                  "mkt_content",
+                  "se_category",
+                  "se_action",
+                  "se_label",
+                  "se_property",
+                  "mkt_clickid",
+                  "refr_domain_userid",
+                  "domain_sessionid"
+                ],
+                "description": "The name of the field"
+              },
+              "originalValue": {
+                "type": "string",
+                "description": "The original value (before the PII transform), of the field"
+              },
+              "modifiedValue": {
+                "type": "string",
+                "maxLength": 128,
+                "description": "The value that this field was replaced with (e.g. the hash of the original)"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "fieldName",
+              "originalValue",
+              "modifiedValue"
+            ]
+          }
+        },
+        "json": {
+          "description": "A JSON field replacement from the EnrichedEvent POJO (e.g. contexts). Each entry in this array is a match of the jsonPath for that field",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "fieldMapping": {
+                "description": "A single replacement (there can be multiple) caused by specifying that JsonPath",
+                "type": "object",
+                "properties": {
+                  "fieldName": {
+                    "enum": [
+                      "contexts",
+                      "derived_contexts",
+                      "unstruct_event"
+                    ],
+                    "description": "The name of the field"
+                  },
+                  "jsonPath": {
+                    "type": "string",
+                    "description": "The JsonPath that was specified"
+                  },
+                  "originalValue": {
+                    "type": "string",
+                    "description": "The original value of the field"
+                  },
+                  "modifiedValue": {
+                    "type": "string",
+                    "maxLength": 128,
+                    "description": "The modified value (e.g. hash) of the original value"
+                  },
+                  "schema": {
+                    "type": "string",
+                    "description": "The iglu schema corresponding to this field and value",
+                    "pattern": "^iglu:([a-zA-Z0-9-_.]+)/([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)/([1-9][0-9]*|\\*)-((?:0|[1-9][0-9]*)|\\*)-((?:0|[1-9][0-9]*)|\\*)$"
+                  }
+                },
+                "required": [
+                  "fieldName",
+                  "jsonPath",
+                  "originalValue",
+                  "modifiedValue"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "pojo"
+          ]
+        },
+        {
+          "required": [
+            "json"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "strategy": {
+      "description": "The strategy used to modify the original value",
+      "type": "object",
+      "properties": {
+        "pseudonymize": {
+          "description": "The pseudonymize strategy for modifying the original value",
+          "type": "object",
+          "properties": {
+            "hashFunction": {
+              "enum": [
+                "MD2",
+                "MD5",
+                "SHA-1",
+                "SHA-256",
+                "SHA-384",
+                "SHA-512"
+              ],
+              "description": "The function used to pseudonymize"
+            }
+          },
+          "required": [
+            "hashFunction"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "pseudonymize"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "pii",
+    "strategy"
+  ],
+  "additionalProperties": false
+}
