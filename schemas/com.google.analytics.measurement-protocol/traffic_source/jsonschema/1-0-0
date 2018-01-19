@@ -1,0 +1,49 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a Google Analytics traffic source entity",
+  "self": {
+    "vendor": "com.google.analytics.measurement-protocol",
+    "name": "traffic_source",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+
+  "type": "object",
+  "properties": {
+    "documentReferrer": {
+      "type": ["string", "null"],
+      "maxLength": 2048
+    },
+    "campaignName": {
+      "type": ["string", "null"],
+      "maxLength": 100
+    },
+    "campaignSource": {
+      "type": ["string", "null"],
+      "maxLength": 100
+    },
+    "campaignMedium": {
+      "type": ["string", "null"],
+      "maxLength": 50
+    },
+    "campaignKeyword": {
+      "type": ["string", "null"],
+      "maxLength": 500
+    },
+    "campaignContent": {
+      "type": ["string", "null"],
+      "maxLength": 500
+    },
+    "campaignId": {
+      "type": ["string", "null"],
+      "maxLength": 100
+    },
+    "googleAdwordsId": {
+      "type": ["string", "null"]
+    },
+    "googleDisplayAdsId": {
+      "type": ["string", "null"]
+    }
+  },
+  "additionalProperties": false
+}
