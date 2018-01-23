@@ -1,3 +1,13 @@
+Release 85 (2018-01-23)
+-----------------------
+Redshift SQL: add for com.google.analytics/undocumented/jsonschema/1-0-0 (#712)
+Redshift SQL: add for com.google.analytics/private/jsonschema/1-0-0 (#713)
+Redshift SQL: add for com.google.analytics.measurement-protocol/* (#717)
+Redshift JSON Path: add for com.google.analytics/private/jsonschema/1-0-0 (#714)
+Redshift JSON Path: add for com.google.analytics/undocumented/jsonschema/1-0-0 (#715)
+Redshift JSON Path: add for com.google.analytics.measurement-protocol/* (#716)
+Fix R84 release date in CHANGELOG (#709)
+
 Release 84 (2018-01-19)
 -----------------------
 Patch com.snowplowanalytics.snowplow/mobile_context/jsonschema/1-0-1 (#706)
