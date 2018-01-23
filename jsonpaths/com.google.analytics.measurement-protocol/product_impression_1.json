@@ -1,0 +1,23 @@
+{
+    "jsonpaths": [
+        "$.schema.vendor",
+        "$.schema.name",
+        "$.schema.format",
+        "$.schema.version",
+        "$.hierarchy.rootId",
+        "$.hierarchy.rootTstamp",
+        "$.hierarchy.refRoot",
+        "$.hierarchy.refTree",
+        "$.hierarchy.refParent",
+        "$.data.brand",
+        "$.data.category",
+        "$.data.currencyCode",
+        "$.data.listIndex",
+        "$.data.name",
+        "$.data.position",
+        "$.data.price",
+        "$.data.productIndex",
+        "$.data.sku",
+        "$.data.variant"
+    ]
+}

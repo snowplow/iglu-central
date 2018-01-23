@@ -1,0 +1,20 @@
+{
+    "jsonpaths": [
+        "$.schema.vendor",
+        "$.schema.name",
+        "$.schema.format",
+        "$.schema.version",
+        "$.hierarchy.rootId",
+        "$.hierarchy.rootTstamp",
+        "$.hierarchy.refRoot",
+        "$.hierarchy.refTree",
+        "$.hierarchy.refParent",
+        "$.data.documentEncoding",
+        "$.data.flashVersion",
+        "$.data.javaEnabled",
+        "$.data.screenColors",
+        "$.data.screenResolution",
+        "$.data.userLanguage",
+        "$.data.viewportSize"
+    ]
+}
