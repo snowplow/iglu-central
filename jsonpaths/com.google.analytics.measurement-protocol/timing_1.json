@@ -1,0 +1,25 @@
+{
+    "jsonpaths": [
+        "$.schema.vendor",
+        "$.schema.name",
+        "$.schema.format",
+        "$.schema.version",
+        "$.hierarchy.rootId",
+        "$.hierarchy.rootTstamp",
+        "$.hierarchy.refRoot",
+        "$.hierarchy.refTree",
+        "$.hierarchy.refParent",
+        "$.data.userTimingCategory",
+        "$.data.userTimingTime",
+        "$.data.userTimingVariableName",
+        "$.data.contentLoadTime",
+        "$.data.dnsTime",
+        "$.data.domInteractiveTime",
+        "$.data.pageDownloadTime",
+        "$.data.pageLoadTime",
+        "$.data.redirectResponseTime",
+        "$.data.serverResponseTime",
+        "$.data.tcpConnectTime",
+        "$.data.userTimingLabel"
+    ]
+}
