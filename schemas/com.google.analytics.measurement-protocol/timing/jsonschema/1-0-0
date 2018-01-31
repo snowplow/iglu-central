@@ -11,15 +11,15 @@
   "type": "object",
   "properties": {
     "userTimingCategory": {
-      "type": "string",
+      "type": ["string", "null"],
       "maxLength": 150
     },
     "userTimingVariableName": {
-      "type": "string",
+      "type": ["string", "null"],
       "maxLength": 500
     },
     "userTimingTime": {
-      "type": "integer"
+      "type": ["integer", "null"]
     },
     "userTimingLabel": {
       "type": ["string", "null"],
@@ -50,6 +50,5 @@
       "type": ["integer", "null"]
     }
   },
-  "required": ["userTimingCategory", "userTimingVariableName", "userTimingTime"],
   "additionalProperties": false
 }
