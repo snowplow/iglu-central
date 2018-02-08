@@ -1,7 +1,9 @@
-language: java
-
-jdk:
- - oraclejdk7
-
-script:
-  ./ci/lint.bash
+script: "./ci/lint.bash"
+before_deploy: pip install --user awscli
+deploy:
+- provider: script
+  skip_cleanup: true
+  script: "./ci/push.bash"
+  on:
+    tags: true
+    condition: '"$(./ci/is_release_tag.bash $TRAVIS_TAG)" != "" && $? == 0'
