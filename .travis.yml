@@ -1,7 +1,8 @@
 language: java
-
 jdk:
- - oraclejdk7
-
-script:
-  ./ci/lint.bash
+- oraclejdk7
+script: "./ci/lint.bash"
+env:
+  global:
+  - secure: qcvBVPk1h8FHt7/HMgBd1JAYLjJn2055vMQI3mx3pMAf8Y70nY2kDeEyIgd7bJDg4ZpaNiCs3SDNxENLZ+RO2dRS5i1Od0P0zYLA6E9BUzaF1WkJ/HCEIg9xCblvB1TdPFz2TNmUQh6Lcbd5qBqFuWgnHT+GLJppRtwUSS6QojU=
+  - secure: iLvRKQE5WOOcc8Ivq6P80sCZACF6fJcMt8P8wW5eXHnT0ERZyve8G1wNyNmfChStm0xwvUJFFE9FfDSjhtTgja5HZUb4fcyFKQhni+qDkHx2kYsRYN7yTC1jyk9blMNpoBzyNxsCWf+uXWp+Hii/zncCOqpycMtmTi6KCYkD7hI=
