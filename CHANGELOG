@@ -1,4 +1,4 @@
-Releaes 86 (2018-02-12)
+Release 86 (2018-02-12)
 -----------------------
 Patch com.google.analytics.measurement-protocol/timing/jsonschema/1-0-0 (#718)
 Patch com.snowplowanalytics.snowplow.enrichments/pii_enrichment_config/jsonschema/1-0-0 (#721)
