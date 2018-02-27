@@ -1,4 +1,13 @@
-Releaes 86 (2018-02-12)
+Release 87 (2018-02-27)
+-----------------------
+Add com.snowplowanalytics.snowplow/consent_document/jsonschema/1-0-0 (#682)
+Add com.snowplowanalytics.snowplow/consent_withdrawn/jsonschema/1-0-0 (#668)
+Add com.snowplowanalytics.snowplow/consent_granted/jsonschema/1-0-0 (#667)
+Infrastructure: add AWS credentials in .travis.yml (#725)
+Infrastructure: extend push.bash to handle JSON Paths files (#678)
+Fix R86 title typo in CHANGELOG (#729)
+
+Release 86 (2018-02-12)
 -----------------------
 Patch com.google.analytics.measurement-protocol/timing/jsonschema/1-0-0 (#718)
 Patch com.snowplowanalytics.snowplow.enrichments/pii_enrichment_config/jsonschema/1-0-0 (#721)
