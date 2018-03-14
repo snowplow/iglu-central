@@ -57,7 +57,7 @@
     "privateIp" : {
       "type" : "string",
       "format" : "ipv4",
-      "minLength" : 11,
+      "minLength" : 7,
       "maxLength" : 15
     },
     "region" : {
