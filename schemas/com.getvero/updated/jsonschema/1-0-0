@@ -38,7 +38,8 @@
 							"type": ["array", "null"],
 							"items": [
 								{
-									"type": "string"
+									"type": "string",
+									"maxLength": 255
 								}
 							]
 						},
@@ -46,7 +47,8 @@
 							"type": ["array", "null"],
 							"items": [
 								{
-									"type": "string"
+									"type": "string",
+									"maxLength": 255
 								}
 							]
 						}

@@ -32,7 +32,7 @@
 				},
 				"email": {
 					"type": ["string", "null"],
-					"maximum": 255
+					"maxLength": 255
 				}
 			}
 		}
