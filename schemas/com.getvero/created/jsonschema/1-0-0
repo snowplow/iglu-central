@@ -20,7 +20,7 @@
 		},
 		"role": {
 			"type": ["string", "null"],
-			"maxLength"
+			"maxLength": 255
 		},
 		"user": {
 			"type": "object",
