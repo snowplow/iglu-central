@@ -1,0 +1,41 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for Vero user created",
+	"self": {
+		"vendor": "com.getvero",
+		"name": "created",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"firstname": {
+			"type": ["string", "null"],
+			"maxLength": 255
+		},
+		"company": {
+			"type": ["string", "null"],
+			"maxLength": 255
+		},
+		"role": {
+			"type": ["string", "null"],
+			"maxLength"
+		},
+		"user": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": ["integer", "null"],
+					"minimum": 0,
+					"maximum": 2147483647 
+				},
+				"email": {
+					"type": ["string", "null"],
+					"maximum": 255
+				}
+			}
+		}
+	},
+	"additionalProperties": false
+}
