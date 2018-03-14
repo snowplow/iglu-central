@@ -1,0 +1,188 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Snowplow PostgreSQL storage configuration",
+    "self": {
+        "vendor": "com.snowplowanalytics.snowplow.storage",
+        "name": "postgresql_config",
+        "format": "jsonschema",
+        "version": "2-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "name": {
+            "description": "Human-readable storage target name, used only for logging",
+            "type": "string",
+            "maxLength": 255
+        },
+        "id": {
+            "description": "Machine-readable unique identificator",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9-_.]+$",
+            "minLength": 1,
+            "maxLength": 64
+        },
+        "host": {
+            "description": "PostgreSQL host ('localhost' for enabled SSH Tunnel)",
+            "type": "string",
+            "oneOf": [
+                { "format": "hostname" },
+                { "format": "ipv4" },
+                { "format": "ipv6" }
+            ]
+        },
+        "database": {
+            "description": "PostgreSQL database name",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+        },
+        "port": {
+            "description": "PostgreSQL database port",
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 65535
+        },
+        "username": {
+            "description": "PostgreSQL user used to load data",
+            "type": "string",
+            "maxLength": 64
+        },
+        "password": {
+            "description": "PostgreSQL password, either plain-text or encrypted key for EC2 Parameter Storage",
+            "type": ["string", "object"],
+            "properties": {
+                "ec2ParameterStore": {
+                    "description": "EC2 Parameter Storage configuration",
+                    "type": "object",
+                    "properties": {
+                        "parameterName": {
+                            "description": "EC2 Parameter with encrypted password",
+                            "type": "string"
+                        }
+                    },
+                    "required": ["parameterName"]
+                }
+            },
+            "required": ["ec2ParameterStore"]
+        },
+        "schema": {
+            "description": "PostgreSQL database schema (e.g. 'atomic')",
+            "type": "string",
+            "maxLength": 64
+        },
+        "sshTunnel": {
+            "description": "Optional SSH Tunnel configuration",
+            "type": ["object", "null"],
+            "properties": {
+                "bastion": {
+                    "description": "Bastion host configuration",
+                    "type": "object",
+                    "properties": {
+                        "host": {
+                            "description": "Bastion SSH host",
+                            "type": "string",
+                            "oneOf": [
+                                { "format": "hostname" },
+                                { "format": "ipv4" },
+                                { "format": "ipv6" }
+                            ]
+                        },
+                        "port": {
+                            "description": "Bastion SSH port",
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 65535
+                        },
+                        "user": {
+                            "description": "SSH user",
+                            "type": "string"
+                        },
+                        "passphrase": {
+                            "description": "Plain-text SSH user's passphrase",
+                            "type": ["string", "null"],
+                            "maxLength": 2048
+                        },
+                        "key": {
+                            "description": "SSH-key stored in EC2 Parameter Storage",
+                            "type": ["object", "null"],
+                            "properties": {
+                                "ec2ParameterStore": {
+                                    "type": "object",
+                                    "properties": {
+                                        "parameterName": {
+                                            "type": "string",
+                                            "maxLength": 2048
+                                        }
+                                    },
+                                    "required": ["parameterName"]
+                                }
+                            },
+                            "required": ["ec2ParameterStore"]
+                        }
+                    },
+                    "required": ["host", "port", "user", "passphrase", "key"]
+                },
+                "destination": {
+                    "description": "Database socket inside private network",
+                    "type": "object",
+                    "properties": {
+                        "host": {
+                            "description": "PostgreSQL host inside private network (root-level host should be changed to 'localhost')",
+                            "type": "string",
+                            "oneOf": [
+                                { "format": "hostname" },
+                                { "format": "ipv4" },
+                                { "format": "ipv6" }
+                            ]
+                        },
+                        "port": {
+                            "description": "PostgreSQL port inside private network (root-level port should be changed to be indentical to 'localPort')",
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 65535
+                        }
+                    },
+                    "required": ["host", "port"]
+                },
+                "localPort": {
+                    "description": "Arbitrary port on node, running Loader (shoul be identical to root-level 'port')",
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 65535
+                }
+            },
+            "required": ["bastion", "destination", "localPort"]
+        },
+        "processingManifest": {
+            "description": "Optional processing manifest to maintain pipeline state",
+            "type": ["object", "null"],
+            "properties": {
+                "amazonDynamoDb": {
+                    "description": "Configuration for processing manifest on top of DynamoDB - single available implementation",
+                    "type": "object",
+                    "properties": {
+                        "tableName": {
+                            "description": "DynamoDB table name",
+                            "type": "string",
+                            "minLength": 3,
+                            "maxLength": 255
+                        }
+                    },
+                    "required": ["tableName"]
+                }
+            },
+            "required": ["amazonDynamoDb"]
+        },
+        "sslMode": {
+            "description": "JDBC sslMode",
+            "type": "string",
+            "enum": ["DISABLE", "REQUIRE", "VERIFY_CA", "VERIFY_FULL"]
+        },
+        "purpose": {
+            "description": "Kind of data stored in this instance",
+            "enum": ["ENRICHED_EVENTS"]
+        }
+    },
+    "additionalProperties": false,
+    "required": ["name", "id", "host", "database", "port", "username", "password", "schema", "sshTunnel", "processingManifest", "sslMode", "purpose"]
+}
