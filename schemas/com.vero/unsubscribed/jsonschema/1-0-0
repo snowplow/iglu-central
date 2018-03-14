@@ -1,0 +1,36 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for Vero email unsubscribed",
+	"self": {
+		"vendor": "com.vero",
+		"name": "unsubscribed",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"unsubscribed_at": {
+			"type": "string",				
+			"format": "date-time"
+		},
+		"type": {
+			"type": "string",
+			"maxLength": 12
+		},
+		"user": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "string",
+					"maxLength": 255
+				},
+				"email": {
+					"type": "string",
+					"maxLength": 255
+				}
+			}	
+		}
+	},
+	"additionalProperties": false
+}
