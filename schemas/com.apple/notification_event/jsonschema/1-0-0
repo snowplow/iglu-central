@@ -1,0 +1,143 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for a local or remote push notification",
+    "self": {
+        "vendor": "com.apple",
+        "name": "notification_event",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+
+    "type": "object",
+    "properties": {
+        "action": {
+            "type": "string"
+        },
+        "categoryIdentifier": {
+            "type": "string"
+        },
+        "threadIdentifier": {
+            "type": "string"
+        },
+        "trigger": {
+            "type": "string",
+            "enum": ["PUSH", "LOCATION", "CALENDAR", "TIME_INTERVAL"]
+        },
+        "deliveryDate": {
+            "type": "string"
+        },
+        "notification": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "subtitle": {
+                    "type": "string"
+                },
+                "body": {
+                    "type": "string"
+                },
+                "badge": {
+                    "type": "integer"
+                },
+                "sound": {
+                    "type": "string"
+                },
+                "launchImageName": {
+                    "type": "string"
+                },
+                "userInfo": {
+                    "type": "object",
+                    "properties": {
+                        "aps": {
+                            "type": "object",
+                            "properties": {
+                                "alert": {
+                                    "type": ["string", "object"],
+                                    "properties": {
+                                        "title": {
+                                            "type": "string"
+                                        },
+                                        "body": {
+                                            "type": "string"
+                                        },
+                                        "titleLocKey": {
+                                            "type": "string"
+                                        },
+                                        "titleLocArgs": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "minItems": 1
+                                        },
+                                        "actionLocKey": {
+                                            "type": "string"
+                                        },
+                                        "locKey": {
+                                            "type": "string"
+                                        },
+                                        "locArgs": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "minItems": 1
+                                        },
+                                        "launchImage": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": ["title", "body"],
+                                    "additionalProperties": { "type": ["string", "number"] }
+                                },
+                                "badge": {
+                                    "type": "integer"
+                                },
+                                "sound": {
+                                    "type": "string"
+                                },
+                                "contentAvailable": {
+                                    "type": "string"
+                                },
+                                "category": {
+                                    "type": "string"
+                                },
+                                "threadId": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": ["alert"],
+                            "additionalProperties": false
+                        }
+                    },
+                    "additionalProperties": { "type": ["object", "array", "string", "number", "boolean"] }
+                },
+                "attachments": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "identifier": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            }
+                        },
+                        "required": ["identifier", "url", "type"],
+                        "additionalProperties": false
+                    }
+                }
+            },
+            "required": ["title", "body"],
+            "additionalProperties": false
+        }
+    },
+    "required": ["action", "categoryIdentifier", "threadIdentifier", "trigger", "deliveryDate", "notification"],
+    "additionalProperties": false
+}
