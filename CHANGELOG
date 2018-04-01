@@ -1,3 +1,10 @@
+Release 88 (2018-04-01)
+-----------------------
+Add com.snowplowanalytics.snowplow.storage/postgresql_config/jsonschema/2-0-0 (#739)
+Add com.snowplowanalytics.snowplow.storage/redshift_config/jsonschema/3-0-0 (#693)
+Add com.apple/notification_event/jsonschema/1-0-0 (#723)
+Patch com.amazon.aws.ec2/instance_identity_document/jsonschema/1-0-0 (#740)
+
 Release 87 (2018-02-27)
 -----------------------
 Add com.snowplowanalytics.snowplow/consent_document/jsonschema/1-0-0 (#682)
