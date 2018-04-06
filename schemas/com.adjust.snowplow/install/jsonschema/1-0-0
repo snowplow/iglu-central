@@ -1,0 +1,295 @@
+
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for Adjust install event",
+  "self": {
+    "vendor": "com.adjust.snowplow",
+    "name": "install",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+
+  "type": "object",
+  "properties": {
+    "app_id": {
+      "type": "string"
+    },
+    "app_name": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "app_name_dashboard": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "store": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "tracker": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "tracker_name": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "network_name": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "campaign_name": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "adgroup_name": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "creative_name": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "impression_based": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "is_organic": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "gclid": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "rejection_reason": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "click_referer": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "click_attribution_window": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "impression_attribution_window": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "reattribution_attribution_window": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "inactive_user_definition": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "adid": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "idfa": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "android_id": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "android_id_md5": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "mac_sha1": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "mac_md5": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "idfa-android-id": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "idfa-or-gps-adid": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "idfa_md5": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "idfa_md5_hex": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "idfv": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "gps_adid": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "gps_adid_md5": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "win_uid": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "win_hwid": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "win_naid": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "win_adid": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "match_type": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "reftag": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "referrer": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "user_agent": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "ip_address": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "click_time": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "engagement_time": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "installed_at": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "installed_at_hour": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "created_at": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "reattributed_at": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "connection_type": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "isp": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "city": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "country": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "language": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "device_name": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "device_type": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "os_name": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "api_level": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "sdk_version": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "os_version": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "environment": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "tracking_enabled": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "timezone": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "fb_campaign_group_name": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "fb_campaign_group_id": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "fb_campaign_name": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "fb_campaign_id": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "fb_adgroup_name": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "fb_adgroup_id": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "tweet_id": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "twitter_line_item_id": {
+      "type": "string",
+      "maxLength": 256
+    },
+    "label": {
+      "type": "string",
+      "maxLength": 256
+    }
+  },
+  "additionalProperties": true
+}
