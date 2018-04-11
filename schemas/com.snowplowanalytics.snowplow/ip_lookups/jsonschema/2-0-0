@@ -1,0 +1,90 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "description": "Schema for MaxMind GeoIP2 ip lookups enrichment",
+        "self": {
+            "vendor": "com.snowplowanalytics.snowplow",
+            "name": "ip_lookups",
+            "format": "jsonschema",
+            "version": "2-0-0"
+        },
+
+        "type": "object",
+        "properties": {
+            "vendor": {
+                "type": "string",
+                "maxLength": 256
+            },
+            "name": {
+                "type": "string",
+                "maxLength": 256
+            },
+            "enabled": {
+                "type": "boolean"
+            },
+            "parameters": {
+                "type": "object",
+                "properties": {
+
+                    "geo": {
+                        "type": "object",
+                        "properties": {
+                            "database": {
+                                "enum": ["GeoLite2-City.mmdb", "GeoIP2-City.mmdb"]
+                            },
+                            "uri": {
+                                "type": "string",
+                                "format": "uri"
+                            }
+                        },
+                        "required": ["database", "uri"]
+                    },
+
+                    "isp": {
+                        "type": "object",
+                        "properties": {
+                            "database": {
+                                "enum": ["GeoIP2-ISP.mmdb"]
+                            },
+                            "uri": {
+                                "type": "string",
+                                "format": "uri"
+                            }
+                        },
+                        "required": ["database", "uri"]
+                    },
+
+                    "domain": {
+                        "type": "object",
+                        "properties": {
+                            "database": {
+                                "enum": ["GeoIP2-Domain.mmdb"]
+                            },
+                            "uri": {
+                                "type": "string",
+                                "format": "uri"
+                            }
+                        },
+                        "required": ["database", "uri"]
+                    },
+
+                    "connectionType": {
+                        "type": "object",
+                        "properties": {
+                            "database": {
+                                "enum": ["GeoIP2-Connection-Type.mmdb"]
+                            },
+                            "uri": {
+                                "type": "string",
+                                "format": "uri"
+                            }
+                        },
+                        "required": ["database", "uri"]
+                    }
+
+                },
+                "additionalProperties": false
+            }
+        },
+        "required": ["name", "vendor", "enabled", "parameters"],
+        "additionalProperties": false
+}

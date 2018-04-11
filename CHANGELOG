@@ -1,3 +1,14 @@
+Release 89 (2018-04-11)
+-----------------------
+Add com.snowplowanalytics.snowplow/ip_lookups/jsonschema/2-0-0 (#744)
+Add com.mandrill/recipient_unsubscribed/jsonschema/1-0-1 (#752)
+Add com.mandrill/message_soft_bounced/jsonschema/1-0-1 (#751)
+Add com.mandrill/message_opened/jsonschema/1-0-1 (#750)
+Add com.mandrill/message_marked_as_spam/jsonschema/1-0-1 (#749)
+Add com.mandrill/message_delayed/jsonschema/1-0-1 (#748)
+Add com.mandrill/message_clicked/jsonschema/1-0-1 (#747)
+Add com.mandrill/message_bounced/jsonschema/1-0-1 (#746)
+
 Release 88 (2018-04-01)
 -----------------------
 Add com.snowplowanalytics.snowplow.storage/postgresql_config/jsonschema/2-0-0 (#739)
