@@ -162,57 +162,57 @@
     "apple_idfa": {
           "description": "ID for advertisers (iOS only) e.g 8C6CBCOD-5F43-4765-A6E6-84DFF3D24707",
           "type": ["string", "null"],
-          "maxLength": 1024
+          "maxLength": 36
     },
     "android_id": {
           "description": "Android ID (Android only) e.g 3accef2d7286d0de",
           "type": ["string", "null"],
-          "maxLength": 1024
+          "maxLength": 16
     },
     "mac_sha1": {
           "description": "Uppercase MAC SHA-1 hash e.g 282f2e4d6324ed731ee1ca4179deb6603f2bc5bc",
           "type": ["string", "null"],
-          "maxLength": 1024
+          "maxLength": 40
     },
     "mac_md5": {
           "description": "Uppercase MAC MD5 hash e.g 098f6bcd4621d373cade4e832627b4f6",
           "type": ["string", "null"],
-          "maxLength": 1024
+          "maxLength": 32
     },
     "apple_idfv": {
           "description": "Uppercase iOS ID for vendors e.g CCB300A0-DE1B-4D48-BC7E-599E453B8DD4",
           "type": ["string", "null"],
-          "maxLength": 1024
+          "maxLength": 36
     },
     "gplay_ad_id": {
           "description": "Google Play Store advertising ID e.g 38400000-8cf0-11bd-b23e-10b96e40000d",
           "type": ["string", "null"],
-          "maxLength": 1024
+          "maxLength": 36
     },
     "windows_phone_udid": {
           "description": "Windows Phone unique device ID e.g e81644f1-46b6-4994-2903-1d1f1440c130",
           "type": ["string", "null"],
-          "maxLength": 1024
+          "maxLength": 36
     },
     "windows_store_hwid": {
           "description": "Windows Store hardware ID e.g JKJbFwIArpGAGDmcBTAvlAUMKJkHAMoSCADlJQkDHWG",
           "type": ["string", "null"],
-          "maxLength": 1024
+          "maxLength": 43
     },
     "windows_store_naid": {
           "description": "Windows Store network adapter ID e.g 5978aed4-82e5-28cf-8364-dfc64cb1fb84",
           "type": ["string", "null"],
-          "maxLength": 1024
+          "maxLength": 36
     },
     "windows_ad_id": {
           "description": "Windows advertising identifier e.g 107e8ea14329d4a2194ebbb6dc0c0fd7",
           "type": ["string", "null"],
-          "maxLength": 1024
+          "maxLength": 32
     },
     "fire_os_ad_id": {
           "description": "Fire OS advertising identifier e.g 63c5519b-7e66-7ee6-aa5d-3b290743811f",
           "type": ["string", "null"],
-          "maxLength": 1024
+          "maxLength": 36
     },
     "attribution_type": {
           "description": "Attribution method e.g fingerprint, device_tag, reftag, google, facebook",
