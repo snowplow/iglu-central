@@ -330,7 +330,7 @@
     "cost_type": {
           "description": "Type of ad spend being tracked (available for ad spend tracking only)* e.g CPI",
           "type": ["string", "null"],
-          "maxLength": 500
+          "enum": ["CPI", "CPM", "CPC"]
     },
     "cost_amount": {
           "description": "Cost of the user engagement (available for ad spend tracking only)* e.g 4.99 ($4.99)",
@@ -375,12 +375,12 @@
     "adwords_network_type": {
           "description": "Google AdWords network type e.g Display; Search",
           "type": ["string", "null"],
-          "maxLength": 1024
+          "enum": ["Display", "Search"]
     },
     "adwords_network_subtype": {
           "description": "Google AdWords network subtype e.g GoogleSearch; AdMob",
           "type": ["string", "null"],
-          "maxLength": 1024
+          "enum": ["GoogleSearch", "AdMob"]
     },
     "adwords_keyword": {
           "description": "Google AdWords search keyword e.g hotel",
