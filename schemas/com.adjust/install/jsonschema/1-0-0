@@ -7,6 +7,7 @@
           "format": "jsonschema",
           "version": "1-0-0"
   },
+  "type": "object",
   "properties": {
     "app_id": {
           "description": "Store App ID or Google Play Store e.g 332193586; de.is24.android; C013FJP3WF",
@@ -65,11 +66,13 @@
     },
     "is_impression_based": {
           "description": "1 if impression-based engagement, 0 if not e.g 1",
-          "type": ["string", "null"]
+          "type": ["string", "null"],
+          "maxLength": 1
     },
     "is_organic": {
           "description": "1 if organic traffic, 0 if non-organic e.g 0",
-          "type": ["string", "null"]
+          "type": ["string", "null"],
+          "maxLength": 1
     },
     "rejection_reason": {
           "description": "Reason for a rejeted attribution e.g anonymous_traffic, distribution_outlier, too_many_engagements, engagement_injection, incorrect_signature",
@@ -293,11 +296,13 @@
     },
     "tracking_enabled": {
           "description": "1 if tracking is enabled, 0 if not e.g 1",
-          "type": ["string", "null"]
+          "type": ["string", "null"],
+          "maxLength": 1
     },
     "tracking_limited": {
           "description": "1 if tracking is limited, 0 if not e.g 0",
-          "type": ["string", "null"]
+          "type": ["string", "null"],
+          "maxLength": 1
     },
     "device_timezone": {
           "description": "Device time zone e.g UTC+0400",
