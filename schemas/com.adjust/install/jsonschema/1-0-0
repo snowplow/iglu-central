@@ -89,55 +89,55 @@
     },
     "click_time": {
           "description": "Attributed click timestamp e.g 1403568849",
-          "type": ["number", "null"],
+          "type": ["integer", "null"],
           "maximum": 9999999999,
           "minimum": 0
     },
     "impression_time": {
           "description": "Attributed impression timestamp e.g 1403568830",
-          "type": ["number", "null"],
+          "type": ["integer", "null"],
           "maximum": 9999999999,
           "minimum": 0
     },
     "conversion_duration": {
           "description": "Time between click and install or reattribution in seconds e.g 72",
-          "type": ["number", "null"],
+          "type": ["integer", "null"],
           "maximum": 9999999999,
           "minimum": 0
     },
     "engagement_time": {
           "description": "Engagement timestamp e.g 1403566587",
-          "type": ["number", "null"],
+          "type": ["integer", "null"],
           "maximum": 9999999999,
           "minimum": 0
     },
     "install_time": {
           "description": "Install (i.e., first app open) timestamp e.g 1404214634",
-          "type": ["number", "null"],
+          "type": ["integer", "null"],
           "maximum": 9999999999,
           "minimum": 0
     },
     "install_complete_time": {
           "description": "App download completion timestamp (reported before Adjust install; Android and Google Play Store only) e.g 1441514522",
-          "type": ["number", "null"],
+          "type": ["integer", "null"],
           "maximum": 9999999999,
           "minimum": 0
     },
     "install_begin_time": {
           "description": "App download began timestamp (Android and Google Play Store only) e.g 1502254761",
-          "type": ["number", "null"],
+          "type": ["integer", "null"],
           "maximum": 9999999999,
           "minimum": 0
     },
     "referral_time": {
           "description": "User landed on app Play Store page timestamp (Android and Google Play Store only) e.g 1836167739",
-          "type": ["number", "null"],
+          "type": ["integer", "null"],
           "maximum": 9999999999,
           "minimum": 0
     },
     "created_at_time": {
           "description": "Activity timestamp e.g 1404214665",
-          "type": ["number", "null"],
+          "type": ["integer", "null"],
           "maximum": 9999999999,
           "minimum": 0
     },
@@ -148,19 +148,19 @@
     },
     "click_attribution_window": {
           "description": "Attribution window settings for device matching (hours) e.g 168",
-          "type": ["number", "null"],
+          "type": ["integer", "null"],
           "maximum": 9999999999,
           "minimum": 0
     },
     "impression_attribution_window": {
           "description": "Attribution window settings for impression matching (hours) e.g 24",
-          "type": ["number", "null"],
+          "type": ["integer", "null"],
           "maximum": 9999999999,
           "minimum": 0
     },
     "fingerprint_attribution_window": {
           "description": "Attribution window settings for device fingerprinting (hours) e.g 18",
-          "type": ["number", "null"],
+          "type": ["integer", "null"],
           "maximum": 9999999999,
           "minimum": 0
     },
