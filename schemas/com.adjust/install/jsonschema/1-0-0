@@ -7,7 +7,6 @@
           "format": "jsonschema",
           "version": "1-0-0"
   },
-  "type": "object",
   "properties": {
     "app_id": {
           "description": "Store App ID or Google Play Store e.g 332193586; de.is24.android; C013FJP3WF",
@@ -66,11 +65,11 @@
     },
     "is_impression_based": {
           "description": "1 if impression-based engagement, 0 if not e.g 1",
-          "type": ["boolean", "null"]
+          "type": ["string", "null"]
     },
     "is_organic": {
           "description": "1 if organic traffic, 0 if non-organic e.g 0",
-          "type": ["boolean", "null"]
+          "type": ["string", "null"]
     },
     "rejection_reason": {
           "description": "Reason for a rejeted attribution e.g anonymous_traffic, distribution_outlier, too_many_engagements, engagement_injection, incorrect_signature",
@@ -89,57 +88,48 @@
     },
     "click_time": {
           "description": "Attributed click timestamp e.g 1403568849",
-          "type": ["integer", "null"],
-          "maximum": 9999999999,
-          "minimum": 0
+          "type": ["string", "null"],
+          "maxLength": 10
     },
     "impression_time": {
           "description": "Attributed impression timestamp e.g 1403568830",
-          "type": ["integer", "null"],
-          "maximum": 9999999999,
-          "minimum": 0
+          "type": ["string", "null"],
+          "maxLength": 10
     },
     "conversion_duration": {
           "description": "Time between click and install or reattribution in seconds e.g 72",
-          "type": ["integer", "null"],
-          "maximum": 9999999999,
-          "minimum": 0
+          "type": ["string", "null"],
+          "maxLength": 10
     },
     "engagement_time": {
           "description": "Engagement timestamp e.g 1403566587",
-          "type": ["integer", "null"],
-          "maximum": 9999999999,
-          "minimum": 0
+          "type": ["string", "null"],
+          "maxLength": 10
     },
     "install_time": {
           "description": "Install (i.e., first app open) timestamp e.g 1404214634",
-          "type": ["integer", "null"],
-          "maximum": 9999999999,
-          "minimum": 0
+          "type": ["string", "null"],
+          "maxLength": 10
     },
     "install_complete_time": {
           "description": "App download completion timestamp (reported before Adjust install; Android and Google Play Store only) e.g 1441514522",
-          "type": ["integer", "null"],
-          "maximum": 9999999999,
-          "minimum": 0
+          "type": ["string", "null"],
+          "maxLength": 10
     },
     "install_begin_time": {
           "description": "App download began timestamp (Android and Google Play Store only) e.g 1502254761",
-          "type": ["integer", "null"],
-          "maximum": 9999999999,
-          "minimum": 0
+          "type": ["string", "null"],
+          "maxLength": 10
     },
     "referral_time": {
           "description": "User landed on app Play Store page timestamp (Android and Google Play Store only) e.g 1836167739",
-          "type": ["integer", "null"],
-          "maximum": 9999999999,
-          "minimum": 0
+          "type": ["string", "null"],
+          "maxLength": 10
     },
     "created_at_time": {
           "description": "Activity timestamp e.g 1404214665",
-          "type": ["integer", "null"],
-          "maximum": 9999999999,
-          "minimum": 0
+          "type": ["string", "null"],
+          "maxLength": 10
     },
     "connection_type": {
           "description": "Internet connection type e.g cellular, Cable%2FDSL, Corporate",
@@ -148,21 +138,18 @@
     },
     "click_attribution_window": {
           "description": "Attribution window settings for device matching (hours) e.g 168",
-          "type": ["integer", "null"],
-          "maximum": 9999999999,
-          "minimum": 0
+          "type": ["string", "null"],
+          "maxLength": 10
     },
     "impression_attribution_window": {
           "description": "Attribution window settings for impression matching (hours) e.g 24",
-          "type": ["integer", "null"],
-          "maximum": 9999999999,
-          "minimum": 0
+          "type": ["string", "null"],
+          "maxLength": 10
     },
     "fingerprint_attribution_window": {
           "description": "Attribution window settings for device fingerprinting (hours) e.g 18",
-          "type": ["integer", "null"],
-          "maximum": 9999999999,
-          "minimum": 0
+          "type": ["string", "null"],
+          "maxLength": 10
     },
     "adjust_device_id": {
           "description": "Adjust device ID (all platforms) e.g 18546f6171f67e29d1cb983322ad1329",
@@ -306,11 +293,11 @@
     },
     "tracking_enabled": {
           "description": "1 if tracking is enabled, 0 if not e.g 1",
-          "type": ["boolean", "null"]
+          "type": ["string", "null"]
     },
     "tracking_limited": {
           "description": "1 if tracking is limited, 0 if not e.g 0",
-          "type": ["boolean", "null"]
+          "type": ["string", "null"]
     },
     "device_timezone": {
           "description": "Device time zone e.g UTC+0400",
@@ -476,4 +463,4 @@
   "minProperties": 1,
   "required": ["app_id"],
   "additionalProperties": true
-}
+  }
