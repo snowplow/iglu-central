@@ -22,6 +22,10 @@
 			"type": ["string", "null"],
 			"maxLength": 255
 		},
+		"type": {
+			"type": ["string", "null"],
+			"maxLength": 12
+		},
 		"user": {
 			"type": "object",
 			"properties": {
@@ -32,7 +36,7 @@
 				},
 				"email": {
 					"type": ["string", "null"],
-					"maxLength": 255
+					"format": "email"
 				}
 			}
 		}

@@ -31,7 +31,7 @@
 				},
 				"email": {
 					"type": "string",
-					"maxLength": 255
+					"format": "email"
 				}
 			}	
 		},

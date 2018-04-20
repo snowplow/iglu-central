@@ -24,14 +24,14 @@
 				},
 				"email": {
 					"type": ["string", "null"],
-					"maxLength": 255
+					"format": "email"
 				}
 			}
 		},
 		"changes": {
 			"type": "object",
 			"properties": {
-				"_tags": {
+				"tags": {
 					"type": "object",
 					"properties": {
 						"add": {
