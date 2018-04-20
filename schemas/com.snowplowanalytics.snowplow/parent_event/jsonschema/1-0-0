@@ -1,0 +1,20 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Context containing ID of parent event (useful for annotating events derived from other events)",
+    "self": {
+        "vendor": "com.snowplowanalytics.snowplow",
+        "name": "parent_event",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+
+    "type": "object",
+    "properties": {
+        "parentEventId": {
+            "type": "string",
+            "format": "uuid"
+        }
+    },
+    "required": ["parentEventId"],
+    "additionalProperties": false
+}
