@@ -46,7 +46,7 @@
       "properties": {
         "account_owner_email_address": {
           "type": "string",
-          "maxLength": 255
+          "format": "email"
         },
         "account_owner_first_name": {
           "type": "string",
@@ -175,7 +175,7 @@
         },
         "email_address": {
           "type": "string",
-          "maxLength": 255
+          "format": "email"
           },
         "email_invalid_cause": {
           "type": "string",
@@ -267,7 +267,7 @@
         },
         "lead_owner_email_address": {
           "type": "string",
-          "maxLength": 255
+          "format": "email"
         },
         "lead_owner_first_name": {
           "type": "string",
@@ -567,7 +567,7 @@
         },
         "email": {
           "type": "string",
-          "maxLength": 255
+          "format": "email"
         }
       }
     },
