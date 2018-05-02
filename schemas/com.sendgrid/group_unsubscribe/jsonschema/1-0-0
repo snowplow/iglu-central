@@ -30,7 +30,7 @@
       "type": "string"
     },
     "useragent": {
-      "type": "string"
+      "type": ["string", "null"]
     },
     "category": {
       "type": [

@@ -25,7 +25,7 @@
       "type": "string"
     },
     "status": {
-      "type": "string"
+      "type": ["string", "integer"]
     },
     "category": {
       "type": [

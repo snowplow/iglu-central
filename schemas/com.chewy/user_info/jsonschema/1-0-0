@@ -1,0 +1,73 @@
+{
+  "$schema" : "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self" : {
+    "vendor" : "com.chewy",
+    "name" : "user_info",
+    "version" : "1-0-0",
+    "format" : "jsonschema"
+  },
+  "type" : "object",
+  "properties" : {
+    "first-order-date" : {
+      "type" : "string"
+    },
+    "city" : {
+      "type" : "string"
+    },
+    "has-ordered" : {
+      "type" : "boolean"
+    },
+    "zip" : {
+      "type" : "string"
+    },
+    "email" : {
+      "type" : "string"
+    },
+    "registration-date" : {
+      "type" : "string"
+    },
+    "state" : {
+      "type" : "string"
+    },
+    "repeat-customer" : {
+      "type" : "boolean"
+    },
+    "country" : {
+      "type" : "string"
+    },
+    "last-order-pet" : {
+      "type" : "string"
+    },
+    "customerId" : {
+      "type" : "string"
+    },
+    "lastName" : {
+      "type" : "string"
+    },
+    "firstName" : {
+      "type" : "string"
+    },
+    "average-order-value" : {
+      "type" : "string"
+    },
+    "last-order-date" : {
+      "type" : "string"
+    },
+    "address" : {
+      "type" : "string"
+    },
+    "mobile" : {
+      "type" : "string"
+    },
+    "autoship-status" : {
+      "type" : "string"
+    },
+    "firstname" : {
+      "type" : "string"
+    },
+    "lastname" : {
+      "type" : "string"
+    }
+  },
+  "additionalProperties" : true
+}

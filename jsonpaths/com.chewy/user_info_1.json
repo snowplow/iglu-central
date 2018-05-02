@@ -1,0 +1,31 @@
+{
+    "jsonpaths": [
+        "$.schema.vendor",
+        "$.schema.name",
+        "$.schema.format",
+        "$.schema.version",
+        "$.hierarchy.rootId",
+        "$.hierarchy.rootTstamp",
+        "$.hierarchy.refRoot",
+        "$.hierarchy.refTree",
+        "$.hierarchy.refParent",
+        "$.data.address",
+        "$.data.average-order-value",
+        "$.data.city",
+        "$.data.country",
+        "$.data.customerId",
+        "$.data.email",
+        "$.data.first-order-date",
+        "$.data.firstname",
+        "$.data.has-ordered",
+        "$.data.last-order-date",
+        "$.data.last-order-pet",
+        "$.data.lastname",
+        "$.data.mobile",
+        "$.data.registration-date",
+        "$.data.repeat-customer",
+        "$.data.state",
+        "$.data.zip",
+        "$.data.autoship-status"
+    ]
+}

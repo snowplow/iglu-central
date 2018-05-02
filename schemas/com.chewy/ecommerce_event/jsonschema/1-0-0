@@ -1,0 +1,178 @@
+{
+  "$schema" : "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self" : {
+    "vendor" : "com.chewy",
+    "name" : "ecommerce_event",
+    "version" : "1-0-0",
+    "format" : "jsonschema"
+  },
+  "type" : "object",
+  "properties" : {
+    "action": {
+      "type": "string"
+    },
+    "autoship-frequency": {
+      "type": "string"
+    },
+    "autoship-order": {
+      "type": "string"
+    },
+    "brand-id": {
+      "type": "string"
+    },
+    "brand-name": {
+      "type": "string"
+    },
+    "category-id": {
+      "type": "string"
+    },
+    "category-level": {
+      "type": "string"
+    },
+    "category-name": {
+      "type": "string"
+    },
+    "credit-card-verification": {
+      "type": "string"
+    },    
+    "checkout_options": {
+      "type": "string"
+    },
+    "checkout_step": {
+      "type": "integer"
+    },
+    "currency_code": {
+      "type": "string"
+    },
+    "direct-mail-order": {
+      "type": "string"
+    },
+    "discount": {
+      "type": "string"
+    },
+    "event_id": {
+      "type": ["integer","string"]
+    },
+    "facet-id": {
+      "type": "string"
+    },
+    "facet-name": {
+      "type": "string"
+    },
+    "facet-value": {
+      "type": "string"
+    },
+    "facet-value-id": {
+      "type": "string"
+    },
+    "first-order": {
+      "type": "string"
+    },
+    "frozen-order": {
+      "type": "string"
+    },
+    "is_non_interactive": {
+      "type": "boolean"
+    },
+    "item-count-total": {
+      "type": "string"
+    },
+    "item-count-unique": {
+      "type": "string"
+    },
+    "list-name": {
+      "type": "string"
+    },
+    "page-number": {
+      "type": "string"
+    },
+    "payment-method-type": {
+      "type": "string"
+    },
+    "prescription-order": {
+      "type": "string"
+    },
+    "product_action_list": {
+      "type": "string"
+    },
+    "product_list_source": {
+      "type": "string"
+    },
+    "promo-id-applied": {
+      "type": "string"
+    },
+    "promo-name-applied": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "string"
+    },
+    "results-count": {
+      "type": "string"
+    },
+    "results-view": {
+      "type": "string"
+    },
+    "revenue": {
+      "type": "string"
+    },
+    "screen_name": {
+      "type": "string"
+    },
+    "search-term": {
+      "type": "string"
+    },
+    "search-term-corrected": {
+      "type": "string"
+    },
+    "search-term-relaxed": {
+      "type": "string"
+    },
+    "session_id": {
+      "type": ["integer","string"]
+    },
+    "shipping": {
+      "type": "string"
+    },
+    "shipping-address-type": {
+      "type": "string"
+    },
+    "shipping_amount": {
+      "type": "number"
+    },
+    "sort-dimension": {
+      "type": "string"
+    },
+    "source-view": {
+      "type": "string"
+    },
+    "source_message_id": {
+      "type": "string"
+    },
+    "subtotal": {
+      "type": "string"
+    },
+    "tax": {
+      "type": ["number","string"]
+    },
+    "tax_amount": {
+      "type": "number"
+    },
+    "timestamp_unixtime_ms": {
+      "type": ["integer","string"]
+    },
+    "total_amount": {
+      "type": "number"
+    },
+    "transaction-id": {
+      "type": "string"
+    },
+    "vet-info-type": {
+      "type": "string"
+    },
+    "product_impression_type": {
+      "type": "string"
+    }
+  },
+  "additionalProperties" : true
+}

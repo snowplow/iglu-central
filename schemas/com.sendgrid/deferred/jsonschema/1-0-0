@@ -44,7 +44,7 @@
       "type": ["string", "integer"]
     },
     "response": {
-      "type": "string"
+      "type": ["string", "null"]
     },
     "cert_error": {
       "type": "string"

@@ -5,13 +5,14 @@ CREATE TABLE IF NOT EXISTS atomic.com_snowplowanalytics_monitoring_kinesis_app_i
 	schema_format		varchar(128)		not null		encoding rle,
 	schema_version		varchar(128)		not null		encoding rle,
 	-- Parentage of this type
-	root_id     		varchar(36) 		not null		encoding gzip_comp   ,
+	root_id     		char(36) 		not null		encoding gzip_comp   ,
 	root_tstamp 		timestamp   		not null		encoding deltaval    ,
 	ref_root    		varchar(255)		not null		encoding rle         ,
 	ref_tree    		varchar(1500)		not null		encoding rle         ,
 	ref_parent  		varchar(255)		not null		encoding rle         ,
 	-- Properties of this type
-	applicationName		varchar(255)		null        		encoding gzip_comp   
+	applicationName		varchar(255)		null        		encoding gzip_comp   ,
+	FOREIGN KEY (root_id) REFERENCES atomic.events(event_id)
 )
 ORDER BY
 	schema_vendor,
@@ -26,3 +27,6 @@ ORDER BY
 SEGMENTED BY
 	hash(root_id) ALL NODES
 ;
+
+
+COMMENT ON TABLE atomic.com_snowplowanalytics_monitoring_kinesis_app_initialized_1 IS 'iglu:com.snowplowanalytics.monitoring.kinesis/app_initialized/jsonschema/1-0-0';

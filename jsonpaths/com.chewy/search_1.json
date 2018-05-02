@@ -1,0 +1,21 @@
+{
+    "jsonpaths": [
+        "$.schema.vendor",
+        "$.schema.name",
+        "$.schema.format",
+        "$.schema.version",
+
+        "$.hierarchy.rootId",
+        "$.hierarchy.rootTstamp",
+        "$.hierarchy.refRoot",
+        "$.hierarchy.refTree",
+        "$.hierarchy.refParent",
+
+        "$.data.search-term",
+        "$.data.search-term-corrected",
+        "$.data.search-term-relaxed",       
+        "$.data.search-redirect",
+        "$.data.search-redirect-type",
+        "$.data.source-view"
+    ]
+}
