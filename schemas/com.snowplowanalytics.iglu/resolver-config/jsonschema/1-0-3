@@ -1,0 +1,97 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for an Iglu resolver's configuration",
+	"self": {
+		"vendor": "com.snowplowanalytics.iglu",
+		"name": "resolver-config",
+		"format": "jsonschema",
+		"version": "1-0-3"
+	},
+
+	"type": "object",
+
+	"properties": {
+
+		"cacheSize": {
+			"type": "number"
+		},
+
+		"cacheTtl": {
+			"type": ["integer", "null"],
+			"minimum": 0
+		},
+
+		"repositories": {
+			"type": "array",
+			"items": {
+				"type": "object",
+
+				"properties": {
+
+					"name": {
+						"type": "string"
+					},
+
+					"priority": {
+						"type": "number"
+					},
+
+					"vendorPrefixes": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+
+					"connection": {
+						"type": "object",
+						"oneOf": [
+							{
+								"properties": {
+									"embedded": {
+										"type": "object",
+										"properties": {
+											"path": {
+												"type": "string"
+											}
+										},
+										"required": ["path"],
+										"additionalProperties": false
+									}
+								},
+								"required": ["embedded"],
+								"additionalProperties": false
+							},
+							{
+								"properties": {
+									"http": {
+										"type": "object",
+										"properties": {
+											"uri": {
+												"type": "string",
+												"format": "uri"
+											},
+											"apikey": {
+												"type": ["string", "null"]
+											}
+										},
+										"required": ["uri"],
+										"additionalProperties": false
+									}
+								},
+								"required": ["http"],
+								"additionalProperties": false
+							}
+						]
+					}
+				},
+				"required": ["name", "priority", "vendorPrefixes", "connection"],
+				"additionalProperties": false
+			}
+		}
+
+	},
+
+	"required": ["cacheSize", "repositories"],
+	"additionalProperties": false
+}
