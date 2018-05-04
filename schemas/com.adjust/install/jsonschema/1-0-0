@@ -32,7 +32,7 @@
     "store": {
           "description": "Target store of click e.g itunes; google, wstore, wphone",
           "type": ["string", "null"],
-          "enum": ["itunes", "google", "wstore", "wphone"]
+          "maxLength": 24
     },
     "adjust_tracker": {
           "description": "6-character Adjust tracker token e.g abc123",
@@ -75,9 +75,9 @@
           "maxLength": 1
     },
     "rejection_reason": {
-          "description": "Reason for a rejeted attribution e.g anonymous_traffic, distribution_outlier, too_many_engagements, engagement_injection, incorrect_signature",
+          "description": "Reason for a rejected attribution e.g anonymous_traffic, distribution_outlier, too_many_engagements, engagement_injection, incorrect_signature",
           "type": ["string", "null"],
-          "enum": ["anonymous_traffic", "distribution_outlier", "too_many_engagements", "engagement_injection", "incorrect_signature"]
+          "maxLength": 50
     },
     "click_referer": {
           "description": "Referrer header from click e.g http%3A%2F%2Fwww.example.com%2F%3Ffoo%3Dbar",
@@ -217,7 +217,7 @@
     "attribution_type": {
           "description": "Attribution method e.g fingerprint, device_tag, reftag, google, facebook",
           "type": ["string", "null"],
-          "enum": ["fingerprint", "device_tag", "reftag", "google", "facebook"]
+          "maxLength": 24
     },
     "gplay_referer": {
           "description": "Google Play Store referrer (Android only) e.g APPIA142157299513371854693246846",
@@ -292,7 +292,7 @@
     "environment": {
           "description": "Current Adjust SDK environment setting e.g production, sandbox",
           "type": ["string", "null"],
-          "enum": ["production", "sandbox"]
+          "maxLength": 24
     },
     "tracking_enabled": {
           "description": "1 if tracking is enabled, 0 if not e.g 1",
@@ -322,7 +322,7 @@
     "cost_type": {
           "description": "Type of ad spend being tracked (available for ad spend tracking only)* e.g CPI",
           "type": ["string", "null"],
-          "enum": ["CPI", "CPM", "CPC"]
+          "maxLength": 8
     },
     "cost_amount": {
           "description": "Cost of the user engagement (available for ad spend tracking only)* e.g 4.99 ($4.99)",
@@ -342,7 +342,7 @@
     "adwords_campaign_type": {
           "description": "Google AdWords campaign type e.g UAC; Search; Display; Video",
           "type": ["string", "null"],
-          "enum": ["UAC", "Search", "Display", "Video"]
+          "maxLength": 24
     },
     "adwords_campaign_name": {
           "description": "Google AdWords campaign name e.g iOS+UAC+US+re-engagement",
@@ -367,12 +367,12 @@
     "adwords_network_type": {
           "description": "Google AdWords network type e.g Display; Search",
           "type": ["string", "null"],
-          "enum": ["Display", "Search"]
+          "maxLength": 24
     },
     "adwords_network_subtype": {
           "description": "Google AdWords network subtype e.g GoogleSearch; AdMob",
           "type": ["string", "null"],
-          "enum": ["GoogleSearch", "AdMob"]
+          "maxLength": 24
     },
     "adwords_keyword": {
           "description": "Google AdWords search keyword e.g hotel",
@@ -457,12 +457,12 @@
     "apple_ad_conversion_type": {
           "description": "Download status: first or subsequent app download e.g Download; Redownload",
           "type": ["string", "null"],
-          "enum": ["Download", "Redownload"]
+          "maxLength": 24
     },
     "apple_ad_keyword_matchtype": {
           "description": "Apple Search keyword matchtype e.g Broad; Exact",
           "type": ["string", "null"],
-          "enum": ["Broad", "Exact"]
+          "maxLength": 24
     }
   },
   "minProperties": 1,
