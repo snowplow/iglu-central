@@ -1,3 +1,12 @@
+Release 91 (2018-05-23)
+-----------------------
+Add com.snowplowanalytics.iglu/resolver-config/jsonschema/1-0-3 (#775)
+Patch com.snowplowanalytics.snowplow.storage/postgresql_config/jsonschema/2-0-0 (#774)
+Patch com.snowplowanalytics.snowplow.storage/redshift_config/jsonschema/3-0-0 (#773)
+Add com.snowplowanalytics.snowplow/application_error/jsonschema/1-0-2 (#771)
+Add com.snowplowanalytics.manifest/locked_payload/jsonschema/1-0-0 (#770)
+Add com.snowplowanalytics.snowplow.storage.rdbshredder/processed_payload/jsonschema/1-0-0 (#755)
+
 Release 90 (2018-05-12)
 -----------------------
 Add com.snowplowanalytics.snowplow/parent_event/jsonschema/1-0-0 (#768)
