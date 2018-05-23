@@ -1,0 +1,23 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for processing manifest payload added by RDB Shredder after job has finished",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow.storage.rdbshredder",
+		"name": "processed_payload",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"shreddedTypes": {
+			"description": "List of shredded types encountered within a single batch",
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		}
+	},
+	"required": ["shreddedTypes"],
+	"additionalProperties": false
+}

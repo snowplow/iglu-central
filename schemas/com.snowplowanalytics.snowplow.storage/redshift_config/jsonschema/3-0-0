@@ -17,14 +17,12 @@
         "id": {
             "description": "Machine-readable unique identificator",
             "type": "string",
-            "pattern": "^[a-zA-Z0-9-_.]+$",
-            "minLength": 1,
-            "maxLength": 64
+            "format": "uuid"
         },
         "host": {
             "description": "Redshift cluster host ('localhost' for enabled SSH Tunnel)",
             "type": "string",
-            "oneOf": [
+            "anyOf": [
                 { "format": "hostname" },
                 { "format": "ipv4" },
                 { "format": "ipv6" }
@@ -82,7 +80,7 @@
                         "host": {
                             "description": "Bastion SSH host",
                             "type": "string",
-                            "oneOf": [
+                            "anyOf": [
                                 { "format": "hostname" },
                                 { "format": "ipv4" },
                                 { "format": "ipv6" }
@@ -131,7 +129,7 @@
                         "host": {
                             "description": "Redshift host inside private network (root-level host should be changed to 'localhost')",
                             "type": "string",
-                            "oneOf": [
+                            "anyOf": [
                                 { "format": "hostname" },
                                 { "format": "ipv4" },
                                 { "format": "ipv6" }
