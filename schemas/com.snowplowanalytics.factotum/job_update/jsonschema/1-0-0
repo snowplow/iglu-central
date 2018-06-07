@@ -114,12 +114,10 @@
 						"type": "string"
 					},
 					"stdout": {
-						"type": "string",
-						"maxLength": 10000
+						"type": "string"
 					},
 					"stderr": {
-						"type": "string",
-						"maxLength": 10000
+						"type": "string"
 					},
 					"returnCode": {
 						"type": "integer",
