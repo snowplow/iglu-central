@@ -1,0 +1,63 @@
+{
+  "$schema" : "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self" : {
+    "vendor" : "com.chewy",
+    "name" : "crash_report",
+    "version" : "1-0-0",
+    "format" : "jsonschema"
+  },
+  "type" : "object",
+  "properties" : {
+    "pl_crash_report_file_base64" : {
+      "type" : "string",
+      "minLength" : 18,
+      "maxLength" : 18
+    },
+    "ios_image_size" : {
+      "type" : ["integer","string"],
+      "maximum" : 2147483647,
+      "minimum" : 0
+    },
+    "topmost_context" : {
+      "type" : "string",
+      "minLength" : 17,
+      "maxLength" : 17
+    },
+    "stack_trace" : {
+      "type" : "string",
+      "minLength" : 24,
+      "maxLength" : 24
+    },
+    "class_name" : {
+      "type" : "string",
+      "minLength" : 26,
+      "maxLength" : 26
+    },
+    "ios_image_base_address" : {
+      "type" : ["integer","string"],
+      "maximum" : 9223372036854775807,
+      "minimum" : 0
+    },
+    "message" : {
+      "type" : "string",
+      "minLength" : 78,
+      "maxLength" : 78
+    },
+    "severity" : {
+      "type" : "string",
+      "minLength" : 5,
+      "maxLength" : 5
+    },
+    "timestamp_unixtime_ms" : {
+      "type": ["integer","string"],
+      "maximum" : 9223372036854775807,
+      "minimum" : 0
+    },
+    "event_id" : {
+      "type": ["integer","string"],
+      "maximum" : 9223372036854775807,
+      "minimum" : 0
+    }
+  },
+  "additionalProperties" : false
+}
