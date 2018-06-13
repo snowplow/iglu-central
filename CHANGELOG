@@ -1,3 +1,8 @@
+Release 92 (2018-06-13)
+-----------------------
+Patch com.snowplowanalytics.factotum/job_update/jsonschema/1-0-0 (#782)
+Patch com.snowplowanalytics.factotum/task_update/jsonschema/1-0-0 (#783)
+
 Release 91 (2018-05-23)
 -----------------------
 Add com.snowplowanalytics.iglu/resolver-config/jsonschema/1-0-3 (#775)
