@@ -2,3 +2,6 @@
 
 # Vagrant
 .vagrant/
+
+# Mac OS
+.DS_Store

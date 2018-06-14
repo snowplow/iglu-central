@@ -1,0 +1,124 @@
+{
+  "$schema" : "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self" : {
+    "vendor" : "com.chewy",
+    "name" : "product",
+    "version" : "1-0-0",
+    "format" : "jsonschema"
+  },
+  "type" : "object",
+  "properties" : {
+    "added_to_cart_time_ms": {
+      "type": ["number","string"]
+    },
+    "advertised-price": {
+      "type": "string"
+    },
+    "advertised-price-type": {
+      "type": "string"
+    },
+    "autoship-price": {
+      "type": "string"
+    },
+    "autoship-savings-pct": {
+      "type": "string"
+    },
+    "availability": {
+      "type": "string"
+    },
+    "average-rating": {
+      "type": "string"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "catentry-id": {
+      "type": "string"
+    },
+    "coupon_code": {
+      "type": "string"
+    },
+    "defining-attribute-name": {
+      "type": "string"
+    },
+    "defining-attribute-value": {
+      "type": "string"
+    },
+    "frozen-item": {
+      "type": "string"
+    },
+    "has-extended-content": {
+      "type": "string"
+    },
+    "has-video": {
+      "type": "string"
+    },
+    "item-badge": {
+      "type": "string"
+    },
+    "map-savings": {
+      "type": "string"
+    },
+    "more-choices-available": {
+      "type": "string"
+    },
+    "product_name": {
+      "type": "string"
+    },
+    "on-sale-item": {
+      "type": "string"
+    },
+    "parent-partnumber": {
+      "type": "string"
+    },
+    "position": {
+      "type": ["number","string"]
+    },
+    "prescription-item": {
+      "type": "string"
+    },
+    "price": {
+      "type": ["number","string"]
+    },
+    "product_id": {
+      "type": "string"
+    },
+    "promo-id": {
+      "type": "string"
+    },
+    "promo-item": {
+      "type": "string"
+    },
+    "promo-search-description": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": ["number","string"]
+    },
+    "recurring-item": {
+      "type": "string"
+    },
+    "review-count": {
+      "type": "string"
+    },
+    "strikethrough-price": {
+      "type": "string"
+    },
+    "strikethrough-price-type": {
+      "type": "string"
+    },
+    "total_product_amount": {
+      "type": ["number","string"]
+    },
+    "extended-content-list": {
+      "type": "string"
+    },
+    "new-item": {
+      "type": "string"
+    }
+  },
+  "additionalProperties" : true
+}

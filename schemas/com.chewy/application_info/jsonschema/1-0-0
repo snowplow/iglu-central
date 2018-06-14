@@ -1,0 +1,28 @@
+{
+  "$schema" : "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self" : {
+    "vendor" : "com.chewy",
+    "name" : "application_info",
+    "version" : "1-0-0",
+    "format" : "jsonschema"
+  },
+  "type" : "object",
+  "properties" : {
+    "application_name" : {
+      "type" : "string"
+    },
+    "application_version" : {
+      "type" : "string"
+    },
+    "install_referrer" : {
+      "type" : "string"
+    },
+    "package" : {
+      "type" : "string"
+    },
+    "apple_search_ads_attributes":{
+      "type" : ["string", "object"]
+    }
+  },
+  "additionalProperties" : false
+}
