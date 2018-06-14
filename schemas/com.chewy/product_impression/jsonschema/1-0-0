@@ -1,0 +1,127 @@
+{
+  "$schema" : "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self" : {
+    "vendor" : "com.chewy",
+    "name" : "product_impression",
+    "version" : "1-0-0",
+    "format" : "jsonschema"
+  },
+  "type" : "object",
+  "properties" : {
+    "advertised-price": {
+      "type": "string"
+    },
+    "advertised-price-type": {
+      "type": "string"
+    },
+    "autoship-price": {
+      "type": "string"
+    },
+    "autoship-savings-pct": {
+      "type": "string"
+    },
+    "availability": {
+      "type": "string"
+    },
+    "average-rating": {
+      "type": "string"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "catentry-id": {
+      "type": "string"
+    },
+    "coupon_code": {
+      "type": "string"
+    },
+    "defining-attribute-name": {
+      "type": "string"
+    },
+    "defining-attribute-value": {
+      "type": "string"
+    },
+    "event_id": {
+      "type": ["integer","string"]
+    },
+    "frozen-item": {
+      "type": "string"
+    },
+    "item-badge": {
+      "type": "string"
+    },
+    "map-savings": {
+      "type": "string"
+    },
+    "more-choices-available": {
+      "type": "string"
+    },
+    "product_name": {
+      "type": "string"
+    },
+    "page-number": {
+      "type": "string"
+    },
+    "parent-partnumber": {
+      "type": "string"
+    },
+    "position": {
+      "type": ["integer","string"]
+    },
+    "prescription-item": {
+      "type": "string"
+    },
+    "price": {
+      "type": ["number","string"]
+    },
+    "product_id": {
+      "type": "string"
+    },
+    "product_impression_type": {
+      "type": "string"
+    },
+    "promo-id": {
+      "type": "string"
+    },
+    "promo-item": {
+      "type": "string"
+    },
+    "promo-search-description": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": ["integer","string"]
+    },
+    "review-count": {
+      "type": "string"
+    },
+    "sales-category-id": {
+      "type": "string"
+    },
+    "sales-category-name": {
+      "type": "string"
+    },
+    "session_id": {
+      "type": ["integer","string"]
+    },
+    "strikethrough-price": {
+      "type": "string"
+    },
+    "strikethrough-price-type": {
+      "type": "string"
+    },
+    "timestamp_unixtime_ms": {
+      "type": ["integer","string"]
+    },
+    "total_product_amount": {
+      "type": ["number","string"]
+    },
+    "variant": {
+      "type": "string"
+    }
+  },
+  "additionalProperties" : true
+}

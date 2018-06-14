@@ -1,0 +1,43 @@
+ {
+  "$schema" : "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self" : {
+    "vendor" : "com.chewy",
+    "name" : "application_state_transition",
+    "version" : "1-0-0",
+    "format" : "jsonschema"
+  },
+  "type" : "object",
+  "properties" : {
+    "launch_referral" : {
+      "type" : "string"
+    },
+    "session_id" : {
+      "type": ["integer","string"]
+    },
+    "is_upgrade" : {
+      "type" : ["boolean","string"]
+    },
+    "source_message_id" : {
+      "type" : "string"
+    },
+    "successfully_closed" : {
+      "type" : ["boolean","string"]
+    },
+    "push_notification_payload" : {
+      "type" : "string"
+    },
+    "timestamp_unixtime_ms" : {
+      "type": ["integer","string"]
+    },
+    "application_transition_type" : {
+      "type" : "string"
+    },
+    "event_id" : {
+      "type": ["integer","string"]
+    },
+    "is_first_run" : {
+      "type" : ["boolean","string"]
+    }
+  },
+  "additionalProperties" : false
+}
