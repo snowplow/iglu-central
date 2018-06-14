@@ -1,0 +1,70 @@
+{
+  "$schema" : "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self" : {
+    "vendor" : "com.chewy",
+    "name" : "device_current_state",
+    "version" : "1-0-0",
+    "format" : "jsonschema"
+  },
+  "type" : "object",
+  "properties" : {
+    "status_bar_orientation" : {
+      "type" : "string"
+    },
+    "application_memory_available_bytes" : {
+      "type" : ["number","string"]
+    },
+    "time_since_start_ms" : {
+      "type" : ["integer","string"]
+    },
+    "data_connection_type" : {
+      "type" : "string"
+    },
+    "system_memory_low" : {
+      "type" : "string"
+    },
+    "system_memory_threshold_bytes" : {
+      "type" : ["number","string"]
+    },
+    "external_disk_space_free_bytes" : {
+      "type" : ["number","string"]
+    },
+    "application_memory_total_bytes" : {
+      "type" : ["number","string"]
+    },
+    "gps_state" : {
+      "type" : ["boolean","string"]
+    },
+    "data_connection_type_detail" : {
+      "type" : "string"
+    },
+    "cpu" : {
+      "type" : "string"
+    },
+    "total_system_memory_usage_bytes" : {
+      "type" : ["number","string"]
+    },
+    "system_memory_available_bytes" : {
+      "type" : ["number","string"]
+    },
+    "device_orientation" : {
+      "type" : "string"
+    },
+    "application_memory_max_bytes" : {
+      "type" : ["number","string"]
+    },
+    "battery_level" : {
+      "type" : ["number","string"]
+    },
+    "disk_space_free_bytes" : {
+      "type" : ["number","string"]
+    },
+    "timestamp_unixtime_ms" : {
+      "type": ["integer","string"]
+    },
+    "event_id" : {
+      "type": ["integer","string"]
+    }
+  },
+  "additionalProperties" : true
+}

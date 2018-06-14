@@ -1,0 +1,124 @@
+{
+  "$schema" : "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self" : {
+    "vendor" : "com.chewy",
+    "name" : "ecommerce_action",
+    "version" : "1-0-0",
+    "format" : "jsonschema"
+  },
+  "type" : "object",
+  "properties" : {
+    "prescription-order" : {
+      "type" : "string"
+    },
+    "screen_name" : {
+      "type" : "string"
+    },
+    "source-view" : {
+      "type" : "string"
+    },
+    "session_id" : {
+      "type" : ["integer","string"]
+    },
+    "promo-name-applied" : {
+      "type" : "string"
+    },
+    "affiliation" : {
+      "type" : "string"
+    },
+    "item-count-unique" : {
+      "type" : "string"
+    },
+    "list-name" : {
+      "type" : "string"
+    },
+    "promo-id-applied" : {
+      "type" : "string"
+    },
+    "credit-card-verification" : {
+      "type" : "string"
+    },
+    "autoship-frequency" : {
+      "type" : "string"
+    },
+    "product_action_list" : {
+      "type" : "string"
+    },
+    "autoship-order" : {
+      "type" : "string"
+    },
+    "checkout_step" : {
+      "type" : ["integer","string"]
+    },
+    "item-count-total" : {
+      "type" : "string"
+    },
+    "source_message_id" : {
+      "type" : "string"
+    },
+    "vet-info-type" : {
+      "type" : "string"
+    },
+    "shipping_amount" : {
+      "type" : ["number","string"]
+    },
+    "direct-mail-order" : {
+      "type" : "string"
+    },
+    "product_list_source" : {
+      "type" : "string"
+    },
+    "transaction_id" : {
+      "type" : "string"
+    },
+    "first-order" : {
+      "type" : "string"
+    },
+    "is_non_interactive" : {
+      "type" : ["boolean","string"]
+    },
+    "shipping-address-type" : {
+      "type" : "string"
+    },
+    "coupon_code" : {
+      "type" : "string"
+    },
+    "tax_amount" : {
+      "type" : ["number","string"]
+    },
+    "subtotal" : {
+      "type" : "string"
+    },
+    "payment-method-type" : {
+      "type" : "string"
+    },
+    "checkout_options" : {
+      "type" : "string"
+    },
+    "discount" : {
+      "type" : "string"
+    },
+    "timestamp_unixtime_ms" : {
+      "type" : ["integer","string"]
+    },
+    "total_amount" : {
+      "type" : ["number","string"]
+    },
+    "event_id" : {
+      "type" : ["integer","string"]
+    },
+    "currency_code" : {
+      "type" : "string"
+    },
+    "action" : {
+      "type" : "string"
+    },
+    "frozen-order" : {
+      "type" : "string"
+    },
+    "shipping" : {
+      "type" : "string"
+    }
+  },
+  "additionalProperties" : true
+}
