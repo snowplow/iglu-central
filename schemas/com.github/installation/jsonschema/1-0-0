@@ -1,0 +1,166 @@
+{
+  "$schema" : "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self" : {
+    "vendor" : "com.github",
+    "name" : "installation",
+    "version" : "1-0-0",
+    "format" : "jsonschema"
+  },
+  "type" : "object",
+  "properties" : {
+    "action" : {
+      "type" : "string"
+    },
+    "installation" : {
+      "type" : "object",
+      "properties" : {
+        "repositories_url" : {
+          "type" : "string",
+          "format" : "uri"
+        },
+        "access_tokens_url" : {
+          "type" : "string",
+          "format" : "uri"
+        },
+        "id" : {
+          "type" : "integer"
+        },
+        "account" : {
+          "type" : "object",
+          "properties" : {
+            "gists_url" : {
+              "type" : "string"
+            },
+            "organizations_url" : {
+              "type" : "string",
+              "format" : "uri"
+            },
+            "gravatar_id" : {
+              "type" : "string"
+            },
+            "url" : {
+              "type" : "string",
+              "format" : "uri"
+            },
+            "repos_url" : {
+              "type" : "string",
+              "format" : "uri"
+            },
+            "received_events_url" : {
+              "type" : "string",
+              "format" : "uri"
+            },
+            "id" : {
+              "type" : "integer"
+            },
+            "following_url" : {
+              "type" : "string"
+            },
+            "site_admin" : {
+              "type" : "boolean"
+            },
+            "subscriptions_url" : {
+              "type" : "string",
+              "format" : "uri"
+            },
+            "starred_url" : {
+              "type" : "string"
+            },
+            "html_url" : {
+              "type" : "string",
+              "format" : "uri"
+            },
+            "login" : {
+              "type" : "string"
+            },
+            "type" : {
+              "type" : "string"
+            },
+            "events_url" : {
+              "type" : "string"
+            },
+            "avatar_url" : {
+              "type" : "string",
+              "format" : "uri"
+            },
+            "followers_url" : {
+              "type" : "string",
+              "format" : "uri"
+            }
+          },
+          "additionalProperties" : true
+        },
+        "repository_selection" : {
+          "type" : "string"
+        }
+      },
+      "additionalProperties" : true
+    },
+    "sender" : {
+      "type" : "object",
+      "properties" : {
+        "gists_url" : {
+          "type" : "string"
+        },
+        "organizations_url" : {
+          "type" : "string",
+          "format" : "uri"
+        },
+        "gravatar_id" : {
+          "type" : "string"
+        },
+        "url" : {
+          "type" : "string",
+          "format" : "uri"
+        },
+        "repos_url" : {
+          "type" : "string",
+          "format" : "uri"
+        },
+        "received_events_url" : {
+          "type" : "string",
+          "format" : "uri"
+        },
+        "id" : {
+          "type" : "integer"
+        },
+        "following_url" : {
+          "type" : "string"
+        },
+        "site_admin" : {
+          "type" : "boolean"
+        },
+        "subscriptions_url" : {
+          "type" : "string",
+          "format" : "uri"
+        },
+        "starred_url" : {
+          "type" : "string"
+        },
+        "html_url" : {
+          "type" : "string",
+          "format" : "uri"
+        },
+        "login" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "events_url" : {
+          "type" : "string"
+        },
+        "avatar_url" : {
+          "type" : "string",
+          "format" : "uri"
+        },
+        "followers_url" : {
+          "type" : "string",
+          "format" : "uri"
+        }
+      },
+      "additionalProperties" : true
+    }
+  },
+  "additionalProperties" : true
+}
