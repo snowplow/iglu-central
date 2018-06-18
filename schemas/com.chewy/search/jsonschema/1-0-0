@@ -18,7 +18,7 @@
       "type" : "string"
     },
     "search-redirect" : {
-      "type" : "boolean"
+      "type" : ["boolean","string"]
     },
     "search-redirect-type" : {
       "type" : "string"

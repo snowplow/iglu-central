@@ -15,13 +15,13 @@
       "type": ["integer","string"]
     },
     "is_upgrade" : {
-      "type" : "boolean"
+      "type" : ["boolean","string"]
     },
     "source_message_id" : {
       "type" : "string"
     },
     "successfully_closed" : {
-      "type" : "boolean"
+      "type" : ["boolean","string"]
     },
     "push_notification_payload" : {
       "type" : "string"
@@ -36,7 +36,7 @@
       "type": ["integer","string"]
     },
     "is_first_run" : {
-      "type" : "boolean"
+      "type" : ["boolean","string"]
     }
   },
   "additionalProperties" : false

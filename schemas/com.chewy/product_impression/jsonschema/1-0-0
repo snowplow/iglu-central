@@ -69,13 +69,13 @@
       "type": "string"
     },
     "position": {
-      "type": "integer"
+      "type": ["integer","string"]
     },
     "prescription-item": {
       "type": "string"
     },
     "price": {
-      "type": "number"
+      "type": ["number","string"]
     },
     "product_id": {
       "type": "string"
@@ -93,7 +93,7 @@
       "type": "string"
     },
     "quantity": {
-      "type": "integer"
+      "type": ["integer","string"]
     },
     "review-count": {
       "type": "string"
@@ -117,7 +117,7 @@
       "type": ["integer","string"]
     },
     "total_product_amount": {
-      "type": "number"
+      "type": ["number","string"]
     },
     "variant": {
       "type": "string"

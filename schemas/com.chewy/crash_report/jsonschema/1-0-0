@@ -14,7 +14,7 @@
       "maxLength" : 18
     },
     "ios_image_size" : {
-      "type" : "integer",
+      "type" : ["integer","string"],
       "maximum" : 2147483647,
       "minimum" : 0
     },
@@ -34,7 +34,7 @@
       "maxLength" : 26
     },
     "ios_image_base_address" : {
-      "type" : "integer",
+      "type" : ["integer","string"],
       "maximum" : 9223372036854775807,
       "minimum" : 0
     },

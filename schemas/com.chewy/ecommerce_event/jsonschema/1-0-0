@@ -39,7 +39,7 @@
       "type": "string"
     },
     "checkout_step": {
-      "type": "integer"
+      "type": ["integer","string"]
     },
     "currency_code": {
       "type": "string"
@@ -72,7 +72,7 @@
       "type": "string"
     },
     "is_non_interactive": {
-      "type": "boolean"
+      "type": ["boolean","string"]
     },
     "item-count-total": {
       "type": "string"
@@ -138,7 +138,7 @@
       "type": "string"
     },
     "shipping_amount": {
-      "type": "number"
+      "type": ["number","string"]
     },
     "sort-dimension": {
       "type": "string"
@@ -162,7 +162,7 @@
       "type": ["integer","string"]
     },
     "total_amount": {
-      "type": "number"
+      "type": ["number","string"]
     },
     "transaction-id": {
       "type": "string"
