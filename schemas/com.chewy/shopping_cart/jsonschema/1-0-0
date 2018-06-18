@@ -9,7 +9,7 @@
   "type" : "object",
   "properties" : {
     "added_to_cart_time_ms": {
-      "type": "integer"
+      "type": ["integer","string"]
     },
     "advertised-price": {
       "type": "string"
@@ -69,13 +69,13 @@
       "type": "string"
     },
     "position": {
-      "type": "integer"
+      "type": ["integer","string"]
     },
     "prescription-item": {
       "type": "string"
     },
     "price": {
-      "type": "number"
+      "type": ["number","string"]
     },
     "product_id": {
       "type": "string"
@@ -90,7 +90,7 @@
       "type": "string"
     },
     "quantity": {
-      "type": "number"
+      "type": ["number","string"]
     },
     "review-count": {
       "type": "string"
@@ -108,7 +108,7 @@
       "type": "string"
     },
     "total_product_amount": {
-      "type": "number"
+      "type": ["number","string"]
     },
     "variant": {
       "type": "string"

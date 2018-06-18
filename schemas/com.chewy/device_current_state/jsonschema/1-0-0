@@ -12,10 +12,10 @@
       "type" : "string"
     },
     "application_memory_available_bytes" : {
-      "type" : "number"
+      "type" : ["number","string"]
     },
     "time_since_start_ms" : {
-      "type" : "integer"
+      "type" : ["integer","string"]
     },
     "data_connection_type" : {
       "type" : "string"
@@ -24,16 +24,16 @@
       "type" : "string"
     },
     "system_memory_threshold_bytes" : {
-      "type" : "number"
+      "type" : ["number","string"]
     },
     "external_disk_space_free_bytes" : {
-      "type" : "number"
+      "type" : ["number","string"]
     },
     "application_memory_total_bytes" : {
-      "type" : "number"
+      "type" : ["number","string"]
     },
     "gps_state" : {
-      "type" : "boolean"
+      "type" : ["boolean","string"]
     },
     "data_connection_type_detail" : {
       "type" : "string"
@@ -42,22 +42,22 @@
       "type" : "string"
     },
     "total_system_memory_usage_bytes" : {
-      "type" : "number"
+      "type" : ["number","string"]
     },
     "system_memory_available_bytes" : {
-      "type" : "number"
+      "type" : ["number","string"]
     },
     "device_orientation" : {
       "type" : "string"
     },
     "application_memory_max_bytes" : {
-      "type" : "number"
+      "type" : ["number","string"]
     },
     "battery_level" : {
-      "type" : "number"
+      "type" : ["number","string"]
     },
     "disk_space_free_bytes" : {
-      "type" : "number"
+      "type" : ["number","string"]
     },
     "timestamp_unixtime_ms" : {
       "type": ["integer","string"]

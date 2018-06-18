@@ -24,13 +24,13 @@
       "type" : "string"
     },
     "timezone_offset" : {
-      "type" : "integer"
+      "type" : ["integer","string"]
     },
     "network_code" : {
       "type" : "string"
     },
     "is_dst" : {
-      "type" : "boolean"
+      "type" : ["boolean","string"]
     },
     "supports_telephony" : {
       "type" : "string"
@@ -42,7 +42,7 @@
       "type" : "string"
     },
     "screen_dpi" : {
-      "type" : "integer",
+      "type" : ["integer","string"],
       "maximum" : 32767,
       "minimum" : 0
     },
@@ -50,10 +50,10 @@
       "type" : "string"
     },
     "push_notification_sound_enabled" : {
-      "type" : "boolean"
+      "type" : ["boolean","string"]
     },
     "has_nfc" : {
-      "type" : "boolean"
+      "type" : ["boolean","string"]
     },
     "android_advertising_id" : {
       "type" : "string"
@@ -65,22 +65,22 @@
       "type" : "string"
     },
     "limit_ad_tracking" : {
-      "type" : "boolean"
+      "type" : ["boolean","string"]
     },
     "brand" : {
       "type" : "string"
     },
     "screen_width" : {
-      "type" : "integer"
+      "type" : ["integer","string"]
     },
     "locale_country" : {
       "type" : "string"
     },
     "is_tablet" : {
-      "type" : "boolean"
+      "type" : ["boolean","string"]
     },
     "screen_height" : {
-      "type" : "integer"
+      "type" : ["integer","string"]
     },
     "radio_access_technology" : {
       "type" : "string"
@@ -116,7 +116,7 @@
       "type" : "string"
     },
     "push_notification_vibrate_enabled" : {
-      "type" : "boolean"
+      "type" : ["boolean","string"]
     },
     "device" : {
       "type" : "string"
@@ -128,7 +128,7 @@
       "type" :  "string"
     },
     "bluetooth_enabled" : {
-      "type" : "boolean"
+      "type" : ["boolean","string"]
     }
   },
   "additionalProperties" : false

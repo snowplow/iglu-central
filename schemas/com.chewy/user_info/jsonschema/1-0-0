@@ -15,7 +15,7 @@
       "type" : "string"
     },
     "has-ordered" : {
-      "type" : "boolean"
+      "type" : ["boolean", "string"]
     },
     "zip" : {
       "type" : "string"
@@ -23,14 +23,14 @@
     "email" : {
       "type" : "string"
     },
-    "registration-date" : {
+    "registration-date" : { 
       "type" : "string"
     },
     "state" : {
       "type" : "string"
     },
     "repeat-customer" : {
-      "type" : "boolean"
+      "type" : ["boolean", "string"]
     },
     "country" : {
       "type" : "string"

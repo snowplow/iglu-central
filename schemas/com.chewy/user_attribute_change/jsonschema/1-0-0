@@ -18,10 +18,10 @@
       "type": "string"
     },
     "is_new_attribute": {
-      "type": "boolean"
+      "type": ["boolean","string"]
     },
     "deleted": {
-      "type": "boolean"
+      "type": ["boolean","string"]
     },
     "source_message_id": {
       "type": "string"

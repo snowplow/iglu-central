@@ -27,7 +27,7 @@
       "type" : "string"
     },
     "session_duration_ms" : {
-      "type" : "integer"
+      "type" : ["integer","string"]
     },
     "timestamp_unixtime_ms" : {
       "type": ["integer","string"]
