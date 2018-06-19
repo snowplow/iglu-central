@@ -33,7 +33,7 @@
       "type" : ["boolean","string"]
     },
     "supports_telephony" : {
-      "type" : "string"
+      "type" : ["boolean","string"]
     },
     "network_country" : {
       "type" : "string"
