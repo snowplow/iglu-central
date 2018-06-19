@@ -1,0 +1,135 @@
+{
+  "$schema" : "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self" : {
+    "vendor" : "com.chewy",
+    "name" : "device_info",
+    "version" : "1-0-0",
+    "format" : "jsonschema"
+  },
+  "type" : "object",
+  "properties" : {
+    "bluetooth_version" : {
+      "type" : "string"
+    },
+    "roku_advertising_id" : {
+      "type" : "string"
+    },
+    "roku_publisher_id" : {
+      "type" : "string"
+    },
+    "http_header_user_agent" : {
+      "type" : "string"
+    },
+    "cpu_architecture" : {
+      "type" : "string"
+    },
+    "timezone_offset" : {
+      "type" : ["integer","string"]
+    },
+    "network_code" : {
+      "type" : "string"
+    },
+    "is_dst" : {
+      "type" : ["boolean","string"]
+    },
+    "supports_telephony" : {
+      "type" : ["boolean","string"]
+    },
+    "network_country" : {
+      "type" : "string"
+    },
+    "os_version" : {
+      "type" : "string"
+    },
+    "screen_dpi" : {
+      "type" : ["integer","string"],
+      "maximum" : 32767,
+      "minimum" : 0
+    },
+    "device_model" : {
+      "type" : "string"
+    },
+    "push_notification_sound_enabled" : {
+      "type" : ["boolean","string"]
+    },
+    "has_nfc" : {
+      "type" : ["boolean","string"]
+    },
+    "android_advertising_id" : {
+      "type" : "string"
+    },
+    "build_identifier" : {
+      "type" : "string"
+    },
+    "android_uuid" : {
+      "type" : "string"
+    },
+    "limit_ad_tracking" : {
+      "type" : ["boolean","string"]
+    },
+    "brand" : {
+      "type" : "string"
+    },
+    "screen_width" : {
+      "type" : ["integer","string"]
+    },
+    "locale_country" : {
+      "type" : "string"
+    },
+    "is_tablet" : {
+      "type" : ["boolean","string"]
+    },
+    "screen_height" : {
+      "type" : ["integer","string"]
+    },
+    "radio_access_technology" : {
+      "type" : "string"
+    },
+    "device_country" : {
+      "type" : "string"
+    },
+    "ios_advertising_id" : {
+      "type" : "string",
+      "format" : "uuid",
+      "minLength" : 36,
+      "maxLength" : 36
+    },
+    "platform" : {
+      "type" : "string"
+    },
+    "locale_language" : {
+      "type" : "string"
+    },
+    "push_token" : {
+      "type" : "string"
+    },
+    "ios_idfv" : {
+      "type" : "string",
+      "format" : "uuid",
+      "minLength" : 36,
+      "maxLength" : 36
+    },
+    "network_mobile_country_code" : {
+      "type" : "string"
+    },
+    "device_manufacturer" : {
+      "type" : "string"
+    },
+    "push_notification_vibrate_enabled" : {
+      "type" : ["boolean","string"]
+    },
+    "device" : {
+      "type" : "string"
+    },
+    "network_carrier" : {
+      "type" : "string"
+    },
+    "product" : {
+      "type" :  "string"
+    },
+    "bluetooth_enabled" : {
+      "type" : ["boolean","string"]
+    }
+  },
+  "additionalProperties" : false
+}

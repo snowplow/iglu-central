@@ -47,7 +47,7 @@
       "type": ["string", "integer"]
     },
     "status": {
-      "type": "string"
+      "type": ["string", "integer"]
     },
     "cert_error": {
       "type": "string"

@@ -1,0 +1,33 @@
+{
+    "jsonpaths": [
+        "$.schema.vendor",
+        "$.schema.name",
+        "$.schema.format",
+        "$.schema.version",
+        "$.hierarchy.rootId",
+        "$.hierarchy.rootTstamp",
+        "$.hierarchy.refRoot",
+        "$.hierarchy.refTree",
+        "$.hierarchy.refParent",
+        "$.data.application_memory_available_bytes",
+        "$.data.application_memory_max_bytes",
+        "$.data.application_memory_total_bytes",
+        "$.data.battery_level",
+        "$.data.cpu",
+        "$.data.data_connection_type",
+        "$.data.data_connection_type_detail",
+        "$.data.device_orientation",
+        "$.data.disk_space_free_bytes",
+        "$.data.external_disk_space_free_bytes",
+        "$.data.gps_state",
+        "$.data.status_bar_orientation",
+        "$.data.system_memory_available_bytes",
+        "$.data.system_memory_low",
+        "$.data.system_memory_threshold_bytes",
+        "$.data.time_since_start_ms",
+        "$.data.total_system_memory_usage_bytes",
+        "$.data.timestamp_unixtime_ms",
+        "$.data.event_id"
+
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "jsonpaths": [
+        "$.schema.vendor",
+        "$.schema.name",
+        "$.schema.format",
+        "$.schema.version",
+        "$.hierarchy.rootId",
+        "$.hierarchy.rootTstamp",
+        "$.hierarchy.refRoot",
+        "$.hierarchy.refTree",
+        "$.hierarchy.refParent",
+        "$.data.class_name",
+        "$.data.event_id",
+        "$.data.ios_image_base_address",
+        "$.data.ios_image_size",
+        "$.data.message",
+        "$.data.pl_crash_report_file_base64",
+        "$.data.severity",
+        "$.data.stack_trace",
+        "$.data.timestamp_unixtime_ms",
+        "$.data.topmost_context"
+    ]
+}

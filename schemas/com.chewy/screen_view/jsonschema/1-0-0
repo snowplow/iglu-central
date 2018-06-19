@@ -1,0 +1,37 @@
+{
+  "$schema" : "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self" : {
+    "vendor" : "com.chewy",
+    "name" : "screen_view",
+    "version" : "1-0-0",
+    "format" : "jsonschema"
+  },
+  "type" : "object",
+  "properties" : {
+    "screen_name" : {
+      "type" : "string"
+    },
+    "session_id" : {
+      "type": ["integer","string"]
+    },
+    "activity_type" : {
+      "type" : "string"
+    },
+      "source_message_id" : {
+          "type" : "string",
+          "format" : "uuid",
+          "minLength" : 36,
+          "maxLength" : 36
+    },
+    "timestamp_unixtime_ms" : {
+      "type": ["integer","string"]
+    },
+    "event_id" : {
+      "type": ["integer","string"]
+    },
+    "link_name" : {
+      "type" : "string"
+    }
+  },
+  "additionalProperties" : false
+}
