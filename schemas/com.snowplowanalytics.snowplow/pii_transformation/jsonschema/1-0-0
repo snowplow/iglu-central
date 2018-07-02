@@ -100,7 +100,8 @@
                   "fieldName",
                   "jsonPath",
                   "originalValue",
-                  "modifiedValue"
+                  "modifiedValue",
+                  "schema"
                 ],
                 "additionalProperties": false
               }
