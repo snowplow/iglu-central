@@ -164,7 +164,7 @@
     "total_amount": {
       "type": ["number","string"]
     },
-    "transaction-id": {
+    "transaction_id": {
       "type": "string"
     },
     "vet-info-type": {

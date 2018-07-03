@@ -61,7 +61,7 @@
         "$.data.tax_amount",
         "$.data.timestamp_unixtime_ms",
         "$.data.total_amount",
-        "$.data.transaction-id",
+        "$.data.transaction_id",
         "$.data.vet-info-type",
         "$.data.product_impression_type"
     ]
