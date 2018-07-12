@@ -1,0 +1,87 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for weather enrichment",
+    "self": {
+      "vendor": "com.snowplowanalytics.snowplow.enrichments",
+      "name": "weather_enrichment_config",
+      "format": "jsonschema",
+      "version": "1-0-1"
+    },
+
+    "type": "object",
+    "properties": {
+      "vendor": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "enabled": {
+        "type": "boolean"
+      },
+      "events" : {
+        "type" : [ "array", "null" ],
+        "items" : {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "eventType": {
+                  "type": "string",
+                  "enum": ["struct", "ad_impression", "transaction",
+                      "transaction_item", "page_view","page_ping"]
+                }
+              },
+              "required": ["eventType"],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "eventType": {
+                  "type": "string",
+                  "enum": ["unstruct"]
+                },
+                "schema": {
+                  "type": "string",
+                  "pattern": "^iglu:([a-zA-Z0-9-_.]+)/([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)/([1-9][0-9]*|\\*)-((?:0|[1-9][0-9]*)|\\*)-((?:0|[1-9][0-9]*)|\\*)$"
+                }
+              },
+              "required": ["eventType", "schema"],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "description": "Perform this enrichment for the events in the list. Use null to disable"
+      },
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "apiKey": {
+            "type": "string"
+          },
+          "cacheSize": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000000
+          },
+          "geoPrecision": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10
+          },
+          "apiHost": {
+            "type": "string"
+          },
+          "timeout": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "required": ["apiKey", "cacheSize", "geoPrecision", "apiHost", "timeout"],
+        "additionalProperties": false
+      }
+    },
+    "required": ["name", "vendor", "enabled", "parameters"],
+    "additionalProperties": false
+}
