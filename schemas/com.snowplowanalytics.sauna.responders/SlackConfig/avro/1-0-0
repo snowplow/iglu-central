@@ -1,0 +1,32 @@
+{
+    "namespace": "com.snowplowanalytics.sauna.responders",
+    "name": "SlackConfig_1_0_0",
+    "type": "record",
+    "fields": [
+        {
+            "name": "enabled",
+            "type": "boolean"
+        },
+        {
+            "name": "id",
+            "type": "string"
+        },
+        {
+            "name": "parameters",
+            "type": {
+                "name": "SlackConfigParameters_1_0_0",
+                "type": "record",
+                "fields": [
+                    {
+                        "name": "sendMessageEnabled",
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "webhookUrl",
+                        "type": "string"
+                    }
+                ]
+            }
+        }
+    ]
+}

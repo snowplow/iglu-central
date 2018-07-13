@@ -1,0 +1,31 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a Google Analytics app entity",
+  "self": {
+    "vendor": "com.google.analytics.measurement-protocol",
+    "name": "app",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": ["string", "null"],
+      "maxLength": 100
+    },
+    "id": {
+      "type": ["string", "null"],
+      "maxLength": 150
+    },
+    "version": {
+      "type": ["string", "null"],
+      "maxLength": 100
+    },
+    "installerId": {
+      "type": ["string", "null"],
+      "maxLength": 150
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,54 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a Google Analytics timing hit",
+  "self": {
+    "vendor": "com.google.analytics.measurement-protocol",
+    "name": "timing",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+
+  "type": "object",
+  "properties": {
+    "userTimingCategory": {
+      "type": ["string", "null"],
+      "maxLength": 150
+    },
+    "userTimingVariableName": {
+      "type": ["string", "null"],
+      "maxLength": 500
+    },
+    "userTimingTime": {
+      "type": ["integer", "null"]
+    },
+    "userTimingLabel": {
+      "type": ["string", "null"],
+      "maxLength": 500
+    },
+    "pageLoadTime": {
+      "type": ["integer", "null"]
+    },
+    "dnsTime": {
+      "type": ["integer", "null"]
+    },
+    "pageDownloadTime": {
+      "type": ["integer", "null"]
+    },
+    "redirectResponseTime": {
+      "type": ["integer", "null"]
+    },
+    "tcpConnectTime": {
+      "type": ["integer", "null"]
+    },
+    "serverResponseTime": {
+      "type": ["integer", "null"]
+    },
+    "domInteractiveTime": {
+      "type": ["integer", "null"]
+    },
+    "contentLoadTime": {
+      "type": ["integer", "null"]
+    }
+  },
+  "additionalProperties": false
+}

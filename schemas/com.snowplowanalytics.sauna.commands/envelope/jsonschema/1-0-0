@@ -1,0 +1,55 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for a Sauna command's envelope",
+    "self": {
+        "vendor": "com.snowplowanalytics.sauna.commands",
+        "name": "envelope",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "commandId": {
+            "type": "string",
+            "format": "uuid"
+        },
+        "whenCreated": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "execution": {
+            "type": "object",
+            "properties": {
+                "semantics": {
+                    "enum": [
+                        "AT_LEAST_ONCE"
+                    ]
+                },
+                "timeToLive": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "semantics",
+                "timeToLive"
+            ],
+            "additionalProperties": false
+        },
+        "tags": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "string"
+            }
+        }
+    },
+    "required": [
+        "commandId",
+        "whenCreated",
+        "execution",
+        "tags"
+    ],
+    "additionalProperties": false
+}

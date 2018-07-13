@@ -1,0 +1,211 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for an Olark transcript event",
+  "self": {
+    "vendor": "com.olark",
+    "name": "transcript",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 128
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "body": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "operatorId": {
+            "type": "string",
+            "maxLength": 64
+          },
+          "kind": {
+            "type": "string",
+            "maxLength": 64
+          },
+          "nickname": {
+            "type": "string",
+            "maxLength": 64
+          },
+          "visitorNickname": {
+            "type": "string",
+            "maxLength": 64
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "maxLength": 128
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 128
+          },
+          "id": {
+            "type": "string",
+            "maxLength": 128
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "visitor": {
+      "type": "object",
+      "properties": {
+        "organization": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "city": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "ip": {
+          "type": "string",
+          "format": "ipv4"
+        },
+        "phoneNumber": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "browser": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "fullName": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "emailAddress": {
+          "type": "string",
+          "format": "email",
+          "maxLength": 256
+        },
+        "country": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "operatingSystem": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "id": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "countryCode": {
+          "type": "string",
+          "maxLength": 8
+        },
+        "region": {
+          "type": "string",
+          "maxLength": 8
+        },
+        "conversationBeginPage": {
+          "type": "string",
+          "format": "uri",
+          "maxLength": 8192
+        },
+        "chatFeedback": {
+          "type": "object",
+          "properties": {
+            "knowledge": {
+              "type": "integer",
+              "maximum": 32767,
+              "minimum": 0
+            },
+            "friendliness": {
+              "type": "integer",
+              "maximum": 32767,
+              "minimum": 0
+            },
+            "responsiveness": {
+              "type": "integer",
+              "maximum": 32767,
+              "minimum": 0
+            },
+            "overallChat": {
+              "type": "integer",
+              "maximum": 32767,
+              "minimum": 0
+            },
+            "comments": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "kind": {
+          "type": "string",
+          "maxLength": 64
+        }
+      },
+      "additionalProperties": true
+    },
+    "id": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "kind": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "manuallySubmitted": {
+      "type": "boolean"
+    },
+    "operators": {
+      "type": "object",
+      "patternProperties": {
+        ".*": {
+          "type": "object",
+          "properties": {
+            "username": {
+              "type": "string",
+              "maxLength": 128
+            },
+            "emailAddress": {
+              "type": "string",
+              "format": "email",
+              "maxLength": 256
+            },
+            "id": {
+              "type": "string",
+              "maxLength": 128
+            },
+            "kind": {
+              "type": "string",
+              "maxLength": 64
+            },
+            "nickname": {
+              "type": "string",
+              "maxLength": 64
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

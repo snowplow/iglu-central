@@ -14,6 +14,7 @@
 -- License:       Apache License Version 2.0
 --
 -- Compatibility: iglu:org.schema/WebPage/jsonschema/1-0-0
+CREATE SCHEMA IF NOT EXISTS atomic;
 
 CREATE TABLE atomic.org_schema_web_page_1 (
 	-- Schema of this type

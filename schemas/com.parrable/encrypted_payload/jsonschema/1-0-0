@@ -13,8 +13,11 @@
     "encryptedId": {
       "type": "string",
       "maxLength": 256
+    },
+    "optout": {
+      "enum": ["true", "false"]
     }
   },
-  "required": ["encryptedId"],
+  "required": ["encryptedId", "optout"],
   "additionalProperties": false
 }

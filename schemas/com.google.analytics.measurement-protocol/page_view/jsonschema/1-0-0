@@ -1,0 +1,31 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a Google Analytics pageview hit",
+  "self": {
+    "vendor": "com.google.analytics.measurement-protocol",
+    "name": "page_view",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+
+  "type": "object",
+  "properties": {
+    "documentLocationUrl": {
+      "type": ["string", "null"],
+      "maxLength": 2048
+    },
+    "documentHostName": {
+      "type": ["string", "null"],
+      "maxLength": 100
+    },
+    "documentPath": {
+      "type": ["string", "null"],
+      "maxLength": 2048
+    },
+    "documentTitle": {
+      "type": ["string", "null"],
+      "maxLength": 1500
+    }
+  },
+  "additionalProperties": false
+}

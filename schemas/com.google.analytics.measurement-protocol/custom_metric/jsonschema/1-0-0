@@ -1,0 +1,23 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a Google Analytics custom metric entity",
+  "self": {
+    "vendor": "com.google.analytics.measurement-protocol",
+    "name": "custom_metric",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+
+  "type": "object",
+  "properties": {
+    "index": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 200
+    },
+    "value": {
+      "type": ["number", "null"]
+    }
+  },
+  "additionalProperties": false
+}

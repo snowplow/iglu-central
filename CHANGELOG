@@ -1,3 +1,282 @@
+Release 93 (2018-06-24)
+-----------------------
+Add com.getvero/bounced/jsonschema/1-0-0 (#792)
+Add com.getvero/clicked/jsonschema/1-0-0 (#793)
+Add com.getvero/created/jsonschema/1-0-0 (#794)
+Add com.getvero/delivered/jsonschema/1-0-0 (#795)
+Add com.getvero/opened/jsonschema/1-0-0 (#796)
+Add com.getvero/sent/jsonschema/1-0-0 (#797)
+Add com.getvero/unsubscribed/jsonschema/1-0-0 (#798)
+Add com.getvero/updated/jsonschema/1-0-0 (#799)
+Add com.marketo/event/jsonschema/1-0-0 (#800)
+Add com.iab.snowplow/spiders_and_robots/jsonschema/1-0-0 (#765)
+Add com.snowplowanalytics.snowplow.enrichments/iab_spiders_and_robots_enrichment/jsonschema/1-0-0 (#764)
+
+Release 92 (2018-06-13)
+-----------------------
+Patch com.snowplowanalytics.factotum/job_update/jsonschema/1-0-0 (#782)
+Patch com.snowplowanalytics.factotum/task_update/jsonschema/1-0-0 (#783)
+
+Release 91 (2018-05-23)
+-----------------------
+Add com.snowplowanalytics.iglu/resolver-config/jsonschema/1-0-3 (#775)
+Patch com.snowplowanalytics.snowplow.storage/postgresql_config/jsonschema/2-0-0 (#774)
+Patch com.snowplowanalytics.snowplow.storage/redshift_config/jsonschema/3-0-0 (#773)
+Add com.snowplowanalytics.snowplow/application_error/jsonschema/1-0-2 (#771)
+Add com.snowplowanalytics.manifest/locked_payload/jsonschema/1-0-0 (#770)
+Add com.snowplowanalytics.snowplow.storage.rdbshredder/processed_payload/jsonschema/1-0-0 (#755)
+
+Release 90 (2018-05-12)
+-----------------------
+Add com.snowplowanalytics.snowplow/parent_event/jsonschema/1-0-0 (#768)
+Add com.snowplowanalytics.snowplow/pii_transformation/jsonschema/1-0-0 (#700)
+Add com.snowplowanalytics.snowplow.enrichments/pii_enrichment_config/jsonschema/2-0-0 (#702)
+Add com.adjust/install/jsonschema/1-0-0 (#733)
+
+Release 89 (2018-04-11)
+-----------------------
+Add com.snowplowanalytics.snowplow/ip_lookups/jsonschema/2-0-0 (#744)
+Add com.mandrill/recipient_unsubscribed/jsonschema/1-0-1 (#752)
+Add com.mandrill/message_soft_bounced/jsonschema/1-0-1 (#751)
+Add com.mandrill/message_opened/jsonschema/1-0-1 (#750)
+Add com.mandrill/message_marked_as_spam/jsonschema/1-0-1 (#749)
+Add com.mandrill/message_delayed/jsonschema/1-0-1 (#748)
+Add com.mandrill/message_clicked/jsonschema/1-0-1 (#747)
+Add com.mandrill/message_bounced/jsonschema/1-0-1 (#746)
+
+Release 88 (2018-04-01)
+-----------------------
+Add com.snowplowanalytics.snowplow.storage/postgresql_config/jsonschema/2-0-0 (#739)
+Add com.snowplowanalytics.snowplow.storage/redshift_config/jsonschema/3-0-0 (#693)
+Add com.apple/notification_event/jsonschema/1-0-0 (#723)
+Patch com.amazon.aws.ec2/instance_identity_document/jsonschema/1-0-0 (#740)
+
+Release 87 (2018-02-27)
+-----------------------
+Add com.snowplowanalytics.snowplow/consent_document/jsonschema/1-0-0 (#682)
+Add com.snowplowanalytics.snowplow/consent_withdrawn/jsonschema/1-0-0 (#668)
+Add com.snowplowanalytics.snowplow/consent_granted/jsonschema/1-0-0 (#667)
+Infrastructure: add AWS credentials in .travis.yml (#725)
+Infrastructure: extend push.bash to handle JSON Paths files (#678)
+Fix R86 title typo in CHANGELOG (#729)
+
+Release 86 (2018-02-12)
+-----------------------
+Patch com.google.analytics.measurement-protocol/timing/jsonschema/1-0-0 (#718)
+Patch com.snowplowanalytics.snowplow.enrichments/pii_enrichment_config/jsonschema/1-0-0 (#721)
+
+Release 85 (2018-01-23)
+-----------------------
+Redshift SQL: add for com.google.analytics/undocumented/jsonschema/1-0-0 (#712)
+Redshift SQL: add for com.google.analytics/private/jsonschema/1-0-0 (#713)
+Redshift SQL: add for com.google.analytics.measurement-protocol/* (#717)
+Redshift JSON Path: add for com.google.analytics/private/jsonschema/1-0-0 (#714)
+Redshift JSON Path: add for com.google.analytics/undocumented/jsonschema/1-0-0 (#715)
+Redshift JSON Path: add for com.google.analytics.measurement-protocol/* (#716)
+Fix R84 release date in CHANGELOG (#709)
+
+Release 84 (2018-01-19)
+-----------------------
+Patch com.snowplowanalytics.snowplow/mobile_context/jsonschema/1-0-1 (#706)
+Patch com.snowplowanalytics.snowplow/mobile_context/jsonschema/1-0-0 (#673)
+Add com.snowplowanalytics.snowplow.enrichments/pii_enrichment_config/jsonschema/1-0-0 (#692)
+Add com.convertro/tracking_parameters/jsonschema/1-0-0 (#698)
+Add com.google.cloud.gce/instance_metadata/jsonschema/1-0-0 (#694)
+Add com.google.analytics/private/jsonschema/1-0-0 (#608)
+Add com.google.analytics/undocumented/jsonschema/1-0-0 (#607)
+Add com.google.analytics.measurement-protocol/general/jsonschema/1-0-0 (#606)
+Add com.google.analytics.measurement-protocol/promotion_action/jsonschema/1-0-0 (#605)
+Add com.google.analytics.measurement-protocol/hit/jsonschema/1-0-0 (#604)
+Add com.google.analytics.measurement-protocol/product_impression_list/jsonschema/1-0-0 (#603)
+Add com.google.analytics.measurement-protocol/product_impression_custom_metric/jsonschema/1-0-0 (#602)
+Add com.google.analytics.measurement-protocol/product_impression_custom_dimension/jsonschema/1-0-0 (#601)
+Add com.google.analytics.measurement-protocol/product_custom_metric/jsonschema/1-0-0 (#600)
+Add com.google.analytics.measurement-protocol/product_custom_dimension/jsonschema/1-0-0 (#599)
+Add com.google.analytics.measurement-protocol/custom_metric/jsonschema/1-0-0 (#598)
+Add com.google.analytics.measurement-protocol/content_group/jsonschema/1-0-0 (#597)
+Add com.google.analytics.measurement-protocol/product_impression/jsonschema/1-0-0 (#576)
+Add com.google.analytics.measurement-protocol/promotion/jsonschema/1-0-0 (#575)
+Add com.google.analytics.measurement-protocol/product_action/jsonschema/1-0-0 (#574)
+Add com.google.analytics.measurement-protocol/product/jsonschema/1-0-0 (#573)
+Add com.google.analytics.measurement-protocol/content_experiment/jsonschema/1-0-0 (#572)
+Add com.google.analytics.measurement-protocol/custom_dimension/jsonschema/1-0-0 (#571)
+Add com.google.analytics.measurement-protocol/app/jsonschema/1-0-0 (#570)
+Add com.google.analytics.measurement-protocol/system_info/jsonschema/1-0-0 (#569)
+Add com.google.analytics.measurement-protocol/traffic_source/jsonschema/1-0-0 (#568)
+Add com.google.analytics.measurement-protocol/session/jsonschema/1-0-0 (#567)
+Add com.google.analytics.measurement-protocol/user/jsonschema/1-0-0 (#566)
+Add com.google.analytics.measurement-protocol/link/1-0-0 (#565)
+Add com.google.analytics.measurement-protocol/timing/jsonschema/1-0-0 (#556)
+Add com.google.analytics.measurement-protocol/exception/jsonschema/1-0-0 (#555)
+Add com.google.analytics.measurement-protocol/social/jsonschema/1-0-0 (#554)
+Add com.google.analytics.measurement-protocol/item/jsonschema/1-0-0 (#553)
+Add com.google.analytics.measurement-protocol/transaction/jsonschema/1-0-0 (#552)
+Add com.google.analytics.measurement-protocol/event/jsonschema/1-0-0 (#551)
+Add com.google.analytics.measurement-protocol/screen_view/jsonschema/1-0-0 (#550)
+Add com.google.analytics.measurement-protocol/page_view/jsonschema/1-0-0 (#549)
+Redshift JSON Path: add for org.ietf/http_header/jsonschema/1-0-0 (#707)
+Redshift SQL: add for org.ietf/http_header/jsonschema/1-0-0 (#703)
+
+Release 83 (2017-12-24)
+-----------------------
+Patch com.snowplowanalytics.snowplow.storage/snowflake_config/jsonschema/1-0-0 (#679)
+
+Release 82 (2017-12-13)
+-----------------------
+Add com.unbounce/form_post/jsonschema/1-0-0 (#359)
+Add com.statusgator/status_change/jsonschema/1-0-0 (#350)
+Add com.olark/transcript/jsonschema/1-0-0 (#537)
+Add com.olark/offline_message/jsonschema/1-0-0 (#536)
+Add com.mailgun/recipient_unsubscribed/jsonschema/1-0-0 (#542)
+Add com.mailgun/message_opened/jsonschema/1-0-0 (#665)
+Add com.mailgun/message_dropped/jsonschema/1-0-0 (#543)
+Add com.mailgun/message_delivered/jsonschema/1-0-0 (#659)
+Add com.mailgun/message_complained/jsonschema/1-0-0 (#657)
+Add com.mailgun/message_clicked/jsonschema/1-0-0 (#541)
+Add com.mailgun/message_bounced/jsonschema/1-0-0 (#540)
+
+Release 81 (2017-12-12)
+-----------------------
+Patch com.snowplowanalytics.snowplow.storage/snowflake_config/jsonschema/1-0-0 (#671)
+
+Release 80 (2017-10-27)
+-----------------------
+Add com.zendesk.snowplow/user/jsonschema/1-0-0 (#653)
+Add com.zendesk.snowplow/ticket_updated/jsonschema/1-0-0 (#652)
+
+Release 79 (2017-10-15)
+-----------------------
+Add com.snowplowanalytics.snowplow.storage/postgresql_config/jsonschema/1-1-0 (#646)
+Add com.snowplowanalytics.snowplow.storage/redshift_config/jsonschema/2-1-0 (#645)
+Add com.snowplowanalytics.snowplow.storage/snowflake_config/jsonschema/1-0-0 (#634)
+Add com.mparticle.snowplow/useridentitychange_event/jsonschema/1-0-0 (#644)
+Add com.mparticle.snowplow/userattributechange_event/jsonschema/1-0-0 (#643)
+Add com.mparticle.snowplow/pushregistration_event/jsonschema/1-0-0 (#641)
+Add com.mparticle.snowplow/pushmessage_event/jsonschema/1-0-0 (#640)
+Add com.mparticle.snowplow/promotion_event/jsonschema/1-0-0 (#639)
+Add com.mparticle.snowplow/product_event/jsonschema/1-0-0 (#638)
+Add com.mparticle.snowplow/impression_event/jsonschema/1-0-0 (#637)
+Add com.mparticle.snowplow/appstatetransition_event/jsonschema/1-0-0 (#636)
+Patch com.mparticle.snowplow/session_context/jsonschema/1-0-0 (#642)
+
+Release 78 (2017-07-05)
+-----------------------
+Add com.snowplowanalytics.snowplow.storage/amazon_dynamodb_config/jsonschema/1-0-1 (#621)
+Add com.snowplowanalytics.snowplow.storage/elastic_config/jsonschema/1-0-1 (#622)
+Add com.snowplowanalytics.snowplow.storage/postgresql_config/jsonschema/1-0-1 (#620)
+Add com.snowplowanalytics.snowplow.storage/redshift_config/jsonschema/2-0-0 (#616)
+
+Release 77 (2017-07-02)
+-----------------------
+Patch com.snowplowanalytics.sauna.responders/OptimizelyConfig/avro/1-0-0 (#588)
+Patch com.snowplowanalytics.sauna.responders/HipchatConfig/avro/1-0-0 (#587)
+Patch com.snowplowanalytics.sauna.observers/LocalFilesystemConfig/avro/1-0-0 (#586)
+Patch com.snowplowanalytics.sauna.observers/AmazonS3Config/avro/1-0-0 (#585)
+Patch com.snowplowanalytics.sauna.observers/AmazonKinesisConfig/avro/1-0-0 (#584)
+Patch com.snowplowanalytics.sauna.loggers/HipchatConfig/avro/1-0-0 (#583)
+Patch com.snowplowanalytics.sauna.loggers/AmazonDynamodbConfig/avro/1-0-0 (#582)
+
+Release 76 (2017-05-30)
+-----------------------
+Add com.snowplowanalytics.dataflowrunner/PlaybookConfig/avro/1-0-1 (#579)
+Add com.snowplowanalytics.sauna.responders/SendgridConfig/avro/1-0-1 (#505)
+Patch com.snowplowanalytics.sauna.responders/SendgridConfig/avro/1-0-0 (#509)
+
+Release 75 (2017-04-16)
+-----------------------
+Add com.pagerduty.sauna.commands/create_event/jsonschema/1-0-0 (#502)
+Add com.snowplowanalytics.sauna.responders/PagerDutyConfig/avro/1-0-0 (#500)
+Add com.sendgrid.sauna.commands/send_email/jsonschema/1-0-0 (#507)
+Add com.optimizely.optimizelyx/summary/jsonschema/1-0-0 (#545)
+Redshift SQL: add for com.optimizely.optimizelyx/summary/jsonschema/1-0-0 (#546)
+Redshift JSON Path: add for com.optimizely.optimizelyx/summary/jsonschema/1-0-0 (#547)
+
+Release 74 (2017-03-31)
+-----------------------
+Add com.slack.sauna.commands/send_message/jsonschema/1-0-0 (#497)
+Add com.snowplowanalytics.sauna.responders/SlackConfig/avro/1-0-0 (#496)
+Add com.snowplowanalytics.dataflowrunner/ClusterConfig/avro/1-1-0 (#515)
+Update README markdown in according with CommonMark (#517)
+
+Release 73 (2017-02-09)
+-----------------------
+Add com.snowplowanalytics.dataflowrunner/PlaybookConfig/avro/1-0-0 (#486)
+Add com.snowplowanalytics.dataflowrunner/ClusterConfig/avro/1-0-0 (#485)
+Patch com.snowplowanalytics.sauna.observers/AmazonKinesisConfig/avro/1-0-0 (#488)
+
+Release 72 (2017-01-26)
+-----------------------
+Add com.snowplowanalytics.iglu/resolver-config/jsonschema/1-0-2 (#343)
+Add io.redash.webhooks/event/jsonschema/1-0-0 (#453)
+Patch com.snowplowanalytics.sauna.observers/AmazonKinesisConfig/avro/1-0-0 (#476)
+Patch com.snowplowanalytics.sauna.responders/HipchatConfig/avro/1-0-0 (#481)
+Redshift SQL: add for io.redash.webhooks/event/jsonschema/1-0-0 (#473)
+Redshift JSON Path: add for io.redash.webhooks/event/jsonschema/1-0-0 (#474)
+
+Release 71 (2017-01-17)
+-----------------------
+Add com.hipchat.sauna.commands/send_room_notification/jsonschema/1-0-0 (#469)
+Add com.snowplowanalytics.sauna.commands/command/jsonschema/1-0-0 (#470)
+Add com.snowplowanalytics.sauna.commands/envelope/jsonschema/1-0-0 (#471)
+Add com.snowplowanalytics.sauna.responders/HipchatConfig/avro/1-0-0 (#472)
+Add com.snowplowanalytics.sauna.observers/AmazonKinesisConfig/avro/1-0-0 (#466)
+
+Release 70 (2016-12-31)
+-----------------------
+Patch com.parrable/decrypted_payload/jsonschema/1-0-0 (#460)
+Redshift SQL: patch org.schema/WebPage/jsonschema/1-0-0 (#452)
+Redshift SQL: patch com.parrable/decrypted_payload/jsonschema/1-0-0 (#461)
+Redshift JSON Path: patch com.parrable/decrypted_payload/jsonschema/1-0-0 (#463)
+
+Release 69 (2016-12-28)
+-----------------------
+Add com.snowplowanalytics.snowplow.storage/amazon_dynamodb_config/jsonschema/1-0-0 (#451)
+Add com.snowplowanalytics.snowplow.storage/elastic_config/jsonschema/1-0-0 (#450)
+Add com.snowplowanalytics.snowplow.storage/postgresql_config/jsonschema/1-0-0 (#449)
+Add com.snowplowanalytics.snowplow.storage/redshift_config/jsonschema/1-0-0 (#448)
+Add com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-5 (#455)
+Redshift SQL: update for com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-5 (#457)
+Redshift JSON Path: add for com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-5 (#456)
+
+Release 68 (2016-12-03)
+-----------------------
+Add com.snowplowanalytics.snowplow/duplicate/jsonschema/1-0-0 (#439)
+Redshift SQL: add for com.snowplowanalytics.snowplow/duplicate/jsonschema/1-0-0 (#440)
+Redshift JSON Path: add for com.snowplowanalytics.snowplow/duplicate/jsonschema/1-0-0 (#441)
+Infrastructure: use AWS environment variables for vagrant push (#447)
+
+Release 67 (2016-11-07)
+-----------------------
+Add com.snowplowanalytics.snowplow/application_error/jsonschema/1-0-1 (#431)
+Add com.optimizely.snowplow/optimizely_summary/jsonschema/1-0-0 (#426)
+Redshift SQL: add for com.optimizely.snowplow/optimizely_summary/jsonschema/1-0-0 (#427)
+Redshift JSON Path: add for com.optimizely.snowplow/optimizely_summary/jsonschema/1-0-0 (#428)
+
+Release 66 (2016-10-26)
+-----------------------
+Patch com.snowplowanalytics.factotum/job_update/jsonschema/1-0-0 (#420)
+Patch com.snowplowanalytics.factotum/task_update/jsonschema/1-0-0 (#422)
+Redshift SQL: patch for com.snowplowanalytics.factotum/job_update/jsonschema/1-0-0 (#424)
+Redshift SQL: patch for com.snowplowanalytics.factotum/task_update/jsonschema/1-0-0 (#423)
+
+Release 65 (2016-10-22)
+-----------------------
+Patch com.snowplowanalytics.snowplow/jsonschema/site_search/1-0-0 (#405)
+Add com.snowplowanalytics.factotum/job_update/jsonschema/1-0-0 (#412)
+Add com.snowplowanalytics.factotum/task_update/jsonschema/1-0-0 (#416)
+Redshift SQL: add for com.snowplowanalytics.factotum/job_update/jsonschema/1-0-0 (#414)
+Redshift SQL: add for com.snowplowanalytics.factotum/task_update/jsonschema/1-0-0 (#417)
+Redshift JSON Path: add for com.snowplowanalytics.factotum/job_update/jsonschema/1-0-0 (#415)
+Redshift JSON Path: add for com.snowplowanalytics.factotum/task_update/jsonschema/1-0-0 (#418)
+
+Release 64 (2016-10-01)
+-----------------------
+Patch com.parrable/encrypted_payload/jsonschema/1-0-0 (#404)
+Redshift SQL: add for com.parrable/encrypted_payload/jsonschema/1-0-0 (#410)
+Redshift SQL: add for com.parrable/decrypted_payload/jsonschema/1-0-0 (#409)
+Redshift JSON Path: add for com.parrable/encrypted_payload/jsonschema/1-0-0 (#407)
+Redshift JSON Path: add for com.parrable/decrypted_payload/jsonschema/1-0-0 (#408)
+
 Release 63 (2016-09-13)
 -----------------------
 Add com.parrable/decrypted_payload/jsonschema/1-0-0 (#396)

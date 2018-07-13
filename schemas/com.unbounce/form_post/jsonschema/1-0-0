@@ -1,0 +1,38 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for Unbounce (https://documentation.unbounce.com/hc/en-us/articles/203510044-Using-a-Webhook#content6)",
+  "self": {
+    "vendor": "com.unbounce",
+    "name": "form_post",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "pageId": {
+      "description": "The identifier Unbounce uses to uniquely identify your page. Eventually you’ll be able to use this with our API to manipulate and get information about your page. This is a 36-character UUID, for example, 'a2838d98-4cf4-11df-a3fd-00163e372d58'.",
+      "type": "string",
+      "maxLength": 36
+    },
+    "pageName": {
+      "description": "The name you gave your page, for example 'My Guaranteed to Convert Landing Page'.",
+      "type": "string"
+    },
+    "variant": {
+      "description": "This identifies the page variant that the visitor saw when they visited your page, and will be a lower-case letter. The first variant is 'a', the next, 'b', and so on. If you have more than 26 variants the sequence will continue with 'aa', 'ab', etc.",
+      "type": "string",
+      "maxLength": 8
+    },
+    "pageUrl": {
+      "description": "The URL of the page that contains your form.",
+      "type": "string",
+      "format": "uri",
+      "maxLength": 8192
+    },
+    "data.json": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

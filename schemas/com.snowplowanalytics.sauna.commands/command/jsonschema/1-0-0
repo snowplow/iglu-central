@@ -1,0 +1,24 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for a Sauna command",
+    "self": {
+        "vendor": "com.snowplowanalytics.sauna.commands",
+        "name": "command",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "envelope": {
+            "$ref": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/instance-iglu-only/jsonschema/1-0-0#"
+        },
+        "command": {
+            "$ref": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/instance-iglu-only/jsonschema/1-0-0#"
+        }
+    },
+    "required": [
+        "envelope",
+        "command"
+    ],
+    "additionalProperties": false
+}
