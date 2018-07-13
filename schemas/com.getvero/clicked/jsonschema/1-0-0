@@ -11,26 +11,47 @@
 	"type": "object",
 	"properties": {
 		"clicked_at": {
-			"type": "string",				
+			"type": ["string", "null"],
 			"format": "date-time"
 		},
 		"user_agent": {
-			"type": "string",
+			"type": ["string", "null"],
+			"maxLength": 255
+		},
+		"message_id": {
+			"type": ["string", "null"],
 			"maxLength": 255
 		},
 		"type": {
-			"type": "string",
-			"maxLength": 12
+			"type": ["string", "null"],
+			"maxLength": 255
+		},
+		"event": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": ["string", "null"],
+					"maxLength": 255
+				},
+				"triggered_at": {
+					"type": ["string", "null"],
+					"format": "date-time"
+				},
+				"data": {
+					"type": ["object", "null"],
+					"additionalProperties": true
+				}
+			}
 		},
 		"user": {
 			"type": "object",
 			"properties": {
 				"id": {
-					"type": "string",
+					"type": ["string", "null"],
 					"maxLength": 255
 				},
 				"email": {
-					"type": "string",
+					"type": ["string", "null"],
 					"format": "email"
 				}
 			}	
@@ -39,35 +60,35 @@
 			"type": "object",
 			"properties": {
 				"id": {
-					"type": "string",
+					"type": ["string", "null"],
 					"maxLength": 255
 				},
 				"type": {
-					"type": "string",
+					"type": ["string", "null"],
 					"maxLength": 255
 				},
 				"name": {
-					"type": "string",
+					"type": ["string", "null"],
 					"maxLength": 255
 				},
 				"subject": {
-					"type": "string",
+					"type": ["string", "null"],
 					"maxLength": 255
 				},
 				"trigger-event": {
-					"type": "string",
+					"type": ["string", "null"],
 					"maxLength": 255
 				},
 				"permalink": {
-					"type": "string",
+					"type": ["string", "null"],
 					"maxLength": 255
 				},
 				"variation": {
-					"type": "string",
+					"type": ["string", "null"],
 					"maxLength": 255
 				},
 				"tags": {
-					"type": "string",
+					"type": ["string", "null"],
 					"maxLength": 255
 				}
 			}	
