@@ -12,25 +12,60 @@
 	"properties": {
 		"bounced_at": {
 			"type": "string",				
-			"format": "date-time"
+			"format": "date-time",
+			"maxLength": 10
 		},
 		"bounce_type": {
-			"type": "string",
+			"type": ["string", "null"],
+			"maxLength": 255
+		},
+		"bounce_code": {
+			"type": ["string", "null"],
+			"maxLength": 32
+		},
+		"bounce_message": {
+			"type": ["string", "null"],
+			"maxLength": 255
+		},
+		"message_id": {
+			"type": ["string", "null"],
 			"maxLength": 255
 		},
 		"type": {
 			"type": "string",
 			"maxLength": 12
 		},
+		"event": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": ["string", "null"],
+					"maxLength": 255
+				},
+				"triggered_at": {
+					"type": ["string", "null"],
+					"format": "date-time"
+				},
+				"data": {
+					"type": "object",
+					"properties": {
+						"key": {
+							"type": ["string", "null"],
+							"maxLength": 255
+						}
+					}
+				} 
+			}
+		},
 		"user": {
 			"type": "object",
 			"properties": {
 				"id": {
-					"type": "string",
+					"type": ["string", "null"],
 					"maxLength": 255
 				},
 				"email": {
-					"type": "string",
+					"type": ["string", "null"],
 					"format": "email"
 				}
 			}	
@@ -39,35 +74,35 @@
 			"type": "object",
 			"properties": {
 				"id": {
-					"type": "string",
+					"type": ["string", "null"],
 					"maxLength": 255
 				},
 				"type": {
-					"type": "string",
+					"type": ["string", "null"],
 					"maxLength": 255
 				},
 				"name": {
-					"type": "string",
+					"type": ["string", "null"],
 					"maxLength": 255
 				},
 				"subject": {
-					"type": "string",
+					"type": ["string", "null"],
 					"maxLength": 255
 				},
 				"trigger-event": {
-					"type": "string",
+					"type": ["string", "null"],
 					"maxLength": 255
 				},
 				"permalink": {
-					"type": "string",
+					"type": ["string", "null"],
 					"maxLength": 255
 				},
 				"variation": {
-					"type": "string",
+					"type": ["string", "null"],
 					"maxLength": 255
 				},
 				"tags": {
-					"type": "string",
+					"type": ["string", "null"],
 					"maxLength": 255
 				}
 			}	

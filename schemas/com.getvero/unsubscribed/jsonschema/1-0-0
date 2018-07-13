@@ -22,11 +22,11 @@
 			"type": "object",
 			"properties": {
 				"id": {
-					"type": "string",
+					"type": ["string", "null"],
 					"maxLength": 255
 				},
 				"email": {
-					"type": "string",
+					"type": ["string", "null"],
 					"format": "email"
 				}
 			}	
