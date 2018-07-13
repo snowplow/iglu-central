@@ -64,14 +64,6 @@
                         }
                     },
                     "required": ["database", "uri"]
-                },
-                "httpUsername": {
-                    "description": "Optional username for basic HTTP authentication",
-                    "type": "string"
-                },
-                "httpPassword": {
-                    "description": "Optional password for basic HTTP authentication",
-                    "type": "string"
                 }
             },
             "required": [
@@ -79,10 +71,6 @@
                 "excludeUseragentFile",
                 "includeUseragentFile"
             ],
-            "dependencies": {
-                "httpUsername": ["httpPassword"],
-                "httpPassword": ["httpUsername"]
-            },
             "additionalProperties": false
         }
     },
