@@ -1,0 +1,42 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a Google Analytics system info entity",
+  "self": {
+    "vendor": "com.google.analytics.measurement-protocol",
+    "name": "system_info",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+
+  "type": "object",
+  "properties": {
+    "screenResolution": {
+      "type": ["string", "null"],
+      "maxLength": 20
+    },
+    "viewportSize": {
+      "type": ["string", "null"],
+      "maxLength": 20
+    },
+    "documentEncoding": {
+      "type": ["string", "null"],
+      "maxLength": 20
+    },
+    "screenColors": {
+      "type": ["string", "null"],
+      "maxLength": 20
+    },
+    "userLanguage": {
+      "type": ["string", "null"],
+      "maxLength": 20
+    },
+    "javaEnabled": {
+      "type": ["boolean", "null"]
+    },
+    "flashVersion": {
+      "type": ["string", "null"],
+      "maxLength": 20
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,96 @@
+{
+  "namespace": "com.snowplowanalytics.sauna.observers",
+  "name": "AmazonKinesisConfig_1_0_0",
+  "type": "record",
+  "fields": [
+    {
+      "name": "enabled",
+      "type": "boolean"
+    },
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "parameters",
+      "type": {
+        "name": "AmazonKinesisObserverParameters_1_0_0",
+        "type": "record",
+        "fields": [
+          {
+            "name": "aws",
+            "type": {
+              "name": "AwsConfigParameters_1_0_0",
+              "type": "record",
+              "fields": [
+                {
+                  "name": "accessKeyId",
+                  "type": "string"
+                },
+                {
+                  "name": "secretAccessKey",
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          {
+            "name": "kinesis",
+            "type": {
+              "name": "AmazonKinesisConfigParameters_1_0_0",
+              "type": "record",
+              "fields": [
+                {
+                  "name": "region",
+                  "type": "string"
+                },
+                {
+                  "name": "streamName",
+                  "type": "string"
+                },
+                {
+                  "name": "maxRecords",
+                  "type": "int"
+                },
+                {
+                  "name": "initialPosition",
+                  "type": {
+                    "name": "ShardIteratorType_1_0_0",
+                    "type": "enum",
+                    "symbols": [
+                      "AT_TIMESTAMP",
+                      "LATEST",
+                      "TRIM_HORIZON"
+                    ]
+                  }
+                },
+                {
+                  "name": "initialPositionModifiers",
+                  "type": [
+                    {
+                      "name": "InitialPositionModifiers_1_0_0",
+                      "type": "record",
+                      "fields": [
+                        {
+                          "name": "timestamp",
+                          "type": [
+                            {
+                              "type": "long",
+                              "logicalType": "timestamp-millis"
+                            },
+                            "null"
+                          ]
+                        }
+                      ]
+                    },
+                    "null"
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

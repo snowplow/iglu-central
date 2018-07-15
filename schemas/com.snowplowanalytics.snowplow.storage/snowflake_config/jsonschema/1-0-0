@@ -1,0 +1,110 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Snowplow Snowflake storage configuration",
+    "self": {
+        "vendor": "com.snowplowanalytics.snowplow.storage",
+        "name": "snowflake_config",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string"
+        },
+        "auth": {
+            "description": "Authentication method for Snowflake Load",
+            "oneOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "accessKeyId": {
+                            "type": "string"
+                        },
+                        "secretAccessKey": {
+                            "type": "string"
+                        }
+                    },
+                    "required": ["accessKeyId", "secretAccessKey"]
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "roleArn": {
+                            "type": ["string", "null"],
+                            "minLength": 20
+                        },
+                        "sessionDuration": {
+                            "type": "integer",
+                            "minimum": 900
+                        }
+                    },
+                    "required": ["roleArn", "sessionDuration"]
+                },
+                {
+                    "type": "null"
+                }
+            ]
+        },
+        "awsRegion": {
+            "type": "string"
+        },
+        "manifest": {
+            "type": "string"
+        },
+        "snowflakeRegion": {
+            "type": "string"
+        },
+        "database": {
+            "type": "string"
+        },
+        "account": {
+            "type": "string"
+        },
+        "warehouse": {
+            "type": "string"
+        },
+        "schema": {
+            "type": "string"
+        },
+        "input": {
+            "type": "string",
+            "format": "uri"
+        },
+        "stage": {
+            "type": "string"
+        },
+        "stageUrl": {
+            "type": "string",
+            "format": "uri"
+        },
+        "username": {
+            "type": "string"
+        },
+        "password": {
+            "type": ["string", "object"],
+            "properties": {
+                "ec2ParameterStore": {
+                    "type": "object",
+                    "properties": {
+                        "parameterName": {
+                            "type": "string"
+                        }
+                    },
+                    "required": ["parameterName"]
+                }
+            },
+            "required": ["ec2ParameterStore"]
+        },
+        "id": {
+            "type": "string",
+            "format": "uuid"
+        },
+        "purpose": {
+            "type": "string",
+            "enum": ["ENRICHED_EVENTS"]
+        }
+    },
+    "additionalProperties": false,
+    "required": ["name", "auth", "awsRegion", "manifest", "snowflakeRegion", "database", "account", "warehouse", "input", "stage", "stageUrl", "username", "password", "purpose"]
+}

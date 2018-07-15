@@ -1,0 +1,69 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a Mailgun message dropped event",
+  "self": {
+    "vendor": "com.mailgun",
+    "name": "message_dropped",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "attachmentCount": {
+      "description": "Number of attachments in attachment-x (where x is a number) fields.",
+      "type": "integer",
+      "maximum": 65535
+    },
+    "code": {
+      "description": "SMTP bounce error code in form (X.X.X).",
+      "type": "string",
+      "maxLength": 8
+    },
+    "description": {
+      "description": "Detailed explanation for why the message was dropped.",
+      "type": "string"
+    },
+    "domain": {
+      "description": "Domain that sent the original message.",
+      "type": "string",
+      "format": "hostname",
+      "maxLength": 256
+    },
+    "event": {
+      "description": "Event name ('dropped').",
+      "type": "string",
+      "maxLength": 16
+    },
+    "messageHeaders": {
+      "description": "String list of all MIME headers of the original message dumped to a JSON string (order of headers preserved).",
+      "type": "string"
+    },
+    "reason": {
+      "description": "Reason for failure. Can be one either 'hardfail' or 'old'.",
+      "type": "string",
+      "maxLength": 8
+    },
+    "recipient": {
+      "description": "Recipient who could not be reached.",
+      "type": "string",
+      "format": "email",
+      "maxLength": 256
+    },
+    "signature": {
+      "description": "String with hexadecimal digits generate by HMAC algorithm (see securing webhooks).",
+      "type": "string",
+      "maxLength": 128
+    },
+    "token": {
+      "description": "Randomly generated string with length 50 (see securing webhooks).",
+      "type": "string",
+      "maxLength": 50,
+      "minLength": 50
+    },
+    "xMailgunSid": {
+      "description": "Mailgun identifying header.",
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

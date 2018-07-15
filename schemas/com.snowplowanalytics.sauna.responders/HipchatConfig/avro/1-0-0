@@ -1,0 +1,32 @@
+{
+    "namespace": "com.snowplowanalytics.sauna.responders",
+    "name": "HipchatConfig_1_0_0",
+    "type": "record",
+    "fields": [
+        {
+            "name": "enabled",
+            "type": "boolean"
+        },
+        {
+            "name": "id",
+            "type": "string"
+        },
+        {
+            "name": "parameters",
+            "type": {
+                "name": "HipchatConfigParameters_1_0_0",
+                "type": "record",
+                "fields": [
+                    {
+                        "name": "sendRoomNotificationEnabled",
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "authToken",
+                        "type": "string"
+                    }
+                ]
+            }
+        }
+    ]
+}

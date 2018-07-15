@@ -1,0 +1,56 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for an user identity change event",
+	"self": {
+		"vendor": "com.mparticle.snowplow",
+		"name": "useridentitychange_event",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+	"type": "object",
+	"properties": {
+		"name": {
+			"type": "string"
+		},
+		"newIdentity": {
+			"type": "object",
+			"properties": {
+				"identity": {
+					"type": "string"
+				},
+				"type": {
+					"type": "string"
+				},
+				"dateFirstSet": {
+					"type": "integer",
+					"maximum": 9223372036854775807,
+					"minimum": 0
+				},
+				"isFirstSeen": {
+					"type": "boolean"
+				}
+			}
+		},
+		"oldIdentity": {
+			"type": "object",
+			"properties": {
+				"identity": {
+					"type": "string"
+				},
+				"type": {
+					"type": "string"
+				},
+				"dateFirstSet": {
+					"type": "integer",
+					"maximum": 9223372036854775807,
+					"minimum": 0
+				},
+				"isFirstSeen": {
+					"type": "boolean"
+				}
+			}
+		}
+	},
+	"required": ["name"],
+	"additionalProperties": false
+}

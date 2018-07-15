@@ -1,0 +1,51 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a Google Analytics enhanced e-commerce product impression entity",
+  "self": {
+    "vendor": "com.google.analytics.measurement-protocol",
+    "name": "product_impression",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+
+  "type": "object",
+  "properties": {
+    "listIndex":{
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 200
+    },
+    "productIndex": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 200
+    },
+    "sku": {
+      "type": ["string", "null"]
+    },
+    "name": {
+      "type": ["string", "null"]
+    },
+    "brand": {
+      "type": ["string", "null"]
+    },
+    "category": {
+      "type": ["string", "null"]
+    },
+    "variant": {
+      "type": ["string", "null"]
+    },
+    "position": {
+      "type": ["integer", "null"]
+    },
+    "price": {
+      "type": ["number", "null"],
+      "multipleOf": 0.01
+    },
+    "currencyCode": {
+      "type": ["string", "null"],
+      "maxLength": 10
+    }
+  },
+  "additionalProperties": false
+}

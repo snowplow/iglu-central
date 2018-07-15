@@ -1,0 +1,20 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a Google Analytics screenview hit",
+  "self": {
+    "vendor": "com.google.analytics.measurement-protocol",
+    "name": "screen_view",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+
+  "type": "object",
+  "properties": {
+    "screenName": {
+      "type": "string",
+      "maxLength": 2048
+    }
+  },
+  "required": ["screenName"],
+  "additionalProperties": false
+}

@@ -1,0 +1,129 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a PagerDuty event command",
+  "self": {
+    "vendor": "com.pagerduty.sauna.commands",
+    "name": "create_event",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "anyOf": [
+    {
+      "properties": {
+        "service_key": {
+          "type": "string"
+        },
+        "event_type": {
+          "enum": [
+            "trigger"
+          ]
+        },
+        "incident_key": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "details": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": true
+        },
+        "client": {
+          "type": "string"
+        },
+        "client_url": {
+          "type": "string"
+        },
+        "contexts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "anyOf": [
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "link"
+                    ]
+                  },
+                  "href": {
+                    "type": "string"
+                  },
+                  "text": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "href"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "image"
+                    ]
+                  },
+                  "src": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  },
+                  "alt": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "src"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
+        }
+      },
+      "required": [
+        "service_key",
+        "event_type",
+        "description"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "service_key": {
+          "type": "string"
+        },
+        "event_type": {
+          "enum": [
+            "acknowledge",
+            "resolve"
+          ]
+        },
+        "incident_key": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "details": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": true
+        }
+      },
+      "required": [
+        "service_key",
+        "event_type",
+        "incident_key"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

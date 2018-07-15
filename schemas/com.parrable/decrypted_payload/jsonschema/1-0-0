@@ -10,15 +10,15 @@
 
   "type": "object",
   "properties": {
-    "browserId": {
+    "browserid": {
       "type": "string",
       "format": "uuid"
     },
-    "deviceId": {
+    "deviceid": {
       "type": "string",
       "maxLength": 36
     }
   },
-  "required": ["browserId", "deviceId"],
+  "required": ["browserid", "deviceid"],
   "additionalProperties": false
 }

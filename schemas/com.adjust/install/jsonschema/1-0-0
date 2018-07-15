@@ -1,0 +1,471 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for an Adjust install event",
+  "self": {
+          "vendor": "com.adjust",
+          "name": "install",
+          "format": "jsonschema",
+          "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "app_id": {
+          "description": "Store App ID or Google Play Store e.g 332193586; de.is24.android; C013FJP3WF",
+          "type": "string",
+          "maxLength": 1024
+    },
+    "app_name": {
+          "description": "Name of the app e.g MyApp",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "app_name_dashboard": {
+          "description": "Name of the app in the Adjust Dashboard e.g MyApp+Android",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "app_version": {
+          "description": "App version number (Android); build-version-number for the bundle (iOS) e.g 5.13.1 (Android), 5131 (iOS)",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "store": {
+          "description": "Target store of click e.g itunes; google, wstore, wphone",
+          "type": ["string", "null"],
+          "maxLength": 24
+    },
+    "adjust_tracker": {
+          "description": "6-character Adjust tracker token e.g abc123",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "adjust_tracker_name": {
+          "description": "Current tracker name e.g Network1%3A%3AChristmas%3A%3AReindeers%3A%3A320x70_en",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "network_name": {
+          "description": "Network name, as taken from the tracker e.g Network1",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "campaign_name": {
+          "description": "Campaign name, as taken from the tracker e.g Christmas",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "adgroup_name": {
+          "description": "Adgroup name, as taken from the tracker e.g Reindeers",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "creative_name": {
+          "description": "Creative name, as taken from the tracker e.g 320x70_en",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "is_impression_based": {
+          "description": "1 if impression-based engagement, 0 if not e.g 1",
+          "type": ["string", "null"],
+          "maxLength": 1
+    },
+    "is_organic": {
+          "description": "1 if organic traffic, 0 if non-organic e.g 0",
+          "type": ["string", "null"],
+          "maxLength": 1
+    },
+    "rejection_reason": {
+          "description": "Reason for a rejected attribution e.g anonymous_traffic, distribution_outlier, too_many_engagements, engagement_injection, incorrect_signature",
+          "type": ["string", "null"],
+          "maxLength": 50
+    },
+    "click_referer": {
+          "description": "Referrer header from click e.g http%3A%2F%2Fwww.example.com%2F%3Ffoo%3Dbar",
+          "type": ["string", "null"],
+          "maxLength": 65535
+    },
+    "event_name": {
+          "description": "Type of user activity",
+          "type": ["string", "null"],
+          "enum": ["install"]
+    },
+    "click_time": {
+          "description": "Attributed click timestamp e.g 1403568849",
+          "type": ["string", "null"],
+          "maxLength": 10
+    },
+    "impression_time": {
+          "description": "Attributed impression timestamp e.g 1403568830",
+          "type": ["string", "null"],
+          "maxLength": 10
+    },
+    "conversion_duration": {
+          "description": "Time between click and install or reattribution in seconds e.g 72",
+          "type": ["string", "null"],
+          "maxLength": 10
+    },
+    "engagement_time": {
+          "description": "Engagement timestamp e.g 1403566587",
+          "type": ["string", "null"],
+          "maxLength": 10
+    },
+    "install_time": {
+          "description": "Install (i.e., first app open) timestamp e.g 1404214634",
+          "type": ["string", "null"],
+          "maxLength": 10
+    },
+    "install_complete_time": {
+          "description": "App download completion timestamp (reported before Adjust install; Android and Google Play Store only) e.g 1441514522",
+          "type": ["string", "null"],
+          "maxLength": 10
+    },
+    "install_begin_time": {
+          "description": "App download began timestamp (Android and Google Play Store only) e.g 1502254761",
+          "type": ["string", "null"],
+          "maxLength": 10
+    },
+    "referral_time": {
+          "description": "User landed on app Play Store page timestamp (Android and Google Play Store only) e.g 1836167739",
+          "type": ["string", "null"],
+          "maxLength": 10
+    },
+    "created_at_time": {
+          "description": "Activity timestamp e.g 1404214665",
+          "type": ["string", "null"],
+          "maxLength": 10
+    },
+    "connection_type": {
+          "description": "Internet connection type e.g cellular, Cable%2FDSL, Corporate",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "click_attribution_window": {
+          "description": "Attribution window settings for device matching (hours) e.g 168",
+          "type": ["string", "null"],
+          "maxLength": 10
+    },
+    "impression_attribution_window": {
+          "description": "Attribution window settings for impression matching (hours) e.g 24",
+          "type": ["string", "null"],
+          "maxLength": 10
+    },
+    "fingerprint_attribution_window": {
+          "description": "Attribution window settings for device fingerprinting (hours) e.g 18",
+          "type": ["string", "null"],
+          "maxLength": 10
+    },
+    "adjust_device_id": {
+          "description": "Adjust device ID (all platforms) e.g 18546f6171f67e29d1cb983322ad1329",
+          "type": ["string", "null"],
+          "maxLength": 32
+    },
+    "apple_idfa": {
+          "description": "ID for advertisers (iOS only) e.g 8C6CBCOD-5F43-4765-A6E6-84DFF3D24707",
+          "type": ["string", "null"],
+          "maxLength": 36
+    },
+    "android_id": {
+          "description": "Android ID (Android only) e.g 3accef2d7286d0de",
+          "type": ["string", "null"],
+          "maxLength": 16
+    },
+    "mac_sha1": {
+          "description": "Uppercase MAC SHA-1 hash e.g 282f2e4d6324ed731ee1ca4179deb6603f2bc5bc",
+          "type": ["string", "null"],
+          "maxLength": 40
+    },
+    "mac_md5": {
+          "description": "Uppercase MAC MD5 hash e.g 098f6bcd4621d373cade4e832627b4f6",
+          "type": ["string", "null"],
+          "maxLength": 32
+    },
+    "apple_idfv": {
+          "description": "Uppercase iOS ID for vendors e.g CCB300A0-DE1B-4D48-BC7E-599E453B8DD4",
+          "type": ["string", "null"],
+          "maxLength": 36
+    },
+    "gplay_ad_id": {
+          "description": "Google Play Store advertising ID e.g 38400000-8cf0-11bd-b23e-10b96e40000d",
+          "type": ["string", "null"],
+          "maxLength": 36
+    },
+    "windows_phone_udid": {
+          "description": "Windows Phone unique device ID e.g e81644f1-46b6-4994-2903-1d1f1440c130",
+          "type": ["string", "null"],
+          "maxLength": 36
+    },
+    "windows_store_hwid": {
+          "description": "Windows Store hardware ID e.g JKJbFwIArpGAGDmcBTAvlAUMKJkHAMoSCADlJQkDHWG",
+          "type": ["string", "null"],
+          "maxLength": 43
+    },
+    "windows_store_naid": {
+          "description": "Windows Store network adapter ID e.g 5978aed4-82e5-28cf-8364-dfc64cb1fb84",
+          "type": ["string", "null"],
+          "maxLength": 36
+    },
+    "windows_ad_id": {
+          "description": "Windows advertising identifier e.g 107e8ea14329d4a2194ebbb6dc0c0fd7",
+          "type": ["string", "null"],
+          "maxLength": 32
+    },
+    "fire_os_ad_id": {
+          "description": "Fire OS advertising identifier e.g 63c5519b-7e66-7ee6-aa5d-3b290743811f",
+          "type": ["string", "null"],
+          "maxLength": 36
+    },
+    "attribution_type": {
+          "description": "Attribution method e.g fingerprint, device_tag, reftag, google, facebook",
+          "type": ["string", "null"],
+          "maxLength": 24
+    },
+    "gplay_referer": {
+          "description": "Google Play Store referrer (Android only) e.g APPIA142157299513371854693246846",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "ip_address": {
+          "description": "Device IP address e.g 8.8.8.8",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "isp": {
+          "description": "Device internet service provider e.g Verizon Internet",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "country": {
+          "description": "Device two-character country code e.g us",
+          "type": ["string", "null"],
+          "maxLength": 2
+    },
+    "country_subdivision": {
+          "description": "Device subdivision of country, e.g., state e.g Calfornia",
+          "type": ["string", "null"],
+          "maxLength": 500
+    },
+    "city": {
+          "description": "Device city e.g Berlin",
+          "type": ["string", "null"],
+          "maxLength": 500
+    },
+    "postal_code": {
+          "description": "Device postal code of IP address e.g 12101",
+          "type": ["string", "null"],
+          "maxLength": 500
+    },
+    "language_code": {
+          "description": "Device two-character language code e.g en",
+          "type": ["string", "null"],
+          "maxLength": 2
+    },
+    "device_name": {
+          "description": "Device model number e.g SM-G313HZ",
+          "type": ["string", "null"],
+          "maxLength": 500
+    },
+    "device_type": {
+          "description": "Device type e.g phone, tablet",
+          "type": ["string", "null"],
+          "maxLength": 20
+    },
+    "os_name": {
+          "description": "Device operating system e.g ios",
+          "type": ["string", "null"],
+          "maxLength": 500
+    },
+    "api_level": {
+          "description": "API level (Android only) e.g 13",
+          "type": ["string", "null"],
+          "maxLength": 500
+    },
+    "sdk_version": {
+          "description": "Adjust SDK version (per app) e.g ios4.1.4",
+          "type": ["string", "null"],
+          "maxLength": 500
+    },
+    "os_version": {
+          "description": "Operating system version number e.g 7.1.3",
+          "type": ["string", "null"],
+          "maxLength": 500
+    },
+    "environment": {
+          "description": "Current Adjust SDK environment setting e.g production, sandbox",
+          "type": ["string", "null"],
+          "maxLength": 24
+    },
+    "tracking_enabled": {
+          "description": "1 if tracking is enabled, 0 if not e.g 1",
+          "type": ["string", "null"],
+          "maxLength": 1
+    },
+    "tracking_limited": {
+          "description": "1 if tracking is limited, 0 if not e.g 0",
+          "type": ["string", "null"],
+          "maxLength": 1
+    },
+    "device_timezone": {
+          "description": "Device time zone e.g UTC+0400",
+          "type": ["string", "null"],
+          "maxLength": 10
+    },
+    "deeplink": {
+          "description": "Deeplink URL appended to click URL e.g myapp://product?id=650",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "partner_parameters": {
+          "description": "Custom partner parameters collected by the Adjust SDK and transmitted to third party providers via postbacks e.g client_id",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "cost_type": {
+          "description": "Type of ad spend being tracked (available for ad spend tracking only)* e.g CPI",
+          "type": ["string", "null"],
+          "maxLength": 8
+    },
+    "cost_amount": {
+          "description": "Cost of the user engagement (available for ad spend tracking only)* e.g 4.99 ($4.99)",
+          "type": ["string", "null"],
+          "maxLength": 500
+    },
+    "cost_currency": {
+          "description": "ISO 4217 currency code of the cost data (available for ad spend tracking only)* e.g USD",
+          "type": ["string", "null"],
+          "maxLength": 3
+    },
+    "google_click_id": {
+          "description": "Google click ID e.g undefined",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "adwords_campaign_type": {
+          "description": "Google AdWords campaign type e.g UAC; Search; Display; Video",
+          "type": ["string", "null"],
+          "maxLength": 24
+    },
+    "adwords_campaign_name": {
+          "description": "Google AdWords campaign name e.g iOS+UAC+US+re-engagement",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "adwords_campaign_id": {
+          "description": "Google AdWords campaign ID e.g 12345678",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "adwords_adgroup_id": {
+          "description": "Google AdWords adgroup ID e.g 123456",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "adwords_creative_id": {
+          "description": "Google AdWords creative ID e.g 174021879258",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "adwords_network_type": {
+          "description": "Google AdWords network type e.g Display; Search",
+          "type": ["string", "null"],
+          "maxLength": 24
+    },
+    "adwords_network_subtype": {
+          "description": "Google AdWords network subtype e.g GoogleSearch; AdMob",
+          "type": ["string", "null"],
+          "maxLength": 24
+    },
+    "adwords_keyword": {
+          "description": "Google AdWords search keyword e.g hotel",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "adwords_matchtype": {
+          "description": "Google AdWords search keyword and match type e.g hotel_Broad",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "adwords_placement": {
+          "description": "Google AdWords ad placement e.g mobile_app - 1",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "adwords_video_id": {
+          "description": "Google AdWords video ID e.g 98765456784",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "adwords_search_term": {
+          "description": "Google organic search term e.g sisyphos",
+          "type": ["string", "null"],
+          "maxLength": 2000
+    },
+    "fb_campaign_group_name": {
+          "description": "Facebook campaign name e.g DPA-PPM_SKU_PPM",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "fb_campaign_group_id": {
+          "description": "Facebook campaign ID e.g 23842588848920296",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "fb_campaign_name": {
+          "description": "Facebook ad set name e.g MyApp Promos",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "fb_campaign_id": {
+          "description": "Facebook ad set ID e.g 23842594106430661",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "fb_adgroup_name": {
+          "description": "Facebook ad name e.g MyApp Summer Promo",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "fb_adgroup_id": {
+          "description": "Facebook ad ID e.g 23842594106590661",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "fb_ad_objective_name": {
+          "description": "Facebook advertising objective e.g Post engagement",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "fb_account_id": {
+          "description": "Facebook ad account ID that created the ad e.g 123456789",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "fb_platform_position": {
+          "description": "Facebook platform position e.g rewarded_video",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "tweet_id": {
+          "description": "Unique tweet ID e.g 852130056168247296",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "twitter_line_item_id": {
+          "description": "Twitter line item ID e.g 7zpix",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "apple_ad_conversion_type": {
+          "description": "Download status: first or subsequent app download e.g Download; Redownload",
+          "type": ["string", "null"],
+          "maxLength": 24
+    },
+    "apple_ad_keyword_matchtype": {
+          "description": "Apple Search keyword matchtype e.g Broad; Exact",
+          "type": ["string", "null"],
+          "maxLength": 24
+    }
+  },
+  "minProperties": 1,
+  "required": ["app_id"],
+  "additionalProperties": true
+  }

@@ -1,0 +1,601 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Marketo description",
+  "self": {
+    "vendor": "com.marketo",
+    "name": "event",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "description": {
+      "type": ["string", "null"],
+      "maxLength": 255
+    },
+    "step": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "maximum": 32767
+    },
+    "campaign": {
+      "type": ["object", "null"],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "description": {
+          "type": ["string", "null"],
+          "maxLength": 255
+        }
+      },
+      "required": ["id", "name"]
+    },
+    "company": {
+      "type": ["object", "null"],
+      "properties": {
+        "account_owner_email_address": {
+          "type": "string",
+          "format": "email"
+        },
+        "account_owner_first_name": {
+          "type": "string",
+          "maxLength": 255
+          },
+        "account_owner_last_name": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "annual_revenue": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "billing_address": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "billing_city": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "billing_country": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "billing_postal_code": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "billing_state": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 255
+          },
+        "notes": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "industry": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "main_phone": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "num_employees": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "parent_company_name": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "sic_code": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "site": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "website": {
+          "type": "string",
+          "maxLength": 255
+        }
+      }
+    },
+    "lead": {
+      "type": ["object", "null"],
+      "properties": {
+        "acquisition_date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "acquisition_program_name": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "acquisition_program": {
+          "type": "string",
+          "maxLength": 255
+          },
+        "address": {
+          "type": "string",
+          "maxLength": 255
+          },
+        "anonymous_ip": {
+          "type": "string",
+          "maxLength": 45
+        },
+        "black_listed": {
+          "type": "boolean"
+        },
+        "city": {
+          "type": "string",
+          "maxLength": 255
+          },
+        "country": {
+          "type": "string",
+          "maxLength": 255
+          },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "date_of_birth": {
+          "type": "string",
+          "format": "date"
+        },
+        "department": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "do_not_call_reason": {
+          "type": "string",
+          "maxLength": 512
+        },
+        "do_not_call": {
+          "type": "boolean"
+        },
+        "email_address": {
+          "type": "string",
+          "format": "email"
+          },
+        "email_invalid_cause": {
+          "type": "string",
+          "maxLength": 255
+          },
+        "email_invalid": {
+          "type": "boolean"
+        },
+        "email_suspended_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "email_suspended_cause": {
+          "type": "string",
+          "maxLength": 2000
+        },
+        "email_suspended": {
+          "type": "boolean"
+        },
+        "fax_number": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "first_name": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "full_name": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "inferred_city": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "inferred_company": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "inferred_country": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "inferred_metropolitan_area": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "inferred_phone_area_code": {
+          "type": "string",
+          "maxLength": 255            
+        },
+        "inferred_postal_code": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "inferred_state_region": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "is_customer": {
+          "type": "boolean"
+        },
+        "is_partner": {
+          "type": "boolean"
+        },
+        "job_title": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "last_interesting_moment_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "last_interesting_moment_description": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "last_interesting_moment_source": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "last_interesting_moment_type": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "last_name": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "lead_owner_email_address": {
+          "type": "string",
+          "format": "email"
+        },
+        "lead_owner_first_name": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "lead_owner_job_title": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "lead_owner_last_name": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "lead_owner_phone_number": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "lead_rating": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "lead_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "lead_source": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "lead_status": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "lead_marketing_suspended": {
+          "type": "boolean"
+        },
+        "facebook_display_name": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "facebook_id": {
+          "type": "string",
+          "maxLength": 512
+        },
+        "facebook_photo_url": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "facebook_profile_url": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "facebook_reach": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "facebook_referred_enrollments": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "facebook_referred_visits": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "gender": {
+          "type": "string",
+          "maxLength": 6
+        },
+        "last_referred_enrollment": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "last_referred_visit": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "linkedin_display_name": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "linkedin_id": {
+          "type": "string",
+          "maxLength": 512
+        },
+        "linkedin_photo_url": {
+          "type": "string",
+          "maxLength": 512
+        },
+        "linkedin_profile_url": {
+          "type": "string",
+          "maxLength": 512
+        },
+        "linkedin_reach": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "linkedin_referred_enrollments": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "linkedin_referred_visits": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "syndication_id": {
+          "type": "string",
+          "maxLength": 512
+        },
+        "total_referred_enrollments": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "total_referred_visits": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "twitter_display_name": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "twitter_id": {
+          "type": "string",
+          "maxLength": 512
+        },
+        "twitter_photo_url": {
+          "type": "string",
+          "maxLength": 512
+        },
+        "twitter_profile_url": {
+          "type": "string",
+          "maxLength": 512
+        },
+        "twitter_reach": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "twitter_referred_enrollments": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "twitter_referred_visits": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "middle_name": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "mobile_phone_number": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "number_of_optys": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "original_referrer": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "original_search_engine": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "original_search_phrase": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "original_source_info": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "original_source_type": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "person_notes": {
+          "type": "string",
+          "maxLength": 512
+        },
+        "person_timezone": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "phone_number": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "postal_code": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "priority": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "registration_source_info": {
+          "type": "string",
+          "maxLength": 2000
+        },
+        "registration_source_type": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "relative_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "relative_urgency": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "role": {
+          "type": "string",
+          "maxLength": 50
+        },
+        "salutation": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "state": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "total_opty_amount": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "total_opty_expected_revenue": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "unsubscribed_reason": {
+          "type": "string",
+          "maxLength": 512
+        },
+        "unsubscribed": {
+          "type": "boolean"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "urgency": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 32767
+        }
+      }
+    },
+    "program": {
+      "type": ["object", "null"],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 2000
+        }
+      }
+    },
+    "social": {
+      "type": ["object", "null"],
+      "properties": {
+        "promo_code": {
+          "type": "string",
+          "maxLength": 255
+        },
+        "share_url": {
+          "type": "string",
+          "maxLength": 2000
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        }
+      }
+    },
+    "datetime": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "forward_to_friend_link": {
+      "type": ["string", "null"],
+      "maxLength": 255
+    },
+    "munchkinId": {
+      "type": ["string", "null"],
+      "maxLength": 255
+    },
+    "unsubscribe_link": {
+      "type": ["string", "null"],
+      "maxLength": 2000
+    },
+    "view_as_webpage_link": {
+      "type": ["string", "null"],
+      "maxLength": 2000
+    },
+    "sp_send_alert_info": {
+      "type": ["string", "null"],
+      "maxLength": 2000
+    }
+  },
+  "additionalProperties": true,
+  "required": ["name"]
+}

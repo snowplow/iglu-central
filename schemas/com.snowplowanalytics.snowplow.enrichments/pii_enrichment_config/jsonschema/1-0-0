@@ -1,0 +1,141 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for PII pseudonymization enrichment",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow.enrichments",
+    "name": "pii_enrichment_config",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "vendor": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "pii": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "pojo": {
+                "type": "object",
+                "properties": {
+                  "field": {
+                    "enum": [
+                      "user_id",
+                      "user_ipaddress",
+                      "user_fingerprint",
+                      "domain_userid",
+                      "network_userid",
+                      "ip_organization",
+                      "ip_domain",
+                      "tr_orderid",
+                      "ti_orderid",
+                      "mkt_term",
+                      "mkt_content",
+                      "se_category",
+                      "se_action",
+                      "se_label",
+                      "se_property",
+                      "mkt_clickid",
+                      "refr_domain_userid",
+                      "domain_sessionid"
+                    ]
+                  }
+                },
+                "required": [
+                  "field"
+                ],
+                "additionalProperties": false
+              },
+              "json": {
+                "type": "object",
+                "properties": {
+                  "field": {
+                    "type": "string"
+                  },
+                  "schemaCriterion": {
+                    "type": "string",
+                    "pattern": "^iglu:([a-zA-Z0-9-_.]+)/([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)/([1-9][0-9]*|\\*)-((?:0|[1-9][0-9]*)|\\*)-((?:0|[1-9][0-9]*)|\\*)$"
+                  },
+                  "jsonPath": {
+                    "type": "string",
+                    "pattern": "^\\$.*$"
+                  }
+                },
+                "required": [
+                  "field",
+                  "schemaCriterion",
+                  "jsonPath"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "oneOf": [
+              {
+                "required": [
+                  "pojo"
+                ]
+              },
+              {
+                "required": [
+                  "json"
+                ]
+              }
+            ],
+            "additionalProperties": false
+          }
+        },
+        "strategy": {
+          "type": "object",
+          "properties": {
+            "pseudonymize": {
+              "type": "object",
+              "properties": {
+                "hashFunction": {
+                  "enum": [
+                    "MD2",
+                    "MD5",
+                    "SHA-1",
+                    "SHA-256",
+                    "SHA-384",
+                    "SHA-512"
+                  ]
+                }
+              },
+              "required": [
+                "hashFunction"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "pseudonymize"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "pii",
+        "strategy"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "vendor",
+    "name",
+    "enabled",
+    "parameters"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a Google Analytics private entity",
+  "self": {
+    "vendor": "com.google.analytics",
+    "name": "private",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+
+  "type": "object",
+  "properties": {
+    "v": {
+      "type": ["string", "null"],
+      "maxLength": 256
+    },
+    "s": {
+      "type": ["integer", "null"]
+    },
+    "u": {
+      "type": ["string", "null"],
+      "maxLength": 256
+    },
+    "gid": {
+      "type": ["string", "null"],
+      "maxLength": 256
+    },
+    "r": {
+      "type": ["integer", "null"]
+    }
+  },
+  "additionalProperties": true
+}
