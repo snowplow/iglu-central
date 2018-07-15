@@ -16,7 +16,7 @@
 		},
 		"type": {
 			"type": "string",
-			"maxLength": 12
+			"maxLength": 64
 		},
 		"user": {
 			"type": "object",

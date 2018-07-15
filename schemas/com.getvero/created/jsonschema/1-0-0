@@ -24,7 +24,7 @@
 		},
 		"type": {
 			"type": ["string", "null"],
-			"maxLength": 12
+			"maxLength": 64
 		},
 		"user": {
 			"type": "object",

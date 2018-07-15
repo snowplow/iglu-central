@@ -16,7 +16,7 @@
 		},
 		"type": {
 			"type": "string",
-			"maxLength": 12
+			"maxLength": 64
 		},
 		"event": {
 			"type": "object",
@@ -30,14 +30,9 @@
 					"format": "date-time"
 				},
 				"data": {
-					"type": "object",
-					"properties": {
-						"key": {
-							"type": ["string", "null"],
-							"maxLength": 255
-						}
-					}
-				} 
+					"type": ["object", "null"],
+					"additionalProperties": true
+				}
 			}
 		},
 		"user": {
