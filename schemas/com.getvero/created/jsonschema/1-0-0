@@ -24,15 +24,14 @@
 		},
 		"type": {
 			"type": ["string", "null"],
-			"maxLength": 12
+			"maxLength": 255
 		},
 		"user": {
 			"type": "object",
 			"properties": {
 				"id": {
-					"type": ["integer", "null"],
-					"minimum": 0,
-					"maximum": 2147483647 
+					"type": ["string", "null"],
+					"maxLength": 255
 				},
 				"email": {
 					"type": ["string", "null"],
