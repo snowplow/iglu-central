@@ -12,7 +12,7 @@
 	"properties": {
 		"bounced_at": {
 			"type": "string",				
-			"format": "date-time",
+			"format": "date-time"
 		},
 		"bounce_type": {
 			"type": ["string", "null"],
