@@ -20,20 +20,21 @@
   			"description": "Application version e.g 1.1.2."
       },
       "build": {
-        "type": "string",
+        "type": ["string", "null"],
   			"maxLength": 100,
   			"description": "Build name e.g 1.2."
       },
       "buildVariant": {
-        "type": "string",
+        "type": ["string", "null"],
   			"maxLength": 100,
   			"description": "Build variant name e.g Debug / Release."
       },
       "buildIsRelease": {
-        "type": "boolean",
+        "type": ["boolean", "null"],
   			"description": "Boolean indicator for the app being a release version."
       }
     },
+    "minProperties": 1,
     "required": ["name", "version"],
     "additionalProperties": false
   }

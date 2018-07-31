@@ -2,7 +2,7 @@
 		"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
 		"description": "Schema for a context related to an app experiment",
 		"self": {
-			"vendor": "com.lifecake.apps",
+			"vendor": "com.snowplowanalytics.mobile",
 			"name": "experiment",
 			"format": "jsonschema",
 			"version": "1-0-0"
@@ -15,7 +15,7 @@
         "description": "Name of the experiment e.g Registration funnel experiment."
       },
 			"experiment_id": {
-				"type": "string",
+				"type": ["string", "null"],
 				"maxLength": 100,
         "description": "Experiment ID e.g Experiment A."
 			},
@@ -25,11 +25,12 @@
         "description": "Name of variation within the experiment e.g 3-step registration funnel."
       },
       "variation_id": {
-        "type": "string",
+        "type": ["string", "null"],
         "maxLength": 100,
         "description": "Variation ID within the experiment e.g Variation A."
       }
 		},
-		"required": ["name", "version"],
+		"minProperties": 1,
+		"required": ["experiment_name", "variation_name"],
 		"additionalProperties": false
 }

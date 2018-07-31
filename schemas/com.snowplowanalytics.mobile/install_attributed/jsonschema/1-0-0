@@ -2,7 +2,7 @@
 		"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
 		"description": "Schema for an attributed install event i.e an install event that is sent when the source of the install can be discerned.",
 		"self": {
-			"vendor": "com.lifecake.apps",
+			"vendor": "com.snowplowanalytics.mobile",
 			"name": "install_attributed",
 			"format": "jsonschema",
 			"version": "1-0-0"
@@ -15,31 +15,32 @@
         "description": "The attribution partner e.g Adjust."
       },
       "campaign_source": {
-        "type": "string",
+        "type": ["string","null"],
         "maxLength": 100,
         "description": "The attributed ad network e.g Facebook."
       },
       "campaign_name": {
-        "type": "string",
+        "type": ["string","null"],
         "maxLength": 100,
         "description": "The name of the attributed campaign e.g Adwords CPC"
       },
       "ad_content": {
-        "type": "string",
+        "type": ["string","null"],
         "maxLength": 100,
         "description": "The content of the campaign."
       },
       "ad_creative": {
-        "type": "string",
+        "type": ["string","null"],
         "maxLength": 100,
         "description": "The ad creative name."
       },
       "ad_group": {
-        "type": "string",
+        "type": ["string","null"],
         "maxLength": 100,
         "description": "The ad group name."
       }
 		},
 		"minProperties": 1,
+		"required": ["provider"],
 		"additionalProperties": true
 }
