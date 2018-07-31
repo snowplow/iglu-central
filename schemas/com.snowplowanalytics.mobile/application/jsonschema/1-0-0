@@ -1,0 +1,39 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for context related to a host application",
+    "self": {
+      "vendor": "com.snowplowanalytics.mobile",
+      "name": "application",
+      "format": "jsonschema",
+      "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+  			"maxLength": 100,
+  			"description": "Application name e.g Snowplow."
+      },
+      "version": {
+        "type": "string",
+  			"maxLength": 100,
+  			"description": "Application version e.g 1.1.2."
+      },
+      "build": {
+        "type": "string",
+  			"maxLength": 100,
+  			"description": "Build name e.g 1.2."
+      },
+      "buildVariant": {
+        "type": "string",
+  			"maxLength": 100,
+  			"description": "Build variant name e.g Debug / Release."
+      },
+      "buildIsRelease": {
+        "type": "boolean",
+  			"description": "Boolean indicator for the app being a release version."
+      }
+    },
+    "required": ["name", "version"],
+    "additionalProperties": false
+  }
