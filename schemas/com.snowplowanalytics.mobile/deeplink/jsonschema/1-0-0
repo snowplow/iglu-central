@@ -1,0 +1,35 @@
+{
+		"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+		"description": "Schema for a context related to a deeplink.",
+		"self": {
+			"vendor": "com.snowplowanalytics.mobile",
+			"name": "deeplink",
+			"format": "jsonschema",
+			"version": "1-0-0"
+		},
+		"type": "object",
+		"properties": {
+      "provider": {
+        "type": "string",
+        "maxLength": 100,
+        "description": "The name of the provider associated with the deeplink service e.g Branch Metrics."
+      },
+      "url": {
+        "type": "string",
+        "maxLength": 1000,
+        "description": "The URL of the deeplink that was opened."
+      },
+			"is_deeplink_session": {
+				"type": "boolean",
+				"description": "Boolean indicator as to whether the session was initiated via a deeplink."
+			},
+			"type": {
+				"type": ["string", "null"],
+				"maxLength": 1000,
+				"description": "The type of deeplink that was opened e.g Re-engagement campaign."
+			}
+		},
+		"minProperties": 1,
+		"required": ["provider", "url", "is_deeplink_session"],
+		"additionalProperties": false
+}
