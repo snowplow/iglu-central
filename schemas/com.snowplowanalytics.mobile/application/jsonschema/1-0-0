@@ -1,6 +1,6 @@
 {
     "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
-    "description": "Schema for context related to a host application",
+    "description": "Schema for context related to a host application.",
     "self": {
       "vendor": "com.snowplowanalytics.mobile",
       "name": "application",
