@@ -1,0 +1,36 @@
+{
+		"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+		"description": "Schema for a context related to a screen viewed.",
+		"self": {
+			"vendor": "com.snowplowanalytics.mobile",
+			"name": "screen",
+			"format": "jsonschema",
+			"version": "1-0-0"
+		},
+		"type": "object",
+		"properties": {
+      "name": {
+        "type": "string",
+        "maxLength": 100,
+        "description": "The name of the screen that was viewed e.g Home."
+      },
+      "type": {
+        "type": ["string", "null"],
+        "maxLength": 100,
+        "description": "The type of screen that was viewed e.g feed / carousel."
+      },
+      "transition_type": {
+        "type": ["string", "null"],
+        "maxLength": 100,
+        "description": "The type of transition that led to the screen being viewed."
+      },
+      "previous_screen_name": {
+        "type": ["string", "null"],
+        "maxLength": 100,
+        "description": "The name of the screen that was viewed before the latest screen_viewed event."
+      }
+		},
+		"minProperties": 1,
+		"required": ["name"],
+		"additionalProperties": false
+}
