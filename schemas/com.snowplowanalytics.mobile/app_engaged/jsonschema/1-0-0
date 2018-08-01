@@ -1,0 +1,31 @@
+{
+		"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+		"description": "Schema for an app engaged event.",
+		"self": {
+			"vendor": "com.snowplowanalytics.mobile",
+			"name": "app_engaged",
+			"format": "jsonschema",
+			"version": "1-0-0"
+		},
+		"type": "object",
+		"properties": {
+      "action": {
+        "type": "string",
+        "maxLength": 100,
+        "description": "The action that the user performed e.g like."
+      },
+      "type": {
+        "type": "string",
+        "maxLength": 100,
+        "description": "The action type that the user performed e.g main button."
+      },
+			"screen_id": {
+				"type": "string",
+				"maxLength": 1000,
+				"description": "The screen ID where the action took place."
+			}
+		},
+		"minProperties": 1,
+		"required": ["action", "type", "url"],
+		"additionalProperties": false
+}
