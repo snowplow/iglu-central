@@ -2,11 +2,7 @@
 set -e
 
 # Constants
-install_dir="/tmp"
-validator_v="0.1.0"
-validator_zip="igluctl_${validator_v}.zip"
-validator_uri="http://dl.bintray.com/snowplow/snowplow-generic/${validator_zip}"
-validator_jar="igluctl"
+source $TRAVIS_BUILD_DIR/ci/constants.sh
 
 # Go to parent dir of this script
 function cd_script_parent() {
@@ -18,11 +14,11 @@ function cd_script_parent() {
 
 # Downloads and installs the full-fat XXX jarfile
 function install_validator() {
-    if [ ! -f ${install_dir}/${validator_jar} ] ; then
-        wget ${validator_uri} -P ${install_dir}
+    if [ ! -f ${IGLUCTL} ] ; then
+        wget ${VALIDATOR_URI} -P ${INSTALL_DIR}
     fi
-    echo "Extract ${install_dir}/${validator_zip}"
-    unzip -j "${install_dir}/${validator_zip}" -d ${install_dir}
+    echo "Extract ${INSTALL_DIR}/${VALIDATOR_ZIP}"
+    unzip -j "${INSTALL_DIR}/${VALIDATOR_ZIP}" -d ${INSTALL_DIR}
     echo "... done"
 }
 
@@ -38,4 +34,4 @@ echo "========================"
 echo "LINTING ALL JSON SCHEMAS"
 echo "------------------------"
 
-java -jar ${install_dir}/${validator_jar} lint "schemas/"
+java -jar ${IGLUCTL} lint "schemas/"
