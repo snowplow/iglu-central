@@ -1,3 +1,13 @@
+Release 95 (2018-08-15)
+-----------------------
+Add com.snowplowanalytics.snowplow/shredded_type/jsonschema/1-0-0 (#781)
+Add com.snowplowanalytics.snowplow.storage/bigquery_config/jsonschema/1-0-0 (#804)
+Add com.snowplowanalytics.snowplow/ua_parser_config/jsonschema/1-0-1 (#828)
+Infrastructure: add sync with Iglu Server mirror (#831)
+Infrastructure: add sync with development mirror (#619)
+Infrastructure: add master apikey for Iglu Server mirror to .travis.yml (#830)
+Infrastructure: bump igluctl to 0.2.0 (#617)
+
 Release 94 (2018-07-16)
 -----------------------
 Add com.amazon.aws.cloudfront/wd_access_log/jsonschema/1-0-6 (#808)

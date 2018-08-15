@@ -1,0 +1,101 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Snowplow Google BigQuery storage configuration",
+    "self": {
+        "vendor": "com.snowplowanalytics.snowplow.storage",
+        "name": "bigquery_config",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "name": {
+            "description": "Human-readable storage target name, used only for logging",
+            "type": "string"
+        },
+        "id": {
+            "description": "Machine-readable unique identifier",
+            "type": "string",
+            "format": "uuid"
+        },
+        "projectId": {
+            "description": "GCP project id",
+            "type": "string"
+        },
+        "input": {
+            "description": "Google PubSub subscription name with enriched TSV data",
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 255
+        },
+        "datasetId": {
+            "description": "BigQuery dataset id",
+            "type": "string"
+        },
+        "tableId": {
+            "description": "BigQuery table id",
+            "type": "string"
+        },
+        "load": {
+            "description": "Loading mode and associated settings",
+            "type": "object",
+            "required": ["mode"],
+            "oneOf": [
+                {
+                    "required": ["retry"],
+                    "properties": {
+                        "mode": {
+                            "enum": ["STREAMING_INSERTS"]
+                        },
+                        "retry": {
+                            "description": "Whether transient failures should be retried or sent straight to failedInserts topic",
+                            "type": "boolean"
+                        }
+                    }
+                },
+                {
+                    "required": ["frequency"],
+                    "properties": {
+                        "mode": {
+                            "enum": ["FILE_LOADS"]
+                        },
+                        "frequency": {
+                            "description": "Frequency of load jobs, in seconds",
+                            "type": "integer",
+                            "minimum": 100,
+                            "maximum": 86400
+                        }
+                    }
+                }
+            ]
+        },
+        "typesTopic": {
+            "description": "Google PubSub topic name for sending observed types",
+            "type": "string"
+        },
+        "typesSubscription": {
+            "description": "Google PubSub subscription name where Mutator gets observed types",
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 255
+        },
+        "badRows": {
+            "description": "Google PubSub topic name to sink rows that were couldn't be transformed to TableRow",
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 255
+        },
+        "failedInserts": {
+            "description": "Google PubSub topic name to sink rows that were couldn't be inserted into BigQuery (due not existing column or service outage)",
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 255
+        },
+        "purpose": {
+            "type": "string",
+            "enum": ["ENRICHED_EVENTS"]
+        }
+    },
+    "additionalProperties": false,
+    "required": ["name", "id", "projectId", "input", "datasetId", "tableId", "load", "typesTopic", "badRows", "failedInserts", "typesSubscription", "purpose"]
+}
