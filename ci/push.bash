@@ -5,6 +5,8 @@ function die() {
     echo "$@" 1>&2 ; exit 1;
 }
 
+source $TRAVIS_BUILD_DIR/ci/constants.sh
+
 master="snowplow-hosted-assets"
 master_region="eu-west-1"
 jsonpath_upload_dir="/4-storage/redshift-storage/jsonpaths/"
@@ -28,3 +30,11 @@ do
         aws s3 sync jsonpaths/ s3://${master}-${region}${jsonpath_upload_dir} --include "*.*" --region=${region}
     fi
 done
+
+
+echo "==========================================="
+echo "SYNCHRONIZING SCHEMAS TO Iglu Server mirror"
+echo "-------------------------------------------"
+
+java -jar ${IGLUCTL} static push schemas ${IGLU_SERVER_MIRROR} ${IGLU_SERVER_APIKEY} --public
+
