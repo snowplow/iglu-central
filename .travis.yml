@@ -1,4 +1,5 @@
 script: "./ci/lint.bash"
+after_script: "./ci/dev_mirror_sync.bash"
 before_deploy: pip install --user awscli
 deploy:
 - provider: script
