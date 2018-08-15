@@ -8,3 +8,4 @@ IGLUCTL="${INSTALL_DIR}/${VALIDATOR_JAR}"
 
 # Infrastructure
 IGLU_SERVER_MIRROR="https://com-snowplowanalytics-1.iglu.snplow.net"
+DEV_MIRROR_BUCKET="iglucentral-dev.com"

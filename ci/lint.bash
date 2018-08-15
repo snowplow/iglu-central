@@ -35,3 +35,4 @@ echo "LINTING ALL JSON SCHEMAS"
 echo "------------------------"
 
 java -jar ${IGLUCTL} lint "schemas/"
+
