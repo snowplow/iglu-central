@@ -1,3 +1,10 @@
+Release 96 (2018-09-06)
+-----------------------
+Add com.snowplowanalytics.iglu/igluctl_config/jsonschema/1-0-0 (#838)
+Add com.snowplowanalytics.snowplow.r2f/removal_criteria/jsonschema/1-0-0 (#826)
+Add com.snowplowanalytics.snowplow.enrichments/api_request_enrichment_config/jsonschema/1-0-1 (#836)
+Patch com.snowplowanalytics.snowplow/pii_transformation/jsonschema/1-0-0 (#802)
+
 Release 95 (2018-08-15)
 -----------------------
 Add com.snowplowanalytics.snowplow/shredded_type/jsonschema/1-0-0 (#781)
