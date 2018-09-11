@@ -9,6 +9,8 @@
         "$.hierarchy.refRoot",
         "$.hierarchy.refTree",
         "$.hierarchy.refParent",
+        "$.data.bounce_code",
+        "$.data.bounce_message",
         "$.data.bounce_type",
         "$.data.bounced_at",
         "$.data.campaign.id",
@@ -19,7 +21,10 @@
         "$.data.campaign.trigger-event",
         "$.data.campaign.type",
         "$.data.campaign.variation",
-        "$.data.type",
+        "$.data.event.data",
+        "$.data.event.name",
+        "$.data.event.triggered_at",
+        "$.data.message_id",
         "$.data.user.email",
         "$.data.user.id"
     ]

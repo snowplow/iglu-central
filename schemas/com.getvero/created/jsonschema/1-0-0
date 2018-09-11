@@ -22,10 +22,6 @@
 			"type": ["string", "null"],
 			"maxLength": 255
 		},
-		"type": {
-			"type": ["string", "null"],
-			"maxLength": 64
-		},
 		"user": {
 			"type": "object",
 			"properties": {

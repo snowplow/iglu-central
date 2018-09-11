@@ -11,7 +11,6 @@
         "$.hierarchy.refParent",
         "$.data.changes.tags.add",
         "$.data.changes.tags.remove",
-        "$.data.type",
         "$.data.user.email",
         "$.data.user.id"
     ]

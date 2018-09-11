@@ -14,10 +14,6 @@
 			"type": "string",				
 			"format": "date-time"
 		},
-		"type": {
-			"type": "string",
-			"maxLength": 64
-		},
 		"user": {
 			"type": "object",
 			"properties": {

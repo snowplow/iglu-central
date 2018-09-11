@@ -18,7 +18,10 @@
         "$.data.campaign.type",
         "$.data.campaign.variation",
         "$.data.clicked_at",
-        "$.data.type",
+        "$.data.event.data",
+        "$.data.event.name",
+        "$.data.event.triggered_at",
+        "$.data.message_id",
         "$.data.user.email",
         "$.data.user.id",
         "$.data.user_agent"

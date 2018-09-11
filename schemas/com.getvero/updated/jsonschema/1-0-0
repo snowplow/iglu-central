@@ -10,10 +10,6 @@
 
 	"type": "object",
 	"properties": {
-		"type": {
-			"type": "string",
-			"maxLength": 64
-		},
 		"user": {
 			"type": "object",
 			"properties": {
