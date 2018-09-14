@@ -82,8 +82,7 @@
           "type" : ["string", "null"]
         },
         "lat" : {
-          "type" : ["number", "null"],
-          "minimum" : 0
+          "type" : ["number", "null"]
         }
       },
       "additionalProperties" : true
