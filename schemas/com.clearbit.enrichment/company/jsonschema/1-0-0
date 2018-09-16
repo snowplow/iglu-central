@@ -58,7 +58,9 @@
           "type" : ["string", "null"]
         },
         "lng" : {
-          "type" : ["number", "null"]
+          "type" : ["number", "null"],
+          "minimum": -180,
+          "maximum": 180
         },
         "state" : {
           "type" : ["string", "null"]
@@ -82,7 +84,9 @@
           "type" : ["string", "null"]
         },
         "lat" : {
-          "type" : ["number", "null"]
+          "type" : ["number", "null"],
+          "minimum": -90,
+          "maximum": 90
         }
       },
       "additionalProperties" : true
