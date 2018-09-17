@@ -30,10 +30,6 @@
 			"type": ["string", "null"],
 			"maxLength": 255
 		},
-		"type": {
-			"type": "string",
-			"maxLength": 255
-		},
 		"event": {
 			"type": "object",
 			"properties": {
@@ -89,7 +85,7 @@
 				},
 				"permalink": {
 					"type": ["string", "null"],
-					"maxLength": 255
+					"format": "uri"
 				},
 				"variation": {
 					"type": ["string", "null"],
