@@ -247,7 +247,7 @@
         },
         "last_interesting_moment_date": {
           "type": "string",
-          "format": "date"
+          "format": "date-time"
         },
         "last_interesting_moment_description": {
           "type": "string",
