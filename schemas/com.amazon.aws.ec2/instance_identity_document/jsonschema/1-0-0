@@ -11,7 +11,7 @@
     "instanceId" : {
       "type" : "string",
       "minLength" : 10,
-      "maxLength" : 19
+      "maxLength" : 21
     },
     "devpayProductCodes" : {
       "type" : [ "array", "null" ],
@@ -34,7 +34,7 @@
     "ramdiskId" : {
       "type" : [ "string", "null" ],
       "minLength" : 12,
-      "maxLength" : 12
+      "maxLength" : 21
     },
     "architecture" : {
       "type" : "string"
@@ -52,7 +52,7 @@
     "imageId" : {
       "type" : "string",
       "minLength" : 12,
-      "maxLength" : 12
+      "maxLength" : 21
     },
     "privateIp" : {
       "type" : "string",
@@ -66,7 +66,7 @@
     "kernelId" : {
       "type" : [ "string", "null" ],
       "minLength" : 12,
-      "maxLength" : 12
+      "maxLength" : 21
     }
   },
   "additionalProperties" : false

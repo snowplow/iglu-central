@@ -1,3 +1,10 @@
+Release 97 (2018-10-14)
+-----------------------
+Add com.snowplowanalytics.mobile/application/jsonschema/1-0-0 (#846)
+Patch com.amazon.aws.ec2/instance_identity_document/jsonschema/1-0-0 (#845)
+Patch com.clearbit.enrichment/person/jsonschema/1-0-0 (#848)
+Patch com.clearbit.enrichment/company/jsonschema/1-0-0 (#849)
+
 Release 96 (2018-09-06)
 -----------------------
 Add com.snowplowanalytics.iglu/igluctl_config/jsonschema/1-0-0 (#838)
