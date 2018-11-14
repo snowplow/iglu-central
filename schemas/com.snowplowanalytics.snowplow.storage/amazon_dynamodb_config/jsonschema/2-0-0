@@ -1,0 +1,52 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Snowplow Amazon DynamoDB storage configuration",
+    "self": {
+        "vendor": "com.snowplowanalytics.snowplow.storage",
+        "name": "amazon_dynamodb_config",
+        "format": "jsonschema",
+        "version": "2-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string"
+        },
+        "auth": {
+            "description": "Authentication method for Events Manifest",
+            "oneOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "accessKeyId": {
+                            "type": "string"
+                        },
+                        "secretAccessKey": {
+                            "type": "string"
+                        }
+                    },
+                    "required": ["accessKeyId", "secretAccessKey"]
+                },
+                {
+                    "type": "null"
+                }
+            ]
+        },
+        "awsRegion": {
+            "type": "string"
+        },
+        "dynamodbTable": {
+            "type": "string"
+        },
+        "id": {
+            "type": "string",
+            "format": "uuid"
+        },
+        "purpose": {
+            "type": "string",
+            "enum": ["EVENTS_MANIFEST"]
+        }
+    },
+    "additionalProperties": false,
+    "required": ["name", "auth", "awsRegion", "dynamodbTable", "id", "purpose"]
+}
