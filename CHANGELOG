@@ -1,3 +1,12 @@
+Release 98 (2018-11-27)
+-----------------------
+Redshift JSON Path: patch org.w3/PerformanceTiming/jsonschema/1-0-0 (#862)
+Redshift SQL: patch org.w3/PerformanceTiming/jsonschema/1-0-0 (#861)
+Add com.snowplowanalytics.snowplow.storage/snowflake_config/jsonschema/1-0-1 (#858)
+Add com.snowplowanalytics.snowplow.storage/amazon_dynamodb_config/jsonschema/2-0-0 (#854)
+Patch com.snowplowanalytics.monitoring.kinesis/storage_write_failed/jsonschema/1-0-0 (#856)
+Patch io.redash.webhooks/event/jsonschema/1-0-0 (#484)
+
 Release 97 (2018-10-14)
 -----------------------
 Add com.snowplowanalytics.mobile/application/jsonschema/1-0-0 (#846)
