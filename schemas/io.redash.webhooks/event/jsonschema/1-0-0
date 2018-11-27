@@ -9,11 +9,6 @@
   },
   "type": "object",
   "properties": {
-    "id": {
-      "type": "integer",
-      "maximum" : 2147483647,
-      "minimum" : -2147483648
-    },
     "user_id": {
       "type": ["integer", "null"],
       "maximum" : 2147483647,
@@ -28,15 +23,14 @@
       "maxLength" : 255
     },
     "object_id": {
-      "type": ["string", "null"],
+      "type": ["string", "integer", "null"],
       "maxLength" : 255
     },
     "additional_properties": {
-      "type": ["string", "null"]
+      "type": ["object", "null"]
     },
     "created_at": {
-      "type": "string",
-      "format" : "date-time"
+      "type": "string"
     },
     "org_id": {
       "type": "integer",
@@ -44,6 +38,6 @@
       "minimum" : -2147483648
     }
   },
-  "required": ["id", "action", "object_id", "created_at", "org_id"],
+  "required": ["action", "object_id", "created_at", "org_id"],
   "additionalProperties": true
 }

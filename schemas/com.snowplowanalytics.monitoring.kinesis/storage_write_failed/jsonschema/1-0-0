@@ -30,7 +30,7 @@
 			"minimum": 0
 		},
 		"message": {
-			"type": "string"
+			"type": ["string", "null"]
 		}
 	},
 
