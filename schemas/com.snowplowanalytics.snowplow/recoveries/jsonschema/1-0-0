@@ -1,0 +1,111 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for an array of recovery scenarios",
+  "self": {
+      "vendor": "com.snowplowanalytics.snowplow",
+      "name": "recoveries",
+      "format": "jsonschema",
+      "version": "1-0-0"
+  },
+  "type": "array",
+  "items": {
+    "type": "object",
+    "oneOf": [
+      {
+        "properties": {
+          "name": {
+            "enum": [
+              "PassThrough"
+            ]
+          },
+          "error": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "error"
+        ],
+        "additionalProperties": false
+      },
+      {
+        "properties": {
+          "name": {
+            "enum": [
+              "RemoveFromQueryString",
+              "RemoveFromBody"
+            ]
+          },
+          "error": {
+            "type": "string"
+          },
+          "toRemove": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "error",
+          "toRemove"
+        ],
+        "additionalProperties": false
+      },
+      {
+        "properties": {
+          "name": {
+            "enum": [
+              "ReplaceInQueryString",
+              "ReplaceInBody"
+            ]
+          },
+          "error": {
+            "type": "string"
+          },
+          "toReplace": {
+            "type": "string"
+          },
+          "replacement": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "error",
+          "toReplace",
+          "replacement"
+        ],
+        "additionalProperties": false
+      },
+      {
+        "properties": {
+          "name": {
+            "enum": [
+              "ReplaceInBase64FieldInQueryString",
+              "ReplaceInBase64FieldInBody"
+            ]
+          },
+          "error": {
+            "type": "string"
+          },
+          "base64Field": {
+            "type": "string"
+          },
+          "toReplace": {
+            "type": "string"
+          },
+          "replacement": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "error",
+          "toReplace",
+          "replacement"
+        ],
+        "additionalProperties": false
+      }
+    ],
+    "additionalProperties": false
+  }
+}
