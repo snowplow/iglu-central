@@ -11,7 +11,7 @@
   "items": {
     "type": "object",
     "description": "Recovery scenario sum type",
-    "oneOf": [
+    "anyOf": [
       {
         "properties": {
           "name": {
