@@ -2,10 +2,10 @@
   "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
   "description": "Schema for an array of recovery scenarios",
   "self": {
-      "vendor": "com.snowplowanalytics.snowplow",
-      "name": "recoveries",
-      "format": "jsonschema",
-      "version": "1-0-0"
+    "vendor": "com.snowplowanalytics.snowplow",
+    "name": "recoveries",
+    "format": "jsonschema",
+    "version": "1-0-0"
   },
   "type": "array",
   "items": {
@@ -104,8 +104,22 @@
           "replacement"
         ],
         "additionalProperties": false
+      },
+      {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "error"
+        ],
+        "additionalProperties": true
       }
-    ],
-    "additionalProperties": false
+    ]
   }
 }
