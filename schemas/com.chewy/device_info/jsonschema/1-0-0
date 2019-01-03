@@ -131,5 +131,5 @@
       "type" : ["boolean","string"]
     }
   },
-  "additionalProperties" : false
+  "additionalProperties" : true
 }
