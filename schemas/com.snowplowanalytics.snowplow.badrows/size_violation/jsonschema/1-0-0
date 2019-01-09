@@ -1,0 +1,68 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a size violation bad row",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow.badrows",
+    "name": "size_violation",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "failure": {
+      "type": "object",
+      "description": "Information regarding the size violation",
+      "properties": {
+        "timestamp": {
+          "type": "string",
+          "description": "Timestamp at which the failure occurred",
+          "format": "date-time"
+        },
+        "maximumAllowedSizeBytes": {
+          "type": "integer",
+          "description": "Maximum payload size allowed by the current platform",
+          "maximum": 1073741824,
+          "minimum": 0
+        },
+        "actualSizeBytes": {
+          "type": "integer",
+          "description": "Maximum payload size allowed by the current platform",
+          "maximum": 1073741824,
+          "minimum": 0
+        },
+        "expectation": {
+          "type": "string",
+          "description": "Expectation which was not met",
+          "maxLength": 256
+        }
+      },
+      "required": [ "timestamp", "maximumAllowedSizeBytes", "actualSizeBytes" ],
+      "additionalProperties": false
+    },
+    "payload": {
+      "type": "string",
+      "description": "The truncated payload that resulted in a size violation"
+    },
+    "processor": {
+      "type": "object",
+      "description": "Information about the piece of software responsible for the creation of this size violation",
+      "properties": {
+        "artifact": {
+          "type": "string",
+          "description": "Artifact responsible for the creation of this size violation",
+          "maxLength": 512
+        },
+        "version": {
+          "type": "string",
+          "description": "Version of the artifact responsible for the creation of this size violation",
+          "pattern": "^(\\d+\\.\\d+\\.\\d+.*)$",
+          "maxLength": 32
+        }
+      },
+      "required": [ "artifact", "version" ],
+      "additionalProperties": false
+    }
+  },
+  "required": [ "failure", "payload", "processor" ],
+  "additionalProperties": false
+}
