@@ -1,3 +1,7 @@
+Release 99 (2019-01-09)
+-----------------------
+Add com.snowplowanalytics.snowplow/focus_form/jsonschema/1-0-0 (#876)
+
 Release 98 (2018-11-27)
 -----------------------
 Redshift JSON Path: patch org.w3/PerformanceTiming/jsonschema/1-0-0 (#862)
