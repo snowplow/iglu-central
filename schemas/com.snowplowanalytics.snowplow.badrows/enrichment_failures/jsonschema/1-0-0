@@ -1,0 +1,277 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a bad row resulting from enrichment failures",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow.badrows",
+    "name": "enrichment_failures",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "failure": {
+      "type": "object",
+      "description": "Information regarding the enrichment failures",
+      "properties": {
+        "timestamp": {
+          "type": "string",
+          "description": "Timestamp at which the failure occurred",
+          "format": "date-time"
+        },
+        "messages": {
+          "type": "array",
+          "description": "List of failure messages associated with the enrichment failures",
+          "items": {
+            "type": "object",
+            "description": "Individual enrichment failure",
+            "properties": {
+              "enrichment": {
+                "type": "object",
+                "description": "Information needed to identify an enrichment",
+                "properties": {
+                  "schemaKey": {
+                    "type": "object",
+                    "description": "The schema coordinates for this enrichment",
+                    "properties": {
+                      "vendor": {
+                        "type": "string",
+                        "description": "Vendor of the enrichment which produced this failure",
+                        "pattern": "^[a-zA-Z0-9-_.]+$"
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "Name of the enrichment which produced this failure",
+                        "pattern": "^[a-zA-Z0-9-_]+$"
+                      },
+                      "format": {
+                        "type": "string",
+                        "description": "Format of the enrichment which produced this failure",
+                        "pattern": "^[a-zA-Z0-9-_]+$"
+                      },
+                      "version": {
+                        "type": "string",
+                        "description": "Version of the enrichment which produced this failure",
+                        "pattern": "^[0-9]+-[0-9]+-[0-9]+$"
+                      }
+                    },
+                    "required": [ "vendor", "name", "format", "version" ],
+                    "additionalProperties": false
+                  },
+                  "identifier": {
+                    "type": "string",
+                    "description": "Uniquely identifies the instance of of the enrichment which produced this failure",
+                    "maxLength": 256
+                  }
+                },
+                "required": [ "schemaKey", "identifier" ],
+                "additionalProperties": false
+              },
+              "message": {
+                "type": "object",
+                "description": "Information about the failure that happened for this enrichment",
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "description": "Error which was internal to the enrichment regarding its input data",
+                    "properties": {
+                      "field": {
+                        "type": "string",
+                        "description": "Field which did not meet the enrichment's expectations",
+                        "maxLength": 64
+                      },
+                      "value": {
+                        "type": [ "string", "null" ],
+                        "description": "Stringified representation of the value which did not meet expectations"
+                      },
+                      "expectation": {
+                        "type": "string",
+                        "description": "Expectation which was not met",
+                        "maxLength": 256
+                      }
+                    },
+                    "required": ["field", "expectation" ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "description": "Error which was external to the enrichment, e.g. a connection issue",
+                    "properties": {
+                      "error": {
+                        "type": "string",
+                        "description": "Error that occurred",
+                        "maxLength": 512
+                      }
+                    },
+                    "required": [ "error" ],
+                    "additionalProperties": false
+                  }
+                ]
+              }
+            },
+            "required": [ "enrichment", "message" ],
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    "payload": {
+      "type": "object",
+      "description": "The partially enriched event that resulted in enrichment failures",
+      "properties": {
+        "app_id": { "type": ["string", "null"] },
+        "platform": { "type": ["string", "null"] },
+        "etl_tstamp": { "type": ["string", "null"] },
+        "collector_tstamp": { "type": ["string", "null"] },
+        "dvce_created_tstamp": { "type": ["string", "null"] },
+        "event": { "type": ["string", "null"] },
+        "event_id": { "type": ["string", "null"] },
+        "txn_id": { "type": ["string", "null"] },
+        "name_tracker": { "type": ["string", "null"] },
+        "v_tracker": { "type": ["string", "null"] },
+        "v_collector": { "type": "string" },
+        "v_etl": { "type": "string" },
+        "user_id": { "type": ["string", "null"] },
+        "user_ipaddress": { "type": ["string", "null"] },
+        "user_fingerprint": { "type": ["string", "null"] },
+        "domain_userid": { "type": ["string", "null"] },
+        "domain_sessionidx": { "type": ["integer", "null"] },
+        "network_userid": { "type": ["string", "null"] },
+        "geo_country": { "type": ["string", "null"] },
+        "geo_region": { "type": ["string", "null"] },
+        "geo_city": { "type": ["string", "null"] },
+        "geo_zipcode": { "type": ["string", "null"] },
+        "geo_latitude": { "type": ["number", "null"] },
+        "geo_longitude": { "type": ["number", "null"] },
+        "geo_region_name": { "type": ["string", "null"] },
+        "ip_isp": { "type": ["string", "null"] },
+        "ip_organization": { "type": ["string", "null"] },
+        "ip_domain": { "type": ["string", "null"] },
+        "ip_netspeed": { "type": ["string", "null"] },
+        "page_url": { "type": ["string", "null"] },
+        "page_title": { "type": ["string", "null"] },
+        "page_referrer": { "type": ["string", "null"] },
+        "page_urlscheme": { "type": ["string", "null"] },
+        "page_urlhost": { "type": ["string", "null"] },
+        "page_urlport": { "type": ["integer", "null"] },
+        "page_urlpath": { "type": ["string", "null"] },
+        "page_urlquery": { "type": ["string", "null"] },
+        "page_urlfragment": { "type": ["string", "null"] },
+        "refr_urlscheme": { "type": ["string", "null"] },
+        "refr_urlhost": { "type": ["string", "null"] },
+        "refr_urlport": { "type": ["integer", "null"] },
+        "refr_urlpath": { "type": ["string", "null"] },
+        "refr_urlquery": { "type": ["string", "null"] },
+        "refr_urlfragment": { "type": ["string", "null"] },
+        "refr_medium": { "type": ["string", "null"] },
+        "refr_source": { "type": ["string", "null"] },
+        "refr_term": { "type": ["string", "null"] },
+        "mkt_medium": { "type": ["string", "null"] },
+        "mkt_source": { "type": ["string", "null"] },
+        "mkt_term": { "type": ["string", "null"] },
+        "mkt_content": { "type": ["string", "null"] },
+        "mkt_campaign": { "type": ["string", "null"] },
+        "contexts": { "type": ["string", "null"] },
+        "se_category": { "type": ["string", "null"] },
+        "se_action": { "type": ["string", "null"] },
+        "se_label": { "type": ["string", "null"] },
+        "se_property": { "type": ["string", "null"] },
+        "se_value": { "type": ["string", "null"] },
+        "unstruct_event": { "type": ["string", "null"] },
+        "tr_orderid": { "type": ["string", "null"] },
+        "tr_affiliation": { "type": ["string", "null"] },
+        "tr_total": { "type": ["string", "null"] },
+        "tr_tax": { "type": ["string", "null"] },
+        "tr_shipping": { "type": ["string", "null"] },
+        "tr_city": { "type": ["string", "null"] },
+        "tr_state": { "type": ["string", "null"] },
+        "tr_country": { "type": ["string", "null"] },
+        "ti_orderid": { "type": ["string", "null"] },
+        "ti_sku": { "type": ["string", "null"] },
+        "ti_name": { "type": ["string", "null"] },
+        "ti_category": { "type": ["string", "null"] },
+        "ti_price": { "type": ["string", "null"] },
+        "ti_quantity": { "type": ["integer", "null"] },
+        "pp_xoffset_min": { "type": ["integer", "null"] },
+        "pp_xoffset_max": { "type": ["integer", "null"] },
+        "pp_yoffset_min": { "type": ["integer", "null"] },
+        "pp_yoffset_max": { "type": ["integer", "null"] },
+        "useragent": { "type": ["string", "null"] },
+        "br_name": { "type": ["string", "null"] },
+        "br_family": { "type": ["string", "null"] },
+        "br_version": { "type": ["string", "null"] },
+        "br_type": { "type": ["string", "null"] },
+        "br_renderengine": { "type": ["string", "null"] },
+        "br_lang": { "type": ["string", "null"] },
+        "br_features_pdf": { "type": ["integer", "null"] },
+        "br_features_flash": { "type": ["integer", "null"] },
+        "br_features_java": { "type": ["integer", "null"] },
+        "br_features_director": { "type": ["integer", "null"] },
+        "br_features_quicktime": { "type": ["integer", "null"] },
+        "br_features_realplayer": { "type": ["integer", "null"] },
+        "br_features_windowsmedia": { "type": ["integer", "null"] },
+        "br_features_gears": { "type": ["integer", "null"] },
+        "br_features_silverlight": { "type": ["integer", "null"] },
+        "br_cookies": { "type": ["integer", "null"] },
+        "br_colordepth": { "type": ["string", "null"] },
+        "br_viewwidth": { "type": ["integer", "null"] },
+        "br_viewheight": { "type": ["integer", "null"] },
+        "os_name": { "type": ["string", "null"] },
+        "os_family": { "type": ["string", "null"] },
+        "os_manufacturer": { "type": ["string", "null"] },
+        "os_timezone": { "type": ["string", "null"] },
+        "dvce_type": { "type": ["string", "null"] },
+        "dvce_ismobile": { "type": ["string", "null"] },
+        "dvce_screenwidth": { "type": ["integer", "null"] },
+        "dvce_screenheight": { "type": ["integer", "null"] },
+        "doc_charset": { "type": ["string", "null"] },
+        "doc_width": { "type": ["integer", "null"] },
+        "doc_height": { "type": ["integer", "null"] },
+        "tr_currency": { "type": ["string", "null"] },
+        "tr_total_base": { "type": ["string", "null"] },
+        "tr_tax_base": { "type": ["string", "null"] },
+        "tr_shipping_base": { "type": ["string", "null"] },
+        "ti_currency": { "type": ["string", "null"] },
+        "ti_price_base": { "type": ["string", "null"] },
+        "base_currency": { "type": ["string", "null"] },
+        "geo_timezone": { "type": ["string", "null"] },
+        "mkt_clickid": { "type": ["string", "null"] },
+        "mkt_network": { "type": ["string", "null"] },
+        "etl_tags": { "type": ["string", "null"] },
+        "dvce_sent_tstamp": { "type": ["string", "null"] },
+        "refr_domain_userid": { "type": ["string", "null"] },
+        "refr_dvce_tstamp": { "type": ["string", "null"] },
+        "derived_contexts": { "type": ["string", "null"] },
+        "domain_sessionid": { "type": ["string", "null"] },
+        "derived_tstamp": { "type": ["string", "null"] },
+        "event_vendor": { "type": ["string", "null"] },
+        "event_name": { "type": ["string", "null"] },
+        "event_format": { "type": ["string", "null"] },
+        "event_version": { "type": ["string", "null"] },
+        "event_fingerprint": { "type": ["string", "null"] },
+        "true_tstamp": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "processor": {
+      "type": "object",
+      "description": "Information about the piece of software responsible for the creation of enrichment failures",
+      "properties": {
+        "artifact": {
+          "type": "string",
+          "description": "Artifact responsible for the creation of enrichment failures",
+          "maxLength": 512
+        },
+        "version": {
+          "type": "string",
+          "description": "Version of the artifact responsible for the creation of enrichment failures",
+          "pattern": "^(\\d+\\.\\d+\\.\\d+.*)$",
+          "maxLength": 32
+        }
+      },
+      "required": [ "artifact", "version" ],
+      "additionalProperties": false
+    }
+  },
+  "required": [ "failure", "payload", "processor" ],
+  "additionalProperties": false
+}
