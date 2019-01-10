@@ -1,0 +1,427 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a bad row resulting from tracker protocol violations",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow.badrows",
+    "name": "tracker_protocol_violations",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "failure": {
+      "type": "object",
+      "description": "Information regarding the tracker protocol violations",
+      "properties": {
+        "timestamp": {
+          "type": "string",
+          "description": "Timestamp at which the failure occurred",
+          "format": "date-time"
+        },
+        "vendor": {
+          "type": "string",
+          "description": "Vendor of the adapter that processed this payload, here com.snowplowanalytics.snowplow",
+          "maxLength": 64
+        },
+        "version": {
+          "type": "string",
+          "description": "Version of the adapter that processed this payload, here tp2",
+          "maxLength": 4
+        },
+        "messages": {
+          "type": "array",
+          "description": "List of failure messages associated with the tracker protocol violations",
+          "items": {
+            "anyOf": [
+              {
+                "type": "object",
+                "description": "Error which was internal to the adapter regarding its input data",
+                "properties": {
+                  "field": {
+                    "type": "string",
+                    "description": "Field which did not meet the adapter's expectations",
+                    "maxLength": 64
+                  },
+                  "value": {
+                    "type": [ "string", "null" ],
+                    "description": "Stringified representation of the value which did not meet expectations"
+                  },
+                  "expectation": {
+                    "type": "string",
+                    "description": "Expectation which was not met",
+                    "maxLength": 256
+                  }
+                },
+                "required": ["field", "expectation" ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "description": "String supplied for schema validation was not json",
+                "properties": {
+                  "field": {
+                    "type": "string",
+                    "description": "Field which ended up not being json",
+                    "maxLength": 64
+                  },
+                  "value": {
+                    "type": [ "string", "null" ],
+                    "description": "Stringified representation of the value which is not json"
+                  },
+                  "error": {
+                    "type": "string",
+                    "description": "Json parsing issue"
+                  }
+                },
+                "required": ["properties", "error" ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "description": "Json supplied for schema validation was not self-describing",
+                "properties": {
+                  "json": {
+                    "type": "string",
+                    "description": "Supplied json which was not self-describing"
+                  },
+                  "error": {
+                    "type": "string",
+                    "description": "Issue which the json which makes it not self-describing",
+                    "enum": [ "INVALID_SCHEMAVER", "INVALID_IGLUURI", "INVALID_DATA_PAYLOAD", "INVALID_SCHEMA" ]
+                  }
+                },
+                "required": [ "json", "error" ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "description": "Supplied json did not validate against its schema",
+                "properties": {
+                  "schemaKey": {
+                    "type": "object",
+                    "description": "The schema coordinates to validate against",
+                    "properties": {
+                      "vendor": {
+                        "type": "string",
+                        "description": "Vendor of the schema to validate against",
+                        "pattern": "^[a-zA-Z0-9-_.]+$"
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "Name of the schema to validate against",
+                        "pattern": "^[a-zA-Z0-9-_]+$"
+                      },
+                      "format": {
+                        "type": "string",
+                        "description": "Format of the schema to validate against",
+                        "pattern": "^[a-zA-Z0-9-_]+$"
+                      },
+                      "version": {
+                        "type": "string",
+                        "description": "Version of the schema to validate against",
+                        "pattern": "^[0-9]+-[0-9]+-[0-9]+$"
+                      }
+                    },
+                    "required": [ "vendor", "name", "format", "version" ],
+                    "additionalProperties": false
+                  },
+                  "error": {
+                    "description": "Iglu client error",
+                    "anyOf": [
+                      {
+                        "description": "Resolution error - schema could not be found in the specified repositories, defined by ResolutionError in the Iglu Client",
+                        "properties": {
+                          "repositories": {
+                            "description": "Defined by LookupHistory in the Iglu Client",
+                            "properties": {
+                              "name": {
+                                "type": "string",
+                                "description": "Name of the repostitory as written in resolver.json"
+                              },
+                              "errors": {
+                                "type": "array",
+                                "description": "Set of errors which happened for this repository",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "attempts": {
+                                "type": "integer",
+                                "minimum": 0,
+                                "description": "Number of attempts which have been made"
+                              }
+                            },
+                            "required": [ "name", "errors", "attempts" ],
+                            "additionalProperties": false
+                          }
+                        },
+                        "required": [ "repositories" ],
+                        "additionalProperties": false
+                      },
+                      {
+                        "description": "Validation error - schema was found, but data is invalid or the schema itself is invalid",
+                        "anyOf": [
+                          {
+                            "description": "Schema is invalid and cannot be used to validate an instance",
+                            "properties": {
+                              "errors": {
+                                "type": "array",
+                                "minItems": 1,
+                                "items": {
+                                  "properties": {
+                                    "path": {
+                                      "type": "string",
+                                      "description": "JSON Path to an issue in the faulty JSON Schema"
+                                    },
+                                    "message": {
+                                      "type": "string",
+                                      "description": "Human-readable message describing the issue with the schema"
+                                    }
+                                  },
+                                  "required": [ "path", "message" ],
+                                  "additionalProperties": false
+                                }
+                              }
+                            },
+                            "required": [ "errors" ],
+                            "additionalProperties": false
+                          },
+                          {
+                            "description": "Invalid data - Schema was resolved and valid, but the given instance is not valid against it. The error comes from a validator",
+                            "properties": {
+                              "errors": {
+                                "type": "array",
+                                "minItems": 1,
+                                "items": {
+                                  "properties": {
+                                    "message": {
+                                      "type": "string",
+                                      "description": "Human-readable message describing the problem in the invalidated data"
+                                    },
+                                    "path": {
+                                      "type": "string",
+                                      "description": "JSON Path to an issue in the faulty data"
+                                    },
+                                    "keyword": {
+                                      "type": "string",
+                                      "description": "JSON Schema keyword that invalidated this instance"
+                                    },
+                                    "targets": {
+                                      "type": "string",
+                                      "description": "Violating value"
+                                    }
+                                  },
+                                  "required": [ "message", "path", "keyword", "targets" ],
+                                  "additionalProperties": false
+                                }
+                              }
+                            },
+                            "required": [ "errors" ],
+                            "additionalProperties": false
+                          }
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "description": "Supplied json does not match the associated schema criterion",
+                        "properties": {
+                          "schemaKey": {
+                            "type": "object",
+                            "description": "The schema coordinates",
+                            "properties": {
+                              "vendor": {
+                                "type": "string",
+                                "description": "Vendor of the schema",
+                                "pattern": "^[a-zA-Z0-9-_.]+$"
+                              },
+                              "name": {
+                                "type": "string",
+                                "description": "Name of the schema",
+                                "pattern": "^[a-zA-Z0-9-_]+$"
+                              },
+                              "format": {
+                                "type": "string",
+                                "description": "Format of the schema",
+                                "pattern": "^[a-zA-Z0-9-_]+$"
+                              },
+                              "version": {
+                                "type": "string",
+                                "description": "Version of the schema",
+                                "pattern": "^[0-9]+-[0-9]+-[0-9]+$"
+                              }
+                            },
+                            "required": [ "vendor", "name", "format", "version" ],
+                            "additionalProperties": false
+                          },
+                          "schemaCriterion": {
+                            "type": "object",
+                            "description": "The schema criterion which was not respected",
+                            "properties": {
+                              "vendor": {
+                                "type": "string",
+                                "description": "Vendor in the schema criterion",
+                                "pattern": "^[a-zA-Z0-9-_.]+$"
+                              },
+                              "name": {
+                                "type": "string",
+                                "description": "Name in the schema criterion",
+                                "pattern": "^[a-zA-Z0-9-_]+$"
+                              },
+                              "format": {
+                                "type": "string",
+                                "description": "Format in the schema criterion",
+                                "pattern": "^[a-zA-Z0-9-_]+$"
+                              },
+                              "model": {
+                                "type": [ "integer", "null" ],
+                                "description": "Model of the schema criterion"
+                              },
+                              "revision": {
+                                "type": [ "integer", "null" ],
+                                "description": "Revision of the schema criterion"
+                              },
+                              "addition": {
+                                "type": [ "integer", "null" ],
+                                "description": "Addition of the schema criterion"
+                              }
+                            },
+                            "required": [ "vendor", "name", "format" ],
+                            "additionalProperties": false
+
+                          }
+                        },
+                        "required": [ "schemaKey", "schemaCriterion" ],
+                        "additionalProperties": false
+                      }
+                    ]
+                  }
+                },
+                "required": [ "schemaKey", "error" ],
+                "additionalProperties": false
+              }
+            ]
+          }
+        }
+      },
+      "required": [ "timestamp", "vendor", "version", "messages" ],
+      "additionalProperties": false
+    },
+    "payload": {
+      "type": "object",
+      "description": "The collector payload that resulted in tracker protocol violations",
+      "properties": {
+        "vendor": {
+          "type": "string",
+          "description": "Vendor of the adapter that processed this payload, here com.snowplowanalytics.snowplow",
+          "maxLength": 64
+        },
+        "version": {
+          "type": "string",
+          "description": "Version of the adapter that processed this payload, here tp2",
+          "maxLength": 4
+        },
+        "querystring": {
+          "type": [ "array", "null" ],
+          "description": "Query string of this collector payload",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Name of the querystring parameter",
+                "maxLength": 512
+              },
+              "value": {
+                "type": [ "string", "null" ],
+                "description": "Possible value for the querystring parameter",
+                "maxLength": 512
+              }
+            },
+            "required": [ "name" ],
+            "additionalProperties": false
+          }
+        },
+        "contentType": {
+          "type": [ "string", "null" ],
+          "description": "Content type of the payload as detected by the collector",
+          "maxLength": 256
+        },
+        "body": {
+          "type": [ "string", "null" ],
+          "description": "Body of this collector payload"
+        },
+        "collector": {
+          "type": "string",
+          "description": "Collector which produced this collector payload",
+          "maxLength": 32
+        },
+        "encoding": {
+          "type": "string",
+          "description": "Encoding of the collector payload",
+          "maxLength": 32
+        },
+        "hostname": {
+          "type": [ "string", "null" ],
+          "description": "Hostname of the payload as detected by the collector",
+          "maxLength": 8192
+        },
+        "timestamp": {
+          "type": "string",
+          "description": "Timestamp at which the payload was collected",
+          "format": "date-time"
+        },
+        "ipAddress": {
+          "type": "string",
+          "description": "IP address of the payload as detected by the collector",
+          "maxLength": 128
+        },
+        "userAgent": {
+          "type": [ "string", "null" ],
+          "description": "User agent of the payload as detected by the collector",
+          "maxLength": 4096
+        },
+        "refererUri": {
+          "type": [ "string", "null" ],
+          "description": "Referer of the payload as detected by the collector",
+          "maxLength": 8192
+        },
+        "headers": {
+          "type": [ "array", "null" ],
+          "description": "List of the headers part of this collector payload",
+          "items": {
+            "type": "string",
+            "maxLength": 8192
+          }
+        },
+        "networkUserId": {
+          "type": [ "string", "null" ],
+          "description": "Network user id associated with this payload",
+          "format": "uuid"
+        }
+      },
+      "required": [ "vendor", "version", "collector", "encoding" ],
+      "additionalProperties": false
+    },
+    "processor": {
+      "type": "object",
+      "description": "Information about the piece of software responsible for the creation of tracker protocol violations",
+      "properties": {
+        "artifact": {
+          "type": "string",
+          "description": "Artifact responsible for the creation of tracker protocol violations",
+          "maxLength": 512
+        },
+        "version": {
+          "type": "string",
+          "description": "Version of the artifact responsible for the creation of tracker protocol violations",
+          "pattern": "^(\\d+\\.\\d+\\.\\d+.*)$",
+          "maxLength": 32
+        }
+      },
+      "required": [ "artifact", "version" ],
+      "additionalProperties": false
+    }
+  },
+  "required": [ "failure", "payload", "processor" ],
+  "additionalProperties": false
+}
