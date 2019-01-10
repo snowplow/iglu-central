@@ -1,0 +1,97 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a format violation bad row",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow.badrows",
+    "name": "collector_payload_format_violation",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "failure": {
+      "type": "object",
+      "description": "Information regarding the format violation",
+      "properties": {
+        "timestamp": {
+          "type": "string",
+          "description": "Timestamp at which the failure occurred",
+          "format": "date-time"
+        },
+        "loader": {
+          "type": "string",
+          "description": "Loader which was used when the failure occurred",
+          "enum": [ "clj-tomcat", "cloudfront", "ndjson", "thrift", "tsv" ]
+        },
+        "message": {
+          "type": "object",
+          "description": "Failure message associated with the format violation",
+          "anyOf": [
+            {
+              "type": "object",
+              "description": "Simple type of error",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "description": "Error which occurred during loading",
+                  "maxLength": 512
+                }
+              },
+              "required": [ "error" ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "description": "Error when some field did not match the expectations for this loader",
+              "properties": {
+                "payloadField": {
+                  "type": "string",
+                  "description": "Field which did not meet expectations",
+                  "maxLength": 64
+                },
+                "value": {
+                  "type": ["string", "null"],
+                  "description": "Stringified representation of the value which did not meet expectations"
+                },
+                "expectation": {
+                  "type": "string",
+                  "description": "Expectation which was not met",
+                  "maxLength": 256
+                }
+              },
+              "required": [ "payloadField", "expectation" ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [ "timestamp", "loader", "message" ],
+      "additionalProperties": false
+    },
+    "payload": {
+      "type": "string",
+      "description": "The collector payload that resulted in a format violation"
+    },
+    "processor": {
+      "type": "object",
+      "description": "Information about the piece of software responsible for the creation of this format violation",
+      "properties": {
+        "artifact": {
+          "type": "string",
+          "description": "Artifact responsible for the creation of this format violation",
+          "maxLength": 512
+        },
+        "version": {
+          "type": "string",
+          "description": "Version of the artifact responsible for the creation of this format violation",
+          "pattern": "^(\\d+\\.\\d+\\.\\d+.*)$",
+          "maxLength": 32
+        }
+      },
+      "required": [ "artifact", "version" ],
+      "additionalProperties": false
+    }
+  },
+  "required": [ "failure", "payload", "processor" ],
+  "additionalProperties": false
+}
