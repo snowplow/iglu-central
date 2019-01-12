@@ -1,0 +1,145 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for an array of recovery scenarios",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow",
+    "name": "recoveries",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "array",
+  "items": {
+    "type": "object",
+    "description": "Recovery scenario sum type",
+    "anyOf": [
+      {
+        "properties": {
+          "name": {
+            "description": "The PassThrough recovery scenario doesn't modify the payload",
+            "enum": [
+              "PassThrough"
+            ]
+          },
+          "error": {
+            "description": "Error filter used to discriminate the bad rows that will be affected by this recovery scenario",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "error"
+        ],
+        "additionalProperties": false
+      },
+      {
+        "properties": {
+          "name": {
+            "description": "The RemoveFrom{Body,QueryString} will remove part of the payload",
+            "enum": [
+              "RemoveFromQueryString",
+              "RemoveFromBody"
+            ]
+          },
+          "error": {
+            "description": "Error filter used to discriminate the bad rows that will be affected by this recovery scenario",
+            "type": "string"
+          },
+          "toRemove": {
+            "description": "String or regex to remove from the {body, query string}",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "error",
+          "toRemove"
+        ],
+        "additionalProperties": false
+      },
+      {
+        "properties": {
+          "name": {
+            "description": "The ReplaceIn{Body,QueryString} will replace part of the payload",
+            "enum": [
+              "ReplaceInQueryString",
+              "ReplaceInBody"
+            ]
+          },
+          "error": {
+            "description": "Error filter used to discriminate the bad rows that will be affected by this recovery scenario",
+            "type": "string"
+          },
+          "toReplace": {
+            "description": "String or regex to replace in the {body, query string}",
+            "type": "string"
+          },
+          "replacement": {
+            "description": "Replacement for the {body, query string}",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "error",
+          "toReplace",
+          "replacement"
+        ],
+        "additionalProperties": false
+      },
+      {
+        "properties": {
+          "name": {
+            "description": "The ReplaceInBase64FieldIn{Body,QueryString} will replace part of a base64-encoded field",
+            "enum": [
+              "ReplaceInBase64FieldInQueryString",
+              "ReplaceInBase64FieldInBody"
+            ]
+          },
+          "error": {
+            "description": "Error filter used to discriminate the bad rows that will be affected by this recovery scenario",
+            "type": "string"
+          },
+          "base64Field": {
+            "description": "Name of the base64-encoded field to decoded and do a replacement in",
+            "enum": [
+              "ue_px",
+              "cx"
+            ]
+          },
+          "toReplace": {
+            "description": "String or regex to replace in the specified base64-encoded field in the {body, query string}",
+            "type": "string"
+          },
+          "replacement": {
+            "description": "Replacement in the specified base64-encoded field in the {body, query string}",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "error",
+          "toReplace",
+          "replacement"
+        ],
+        "additionalProperties": false
+      },
+      {
+        "properties": {
+          "name": {
+            "description": "Fallback for a custom recovery scenario",
+            "type": "string"
+          },
+          "error": {
+            "description": "Error filter used to discriminate the bad rows that will be affected by this recovery scenario",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "error"
+        ],
+        "additionalProperties": true
+      }
+    ]
+  }
+}
