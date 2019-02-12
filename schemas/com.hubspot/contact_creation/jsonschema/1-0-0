@@ -1,0 +1,64 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Webhook event for creating a new contact.",
+  "self": {
+    "vendor": "com.hubspot",
+    "name": "contact_creation",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "objectId": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647,
+      "description": "The ID of the object that was created/changed/deleted. For contacts this is the vid; for companies, the companyId; and for deals the dealId."
+    },
+    "changeSource": {
+      "type": "string",
+      "maxLength": 128,
+      "description": "The source of this change. Can be any of the change sources that you find on contact property histories."
+    },
+    "eventId": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647,
+      "description": "The unique ID of the event that triggered this notification."
+    },
+    "subscriptionId": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647,
+      "description": "The ID of the subscription that caused us to send you a notification of this event."
+    },
+    "portalId": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647,
+      "description": "The customer's portalId that this event came from."
+    },
+    "appId": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647,
+      "description": "The ID of your application. (In case you have multiple applications pointing to the same webhook URL.)"
+    },
+    "occurredAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this event occurred."
+    },
+    "attemptNumber": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647,
+      "description": "Which attempt this is to notify your service of this event (starting at 0). If your service times-out or throws an error as described in 'Retries' below, we will attempt to send the notification to your service again."
+    },
+    "changeFlag": {
+      "type": "string",
+      "maxLength": 128
+    }
+  },
+  "additionalProperties": false
+}
