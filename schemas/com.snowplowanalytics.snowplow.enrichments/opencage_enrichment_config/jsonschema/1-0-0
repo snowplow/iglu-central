@@ -3,7 +3,7 @@
     "description": "Schema for OpenCage API enrichment",
     "self": {
       "vendor": "com.snowplowanalytics.snowplow.enrichments",
-      "name": "opencache_enrichment_config",
+      "name": "opencage_enrichment_config",
       "format": "jsonschema",
       "version": "1-0-0"
     },
