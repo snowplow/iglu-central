@@ -40,7 +40,7 @@
             "minimum": 1
           }
         },
-        "required": ["apiKey", "cacheSize", "scale", 
+        "required": ["apiKey", "cacheSize", "scale", "timeout"],
         "additionalProperties": false
       }
     },
