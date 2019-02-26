@@ -1,3 +1,17 @@
+Release 101 (2019-02-26)
+------------------------
+Add com.snowplowanalytics.snowplow/atomic/jsonschema/1-0-0 (#778)
+Add com.marketo/event/jsonschema/2-0-0 (#889)
+Add com.hubspot/company_change/jsonschema/1-0-0 (#891)
+Add com.hubspot/company_creation/jsonschema/1-0-0 (#892)
+Add com.hubspot/company_deletion/jsonschema/1-0-0 (#893)
+Add com.hubspot/contact_change/jsonschema/1-0-0 (#894)
+Add com.hubspot/contact_creation/jsonschema/1-0-0 (#895)
+Add com.hubspot/contact_deletion/jsonschema/1-0-0 (#896)
+Add com.hubspot/deal_change/jsonschema/1-0-0 (#897)
+Add com.hubspot/deal_creation/jsonschema/1-0-0 (#898)
+Add com.hubspot/deal_deletion/jsonschema/1-0-0 (#899)
+
 Release 100 (2019-01-12)
 ------------------------
 Add com.snowplowanalytics.snowplow/recoveries/jsonschema/1-0-0 (#879)
