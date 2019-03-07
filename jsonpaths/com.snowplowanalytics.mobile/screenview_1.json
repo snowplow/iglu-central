@@ -1,0 +1,25 @@
+{
+    "jsonpaths": [
+        "$.schema.vendor",
+        "$.schema.name",
+        "$.schema.format",
+        "$.schema.version",
+        "$.hierarchy.rootId",
+        "$.hierarchy.rootTstamp",
+        "$.hierarchy.refRoot",
+        "$.hierarchy.refTree",
+        "$.hierarchy.refParent",
+        "$.data.name",
+        "$.data.activity",
+        "$.data.fragment",
+        "$.data.id",
+        "$.data.previousId",
+        "$.data.previousName",
+        "$.data.previousType",
+        "$.data.topViewTag",
+        "$.data.topViewcontroller",
+        "$.data.transitionType",
+        "$.data.type",
+        "$.data.viewcontroller"
+    ]
+}

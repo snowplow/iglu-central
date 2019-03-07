@@ -1,0 +1,65 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for a screenview event",
+    "self": {
+        "vendor": "com.snowplowanalytics.mobile",
+        "name": "screenview",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "The name of the screen viewed."
+        },
+        "type": {
+            "type": "string",
+            "description": "The type of screen that was viewed e.g feed / carousel."
+        },
+        "id": {
+            "type": "string",
+            "maxLength": 36,
+            "description": "An ID for identifying a screenview."
+        },
+        "previousName": {
+            "type": "string",
+            "description": "The name of the previous screen."
+        },
+        "previousId": {
+            "type": "string",
+            "description": "A screenview ID of the previous screenview."
+        },
+        "previousType": {
+            "type": "string",
+            "description": "The screen type of the previous screenview."
+        },
+        "transitionType": {
+            "type": "string",
+            "description": "The type of transition that led to the screen being viewed."
+        },
+        "viewcontroller": {
+            "type": "string",
+            "description": "iOS specific: class name of the view controller."
+        },
+        "topViewcontroller": {
+            "type": "string",
+            "description": "iOS specific: class name of the view controller."
+        },
+        "topViewTag": {
+            "type": "string",
+            "description": "iOS specific: tag property of the top view of the view controller."
+        },
+        "activity": {
+            "type": "string",
+            "description": "Android specific: name of activity."
+        },
+        "fragment": {
+            "type": "string",
+            "description": "Android specific: name of fragment."
+        }
+    },
+    "minProperties": 1,
+    "required": ["name"],
+    "additionalProperties": false
+}
