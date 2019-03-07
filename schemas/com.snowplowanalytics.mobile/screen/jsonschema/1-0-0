@@ -1,0 +1,46 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for a context that represents information pertaining to the current screen being viewed when an event occurs.",
+    "self": {
+        "vendor": "com.snowplowanalytics.mobile",
+        "name": "screen",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "The name of the screen viewed."
+        },
+        "type": {
+            "type": "string",
+            "description": "The type of screen that was viewed e.g feed / carousel."
+        },
+        "id": {
+            "type": "string",
+	    "format": "uuid",
+            "maxLength": 36,
+            "description": "An ID from the associated screenview event."
+        },
+        "viewController": {
+            "type": "string",
+            "description": "iOS specific: class name of the view controller."
+        },
+        "topViewController": {
+            "type": "string",
+            "description": "iOS specific: class name of the top level view controller."
+        },
+        "activity": {
+            "type": "string",
+            "description": "Android specific: name of activity."
+        },
+        "fragment": {
+            "type": "string",
+            "description": "Android specific: name of fragment."
+        }
+    },
+    "minProperties": 2,
+    "required": ["name", "id"],
+    "additionalProperties": false
+}
