@@ -1,0 +1,14 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for an event where a mobile application is installed.",
+	"self": {
+		"vendor": "com.snowplowanalytics.mobile",
+		"name": "application_install",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+	"type": "object",
+	"properties": {
+	},
+	"additionalProperties": false
+}
