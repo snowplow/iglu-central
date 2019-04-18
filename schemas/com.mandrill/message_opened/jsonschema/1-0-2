@@ -1,0 +1,236 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a Mandrill message opened event",
+	"self": {
+		"vendor": "com.mandrill",
+		"name": "message_opened",
+		"format": "jsonschema",
+		"version": "1-0-2"
+	},
+
+	"type": "object",
+	"properties": {
+		"_id": {
+			"type": "string"
+		},
+		"ip": {
+			"type": "string"
+		},
+		"location": {
+			"type": ["object", "null"],
+			"properties": {
+				"city": {
+					"type": "string"
+				},
+				"country_short": {
+					"type": "string"
+				},
+				"country": {
+					"type": "string"
+				},
+				"latitude": {
+					"type": "number"
+				},
+				"longitude": {
+					"type": "number"
+				},
+				"postal_code": {
+					"type": "string"
+				},
+				"region": {
+					"type": "string"
+				},
+				"timezone": {
+					"type": "string"
+				}
+			},
+			"additionalProperties": false
+		},
+		"msg": {
+			"type": "object",
+			"properties": {
+				"_id": {
+					"type": "string"
+				},
+				"_version": {
+					"type": "string"
+				},
+				"clicks": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"ts": {
+								"type": "string",
+								"format": "date-time"
+							},
+							"url": {
+								"type": "string"
+							},
+							"ip": {
+								"type": "string"
+							},
+							"location": {
+								"type": ["string", "null"]
+							},
+							"ua": {
+								"type": ["string", "null"]
+							}
+						},
+						"additionalProperties": true
+					}
+				},
+				"email": {
+					"type": "string"
+				},
+				"metadata": {
+					"type": "object",
+					"properties": {
+						"user_id": {
+							"type": "number"
+						}
+					},
+					"additionalProperties": true
+				},
+				"opens": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"ts": {
+								"type": "string",
+								"format": "date-time"
+							},
+							"ip": {
+								"type": "string"
+							},
+							"location": {
+								"type": ["string", "null"]
+							},
+							"ua": {
+								"type": ["string", "null"]
+							}
+						},
+						"additionalProperties": true
+					}
+				},
+				"sender": {
+					"type": "string"
+				},
+				"state": {
+					"type": "string"
+				},
+				"subaccount": {
+					"type": ["string", "null"]
+				},
+				"subject": {
+					"type": "string"
+				},
+				"tags": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"ts": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"resends": {
+					"type": "array"
+				},
+				"smtp_events": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"ts": {
+								"type": "string",
+								"format": "date-time"
+							},
+							"type": {
+								"type": "string"
+							},
+							"diag": {
+								"type": "string"
+							},
+							"source_ip": {
+								"type": "string"
+							},
+							"destination_ip": {
+								"type": "string"
+							},
+							"size": {
+								"type": "integer"
+							}
+						},
+						"additionalProperties": true
+					}
+				},
+				"template": {
+					"type": ["string", "null"]
+				}
+			},
+			"additionalProperties": false
+		},
+		"ts": {
+			"type": "string",
+			"format": "date-time"
+		},
+		"user_agent_parsed": {
+			"type": ["object", "null"],
+			"properties": {
+				"mobile": {
+					"type": "boolean"
+				},
+				"os_company_url": {
+					"type": ["string", "null"]
+				},
+				"os_company": {
+					"type": ["string", "null"]
+				},
+				"os_family": {
+					"type": ["string", "null"]
+				},
+				"os_icon": {
+					"type": ["string", "null"]
+				},
+				"os_name": {
+					"type": ["string", "null"]
+				},
+				"os_url": {
+					"type": ["string", "null"]
+				},
+				"type": {
+					"type": ["string", "null"]
+				},
+				"ua_company_url": {
+					"type": ["string", "null"]
+				},
+				"ua_company": {
+					"type": ["string", "null"]
+				},
+				"ua_family": {
+					"type": ["string", "null"]
+				},
+				"ua_icon": {
+					"type": ["string", "null"]
+				},
+				"ua_name": {
+					"type": ["string", "null"]
+				},
+				"ua_url": {
+					"type": ["string", "null"]
+				},
+				"ua_version": {
+					"type": ["string", "null"]
+				}
+			},
+			"additionalProperties": false
+		},
+		"user_agent": {
+			"type": "string"
+		}
+	},
+	"additionalProperties": false
+}
