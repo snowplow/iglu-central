@@ -17,7 +17,7 @@
 			"type": "string"
 		},
 		"location": {
-			"type": "object",
+			"type": ["object", "null"],
 			"properties": {
 				"city": {
 					"type": "string"
@@ -74,7 +74,7 @@
 								"type": ["string", "null"]
 							},
 							"ua": {
-								"type": "string"
+								"type": ["string", "null"]
 							}
 						},
 						"additionalProperties": true
@@ -108,7 +108,7 @@
 								"type": ["string", "null"]
 							},
 							"ua": {
-								"type": "string"
+								"type": ["string", "null"]
 							}
 						},
 						"additionalProperties": true
@@ -162,7 +162,7 @@
 							},
 							"size": {
 								"type": "integer"
-							}					
+							}
 						},
 						"additionalProperties": true
 					}
@@ -181,7 +181,7 @@
 			"type": "string"
 		},
 		"user_agent_parsed": {
-			"type": "object",
+			"type": ["object", "null"],
 			"properties": {
 				"mobile": {
 					"type": "boolean"
