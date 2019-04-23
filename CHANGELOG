@@ -1,3 +1,8 @@
+Release 102 (2019-04-23)
+------------------------
+Patch com.mandrill/message_clicked/jsonschema/1-0-1 (#928)
+Patch com.mandrill/message_opened/jsonschema/1-0-1 (#929)
+
 Release 101 (2019-02-26)
 ------------------------
 Add com.snowplowanalytics.snowplow/atomic/jsonschema/1-0-0 (#778)
