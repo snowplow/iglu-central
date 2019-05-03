@@ -1,3 +1,9 @@
+Release 103 (2019-05-03)
+------------------------
+Add com.snowplowanalytics.mobile/screen/jsonschema/1-0-0 (#866)
+Add com.snowplowanalytics.mobile/screen_view/jsonschema/1-0-0 (#919)
+Add com.snowplowanalytics.mobile/application_install/jsonschema/1-0-0 (#872)
+
 Release 102 (2019-04-23)
 ------------------------
 Patch com.mandrill/message_clicked/jsonschema/1-0-1 (#928)
