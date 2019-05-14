@@ -1,3 +1,19 @@
+Release 104 (2019-05-17)
+------------------------
+Add nl.basjes/yauaa_context/jsonschema/1-0-0 (#934)
+Add com.snowplowanalytics.snowplow.enrichments/yauaa_enrichment_config/jsonschema/1-0-0 (#936)
+Add com.sendgrid/unsubscribe/jsonschema/2-0-0 (#917)
+Add com.sendgrid/spamreport/jsonschema/2-0-0 (#916)
+Add com.sendgrid/processed/jsonschema/2-0-0 (#915)
+Add com.sendgrid/open/jsonschema/2-0-0 (#914)
+Add com.sendgrid/group_unsubscribe/jsonschema/2-0-0 (#913)
+Add com.sendgrid/group_resubscribe/jsonschema/2-0-0 (#912)
+Add com.sendgrid/dropped/jsonschema/2-0-0 (#911)
+Add com.sendgrid/delivered/jsonschema/2-0-0 (#910)
+Add com.sendgrid/deferred/jsonschema/2-0-0 (#909)
+Add com.sendgrid/click/jsonschema/2-0-0 (#908)
+Add com.sendgrid/bounce/jsonschema/2-0-0 (#907)
+
 Release 103 (2019-05-03)
 ------------------------
 Add com.snowplowanalytics.mobile/screen/jsonschema/1-0-0 (#866)
