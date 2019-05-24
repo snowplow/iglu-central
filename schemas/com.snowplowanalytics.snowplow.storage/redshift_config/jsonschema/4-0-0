@@ -1,0 +1,271 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Snowplow Redshift storage configuration",
+    "self": {
+        "vendor": "com.snowplowanalytics.snowplow.storage",
+        "name": "redshift_config",
+        "format": "jsonschema",
+        "version": "4-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "name": {
+            "description": "Human-readable storage target name, used only for logging",
+            "type": "string",
+            "maxLength": 255
+        },
+        "id": {
+            "description": "Machine-readable unique identificator",
+            "type": "string",
+            "format": "uuid"
+        },
+        "host": {
+            "description": "Redshift cluster host ('localhost' for enabled SSH Tunnel)",
+            "type": "string",
+            "anyOf": [
+                { "format": "hostname" },
+                { "format": "ipv4" },
+                { "format": "ipv6" }
+            ]
+        },
+        "database": {
+            "description": "Redshift database name",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+        },
+        "port": {
+            "description": "Redshift database port",
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 65535
+        },
+        "username": {
+            "description": "Redshift user",
+            "type": "string",
+            "maxLength": 128
+        },
+        "password": {
+            "description": "Redshift password, either plain-text or encrypted key for EC2 Parameter Storage",
+            "type": ["string", "object"],
+            "properties": {
+                "ec2ParameterStore": {
+                    "description": "EC2 Parameter Storage configuration",
+                    "type": "object",
+                    "properties": {
+                        "parameterName": {
+                            "description": "EC2 Parameter with encrypted password",
+                            "type": "string",
+                            "maxLength": 2048
+                        }
+                    },
+                    "required": ["parameterName"]
+                }
+            },
+            "required": ["ec2ParameterStore"]
+        },
+        "schema": {
+            "description": "Redshift database schema (e.g. 'atomic')",
+            "type": "string",
+            "maxLength": 128
+        },
+        "sshTunnel": {
+            "description": "Optional SSH Tunnel configuration",
+            "type": ["object", "null"],
+            "properties": {
+                "bastion": {
+                    "description": "Bastion host configuration",
+                    "type": "object",
+                    "properties": {
+                        "host": {
+                            "description": "Bastion SSH host",
+                            "type": "string",
+                            "anyOf": [
+                                { "format": "hostname" },
+                                { "format": "ipv4" },
+                                { "format": "ipv6" }
+                            ]
+                        },
+                        "port": {
+                            "description": "Bastion SSH port",
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 65535
+                        },
+                        "user": {
+                            "description": "SSH user",
+                            "type": "string",
+                            "maxLength": 32
+                        },
+                        "passphrase": {
+                            "description": "Plain-text SSH user's passphrase",
+                            "type": ["string", "null"],
+                            "maxLength": 2048
+                        },
+                        "key": {
+                            "description": "SSH-key stored in EC2 Parameter Storage",
+                            "type": ["object", "null"],
+                            "properties": {
+                                "ec2ParameterStore": {
+                                    "type": "object",
+                                    "properties": {
+                                        "parameterName": {
+                                            "type": "string",
+                                            "maxLength": 2048
+                                        }
+                                    },
+                                    "required": ["parameterName"]
+                                }
+                            },
+                            "required": ["ec2ParameterStore"]
+                        }
+                    },
+                    "required": ["host", "port", "user", "passphrase", "key"]
+                },
+                "destination": {
+                    "description": "Database socket inside private network",
+                    "type": "object",
+                    "properties": {
+                        "host": {
+                            "description": "Redshift host inside private network (root-level host should be changed to 'localhost')",
+                            "type": "string",
+                            "anyOf": [
+                                { "format": "hostname" },
+                                { "format": "ipv4" },
+                                { "format": "ipv6" }
+                            ]
+                        },
+                        "port": {
+                            "description": "Redshift port inside private network (root-level 'port' should be changed to be identical to 'localPort')",
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 65535
+                        }
+                    },
+                    "required": ["host", "port"]
+                },
+                "localPort": {
+                    "description": "Arbitrary port on node, running Loader (shoul be identical to root-level 'port')",
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 65535
+                }
+            },
+            "required": ["bastion", "destination", "localPort"]
+        },
+        "processingManifest": {
+            "description": "Optional processing manifest to maintain pipeline state",
+            "type": ["object", "null"],
+            "properties": {
+                "amazonDynamoDb": {
+                    "description": "Configuration for processing manifest on top of DynamoDB - single available implementation",
+                    "type": "object",
+                    "properties": {
+                        "tableName": {
+                            "description": "DynamoDB table name",
+                            "type": "string",
+                            "minLength": 3,
+                            "maxLength": 255
+                        }
+                    },
+                    "required": ["tableName"]
+                }
+            },
+            "required": ["amazonDynamoDb"]
+        },
+        "roleArn": {
+            "description": "IAM Role ARN used to load data from S3",
+            "type": "string",
+            "minLength": 20
+        },
+        "maxError": {
+            "description": "Amount of allowed errors before aborting load",
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100000
+        },
+        "compRows": {
+            "description": "Number of rows to be used as the sample size for compression analysis",
+            "type": "integer",
+            "minimum": 1000,
+            "maximum": 1000000000
+        },
+        "jdbc": {
+            "type": "object",
+            "properties": {
+                "BlockingRowsMode": {
+                    "description": "The number of rows to hold in memory",
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "DisableIsValidQuery": {
+                    "description": "Disable detection JDBC driver no longer holding a valid database connection",
+                    "type": "boolean"
+                },
+                "DSILogLevel": {
+                    "description": "Amount of detail included in log file",
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 6
+                },
+                "FilterLevel": {
+                    "description": "The minimum severity level of a message that the client processes",
+                    "enum": ["DEBUG", "INFO", "NOTICE", "WARNING", "LOG", "ERROR"]
+                },
+                "loginTimeout": {
+                    "description": "The number of seconds to wait before timing out when connecting to the server",
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "loglevel": {
+                    "description": "The amount of logging information output by the driver",
+                    "type": ["integer", "null"],
+                    "minimum": 0,
+                    "maximum": 2
+                },
+                "socketTimeout": {
+                    "description": "The number of seconds to wait during socket read operations before timing out",
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "ssl": {
+                    "description": "Whether to use an SSL connection",
+                    "type": "boolean"
+                },
+                "sslMode": {
+                    "description": "Determines how to handle server certificate verification",
+                    "type": ["string", "null"],
+                    "enum": ["verify-ca", "verify-full"]
+                },
+                "sslRootCert": {
+                    "description": "The full path of a .pem or .crt file containing the trust root Certificate Authority",
+                    "type": ["string", "null"],
+                    "maxLength": 1024
+                },
+                "tcpKeepAlive": {
+                    "description": "A value that determines whether TCP keepalives are enabled",
+                    "type": "boolean"
+                },
+                "TCPKeepAliveMinutes": {
+                    "description": "The threshold for minutes of inactivity before initiating a TCP keepalive transmission",
+                    "type": "integer",
+                    "minimum": 0
+                }
+            },
+            "additionalProperties": false
+        },
+        "blacklistTabular": {
+            "description": "List of iglu schemas for entities that should not be shredded into TSV format",
+            "type": ["array", "null"],
+            "items": {
+                "type": "string"
+            }
+        },
+        "purpose": {
+            "description": "Kind of data stored in this instance",
+            "enum": ["ENRICHED_EVENTS"]
+        }
+    },
+    "additionalProperties": false,
+    "required": ["name", "id", "host", "database", "port", "username", "password", "schema", "sshTunnel", "processingManifest", "roleArn", "maxError", "compRows", "jdbc", "purpose"]
+}
