@@ -1,0 +1,244 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a bad row resulting from adapter failures",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow.badrows",
+    "name": "adapter_failures",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "failure": {
+      "type": "object",
+      "description": "Information regarding the adapter violations",
+      "properties": {
+        "timestamp": {
+          "type": "string",
+          "description": "Timestamp at which the failure occurred",
+          "format": "date-time"
+        },
+        "vendor": {
+          "type": "string",
+          "description": "Vendor of the adapter that processed this payload",
+          "maxLength": 64
+        },
+        "version": {
+          "type": "string",
+          "description": "Version of the adapter that processed this payload",
+          "maxLength": 4
+        },
+        "messages": {
+          "type": "array",
+          "description": "List of failure messages associated with the adapter failures",
+          "items": {
+            "anyOf": [
+              {
+                "type": "object",
+                "description": "Error which was internal to the adapter regarding its input data",
+                "properties": {
+                  "field": {
+                    "type": "string",
+                    "description": "Field which did not meet the adapter's expectations",
+                    "maxLength": 64
+                  },
+                  "value": {
+                    "type": [ "string", "null" ],
+                    "description": "Stringified representation of the value which did not meet expectations"
+                  },
+                  "expectation": {
+                    "type": "string",
+                    "description": "Expectation which was not met",
+                    "maxLength": 256
+                  }
+                },
+                "required": ["field", "expectation" ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "description": "String supplied for schema validation was not json",
+                "properties": {
+                  "field": {
+                    "type": "string",
+                    "description": "Field which ended up not being json",
+                    "maxLength": 64
+                  },
+                  "value": {
+                    "type": [ "string", "null" ],
+                    "description": "Stringified representation of the value which is not json"
+                  },
+                  "error": {
+                    "type": "string",
+                    "description": "Json parsing issue"
+                  }
+                },
+                "required": ["properties", "error" ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "description": "Json supplied for schema validation was not self-describing",
+                "properties": {
+                  "json": {
+                    "type": "string",
+                    "description": "Supplied json which was not self-describing"
+                  },
+                  "error": {
+                    "type": "string",
+                    "description": "Issue which the json which makes it not self-describing",
+                    "enum": [ "INVALID_SCHEMAVER", "INVALID_IGLUURI", "INVALID_DATA_PAYLOAD", "INVALID_SCHEMA" ]
+                  }
+                },
+                "required": [ "json", "error" ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "description": "Could not map the adapter vendor event type to an Iglu schema",
+                "properties": {
+                  "actual": {
+                    "type": [ "string", "null" ],
+                    "description": "The actual event type as determined by the adapter's logic",
+                    "maxLength": 256
+                  },
+                  "expectedMapping": {
+                    "type": "object",
+                    "description": "The possible mappings between adapter vendor event types and Iglu schemas",
+                    "additionalProperties": { "type": "string" }
+                  },
+                  "expectation": {
+                    "type": "string",
+                    "description": "Expectation regarding the mapping which was not met",
+                    "maxLength": 256
+                  }
+                },
+                "required": [ "expectedMapping", "expectation" ],
+                "additionalProperties": false
+              }
+            ]
+          }
+        }
+      },
+      "required": [ "timestamp", "vendor", "version", "messages" ],
+      "additionalProperties": false
+    },
+    "payload": {
+      "type": "object",
+      "description": "The collector payload that resulted in adapter failures",
+      "properties": {
+        "vendor": {
+          "type": "string",
+          "description": "Vendor of the adapter that processed this payload",
+          "maxLength": 64
+        },
+        "version": {
+          "type": "string",
+          "description": "Version of the adapter that processed this payload",
+          "maxLength": 4
+        },
+        "querystring": {
+          "type": [ "array", "null" ],
+          "description": "Query string of this collector payload",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Name of the querystring parameter",
+                "maxLength": 512
+              },
+              "value": {
+                "type": [ "string", "null" ],
+                "description": "Possible value for the querystring parameter",
+                "maxLength": 512
+              }
+            },
+            "required": [ "name" ],
+            "additionalProperties": false
+          }
+        },
+        "contentType": {
+          "type": [ "string", "null" ],
+          "description": "Content type of the payload as detected by the collector",
+          "maxLength": 256
+        },
+        "body": {
+          "type": [ "string", "null" ],
+          "description": "Body of this collector payload"
+        },
+        "collector": {
+          "type": "string",
+          "description": "Collector which produced this collector payload",
+          "maxLength": 32
+        },
+        "encoding": {
+          "type": "string",
+          "description": "Encoding of the collector payload",
+          "maxLength": 32
+        },
+        "hostname": {
+          "type": [ "string", "null" ],
+          "description": "Hostname of the payload as detected by the collector",
+          "maxLength": 8192
+        },
+        "timestamp": {
+          "type": "string",
+          "description": "Timestamp at which the payload was collected",
+          "format": "date-time"
+        },
+        "ipAddress": {
+          "type": "string",
+          "description": "IP address of the payload as detected by the collector",
+          "maxLength": 128
+        },
+        "userAgent": {
+          "type": [ "string", "null" ],
+          "description": "User agent of the payload as detected by the collector",
+          "maxLength": 4096
+        },
+        "refererUri": {
+          "type": [ "string", "null" ],
+          "description": "Referer of the payload as detected by the collector",
+          "maxLength": 8192
+        },
+        "headers": {
+          "type": [ "array", "null" ],
+          "description": "List of the headers part of this collector payload",
+          "items": {
+            "type": "string",
+            "maxLength": 8192
+          }
+        },
+        "networkUserId": {
+          "type": [ "string", "null" ],
+          "description": "Network user id associated with this payload",
+          "format": "uuid"
+        }
+      },
+      "required": [ "vendor", "version", "collector", "encoding" ],
+      "additionalProperties": false
+    },
+    "processor": {
+      "type": "object",
+      "description": "Information about the piece of software responsible for the creation of adapter failures",
+      "properties": {
+        "artifact": {
+          "type": "string",
+          "description": "Artifact responsible for the creation of adapter failures",
+          "maxLength": 512
+        },
+        "version": {
+          "type": "string",
+          "description": "Version of the artifact responsible for the creation of adapter failures",
+          "pattern": "^(\\d+\\.\\d+\\.\\d+.*)$",
+          "maxLength": 32
+        }
+      },
+      "required": [ "artifact", "version" ],
+      "additionalProperties": false
+    }
+  },
+  "required": [ "failure", "payload", "processor" ],
+  "additionalProperties": false
+}
