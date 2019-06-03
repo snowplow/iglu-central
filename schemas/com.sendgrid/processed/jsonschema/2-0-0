@@ -1,6 +1,6 @@
 {
   "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
-  "description": "Schema for a SendGrid processed event",
+  "description": "Schema for a SendGrid processed event. Property descriptions derived from the SendGrid documentation: https://sendgrid.com/docs/for-developers/tracking-events/event/",
   "self": {
     "vendor": "com.sendgrid",
     "name": "processed",
@@ -36,10 +36,10 @@
       "additionalProperties": true
     },
     "sg_event_id": {
-      "description": "A unique ID to this event that you can use for deduplication purposes. These IDs are either 22 or 48 characters long.",
+      "description": "A unique ID to this event that you can use for deduplication purposes. These IDs are up to 100 characters long and are URL safe.",
       "type": "string",
       "minLength": 22,
-      "maxLength": 48
+      "maxLength": 4096
     },
     "smtp-id": {
       "description": "A unique ID attached to the message by the originating system",
