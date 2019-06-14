@@ -1,0 +1,144 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Snowplow Snowflake storage configuration",
+    "self": {
+        "vendor": "com.snowplowanalytics.snowplow.storage",
+        "name": "snowflake_config",
+        "format": "jsonschema",
+        "version": "1-0-2"
+    },
+    "type": "object",
+    "properties": {
+        "name": {
+            "description": "Human-readable configuration name",
+            "type": "string"
+        },
+        "auth": {
+            "description": "Authentication method for Snowflake Load",
+            "oneOf": [
+                {
+                    "type": "object",
+                    "description": "Static AWS credentials",
+                    "properties": {
+                        "accessKeyId": {
+                            "description": "accessKeyId of static AWS credentials",
+                            "type": "string"
+                        },
+                        "secretAccessKey": {
+                            "description": "secretAccessKey of static AWS credentials",
+                            "type": "string"
+                        }
+                    },
+                    "required": ["accessKeyId", "secretAccessKey"]
+                },
+                {
+                    "type": "object",
+                    "description": "Temporary credentials",
+                    "properties": {
+                        "roleArn": {
+                            "description": "roleArn of temporary credentials",
+                            "type": ["string", "null"],
+                            "minLength": 20
+                        },
+                        "sessionDuration": {
+                            "description": "sessionDuration of temporary credentials",
+                            "type": "integer",
+                            "minimum": 900
+                        }
+                    },
+                    "required": ["roleArn", "sessionDuration"]
+                },
+                {
+                    "type": "null"
+                }
+            ]
+        },
+        "awsRegion": {
+            "description": "AWS Region used by Transformer to access S3 and DynamoDB",
+            "type": "string"
+        },
+        "manifest": {
+            "description": "AWS DynamoDB table name with processing manifest. Needs to be created manually e.g. snowflake-event-manifest",
+            "type": "string"
+        },
+        "snowflakeRegion": {
+            "description": "AWS Region used by Snowflake to access its endpoint. Recommended to use same as $AWS_REGION if possible",
+            "type": "string"
+        },
+        "database": {
+            "description": "Snowflake Database name. Database must be created manually e.g. acme-snowplow",
+            "type": "string"
+        },
+        "account": {
+            "description": "Snowflake account name. Must be obtained from Snowflake",
+            "type": "string"
+        },
+        "warehouse": {
+            "description": "Snowflake Warehouse. Warehouse automatically created during setup step e.g. snowplow_wh",
+            "type": "string"
+        },
+        "schema": {
+            "description": "Snowflake DB schema. Schema automatically created during setup step e.g. atomic",
+            "type": "string"
+        },
+        "input": {
+            "description": "S3 URL to Snowplow enriched events archive e.g. s3://com-acme-snowplow/archive/enriched/",
+            "type": "string",
+            "format": "uri"
+        },
+        "stage": {
+            "description": "Arbitrary name for Snowflake Stage. Stage created automatically during setup step e.g. snowplow_stage",
+            "type": "string"
+        },
+        "stageUrl": {
+            "description": "URL for Transformer-processed data e.g. s3://com-acme-snowplow/snowflake/stage/",
+            "type": "string",
+            "format": "uri"
+        },
+        "badOutputUrl": {
+            "description": "URL for bad rows e.g. s3://com-acme-snowplow/snowflake/badrow",
+            "type": "string",
+            "format": "uri"
+        },
+        "username": {
+            "description": "Snowflake username. Must be obtained from Snowflake",
+            "type": "string"
+        },
+        "password": {
+            "type": ["string", "object"],
+            "description": "Password which can be passed in two forms: plain string or ec2ParameterStore",
+            "properties": {
+                "ec2ParameterStore": {
+                    "type": "object",
+                    "description": "ec2ParameterStore object as password. Password will be safely stored in EC2 Parameter store and not exposed",
+                    "properties": {
+                        "parameterName": {
+                            "type": "string"
+                        }
+                    },
+                    "required": ["parameterName"]
+                }
+            },
+            "required": ["ec2ParameterStore"]
+        },
+        "maxError": {
+            "description": "Optional Snowflake setting - a table copy statement will skip an input file when the number of errors in it exceeds the specified number",
+            "type": "integer"
+        },
+        "jdbcHost": {
+            "description": "An optional host for the JDBC driver that has priority over automatically derived hosts",
+            "type": "string"        
+        },
+        "id": {
+            "description": "Optional machine-readable configuration id",
+            "type": "string",
+            "format": "uuid"
+        },
+        "purpose": {
+            "type": "string",
+            "enum": ["ENRICHED_EVENTS"]
+        }
+    },
+    "additionalProperties": false,
+    "required": ["name", "auth", "awsRegion", "manifest", "snowflakeRegion", "database", "account", "warehouse", "input", "stage", "stageUrl", "username", "password", "purpose"]
+}
