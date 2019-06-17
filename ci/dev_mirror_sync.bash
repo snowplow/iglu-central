@@ -16,7 +16,7 @@ echo "=================================================="
 echo "SYNCHRONIZING SCHEMAS TO DEV MIRROR $REGISTRY_PATH"
 echo "--------------------------------------------------"
 
-[ -z "${AWS_SHA_ACCESS_KEY_ID}" ] && die "Need to set AWS_SHA_ACCESS_KEY_ID"
-[ -z "${AWS_SHA_SECRET_ACCESS_KEY}" ] && die "Need to set AWS_SHA_SECRET_ACCESS_KEY"
+[ -z "${AWS_SHA_ACCESS_KEY_ID}" ] && echo "Need to set AWS_SHA_ACCESS_KEY_ID" 1>&2 ; exit 1; 
+[ -z "${AWS_SHA_SECRET_ACCESS_KEY}" ] && echo "Need to set AWS_SHA_SECRET_ACCESS_KEY" 1>&2 ; exit 1; 
 
 java -jar ${IGLUCTL} static s3cp schemas/ $DEV_MIRROR_BUCKET --s3path "$TRAVIS_PULL_REQUEST_BRANCH/" --region=us-east-1 --accessKeyId $AWS_SHA_ACCESS_KEY_ID --secretAccessKey $AWS_SHA_SECRET_ACCESS_KEY
