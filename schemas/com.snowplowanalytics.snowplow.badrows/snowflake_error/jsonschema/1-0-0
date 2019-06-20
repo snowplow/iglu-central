@@ -1,0 +1,561 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a Snowflake Loader specific bad row",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow.badrows",
+    "name": "snowflake_error",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "failures": {
+      "type": "array",
+      "description": "Snowflake related failures",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "description": "Model for failures related with the one of the fields of the enriched event",
+            "properties": {
+              "valueError": {
+                "type": "object",
+                "properties": {
+                  "value": { "type": "string" },
+                  "column": { "type": "string" },
+                  "message": { "type": "string" }
+                },
+                "required": ["value", "column", "message"],
+                "additionalProperties": false
+              }
+            },
+            "required": ["valueError"],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "description": "Model for deduplication error info",
+            "properties": {
+              "deduplicationError": {
+                "type": "object",
+                "properties": {
+                  "message": { "type": "string" }
+                },
+                "required": ["message"],
+                "additionalProperties": false
+              }
+            },
+            "required": ["deduplicationError"],
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "enrichedEvent": {
+      "type": "object",
+      "description": "The enriched event that resulted in a storage loader failure",
+      "properties": {
+        "app_id": {
+          "type": ["string", "null"],
+          "maxLength": 255
+        },
+        "platform": {
+          "type": ["string", "null"],
+          "maxLength": 255
+        },
+        "etl_tstamp": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "collector_tstamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "dvce_created_tstamp": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "event": {
+          "type": ["string", "null"],
+          "maxLength": 128
+        },
+        "event_id": {
+          "type": "string",
+          "maxLength": 36
+        },
+        "txn_id": {
+          "type": ["integer", "null"]
+        },
+        "name_tracker": {
+          "type": ["string", "null"],
+          "maxLength": 128
+        },
+        "v_tracker": {
+          "type": ["string", "null"],
+          "maxLength": 100
+        },
+        "v_collector": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "v_etl": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "user_id": {
+          "type": ["string", "null"],
+          "maxLength": 255
+        },
+        "user_ipaddress": {
+          "type": ["string", "null"],
+          "maxLength": 128
+        },
+        "user_fingerprint": {
+          "type": ["string", "null"],
+          "maxLength": 128
+        },
+        "domain_userid": {
+          "type": ["string", "null"],
+          "maxLength": 128
+        },
+        "domain_sessionidx": {
+          "type": ["integer", "null"]
+        },
+        "network_userid": {
+          "type": ["string", "null"],
+          "maxLength": 128
+        },
+        "geo_country": {
+          "type": ["string", "null"],
+          "maxLength": 2
+        },
+        "geo_region": {
+          "type": ["string", "null"],
+          "maxLength": 3
+        },
+        "geo_city": {
+          "type": ["string", "null"],
+          "maxLength": 75
+        },
+        "geo_zipcode": {
+          "type": ["string", "null"],
+          "maxLength": 15
+        },
+        "geo_latitude": {
+          "type": ["number", "null"]
+        },
+        "geo_longitude": {
+          "type": ["number", "null"]
+        },
+        "geo_region_name": {
+          "type": ["string", "null"],
+          "maxLength": 100
+        },
+        "ip_isp": {
+          "type": ["string", "null"],
+          "maxLength": 100
+        },
+        "ip_organization": {
+          "type": ["string", "null"],
+          "maxLength": 128
+        },
+        "ip_domain": {
+          "type": ["string", "null"],
+          "maxLength": 128
+        },
+        "ip_netspeed": {
+          "type": ["string", "null"],
+          "maxLength": 100
+        },
+        "page_url": {
+          "type": ["string", "null"],
+          "maxLength": 4096
+        },
+        "page_title": {
+          "type": ["string", "null"],
+          "maxLength": 2000
+        },
+        "page_referrer": {
+          "type": ["string", "null"],
+          "maxLength": 4096
+        },
+        "page_urlscheme": {
+          "type": ["string", "null"],
+          "maxLength": 16
+        },
+        "page_urlhost": {
+          "type": ["string", "null"],
+          "maxLength": 255
+        },
+        "page_urlport": {
+          "type": ["integer", "null"]
+        },
+        "page_urlpath": {
+          "type": ["string", "null"],
+          "maxLength": 3000
+        },
+        "page_urlquery": {
+          "type": ["string", "null"],
+          "maxLength": 6000
+        },
+        "page_urlfragment": {
+          "type": ["string", "null"],
+          "maxLength": 3000
+        },
+        "refr_urlscheme": {
+          "type": ["string", "null"],
+          "maxLength": 16
+        },
+        "refr_urlhost": {
+          "type": ["string", "null"],
+          "maxLength": 255
+        },
+        "refr_urlport": {
+          "type": ["integer", "null"]
+        },
+        "refr_urlpath": {
+          "type": ["string", "null"],
+          "maxLength": 6000
+        },
+        "refr_urlquery": {
+          "type": ["string", "null"],
+          "maxLength": 6000
+        },
+        "refr_urlfragment": {
+          "type": ["string", "null"],
+          "maxLength": 3000
+        },
+        "refr_medium": {
+          "type": ["string", "null"],
+          "maxLength": 25
+        },
+        "refr_source": {
+          "type": ["string", "null"],
+          "maxLength": 50
+        },
+        "refr_term": {
+          "type": ["string", "null"],
+          "maxLength": 255
+        },
+        "mkt_medium": {
+          "type": ["string", "null"],
+          "maxLength": 255
+        },
+        "mkt_source": {
+          "type": ["string", "null"],
+          "maxLength": 255
+        },
+        "mkt_term": {
+          "type": ["string", "null"],
+          "maxLength": 255
+        },
+        "mkt_content": {
+          "type": ["string", "null"],
+          "maxLength": 500
+        },
+        "mkt_campaign": {
+          "type": ["string", "null"],
+          "maxLength": 255
+        },
+        "se_category": {
+          "type": ["string", "null"],
+          "maxLength": 1000
+        },
+        "se_action": {
+          "type": ["string", "null"],
+          "maxLength": 1000
+        },
+        "se_label": {
+          "type": ["string", "null"],
+          "maxLength": 1000
+        },
+        "se_property": {
+          "type": ["string", "null"],
+          "maxLength": 1000
+        },
+        "se_value": {
+          "type": ["number", "null"]
+        },
+        "tr_orderid": {
+          "type": ["string", "null"],
+          "maxLength": 255
+        },
+        "tr_affiliation": {
+          "type": ["string", "null"],
+          "maxLength": 255
+        },
+        "tr_total": {
+          "type": ["number", "null"]
+        },
+        "tr_tax": {
+          "type": ["number", "null"]
+        },
+        "tr_shipping": {
+          "type": ["number", "null"]
+        },
+        "tr_city": {
+          "type": ["string", "null"],
+          "maxLength": 255
+        },
+        "tr_state": {
+          "type": ["string", "null"],
+          "maxLength": 255
+        },
+        "tr_country": {
+          "type": ["string", "null"],
+          "maxLength": 255
+        },
+        "ti_orderid": {
+          "type": ["string", "null"],
+          "maxLength": 255
+        },
+        "ti_sku": {
+          "type": ["string", "null"],
+          "maxLength": 255
+        },
+        "ti_name": {
+          "type": ["string", "null"],
+          "maxLength": 255
+        },
+        "ti_category": {
+          "type": ["string", "null"],
+          "maxLength": 255
+        },
+        "ti_price": {
+          "type": ["number", "null"]
+        },
+        "ti_quantity": {
+          "type": ["integer", "null"]
+        },
+        "pp_xoffset_min": {
+          "type": ["integer", "null"]
+        },
+        "pp_xoffset_max": {
+          "type": ["integer", "null"]
+        },
+        "pp_yoffset_min": {
+          "type": ["integer", "null"]
+        },
+        "pp_yoffset_max": {
+          "type": ["integer", "null"]
+        },
+        "useragent": {
+          "type": ["string", "null"],
+          "maxLength": 1000
+        },
+        "br_name": {
+          "type": ["string", "null"],
+          "maxLength": 50
+        },
+        "br_family": {
+          "type": ["string", "null"],
+          "maxLength": 50
+        },
+        "br_version": {
+          "type": ["string", "null"],
+          "maxLength": 50
+        },
+        "br_type": {
+          "type": ["string", "null"],
+          "maxLength": 50
+        },
+        "br_renderengine": {
+          "type": ["string", "null"],
+          "maxLength": 50
+        },
+        "br_lang": {
+          "type": ["string", "null"],
+          "maxLength": 255
+        },
+        "br_features_pdf": {
+          "type": ["boolean", "null"]
+        },
+        "br_features_flash": {
+          "type": ["boolean", "null"]
+        },
+        "br_features_java": {
+          "type": ["boolean", "null"]
+        },
+        "br_features_director": {
+          "type": ["boolean", "null"]
+        },
+        "br_features_quicktime": {
+          "type": ["boolean", "null"]
+        },
+        "br_features_realplayer": {
+          "type": ["boolean", "null"]
+        },
+        "br_features_windowsmedia": {
+          "type": ["boolean", "null"]
+        },
+        "br_features_gears": {
+          "type": ["boolean", "null"]
+        },
+        "br_features_silverlight": {
+          "type": ["boolean", "null"]
+        },
+        "br_cookies": {
+          "type": ["boolean", "null"]
+        },
+        "br_colordepth": {
+          "type": ["string", "null"],
+          "maxLength": 12
+        },
+        "br_viewwidth": {
+          "type": ["integer", "null"]
+        },
+        "br_viewheight": {
+          "type": ["integer", "null"]
+        },
+        "os_name": {
+          "type": ["string", "null"],
+          "maxLength": 50
+        },
+        "os_family": {
+          "type": ["string", "null"],
+          "maxLength": 50
+        },
+        "os_manufacturer": {
+          "type": ["string", "null"],
+          "maxLength": 50
+        },
+        "os_timezone": {
+          "type": ["string", "null"],
+          "maxLength": 255
+        },
+        "dvce_type": {
+          "type": ["string", "null"],
+          "maxLength": 50
+        },
+        "dvce_ismobile": {
+          "type": ["boolean", "null"]
+        },
+        "dvce_screenwidth": {
+          "type": ["integer", "null"]
+        },
+        "dvce_screenheight": {
+          "type": ["integer", "null"]
+        },
+        "doc_charset": {
+          "type": ["string", "null"],
+          "maxLength": 128
+        },
+        "doc_width": {
+          "type": ["integer", "null"]
+        },
+        "doc_height": {
+          "type": ["integer", "null"]
+        },
+        "tr_currency": {
+          "type": ["string", "null"],
+          "maxLength": 3
+        },
+        "tr_total_base": {
+          "type": ["number", "null"]
+        },
+        "tr_tax_base": {
+          "type": ["number", "null"]
+        },
+        "tr_shipping_base": {
+          "type": ["number", "null"]
+        },
+        "ti_currency": {
+          "type": ["string", "null"],
+          "maxLength": 3
+        },
+        "ti_price_base": {
+          "type": ["number", "null"]
+        },
+        "base_currency": {
+          "type": ["string", "null"],
+          "maxLength": 3
+        },
+        "geo_timezone": {
+          "type": ["string", "null"],
+          "maxLength": 64
+        },
+        "mkt_clickid": {
+          "type": ["string", "null"],
+          "maxLength": 128
+        },
+        "mkt_network": {
+          "type": ["string", "null"],
+          "maxLength": 64
+        },
+        "etl_tags": {
+          "type": ["string", "null"],
+          "maxLength": 500
+        },
+        "dvce_sent_tstamp": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "refr_domain_userid": {
+          "type": ["string", "null"],
+          "maxLength": 128
+        },
+        "refr_dvce_tstamp": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "domain_sessionid": {
+          "type": ["string", "null"],
+          "maxLength": 128
+        },
+        "derived_tstamp": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "event_vendor": {
+          "type": ["string", "null"],
+          "maxLength": 1000
+        },
+        "event_name": {
+          "type": ["string", "null"],
+          "maxLength": 1000
+        },
+        "event_format": {
+          "type": ["string", "null"],
+          "maxLength": 128
+        },
+        "event_version": {
+          "type": ["string", "null"],
+          "maxLength": 128
+        },
+        "event_fingerprint": {
+          "type": ["string", "null"],
+          "maxLength": 128
+        },
+        "true_tstamp": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "unstruct_event": { "type": ["object", "null"] },
+        "contexts": { "type": ["object", "null" ]},
+        "derived_contexts": { "type": ["object", "null" ]}
+      },
+      "additionalProperties": false
+    },
+    "processor": {
+      "type": "object",
+      "description": "Information about the piece of software responsible for the creation of enrichment failures",
+      "properties": {
+        "artifact": {
+          "type": "string",
+          "description": "Artifact responsible for the creation of enrichment failures",
+          "maxLength": 512
+        },
+        "version": {
+          "type": "string",
+          "description": "Version of the artifact responsible for the creation of enrichment failures",
+          "pattern": "^(\\d+\\.\\d+\\.\\d+.*)$",
+          "maxLength": 32
+        }
+      },
+      "required": [ "artifact", "version" ],
+      "additionalProperties": false
+    }
+  },
+  "required": ["failures", "enrichedEvent", "processor"],
+  "additionalProperties": false
+}
