@@ -8,6 +8,17 @@ All of the schemas for **[Snowplow][snowplow-repo]** (amongst other systems) are
 
 ![iglucentral-img][iglucentral-img]
 
+## Dev registries
+
+Iglu Central automatically publishes content of pull requests opened by users with write permissions to a static S3 registry.
+Full path of a dev registry is:
+
+```
+http://iglucentral-dev.com.s3-website-us-east-1.amazonaws.com/BRANCH_NAME
+```
+
+Where `BRANCH_NAME` is the name of git branch in the PR. This registry can be used in a resolver configuration until PR is merged into master branch.
+
 ## Find out more
 
 | **[Technical Docs][techdocs]**     | **[Setup Guide][setup]**     | **[Roadmap][roadmap]**           | **[Contributing][contributing]**           |
