@@ -1,0 +1,35 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for a web page context",
+    "self": {
+        "vendor": "com.snowplowanalytics.snowplow",
+        "name": "gdpr",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+
+    "type": "object",
+    "properties": {
+        "basisForProcessing": {
+          "enum": ["consent", "contract", "legal_obligation", "vital_interests", "public_task", "legitimate_interests"],
+          "description": "GDPR basis for data collection & processing"
+        },
+        "documentId": {
+          "type": ["string", "null"],
+          "maxLength": 255,
+          "description": "ID for document detailing basis for processing"
+        },
+        "documentVersion": {
+          "type": ["string", "null"],
+          "maxLength": 16,
+          "description": "Version of document detailing basis for processing"
+        },
+        "documentDescription": {
+          "type": ["string", "null"],
+          "maxLength": 4096,
+          "description": "Description of document detailing basis for processing"
+        }
+    },
+    "required": ["basisForProcessing"],
+    "additionalProperties": false
+}
