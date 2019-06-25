@@ -267,5 +267,5 @@
         }
     },
     "additionalProperties": false,
-    "required": ["name", "id", "host", "database", "port", "username", "password", "schema", "sshTunnel", "processingManifest", "roleArn", "maxError", "compRows", "jdbc", "blacklistTabular", "purpose"]
+    "required": ["name", "id", "host", "database", "port", "username", "password", "schema", "sshTunnel", "processingManifest", "roleArn", "maxError", "compRows", "jdbc", "purpose"]
 }
