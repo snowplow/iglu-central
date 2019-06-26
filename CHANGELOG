@@ -1,3 +1,7 @@
+Release 105 (2019-06-29)
+-----------------------
+Add com.snowplowanalytics.snowplow/gdpr/jsonschema/1-0-0 (#965)
+
 Release 104 (2019-05-17)
 ------------------------
 Add nl.basjes/yauaa_context/jsonschema/1-0-0 (#934)
