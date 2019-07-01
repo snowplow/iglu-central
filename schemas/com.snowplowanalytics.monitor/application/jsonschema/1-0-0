@@ -1,0 +1,121 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for an application entity, attached as context to status report events",
+  "self": {
+    "vendor": "com.snowplowanalytics.monitor",
+    "name": "application",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the application, eg rdb-loader",
+      "type": ["string", "null"],
+      "maxLength": 256
+    },
+    "category": {
+      "description": "The category of the application, eg loader",
+      "type": ["string", "null"],
+      "maxLength": 256
+    },
+    "version": {
+      "description": "The version of the application, eg 1.22.1",
+      "type": ["string", "null"],
+      "maxLength": 32
+    },
+    "instanceId": {
+      "description": "The ID of the application instance; a UUID",
+      "type": "string",
+      "maxLength": 36
+    },
+    "instanceName": {
+      "description": "The name of the application instance, eg com-acme-prod1-rdb-loader-1",
+      "type": ["string", "null"],
+      "maxLength": 256
+    },
+    "inputs": {
+      "description": "The inputs consumed by the application, such as streams etc",
+      "type": ["array", "null"],
+      "items": {
+        "description": "Details about the input",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "The ID of the input; a UUID",
+            "type": "string",
+            "maxLength": 36
+          },
+          "type": {
+            "description": "The type of the input, eg stream",
+            "type": "string",
+            "maxLength": 32
+          }
+        },
+        "required": ["id", "type"],
+        "additionalProperties": false
+      }
+    },
+    "outputs": {
+      "description": "The outputs of the application, such as streams, databases, etc",
+      "type": ["array", "null"],
+      "items": {
+        "description": "Details about the output",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "The ID of the output; a UUID",
+            "type": "string",
+            "maxLength": 36
+          },
+          "type": {
+            "description": "The type of the output, eg database",
+            "type": "string",
+            "maxLength": 32
+          }
+        },
+        "required": ["id", "type"],
+        "additionalProperties": false
+      }
+    },
+    "cloud": {
+      "description": "The cloud on which the application is running",
+      "type": ["string", "null"],
+      "enum": ["aws", "gcp", "azure", "on-prem", "private", "other"]
+    },
+    "region": {
+      "description": "The region in which the application is deployed, eg eu-west-1",
+      "type": ["string", "null"],
+      "maxLength": 64
+    },
+    "fabric": {
+      "description": "The infrastructure on which the application is deployed, eg EC2, Lambda, Kubernetes, Dataflow, ECS, Cloud Functions, etc",
+      "type": ["string", "null"],
+      "maxLength": 256
+    },
+    "tags": {
+      "description": "Tags attached to the application instance",
+      "type": ["array", "null"],
+      "items": {
+        "description": "A key-value pair",
+        "type": "object",
+        "properties": {
+          "key": {
+            "description": "The key of the key-value pair",
+            "type": "string",
+            "maxLength": 4096
+          },
+          "value": {
+            "description": "The value of the key-value pair",
+            "type": "string",
+            "maxLength": 4096
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["instanceId"],
+  "additionalProperties": false
+}
