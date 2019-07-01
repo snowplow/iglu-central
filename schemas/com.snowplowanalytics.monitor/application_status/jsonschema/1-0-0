@@ -1,0 +1,77 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for an application status context; describes the status of the application entity attached as context to an application status report",
+  "self": {
+    "vendor": "com.snowplowanalytics.monitor",
+    "name": "application_status",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+
+  "type": "object",
+  "properties": {
+    "periodLengthInSec": {
+      "description": "The length of the period to which this status applies; in seconds",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2678400
+    },
+    "periodStart": {
+      "description": "The start of the period to which this status applies",
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "periodEnd": {
+      "description": "The end of the period to which this status applies",
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "minTstamp": {
+      "description": "The minimum timestamp processed in the period to which this status applies",
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "maxTstamp": {
+      "description": "The maximum timestamp processed in the period to which this status applies",
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "tstampType": {
+      "description": "The type of timestamp used, eg collector_tstamp, failure_tstamp, etc",
+      "type": ["string", "null"],
+      "maxLength": 4096
+    },
+    "minLatency": {
+      "description": "The minimum data latency in the period to which this status applies, calculated as difference between maxTstamp and now(); in milliseconds",
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "maxLatency": {
+      "description": "The maximum data latency in the period to which this status applies, calculated as difference between minTstamp and now(); in milliseconds",
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "numEventsTotal":{
+      "description": "The total number of events processed in the period to which this status applies",
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "maximum": 9223372036854775807
+    },
+    "numEventsSucceeded":{
+      "description": "The number of successfully processed events in the period to which this status applies",
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "maximum": 9223372036854775807
+    },
+    "numEventsFailed":{
+      "description": "The number of events that failed to be processed in the period to which this status applies",
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "maximum": 9223372036854775807
+    }
+  },
+  "required": ["periodLengthInSec"],
+  "additionalProperties": false
+}
