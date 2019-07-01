@@ -1,0 +1,26 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a pipeline entity, attached as context to status report events",
+  "self": {
+    "vendor": "com.snowplowanalytics.monitor",
+    "name": "pipeline",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The ID of the pipeline; a UUID",
+      "type": "string",
+      "maxLength": 36
+    },
+    "name": {
+      "description": "The name of the pipeline",
+      "type": ["string", "null"],
+      "maxLength": 256
+    }
+  },
+  "required": ["id"],
+  "additionalProperties": false
+}
