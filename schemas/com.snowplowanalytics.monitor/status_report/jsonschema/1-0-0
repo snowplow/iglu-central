@@ -1,0 +1,26 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a status report event emitted from an application or a piece of monitoring tech",
+  "self": {
+    "vendor": "com.snowplowanalytics.monitor",
+    "name": "status_report",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The ID of the status report; a UUID",
+      "type": "string",
+      "maxLength": 36
+    },
+    "context": {
+      "description": "The context in which this status report is generated",
+      "type": "string",
+      "enum": ["self-reporting", "monitoring"]
+    }
+  },
+  "required": ["id", "context"],
+  "additionalProperties": false
+}
