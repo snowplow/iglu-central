@@ -1,0 +1,26 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for a bad row resulting from shredding event",
+    "self": {
+        "vendor": "com.snowplowanalytics.snowplow.badrows",
+        "name": "rdb_loader_shredding_error",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+      "original": {
+        "type": "string",
+        "description": "Original payload"
+      },
+      "errors": {
+        "type": "array",
+        "description": "Errors got while shredding event",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": ["original", "errors"],
+    "additionalProperties": false
+}
