@@ -8,6 +8,25 @@ All of the schemas for **[Snowplow][snowplow-repo]** (amongst other systems) are
 
 ![iglucentral-img][iglucentral-img]
 
+## Dev registries
+
+Iglu Central automatically publishes content of pull requests opened by users with write permissions to a static S3 registry.
+Full path of a dev registry is:
+
+```
+http://iglucentral-dev.com.s3-website-us-east-1.amazonaws.com/BRANCH_NAME
+```
+
+Where `BRANCH_NAME` is the name of git branch in the PR. This registry can be used in a resolver configuration until PR is merged into master branch.
+
+Another option for temporary registry is to use Github raw hosting:
+
+```
+https://raw.githubusercontent.com/snowplow/iglu-central/BRANCH_NAME
+```
+
+Where `snowplow` can be replaced with your Github username if you forked the repository.
+
 ## Find out more
 
 | **[Technical Docs][techdocs]**     | **[Setup Guide][setup]**     | **[Roadmap][roadmap]**           | **[Contributing][contributing]**           |
@@ -16,7 +35,7 @@ All of the schemas for **[Snowplow][snowplow-repo]** (amongst other systems) are
 
 ## Copyright and license
 
-Iglu Central is copyright 2014-2018 Snowplow Analytics Ltd.
+Iglu Central is copyright 2014-2019 Snowplow Analytics Ltd.
 
 Licensed under the **[Apache License, Version 2.0][license]** (the "License");
 you may not use this software except in compliance with the License.
@@ -30,7 +49,7 @@ limitations under the License.
 [travis]: https://travis-ci.org/snowplow/iglu-central
 [travis-image]: https://travis-ci.org/snowplow/iglu-central.png?branch=master
 
-[release-image]: http://img.shields.io/badge/release-106-orange.svg?style=flat
+[release-image]: http://img.shields.io/badge/release-107-orange.svg?style=flat
 [releases]: https://github.com/snowplow/iglu-central/releases
 
 [license-image]: http://img.shields.io/badge/license-Apache--2-blue.svg?style=flat

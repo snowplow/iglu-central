@@ -11,7 +11,7 @@
     "properties": {
         "deviceClass": {
             "description": "See https://yauaa.basjes.nl/README-Output.html",
-            "enum": ["Desktop", "Anonymized", "Unknown", "Mobile", "Tablet", "Phone", "Watch", "Virtual Reality", "eReader", "Set-top box", "TV", "Game Console", "Handheld Game Console", "Voice", "Robot", "Robot Mobile", "Spy", "Hacker"]
+            "enum": ["Desktop", "Anonymized", "Unknown", "UNKNOWN", "Mobile", "Tablet", "Phone", "Watch", "Virtual Reality", "eReader", "Set-top box", "TV", "Game Console", "Handheld Game Console", "Voice", "Robot", "Robot Mobile", "Spy", "Hacker"]
         },
         "deviceName": {
             "description": "Example: Google Nexus 6",
