@@ -1,0 +1,42 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for bad rows which occurs while trying to fetch events from PubSub topic",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow.badrows",
+    "name": "bq_repeater_pubsub_error",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "payload": {
+      "type": "string",
+      "description": "Payload from PubSub topic when error occurred"
+    },
+    "error": {
+      "type": "string",
+      "description": "Error message"
+    },
+    "processor": {
+      "type": "object",
+      "description": "Information about the piece of software responsible for the creation of enrichment failures",
+      "properties": {
+        "artifact": {
+          "type": "string",
+          "description": "Artifact responsible for the creation of enrichment failures",
+          "maxLength": 512
+        },
+        "version": {
+          "type": "string",
+          "description": "Version of the artifact responsible for the creation of enrichment failures",
+          "pattern": "^(\\d+\\.\\d+\\.\\d+.*)$",
+          "maxLength": 32
+        }
+      },
+      "required": [ "artifact", "version" ],
+      "additionalProperties": false
+    }
+  },
+  "required": ["payload", "error", "processor"],
+  "additionalProperties": false
+}
