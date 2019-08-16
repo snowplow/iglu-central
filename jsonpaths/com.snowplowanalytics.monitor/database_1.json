@@ -1,0 +1,23 @@
+{
+    "jsonpaths": [
+        "$.schema.vendor",
+        "$.schema.name",
+        "$.schema.format",
+        "$.schema.version",
+        "$.hierarchy.rootId",
+        "$.hierarchy.rootTstamp",
+        "$.hierarchy.refRoot",
+        "$.hierarchy.refTree",
+        "$.hierarchy.refParent",
+        "$.data.configName",
+        "$.data.cloud",
+        "$.data.configId",
+        "$.data.datasetId",
+        "$.data.name",
+        "$.data.projectId",
+        "$.data.region",
+        "$.data.schema",
+        "$.data.tags",
+        "$.data.type"
+    ]
+}

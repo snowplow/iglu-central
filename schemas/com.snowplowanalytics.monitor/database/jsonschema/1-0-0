@@ -1,0 +1,86 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a database entity, attached as context to status report events",
+  "self": {
+    "vendor": "com.snowplowanalytics.monitor",
+    "name": "database",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+
+  "type": "object",
+  "properties": {
+    "type": {
+      "description": "The type of the database, eg Redshift, Snowflake, BigQuery, DynamoDB, Elastic",
+      "type": ["string", "null"],
+      "maxLength": 256
+    },
+    "configName": {
+      "description": "Human-readable configuration name, eg com.acme BigQuery",
+      "type": "string",
+      "maxLength": 4096
+    },
+    "configId": {
+      "description": "Machine-readable unique configuration identifier; a UUID",
+      "type": ["string", "null"],
+      "maxLength": 36
+    },
+    "name": {
+      "description": "Redshift / Snowflake / PostgreSQL / etc database name, eg snowplow",
+      "type": ["string", "null"],
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "projectId": {
+      "description": "GCP project ID, eg snowplow",
+      "type": ["string", "null"],
+      "minLength": 6,
+      "maxLength": 30
+    },
+    "schema": {
+      "description": "Redshift / Snowflake / PostgreSQL / etc schema name, eg atomic",
+      "type": ["string", "null"],
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "datasetId": {
+      "description": "BigQuery dataset ID, eg atomic",
+      "type": ["string", "null"],
+      "minLength": 1,
+      "maxLength": 1024
+    },
+    "cloud": {
+      "description": "The cloud on which the database is deployed",
+      "type": ["string", "null"],
+      "enum": ["aws", "gcp", "azure", "on-prem", "private", "other"]
+    },
+    "region": {
+      "description": "The region in which the database is deployed, eg eu-west-1",
+      "type": ["string", "null"],
+      "maxLength": 64
+    },
+    "tags": {
+      "description": "Tags attached to the database instance",
+      "type": ["array", "null"],
+      "items": {
+        "description": "A key-value pair",
+        "type": "object",
+        "properties": {
+          "key": {
+            "description": "The key of the key-value pair",
+            "type": "string",
+            "maxLength": 4096
+          },
+          "value": {
+            "description": "The value of the key-value pair",
+            "type": "string",
+            "maxLength": 4096
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["configName"],
+  "additionalProperties": false
+}
