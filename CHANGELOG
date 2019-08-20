@@ -1,3 +1,10 @@
+Release 108 (2019-08-26)
+------------------------
+Add com.snowplowanalytics.snowplow.badrows/loader_runtime_error/jsonschema/1-0-0 (#985)
+Add com.snowplowanalytics.snowplow.badrows/loader_iglu_error/jsonschema/1-0-0 (#987)
+Infrastructure: add master apikey for Iglu Server eu1 mirror to .travis.yml (#995)
+Infrastructure: add sync with Iglu Server eu1 mirror (#993)
+
 Release 107 (2019-07-10)
 ------------------------
 Add com.snowplowanalytics.snowplow.badrows/snowflake_error/jsonschema/1-0-0 (#977)
