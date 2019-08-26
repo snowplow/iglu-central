@@ -37,4 +37,5 @@ echo "SYNCHRONIZING SCHEMAS TO Iglu Server mirror"
 echo "-------------------------------------------"
 
 java -jar ${IGLUCTL} static push schemas ${IGLU_SERVER_MIRROR} ${IGLU_SERVER_APIKEY} --public
+java -jar ${IGLUCTL} static push schemas ${IGLU_SERVER_EU1_MIRROR} ${IGLU_SERVER_EU1_APIKEY} --public
 
