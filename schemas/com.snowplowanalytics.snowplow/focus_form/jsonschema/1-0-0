@@ -24,7 +24,7 @@
 			"type": "string",
 			"enum": ["INPUT", "TEXTAREA", "SELECT"]
 		},
-		"elementType": {
+		"type": {
 			"type": ["string", "null"],
 			"enum": ["button", "checkbox", "color", "date", "datetime", "datetime-local", "email", "file", "hidden", "image", "month", "number", "password", "radio", "range", "reset", "search", "submit", "tel", "text", "time", "url", "week"]
 		},
