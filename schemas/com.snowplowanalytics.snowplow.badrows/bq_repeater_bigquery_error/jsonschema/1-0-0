@@ -9,7 +9,7 @@
   },
   "type": "object",
   "properties": {
-    "reconstructedEvent": {
+    "payload": {
       "type": "object",
       "description": "Event which is reconstructed from failed insert payload",
       "properties": {
@@ -521,7 +521,7 @@
       "required": ["atomic", "selfDescribingEntities"],
       "additionalProperties": false
     },
-    "error": {
+    "failure": {
       "type": "object",
       "description": "Gives detailed information about error such that location, reason and error message",
       "properties": {
@@ -561,6 +561,6 @@
       "additionalProperties": false
     }
   },
-  "required": ["reconstructedEvent", "error", "processor"],
+  "required": ["payload", "failure", "processor"],
   "additionalProperties": false
 }
