@@ -9,7 +9,7 @@
   },
   "type": "object",
   "properties": {
-    "errors": {
+    "failure": {
       "type": "array",
       "description": "List of error info objects which are taken during casting process of all the self describing entities in the event",
       "items": {
@@ -106,7 +106,7 @@
         "additionalProperties": false
       }
     },
-    "original": {
+    "payload": {
       "type": "object",
       "description": "The enriched event that resulted in a storage loader failure",
       "properties": {
@@ -611,6 +611,6 @@
       "additionalProperties": false
     }
   },
-  "required": ["errors", "original", "processor"],
+  "required": ["failure", "payload", "processor"],
   "additionalProperties": false
 }
