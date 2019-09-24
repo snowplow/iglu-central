@@ -13,15 +13,22 @@
       "type": "string",
       "description": "Data blob which was not recognized as an enriched event by the BigQuery Repeater"
     },
-    "error": {
-      "type": "string",
-      "description": "Error message"
-    },
-    "location": {
-      "type": "array",
-      "description": "Location on JSON object where error occured, location path is represented as array of keys",
-      "items": { 
-        "type": "string"
+    "failure": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string",
+          "description": "Error message"
+        },
+        "location": {
+          "type": "array",
+          "description": "Location on JSON object where error occured, location path is represented as array of keys",
+          "items": { 
+            "type": "string"
+          }
+        },
+        "required": ["message", "location"],
+        "additionalProperties": false
       }
     },
     "processor": {
@@ -44,6 +51,6 @@
       "additionalProperties": false
     }
   },
-  "required": ["payload", "error", "location", "processor"],
+  "required": ["payload", "failure", "processor"],
   "additionalProperties": false
 }
