@@ -13,7 +13,7 @@
       "type": "string",
       "description": "Payload from PubSub topic when error occurred"
     },
-    "error": {
+    "failure": {
       "type": "string",
       "description": "Error message"
     },
@@ -37,6 +37,6 @@
       "additionalProperties": false
     }
   },
-  "required": ["payload", "error", "processor"],
+  "required": ["payload", "failure", "processor"],
   "additionalProperties": false
 }
