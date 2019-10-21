@@ -1,0 +1,41 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for configuration of an event fingerprinting enrichment",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow",
+		"name": "event_fingerprint_config",
+		"format": "jsonschema",
+		"version": "1-0-1"
+	},
+
+	"type": "object",
+	"properties": {
+		"vendor": {
+			"type": "string"
+		},
+		"name": {
+			"type": "string"
+		},		
+		"enabled": {
+			"type": "boolean"
+		},
+		"parameters": {
+			"type": "object",
+			"properties": {
+				"hashAlgorithm": {
+					"enum": ["MD5", "SHA1", "SHA256", "SHA384", "SHA512"]
+				},
+				"excludeParameters": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				}
+			},
+			"required": ["hashAlgorithm", "excludeParameters"],
+			"additionalProperties": false
+		}
+	},
+	"required": ["name", "vendor", "enabled", "parameters"],
+	"additionalProperties": false
+}
