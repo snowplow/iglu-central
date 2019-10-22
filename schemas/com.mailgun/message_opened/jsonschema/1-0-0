@@ -40,7 +40,7 @@
     "country": {
       "description": "Two-letter country code (as specified by ISO3166) the event came from or ‘unknown’ if it couldn’t be determined.",
       "type": "string",
-      "maxLength": 2
+      "maxLength": 8
     },
     "deviceType": {
       "description": "Device type the message was opened on. Can be ‘desktop’, ‘mobile’, ‘tablet’, ‘other’ or ‘unknown’.",

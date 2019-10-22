@@ -221,7 +221,7 @@
 		},
 		"se_label": {
 			"type": ["string", "null"],
-			"maxLength": 1000
+			"maxLength": 4096
 		},
 		"se_property": {
 			"type": ["string", "null"],

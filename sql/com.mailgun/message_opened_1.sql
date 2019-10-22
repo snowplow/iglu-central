@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS atomic.com_mailgun_message_opened_1 (
     "client_name"    VARCHAR(64)   ENCODE LZO,
     "client_os"      VARCHAR(64)   ENCODE LZO,
     "client_type"    VARCHAR(64)   ENCODE LZO,
-    "country"        VARCHAR(2)    ENCODE LZO,
+    "country"        VARCHAR(8)    ENCODE LZO,
     "device_type"    VARCHAR(64)   ENCODE LZO,
     "domain"         VARCHAR(256)  ENCODE LZO,
     "ip"             VARCHAR(15)   ENCODE LZO,

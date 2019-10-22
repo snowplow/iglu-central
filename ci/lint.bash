@@ -34,5 +34,5 @@ echo "========================"
 echo "LINTING ALL JSON SCHEMAS"
 echo "------------------------"
 
-java -jar ${IGLUCTL} lint "schemas/"
+java -jar ${IGLUCTL} lint --skip-checks optionalNull,description,numericMinMax,stringLength,stringMaxLengthRange,rootObject "schemas/"
 

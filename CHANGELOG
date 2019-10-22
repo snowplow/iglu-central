@@ -1,3 +1,12 @@
+Release 109 (2019-10-22)
+------------------------
+Add com.snowplowanalytics.snowplow/event_fingerprint_config/jsonschema/1-0-1 (#1009)
+Add com.snowplowanalytics.snowplow/anon_ip/jsonschema/1-0-1 (#1008)
+Patch com.snowplowanalytics.snowplow/atomic/jsonschema/1-0-0 (#906)
+Patch com.mailgun/message_opened/jsonschema/1-0-0 (#1010)
+Infrastructure: remove Insights Iglu Server mirror (#997)
+Infrastructure: bump igluctl to 0.6.0 (#1002)
+
 Release 108 (2019-08-26)
 ------------------------
 Add com.snowplowanalytics.snowplow.badrows/loader_runtime_error/jsonschema/1-0-0 (#985)
