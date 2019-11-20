@@ -1,0 +1,44 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a context of a Google reCaptcha site verification",
+	"self": {
+		"vendor": "com.google.recaptcha",
+		"name": "site_verify",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"success": {
+			"type": "boolean"
+		},
+        "score": {
+			"type": "number",
+            "maximum": 1024,
+            "minimum": 0
+		},
+        "action": {
+            "type": "string",
+            "maxLength": 1024,
+            "minLength": 0
+        },
+        "challenge_ts": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "hostname": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 0
+        },
+        "error-codes": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+	},
+    "required": ["success"],
+	"additionalProperties": false
+}

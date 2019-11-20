@@ -1,0 +1,26 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a context of a Google reCaptcha token",
+	"self": {
+		"vendor": "com.google.recaptcha",
+		"name": "token",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"token": {
+			"type": "string",
+            "maxLength": 1024,
+            "minLength": 256
+		},
+        "action": {
+			"type": "string",
+            "maxLength": 1024,
+            "minLength": 0
+		}
+	},
+    "required": ["token", "action"],
+	"additionalProperties": false
+}
