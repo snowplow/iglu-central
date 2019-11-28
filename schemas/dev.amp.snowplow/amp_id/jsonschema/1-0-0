@@ -1,0 +1,38 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self": {
+    "vendor": "dev.amp.snowplow",
+    "name": "amp_id",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "description": "Schema for AMP user identification",
+  "properties": {
+    "ampClientId": {
+      "type": "string",
+      "description": "AMP client ID - unique to AMP user",
+      "maxLength": 128
+    },
+    "domainUserid": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Snowplow domain_userid - tracked if available",
+      "maxLength": 128
+    },
+    "userId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "User-defined user_id - tracked if available",
+      "maxLength": 255
+    }
+  },
+  "additionalProperties": false,
+  "type": "object",
+  "required": [
+    "ampClientId"
+  ]
+}
