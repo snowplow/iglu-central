@@ -1,0 +1,82 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for storage recovery jobs, such as Snowplow BigQuery Repeater",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow.badrows",
+    "name": "loader_recovery_error",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "payload": {
+      "type": "string",
+      "description": "Data blob which was not inserted into a warehouse"
+    },
+    "failure": {
+      "description": "A reason why payload could not be inserted",
+      "properties": {
+        "error": {
+          "oneOf": [
+            {
+              "description": "Payload couldn't be parsed as an event (ParsingError)",
+              "type": "object",
+              "properties": {
+                "message": {
+                  "description": "Human-readable error",
+                  "type": "string"
+                },
+                "location": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": ["message", "location"]
+            },
+            {
+              "description": "Payload couldn't be inserted because of a service failure (RuntimeError)",
+              "type": "object",
+              "properties": {
+                "message": {
+                  "description": "Human-readable error",
+                  "type": "string"
+                },
+                "location": {
+                  "type": ["string", "null"]
+                },
+                "reason": {
+                  "type": ["string", "null"]
+                }
+              },
+              "required": ["message", "location", "reason"]
+            }
+          ]
+        }
+      },
+      "required": ["error"]
+    },
+    "processor": {
+      "type": "object",
+      "description": "Information about the piece of software responsible for the creation of enrichment failures",
+      "properties": {
+        "artifact": {
+          "type": "string",
+          "description": "Artifact responsible for the creation of enrichment failures",
+          "maxLength": 512
+        },
+        "version": {
+          "type": "string",
+          "description": "Version of the artifact responsible for the creation of enrichment failures",
+          "pattern": "^(\\d+\\.\\d+\\.\\d+.*)$",
+          "maxLength": 32
+        }
+      },
+      "required": [ "artifact", "version" ],
+      "additionalProperties": false
+    }
+  },
+  "required": ["payload", "failure", "processor"],
+  "additionalProperties": false
+}
