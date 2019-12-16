@@ -1,3 +1,19 @@
+Release 110 (2019-12-16)
+------------------------
+Add dev.amp.snowplow/amp_id/jsonschema/1-0-0 (#1017)
+Add dev.amp.snowplow/amp_web_page/jsonschema/1-0-0 (#1016)
+Add com.snowplowanalytics.snowplow/referer_parser/jsonschema/2-0-0 (#925)
+Add com.snowplowanalytics.snowplow.badrows/loader_recovery_error/jsonschema/1-0-0 (#1020)
+Add com.snowplowanalytics.snowplow.badrows/loader_iglu_error/jsonschema/2-0-0 (#1014)
+Add com.snowplowanalytics.snowplow.badrows/loader_runtime_error/jsonschema/1-0-1 (#1004)
+Add com.snowplowanalytics.snowplow.badrows/loader_parsing_error/jsonschema/2-0-0 (#1019)
+Add com.snowplowanalytics.snowplow.badrows/enrichment_failures/jsonschema/1-0-0 (#886)
+Add com.snowplowanalytics.snowplow.badrows/schema_violations/jsonschema/1-0-0 (#885)
+Add com.snowplowanalytics.snowplow.badrows/tracker_protocol_violations/jsonschema/1-0-0 (#884)
+Add com.snowplowanalytics.snowplow.badrows/adapter_failures/jsonschema/1-0-0 (#946)
+Add com.snowplowanalytics.snowplow.badrows/collector_payload_format_violation/jsonschema/1-0-0 (#883)
+Add com.snowplowanalytics.snowplow.badrows/size_violation/jsonschema/1-0-0 (#881)
+
 Release 109 (2019-10-22)
 ------------------------
 Add com.snowplowanalytics.snowplow/event_fingerprint_config/jsonschema/1-0-1 (#1009)

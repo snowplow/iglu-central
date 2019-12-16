@@ -1,0 +1,22 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self": {
+    "vendor": "dev.amp.snowplow",
+    "name": "amp_web_page",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "description": "Schema for AMP Web Page context",
+  "properties": {
+    "ampPageViewId": {
+      "type": "string",
+      "description": "Base64 AMP page view ID - unique to Page View",
+      "maxLength": 255
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "ampPageViewId"
+  ],
+  "type": "object"
+}
