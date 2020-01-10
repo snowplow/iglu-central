@@ -28,7 +28,7 @@
     "instanceId": {
       "description": "The ID of the application instance; a UUID",
       "type": "string",
-      "maxLength": 36
+      "format": "uuid"
     },
     "instanceName": {
       "description": "The name of the application instance, eg com-acme-prod1-rdb-loader-1",
@@ -45,7 +45,7 @@
           "id": {
             "description": "The ID of the input; a UUID",
             "type": "string",
-            "maxLength": 36
+            "format": "uuid"
           },
           "type": {
             "description": "The type of the input, eg stream",
@@ -67,7 +67,7 @@
           "id": {
             "description": "The ID of the output; a UUID",
             "type": "string",
-            "maxLength": 36
+            "format": "uuid"
           },
           "type": {
             "description": "The type of the output, eg database",

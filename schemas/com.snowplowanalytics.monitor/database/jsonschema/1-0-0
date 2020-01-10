@@ -23,7 +23,7 @@
     "configId": {
       "description": "Machine-readable unique configuration identifier; a UUID",
       "type": ["string", "null"],
-      "maxLength": 36
+      "format": "uuid"
     },
     "name": {
       "description": "Redshift / Snowflake / PostgreSQL / etc database name, eg snowplow",

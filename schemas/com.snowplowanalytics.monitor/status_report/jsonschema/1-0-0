@@ -13,7 +13,7 @@
     "id": {
       "description": "The ID of the status report; a UUID",
       "type": "string",
-      "maxLength": 36
+      "format": "uuid"
     },
     "context": {
       "description": "The context in which this status report is generated",
