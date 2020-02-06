@@ -1,0 +1,39 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a tracker error",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow",
+    "name": "diagnostic_error",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "message": {
+      "description": "Message of the error.",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 2048
+    },
+    "className": {
+      "description": "ClassName where the error appeared.",
+      "type": ["string", "null"],
+      "minLength": 0,
+      "maxLength": 1024
+    },
+    "stackTrace": {
+      "description": "StackTrace of the error.",
+      "type": ["string", "null"],
+      "minLength": 0,
+      "maxLength": 8192
+    },
+    "exceptionName": {
+      "description": "Exception name involved in the error.",
+      "type": ["string", "null"],
+      "minLength": 0,
+      "maxLength": 1024
+    }
+  },
+  "required": ["message"],
+  "additionalProperties": false
+}
