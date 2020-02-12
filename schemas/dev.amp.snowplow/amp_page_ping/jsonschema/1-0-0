@@ -1,0 +1,47 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self": {
+    "vendor": "dev.amp.snowplow",
+    "name": "amp_page_ping",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "description": "Schema for amp-specific page ping events",
+  "properties": {
+    "scrollLeft": {
+      "type": "integer",
+      "description": "Pixels scrolled from the left, as provided by AMP"
+    },
+    "scrollWidth": {
+      "type": "integer",
+      "description": "Width of page in pixels, as provided by AMP",
+      "minimum": 0
+    },
+    "viewportWidth": {
+      "type": "integer",
+      "description": "Width of viewport in pixels, taking into account zoom and window size, as provided by AMP",
+      "minimum": 0
+    },
+    "scrollTop": {
+      "type": "integer",
+      "description": "Pixels scrolled from the top"
+    },
+    "scrollHeight": {
+      "type": "integer",
+      "description": "Height of page in pixels, as provided by AMP",
+      "minimum": 0
+    },
+    "viewportHeight": {
+      "type": "integer",
+      "description": "Height of viewport in pixels, taking into account zoom and window size, as provided by AMP",
+      "minimum": 0
+    },
+    "totalEngagedTime": {
+      "type": "integer",
+      "description": "Seconds of engaged time spent on page, according to the AMP platform's measurement of engaged time",
+      "minimum": 0
+    }
+  },
+  "additionalProperties": false,
+  "type": "object"
+}
