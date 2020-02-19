@@ -2,7 +2,7 @@
   "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
   "description": "Schema for a tracker error",
   "self": {
-    "vendor": "com.snowplowanalytics.mobile",
+    "vendor": "com.snowplowanalytics.snowplow",
     "name": "diagnostic_error",
     "format": "jsonschema",
     "version": "1-0-0"
