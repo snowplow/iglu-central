@@ -1,3 +1,8 @@
+Release 111 (2020-02-26)
+------------------------
+Add dev.amp.snowplow/amp_page_ping/jsonschema/1-0-0 (#1026)
+Add com.snowplowanalytics.snowplow/diagnostic_error/jsonschema/1-0-0 (#1028)
+
 Release 110 (2019-12-16)
 ------------------------
 Add dev.amp.snowplow/amp_id/jsonschema/1-0-0 (#1017)
