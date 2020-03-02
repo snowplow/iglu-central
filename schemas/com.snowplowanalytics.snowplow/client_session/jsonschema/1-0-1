@@ -33,9 +33,7 @@
 			"enum": [ "SQLITE", "COOKIE_1", "COOKIE_3", "LOCAL_STORAGE", "FLASH_LSO" ]
 		},
 		"firstEventId": {
-			"type": [
-				"string"
-			],
+			"type": "string",
 			"format": "uuid"
 		}
 	},
