@@ -25,12 +25,6 @@
 		"carrier": {
 			"type": ["string", "null"]
 		},
-		"networkType": {
-			"enum": [ "mobile", "wifi", "offline" ]
-		},
-		"networkTechnology": {
-			"type": "string"
-		},
 		"openIdfa": {
 			"type": "string"
 		},
@@ -41,6 +35,12 @@
 			"type": "string"
 		},
 		"androidIdfa": {
+			"type": "string"
+		},
+		"networkType": {
+			"enum": [ "mobile", "wifi", "offline" ]
+		},
+		"networkTechnology": {
 			"type": "string"
 		}
 	},
