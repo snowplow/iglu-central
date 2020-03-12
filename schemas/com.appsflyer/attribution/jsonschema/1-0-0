@@ -1,0 +1,566 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for an Appsflyer attribution event",
+  "self": {
+          "vendor": "com.appsflyer",
+          "name": "attribution",
+          "format": "jsonschema",
+          "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "advertising_id": {
+          "description": "Advertising ID",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "af_ad": {
+          "description": "ad",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "af_ad_id": {
+          "description": "Ad ID",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "af_ad_type": {
+          "description": "Ad Type",
+          "type": ["string", "null"],
+          "maxLength": 1024
+    },
+    "af_adset": {
+        "description": "Adset",
+        "type": ["string", "null"],
+        "maxLength": 1024
+    },   
+    "af_adset_id": {
+        "description": "Adset ID",
+        "type": ["string", "null"],
+        "maxLength": 1024
+    },     
+    "af_attribution_lookback": {
+        "description": "Attribution Lookback Window",
+        "type": ["string", "null"],
+        "maxLength": 1024
+    },  
+    "af_c_id": {
+        "description": "Campaign ID",
+        "type": ["string", "null"],
+        "maxLength": 1024
+    }, 
+    "af_channel": {
+        "description": "Channel",
+        "type": ["string", "null"],
+        "maxLength": 1024
+    }, 
+    "af_cost_currency": {
+        "description": "Cost Currency",
+        "type": ["string", "null"],
+        "maxLength": 1024
+    }, 
+    "af_cost_model": {
+        "description": "Cost Model",
+        "type": ["string", "null"],
+        "maxLength": 1024
+    }, 
+    "af_cost_value": {
+        "description": "Cost Value",
+        "type": ["string", "null"],
+        "maxLength": 1024
+    }, 
+    "af_keywords": {
+        "description": "Keywords",
+        "type": ["string", "null"],
+        "maxLength": 1024
+    }, 
+    "af_prt": {
+        "description": "Partner",
+        "type": ["string", "null"],
+        "maxLength": 1024
+    }, 
+    "af_reengagement_window": {
+        "description": "Reengagement Window",
+        "type": ["string", "null"],
+        "maxLength": 1024
+    }, 
+    "af_siteid": {
+        "description": "Site ID",
+        "type": ["string", "null"],
+        "maxLength": 1024
+    }, 
+    "af_sub_siteid": {
+        "description": "Sub Site ID",
+        "type": ["string", "null"],
+        "maxLength": 1024
+    }, 
+    "af_sub1": {
+        "description": "Sub Param 1",
+        "type": ["string", "null"],
+        "maxLength": 1024
+    }, 
+    "af_sub2": {
+        "description": "Sub Param 2",
+        "type": ["string", "null"],
+        "maxLength": 1024
+    }, 
+    "af_sub3": {
+        "description": "Sub Param 3",
+        "type": ["string", "null"],
+        "maxLength": 1024
+    }, 
+    "af_sub4": {
+        "description": "Sub Param 4",
+        "type": ["string", "null"],
+        "maxLength": 1024
+    }, 
+    "af_sub5": {
+        "description": "Sub Param 5",
+        "type": ["string", "null"],
+        "maxLength": 1024
+    }, 
+    "amazon_aid": {
+        "description": "Amazon Fire ID",
+        "type": ["string", "null"],
+        "maxLength": 1024
+    }, 
+    "android_id": {
+        "description": "Android ID",
+        "type": ["string", "null"],
+        "maxLength": 1024
+    }, 
+    "api_version": {
+        "description": "API Version e.g. 2.0",
+        "type": ["string", "null"],
+        "maxLength": 10
+    }, 
+    "app_id": {
+        "description": "App ID",
+        "type": ["string", "null"],
+        "maxLength": 1024
+    }, 
+    "app_name": {
+        "description": "App Name",
+        "type": ["string", "null"],
+        "maxLength": 1024
+    }, 
+    "app_version": {
+        "description": "App Version e.g. 1.4.1",
+        "type": ["string", "null"],
+        "maxLength": 100
+    }, 
+    "appsflyer_id": {
+        "description": "AppsFlyer ID e.g. 1547985076649-5309999",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "attributed_touch_time": {
+        "description": "Attributed Touch Time",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "attributed_touch_time_selected_timezone": {
+        "description": "Attributed Touch Time Selected Timezone",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "attributed_touch_type": {
+        "description": "Attributed Touch Type",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "bundle_id": {
+        "description": "Bundle ID e.g. com.appsflyer.AppsFlyer",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "campaign": {
+        "description": "Campaign",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "carrier": {
+        "description": "Carrier",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "city": {
+        "description": "City",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "contributor_1_af_prt": {
+        "description": "Contributor 1 Partner",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "contributor_1_campaign": {
+        "description": "Contributor 1 Campaign",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "contributor_1_match_type": {
+        "description": "Contributor 1 Match Type",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "contributor_1_media_source": {
+        "description": "Contributor 1 Media Source",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "contributor_1_touch_time": {
+        "description": "Contributor 1 Touch Time",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "contributor_1_touch_type": {
+        "description": "Contributor 1 Touch Type",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "contributor_2_af_prt": {
+        "description": "Contributor 2 Partner",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "contributor_2_campaign": {
+        "description": "Contributor 2 Campaign",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "contributor_2_match_type": {
+        "description": "Contributor 2 Match Type",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "contributor_2_media_source": {
+        "description": "Contributor 2 Media Source",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "contributor_2_touch_time": {
+        "description": "Contributor 2 Touch Time",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "contributor_2_touch_type": {
+        "description": "Contributor 2 Touch Type",
+        "type": ["string", "null"],
+        "maxLength": 512
+    },     
+    "contributor_3_af_prt": {
+        "description": "Contributor 3 Partner",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "contributor_3_campaign": {
+        "description": "Contributor 3 Campaign",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "contributor_3_match_type": {
+        "description": "Contributor 3 Match Type",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "contributor_3_media_source": {
+        "description": "Contributor 3 Media Source",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "contributor_3_touch_time": {
+        "description": "Contributor 3 Touch Time",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "contributor_3_touch_type": {
+        "description": "Contributor 3 Touch Type",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "cost_in_selected_currency": {
+        "description": "Cost In Selected Currency",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "country_code": {
+        "description": "Country Code",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "custom_data": {
+        "description": "Custom Data",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "customer_user_id": {
+        "description": "Customer User ID",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "deeplink_url": {
+        "description": "Deep Link URL",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "device_category": {
+        "description": "Device Category",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "device_download_time": {
+        "description": "Device Download Time e.g. 2019-01-20 04:51:16.000",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "device_type": {
+        "description": "Device Type e.g. iPhoneXR",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "dma": {
+        "description": "DMA",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "device_download_time_selected_timezone": {
+        "description": "Device Download Time Selected Timezone",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "event_name": {
+        "description": "Event Name",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "event_revenue": {
+        "description": "Event Revenue",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "event_revenue_currency": {
+        "description": "Event Revenue Currency e.g. USD",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "event_revenue_usd": {
+        "description": "Event Revenue USD",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "event_source": {
+        "description": "Event Source e.g. SDK",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "event_time": {
+        "description": "Event Time e.g. 2020-01-15 14:57:24.898",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "event_time_selected_timezone": {
+        "description": "Event Time Selected Timezone e.g. 2020-01-15 14:57:24.898+0000",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "event_value": {
+        "description": "Event Value",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "gp_broadcast_referrer": {
+        "description": "GP Broadcast Referrer",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "gp_click_time": {
+        "description": "Google Play Click Time",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "gp_install_begin": {
+        "description": "Google Play Install Begin Time",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "gp_referrer": {
+        "description": "Google Play Referrer",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "http_referrer": {
+        "description": "HTTP Referrer",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "idfa": {
+        "description": "IDFA e.g. A7071198-3848-40A5-B3D0-94578D9BZZZZ",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "idfv": {
+        "description": "IDFV e.g. 868049A3-4B2F-4A11-9B00-CFFC362XXXXX",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "imei": {
+        "description": "IMEI",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "install_app_store": {
+        "description": "Install App Store",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "install_time": {
+        "description": "Install Time",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "install_time_selected_timezone": {
+        "description": "Install Time Selected Timezone e.g. 2019-01-20 04:51:16.000+0000",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "ip": {
+        "description": "IP",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "is_LAT": {
+        "description": "Is LAT",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "is_primary_attribution": {
+        "description": "Is Primary Attribution",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "is_receipt_validated": {
+        "description": "Is Receipt Validated",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "is_retargeting": {
+        "description": "Is Retargeting",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "keyword_id": {
+        "description": "Keyword ID",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "keyword_match_type": {
+        "description": "Keywords Match Type",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }, 
+    "language": {
+        "description": "Language",
+        "type": ["string", "null"],
+        "maxLength": 512
+    },
+    "match_type": {
+        "description": "Match Type",
+        "type": ["string", "null"],
+        "maxLength": 512
+    },
+    "media_source": {
+        "description": "Media Source",
+        "type": ["string", "null"],
+        "maxLength": 512
+    },
+    "network_account_id": {
+        "description": "Network Account ID",
+        "type": ["string", "null"],
+        "maxLength": 512
+    },
+    "oaid": {
+        "description": "OAID",
+        "type": ["string", "null"],
+        "maxLength": 512
+    },
+    "operator": {
+        "description": "Operator",
+        "type": ["string", "null"],
+        "maxLength": 512
+    },
+    "original_url": {
+        "description": "Original URL",
+        "type": ["string", "null"],
+        "maxLength": 512
+    },
+    "os_version": {
+        "description": "OS Version",
+        "type": ["string", "null"],
+        "maxLength": 512
+    },
+    "platform": {
+        "description": "Platform",
+        "type": ["string", "null"],
+        "maxLength": 512
+    },
+    "postal_code": {
+        "description": "Postal code e.g. 823941",
+        "type": ["string", "null"],
+        "maxLength": 512
+    },
+    "region": {
+        "description": "Region",
+        "type": ["string", "null"],
+        "maxLength": 512
+    },
+    "retargeting_conversion_type": {
+        "description": "Retargeting Conversion Type",
+        "type": ["string", "null"],
+        "maxLength": 512
+    },
+    "revenue_in_selected_currency": {
+        "description": "Revenue In selected currency",
+        "type": ["string", "null"],
+        "maxLength": 512
+    },
+    "sdk_version": {
+        "description": "SDK Version",
+        "type": ["string", "null"],
+        "maxLength": 512
+    },
+    "selected_currency": {
+        "description": "Selected Currency",
+        "type": ["string", "null"],
+        "maxLength": 512
+    },
+    "selected_timezone": {
+        "description": "Selected Timezone",
+        "type": ["string", "null"],
+        "maxLength": 512
+    },
+    "state": {
+        "description": "State",
+        "type": ["string", "null"],
+        "maxLength": 512
+    },
+    "store_reinstall": {
+        "description": "Store Reinstall",
+        "type": ["string", "null"],
+        "maxLength": 512
+    },
+    "user_agent": {
+        "description": "User Agent e.g. AppsFlyer/1 CFNetwork/978.0.7 Darwin/18.6.0",
+        "type": ["string", "null"],
+        "maxLength": 1024
+    },
+    "wifi": {
+        "description": "WIFI",
+        "type": ["string", "null"],
+        "maxLength": 512
+    }
+  },
+  "minProperties": 1,
+  "required": ["app_id"],
+  "additionalProperties": true
+  }
