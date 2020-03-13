@@ -12,122 +12,122 @@
     "advertising_id": {
           "description": "Advertising ID",
           "type": ["string", "null"],
-          "maxLength": 1024
+          "maxLength": 512
     },
     "af_ad": {
           "description": "ad",
           "type": ["string", "null"],
-          "maxLength": 1024
+          "maxLength": 512
     },
     "af_ad_id": {
           "description": "Ad ID",
           "type": ["string", "null"],
-          "maxLength": 1024
+          "maxLength": 512
     },
     "af_ad_type": {
           "description": "Ad Type",
           "type": ["string", "null"],
-          "maxLength": 1024
+          "maxLength": 512
     },
     "af_adset": {
         "description": "Adset",
         "type": ["string", "null"],
-        "maxLength": 1024
+        "maxLength": 512
     },   
     "af_adset_id": {
         "description": "Adset ID",
         "type": ["string", "null"],
-        "maxLength": 1024
+        "maxLength": 512
     },     
     "af_attribution_lookback": {
         "description": "Attribution Lookback Window",
         "type": ["string", "null"],
-        "maxLength": 1024
+        "maxLength": 512
     },  
     "af_c_id": {
         "description": "Campaign ID",
         "type": ["string", "null"],
-        "maxLength": 1024
+        "maxLength": 512
     }, 
     "af_channel": {
         "description": "Channel",
         "type": ["string", "null"],
-        "maxLength": 1024
+        "maxLength": 512
     }, 
     "af_cost_currency": {
         "description": "Cost Currency",
         "type": ["string", "null"],
-        "maxLength": 1024
+        "maxLength": 512
     }, 
     "af_cost_model": {
         "description": "Cost Model",
         "type": ["string", "null"],
-        "maxLength": 1024
+        "maxLength": 512
     }, 
     "af_cost_value": {
         "description": "Cost Value",
         "type": ["string", "null"],
-        "maxLength": 1024
+        "maxLength": 512
     }, 
     "af_keywords": {
         "description": "Keywords",
         "type": ["string", "null"],
-        "maxLength": 1024
+        "maxLength": 512
     }, 
     "af_prt": {
         "description": "Partner",
         "type": ["string", "null"],
-        "maxLength": 1024
+        "maxLength": 512
     }, 
     "af_reengagement_window": {
         "description": "Reengagement Window",
         "type": ["string", "null"],
-        "maxLength": 1024
+        "maxLength": 512
     }, 
     "af_siteid": {
         "description": "Site ID",
         "type": ["string", "null"],
-        "maxLength": 1024
+        "maxLength": 512
     }, 
     "af_sub_siteid": {
         "description": "Sub Site ID",
         "type": ["string", "null"],
-        "maxLength": 1024
+        "maxLength": 512
     }, 
     "af_sub1": {
         "description": "Sub Param 1",
         "type": ["string", "null"],
-        "maxLength": 1024
+        "maxLength": 512
     }, 
     "af_sub2": {
         "description": "Sub Param 2",
         "type": ["string", "null"],
-        "maxLength": 1024
+        "maxLength": 512
     }, 
     "af_sub3": {
         "description": "Sub Param 3",
         "type": ["string", "null"],
-        "maxLength": 1024
+        "maxLength": 512
     }, 
     "af_sub4": {
         "description": "Sub Param 4",
         "type": ["string", "null"],
-        "maxLength": 1024
+        "maxLength": 512
     }, 
     "af_sub5": {
         "description": "Sub Param 5",
         "type": ["string", "null"],
-        "maxLength": 1024
+        "maxLength": 512
     }, 
     "amazon_aid": {
         "description": "Amazon Fire ID",
         "type": ["string", "null"],
-        "maxLength": 1024
+        "maxLength": 512
     }, 
     "android_id": {
         "description": "Android ID",
         "type": ["string", "null"],
-        "maxLength": 1024
+        "maxLength": 512
     }, 
     "api_version": {
         "description": "API Version e.g. 2.0",
@@ -135,12 +135,12 @@
         "maxLength": 10
     }, 
     "app_id": {
-        "description": "App ID",
+        "description": "App ID e.g. id14398280321",
         "type": ["string", "null"],
-        "maxLength": 1024
+        "maxLength": 512
     }, 
     "app_name": {
-        "description": "App Name",
+        "description": "App Name e.g. My App",
         "type": ["string", "null"],
         "maxLength": 1024
     }, 
@@ -165,7 +165,7 @@
         "maxLength": 512
     }, 
     "attributed_touch_type": {
-        "description": "Attributed Touch Type",
+        "description": "Attributed Touch Type e.g. click",
         "type": ["string", "null"],
         "maxLength": 512
     }, 
@@ -185,7 +185,7 @@
         "maxLength": 512
     }, 
     "city": {
-        "description": "City",
+        "description": "City e.g. Sarasota",
         "type": ["string", "null"],
         "maxLength": 512
     }, 
@@ -235,7 +235,7 @@
         "maxLength": 512
     }, 
     "contributor_2_media_source": {
-        "description": "Contributor 2 Media Source",
+        "description": "Contributor 2 Media Source e.g. Snapchat_BestValue",
         "type": ["string", "null"],
         "maxLength": 512
     }, 
@@ -305,7 +305,7 @@
         "maxLength": 512
     }, 
     "device_category": {
-        "description": "Device Category",
+        "description": "Device Category e.g. phone",
         "type": ["string", "null"],
         "maxLength": 512
     }, 
@@ -320,7 +320,7 @@
         "maxLength": 512
     }, 
     "dma": {
-        "description": "DMA",
+        "description": "DMA e.g. 539",
         "type": ["string", "null"],
         "maxLength": 512
     }, 
@@ -330,7 +330,7 @@
         "maxLength": 512
     }, 
     "event_name": {
-        "description": "Event Name",
+        "description": "Event Name e.g. tutorial_completion",
         "type": ["string", "null"],
         "maxLength": 512
     }, 
@@ -415,7 +415,7 @@
         "maxLength": 512
     }, 
     "install_time": {
-        "description": "Install Time",
+        "description": "Install Time e.g. 2020-03-12 18:34:48.177",
         "type": ["string", "null"],
         "maxLength": 512
     }, 
@@ -425,7 +425,7 @@
         "maxLength": 512
     }, 
     "ip": {
-        "description": "IP",
+        "description": "IP address e.g. 73.255.148.211",
         "type": ["string", "null"],
         "maxLength": 512
     }, 
@@ -435,19 +435,16 @@
         "maxLength": 512
     }, 
     "is_primary_attribution": {
-        "description": "Is Primary Attribution",
-        "type": ["string", "null"],
-        "maxLength": 512
+        "description": "Is Primary Attribution e.g. true",
+        "type": ["boolean", "null"]
     }, 
     "is_receipt_validated": {
-        "description": "Is Receipt Validated",
-        "type": ["string", "null"],
-        "maxLength": 512
+        "description": "Is Receipt Validated e.g. false",
+        "type": ["boolean", "null"]
     }, 
     "is_retargeting": {
-        "description": "Is Retargeting",
-        "type": ["string", "null"],
-        "maxLength": 512
+        "description": "Is Retargeting e.g. false",
+        "type": ["boolean", "null"]
     }, 
     "keyword_id": {
         "description": "Keyword ID",
@@ -455,12 +452,12 @@
         "maxLength": 512
     }, 
     "keyword_match_type": {
-        "description": "Keywords Match Type",
+        "description": "Keywords Match Type e.g. fingerprinting",
         "type": ["string", "null"],
         "maxLength": 512
     }, 
     "language": {
-        "description": "Language",
+        "description": "Language e.g. en-US",
         "type": ["string", "null"],
         "maxLength": 512
     },
@@ -495,12 +492,12 @@
         "maxLength": 512
     },
     "os_version": {
-        "description": "OS Version",
+        "description": "OS Version e.g. 13.3.1",
         "type": ["string", "null"],
         "maxLength": 512
     },
     "platform": {
-        "description": "Platform",
+        "description": "Platform e.g. ios",
         "type": ["string", "null"],
         "maxLength": 512
     },
@@ -525,7 +522,7 @@
         "maxLength": 512
     },
     "sdk_version": {
-        "description": "SDK Version",
+        "description": "SDK Version e.g. v5.1.0",
         "type": ["string", "null"],
         "maxLength": 512
     },
@@ -540,14 +537,13 @@
         "maxLength": 512
     },
     "state": {
-        "description": "State",
+        "description": "State e.g. HAV",
         "type": ["string", "null"],
         "maxLength": 512
     },
     "store_reinstall": {
         "description": "Store Reinstall",
-        "type": ["string", "null"],
-        "maxLength": 512
+        "type": ["boolean", "null"]
     },
     "user_agent": {
         "description": "User Agent e.g. AppsFlyer/1 CFNetwork/978.0.7 Darwin/18.6.0",
@@ -561,6 +557,5 @@
     }
   },
   "minProperties": 1,
-  "required": ["app_id"],
   "additionalProperties": true
   }
