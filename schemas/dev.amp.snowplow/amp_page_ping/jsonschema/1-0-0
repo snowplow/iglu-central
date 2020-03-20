@@ -9,35 +9,35 @@
   "description": "Schema for amp-specific page ping events",
   "properties": {
     "scrollLeft": {
-      "type": "integer",
+      "type": "number",
       "description": "Pixels scrolled from the left, as provided by AMP"
     },
     "scrollWidth": {
-      "type": "integer",
+      "type": "number",
       "description": "Width of page in pixels, as provided by AMP",
       "minimum": 0
     },
     "viewportWidth": {
-      "type": "integer",
+      "type": "number",
       "description": "Width of viewport in pixels, taking into account zoom and window size, as provided by AMP",
       "minimum": 0
     },
     "scrollTop": {
-      "type": "integer",
+      "type": "number",
       "description": "Pixels scrolled from the top"
     },
     "scrollHeight": {
-      "type": "integer",
+      "type": "number",
       "description": "Height of page in pixels, as provided by AMP",
       "minimum": 0
     },
     "viewportHeight": {
-      "type": "integer",
+      "type": "number",
       "description": "Height of viewport in pixels, taking into account zoom and window size, as provided by AMP",
       "minimum": 0
     },
     "totalEngagedTime": {
-      "type": "integer",
+      "type": "number",
       "description": "Seconds of engaged time spent on page, according to the AMP platform's measurement of engaged time",
       "minimum": 0
     }
