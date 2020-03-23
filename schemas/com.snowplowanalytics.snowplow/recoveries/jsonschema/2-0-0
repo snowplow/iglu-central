@@ -1,0 +1,255 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for an array of recovery scenarios",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow",
+    "name": "recoveries",
+    "format": "jsonschema",
+    "version": "2-0-0"
+  },
+  "type": "object",
+  "minProperties": 1,
+  "patternProperties": {
+    "^iglu:": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^(([a-zA-Z0-9]+)(-?))+$",
+            "minLength": 1,
+            "description": "A slug name for recovery flow"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "op": {
+                  "type": "string",
+                  "enum": [
+                    "Cast",
+                    "Remove",
+                    "Replace",
+                    "Test"
+                  ],
+                  "description": "Transformation operation to perform"
+                },
+                "path": {
+                  "type": "string",
+                  "pattern": "^(([a-zA-Z0-9]+)(\\.?))+$",
+                  "description": "JSON Path to object"
+                },
+                "match": {
+                  "type": "string",
+                  "description": "An expression applied when replacing field’s values with new value"
+                },
+                "value": {
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "object",
+                      "description": "Compare against static value",
+                      "properties": {
+                        "value": {
+                          "type": [
+                            "array",
+                            "number",
+                            "object",
+                            "string"
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "description": "Compare against regular expression",
+                      "properties": {
+                        "regex": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "regex"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "description": "Compare size",
+                      "properties": {
+                        "size": {
+                          "type": "object",
+                          "oneOf": [
+                            {
+                              "properties": {
+                                "eq": {
+                                  "type": "integer"
+                                }
+                              }
+                            },
+                            {
+                              "properties": {
+                                "lt": {
+                                  "type": "integer"
+                                }
+                              }
+                            },
+                            {
+                              "properties": {
+                                "gt": {
+                                  "type": "integer"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "additionalProperties": false
+                    }
+                  ],
+                  "description": "A value to match against"
+                },
+                "from": {
+                  "type": "string",
+                  "description": "Source type to cast from"
+                },
+                "to": {
+                  "type": "string",
+                  "description": "Target type to cast to"
+                }
+              },
+              "required": [
+                "op",
+                "path",
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            "description": "Conditions required to apply steps for specific Bad Row type"
+          },
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "op": {
+                  "type": "string",
+                  "enum": [
+                    "Cast",
+                    "Remove",
+                    "Replace",
+                    "Test"
+                  ],
+                  "description": "Transformation operation to perform"
+                },
+                "path": {
+                  "type": "string",
+                  "pattern": "^(([a-zA-Z0-9]+)(\\.?))+$",
+                  "description": "JSON Path to object"
+                },
+                "match": {
+                  "type": "string",
+                  "description": "An expression applied when replacing field’s values with new value"
+                },
+                "value": {
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "object",
+                      "description": "Compare against static value",
+                      "properties": {
+                        "value": {
+                          "type": [
+                            "number",
+                            "object",
+                            "string"
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "description": "Compare against regular expression",
+                      "properties": {
+                        "regex": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "regex"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "description": "Compare size",
+                      "properties": {
+                        "size": {
+                          "type": "object",
+                          "oneOf": [
+                            {
+                              "properties": {
+                                "eq": {
+                                  "type": "integer"
+                                }
+                              }
+                            },
+                            {
+                              "properties": {
+                                "lt": {
+                                  "type": "integer"
+                                }
+                              }
+                            },
+                            {
+                              "properties": {
+                                "gt": {
+                                  "type": "integer"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "additionalProperties": false
+                    }
+                  ],
+                  "description": "A value to match against"
+                },
+                "from": {
+                  "type": "string",
+                  "description": "Source type to cast from"
+                },
+                "to": {
+                  "type": "string",
+                  "description": "Target type to cast to"
+                }
+              },
+              "required": [
+                "op",
+                "path",
+                "value"
+              ],
+              "additionalProperties": false
+            },
+            "description": "Steps to be applied for specific Bad Row type"
+          }
+        },
+        "required": [
+          "name",
+          "conditions",
+          "steps"
+        ],
+        "additionalProperties": {
+          "type": "array"
+        }
+      }
+    }
+  }
+}
