@@ -1,3 +1,9 @@
+Release 112 (2020-04-08)
+------------------------
+Patch schemas/dev.amp.snowplow/amp_page_ping/jsonschema/1-0-0 (#1035)
+Patch com.snowplowanalytics.snowplow/mobile_context/jsonschema/1-0-1 (#1038)
+Patch com.snowplowanalytics.snowplow/client_session/jsonschema/1-0-1 (#1031)
+
 Release 111 (2020-02-26)
 ------------------------
 Add dev.amp.snowplow/amp_page_ping/jsonschema/1-0-0 (#1026)
