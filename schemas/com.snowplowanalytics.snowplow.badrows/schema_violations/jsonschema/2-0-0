@@ -1,0 +1,476 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a bad row resulting from schema violations",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow.badrows",
+    "name": "schema_violations",
+    "format": "jsonschema",
+    "version": "2-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "failure": {
+      "type": "object",
+      "description": "Information regarding the schema violations",
+      "properties": {
+        "timestamp": {
+          "type": "string",
+          "description": "Timestamp at which the failure occurred",
+          "format": "date-time"
+        },
+        "messages": {
+          "type": "array",
+          "description": "List of failure messages associated with the tracker protocol violations",
+          "items": {
+            "anyOf": [
+              {
+                "type": "object",
+                "description": "String supplied for schema validation was not JSON",
+                "properties": {
+                  "field": {
+                    "type": "string",
+                    "description": "Field which ended up not being json",
+                    "maxLength": 64
+                  },
+                  "value": {
+                    "type": [ "string", "null" ],
+                    "description": "Stringified representation of the value which is not json"
+                  },
+                  "error": {
+                    "type": "string",
+                    "description": "Json parsing issue"
+                  }
+                },
+                "required": ["field", "error" ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "description": "Json supplied for schema validation was not self-describing",
+                "properties": {
+                  "json": {
+                    "description": "Supplied JSON which was not self-describing"
+                  },
+                  "error": {
+                    "type": "string",
+                    "description": "Issue which the json which makes it not self-describing",
+                    "enum": [ "INVALID_SCHEMAVER", "INVALID_IGLUURI", "INVALID_DATA_PAYLOAD", "INVALID_SCHEMA" ]
+                  }
+                },
+                "required": [ "json", "error" ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "description": "Supplied JSON does not match the associated schema criterion",
+                "properties": {
+                  "schemaKey": {
+                    "description": "Supplied schema key",
+                    "type": "string"
+                  },
+                  "schemaCriterion": {
+                    "type": "string",
+                    "description": "The schema criterion which was not respected"
+                  }
+                },
+                "required": [ "schemaKey", "schemaCriterion" ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "description": "Supplied JSON did not validate against its schema (or schema was not found)",
+                "properties": {
+                  "schemaKey": {
+                    "type": "string",
+                    "description": "The iglu schema coordinates to validate against"
+                  },
+                  "error": {
+                    "description": "Iglu client error",
+                    "anyOf": [
+                      {
+                        "description": "Resolution error - schema could not be found in the specified repositories, defined by ResolutionError in the Iglu Client",
+                        "properties": {
+                          "error": {
+                            "enum": ["ResolutionError"]
+                          },
+                          "lookupHistory": {
+                            "type": "array",
+                            "minItems": 1,
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "repostitory": {
+                                  "type": "string",
+                                  "description": "Name of the repostitory as written in resolver.json"
+                                },
+                                "errors": {
+                                  "description": "Set of errors which happened for this repository",
+                                  "type": "array",
+                                  "minItems": 1,
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "error": {
+                                        "description": "Type of error (NotFound does not contain a message)",
+                                        "enum": ["RepoFailure", "ClientFailure", "NotFound"]
+                                      },
+                                      "message": {
+                                        "description": "Optional message in case of ClientFailure or RepoFailure",
+                                        "type": "string",
+                                        "maxLength": 256
+                                      }
+                                    },
+                                    "required": ["error" ]
+                                  }
+                                },
+                                "attempts": {
+                                  "type": "integer",
+                                  "minimum": 0,
+                                  "description": "Number of attempts which have been made"
+                                },
+                                "lastAttempt": {
+                                  "type": "string",
+                                  "format": "date-time",
+                                  "description": "Timestamp of a last attempt being made"
+                                }
+                              },
+                              "required": ["repository", "errors", "attempts", "lastAttempt"]
+                            }
+                          }
+                        },
+                        "required": [ "error", "lookupHistory" ],
+                        "additionalProperties": false
+                      },
+                      {
+                        "description": "Data is invalid against resolved schema",
+                        "properties": {
+                          "error": {
+                            "enum": ["ValidationError"]
+                          },
+                          "dataReports": {
+                            "type": "array",
+                            "minItems": 1,
+                            "items": {
+                              "properties": {
+                                "message": {
+                                  "type": "string",
+                                  "description": "Human-readable message describing the issue with the schema"
+                                },
+                                "path": {
+                                  "type": ["string", "null"],
+                                  "description": "JSON Path to an issue in the faulty JSON datum"
+                                },
+                                "keyword": {
+                                  "type": ["string", "null"],
+                                  "description": "JSON Schema Keywrod caused invalidation"
+                                },
+                                "targets": {
+                                  "type": ["array", "null"]
+                                }
+                              },
+                              "required": [ "path", "message", "keyword", "targets" ],
+                              "additionalProperties": false
+                            }
+                          }
+                        },
+                        "required": [ "dataReports" ],
+                        "additionalProperties": false
+                      },
+                      {
+                        "description": "Schema is invalid and cannot be used to validate an instance",
+                        "properties": {
+                          "error": {
+                            "enum": ["ValidationError"]
+                          },
+                          "schemaIssues": {
+                            "description": "List of problems in resolved JSON schema",
+                            "type": "array",
+                            "minItems": 1,
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "path": {
+                                  "type": "string",
+                                  "description": "JSON Path to an issue in the faulty JSON Schema"
+                                },
+                                "message": {
+                                  "type": "string",
+                                  "description": "Human-readable message describing the issue with the schema"
+                                }
+                              },
+                              "required": [ "path", "message" ],
+                              "additionalProperties": false
+                            }
+                          }
+                        },
+                        "required": [ "error" ],
+                        "additionalProperties": false
+                      }
+                    ]
+                  }
+                },
+                "additionalProperties": false
+              }
+            ]
+          }
+        }
+      },
+      "required": [ "timestamp", "messages" ],
+      "additionalProperties": false
+    },
+    "payload": {
+      "type": "object",
+      "properties": {
+        "raw": {
+          "type": "object",
+          "description": "The raw event extracted from collector payload",
+          "properties": {
+            "vendor": {
+              "type": "string",
+              "description": "Vendor of the adapter that processed this payload, here com.snowplowanalytics.snowplow",
+              "maxLength": 64
+            },
+            "version": {
+              "type": "string",
+              "description": "Version of the adapter that processed this payload",
+              "maxLength": 16
+            },
+            "parameters": {
+              "type": [ "array", "null" ],
+              "description": "Query string of the collector payload containing this event",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Name of the querystring parameter",
+                    "maxLength": 512
+                  },
+                  "value": {
+                    "type": [ "string", "null" ],
+                    "description": "Possible value for the querystring parameter",
+                    "maxLength": 512
+                  }
+                },
+                "required": [ "name", "value" ],
+                "additionalProperties": false
+              }
+            },
+            "contentType": {
+              "type": [ "string", "null" ],
+              "description": "Content type of the payload as detected by the collector",
+              "maxLength": 256
+            },
+            "loaderName": {
+              "type": "string",
+              "maxLength": 32
+            },
+            "encoding": {
+              "type": "string",
+              "description": "Encoding of the collector payload",
+              "maxLength": 32
+            },
+            "hostname": {
+              "type": [ "string", "null" ],
+              "description": "Hostname of the payload as detected by the collector",
+              "maxLength": 8192
+            },
+            "timestamp": {
+              "type": ["string", "null"],
+              "description": "Timestamp at which the payload was collected",
+              "format": "date-time"
+            },
+            "ipAddress": {
+              "type": ["string", "null"],
+              "description": "IP address of the payload as detected by the collector",
+              "maxLength": 128
+            },
+            "useragent": {
+              "type": [ "string", "null" ],
+              "description": "User agent of the payload as detected by the collector",
+              "maxLength": 4096
+            },
+            "refererUri": {
+              "type": [ "string", "null" ],
+              "description": "Referer of the payload as detected by the collector",
+              "maxLength": 8192
+            },
+            "headers": {
+              "type": [ "array", "null" ],
+              "description": "List of the headers part of this collector payload",
+              "items": {
+                "type": "string",
+                "maxLength": 8192
+              }
+            },
+            "userId": {
+              "type": [ "string", "null" ],
+              "description": "Network user id associated with this payload",
+              "format": "uuid"
+            }
+          },
+          "required": [ "vendor", "version", "loaderName", "encoding" ],
+          "additionalProperties": false
+        },
+        "enriched": {
+          "description": "The partially enriched event that resulted in schema violations",
+          "properties": {
+            "app_id": { "type": ["string", "null"] },
+            "platform": { "type": ["string", "null"] },
+            "etl_tstamp": { "type": ["string", "null"] },
+            "collector_tstamp": { "type": ["string", "null"] },
+            "dvce_created_tstamp": { "type": ["string", "null"] },
+            "event": { "type": ["string", "null"] },
+            "event_id": { "type": ["string", "null"] },
+            "txn_id": { "type": ["string", "null"] },
+            "name_tracker": { "type": ["string", "null"] },
+            "v_tracker": { "type": ["string", "null"] },
+            "v_collector": { "type": ["string", "null"] },
+            "v_etl": { "type": ["string", "null"] },
+            "user_id": { "type": ["string", "null"] },
+            "user_ipaddress": { "type": ["string", "null"] },
+            "user_fingerprint": { "type": ["string", "null"] },
+            "domain_userid": { "type": ["string", "null"] },
+            "domain_sessionidx": { "type": ["integer", "null"] },
+            "network_userid": { "type": ["string", "null"] },
+            "geo_country": { "type": ["string", "null"] },
+            "geo_region": { "type": ["string", "null"] },
+            "geo_city": { "type": ["string", "null"] },
+            "geo_zipcode": { "type": ["string", "null"] },
+            "geo_latitude": { "type": ["number", "null"] },
+            "geo_longitude": { "type": ["number", "null"] },
+            "geo_region_name": { "type": ["string", "null"] },
+            "ip_isp": { "type": ["string", "null"] },
+            "ip_organization": { "type": ["string", "null"] },
+            "ip_domain": { "type": ["string", "null"] },
+            "ip_netspeed": { "type": ["string", "null"] },
+            "page_url": { "type": ["string", "null"] },
+            "page_title": { "type": ["string", "null"] },
+            "page_referrer": { "type": ["string", "null"] },
+            "page_urlscheme": { "type": ["string", "null"] },
+            "page_urlhost": { "type": ["string", "null"] },
+            "page_urlport": { "type": ["integer", "null"] },
+            "page_urlpath": { "type": ["string", "null"] },
+            "page_urlquery": { "type": ["string", "null"] },
+            "page_urlfragment": { "type": ["string", "null"] },
+            "refr_urlscheme": { "type": ["string", "null"] },
+            "refr_urlhost": { "type": ["string", "null"] },
+            "refr_urlport": { "type": ["integer", "null"] },
+            "refr_urlpath": { "type": ["string", "null"] },
+            "refr_urlquery": { "type": ["string", "null"] },
+            "refr_urlfragment": { "type": ["string", "null"] },
+            "refr_medium": { "type": ["string", "null"] },
+            "refr_source": { "type": ["string", "null"] },
+            "refr_term": { "type": ["string", "null"] },
+            "mkt_medium": { "type": ["string", "null"] },
+            "mkt_source": { "type": ["string", "null"] },
+            "mkt_term": { "type": ["string", "null"] },
+            "mkt_content": { "type": ["string", "null"] },
+            "mkt_campaign": { "type": ["string", "null"] },
+            "contexts": { "type": ["string", "null"] },
+            "se_category": { "type": ["string", "null"] },
+            "se_action": { "type": ["string", "null"] },
+            "se_label": { "type": ["string", "null"] },
+            "se_property": { "type": ["string", "null"] },
+            "se_value": { "type": ["string", "null"] },
+            "unstruct_event": { "type": ["string", "null"] },
+            "tr_orderid": { "type": ["string", "null"] },
+            "tr_affiliation": { "type": ["string", "null"] },
+            "tr_total": { "type": ["string", "null"] },
+            "tr_tax": { "type": ["string", "null"] },
+            "tr_shipping": { "type": ["string", "null"] },
+            "tr_city": { "type": ["string", "null"] },
+            "tr_state": { "type": ["string", "null"] },
+            "tr_country": { "type": ["string", "null"] },
+            "ti_orderid": { "type": ["string", "null"] },
+            "ti_sku": { "type": ["string", "null"] },
+            "ti_name": { "type": ["string", "null"] },
+            "ti_category": { "type": ["string", "null"] },
+            "ti_price": { "type": ["string", "null"] },
+            "ti_quantity": { "type": ["integer", "null"] },
+            "pp_xoffset_min": { "type": ["integer", "null"] },
+            "pp_xoffset_max": { "type": ["integer", "null"] },
+            "pp_yoffset_min": { "type": ["integer", "null"] },
+            "pp_yoffset_max": { "type": ["integer", "null"] },
+            "useragent": { "type": ["string", "null"] },
+            "br_name": { "type": ["string", "null"] },
+            "br_family": { "type": ["string", "null"] },
+            "br_version": { "type": ["string", "null"] },
+            "br_type": { "type": ["string", "null"] },
+            "br_renderengine": { "type": ["string", "null"] },
+            "br_lang": { "type": ["string", "null"] },
+            "br_features_pdf": { "type": ["integer", "null"] },
+            "br_features_flash": { "type": ["integer", "null"] },
+            "br_features_java": { "type": ["integer", "null"] },
+            "br_features_director": { "type": ["integer", "null"] },
+            "br_features_quicktime": { "type": ["integer", "null"] },
+            "br_features_realplayer": { "type": ["integer", "null"] },
+            "br_features_windowsmedia": { "type": ["integer", "null"] },
+            "br_features_gears": { "type": ["integer", "null"] },
+            "br_features_silverlight": { "type": ["integer", "null"] },
+            "br_cookies": { "type": ["integer", "null"] },
+            "br_colordepth": { "type": ["string", "null"] },
+            "br_viewwidth": { "type": ["integer", "null"] },
+            "br_viewheight": { "type": ["integer", "null"] },
+            "os_name": { "type": ["string", "null"] },
+            "os_family": { "type": ["string", "null"] },
+            "os_manufacturer": { "type": ["string", "null"] },
+            "os_timezone": { "type": ["string", "null"] },
+            "dvce_type": { "type": ["string", "null"] },
+            "dvce_ismobile": { "type": ["integer", "null"] },
+            "dvce_screenwidth": { "type": ["integer", "null"] },
+            "dvce_screenheight": { "type": ["integer", "null"] },
+            "doc_charset": { "type": ["string", "null"] },
+            "doc_width": { "type": ["integer", "null"] },
+            "doc_height": { "type": ["integer", "null"] },
+            "tr_currency": { "type": ["string", "null"] },
+            "tr_total_base": { "type": ["string", "null"] },
+            "tr_tax_base": { "type": ["string", "null"] },
+            "tr_shipping_base": { "type": ["string", "null"] },
+            "ti_currency": { "type": ["string", "null"] },
+            "ti_price_base": { "type": ["string", "null"] },
+            "base_currency": { "type": ["string", "null"] },
+            "geo_timezone": { "type": ["string", "null"] },
+            "mkt_clickid": { "type": ["string", "null"] },
+            "mkt_network": { "type": ["string", "null"] },
+            "etl_tags": { "type": ["string", "null"] },
+            "dvce_sent_tstamp": { "type": ["string", "null"] },
+            "refr_domain_userid": { "type": ["string", "null"] },
+            "refr_dvce_tstamp": { "type": ["string", "null"] },
+            "derived_contexts": { "type": ["string", "null"] },
+            "domain_sessionid": { "type": ["string", "null"] },
+            "derived_tstamp": { "type": ["string", "null"] },
+            "event_vendor": { "type": ["string", "null"] },
+            "event_name": { "type": ["string", "null"] },
+            "event_format": { "type": ["string", "null"] },
+            "event_version": { "type": ["string", "null"] },
+            "event_fingerprint": { "type": ["string", "null"] },
+            "true_tstamp": { "type": ["string", "null"] }
+          },
+          "additionalProperties": false
+        }
+      }
+    },
+    "processor": {
+      "type": "object",
+      "description": "Information about the piece of software responsible for the creation of schema violations",
+      "properties": {
+        "artifact": {
+          "type": "string",
+          "description": "Artifact responsible for the creation of schema violations",
+          "maxLength": 512
+        },
+        "version": {
+          "type": "string",
+          "description": "Version of the artifact responsible for the creation of schema violations",
+          "pattern": "^(\\d+\\.\\d+\\.\\d+.*)$",
+          "maxLength": 32
+        }
+      },
+      "required": [ "artifact", "version" ],
+      "additionalProperties": false
+    }
+  },
+  "required": [ "failure", "payload", "processor" ],
+  "additionalProperties": false
+}
