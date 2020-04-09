@@ -245,10 +245,7 @@
           "name",
           "conditions",
           "steps"
-        ],
-        "additionalProperties": {
-          "type": "array"
-        }
+        ]
       }
     }
   }
