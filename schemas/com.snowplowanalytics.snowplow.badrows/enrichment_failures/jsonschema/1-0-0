@@ -407,7 +407,7 @@
             "os_manufacturer": { "type": ["string", "null"] },
             "os_timezone": { "type": ["string", "null"] },
             "dvce_type": { "type": ["string", "null"] },
-            "dvce_ismobile": { "type": ["string", "null"] },
+            "dvce_ismobile": { "type": ["integer", "null"] },
             "dvce_screenwidth": { "type": ["integer", "null"] },
             "dvce_screenheight": { "type": ["integer", "null"] },
             "doc_charset": { "type": ["string", "null"] },
