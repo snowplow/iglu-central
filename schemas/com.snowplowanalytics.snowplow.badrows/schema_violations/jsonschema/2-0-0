@@ -5,7 +5,7 @@
     "vendor": "com.snowplowanalytics.snowplow.badrows",
     "name": "schema_violations",
     "format": "jsonschema",
-    "version": "1-0-0"
+    "version": "2-0-0"
   },
   "type": "object",
   "properties": {
@@ -236,8 +236,25 @@
               "maxLength": 16
             },
             "parameters": {
-              "type": "object",
-              "description": "Tracker protocol parameters"
+              "type": [ "array", "null" ],
+              "description": "Query string of the collector payload containing this event",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Name of the querystring parameter",
+                    "maxLength": 512
+                  },
+                  "value": {
+                    "type": [ "string", "null" ],
+                    "description": "Possible value for the querystring parameter",
+                    "maxLength": 512
+                  }
+                },
+                "required": [ "name", "value" ],
+                "additionalProperties": false
+              }
             },
             "contentType": {
               "type": [ "string", "null" ],
@@ -308,8 +325,8 @@
             "txn_id": { "type": ["string", "null"] },
             "name_tracker": { "type": ["string", "null"] },
             "v_tracker": { "type": ["string", "null"] },
-            "v_collector": { "type": "string" },
-            "v_etl": { "type": "string" },
+            "v_collector": { "type": ["string", "null"] },
+            "v_etl": { "type": ["string", "null"] },
             "user_id": { "type": ["string", "null"] },
             "user_ipaddress": { "type": ["string", "null"] },
             "user_fingerprint": { "type": ["string", "null"] },

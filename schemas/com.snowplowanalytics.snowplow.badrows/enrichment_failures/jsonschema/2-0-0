@@ -1,17 +1,17 @@
 {
   "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
-  "description": "Schema for a bad row resulting from schema violations",
+  "description": "Schema for a bad row resulting from enrichment failures",
   "self": {
     "vendor": "com.snowplowanalytics.snowplow.badrows",
-    "name": "schema_violations",
+    "name": "enrichment_failures",
     "format": "jsonschema",
-    "version": "1-0-0"
+    "version": "2-0-0"
   },
   "type": "object",
   "properties": {
     "failure": {
       "type": "object",
-      "description": "Information regarding the schema violations",
+      "description": "Information regarding the enrichment failures",
       "properties": {
         "timestamp": {
           "type": "string",
@@ -20,203 +20,210 @@
         },
         "messages": {
           "type": "array",
-          "description": "List of failure messages associated with the tracker protocol violations",
+          "description": "List of failure messages associated with the enrichment failures",
           "items": {
-            "anyOf": [
-              {
-                "type": "object",
-                "description": "String supplied for schema validation was not JSON",
-                "properties": {
-                  "field": {
-                    "type": "string",
-                    "description": "Field which ended up not being json",
-                    "maxLength": 64
-                  },
-                  "value": {
-                    "type": [ "string", "null" ],
-                    "description": "Stringified representation of the value which is not json"
-                  },
-                  "error": {
-                    "type": "string",
-                    "description": "Json parsing issue"
-                  }
-                },
-                "required": ["field", "error" ],
-                "additionalProperties": false
-              },
-              {
-                "type": "object",
-                "description": "Json supplied for schema validation was not self-describing",
-                "properties": {
-                  "json": {
-                    "description": "Supplied JSON which was not self-describing"
-                  },
-                  "error": {
-                    "type": "string",
-                    "description": "Issue which the json which makes it not self-describing",
-                    "enum": [ "INVALID_SCHEMAVER", "INVALID_IGLUURI", "INVALID_DATA_PAYLOAD", "INVALID_SCHEMA" ]
-                  }
-                },
-                "required": [ "json", "error" ],
-                "additionalProperties": false
-              },
-              {
-                "type": "object",
-                "description": "Supplied JSON does not match the associated schema criterion",
-                "properties": {
-                  "schemaKey": {
-                    "description": "Supplied schema key",
-                    "type": "string"
-                  },
-                  "schemaCriterion": {
-                    "type": "string",
-                    "description": "The schema criterion which was not respected"
-                  }
-                },
-                "required": [ "schemaKey", "schemaCriterion" ],
-                "additionalProperties": false
-              },
-              {
-                "type": "object",
-                "description": "Supplied JSON did not validate against its schema (or schema was not found)",
+            "type": "object",
+            "description": "Individual enrichment failure or null in case of validation",
+            "properties": {
+              "enrichment": {
+                "type": ["object", "null"],
+                "description": "Information needed to identify an enrichment",
                 "properties": {
                   "schemaKey": {
                     "type": "string",
-                    "description": "The iglu schema coordinates to validate against"
+                    "description": "The schema coordinates for this enrichment"
                   },
-                  "error": {
-                    "description": "Iglu client error",
-                    "anyOf": [
-                      {
-                        "description": "Resolution error - schema could not be found in the specified repositories, defined by ResolutionError in the Iglu Client",
-                        "properties": {
-                          "error": {
-                            "enum": ["ResolutionError"]
-                          },
-                          "lookupHistory": {
-                            "type": "array",
-                            "minItems": 1,
-                            "items": {
-                              "type": "object",
-                              "properties": {
-                                "repostitory": {
-                                  "type": "string",
-                                  "description": "Name of the repostitory as written in resolver.json"
-                                },
-                                "errors": {
-                                  "description": "Set of errors which happened for this repository",
-                                  "type": "array",
-                                  "minItems": 1,
-                                  "items": {
-                                    "type": "object",
-                                    "properties": {
-                                      "error": {
-                                        "description": "Type of error (NotFound does not contain a message)",
-                                        "enum": ["RepoFailure", "ClientFailure", "NotFound"]
-                                      },
-                                      "message": {
-                                        "description": "Optional message in case of ClientFailure or RepoFailure",
-                                        "type": "string",
-                                        "maxLength": 256
+                  "identifier": {
+                    "type": "string",
+                    "description": "Uniquely identifies the instance of of the enrichment which produced this failure",
+                    "maxLength": 256
+                  }
+                },
+                "required": [ "schemaKey", "identifier" ],
+                "additionalProperties": false
+              },
+              "message": {
+                "type": "object",
+                "description": "Information about the failure that happened for this enrichment",
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "description": "Error which was internal to the enrichment regarding its input data",
+                    "properties": {
+                      "field": {
+                        "type": "string",
+                        "description": "Field which did not meet the enrichment's expectations",
+                        "maxLength": 64
+                      },
+                      "value": {
+                        "type": [ "string", "null" ],
+                        "description": "Stringified representation of the value which did not meet expectations"
+                      },
+                      "expectation": {
+                        "type": "string",
+                        "description": "Expectation which was not met",
+                        "maxLength": 256
+                      }
+                    },
+                    "required": ["field", "expectation" ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "description": "Error which was external to the enrichment, e.g. a connection issue",
+                    "properties": {
+                      "error": {
+                        "type": "string",
+                        "description": "Error that occurred",
+                        "maxLength": 512
+                      }
+                    },
+                    "required": [ "error" ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "description": "Supplied JSON did not validate against its schema (or schema was not found)",
+                    "properties": {
+                      "schemaKey": {
+                        "type": "string",
+                        "description": "The iglu schema coordinates to validate against"
+                      },
+                      "error": {
+                        "description": "Iglu client error",
+                        "anyOf": [
+                          {
+                            "description": "Resolution error - schema could not be found in the specified repositories, defined by ResolutionError in the Iglu Client",
+                            "properties": {
+                              "error": {
+                                "enum": ["ResolutionError"]
+                              },
+                              "lookupHistory": {
+                                "type": "array",
+                                "minItems": 1,
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "repostitory": {
+                                      "type": "string",
+                                      "description": "Name of the repostitory as written in resolver.json"
+                                    },
+                                    "errors": {
+                                      "description": "Set of errors which happened for this repository",
+                                      "type": "array",
+                                      "minItems": 1,
+                                      "items": {
+                                        "type": "object",
+                                        "properties": {
+                                          "error": {
+                                            "description": "Type of error (NotFound does not contain a message)",
+                                            "enum": ["RepoFailure", "ClientFailure", "NotFound"]
+                                          },
+                                          "message": {
+                                            "description": "Optional message in case of ClientFailure or RepoFailure",
+                                            "type": "string",
+                                            "maxLength": 256
+                                          }
+                                        },
+                                        "required": ["error" ]
                                       }
                                     },
-                                    "required": ["error" ]
-                                  }
-                                },
-                                "attempts": {
-                                  "type": "integer",
-                                  "minimum": 0,
-                                  "description": "Number of attempts which have been made"
-                                },
-                                "lastAttempt": {
-                                  "type": "string",
-                                  "format": "date-time",
-                                  "description": "Timestamp of a last attempt being made"
+                                    "attempts": {
+                                      "type": "integer",
+                                      "minimum": 0,
+                                      "description": "Number of attempts which have been made"
+                                    },
+                                    "lastAttempt": {
+                                      "type": "string",
+                                      "format": "date-time",
+                                      "description": "Timestamp of a last attempt being made"
+                                    }
+                                  },
+                                  "required": ["repository", "errors", "attempts", "lastAttempt"]
                                 }
-                              },
-                              "required": ["repository", "errors", "attempts", "lastAttempt"]
-                            }
-                          }
-                        },
-                        "required": [ "error", "lookupHistory" ],
-                        "additionalProperties": false
-                      },
-                      {
-                        "description": "Data is invalid against resolved schema",
-                        "properties": {
-                          "error": {
-                            "enum": ["ValidationError"]
+                              }
+                            },
+                            "required": [ "error", "lookupHistory" ],
+                            "additionalProperties": false
                           },
-                          "dataReports": {
-                            "type": "array",
-                            "minItems": 1,
-                            "items": {
-                              "properties": {
-                                "message": {
-                                  "type": "string",
-                                  "description": "Human-readable message describing the issue with the schema"
-                                },
-                                "path": {
-                                  "type": ["string", "null"],
-                                  "description": "JSON Path to an issue in the faulty JSON datum"
-                                },
-                                "keyword": {
-                                  "type": ["string", "null"],
-                                  "description": "JSON Schema Keywrod caused invalidation"
-                                },
-                                "targets": {
-                                  "type": ["array", "null"]
-                                }
+                          {
+                            "description": "Data is invalid against resolved schema",
+                            "properties": {
+                              "error": {
+                                "enum": ["ValidationError"]
                               },
-                              "required": [ "path", "message", "keyword", "targets" ],
-                              "additionalProperties": false
-                            }
-                          }
-                        },
-                        "required": [ "dataReports" ],
-                        "additionalProperties": false
-                      },
-                      {
-                        "description": "Schema is invalid and cannot be used to validate an instance",
-                        "properties": {
-                          "error": {
-                            "enum": ["ValidationError"]
+                              "dataReports": {
+                                "type": "array",
+                                "minItems": 1,
+                                "items": {
+                                  "properties": {
+                                    "message": {
+                                      "type": "string",
+                                      "description": "Human-readable message describing the issue with the schema"
+                                    },
+                                    "path": {
+                                      "type": ["string", "null"],
+                                      "description": "JSON Path to an issue in the faulty JSON datum"
+                                    },
+                                    "keyword": {
+                                      "type": ["string", "null"],
+                                      "description": "JSON Schema Keywrod caused invalidation"
+                                    },
+                                    "targets": {
+                                      "type": ["array", "null"]
+                                    }
+                                  },
+                                  "required": [ "path", "message", "keyword", "targets" ],
+                                  "additionalProperties": false
+                                }
+                              }
+                            },
+                            "required": [ "dataReports" ],
+                            "additionalProperties": false
                           },
-                          "schemaIssues": {
-                            "description": "List of problems in resolved JSON schema",
-                            "type": "array",
-                            "minItems": 1,
-                            "items": {
-                              "type": "object",
-                              "properties": {
-                                "path": {
-                                  "type": "string",
-                                  "description": "JSON Path to an issue in the faulty JSON Schema"
-                                },
-                                "message": {
-                                  "type": "string",
-                                  "description": "Human-readable message describing the issue with the schema"
-                                }
+                          {
+                            "description": "Schema is invalid and cannot be used to validate an instance",
+                            "properties": {
+                              "error": {
+                                "enum": ["ValidationError"]
                               },
-                              "required": [ "path", "message" ],
-                              "additionalProperties": false
-                            }
+                              "schemaIssues": {
+                                "description": "List of problems in resolved JSON schema",
+                                "type": "array",
+                                "minItems": 1,
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "path": {
+                                      "type": "string",
+                                      "description": "JSON Path to an issue in the faulty JSON Schema"
+                                    },
+                                    "message": {
+                                      "type": "string",
+                                      "description": "Human-readable message describing the issue with the schema"
+                                    }
+                                  },
+                                  "required": [ "path", "message" ],
+                                  "additionalProperties": false
+                                }
+                              }
+                            },
+                            "required": [ "error" ],
+                            "additionalProperties": false
                           }
-                        },
-                        "required": [ "error" ],
-                        "additionalProperties": false
+                        ]
                       }
-                    ]
+                    },
+                    "additionalProperties": false
                   }
-                },
-                "additionalProperties": false
+                ]
               }
-            ]
+            },
+            "required": [ "enrichment", "message" ],
+            "additionalProperties": false
           }
         }
-      },
-      "required": [ "timestamp", "messages" ],
-      "additionalProperties": false
+      }
     },
     "payload": {
       "type": "object",
@@ -236,8 +243,25 @@
               "maxLength": 16
             },
             "parameters": {
-              "type": "object",
-              "description": "Tracker protocol parameters"
+              "type": [ "array", "null" ],
+              "description": "Query string of the collector payload containing this event",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Name of the querystring parameter",
+                    "maxLength": 512
+                  },
+                  "value": {
+                    "type": [ "string", "null" ],
+                    "description": "Possible value for the querystring parameter",
+                    "maxLength": 512
+                  }
+                },
+                "required": [ "name", "value" ],
+                "additionalProperties": false
+              }
             },
             "contentType": {
               "type": [ "string", "null" ],
@@ -308,8 +332,8 @@
             "txn_id": { "type": ["string", "null"] },
             "name_tracker": { "type": ["string", "null"] },
             "v_tracker": { "type": ["string", "null"] },
-            "v_collector": { "type": "string" },
-            "v_etl": { "type": "string" },
+            "v_collector": { "type": ["string", "null"] },
+            "v_etl": { "type": ["string", "null"] },
             "user_id": { "type": ["string", "null"] },
             "user_ipaddress": { "type": ["string", "null"] },
             "user_fingerprint": { "type": ["string", "null"] },
@@ -436,16 +460,16 @@
     },
     "processor": {
       "type": "object",
-      "description": "Information about the piece of software responsible for the creation of schema violations",
+      "description": "Information about the piece of software responsible for the creation of enrichment failures",
       "properties": {
         "artifact": {
           "type": "string",
-          "description": "Artifact responsible for the creation of schema violations",
+          "description": "Artifact responsible for the creation of enrichment failures",
           "maxLength": 512
         },
         "version": {
           "type": "string",
-          "description": "Version of the artifact responsible for the creation of schema violations",
+          "description": "Version of the artifact responsible for the creation of enrichment failures",
           "pattern": "^(\\d+\\.\\d+\\.\\d+.*)$",
           "maxLength": 32
         }
