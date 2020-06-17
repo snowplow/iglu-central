@@ -1,0 +1,35 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for the anonymous IP enrichment produced by Maxmind",
+    "self": {
+        "vendor": "com.maxmind",
+        "name": "anonymous_ip",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+
+    "type": "object",
+    "properties": {
+        "is_anonymous": {
+            "description": "True if the IP belongs to any sort of anonymous network."
+            "type": ["boolean", "null"]
+        },
+        "is_anonymous_vpn": {
+            "description": "True if the IP address is registered to an anonymous VPN provider. If a VPN provider does not register subnets under names associated with them, we will likely only flag their IP ranges using the is_hosting_provider flag."
+            "type": ["boolean", "null"]
+        },
+        "is_hosting_provider": {
+            "description": "True if the IP address belongs to a hosting or VPN provider (see description of is_anonymous_vpn).",
+            "type": ["boolean", "null"]
+        },
+        "is_public_proxy": {
+            "description": "True if the IP address belongs to a public prox.y",
+            "type": ["boolean", "null"]
+        },
+        "is_tor_exit_node": {
+            "description": "True if the IP address is a Tor exit node."
+            "type": ["boolean", "null"]
+        }
+    },
+    "additionalProperties": false
+}
