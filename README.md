@@ -35,7 +35,7 @@ Where `snowplow` can be replaced with your Github username if you forked the rep
 
 ## Copyright and license
 
-Iglu Central is copyright 2014-2019 Snowplow Analytics Ltd.
+Iglu Central is copyright 2014-2020 Snowplow Analytics Ltd.
 
 Licensed under the **[Apache License, Version 2.0][license]** (the "License");
 you may not use this software except in compliance with the License.
@@ -49,7 +49,7 @@ limitations under the License.
 [travis]: https://travis-ci.org/snowplow/iglu-central
 [travis-image]: https://travis-ci.org/snowplow/iglu-central.png?branch=master
 
-[release-image]: http://img.shields.io/badge/release-115-orange.svg?style=flat
+[release-image]: http://img.shields.io/badge/release-116-orange.svg?style=flat
 [releases]: https://github.com/snowplow/iglu-central/releases
 
 [license-image]: http://img.shields.io/badge/license-Apache--2-blue.svg?style=flat
