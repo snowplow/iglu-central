@@ -11,11 +11,11 @@
     "type": "object",
     "properties": {
         "is_anonymous": {
-            "description": "True if the IP belongs to any sort of anonymous network."
+            "description": "True if the IP belongs to any sort of anonymous network.",
             "type": ["boolean", "null"]
         },
         "is_anonymous_vpn": {
-            "description": "True if the IP address is registered to an anonymous VPN provider. If a VPN provider does not register subnets under names associated with them, we will likely only flag their IP ranges using the is_hosting_provider flag."
+            "description": "True if the IP address is registered to an anonymous VPN provider. If a VPN provider does not register subnets under names associated with them, we will likely only flag their IP ranges using the is_hosting_provider flag.",
             "type": ["boolean", "null"]
         },
         "is_hosting_provider": {
@@ -27,7 +27,7 @@
             "type": ["boolean", "null"]
         },
         "is_tor_exit_node": {
-            "description": "True if the IP address is a Tor exit node."
+            "description": "True if the IP address is a Tor exit node.",
             "type": ["boolean", "null"]
         }
     },
