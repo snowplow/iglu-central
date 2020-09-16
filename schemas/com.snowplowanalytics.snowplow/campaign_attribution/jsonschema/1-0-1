@@ -23,6 +23,7 @@
 			"type": "object",
 			"properties": {
 				"mapping": {
+					"type": ["string", "null"],
 					"enum": ["static", "script"]
 				},
 				"fields": {
