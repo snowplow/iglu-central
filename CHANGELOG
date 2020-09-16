@@ -1,3 +1,11 @@
+Release 118 (2020-09-17)
+------------------------
+Patch com.snowplowanalytics.snowplow/gdpr/jsonschema/1-0-0 (#1081)
+Patch com.snowplowanalytics.snowplow/campaign_attribution/jsonschema/1-0-1 (#1080)
+Patch com.snowplowanalytics.snowplow/application_error/jsonschema/1-0-2 (#1079)
+Add nl.basjes/yauaa_context/jsonschema/1-0-1 (#1077)
+Add com.snowplowanalytics.snowplow.storage/snowflake_config/jsonschema/1-0-3 (#1070)
+
 Release 117 (2020-07-22)
 ------------------------
 Fix com.maxmind/anonymous_ip/jsonschema/1-0-0 (#1065)
