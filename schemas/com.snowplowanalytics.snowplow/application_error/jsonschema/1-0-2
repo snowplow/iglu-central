@@ -11,6 +11,7 @@
   "type": "object",
   "properties": {
     "programmingLanguage": {
+      "type": "string",
       "enum": [
         "JAVA",
         "SCALA",
