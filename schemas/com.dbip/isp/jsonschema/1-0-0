@@ -1,0 +1,200 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for db-ip.com location isp dataset",
+  "self": {
+          "vendor": "com.dbip",
+          "name": "isp",
+          "format": "jsonschema",
+          "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "continent": {
+        "description": "The continent object",
+        "type": ["object","null"],        
+        "properties": {
+            "code": {
+                "type": ["string","null"],
+                "description": "The continent code e.g. EU",
+                "maxLength": 255
+            },        
+            "geoname_id": {
+                "description": "The continent geoname id",
+                "type": ["number","null"],
+                "minimum": 0,              
+                "maximum": 9223372036854775807
+            },
+            "names": {
+                "description": "The continent names",
+                "type": ["object","null"],        
+                    "properties": {        
+                            "en": {
+                                "type": ["string","null"],
+                                "description": "Continent name in english e.g. Europe",
+                                "maxLength": 255
+                            },
+                            "de": {
+                                "type": ["string","null"],
+                                "description": "Continent name in german",
+                                "maxLength": 255
+                            },
+                            "es": {
+                                "type": ["string","null"],
+                                "description": "Continent name in spanish",
+                                "maxLength": 255
+                            },
+                            "fa": {
+                                "type": ["string","null"],
+                                "description": "Continent name in farsi",
+                                "maxLength": 255
+                            },
+                            "fr": {
+                                "type": ["string","null"],
+                                "description": "Continent name in french",
+                                "maxLength": 255
+                            },
+                            "ja": {
+                                "type": ["string","null"],
+                                "description": "Continent name in japanese",
+                                "maxLength": 255
+                            },
+                            "ko": {
+                                "type": ["string","null"],
+                                "description": "Continent name in korean",
+                                "maxLength": 255
+                            },
+                            "pt-BR": {
+                                "type": ["string","null"],
+                                "description": "Continent name in portuguese",
+                                "maxLength": 255
+                            },
+                            "ru": {
+                                "type": ["string","null"],
+                                "description": "Continent name in russian",
+                                "maxLength": 255
+                            }
+                    }
+            }
+        }
+    },
+
+    "country": {
+        "description": "The country object",
+        "type": ["object","null"],        
+        "properties": {
+            "iso_code": {
+                "type": ["string","null"],
+                "description": "The country ISO code e.g. PT",
+                "maxLength": 255
+            },    
+            "is_in_european_union": {
+                "type": ["boolean","null"],
+                "description": "True if country is in European Union"
+            },              
+            "geoname_id": {
+                "description": "The country geoname id",
+                "type": ["number","null"],
+                "minimum": 0,              
+                "maximum": 2147483647
+            },
+            "names": {
+                "description": "The country names",
+                "type": ["object","null"],        
+                    "properties": {        
+                            "en": {
+                                "type": ["string","null"],
+                                "description": "Country name in english e.g. Portugal",
+                                "maxLength": 255
+                            },
+                            "de": {
+                                "type": ["string","null"],
+                                "description": "Country name in german",
+                                "maxLength": 255
+                            },
+                            "es": {
+                                "type": ["string","null"],
+                                "description": "Country name in spanish",
+                                "maxLength": 255
+                            },
+                            "fa": {
+                                "type": ["string","null"],
+                                "description": "Country name in farsi",
+                                "maxLength": 255
+                            },
+                            "fr": {
+                                "type": ["string","null"],
+                                "description": "Country name in french",
+                                "maxLength": 255
+                            },
+                            "ja": {
+                                "type": ["string","null"],
+                                "description": "Country name in japanese",
+                                "maxLength": 255
+                            },
+                            "ko": {
+                                "type": ["string","null"],
+                                "description": "Country name in korean",
+                                "maxLength": 255
+                            },
+                            "pt-BR": {
+                                "type": ["string","null"],
+                                "description": "Country name in portuguese",
+                                "maxLength": 255
+                            },
+                            "ru": {
+                                "type": ["string","null"],
+                                "description": "Country name in russian",
+                                "maxLength": 255
+                            }
+                    }
+            }
+        }
+    },
+
+    "traits": {
+        "description": "Traits",
+        "type": ["object","null"],        
+            "properties": {        
+                    "autonomous_system_number": {
+                        "type": ["number","null"],
+                        "description": "The autonomous system number",
+                        "minimum": 0,
+                        "maximum": 2147483647
+                    },
+                    "autonomous_system_organization": {
+                        "type": ["string","null"],
+                        "description": "AS organization name",
+                        "maxLength": 255
+                    },
+                    "connection_type": {
+                        "type": ["string","null"],
+                        "description": "Connection type e.g. Dialup,Cable/DSL,Cellular,Corporate",
+                        "maxLength": 255
+                    },
+                    "isp": {
+                        "type": ["string","null"],
+                        "description": "Internet Service Provider name",
+                        "maxLength": 255
+                    },
+                    "organization": {
+                        "type": ["string","null"],
+                        "description": "City name in french",
+                        "maxLength": 255
+                    },
+                    "ja": {
+                        "type": ["string","null"],
+                        "description": "City name in japanese",
+                        "maxLength": 255
+                    },
+                    "ko": {
+                        "type": ["string","null"],
+                        "description": "Organization name",
+                        "maxLength": 255
+                    }
+            }
+    }
+    
+  },
+  "minProperties": 1,
+  "additionalProperties": true
+}
