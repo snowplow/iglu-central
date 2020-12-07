@@ -1,0 +1,18 @@
+{
+    "jsonpaths": [
+        "$.schema.vendor",
+        "$.schema.name",
+        "$.schema.format",
+        "$.schema.version",
+        "$.hierarchy.rootId",
+        "$.hierarchy.rootTstamp",
+        "$.hierarchy.refRoot",
+        "$.hierarchy.refTree",
+        "$.hierarchy.refParent",
+        "$.data.is_anonymous",
+        "$.data.is_anonymous_vpn",
+        "$.data.is_hosting_provider",
+        "$.data.is_public_proxy",
+        "$.data.is_tor_exit_node"
+    ]
+}
