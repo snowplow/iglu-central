@@ -11,12 +11,19 @@
 	"type": "object",
 	"properties": {
 		"formId": {
-			"type": "string"
+			"description": "The id of the form",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 4096
 		},
 		"formClasses": {
+			"description": "An array of the classes on the form",
 			"type": "array",
 			"items": {
-				"type": "string"
+				"description": "A class on the form",
+				"type": "string",
+				"minLength": 0,
+				"maxLength": 4096
 			}
 		},
 		"elements": {
@@ -25,15 +32,25 @@
 				"type": "object",
 				"properties": {
 					"name": {
-						"type": "string"
+						"description": "The name of the element within the form",
+						"type": "string",
+						"minLength": 0,
+						"maxLength": 65535
 					},
 					"value": {
-						"type": ["string", "null"]
+						"description": "The value of the element when submitted",
+						"type": ["string", "null"],
+						"minLength": 0,
+						"maxLength": 65535
 					},
 					"nodeName": {
+						"description": "The node type of the element",
+						"type": "string",
 						"enum": ["INPUT", "TEXTAREA", "SELECT"]
 					},
 					"type": {
+						"description": "The type of input element",
+						"type": ["string", "null"],
 						"enum": ["button", "checkbox", "color", "date", "datetime", "datetime-local", "email", "file", "hidden", "image", "month", "number", "password", "radio", "range", "reset", "search", "submit", "tel", "text", "time", "url", "week"]
 					}
 				},
