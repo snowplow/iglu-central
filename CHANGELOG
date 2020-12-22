@@ -1,3 +1,13 @@
+Release 121 (2020-03-17)
+------------------------
+Add missing JSONPath and SQL files (#1088)
+Add com.snowplowanalytics.datamodeling/config/jsonschema/1-0-0 (#1094)
+Add com.snowplowanalytics.snowplow.storage/shredding_complete/jsonschema/1-0-0 (#1082)
+Patch com.snowplowanalytics.snowplow/submit_form/jsonschema/1-0-0 (#1092)
+Patch com.snowplowanalytics.snowplow/change_form/jsonschema/1-0-0 (#1091)
+Patch com.snowplowanalytics.snowplow/focus_form/jsonschema/1-0-0 (#1086)
+Infrastructure: replace Travis badge with GA badge in README (#1102)
+
 Release 120 (2021-02-08)
 ------------------------
 Infrastructure: fix continuous deployment (#1100)
