@@ -4,9 +4,9 @@ set -e
 
 tag=$1
 
-# Deployment is performed when $TRAVIS_TAG points to head of master.
-# Below is a workaround to check this condition, since Travis doesn't
-# fetch any reference object when a tag is pushed.
+echo "tag: ${tag}"
+
+# deploy only if tag points to master branch
 
 git clone https://github.com/snowplow/iglu-central.git tmp/iglu-central
 cd tmp/iglu-central/

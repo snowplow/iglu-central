@@ -5,7 +5,7 @@ function die() {
     echo "$@" 1>&2 ; exit 1;
 }
 
-source $TRAVIS_BUILD_DIR/ci/constants.sh
+source $GITHUB_WORKSPACE/.github/scripts/constants.sh
 
 master="snowplow-hosted-assets"
 master_region="eu-west-1"
@@ -37,4 +37,3 @@ echo "SYNCHRONIZING SCHEMAS TO Iglu Server mirror"
 echo "-------------------------------------------"
 
 java -jar ${IGLUCTL} static push schemas ${IGLU_SERVER_EU1_MIRROR} ${IGLU_SERVER_EU1_APIKEY} --public
-
