@@ -10,7 +10,7 @@ echo "tag: ${tag}"
 
 git clone https://github.com/snowplow/iglu-central.git tmp/iglu-central
 cd tmp/iglu-central/
-head_tags=$(git tag -l --points-at refs/heads/migrate-to-gh-actions)
+head_tags=$(git tag -l --points-at refs/remotes/origin/migrate-to-gh-actions)
 cd ../../
 rm -rf tmp
 
