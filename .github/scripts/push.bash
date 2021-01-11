@@ -25,9 +25,9 @@ do
     echo "SYNCHRONIZING JSONPATHS TO ${region}"
     echo "-------------------------------------"
     if [ $region == $master_region ]; then
-        aws s3 sync jsonpaths/ s3://${master}${jsonpath_upload_dir} --include "*.*" --region=${region}
+        aws s3 sync --dryrun jsonpaths/ s3://${master}${jsonpath_upload_dir} --include "*.*" --region=${region}
     else
-        aws s3 sync jsonpaths/ s3://${master}-${region}${jsonpath_upload_dir} --include "*.*" --region=${region}
+        aws s3 sync --dryrun jsonpaths/ s3://${master}-${region}${jsonpath_upload_dir} --include "*.*" --region=${region}
     fi
 done
 
@@ -36,4 +36,5 @@ echo "==========================================="
 echo "SYNCHRONIZING SCHEMAS TO Iglu Server mirror"
 echo "-------------------------------------------"
 
-java -jar ${IGLUCTL} static push schemas ${IGLU_SERVER_EU1_MIRROR} ${IGLU_SERVER_EU1_APIKEY} --public
+# java -jar ${IGLUCTL} static push schemas ${IGLU_SERVER_EU1_MIRROR} ${IGLU_SERVER_EU1_APIKEY} --public
+echo "java -jar ${IGLUCTL} static push schemas ${IGLU_SERVER_EU1_MIRROR} IGLU_SERVER_EU1_APIKEY --public"

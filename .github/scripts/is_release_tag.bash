@@ -10,7 +10,7 @@ echo "tag: ${tag}"
 
 git clone https://github.com/snowplow/iglu-central.git tmp/iglu-central
 cd tmp/iglu-central/
-head_tags=$(git tag -l --points-at refs/heads/master)
+head_tags=$(git tag -l --points-at refs/heads/migrate-to-gh-actions)
 cd ../../
 rm -rf tmp
 
@@ -23,9 +23,9 @@ do
 done
 
 if [ "$exist" == "true" ]; then
-    echo "Tag $tag points at master branch. Proceed to deploy..."
+    echo "Tag $tag points at migrate-to-gh-actions branch. Proceed to deploy..."
     exit 0
 else
-    echo "Tag $tag does not point at master branch. You need to push master before the tag. Aborting deploy..."
+    echo "Tag $tag does not point at migrate-to-gh-actions branch. You need to push master before the tag. Aborting deploy..."
     exit 1
 fi
