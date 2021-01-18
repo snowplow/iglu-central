@@ -5,7 +5,11 @@ function die() {
     echo "$@" 1>&2 ; exit 1;
 }
 
+# Constants
 source $GITHUB_WORKSPACE/.github/scripts/constants.sh
+
+# Required artifacts
+source $GITHUB_WORKSPACE/.github/scripts/requirements.sh
 
 master="snowplow-hosted-assets"
 master_region="eu-west-1"
@@ -31,9 +35,14 @@ do
     fi
 done
 
+echo "================================"
+echo "INSTALLING JSON SCHEMA VALIDATOR"
+echo "--------------------------------"
+
+install_igluctl
 
 echo "==========================================="
 echo "SYNCHRONIZING SCHEMAS TO Iglu Server mirror"
 echo "-------------------------------------------"
 
-java -jar ${IGLUCTL} static push schemas ${IGLU_SERVER_EU1_MIRROR} ${IGLU_SERVER_EU1_APIKEY} --public
+java -jar ${IGLUCTL} static push --public $GITHUB_WORKSPACE/schemas/ ${IGLU_SERVER_EU1_MIRROR} ${IGLU_SERVER_EU1_APIKEY} 
