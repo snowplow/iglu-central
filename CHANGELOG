@@ -1,3 +1,8 @@
+Release 119 (2021-01-14)
+------------------------
+Extend copyright notice to 2021 (#1098)
+Infrastructure: migrate to GitHub Actions (#1096)
+
 Release 118 (2020-09-17)
 ------------------------
 Patch com.snowplowanalytics.snowplow/gdpr/jsonschema/1-0-0 (#1081)

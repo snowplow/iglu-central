@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Lint
+        run: ./.github/scripts/lint.bash
+
+      - name: Dev mirror
+        env:
+          AWS_SHA_ACCESS_KEY_ID: ${{ secrets.AWS_SHA_ACCESS_KEY_ID }}
+          AWS_SHA_SECRET_ACCESS_KEY: ${{ secrets.AWS_SHA_SECRET_ACCESS_KEY }}
+        run: ./.github/scripts/dev_mirror_sync.bash

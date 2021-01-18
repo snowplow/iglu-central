@@ -1,0 +1,42 @@
+name: CD
+
+on:
+  push:
+    tags:
+      - 'r*'
+
+jobs:
+  cd:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Extract tag version from ref
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+
+      - name: is_release_tag check
+        id: tag_check
+        env:
+          RELEASE_TAG: ${{ steps.get_version.outputs.VERSION }}
+        run: |
+          ./.github/scripts/is_release_tag.bash $RELEASE_TAG
+          echo ::set-output name=exit_code::$?
+
+      - name: Debug is_release_tag check
+        env:
+          IS_RELEASE_TAG: ${{ steps.tag_check.outputs.exit_code }}
+        run: |
+          echo "is_release_tag: $IS_RELEASE_TAG"
+
+      - uses: BSFishy/pip-action@v1
+        if: steps.tag_check.outputs.exit_code == 0
+        with:
+          packages: awscli
+
+      - name: Deploy
+        if: steps.tag_check.outputs.exit_code == 0
+        env:
+          AWS_SHA_ACCESS_KEY_ID: ${{ secrets.AWS_SHA_ACCESS_KEY_ID }}
+          AWS_SHA_SECRET_ACCESS_KEY: ${{ secrets.AWS_SHA_SECRET_ACCESS_KEY }}
+        run: ./.github/scripts/push.bash

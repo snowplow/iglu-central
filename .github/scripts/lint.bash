@@ -2,7 +2,7 @@
 set -e
 
 # Constants
-source $TRAVIS_BUILD_DIR/ci/constants.sh
+source $GITHUB_WORKSPACE/.github/scripts/constants.sh
 
 # Go to parent dir of this script
 function cd_script_parent() {
@@ -34,5 +34,4 @@ echo "========================"
 echo "LINTING ALL JSON SCHEMAS"
 echo "------------------------"
 
-java -jar ${IGLUCTL} lint --skip-checks optionalNull,description,numericMinMax,stringLength,stringMaxLengthRange,rootObject "schemas/"
-
+java -jar ${IGLUCTL} lint --skip-checks optionalNull,description,numericMinMax,stringLength,stringMaxLengthRange,rootObject $GITHUB_WORKSPACE/schemas/
