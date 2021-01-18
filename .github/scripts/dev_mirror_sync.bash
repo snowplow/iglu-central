@@ -24,4 +24,4 @@ echo "=================================================="
 echo "SYNCHRONIZING SCHEMAS TO DEV MIRROR $REGISTRY_PATH"
 echo "--------------------------------------------------"
 
-java -jar ${IGLUCTL} static s3cp schemas/ $DEV_MIRROR_BUCKET --s3path "$GITHUB_HEAD_REF/" --region=us-east-1 --accessKeyId $AWS_SHA_ACCESS_KEY_ID --secretAccessKey $AWS_SHA_SECRET_ACCESS_KEY
+java -jar ${IGLUCTL} static s3cp $GITHUB_WORKSPACE/schemas/ $DEV_MIRROR_BUCKET --s3path "$GITHUB_HEAD_REF/" --region=us-east-1 --accessKeyId $AWS_SHA_ACCESS_KEY_ID --secretAccessKey $AWS_SHA_SECRET_ACCESS_KEY

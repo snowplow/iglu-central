@@ -4,31 +4,14 @@ set -e
 # Constants
 source $GITHUB_WORKSPACE/.github/scripts/constants.sh
 
-# Go to parent dir of this script
-function cd_script_parent() {
-    source="${BASH_SOURCE[0]}"
-    while [ -h "${source}" ] ; do source="$(readlink "${source}")"; done
-    dir="$( cd -P "$( dirname "${source}" )/.." && pwd )"
-    cd ${dir}
-}
-
-# Downloads and installs the full-fat XXX jarfile
-function install_validator() {
-    if [ ! -f ${IGLUCTL} ] ; then
-        wget ${VALIDATOR_URI} -P ${INSTALL_DIR}
-    fi
-    echo "Extract ${INSTALL_DIR}/${VALIDATOR_ZIP}"
-    unzip -j "${INSTALL_DIR}/${VALIDATOR_ZIP}" -d ${INSTALL_DIR}
-    echo "... done"
-}
-
-cd_script_parent
+# Required artifacts
+source $GITHUB_WORKSPACE/.github/scripts/requirements.sh
 
 echo "================================"
 echo "INSTALLING JSON SCHEMA VALIDATOR"
 echo "--------------------------------"
 
-install_validator
+install_igluctl
 
 echo "========================"
 echo "LINTING ALL JSON SCHEMAS"
