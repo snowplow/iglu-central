@@ -39,4 +39,5 @@ jobs:
         env:
           AWS_SHA_ACCESS_KEY_ID: ${{ secrets.AWS_SHA_ACCESS_KEY_ID }}
           AWS_SHA_SECRET_ACCESS_KEY: ${{ secrets.AWS_SHA_SECRET_ACCESS_KEY }}
+          IGLU_SERVER_EU1_APIKEY: ${{ secrets.IGLU_SERVER_EU1_APIKEY }}
         run: ./.github/scripts/push.bash
