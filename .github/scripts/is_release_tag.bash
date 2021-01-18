@@ -8,7 +8,7 @@ tag=$1
 
 git clone https://github.com/snowplow/iglu-central.git tmp/iglu-central
 cd tmp/iglu-central/
-head_tags=$(git tag -l --points-at refs/heads/master)
+head_tags=$(git tag -l --points-at refs/remotes/origin/fix-gh-actions)
 cd ../../
 rm -rf tmp
 
