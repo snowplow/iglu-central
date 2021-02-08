@@ -1,8 +1,7 @@
 # Igluctl
 INSTALL_DIR="/tmp"
-VALIDATOR_V="0.7.1"
-VALIDATOR_ZIP="igluctl_${VALIDATOR_V}.zip"
-VALIDATOR_URI="http://dl.bintray.com/snowplow/snowplow-generic/${VALIDATOR_ZIP}"
+VALIDATOR_V="0.7.2"
+VALIDATOR_URI="https://github.com/snowplow-incubator/igluctl/releases/download/${VALIDATOR_V}/igluctl"
 VALIDATOR_JAR="igluctl"
 IGLUCTL="${INSTALL_DIR}/${VALIDATOR_JAR}"
 
