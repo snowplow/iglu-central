@@ -131,9 +131,9 @@
                             "items": {
                               "type": "object",
                               "properties": {
-                                "repostitory": {
+                                "repository": {
                                   "type": "string",
-                                  "description": "Name of the repostitory as written in resolver.json"
+                                  "description": "Name of the repository as written in resolver.json"
                                 },
                                 "errors": {
                                   "description": "Set of errors which happened for this repository",
