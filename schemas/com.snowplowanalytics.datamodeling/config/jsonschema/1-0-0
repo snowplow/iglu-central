@@ -1,0 +1,102 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "self": {
+                "vendor": "com.snowplowanalytics.datamodeling",
+                "name": "config",
+                "version": "1-0-0",
+                "format": "jsonschema"
+        },
+        "type": "object",
+        "properties": {
+                "enabled": {
+                        "type": "boolean"
+                },
+                "lockType": {
+                        "type": "string",
+                        "enum": [
+                                "hard",
+                                "soft"
+                        ]
+                },
+                "storage": {
+                        "type": "string",
+                        "enum": [
+                                "Default",
+                                "BigQuery"
+                        ]
+                },
+                "playbooks": {
+                        "type": "array",
+                        "items": {
+                                "type": "object",
+                                "properties": {
+                                        "playbook": {
+                                                "type": "string",
+                                                "minLength": 1,
+                                                "maxLength": 256
+                                        },
+                                        "dependsOn": {
+                                                "type": "array",
+                                                "items": {
+                                                        "type": "string",
+                                                        "minLength": 1,
+                                                        "maxLength": 256
+                                                },
+                                                "minItems": 0,
+                                                "maxItems": 64
+                                        }
+                                },
+                                "required": [
+                                        "playbook",
+                                        "dependsOn"
+                                ],
+                                "additionalProperties": false
+                        },
+                        "minItems": 1,
+                        "maxItems": 64
+                },
+                "owners": {
+                        "type": ["array", "null"],
+                        "items": {
+                                "type": "object",
+                                "properties": {
+                                        "name": {
+                                                "type": "string",
+                                                "minLength": 1,
+                                                "maxLength": 256
+                                        },
+                                        "email": {
+                                                "type": "string",
+                                                "format": "email"
+                                        }
+                                },
+                                "required": [
+                                        "name",
+                                        "email"
+                                ],
+                                "additionalProperties": false
+                        },
+                        "minItems": 0,
+                        "maxItems": 64
+                },
+                "dagName": {
+                        "type": ["string", "null"],
+                        "minLength": 1,
+                        "maxLength": 256
+                },
+                "sqlRunner": {
+                        "type": ["string", "null"],
+                        "pattern": "^(0|[1-9][0-9]{0,1})\\.(0|[1-9][0-9]{0,1})\\.(0|[1-9][0-9]{0,1})(-rc[0-9]{1,2}){0,1}$"
+                },
+                "metadata": {
+                        "type": ["object", "null"]
+                }
+        },
+        "required": [
+                "enabled",
+                "lockType",
+                "storage",
+                "playbooks"
+        ],
+        "additionalProperties": false
+}

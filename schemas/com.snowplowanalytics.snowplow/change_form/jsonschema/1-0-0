@@ -11,25 +11,42 @@
 	"type": "object",
 	"properties": {
 		"formId": {
-			"type": "string"
+			"description": "The id of the form the element belongs to",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 4096
 		},
 		"elementId": {
-			"type": "string"
+			"description": "The id of the element that has just received focus",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 4096
 		},
 		"nodeName": {
+			"description": "The node type of the element",
+			"type": "string",
 			"enum": ["INPUT", "TEXTAREA", "SELECT"]
 		},
 		"type": {
+			"description": "The type of input element",
+			"type": ["string", "null"],
 			"enum": ["button", "checkbox", "color", "date", "datetime", "datetime-local", "email", "file", "hidden", "image", "month", "number", "password", "radio", "range", "reset", "search", "submit", "tel", "text", "time", "url", "week"]
 		},
 		"elementClasses": {
+			"description": "An array of the classes on the element",
 			"type": "array",
 			"items": {
-				"type": "string"
+				"description": "A class on the element",
+				"type": "string",
+				"minLength": 0,
+				"maxLength": 4096
 			}
 		},
 		"value": {
-			"type": ["string", "null"]
+			"description": "The value of the element when it gained focus",
+			"type": ["string", "null"],
+			"minLength": 0,
+			"maxLength": 65535
 		}
 	},
 	"required": ["formId", "elementId", "nodeName", "value"],
