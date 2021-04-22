@@ -1,0 +1,169 @@
+{
+  "$schema" : "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self" : {
+    "vendor" : "com.snowplowanalytics.mobile",
+    "name" : "remote_config",
+    "version" : "1-0-0",
+    "format" : "jsonschema"
+  },
+  "title": "Snowplow Mobile Trackers config file",
+  "description": "The configuration file for the Snowplow mobile trackers.",
+  "type": "object",
+  "properties": {
+    "formatVersion": {
+      "description": "Version string (SemVer format) that identifies the current schema.",
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9a-zA-Z.+\\-]+$"
+    },
+    "configurationVersion": {
+      "description": "Version number that identifier the current configuration. It has to be increased on each update.",
+      "type": "integer"
+    },
+    "configurationBundle": {
+      "description": "The list of configurations for each tracker to configure.",
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "namespace": {
+              "description": "The namespace string that identifies the single tracker.",
+              "type": "string"
+            },
+            "networkConfiguration": {
+              "description": "Represents the network communication configuration allowing the tracker to be able to send events to the Snowplow collector.",
+              "type": "object",
+              "properties": {
+                "endpoint": {
+                  "description": "URL of the collector that is going to receive the events tracked by the tracker. The URL can include the schema/protocol (e.g.: http://collector-url.com). In case the URL doesn’t include the schema/protocol, the HTTPS protocol is automatically selected.",
+                  "type": "string"
+                },
+                "method": {
+                  "description": "The method used to send the requests (GET or POST).",
+                  "enum": [ "get", "post" ]
+                }
+              },
+              "required": [
+                "endpoint"
+              ]
+            },
+            "trackerConfiguration": {
+              "description": "Represents the configuration of the tracker and the core tracker properties. The TrackerConfiguration can be used to setup the tracker behaviour indicating what should be tracked in term of automatic tracking and contexts/entities to track with the events.",
+              "type": "object",
+              "properties": {
+                "appId": {
+                  "description": "Identifer of the app.",
+                  "type": "string"
+                },
+                "devicePlatform": {
+                  "description": "It sets the device platform the tracker is running on.",
+                  "enum": [ "web", "mob", "pc", "srv", "app", "tv", "cnsl", "iot" ]
+                },
+                "logLevel": {
+                  "description": "It sets the log level of tracker logs.",
+                  "enum": [ "off", "error", "debug", "verbose" ]
+                },
+                "sessionContext": {
+                  "description": "Whether session context is sent with all the tracked events.",
+                  "type": "boolean"
+                },
+                "applicationContext": {
+                  "description": "Whether application context is sent with all the tracked events.",
+                  "type": "boolean"
+                },
+                "platformContext": {
+                  "description": "Whether mobile/platform context is sent with all the tracked events.",
+                  "type": "boolean"
+                },
+                "geoLocationContext": {
+                  "description": "Whether geo-location context is sent with all the tracked events.",
+                  "type": "boolean"
+                },
+                "screenContext": {
+                  "description": "Whether screen context is sent with all the tracked events.",
+                  "type": "boolean"
+                },
+                "screenViewAutotracking": {
+                  "description": "Whether enable automatic tracking of ScreenView events.",
+                  "type": "boolean"
+                },
+                "lifecycleAutotracking": {
+                  "description": "Whether enable automatic tracking of background and foreground transitions.",
+                  "type": "boolean"
+                },
+                "installAutotracking": {
+                  "description": "Whether enable automatic tracking of install event.",
+                  "type": "boolean"
+                },
+                "exceptionAutotracking": {
+                  "description": "Whether enable crash reporting.",
+                  "type": "boolean"
+                },
+                "diagnosticAutotracking": {
+                  "description": "Whether enable tracker diagnostic.",
+                  "type": "boolean"
+                }
+              }
+            },
+            "subjectConfiguration": {
+              "description": "Represents the configuration of the subject. The SubjectConfiguration can be used to setup the tracker with the basic information about the user and the app which will be attached on all the events as contexts.",
+              "type": "object",
+              "properties": {
+                "userId": {
+                  "description": "The custom user identifier.",
+                  "type": "string"
+                },
+                "networkUserId": {
+                  "description": "The custom network user identifier.",
+                  "type": "string"
+                },
+                "domainUserId": {
+                  "description": "The custom domain user identifier.",
+                  "type": "string"
+                },
+                "useragent": {
+                  "description": "The custom user-agent. It overrides the user-agent used by default.",
+                  "type": "string"
+                },
+                "ipAddress": {
+                  "description": "The IP address (not automatically set).",
+                  "type": "string"
+                },
+                "timezone": {
+                  "description": "Override the timezone string set by the tracker.",
+                  "type": "string"
+                },
+                "language": {
+                  "description": "Override the language string set by the tracker.",
+                  "type": "string"
+                }
+              }
+            },
+            "sessionConfiguration": {
+              "description": "Represents the configuration of a Session object which gets appended to each event sent from the Tracker and changes based on the timeout set for the inactivity of app when in foreground or background.",
+              "type": "object",
+              "properties": {
+                "backgroundTimeout": {
+                  "description": "The amount of time that can elapse before the session id is updated while the app is in the background.",
+                  "type": "integer"
+                },
+                "foregroundTimeout": {
+                  "description": "The amount of time that can elapse before the session id is updated while the app is in the foreground.",
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "required": [
+            "namespace"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "formatVersion",
+    "configurationVersion",
+    "configurationBundle"
+  ]
+}
