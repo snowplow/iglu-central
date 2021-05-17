@@ -154,7 +154,6 @@
     }
   },
   "required": [
-    "formatVersion",
     "configurationVersion",
     "configurationBundle"
   ]
