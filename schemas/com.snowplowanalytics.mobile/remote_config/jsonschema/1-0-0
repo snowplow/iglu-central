@@ -10,8 +10,9 @@
   "type": "object",
   "properties": {
     "configurationVersion": {
-      "description": "Version number that identifier the current configuration. It has to be increased on each update.",
-      "type": "integer"
+      "description": "Version number that identifies the current configuration. It has to be increased on each update.",
+      "type": "integer",
+      "minimum": 0
     },
     "configurationBundle": {
       "description": "The list of configurations for each tracker to configure.",
@@ -45,7 +46,7 @@
             "type": "object",
             "properties": {
               "appId": {
-                "description": "Identifer of the app.",
+                "description": "Identifier of the app.",
                 "type": "string"
               },
               "devicePlatform": {
@@ -138,11 +139,13 @@
             "properties": {
               "backgroundTimeout": {
                 "description": "The amount of time that can elapse before the session id is updated while the app is in the background.",
-                "type": "integer"
+                "type": "integer",
+                "minimum": 0
               },
               "foregroundTimeout": {
                 "description": "The amount of time that can elapse before the session id is updated while the app is in the foreground.",
-                "type": "integer"
+                "type": "integer",
+                "minimum": 0
               }
             }
           }
