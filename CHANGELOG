@@ -1,3 +1,7 @@
+Release 123 (2021-06-17)
+------------------------
+Add com.snowplowanalytics.mobile/remote_config/jsonschema/1-0-0 (close #1109)
+
 Release 122 (2021-05-05)
 ------------------------
 Add nl.basjes/yauaa_context/jsonschema/1-0-2 (#1107)
