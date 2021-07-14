@@ -1,3 +1,7 @@
+Release 125 (2021-07-14)
+------------------------
+Export Iglu Server Mirror apikey in Github actions (#1122)
+
 Release 124 (2021-07-13)
 ------------------------
 Add secondary production Iglu Server mirror for Europe (#1120)
