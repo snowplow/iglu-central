@@ -1,3 +1,7 @@
+Release 126 (2021-08-23)
+------------------------
+Add com.snowplowanalytics.monitoring.batch/alert/jsonschema/1-0-0 (#1124)
+
 Release 125 (2021-07-14)
 ------------------------
 Export Iglu Server Mirror apikey in Github actions (#1122)

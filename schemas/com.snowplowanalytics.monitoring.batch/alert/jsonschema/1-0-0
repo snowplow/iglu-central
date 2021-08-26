@@ -1,0 +1,47 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Webhook payload describing an alert coming from RDB Loader",
+  "self": {
+    "vendor": "com.snowplowanalytics.monitoring.batch",
+    "name": "alert",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "base": {
+      "description": "A folder that caused an alert",
+      "type": ["string", "null"],
+      "format": "uri",
+      "maxLength": 1024
+    },
+    "application": {
+      "type": "string",
+      "maxLength": 64,
+      "description": "Application's name and version"
+    },
+    "message": {
+      "description": "Free-form message describing the problem",
+      "maxLength": 4096,
+      "type": "string"
+    },
+    "severity": {
+      "description": "Severity level of the alarm",
+      "enum": ["INFO", "WARNING", "ERROR"]
+    },
+    "group": {
+      "description": "Arbitrary string representing an entity several alerts can be grouped by",
+      "type": ["string", "null"],
+      "maxLength": 1024
+    },
+    "tags": {
+      "description": "Set of key value pairs providing additional information",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "required": ["application", "message", "severity", "tags"],
+  "additionalProperties": false
+}
