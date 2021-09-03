@@ -1,0 +1,25 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Represents a deep-link received in the app.",
+	"self": {
+		"vendor": "com.snowplowanalytics.mobile",
+		"name": "deep_link_received",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+	"type": "object",
+	"properties": {
+		"url": {
+			"type": "string",
+			"description": "URL in the received deep-link",
+			"maxLength": 255
+		},
+		"referrer": {
+			"type": "string",
+			"description": "Referrer URL, source of this deep-link",
+			"maxLength": 255
+		}
+	},
+	"required": ["url"],
+	"additionalProperties": false
+}
