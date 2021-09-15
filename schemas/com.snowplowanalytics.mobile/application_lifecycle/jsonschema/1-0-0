@@ -12,8 +12,7 @@
   "properties": {
     "isVisible": {
       "description": "Indicates if the app is in foreground state (true) or background state (false)",
-      "type": "boolean",
-      "default": true
+      "type": "boolean"
     },
     "index": {
       "description": "Represents the foreground index or background index (tracked with com.snowplowanalytics.snowplow application_foreground and application_background events.",
