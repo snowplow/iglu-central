@@ -12,11 +12,13 @@
 		"url": {
 			"type": "string",
 			"description": "URL in the received deep-link",
+			"format": "uri",
 			"maxLength": 4096
 		},
 		"referrer": {
 			"type": "string",
 			"description": "Referrer URL, source of this deep-link",
+			"format": "uri",
 			"maxLength": 4096
 		}
 	},
