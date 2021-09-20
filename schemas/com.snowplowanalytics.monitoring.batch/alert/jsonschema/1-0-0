@@ -36,10 +36,7 @@
     },
     "tags": {
       "description": "Set of key value pairs providing additional information",
-      "type": "object",
-      "additionalProperties": {
-        "type": "string"
-      }
+      "type": "object"
     }
   },
   "required": ["application", "message", "severity", "tags"],
