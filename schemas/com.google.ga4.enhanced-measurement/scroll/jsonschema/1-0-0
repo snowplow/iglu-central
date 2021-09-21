@@ -1,0 +1,13 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "self": {
+                "vendor": "com.google.ga4.enhanced-measurement",
+                "name": "scroll",
+                "version": "1-0-0",
+                "format": "jsonschema"
+        },
+        "description": "A scroll GA4 enhanced-measurement event.",
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+}
