@@ -1,0 +1,19 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "self": {
+                "vendor": "com.google.ga4.enhanced-measurement",
+                "name": "view_search_results",
+                "version": "1-0-0",
+                "format": "jsonschema"
+        },
+        "description": "A view_search_results GA4 enhanced-measurement event.",
+        "type": "object",
+        "properties": {
+                "search_term": {
+                        "description": "The term that was searched for.",
+                        "type": "string",
+                        "maxLength": 4096
+                }
+        },
+        "additionalProperties": false
+}
