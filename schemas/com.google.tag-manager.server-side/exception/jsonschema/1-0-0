@@ -1,0 +1,24 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "self": {
+                "vendor": "com.google.tag-manager.server-side",
+                "name": "exception",
+                "version": "1-0-0",
+                "format": "jsonschema"
+        },
+        "description": "An exception GTM server-side event.",
+        "type": "object",
+        "properties": {
+                "description": {
+                        "description": "The description of the exception that occurred.",
+                        "type": ["string", "null"],
+                        "maxLength": 4096
+                },
+                "fatal": {
+                        "description": "Whether or not the exception was a fatal one.",
+                        "type": ["boolean", "null"]
+                }
+
+        },
+        "additionalProperties": false
+}
