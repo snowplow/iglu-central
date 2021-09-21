@@ -1,0 +1,25 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "self": {
+                "vendor": "com.google.tag-manager.server-side",
+                "name": "generate_lead",
+                "version": "1-0-0",
+                "format": "jsonschema"
+        },
+        "description": "A generate_lead GTM server-side event.",
+        "type": "object",
+        "properties": {
+                "currency": {
+                        "description": "Currency of the items associated with the event, in 3-letter ISO 4217 format. Is required, if value is set.",
+                        "type": ["string", "null"],
+                        "minLength": 3,
+                        "maxLength": 3
+                },
+                "value": {
+                        "description": "The monetary value of the event.",
+                        "type": ["number", "null"],
+                        "minimum": 0
+                }
+        },
+        "additionalProperties": false
+}
