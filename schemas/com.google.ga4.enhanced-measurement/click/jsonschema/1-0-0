@@ -1,0 +1,39 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "self": {
+                "vendor": "com.google.ga4.enhanced-measurement",
+                "name": "click",
+                "version": "1-0-0",
+                "format": "jsonschema"
+        },
+        "description": "A click GA4 enhanced-measurement event.",
+        "type": "object",
+        "properties": {
+                "link_classes": {
+                        "description": "The classes of the link element.",
+                        "type": ["string", "null"],
+                        "maxLength": 4096
+                },
+                "link_domain": {
+                        "description": "The link domain.",
+                        "type": ["string", "null"],
+                        "maxLength": 4096
+                },
+                "link_id": {
+                        "description": "The link ID.",
+                        "type": ["string", "null"],
+                        "maxLength": 500
+                },
+                "link_url": {
+                        "description": "The link url.",
+                        "type": ["string", "null"],
+                        "format": "uri",
+                        "maxLength": 4096
+                },
+                "outbound": {
+                        "description": "Whether the link is outbound.",
+                        "type": ["boolean", "null"]
+                }
+        },
+        "additionalProperties": false
+}
