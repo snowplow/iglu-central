@@ -1,0 +1,66 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "self": {
+                "vendor": "com.google.tag-manager.server-side",
+                "name": "user_data",
+                "version": "1-0-0",
+                "format": "jsonschema"
+        },
+        "description": "The user_data GTM server-side context.",
+        "type": "object",
+        "properties": {
+                "email_address": {
+                        "description": "Email address of the user.",
+                        "type": ["string", "null"],
+                        "maxLength": 256
+                },
+                "phone_number": {
+                        "description": "Phone number of the user.",
+                        "type": ["string", "null"],
+                        "maxLength": 64
+                },
+                "address": {
+                        "description": "Address of the user.",
+                        "type": ["object", "null"],
+                        "properties": {
+                                "first_name": {
+                                        "description": "First name of the user.",
+                                        "type": ["string", "null"],
+                                        "maxLength": 4096
+                                },
+                                "last_name": {
+                                        "description": "Last name of the user.",
+                                        "type": ["string", "null"],
+                                        "maxLength": 4096
+                                },
+                                "street": {
+                                        "description": "Street and number for the address of the user.",
+                                        "type": ["string", "null"],
+                                        "maxLength": 4096
+                                },
+                                "city": {
+                                        "description": "City for the address of the user.",
+                                        "type": ["string", "null"],
+                                        "maxLength": 4096
+                                },
+                                "region": {
+                                        "description": "State or territory for the address of the user.",
+                                        "type": ["string", "null"],
+                                        "maxLength": 4096
+                                },
+                                "postal_code": {
+                                        "description": "Postal code for the address of the user.",
+                                        "type": ["string", "null"],
+                                        "maxLength": 4096
+                                },
+                                "country": {
+                                        "description": "Country code for the address of the user.",
+                                        "type": ["string", "null"],
+                                        "maxLength": 4096
+                                }
+                        },
+                        "additionalProperties": false
+                }
+        },
+        "additionalProperties": false
+}
