@@ -1,0 +1,143 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for a local or remote push notification",
+    "self": {
+        "vendor": "com.snowplowanalytics.mobile",
+        "name": "message_notification",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "title": {
+            "description": "The notification's title.",
+            "type": "string",
+            "maxLength": 1024
+        },
+        "body": {
+            "description": "The notification's body.",
+            "type": "string",
+            "maxLength": 4096
+        },
+        "trigger": {
+            "description": "The trigger that raised the notification message.",
+            "type": "string",
+            "enum": ["push", "location", "calendar", "timeInterval", "other"]
+        },
+        "notificationTimestamp": {
+            "description": "The time when the event of the notification occurred.",
+            "type": ["string", "null"],
+            "format": "date-time"
+        },
+        "sound": {
+            "description": "The sound played when the device receives the notification.",
+            "type": ["string", "null"],
+            "maxLength": 1024
+        },
+        "action": {
+            "description": "The action associated with the notification.",
+            "type": ["string", "null"],
+            "maxLength": 1024
+        },
+        "bodyLocKey": {
+            "description": "The key to the body string in the app's string resources to use to localize the body text to the user's current localization.",
+            "type": ["string", "null"],
+            "maxLength": 1024
+        },
+        "bodyLocArgs": {
+            "description": "Variable string values to be used in place of the format specifiers in bodyLocArgs to use to localize the body text to the user's current localization.",
+            "type": ["array", "null"],
+            "items": {
+                "description": "Item of bodyLocArgs.",
+                "type": ["string", "null"],
+                "maxLength": 1024
+            },
+            "minItems": 1
+        },
+        "titleLocKey": {
+            "description": "The key to the title string in the app's string resources to use to localize the title text to the user's current localization.",
+            "type": ["string", "null"],
+            "maxLength": 1024
+        },
+        "titleLocArgs": {
+            "description": "Variable string values to be used in place of the format specifiers in titleLocArgs to use to localize the title text to the user's current localization.",
+            "type": ["array", "null"],
+            "items": {
+                "description": "Item of titleLocArgs.",
+                "type": ["string", "null"],
+                "maxLength": 1024
+            },
+            "minItems": 1
+        },
+        "group": {
+            "description": "The group which this notification is part of.",
+            "type": ["string", "null"],
+            "maxLength": 1024
+        },
+        "category": {
+            "description": "The category associated to the notification.",
+            "type": ["string", "null"],
+            "maxLength": 1024
+        },
+        "notificationCount": {
+            "description": "The number of items this notification represents. It's the badge number on iOS.",
+            "type": ["integer", "null"],
+            "minimum": 0,
+            "maximum": 10000
+        },
+        "subtitle": {
+            "description": "The notification's subtitle (iOS only).",
+            "type": ["string", "null"],
+            "maxLength": 1024
+        },
+        "contentAvailable": {
+            "description": "Indicates whether the application is notified of the delivery of the notification. When true the app is woken up (iOS only).",
+            "type": ["boolean", "null"]
+        },
+        "threadIdentifier": {
+            "description": "An identifier similar to 'group' but usable for different purposes (iOS only).",
+            "type": ["string", "null"],
+            "maxLength": 1024
+        },
+        "icon": {
+            "description": "The icon associated to the notification (Android only).",
+            "type": ["string", "null"],
+            "maxLength": 1024
+        },
+        "tag": {
+            "description": "An identifier similar to 'group' but usable for different purposes (Android only).",
+            "type": ["string", "null"],
+            "maxLength": 1024
+        },
+        "attachments": {
+            "description": "Attachments added to the notification (they can be part of the 'data' field).",
+            "type": ["array", "null"],
+            "items": {
+                "description": "Attachment.",
+                "type": "object",
+                "properties": {
+                    "identifier": {
+                        "description": "The identifier of the attachment.",
+                        "type": "string",
+                        "maxLength": 1024
+                    },
+                    "url": {
+                        "description": "The url of the attachment.",
+                        "type": "string",
+                        "format": "uri",
+                        "maxLength": 1024
+                    },
+                    "type": {
+                        "description": "The type of attachment.",
+                        "type": "string",
+                        "maxLength": 1024
+                    }
+                },
+                "required": ["identifier", "url", "type"],
+                "additionalProperties": false
+            }
+        }
+    },
+    "required": ["title", "body", "trigger"],
+    "additionalProperties": false
+}
