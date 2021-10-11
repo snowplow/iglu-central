@@ -7,7 +7,6 @@
         "format": "jsonschema",
         "version": "1-0-0"
     },
-
     "type": "object",
     "properties": {
         "tag": {
