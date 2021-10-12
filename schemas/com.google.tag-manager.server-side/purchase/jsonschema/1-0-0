@@ -1,0 +1,161 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "self": {
+                "vendor": "com.google.tag-manager.server-side",
+                "name": "purchase",
+                "version": "1-0-0",
+                "format": "jsonschema"
+        },
+        "description": "A purchase GTM server-side event.",
+        "type": "object",
+        "properties": {
+                "currency": {
+                        "description": "Currency of the items associated with the event, in 3-letter ISO 4217 format. Is required, if value is set.",
+                        "type": ["string", "null"],
+                        "minLength": 3,
+                        "maxLength": 3
+                },
+                "transaction_id": {
+                        "description": "The unique identifier of a transaction.",
+                        "type": "string",
+                        "maxLength": 500
+                },
+                "value": {
+                        "description": "The monetary value of the event.",
+                        "type": ["number", "null"],
+                        "minimum": 0
+                },
+                "affiliation": {
+                        "description": "A product affiliation to designate a supplying company or brick and mortar store location.",
+                        "type": ["string", "null"],
+                        "maxLength": 4096
+                },
+                "coupon": {
+                        "description": "The coupon name or code associated with the event.",
+                        "type": ["string", "null"],
+                        "maxLength": 4096
+                },
+                "shipping": {
+                        "description": "Shipping cost associated with a transaction.",
+                        "type": ["number", "null"],
+                        "minimum": 0
+                },
+                "tax": {
+                        "description": "Tax cost associated with a transaction.",
+                        "type": ["number", "null"],
+                        "minimum": 0
+                },
+                "items": {
+                        "description": "The items for the event.",
+                        "type": "array",
+                        "items": {
+                                "description": "An item object.",
+                                "type": "object",
+                                "properties": {
+                                        "item_id": {
+                                                "description": "The ID of the item.",
+                                                "type": ["string", "null"],
+                                                "maxLength": 500
+                                        },
+                                        "item_name": {
+                                                "description": "The name of the item.",
+                                                "type": ["string", "null"],
+                                                "maxLength": 500
+                                        },
+                                        "affiliation": {
+                                                "description": "A product affiliation to designate a supplying company or brick and mortar store location",
+                                                "type": ["string", "null"],
+                                                "maxLength": 4096
+                                        },
+                                        "coupon": {
+                                                "description": "The coupon name or code associated with the item.",
+                                                "type": ["string", "null"],
+                                                "maxLength": 4096
+                                        },
+                                        "currency": {
+                                                "description": "The currency, in 3-letter ISO 4217 format.",
+                                                "type": ["string", "null"],
+                                                "minLength": 3,
+                                                "maxLength": 3
+                                        },
+                                        "discount": {
+                                                "description": "The monetary discount value associated with the item.",
+                                                "type": ["number", "null"],
+                                                "minimum": 0
+                                        },
+                                        "index": {
+                                                "description": "The index of the item in a list.",
+                                                "type": ["integer", "null"],
+                                                "minimum": 0
+                                        },
+                                        "item_brand": {
+                                                "description": "The brand of the item.",
+                                                "type": ["string", "null"],
+                                                "maxLength": 4096
+                                        },
+                                        "item_category": {
+                                                "description": "The category of the item.",
+                                                "type": ["string", "null"],
+                                                "maxLength": 4096
+                                        },
+                                        "item_category2": {
+                                                "description": "The second category hierarchy or additional taxonomy for the item.",
+                                                "type": ["string", "null"],
+                                                "maxLength": 4096
+                                        },
+                                        "item_category3": {
+                                                "description": "The third category hierarchy or additional taxonomy for the item.",
+                                                "type": ["string", "null"],
+                                                "maxLength": 4096
+                                        },
+                                        "item_category4": {
+                                                "description": "The fourth category hierarchy or additional taxonomy for the item.",
+                                                "type": ["string", "null"],
+                                                "maxLength": 4096
+                                        },
+                                        "item_category5": {
+                                                "description": "The fifth category hierarchy or additional taxonomy for the item.",
+                                                "type": ["string", "null"],
+                                                "maxLength": 4096
+                                        },
+                                        "item_list_id": {
+                                                "description": "The ID of the list in which the item was presented to the user.",
+                                                "type": ["string", "null"],
+                                                "maxLength": 4096
+                                        },
+                                        "item_list_name": {
+                                                "description": "The name of the list in which the item was presented to the user.",
+                                                "type": ["string", "null"],
+                                                "maxLength": 4096
+                                        },
+                                        "item_variant": {
+                                                "description": "The item variant or unique code or description for additional item details or options.",
+                                                "type": ["string", "null"],
+                                                "maxLength": 4096
+                                        },
+                                        "location_id": {
+                                                "description": "The location associated with the item.",
+                                                "type": ["string", "null"],
+                                                "maxLength": 4096
+                                        },
+                                        "price": {
+                                                "description": "The monetary price of the item, in units of the specified currency parameter.",
+                                                "type": ["number", "null"],
+                                                "minimum": 0
+                                        },
+                                        "quantity": {
+                                                "description": "Item quantity.",
+                                                "type": ["integer", "null"],
+                                                "minimum": 0
+                                        }
+                                },
+                                "additionalProperties": false
+                        }
+                }
+        },
+        "required": [
+                "transaction_id",
+                "items"
+        ],
+        "additionalProperties": false
+}

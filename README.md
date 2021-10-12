@@ -49,7 +49,7 @@ limitations under the License.
 [cd]: https://github.com/snowplow/iglu-central/actions?query=workflow%3ACI
 [cd-image]: https://github.com/snowplow/iglu-central/workflows/CI/badge.svg
 
-[release-image]: http://img.shields.io/badge/release-127-orange.svg?style=flat
+[release-image]: http://img.shields.io/badge/release-128-orange.svg?style=flat
 [releases]: https://github.com/snowplow/iglu-central/releases
 
 [license-image]: http://img.shields.io/badge/license-Apache--2-blue.svg?style=flat

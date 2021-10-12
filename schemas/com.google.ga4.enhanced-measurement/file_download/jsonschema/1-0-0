@@ -1,0 +1,50 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "self": {
+                "vendor": "com.google.ga4.enhanced-measurement",
+                "name": "file_download",
+                "version": "1-0-0",
+                "format": "jsonschema"
+        },
+        "description": "A file_download GA4 enhanced-measurement event.",
+        "type": "object",
+        "properties": {
+                "file_extention": {
+                        "description": "The extention of the file downloaded.",
+                        "type": ["string", "null"],
+                        "maxLength": 16
+                },
+                "file_name": {
+                        "description": "The file name.",
+                        "type": ["string", "null"],
+                        "maxLength": 500
+                },
+                "link_classes": {
+                        "description": "The classes of the file element.",
+                        "type": ["string", "null"],
+                        "maxLength": 4096
+                },
+                "link_domain": {
+                        "description": "The link domain.",
+                        "type": ["string", "null"],
+                        "maxLength": 4096
+                },
+                "link_id": {
+                        "description": "The link ID.",
+                        "type": ["string", "null"],
+                        "maxLength": 500
+                },
+                "link_text": {
+                        "description": "The link text.",
+                        "type": ["string", "null"],
+                        "maxLength": 4096
+                },
+                "link_url": {
+                        "description": "The link url.",
+                        "type": ["string", "null"],
+                        "format": "uri",
+                        "maxLength": 4096
+                }
+        },
+        "additionalProperties": false
+}

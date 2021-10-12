@@ -1,0 +1,24 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "self": {
+                "vendor": "com.google.tag-manager.server-side",
+                "name": "select_content",
+                "version": "1-0-0",
+                "format": "jsonschema"
+        },
+        "description": "A select_content GTM server-side event.",
+        "type": "object",
+        "properties": {
+                "content_type": {
+                        "description": "The type of selected content.",
+                        "type": ["string", "null"],
+                        "maxLength": 4096
+                },
+                "item_id": {
+                        "description": "An identifier for the item that was selected.",
+                        "type": ["string", "null"],
+                        "maxLength": 500
+                }
+        },
+        "additionalProperties": false
+}

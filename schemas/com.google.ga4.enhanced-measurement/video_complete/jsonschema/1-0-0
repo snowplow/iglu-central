@@ -1,0 +1,50 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "self": {
+                "vendor": "com.google.ga4.enhanced-measurement",
+                "name": "video_complete",
+                "version": "1-0-0",
+                "format": "jsonschema"
+        },
+        "description": "A video_complete GA4 enhanced-measurement event.",
+        "type": "object",
+        "properties": {
+                "video_current_time": {
+                        "description": "The current time of the video in seconds.",
+                        "type": ["integer", "null"],
+                        "minimum": 0
+                },
+                "video_duration": {
+                        "description": "The video duration in seconds.",
+                        "type": ["integer", "null"],
+                        "minimum": 0
+                },
+                "video_percent": {
+                        "description": "The percentage of video watched.",
+                        "type": ["number", "null"],
+                        "minimum": 0,
+                        "maximum": 100
+                },
+                "video_provider": {
+                        "description": "The video provider.",
+                        "type": ["string", "null"],
+                        "maxLength": 4096
+                },
+                "video_title": {
+                        "description": "The video title.",
+                        "type": ["string", "null"],
+                        "maxLength": 4096
+                },
+                "video_url": {
+                        "description": "The video url.",
+                        "type": ["string", "null"],
+                        "format": "uri",
+                        "maxLength": 4096
+                },
+                "visible": {
+                        "description": "Whether the video is visible or not.",
+                        "type": ["boolean", "null"]
+                }
+        },
+        "additionalProperties": false
+}
