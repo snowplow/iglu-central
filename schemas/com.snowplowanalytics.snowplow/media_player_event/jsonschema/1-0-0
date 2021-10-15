@@ -1,0 +1,31 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a media event",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow",
+    "name": "media_player_event",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "The event fired by the media player",
+      "maxLength": 255
+    },
+    "label": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "A custom identifier",
+      "maxLength": 4096
+    }
+  },
+  "required": [
+    "type"
+  ],
+  "additionalProperties": false
+}
+
