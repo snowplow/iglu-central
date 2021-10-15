@@ -1,0 +1,52 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Context Schema for a video player event",
+  "self": {
+    "vendor": "org.whatwg",
+    "name": "video_element",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "autoPictureInPicture": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "A boolean value that is true if the video should enter or leave picture-in-picture mode automatically when changing tab and/or application"
+    },
+    "disablePictureInPicture": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "The disablePictureInPicture property will hint the user agent to not suggest the picture-in-picture to users or to request it automatically"
+    },
+    "poster": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "'poster' HTML attribute, which specifies an image to show while no video data is available",
+      "maxLength": 65535
+    },
+    "videoHeight": {
+      "type": "integer",
+      "description": "A value indicating the intrinsic height of the resource in CSS pixels, or 0 if no media is available yet",
+      "minimum": 0,
+      "maximum": 65535
+    },
+    "videoWidth": {
+      "type": "integer",
+      "description": "A value indicating the intrinsic width of the resource in CSS pixels, or 0 if no media is available yet",
+      "minimum": 0,
+      "maximum": 65535
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "videoHeight",
+    "videoWidth"
+  ]
+}
