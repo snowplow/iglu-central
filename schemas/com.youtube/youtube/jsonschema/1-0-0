@@ -1,0 +1,158 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Context Schema for a youtube player event",
+  "self": {
+    "vendor": "com.youtube",
+    "name": "youtube",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "avaliablePlaybackRates": {
+      "type": "array",
+      "description": "An array of playback rates in which the current video is available",
+      "items": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 128
+      }
+    },
+    "avaliableQualityLevels": {
+      "type": ["array", "null"],
+      "description": "An array of quality levels in which the current video is available",
+      "items": {
+        "type": "string",
+        "maxLength": 128
+      }
+    },
+    "cued": {
+      "type": "boolean",
+      "description": "If the video is cued"
+    },
+    "playerId": {
+      "type": "string",
+      "description": "The HTML id of the video element",
+      "maxLength": 65535
+    },
+    "autoPlay": {
+      "type": "boolean",
+      "description": "This specifies whether the initial video will automatically start to play when the player loads."
+    },
+    "buffering": {
+      "type": "boolean",
+      "description": "If the player is buffering"
+    },
+    "controls": {
+      "type": "boolean",
+      "description": "Whether the video player controls are displayed"
+    },
+    "error": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "A string of the latest error to occur, or null if no errors",
+      "enum": [
+        "INVALID_PARAMETER",
+        "HTML5_PLAYER_ERROR",
+        "NOT_FOUND",
+        "EMBED_DISALLOWED"
+      ]
+    },
+    "loaded": {
+      "type": "integer",
+      "description": "The percentage of the video that the player shows as buffered",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "origin": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The origin domain of the embed",
+      "maxLength": 65535
+    },
+    "playbackQuality": {
+      "type": "string",
+      "description": "The quality level of the current video",
+      "maxLength": 128
+    },
+    "playlist": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "description": "An array of the video IDs in the playlist as they are currently ordered."
+    },
+    "playlistIndex": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The index of the playlist video that is currently playing",
+      "minimum": 0,
+      "maximum": 65535
+    },
+    "unstarted": {
+      "type": "boolean",
+      "description": "If the player hasn't started"
+    },
+    "url": {
+      "type": "string",
+      "description": "The YouTube embed URL of the media resource",
+      "maxLength": 65535,
+      "format": "uri"
+    },
+    "fov": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The field-of-view of the view in degrees, as measured along the longer edge of the viewport",
+      "minimum": 30,
+      "maximum": 120
+    },
+    "roll": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The clockwise or counterclockwise rotational angle of the view in degrees",
+      "minimum": -180,
+      "maximum": 180
+    },
+    "pitch": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The vertical angle of the view in degrees",
+      "minimum": -90,
+      "maximum": 90
+    },
+    "yaw": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The horizontal angle of the view in degrees",
+      "minimum": 0,
+      "maximum": 360
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "avaliablePlaybackRates",
+    "autoPlay",
+    "buffering",
+    "controls",
+    "cued",
+    "loaded",
+    "playbackQuality",
+    "playerId",
+    "unstarted",
+    "url"
+  ]
+}
