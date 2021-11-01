@@ -1,3 +1,7 @@
+Release 129 (2021-11-01)
+------------------------
+Infrastructure: Push schema lists to Iglu Central (#1181)
+
 Release 128 (2021-10-12)
 ------------------------
 Add com.apple/notification_event/jsonschema/1-0-1 (#1173)

@@ -2,3 +2,5 @@
 
 # Vagrant
 .vagrant/
+igluctl
+igluctl*.zip
