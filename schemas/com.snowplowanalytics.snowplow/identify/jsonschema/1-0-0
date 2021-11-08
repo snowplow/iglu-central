@@ -1,0 +1,25 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "self": {
+                "vendor": "com.snowplowanalytics.snowplow",
+                "name": "identify",
+                "version": "1-0-0",
+                "format": "jsonschema"
+        },
+        "description": "A Snowplow identify event.",
+        "type": "object",
+        "properties": {
+                "id": {
+                        "description": "The user identifier.",
+                        "type": ["string", "null"],
+                        "maxLength": 256
+                },
+                "email": {
+                        "description": "The user email address.",
+                        "type": ["string", "null"],
+                        "maxLength": 256
+                }
+
+        },
+        "additionalProperties": false
+}
