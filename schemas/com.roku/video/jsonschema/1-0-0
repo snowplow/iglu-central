@@ -1,0 +1,143 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Context Schema for a Roku video event (reflects the Video node: https://developer.roku.com/en-gb/docs/references/scenegraph/media-playback-nodes/video.md)",
+  "self": {
+    "format": "jsonschema",
+    "name": "video",
+    "vendor": "com.roku",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "videoId": {
+      "type": "string",
+      "description": "ID generated when video tracking of the video node was initialized.",
+      "maxLength": 255
+    },
+    "contentId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "ID of video provided in content metadata.",
+      "maxLength": 255
+    },
+    "contentTitle": {
+      "description": "Title of video provided in content metadata.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 65535
+    },
+    "contentUrl": {
+      "description": "URL of video provided in content metadata.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 65535,
+      "format": "uri"
+    },
+    "contentType": {
+      "description": "Category of video (e.g., movie, season, series) provided in content metadata.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 255
+    },
+    "streamFormat": {
+      "description": "Container format of video (e.g., mp4, wma, mkv) provided in content metadata.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 255
+    },
+    "streamUrl": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "URL of the current stream.",
+      "maxLength": 65535,
+      "format": "uri"
+    },
+    "measuredBitrate": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "Measured bitrate (bps) of the network when the stream was selected.",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "streamBitrate": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "Current bitrate of the stream.",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "isUnderrun": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Indicates whether the stream was downloaded due to an underrun."
+    },
+    "isResumed": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Indicates whether the playback was resumed after trickplay."
+    },
+    "videoFormat": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Video codec of the currently playing video stream (e.g., hevc, mpeg2, mpeg4_15).",
+      "maxLength": 255
+    },
+    "timeToStartStreaming": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Time in seconds from playback being started until the video actually began playing.",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "width": {
+      "type": "integer",
+      "description": "Width of the video play window in pixels. 0 if the play window is set to the width of the entire display screen.",
+      "minimum": 0,
+      "maximum": 65535
+    },
+    "height": {
+      "type": "integer",
+      "description": "Height of the video play window in pixels. 0 if the play window is set to the height of the entire display screen.",
+      "minimum": 0,
+      "maximum": 65535
+    },
+    "errorStr": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "A diagnostic message indicating a video play error. Refer to the Roku Video documentation for the format of the string.",
+      "maxLength": 65535
+    }
+  },
+  "required": [
+    "videoId",
+    "width",
+    "height"
+  ],
+  "additionalProperties": false
+}
