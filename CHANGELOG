@@ -1,3 +1,13 @@
+Release 130 (2021-12-01)
+------------------------
+Add schemas/nl.basjes/yauaa_context/jsonschema/1-0-3 (#1126)
+Add com.snowplowanalytics.snowplow/identify/jsonschema/1-0-0 (#1185)
+Add com.youtube/youtube/jsonschema/1-0-0 (#1180)
+Add org.whatwg/video_element/jsonschema/1-0-0 (#1179)
+Add org.whatwg/media_element/jsonschema/1-0-0 (#1178)
+Add com.snowplowanalytics.snowplow/media_player_event/jsonschema/1-0-0 (#1177)
+Add com.snowplowanalytics.snowplow/media_player/jsonschema/1-0-0 (#1176)
+
 Release 129 (2021-11-01)
 ------------------------
 Infrastructure: Push schema lists to Iglu Central (#1181)
