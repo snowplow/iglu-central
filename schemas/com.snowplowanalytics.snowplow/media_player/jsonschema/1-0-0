@@ -1,0 +1,80 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Common Context Schema for a media player event",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow",
+    "name": "media_player",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "currentTime": {
+      "type": "number",
+      "description": "The current playback time",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "duration": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "A double-precision floating-point value indicating the duration of the media in seconds",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "ended": {
+      "type": "boolean",
+      "description": "If playback of the media has ended"
+    },
+    "isLive": {
+      "type": "boolean",
+      "description": "If the media is live"
+    },
+    "loop": {
+      "type": "boolean",
+      "description": "If the video should restart after ending"
+    },
+    "muted": {
+      "type": "boolean",
+      "description": "If the media element is muted"
+    },
+    "paused": {
+      "type": "boolean",
+      "description": "If the media element is paused"
+    },
+    "percentProgress": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The percent of the way through the media",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "playbackRate": {
+      "type": "number",
+      "description": "Playback rate (1 is normal)",
+      "minimum": -9007199254740991,
+      "maximum": 9007199254740991
+    },
+    "volume": {
+      "type": "integer",
+      "description": "Volume percent",
+      "minimum": 0,
+      "maximum": 100
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "currentTime",
+    "duration",
+    "ended",
+    "loop",
+    "muted",
+    "paused",
+    "playbackRate",
+    "volume"
+  ]
+}
