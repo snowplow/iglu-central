@@ -1,3 +1,9 @@
+Release 131 (2021-12-21)
+------------------------
+Add com.roku/device_info/jsonschema/1-0-0 (#1190)
+Add com.roku/video/jsonschema/1-0-0 (#1189)
+Add com.snowplowanalytics.monitoring.batch/load_succeeded/jsonschema/2-0-0 (#1195)
+
 Release 130 (2021-12-01)
 ------------------------
 Add schemas/nl.basjes/yauaa_context/jsonschema/1-0-3 (#1126)
