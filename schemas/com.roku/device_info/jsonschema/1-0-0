@@ -1,0 +1,159 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Context Schema with information about Roku device (reflects the ifDeviceInfo interface: https://developer.roku.com/en-gb/docs/references/brightscript/interfaces/ifdeviceinfo.md)",
+  "self": {
+    "format": "jsonschema",
+    "name": "device_info",
+    "vendor": "com.roku",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "model": {
+      "type": "string",
+      "description": "Model name of the Roku device.",
+      "maxLength": 255
+    },
+    "modelDisplayName": {
+      "type": "string",
+      "description": "Model display name.",
+      "maxLength": 65535
+    },
+    "modelType": {
+      "type": "string",
+      "description": "Type of device.",
+      "maxLength": 255
+    },
+    "osVersion": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Major, minor, revision, and build number of the Roku OS running on the device separated by dots.",
+      "maxLength": 255
+    },
+    "channelClientId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "A unique device identifier that is different across channels.",
+      "maxLength": 255
+    },
+    "isRIDADisabled": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Indicates whether tracking via Roku's ID for Advertisers (RIDA) is disabled on the device."
+    },
+    "RIDA": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "A persistent unique identifier (UUID) for the device.",
+      "maxLength": 255
+    },
+    "captionsMode": {
+      "type": "string",
+      "description": "Determines whether global captions are turned on or off, or are in instant replay mode.",
+      "maxLength": 255
+    },
+    "audioOutputChannel": {
+      "type": "string",
+      "description": "Type of audio output.",
+      "maxLength": 255
+    },
+    "memoryLevel": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "General memory level of the channel.",
+      "maxLength": 255
+    },
+    "timeSinceLastKeypress": {
+      "type": "integer",
+      "description": "The number of seconds since the last remote keypress was received.",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "userCountryCode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Country code associated with the user's Roku account, normally the ISO 3166-1 (2-letter) code",
+      "maxLength": 255
+    },
+    "countryCode": {
+      "type": "string",
+      "description": "Indicates the Roku Channel Store associated with a user's Roku account. May be a ISO 3166-1 country code or a Roku Powered Channel Store Identifier",
+      "maxLength": 255
+    },
+    "videoMode": {
+      "type": "string",
+      "description": "Video playback resolution.",
+      "maxLength": 255
+    },
+    "displayWidth": {
+      "type": "integer",
+      "description": "Physical width of the attached display in centimeters.",
+      "minimum": 0,
+      "maximum": 65535
+    },
+    "displayHeight": {
+      "type": "integer",
+      "description": "Physical height of the attached display in centimeters.",
+      "minimum": 0,
+      "maximum": 65535
+    },
+    "displayProperties": {
+      "type": "array",
+      "description": "List of keys for display properties of the screen.",
+      "items": {
+        "type": "string",
+        "description": "Display property of the screen.",
+        "maxLength": 255
+      }
+    },
+    "connectionType": {
+      "type": "string",
+      "description": "Type of internet connection the device is using.",
+      "maxLength": 255
+    },
+    "internetStatus": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Internet connection status of the device."
+    },
+    "features": {
+      "type": "array",
+      "description": "List of features that the current device/firmware supports.",
+      "items": {
+        "type": "string",
+        "description": "Feature that the current device/firmware supports.",
+        "maxLength": 255
+      }
+    }
+  },
+  "required": [
+    "model",
+    "modelDisplayName",
+    "modelType",
+    "captionsMode",
+    "audioOutputChannel",
+    "timeSinceLastKeypress",
+    "countryCode",
+    "videoMode",
+    "displayWidth",
+    "displayHeight",
+    "displayProperties",
+    "connectionType",
+    "features"
+  ],
+  "additionalProperties": false
+}
