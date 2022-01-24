@@ -1,8 +1,9 @@
-Release 131 (2021-12-21)
+Release 131 (2022-01-24)
 ------------------------
 Add com.roku/device_info/jsonschema/1-0-0 (#1190)
 Add com.roku/video/jsonschema/1-0-0 (#1189)
 Add com.snowplowanalytics.monitoring.batch/load_succeeded/jsonschema/2-0-0 (#1195)
+Patch com.snowplowanalytics.snowplow/mobile_context/jsonschema/1-0-2 (#1197)
 
 Release 130 (2021-12-01)
 ------------------------
