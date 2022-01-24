@@ -1,3 +1,7 @@
+Release 132 (2022-01-24)
+------------------------
+Patch com.snowplowanalytics.snowplow/mobile_context/jsonschema/1-0-2 (#1197)
+
 Release 131 (2021-12-21)
 ------------------------
 Add com.roku/device_info/jsonschema/1-0-0 (#1190)
