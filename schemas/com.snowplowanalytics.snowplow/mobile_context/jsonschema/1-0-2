@@ -58,7 +58,7 @@
 		"appAvailableMemory": {
 			"type": ["integer", "null"],
 			"minimum": 0,
-			"maximum": 4294967295,
+			"maximum": 9223372036854775807,
 			"description": "Amount of memory in bytes available to the current app (iOS only)"
 		},
 		"batteryLevel": {
