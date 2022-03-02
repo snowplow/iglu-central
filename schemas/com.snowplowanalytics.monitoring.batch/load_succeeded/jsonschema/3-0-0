@@ -5,7 +5,7 @@
     "vendor": "com.snowplowanalytics.monitoring.batch",
     "name": "load_succeeded",
     "format": "jsonschema",
-    "version": "2-0-1"
+    "version": "3-0-0"
   },
 
   "type": "object",
@@ -24,27 +24,77 @@
           "description": "File compression type",
           "enum": ["GZIP", "NONE"]
         },
-        "types": {
-          "description": "Set of Iglu URIs and the format they were shredded into",
-          "type": "array",
-          "items": {
-            "properties": {
-              "schemaKey": {
-                "description": "Iglu URI",
-                "type": "string",
-                "maxLength": 256
+        "typesInfo": {
+          "description": "Info about schemas used in events and output formats in the respective batch",
+          "type": "object",
+          "oneOf": [
+            {
+              "properties": {
+                "transformation": {
+                  "description": "Type of the transformation",
+                  "enum": ["SHREDDED"]
+                },
+                "types": {
+                  "description": "Set of Iglu URIs and the format they were shredded into",
+                  "type": "array",
+                  "items": {
+                    "properties": {
+                      "schemaKey": {
+                        "description": "Iglu URI",
+                        "type": "string",
+                        "maxLength": 256
+                      },
+                      "format": {
+                        "description": "File format in which the entities were shredded to",
+                        "enum": ["TSV", "JSON"]
+                      },
+                      "selfDescribingJsonType": {
+                        "description": "Type of the self-describing JSON in the event",
+                        "enum": ["UNSTRUCT_EVENT", "CONTEXTS"]
+                      }
+                    },
+                    "required": ["schemaKey", "format", "selfDescribingJsonType"],
+                    "additionalProperties": false
+                  }
+                }
               },
-              "format": {
-                "description": "File format in which the entities were shredded to",
-                "enum": ["TSV", "JSON", "WIDEROW", "PARQUET"]
-              },
-              "shredProperty": {
-                "description": "Field types of enriched event that can be shredded (self-describing JSONs)",
-                "enum": ["SELFDESCRIBING_EVENT", "CONTEXTS"]
-              }
+              "required": ["transformation", "types"],
+              "additionalProperties": false
             },
-            "required": ["schemaKey", "format", "shredProperty"]
-          }
+            {
+              "properties": {
+                "transformation": {
+                  "description": "Type of the transformation",
+                  "enum": ["WIDEROW"]
+                },
+                "fileFormat": {
+                  "description": "Output file format",
+                  "enum": ["JSON", "PARQUET"]
+                },
+                "types": {
+                  "description": "Set of Iglu URIs and the format they were shredded into",
+                  "type": "array",
+                  "items": {
+                    "properties": {
+                      "schemaKey": {
+                        "description": "Iglu URI",
+                        "type": "string",
+                        "maxLength": 256
+                      },
+                      "selfDescribingJsonType": {
+                        "description": "Type of the self-describing JSON in the event",
+                        "enum": ["UNSTRUCT_EVENT", "CONTEXTS"]
+                      }
+                    },
+                    "required": ["schemaKey", "selfDescribingJsonType"],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": ["transformation", "fileFormat", "types"],
+              "additionalProperties": false
+            }
+          ]
         },
         "timestamps": {
           "description": "Set of timestamps associated with the batch",
@@ -102,7 +152,7 @@
           }
         }
       },
-      "required": ["base", "compression", "types", "timestamps", "processor"],
+      "required": ["base", "compression", "typesInfo", "timestamps", "processor"],
       "additionalProperties": false
     },
     "application": {
