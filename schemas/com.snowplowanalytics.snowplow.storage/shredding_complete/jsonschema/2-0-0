@@ -43,12 +43,12 @@
                     "description": "File format in which the entities were shredded to",
                     "enum": ["TSV", "JSON"]
                   },
-                  "selfDescribingJsonType": {
+                  "snowplowEntity": {
                     "description": "Type of the self-describing JSONs in the event",
-                    "enum": ["UNSTRUCT_EVENT", "CONTEXTS"]
+                    "enum": ["SELF_DESCRIBING_EVENT", "CONTEXTS"]
                   }
                 },
-                "required": ["schemaKey", "format", "selfDescribingJsonType"],
+                "required": ["schemaKey", "format", "snowplowEntity"],
                 "additionalProperties": false
               }
             }
@@ -76,12 +76,12 @@
                     "type": "string",
                     "maxLength": 256
                   },
-                  "selfDescribingJsonType": {
+                  "snowplowEntity": {
                     "description": "Type of the self-describing JSONs in the event",
-                    "enum": ["UNSTRUCT_EVENT", "CONTEXTS"]
+                    "enum": ["SELF_DESCRIBING_EVENT", "CONTEXTS"]
                   }
                 },
-                "required": ["schemaKey", "selfDescribingJsonType"],
+                "required": ["schemaKey", "snowplowEntity"],
                 "additionalProperties": false
               }
             }
