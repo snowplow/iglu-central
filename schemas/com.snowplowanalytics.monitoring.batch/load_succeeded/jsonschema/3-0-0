@@ -45,7 +45,7 @@
                         "maxLength": 256
                       },
                       "format": {
-                        "description": "File format in which the entities were shredded to",
+                        "description": "File format into which the entities were shredded",
                         "enum": ["TSV", "JSON"]
                       },
                       "snowplowEntity": {
