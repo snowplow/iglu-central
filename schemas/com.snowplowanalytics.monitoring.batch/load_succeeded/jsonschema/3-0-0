@@ -50,7 +50,7 @@
                       },
                       "snowplowEntity": {
                         "description": "Type of the self-describing JSON in the event",
-                        "enum": ["SELF_DESCRIBING_EVENT", "CONTEXTS"]
+                        "enum": ["SELF_DESCRIBING_EVENT", "CONTEXT"]
                       }
                     },
                     "required": ["schemaKey", "format", "snowplowEntity"],
@@ -83,7 +83,7 @@
                       },
                       "snowplowEntity": {
                         "description": "Type of the self-describing JSON in the event",
-                        "enum": ["SELF_DESCRIBING_EVENT", "CONTEXTS"]
+                        "enum": ["SELF_DESCRIBING_EVENT", "CONTEXT"]
                       }
                     },
                     "required": ["schemaKey", "snowplowEntity"],
