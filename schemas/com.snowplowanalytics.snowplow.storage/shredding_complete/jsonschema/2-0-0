@@ -1,0 +1,152 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Message with batch metadata, passed from Shredder to Loader",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow.storage",
+    "name": "shredding_complete",
+    "format": "jsonschema",
+    "version": "2-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "base": {
+      "description": "Blob storage path to the root of the batch",
+      "type": "string",
+      "format": "uri",
+      "maxLength": 1024
+    },
+    "compression": {
+      "description": "File compression type",
+      "enum": ["GZIP", "NONE"]
+    },
+    "typesInfo": {
+      "description": "Info about schemas used in events and output formats in the respective batch",
+      "type": "object",
+      "oneOf": [
+        {
+          "properties": {
+            "transformation": {
+              "description": "Type of the transformation",
+              "enum": ["SHREDDED"]
+            },
+            "types": {
+              "description": "Set of Iglu URIs and the format they were shredded into",
+              "type": "array",
+              "items": {
+                "properties": {
+                  "schemaKey": {
+                    "description": "Iglu URI",
+                    "type": "string",
+                    "maxLength": 256
+                  },
+                  "format": {
+                    "description": "File format into which the entities were shredded",
+                    "enum": ["TSV", "JSON"]
+                  },
+                  "snowplowEntity": {
+                    "description": "Type of the self-describing JSONs in the event",
+                    "enum": ["SELF_DESCRIBING_EVENT", "CONTEXT"]
+                  }
+                },
+                "required": ["schemaKey", "format", "snowplowEntity"],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": ["transformation", "types"],
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "transformation": {
+              "description": "Type of the transformation",
+              "enum": ["WIDEROW"]
+            },
+            "fileFormat": {
+              "description": "Output file format",
+              "enum": ["JSON", "PARQUET"]
+            },
+            "types": {
+              "description": "Set of Iglu URIs and the format they were shredded into",
+              "type": "array",
+              "items": {
+                "properties": {
+                  "schemaKey": {
+                    "description": "Iglu URI",
+                    "type": "string",
+                    "maxLength": 256
+                  },
+                  "snowplowEntity": {
+                    "description": "Type of the self-describing JSONs in the event",
+                    "enum": ["SELF_DESCRIBING_EVENT", "CONTEXT"]
+                  }
+                },
+                "required": ["schemaKey", "snowplowEntity"],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": ["transformation", "fileFormat", "types"],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "timestamps": {
+      "description": "Set of timestampts associated with the batch",
+      "type": "object",
+      "properties": {
+        "jobStarted": {
+          "description": "Time when the batch started being shredded",
+          "type": "string",
+          "format": "date-time"
+        },
+        "jobCompleted": {
+          "description": "Time when the batch shredding has been finished (and the message being prepared)",
+          "type": "string",
+          "format": "date-time"
+        },
+        "min": {
+          "description": "The earliest collector_stamp available in the batch",
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "max": {
+          "description": "The latest collector_tstamp available in the batch",
+          "type": ["string", "null"],
+          "format": "date-time"
+        }
+      },
+      "required": ["jobStarted", "jobCompleted", "min", "max"]
+    },
+    "processor": {
+      "description": "Identificator of a shredder sent the message",
+      "type": "object",
+      "properties": {
+        "artifact": {
+          "description": "Name of the artifact",
+          "type": "string",
+          "maxLength": 64
+        },
+        "version": {
+          "description": "Semantic Version of the artifact",
+          "type": "string",
+          "maxLength": 16
+        }
+      },
+      "required": ["artifact", "version"]
+    },
+    "count": {
+      "description": "Count of events in the batch, null means the count could not be calculated",
+      "type": ["object", "null"],
+      "properties": {
+        "good": {
+          "description": "Amount of good events in the batch",
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    }
+  },
+  "required": ["base", "compression", "typesInfo", "timestamps", "processor"],
+  "additionalProperties": false
+}
