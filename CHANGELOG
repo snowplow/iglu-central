@@ -1,3 +1,8 @@
+Release 133 (2022-03-15)
+------------------------
+Add com.snowplowanalytics.monitoring.batch/load_succeeded/jsonschema/3-0-0 (#1208)
+Add com.snowplowanalytics.snowplow.storage/shredding_complete/jsonschema/2-0-0 (#1207)
+
 Release 132 (2022-01-24)
 ------------------------
 Patch com.snowplowanalytics.snowplow/mobile_context/jsonschema/1-0-2 (#1197)
