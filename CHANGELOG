@@ -1,3 +1,7 @@
+Release 134 (2022-05-16)
+------------------------
+Add com.iterable/system_webhook/jsonschema/1-0-0 (#1204)
+
 Release 133 (2022-03-15)
 ------------------------
 Add com.snowplowanalytics.monitoring.batch/load_succeeded/jsonschema/3-0-0 (#1208)
