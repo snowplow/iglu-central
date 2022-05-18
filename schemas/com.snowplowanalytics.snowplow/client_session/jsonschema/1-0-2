@@ -1,0 +1,81 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a client-generated user session",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow",
+		"name": "client_session",
+		"format": "jsonschema",
+		"version": "1-0-2"
+	},
+	"type": "object",
+	"properties": {
+		"userId": {
+			"type": "string",
+			"format": "uuid",
+			"description": "An identifier for the user of the session"
+		},
+		"sessionId": {
+			"type": "string",
+			"format": "uuid",
+			"description": "An identifier for the session"
+		},
+		"sessionIndex": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": "The index of the current session for this user"
+		},
+		"eventIndex": {
+			"type": [
+				"null",
+				"integer"
+			],
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": "Optional index of the current event in the session"
+		},
+		"previousSessionId": {
+			"type": [
+				"null",
+				"string"
+			],
+			"format": "uuid",
+			"description": "The previous session identifier for this user"
+		},
+		"storageMechanism": {
+			"type": "string",
+			"enum": [
+				"SQLITE",
+				"COOKIE_1",
+				"COOKIE_3",
+				"LOCAL_STORAGE",
+				"FLASH_LSO"
+			],
+			"description": "The mechanism that the session information has been stored on the device"
+		},
+		"firstEventId": {
+			"type": [
+				"null",
+				"string"
+			],
+			"format": "uuid",
+			"description": "The optional identifier of the first event for this session"
+		},
+		"firstEventTimestamp": {
+			"description": "Optional date-time timestamp of when the first event in the session was tracked",
+			"type": [
+				"null",
+				"string"
+			],
+			"format": "date-time"
+		}
+	},
+	"required": [
+		"userId",
+		"sessionId",
+		"sessionIndex",
+		"previousSessionId",
+		"storageMechanism"
+	],
+	"additionalProperties": false
+}
