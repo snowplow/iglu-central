@@ -9,6 +9,8 @@ function install_igluctl() {
     then
         echo "igluctl not found, downloading..."
         wget "${VALIDATOR_URI}" -P "${INSTALL_DIR}"
+        echo "unzipping..."
+        unzip ${INSTALL_DIR}/$VALIDATOR_ZIP -d ${INSTALL_DIR}
         echo "done!"
     else
         echo "igluctl is already downloaded!"
