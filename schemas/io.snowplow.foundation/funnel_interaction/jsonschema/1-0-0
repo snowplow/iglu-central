@@ -1,0 +1,35 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a funnel interaction event",
+  "self": {
+    "vendor": "io.snowplow.foundation",
+    "name": "funnel_interaction",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "properties": {
+    "funnel_name": {
+      "type": "string",
+      "maxLength": 255,
+      "description": "The name of the funnel"
+    },
+    "step_name": {
+      "type": "string",
+      "maxLength": 255,
+      "description": "The funnel step"
+    },
+    "step_position": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100,
+      "description": "The position of this step in the funnel"
+    }
+  },
+  "additionalProperties": false,
+  "type": "object",
+  "required": [
+    "funnel_name",
+    "step_name"
+  ]
+}
+
