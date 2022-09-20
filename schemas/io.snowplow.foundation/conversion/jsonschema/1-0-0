@@ -1,0 +1,23 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a conversion event",
+  "self": {
+    "vendor": "io.snowplow.foundation",
+    "name": "conversion",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "value": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100000
+    }
+  },
+  "additionalProperties": false,
+  "type": "object"
+}

@@ -1,0 +1,228 @@
+{
+  "$schema" : "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self" : {
+    "vendor" : "com.snowplowanalytics.mobile",
+    "name" : "remote_config",
+    "version" : "1-0-1",
+    "format" : "jsonschema"
+  },
+  "description": "The configuration file for the Snowplow mobile trackers.",
+  "type": "object",
+  "properties": {
+    "configurationVersion": {
+      "description": "Version number that identifies the current configuration. It has to be increased on each update.",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "configurationBundle": {
+      "description": "The list of configurations for each tracker to configure.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "description": "Configuration objects",
+        "properties": {
+          "namespace": {
+            "description": "The namespace string that identifies the single tracker.",
+            "type": "string",
+            "maxLength": 4096
+          },
+          "networkConfiguration": {
+            "description": "Represents the network communication configuration allowing the tracker to be able to send events to the Snowplow collector.",
+            "type": ["object", "null"],
+            "properties": {
+              "endpoint": {
+                "description": "URL of the collector that is going to receive the events tracked by the tracker. The URL can include the schema/protocol (e.g.: http://collector-url.com). In case the URL doesn’t include the schema/protocol, the HTTPS protocol is automatically selected.",
+                "type": "string",
+                "maxLength": 2048
+              },
+              "method": {
+                "description": "The method used to send the requests (GET or POST).",
+                "type": ["string", "null"],
+                "enum": ["get", "post", null]
+              }
+            },
+            "required": [
+              "endpoint"
+            ]
+          },
+          "trackerConfiguration": {
+            "description": "Represents the configuration of the tracker and the core tracker properties. The TrackerConfiguration can be used to setup the tracker behaviour indicating what should be tracked in term of automatic tracking and contexts/entities to track with the events.",
+            "type": ["object", "null"],
+            "properties": {
+              "appId": {
+                "description": "Identifier of the app.",
+                "type": "string",
+                "maxLength": 4096
+              },
+              "devicePlatform": {
+                "description": "It sets the device platform the tracker is running on.",
+                "type": ["string", "null"],
+                "enum": ["web", "mob", "pc", "srv", "app", "tv", "cnsl", "iot", null]
+              },
+              "logLevel": {
+                "description": "It sets the log level of tracker logs.",
+                "type": ["string", "null"],
+                "enum": ["off", "error", "debug", "verbose", null]
+              },
+              "sessionContext": {
+                "description": "Whether session context is sent with all the tracked events.",
+                "type": "boolean"
+              },
+              "applicationContext": {
+                "description": "Whether application context is sent with all the tracked events.",
+                "type": "boolean"
+              },
+              "platformContext": {
+                "description": "Whether mobile/platform context is sent with all the tracked events.",
+                "type": "boolean"
+              },
+              "geoLocationContext": {
+                "description": "Whether geo-location context is sent with all the tracked events.",
+                "type": "boolean"
+              },
+              "screenContext": {
+                "description": "Whether screen context is sent with all the tracked events.",
+                "type": "boolean"
+              },
+              "screenViewAutotracking": {
+                "description": "Whether enable automatic tracking of ScreenView events.",
+                "type": "boolean"
+              },
+              "lifecycleAutotracking": {
+                "description": "Whether enable automatic tracking of background and foreground transitions.",
+                "type": "boolean"
+              },
+              "installAutotracking": {
+                "description": "Whether enable automatic tracking of install event.",
+                "type": "boolean"
+              },
+              "exceptionAutotracking": {
+                "description": "Whether enable crash reporting.",
+                "type": "boolean"
+              },
+              "diagnosticAutotracking": {
+                "description": "Whether enable tracker diagnostic.",
+                "type": "boolean"
+              },
+              "userAnonymisation": {
+                "description": "Whether to anonymise client-side user identifiers in session and platform context entities",
+                "type": "boolean"
+              }
+            }
+          },
+          "subjectConfiguration": {
+            "description": "Represents the configuration of the subject. The SubjectConfiguration can be used to setup the tracker with the basic information about the user and the app which will be attached on all the events as contexts.",
+            "type": ["object", "null"],
+            "properties": {
+              "userId": {
+                "description": "The custom user identifier.",
+                "type": "string",
+                "maxLength": 4096
+              },
+              "networkUserId": {
+                "description": "The custom network user identifier.",
+                "type": "string",
+                "maxLength": 4096
+              },
+              "domainUserId": {
+                "description": "The custom domain user identifier.",
+                "type": "string",
+                "maxLength": 4096
+              },
+              "useragent": {
+                "description": "The custom user-agent. It overrides the user-agent used by default.",
+                "type": "string",
+                "maxLength": 4096
+              },
+              "ipAddress": {
+                "description": "The IP address (not automatically set).",
+                "type": "string",
+                "maxLength": 4096
+              },
+              "timezone": {
+                "description": "Override the timezone string set by the tracker.",
+                "type": "string",
+                "maxLength": 4096
+              },
+              "language": {
+                "description": "Override the language string set by the tracker.",
+                "type": "string",
+                "maxLength": 4096
+              }
+            }
+          },
+          "sessionConfiguration": {
+            "description": "Represents the configuration of a Session object which gets appended to each event sent from the Tracker and changes based on the timeout set for the inactivity of app when in foreground or background.",
+            "type": ["object", "null"],
+            "properties": {
+              "backgroundTimeout": {
+                "description": "The amount of time that can elapse before the session id is updated while the app is in the background.",
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9223372036854775807
+              },
+              "foregroundTimeout": {
+                "description": "The amount of time that can elapse before the session id is updated while the app is in the foreground.",
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9223372036854775807
+              }
+            }
+          },
+          "emitterConfiguration": {
+            "description": "Represents the configuration of how events should be sent to the Collector using the Emitter instance.",
+            "type": ["object", "null"],
+            "properties": {
+              "bufferOption": {
+                "description": "Whether the buffer should send events instantly or after the buffer has reached it's limit.",
+                "type": ["string", "null"],
+                "enum": ["Single", "DefaultGroup", "HeavyGroup", null]
+              },
+              "emitRange": {
+                "description": "Maximum number of events collected from the EventStore to be sent in a request.",
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2147483647
+              },
+              "threadPoolSize": {
+                "description": "Maximum number of threads working in parallel in the tracker to send requests.",
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2147483647
+              },
+              "byteLimitGet": {
+                "description": "Maximum amount of bytes allowed to be sent in a payload in a GET request.",
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2147483647
+              },
+              "byteLimitPost": {
+                "description": "Maximum amount of bytes allowed to be sent in a payload in a POST request.",
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2147483647
+              },
+              "customRetryForStatusCodes": {
+                "description": "Custom retry rules for HTTP status codes returned from the Collector. Mapping of integers (status codes) to booleans (true for retry and false for not retry).",
+                "type": "object",
+                "additionalProperties": true
+              },
+              "serverAnonymisation": {
+                "description": "Whether to anonymise server-side user identifiers including the network_userid and user_ipaddress",
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "required": [
+          "namespace"
+        ]
+      }
+    }
+  },
+  "required": [
+    "configurationVersion",
+    "configurationBundle"
+  ]
+}

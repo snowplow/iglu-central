@@ -1,0 +1,37 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a content entity",
+  "self": {
+    "vendor": "io.snowplow.foundation",
+    "name": "content",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "id": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "category": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "date_published": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "author": {
+      "type": "string",
+      "maxLength": 255
+    }
+  },
+  "additionalProperties": false,
+  "type": "object",
+  "required": [
+    "name"
+  ]
+}
