@@ -1,0 +1,45 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self": {
+    "vendor": "dev.amp.snowplow",
+    "name": "amp_session",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "description": "Schema for AMP session identification",
+  "properties": {
+    "ampSessionId": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647,
+      "description": "An identifier for the AMP session."
+  },
+    "ampSessionIndex": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647,
+      "description": "The index of the current session for this user."
+    },
+    "sessionEngaged": {
+      "type": "boolean",
+      "description": "If there has been any kind of user engagement in the AMP session. Engagement in this context means if the page is visible, has focus and is in the foreground."
+    },
+    "sessionCreationTimestamp": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991,
+      "description": "Timestamp at which the session was created  in milliseconds elapsed since the UNIX epoch."
+    },
+    "lastSessionEventTimestamp": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "maximum": 9007199254740991,
+      "description": "Timestamp at which the last event took place in the session in milliseconds elapsed since the UNIX epoch."
+    }
+  },
+  "additionalProperties": false,
+  "type": "object",
+  "required": [
+    "ampSessionId","ampSessionIndex","sessionEngaged","sessionCreationTimestamp"
+  ]
+}
