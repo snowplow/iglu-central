@@ -1,3 +1,9 @@
+Release 137 (2022-11-02)
+------------------------
+Add nl.basjes/yauaa_context/jsonschema/1-0-4 (#1216)
+Add dev.amp.snowplow/amp_session/jsonschema/1-0-0 (#1234)
+Bump igluctl version to allow schema lists in dev registry (#1236)
+
 Release 136 (2022-09-15)
 ------------------------
 Add com.snowplowanalytics.mobile/remote_config/jsonschema/1-0-1 (#1225)
