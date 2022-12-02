@@ -1,0 +1,22 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "self": {
+                "vendor": "com.google.tag-manager.server-side",
+                "name": "level_end",
+                "version": "1-0-0",
+                "format": "jsonschema"
+        },
+        "description": "This event signifies that a player has reached the end of a level.",
+        "type": "object",
+        "properties": {
+                "level_name": {
+                        "description": "The name of the level.",
+                        "type": ["string", "null"]
+                },
+                "success": {
+                    "description": "Set to true if the level was completed successfully.",
+                    "type": ["boolean", "null"]
+                }
+        },
+        "additionalProperties": false
+}

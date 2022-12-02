@@ -1,0 +1,19 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "self": {
+                "vendor": "com.google.tag-manager.server-side",
+                "name": "unlock_achievement",
+                "version": "1-0-0",
+                "format": "jsonschema"
+        },
+        "description": "Log this event when the user has unlocked an achievement. This event can help you understand how users are experiencing your game.",
+        "type": "object",
+        "properties": {
+                "achievement_id": {
+                    "description": "The id of the achievement that was unlocked.",
+                    "type": ["string", "null"]
+                }
+        },
+        "required": ["achievement_id"],
+        "additionalProperties": false
+}

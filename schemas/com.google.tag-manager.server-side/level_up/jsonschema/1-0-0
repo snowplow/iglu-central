@@ -1,0 +1,22 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "self": {
+                "vendor": "com.google.tag-manager.server-side",
+                "name": "level_up",
+                "version": "1-0-0",
+                "format": "jsonschema"
+        },
+        "description": "This event signifies that a player has leveled up. Use it to gauge the level distribution of your userbase and identify levels that are difficult to complete.",
+        "type": "object",
+        "properties": {
+                "level": {
+                    "description": "The level of the character.",
+                    "type": ["number", "null"]
+                },
+                "character": {
+                    "description": "The character that leveled up.",
+                    "type": ["string", "null"]
+                }
+        },
+        "additionalProperties": false
+}
