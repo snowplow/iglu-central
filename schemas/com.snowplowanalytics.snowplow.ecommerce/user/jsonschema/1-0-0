@@ -1,0 +1,37 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for an user entity in Ecommerce",
+    "self": {
+        "vendor": "com.snowplowanalytics.snowplow.ecommerce",
+        "name": "user",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "id": {
+            "description" : "The user ID.",
+            "type": "string",
+            "maxLength": 128
+        },
+        "is_guest": {
+            "description": "Whether or not the user is a guest.",
+            "type": [
+                "boolean",
+                "null"
+            ]
+        },
+        "email" : {
+            "description" : "The user's email address.",
+            "type": [
+                "string",
+                "null"
+            ],
+            "maxLength": 256
+        }
+    },
+    "required": [
+        "id"
+    ],
+    "additionalProperties": false
+}

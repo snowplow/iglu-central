@@ -1,0 +1,35 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for a cart entity in Ecommerce",
+    "self": {
+        "vendor": "com.snowplowanalytics.snowplow.ecommerce",
+        "name": "cart",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "cart_id": {
+            "description": "The unique ID representing this cart.",
+            "type": ["string","null"],
+            "maxLength": 4096
+        },
+        "total_value": {
+            "description": "The total value of the cart after this interaction.",
+            "type": "number",
+            "minimum": 0,
+            "multipleOf": 0.01,
+            "maximum": 9999999
+        },
+        "currency": {
+            "description": "The currency used for this cart (ISO 4217).",
+            "type": "string",
+            "maxLength": 3,
+            "minLength": 3
+        }
+    },
+    "required": [
+        "total_value", "currency"
+    ],
+    "additionalProperties": false
+}
