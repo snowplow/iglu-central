@@ -1,0 +1,21 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for consent dialog shown event",
+    "self": {
+        "vendor": "com.snowplowanalytics.snowplow",
+        "name": "cmp_visible",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "elapsedTime": {
+            "type": "number",
+            "description": "The time taken for the consent popup to be shown to the screen.",
+            "maximum" : 9223372036854775807,
+            "minimum" : 0
+        }
+    },
+    "required": ["elapsedTime"],
+    "additionalProperties": false
+}
