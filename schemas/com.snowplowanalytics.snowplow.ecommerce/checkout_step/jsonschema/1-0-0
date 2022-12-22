@@ -1,0 +1,107 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for a checkout step entity in Ecommerce",
+    "self": {
+        "vendor": "com.snowplowanalytics.snowplow.ecommerce",
+        "name": "checkout_step",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "step" : {
+            "description" : "Checkout step index.",
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 90
+        },
+        "shipping_postcode": {
+            "description": "Shipping address postcode.",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 128
+        },
+        "billing_postcode": {
+            "description": "Billing address postcode.",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 128
+        },
+        "shipping_full_address": {
+            "description": "Full shipping address.",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 4096
+        },
+        "billing_full_address": {
+            "description": "Full billing address.",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 4096
+        },
+        "delivery_provider": {
+            "description": "Can be used to discern delivery providers DHL, PostNL etc.",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 128
+        },
+        "delivery_method": {
+            "description": "Can be used to discern delivery methods selected E.g. store pickup, standard delivery, express delivery, international.",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 128
+        },
+        "coupon_code": {
+            "description": "Coupon applied at checkout.",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 128
+        },
+        "account_type": {
+            "description": "Type of account used on checkout. E.g. existing user, guest.",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 128
+        },
+        "payment_method": {
+            "description": "Any kind of payment method the user selected to proceed E.g. card, PayPal, Alipay etc.",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 128
+        },
+        "proof_of_payment": {
+            "description": "Invoice or receipt.",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 128
+        },
+        "marketing_opt_in": {
+            "type" : ["boolean", "null"],
+            "description": "If opted in to marketing campaigns."
+        }
+    },
+    "required": [
+        "step"
+    ],
+    "additionalProperties": false
+}

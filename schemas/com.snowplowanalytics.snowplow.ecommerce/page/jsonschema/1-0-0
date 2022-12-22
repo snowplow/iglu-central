@@ -1,0 +1,38 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for a page entity in Ecommerce",
+    "self": {
+        "vendor": "com.snowplowanalytics.snowplow.ecommerce",
+        "name": "page",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "type": {
+            "description": "The type of the page that was visited E.g. homepage, product page, checkout page.",
+            "type": "string",
+            "maxLength": 128
+        },
+        "language": {
+            "description": "The language that the web page is based in.",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 128
+        },
+        "locale": {
+            "description": "The locale version of the site that is running.",
+            "type": [
+                "string",
+                "null"
+            ],
+            "maxLength": 128
+        }
+    },
+    "required": [
+        "type"
+    ],
+    "additionalProperties": false
+}

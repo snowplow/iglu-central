@@ -1,0 +1,107 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for a product entity in Ecommerce",
+    "self": {
+        "vendor": "com.snowplowanalytics.snowplow.ecommerce",
+        "name": "product",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "id": {
+            "description" : "The SKU or product ID.",
+            "type": "string",
+            "maxLength": 4096
+        },
+        "name" : {
+            "description" : "The name or title of the product.",
+            "type": ["string", "null"],
+            "maxLength": 4096
+        },
+        "category": {
+            "description" : "The category the product belongs to. Use a consistent separator to express multiple levels. E.g. Woman/Shoes/Sneakers",
+            "type": "string",
+            "maxLength": 4096
+        },
+        "price": {
+            "description" : "The price of the product at the current time.",
+            "type": "number",
+            "minimum": 0,
+            "multipleOf": 0.01,
+            "maximum": 9999999
+        },
+        "list_price": {
+            "description" : "The list or recommended retail price of a product.",
+            "type" : ["number", "null"],
+            "minimum": 0,
+            "multipleOf": 0.01,
+            "maximum": 9999999
+        },
+        "quantity" : {
+            "description" : "The quantity of the product taking part in the ecommerce action.",
+            "type": ["integer", "null"],
+            "minimum": 0,
+            "maximum": 9999999
+        },
+        "size": {
+            "description" : "The size of the product.",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 256
+        },
+        "variant": {
+            "description" : "The variant of the product.",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 256
+        },
+        "brand": {
+            "description" : "The brand of the product.",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 256
+        },
+        "inventory_status": {
+            "description" : "The inventory status of the product E.g. in stock, out of stock, preorder, backorder.",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 256
+        },
+        "position": {
+            "description" : "The position the product was presented in a list of products E.g. search results, product list page.",
+            "type" : [
+                "integer",
+                "null"
+            ],
+            "minimum": 0,
+            "maximum": 9999999
+        },
+        "currency": {
+            "description" : "The currency in which the product is being priced (ISO 4217).",
+            "type" : "string",
+            "maxLength": 3,
+            "minLength": 3
+        },
+        "creative_id": {
+            "description" : "Identifier/Name/Url for the creative presented on a list or product view.",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 256
+        }
+    },
+    "required": [
+        "id", "category", "price", "currency"
+    ],
+    "additionalProperties": false
+}

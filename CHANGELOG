@@ -1,3 +1,9 @@
+Release 138 (2022-12-20)
+------------------------
+Add com.snowplowanalytics.snowplow/consent_preferences/jsonschema/1-0-0 (close #1246)
+Add com.snowplowanalytics.snowplow/cmp_visible/jsonschema/1-0-0 (close #1242)
+Add com.snowplowanalytics.snowplow.ecommerce (close #1241)
+
 Release 137 (2022-11-02)
 ------------------------
 Add nl.basjes/yauaa_context/jsonschema/1-0-4 (#1216)
