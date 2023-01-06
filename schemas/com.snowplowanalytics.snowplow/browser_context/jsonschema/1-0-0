@@ -1,0 +1,81 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for browser contexts",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow",
+    "name": "browser_context",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "viewport": {
+      "type": "string",
+      "maxLength": 20,
+      "description": "Viewport dimensions of the browser. Arrives in the form of WidthxHeight e.g. 1200x900."
+    },
+    "documentSize": {
+      "type": "string",
+      "maxLength": 20,
+      "description": "Document dimensions. Arrives in the form of WidthxHeight e.g. 1200x900"
+    },
+    "resolution": {
+      "type": "string",
+      "maxLength": 20,
+      "description": "Device native resolution. Arrives in the form of WidthxHeight e.g. 1200x900"
+    },
+    "colorDepth": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1000,
+      "description": "The number of bits allocated to colors for a pixel in the output device, excluding the alpha channel."
+    },
+    "devicePixelRatio": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 1000,
+      "description": "Ratio of the resolution in physical pixels to the resolution in CSS pixels for the current display device."
+    },
+    "cookiesEnabled": {
+      "type": "boolean",
+      "description": "Indicates whether cookies are enabled or not. More info and caveats at https://developer.mozilla.org/en-US/docs/Web/API/Navigator/cookieEnabled."
+    },
+    "online": {
+      "type": "boolean",
+      "description": "Returns the online status of the browser. Important caveats are described in https://developer.mozilla.org/en-US/docs/Web/API/Navigator/onLine."
+    },
+    "browserLanguage": {
+      "type": ["string", "null"],
+      "maxLength": 20,
+      "description": "The preferred language of the user, usually the language of the browser UI. RFC 5646 https://datatracker.ietf.org/doc/html/rfc5646."
+    },
+    "documentLanguage": {
+      "type": ["string", "null"],
+      "maxLength": 20,
+      "description": "The language of the HTML document. RFC 5646 https://datatracker.ietf.org/doc/html/rfc5646."
+    },
+    "webdriver": {
+      "type": ["boolean", "null"],
+      "description": "Indicates whether the user agent is controlled by automation."
+    },
+    "deviceMemory": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "maximum": 1000,
+      "description": "Approximate amount of device memory in gigabytes."
+    },
+    "hardwareConcurrency": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "maximum": 1000,
+      "description": "Number of logical processors available to run threads on the user's computer."
+    },
+    "tabId": {
+      "type": ["string", "null"],
+      "format": "uuid",
+      "description": "An identifier for the client browser tab the event is sent from."
+    }
+  },
+  "required": ["viewport", "documentSize", "cookiesEnabled", "online", "colorDepth", "resolution"],
+  "additionalProperties": false
+}
