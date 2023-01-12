@@ -1,0 +1,136 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for mobile contexts",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow",
+		"name": "mobile_context",
+		"format": "jsonschema",
+		"version": "1-0-3"
+	},
+	"type": "object",
+	"properties": {
+		"osType": {
+			"type": "string",
+			"description": "Operating system type (e.g., ios, tvos, watchos, osx, android)"
+		},
+		"osVersion": {
+			"type": "string",
+			"description": "The current version of the operating system"
+		},
+		"deviceManufacturer": {
+			"type": "string",
+			"description": "The manufacturer of the product/hardware"
+		},
+		"deviceModel": {
+			"type": "string",
+			"description": "The end-user-visible name for the end product"
+		},
+		"carrier": {
+			"type": ["string", "null"],
+			"description": "The carrier of the SIM inserted in the device"
+		},
+		"networkType": {
+			"type": ["string", "null"],
+			"enum": ["mobile", "wifi", "offline", null],
+			"description": "Type of network the device is connected to"
+		},
+		"networkTechnology": {
+			"type": ["string", "null"],
+			"description": "Radio access technology that the device is using"
+		},
+		"openIdfa": {
+			"type": ["string", "null"],
+			"description": "Deprecated tracking identifier for iOS"
+		},
+		"appleIdfa": {
+			"type": ["string", "null"],
+			"description": "Advertising identifier on iOS"
+		},
+		"appleIdfv": {
+			"type": ["string", "null"],
+			"description": "UUID identifier for vendors on iOS"
+		},
+		"androidIdfa": {
+			"type": ["string", "null"],
+			"description": "Advertising identifier on Android"
+		},
+		"physicalMemory": {
+			"type": ["integer", "null"],
+			"minimum": 0,
+			"maximum": 9223372036854775807,
+			"description": "Total physical system memory in bytes"
+		},
+		"systemAvailableMemory": {
+			"type": ["integer", "null"],
+			"minimum": 0,
+			"maximum": 9223372036854775807,
+			"description": "Available memory on the system in bytes (Android only)"
+		},
+		"appAvailableMemory": {
+			"type": ["integer", "null"],
+			"minimum": 0,
+			"maximum": 9223372036854775807,
+			"description": "Amount of memory in bytes available to the current app (iOS only)"
+		},
+		"batteryLevel": {
+			"type": ["integer", "null"],
+			"minimum": 0,
+			"maximum": 100,
+			"description": "Remaining battery level as an integer percentage of total battery capacity"
+		},
+		"batteryState": {
+			"type": ["string", "null"],
+			"enum": ["unplugged", "charging", "full", null],
+			"maxLength": 255,
+			"description": "Battery state for the device"
+		},
+		"lowPowerMode": {
+			"type": ["boolean", "null"],
+			"description": "A Boolean indicating whether Low Power Mode is enabled (iOS only)"
+		},
+		"availableStorage": {
+			"type": ["integer", "null"],
+			"minimum": 0,
+			"maximum": 9223372036854775807,
+			"description": "Bytes of storage remaining"
+		},
+		"totalStorage": {
+			"type": ["integer", "null"],
+			"minimum": 0,
+			"maximum": 9223372036854775807,
+			"description": "Total size of storage in bytes"
+		},
+		"isPortrait": {
+			"type": ["boolean", "null"],
+			"description": "A Boolean indicating whether the device orientation is portrait (either upright or upside down)"
+		},
+		"resolution": {
+			"type": ["string", "null"],
+			"maxLength": 20,
+			"description": "Screen resolution in pixels. Arrives in the form of WIDTHxHEIGHT (e.g., 1200x900). Doesn't change when device orientation changes"
+		},
+		"scale": {
+			"type": ["number", "null"],
+			"minimum": 0,
+			"maximum": 1000,
+			"description": "Scale factor used to convert logical coordinates to device coordinates of the screen (uses UIScreen.scale on iOS and DisplayMetrics.density on Android)"
+		},
+		"language": {
+			"type": ["string", "null"],
+			"maxLength": 8,
+			"description": "System language currently used on the device (ISO 639)"
+		},
+		"appSetId": {
+			"type": ["string", "null"],
+			"format": "uuid",
+			"description": "Android vendor ID scoped to the set of apps published under the same Google Play developer account (see https://developer.android.com/training/articles/app-set-id)"
+		},
+		"appSetIdScope": {
+			"type": ["string", "null"],
+			"enum": ["app", "developer", null],
+			"description": "Scope of the `appSetId`. Can be scoped to the app or to a developer account on an app store (all apps from the same developer on the same device will have the same ID)"
+		}
+	},
+	"required": ["osType", "osVersion", "deviceManufacturer", "deviceModel"],
+	"additionalProperties": false
+}
