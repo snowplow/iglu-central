@@ -1,0 +1,43 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for a refund in Ecommerce",
+    "self": {
+        "vendor": "com.snowplowanalytics.snowplow.ecommerce",
+        "name": "refund",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "transaction_id": {
+            "description": "The ID of the transaction.",
+            "type": "string",
+            "maxLength": 4096
+        },
+        "currency": {
+            "description" : "The currency in which the product is being priced (ISO 4217).",
+            "type" : "string",
+            "maxLength": 3,
+            "minLength": 3
+        },
+        "refund_amount" : {
+            "type": "number",
+            "description": "The monetary amount refunded.",
+            "multipleOf": 0.01,
+            "minimum": 0.00,
+            "maximum": 9999999
+        },
+        "refund_reason": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Reason for refunding the whole or part of the transaction.",
+            "maxLength": 4096
+        }
+    },
+    "required": [
+        "transaction_id", "currency", "refund_amount"
+    ],
+    "additionalProperties": false
+}
