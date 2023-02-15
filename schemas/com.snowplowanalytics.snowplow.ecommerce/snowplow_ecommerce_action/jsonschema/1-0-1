@@ -1,0 +1,40 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for an Ecommerce action",
+    "self": {
+        "vendor": "com.snowplowanalytics.snowplow.ecommerce",
+        "name": "snowplow_ecommerce_action",
+        "format": "jsonschema",
+        "version": "1-0-1"
+    },
+    "type": "object",
+    "properties": {
+        "type": {
+            "description": "Standard ecommerce actions.",
+            "enum": [
+                "add_to_cart",
+                "remove_from_cart",
+                "product_view",
+                "list_click",
+                "list_view",
+                "promo_click",
+                "promo_view",
+                "checkout_step",
+                "transaction",
+                "refund"
+            ]
+        },
+        "name": {
+            "description": "The name of the list presented to the user E.g. product list, search results, shop the look, frequently bought with.",
+            "type": [
+                "string",
+                "null"
+            ],
+            "maxLength": 128
+        }
+    },
+    "required": [
+        "type"
+    ],
+    "additionalProperties": false
+}
