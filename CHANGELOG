@@ -1,3 +1,10 @@
+Release 140 (2022-02-02)
+------------------------
+Add com.snowplowanalytics.snowplow/browser_context/jsonschema/1-0-0 (#1249)
+Add com.android.installreferrer.api/referrer_details/jsonschema/1-0-0 (#1254)
+Add com.snowplowanalytics.snowplow.ecommerce/promotion/jsonschema/1-0-0 (#1263)
+Add com.snowplowanalytics.snowplow.ecommerce/snowplow_ecommerce_action/jsonschema/1-0-1 (#1261)
+
 Release 139 (2022-01-09)
 ------------------------
 Add com.snowplowanalytics.snowplow.storage/shredding_complete/jsonschema/2-0-1 (close #1247)
