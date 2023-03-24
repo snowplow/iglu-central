@@ -1,0 +1,214 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for SQL Query enrichment configuration",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow.enrichments",
+		"name": "sql_query_enrichment_config",
+		"format": "jsonschema",
+		"version": "1-0-1"
+	},
+
+	"type": "object",
+	"properties": {
+		"vendor": {
+			"type": "string"
+		},
+		"name": {
+			"type": "string"
+		},
+		"enabled": {
+			"type": "boolean"
+		},
+
+		"parameters": {
+			"type": "object",
+			"properties": {
+				"inputs": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"placeholder": {
+								"type": "integer",
+								"minimum": 1,
+								"maximum": 64
+							},
+							"pojo": {
+								"type": "object",
+								"properties": {
+									"field": {
+										"type": "string"
+									}
+								},
+								"additionalProperties": false,
+								"required": ["field"]
+							},
+							"json": {
+								"type": "object",
+								"properties": {
+									"field": {
+										"type": "string",
+										"enum": ["unstruct_event", "contexts", "derived_contexts"]
+									},
+									"schemaCriterion": {
+										"type": "string",
+										"pattern": "^iglu:([a-zA-Z0-9-_.]+)/([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)/([1-9][0-9]*|\\*)-((?:0|[1-9][0-9]*)|\\*)-((?:0|[1-9][0-9]*)|\\*)$"
+									},
+									"jsonPath": {
+										"type": "string"
+									}
+								},
+								"additionalProperties": false,
+								"required": ["field", "schemaCriterion", "jsonPath"]
+							}
+						},
+						"additionalProperties": false,
+						"minProperties": 2,
+						"maxProperties": 2,
+						"required": ["placeholder"]
+					}
+				},
+				"database": {
+					"oneOf": [
+
+						{
+							"type": "object",
+							"properties": {
+								"postgresql": {
+									"type": "object",
+									"properties": {
+										"host": {
+											"type": "string"
+										},
+										"port": {
+											"type": "integer",
+											"minimum": 1,
+											"maximum": 65535
+										},
+										"sslMode": {
+											"type": "boolean"
+										},
+										"username": {
+											"type": "string",
+											"minLength": 1
+										},
+										"password": {
+											"type": "string"
+										},
+										"database": {
+											"type": "string",
+											"minLength": 1
+										}
+									},
+									"required": ["host", "port", "sslMode", "username", "password", "database"],
+									"additionalProperties": false
+								}
+							},
+							"required": ["postgresql"],
+							"additionalProperties": false
+						},
+
+						{
+							"type": "object",
+							"properties": {
+								"mysql": {
+									"type": "object",
+									"properties": {
+										"host": {
+											"type": "string"
+										},
+										"port": {
+											"type": "integer",
+											"minimum": 1,
+											"maximum": 65535
+										},
+										"sslMode": {
+											"type": "boolean"
+										},
+										"username": {
+											"type": "string",
+											"minLength": 1
+										},
+										"password": {
+											"type": "string"
+										},
+										"database": {
+											"type": "string",
+											"minLength": 1
+										}
+									},
+									"required": ["host", "port", "sslMode", "username", "password", "database"],
+									"additionalProperties": false
+								}
+							},
+							"required": ["mysql"]
+						}
+					],
+					"additionalProperties": true
+				},
+				"query": {
+					"type": "object",
+					"properties": {
+						"sql": {
+							"type": "string"
+						}
+					},
+					"required": ["sql"],
+					"additionalProperties": false
+				},
+				"output": {
+					"type": "object",
+					"properties": {
+						"expectedRows": {
+							"type": "string",
+							"enum": ["AT_LEAST_ONE", "AT_LEAST_ZERO", "AT_MOST_ONE", "EXACTLY_ONE"]
+						},
+						"json": {
+							"type": "object",
+							"properties": {
+								"schema": {
+									"type": "string",
+									"pattern": "^iglu:([a-zA-Z0-9-_.]+)/([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)/([1-9][0-9]*(?:-(?:0|[1-9][0-9]*)){2})$"
+								},
+								"propertyNames": {
+									"type": "string",
+									"enum": ["AS_IS", "CAMEL_CASE", "PASCAL_CASE", "SNAKE_CASE", "LOWER_CASE", "UPPER_CASE"]
+								},
+								"describes": {
+									"type": "string",
+									"enum": ["ALL_ROWS", "EVERY_ROW"]
+								}
+							},
+							"required": ["schema", "propertyNames", "describes"],
+							"additionalProperties": false
+						}
+					},
+					"additionalProperties": false
+				},
+				"cache": {
+					"type": "object",
+					"properties": {
+						"size": {
+							"type": "integer",
+							"minimum": 0
+						},
+						"ttl": {
+							"type": "integer",
+							"minimum": 0,
+							"maximum": 86400
+						}
+					},
+					"additionalProperties": false,
+					"required": ["size", "ttl"]
+				},
+				"ignoreOnError": {
+					"type": "boolean"
+				}
+			},
+			"additionalProperties": false,
+			"required": ["inputs", "database", "query", "output", "cache", "ignoreOnError"]
+		}
+	},
+	"additionalProperties": false,
+	"required": ["name", "vendor", "enabled", "parameters"]
+}
