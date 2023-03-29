@@ -1,0 +1,46 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a Vimeo text track event, fired when the active text track of the captions or subtitle kind changes.",
+  "self": {
+    "vendor": "com.vimeo",
+    "name": "text_track_change_event",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "kind": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The kind of the text track: 'captions' or 'subtitles'.",
+      "maxLength": 4096
+    },
+    "language": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The ISO code of the text track's language.",
+      "maxLength": 4096
+    },
+    "label": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The human-readable label of the text track for identification purposes.",
+      "maxLength": 4096
+    },
+    "mode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The mode of the text track",
+      "maxLength": 4096
+    }
+  },
+  "additionalProperties": false
+}
