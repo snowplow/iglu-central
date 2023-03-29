@@ -1,11 +1,25 @@
-Release 140 (2022-02-02)
+Release 141 (2023-05-03)
+------------------------
+Add org.w3/PerformanceNavigationTiming/jsonschema/1-0-0 (#1294)
+Add com.snowplowanalytics.snowplow.badrows/tracker_protocol_violations/jsonschema/1-0-1 (#1291)
+Add com.snowplowanalytics.snowplow.badrows/schema_violations/jsonschema/2-0-1 (#1290)
+Add com.snowplowanalytics.snowplow.badrows/loader_iglu_error/jsonschema/2-0-1 (#1289)
+Add com.snowplowanalytics.snowplow.badrows/recovery_error/jsonschema/1-0-1 (#1288)
+Add com.snowplowanalytics.snowplow.badrows/enrichment_failures/jsonschema/2-0-1 (#1287)
+Add com.snowplowanalytics.iglu/validation_info/jsonschema/1-0-0 (#1285)
+Add com.snowplowanalytics.snowplow.enrichments/sql_query_enrichment_config/jsonschema/1-0-1 (#1272)
+Add com.snowplowanalytics.snowplow.enrichments/api_request_enrichment_config/jsonschema/1-0-2 (#1271)
+Add com.snowplowanalytics.snowplow.ecommerce/refund/jsonschema/1-0-0 (#1259)
+Add com.snowplowanalytics.snowplow/mobile_context/jsonschema/1-0-3 (#1252)
+
+Release 140 (2023-02-02)
 ------------------------
 Add com.snowplowanalytics.snowplow/browser_context/jsonschema/1-0-0 (#1249)
 Add com.android.installreferrer.api/referrer_details/jsonschema/1-0-0 (#1254)
 Add com.snowplowanalytics.snowplow.ecommerce/promotion/jsonschema/1-0-0 (#1263)
 Add com.snowplowanalytics.snowplow.ecommerce/snowplow_ecommerce_action/jsonschema/1-0-1 (#1261)
 
-Release 139 (2022-01-09)
+Release 139 (2023-01-09)
 ------------------------
 Add com.snowplowanalytics.snowplow.storage/shredding_complete/jsonschema/2-0-1 (close #1247)
 
