@@ -1,0 +1,13 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Media player event sent when the player changes state to playing from previously being paused.",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow.media",
+    "name": "play_event",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {},
+  "additionalProperties": false
+}
