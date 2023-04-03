@@ -1,0 +1,32 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Media player event sent when the volume has changed.",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow.media",
+    "name": "volume_change_event",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "previousVolume": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "Volume percentage before the change.",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "newVolume": {
+      "type": "integer",
+      "description": "Volume percentage after the change.",
+      "minimum": 0,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "newVolume"
+  ],
+  "additionalProperties": false
+}
