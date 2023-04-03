@@ -1,0 +1,14 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Media player event that signals the start of an ad break.",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow.media",
+    "name": "ad_break_start_event",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+  },
+  "additionalProperties": false
+}
