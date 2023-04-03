@@ -1,0 +1,21 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Media player event fired immediately after the browser switches into or out of picture-in-picture mode.",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow.media",
+    "name": "picture_in_picture_change_event",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "pictureInPicture": {
+      "type": "boolean",
+      "description": "Whether the video element is showing picture-in-picture after the change."
+    }
+  },
+  "required": [
+    "pictureInPicture"
+  ],
+  "additionalProperties": false
+}
