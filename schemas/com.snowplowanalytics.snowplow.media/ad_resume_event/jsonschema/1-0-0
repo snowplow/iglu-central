@@ -1,0 +1,23 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Media player event fired when the user resumed playing the ad creative after it had been stopped or paused.",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow.media",
+    "name": "ad_resume_event",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "percentProgress": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The percent of the way through the ad",
+      "minimum": 0,
+      "maximum": 100
+    }
+  },
+  "additionalProperties": false
+}
