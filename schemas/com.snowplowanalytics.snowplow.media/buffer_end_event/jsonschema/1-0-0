@@ -1,0 +1,13 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Media player event fired when the the player finishes buffering content and resumes playback.",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow.media",
+    "name": "buffer_end_event",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {},
+  "additionalProperties": false
+}
