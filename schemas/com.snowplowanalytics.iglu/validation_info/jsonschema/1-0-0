@@ -1,0 +1,24 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "description": "Schema for validation information context",
+        "self": {
+                "vendor": "com.snowplowanalytics.iglu",
+                "name": "validation_info",
+                "format": "jsonschema",
+                "version": "1-0-0"
+        },
+
+        "type": "object",
+        "properties": {
+                "originalSchema": {
+                        "type": "string",
+                        "description": "The original schema of the validated entity"
+                },
+                "validatedWith": {
+                        "type": "string",
+                        "description": "The actual version of the schema that entity is validated with"
+                }
+        },
+        "required": ["originalSchema", "validatedWith"],
+        "additionalProperties": false
+}
