@@ -1,0 +1,29 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Media player event sent when the playback rate has changed.",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow.media",
+    "name": "playback_rate_change_event",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "previousRate": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Playback rate before the change (1 is normal)",
+      "minimum": 0,
+      "maximum": 16
+    },
+    "newRate": {
+      "type": "number",
+      "description": "Playback rate after the change (1 is normal)",
+      "minimum": 0,
+      "maximum": 16
+    }
+  },
+  "additionalProperties": false
+}
