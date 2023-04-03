@@ -1,0 +1,55 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Media player event tracked when the video playback quality changes automatically.",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow.media",
+    "name": "quality_change_event",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "previousQuality": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Quality level before the change (e.g., 1080p).",
+      "maxLength": 4096
+    },
+    "newQuality": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Quality level after the change (e.g., 1080p).",
+      "maxLength": 4096
+    },
+    "bitrate": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The current bitrate in bits per second.",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "framesPerSecond": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The current number of frames per second.",
+      "minimum": 0,
+      "maximum": 65535
+    },
+    "automatic": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Whether the change was automatic or triggered by the user."
+    }
+  },
+  "additionalProperties": false
+}
