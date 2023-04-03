@@ -1,0 +1,38 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Media player event tracked when the resource could not be loaded due to an error.",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow.media",
+    "name": "error_event",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "errorCode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Error-identifying code for the playback issue. E.g. E522",
+      "maxLength": 256
+    },
+    "errorName": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Name for the type of error that occurred in the playback. E.g. forbidden",
+      "maxLength": 256
+    },
+    "errorDescription": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Longer description for the error that occurred in the playback.",
+      "maxLength": 4096
+    }
+  },
+  "additionalProperties": false
+}
