@@ -1,0 +1,128 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for errors reported by Snowplow Event Recovery",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow.badrows",
+    "name": "recovery_error",
+    "format": "jsonschema",
+    "version": "1-0-1"
+  },
+  "type": "object",
+  "properties": {
+    "payload": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "type": "string",
+          "enum": [
+            "iglu:com.snowplowanalytics.snowplow.badrows/adapter_failures/jsonschema/1-0-0",
+            "iglu:com.snowplowanalytics.snowplow.badrows/collector_payload_format_violation/jsonschema/1-0-0",
+            "iglu:com.snowplowanalytics.snowplow.badrows/enrichment_failures/jsonschema/1-0-0",
+            "iglu:com.snowplowanalytics.snowplow.badrows/enrichment_failures/jsonschema/2-0-0",
+            "iglu:com.snowplowanalytics.snowplow.badrows/enrichment_failures/jsonschema/2-0-1",
+            "iglu:com.snowplowanalytics.snowplow.badrows/loader_iglu_error/jsonschema/2-0-0",
+            "iglu:com.snowplowanalytics.snowplow.badrows/loader_iglu_error/jsonschema/2-0-1",
+            "iglu:com.snowplowanalytics.snowplow.badrows/loader_parsing_error/jsonschema/2-0-0",
+            "iglu:com.snowplowanalytics.snowplow.badrows/loader_recovery_error/jsonschema/1-0-0",
+            "iglu:com.snowplowanalytics.snowplow.badrows/loader_runtime_error/jsonschema/1-0-0",
+            "iglu:com.snowplowanalytics.snowplow.badrows/loader_runtime_error/jsonschema/1-0-1",
+            "iglu:com.snowplowanalytics.snowplow.badrows/relay_failure/jsonschema/1-0-0",
+            "iglu:com.snowplowanalytics.snowplow.badrows/schema_violations/jsonschema/1-0-0",
+            "iglu:com.snowplowanalytics.snowplow.badrows/schema_violations/jsonschema/2-0-0",
+            "iglu:com.snowplowanalytics.snowplow.badrows/schema_violations/jsonschema/2-0-1",
+            "iglu:com.snowplowanalytics.snowplow.badrows/size_violation/jsonschema/1-0-0",
+            "iglu:com.snowplowanalytics.snowplow.badrows/snowflake_error/jsonschema/1-0-0",
+            "iglu:com.snowplowanalytics.snowplow.badrows/tracker_protocol_violations/jsonschema/1-0-0",
+            "iglu:com.snowplowanalytics.snowplow.badrows/tracker_protocol_violations/jsonschema/1-0-1"
+          ],
+          "description": "Original bad row schema"
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "processor": {
+              "type": "object",
+              "description": "Original application that the bad row comes from"
+            },
+            "failure": {
+              "type": [
+                "object",
+                "array",
+                "string"
+              ],
+              "description": "Original failure reason(s)"
+            },
+            "payload": {
+              "type": [
+                "object",
+                "string"
+              ],
+              "description": "Original payload object, can be a full payload object or a raw payload string"
+            }
+          },
+          "required": [
+            "processor",
+            "failure"
+          ],
+          "description": "Original bad row contents"
+        }
+      },
+      "required": [
+        "schema",
+        "data"
+      ],
+      "description": "Original bad row"
+    },
+    "recoveries": {
+      "type": "integer",
+      "description": "Number of times payload recovery has been tried"
+    },
+    "failure": {
+      "description": "A reason why payload could not be recovered",
+      "properties": {
+        "error": {
+          "description": "Human-readable error",
+          "type": "string"
+        },
+        "configName": {
+          "description": "Name of recovery configuration that failed",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "error"
+      ]
+    },
+    "processor": {
+      "type": "object",
+      "description": "Information about the piece of software responsible for the creation of enrichment failures",
+      "properties": {
+        "artifact": {
+          "type": "string",
+          "description": "Artifact responsible for the creation of enrichment failures",
+          "maxLength": 512
+        },
+        "version": {
+          "type": "string",
+          "description": "Version of the artifact responsible for the creation of enrichment failures",
+          "pattern": "^(\\d+\\.\\d+\\.\\d+.*)$",
+          "maxLength": 32
+        }
+      },
+      "required": [
+        "artifact",
+        "version"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "payload",
+    "failure",
+    "processor"
+  ],
+  "additionalProperties": false
+}
