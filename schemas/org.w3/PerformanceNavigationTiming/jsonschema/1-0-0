@@ -1,0 +1,225 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for page navigation performance entity, based on the PerformanceNavigationTiming interface (see https://w3c.github.io/navigation-timing/)",
+    "self": {
+        "vendor": "org.w3",
+        "name": "PerformanceNavigationTiming",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "decodedBodySize": {
+            "type": [ "integer", "null" ],
+            "maximum": 2147483647,
+            "minimum": 0,
+            "description": "A number that is the size (in octets) received from the fetch (HTTP or cache) of the message body, after removing any applied content encoding."
+        },
+        "encodedBodySize": {
+            "type": [ "integer", "null" ],
+            "maximum": 2147483647,
+            "minimum": 0,
+            "description": "A number representing the size (in octets) received from the fetch (HTTP or cache), of the payload body, before removing any applied content encodings."
+        },
+        "redirectStart": {
+            "type": [ "number", "null" ],
+            "maximum": 2147483647,
+            "minimum": -2147483647,
+            "description": "A DOMHighResTimeStamp that represents the start time of the fetch which initiates the redirect in milliseconds."
+        },
+        "redirectEnd": {
+            "type": [ "number", "null" ],
+            "maximum": 2147483647,
+            "minimum": -2147483647,
+            "description": "A DOMHighResTimeStamp immediately after receiving the last byte of the response of the last redirect in milliseconds."
+        },
+        "fetchStart": {
+            "type": [ "number", "null" ],
+            "maximum": 2147483647,
+            "minimum": -2147483647,
+            "description": "A DOMHighResTimeStamp immediately before the browser starts to fetch the resource in milliseconds."
+        },
+        "domainLookupStart": {
+            "type": [ "number", "null" ],
+            "maximum": 2147483647,
+            "minimum": -2147483647,
+            "description": "A DOMHighResTimeStamp immediately before the browser starts the domain name lookup for the resource in milliseconds."
+        },
+        "domainLookupEnd": {
+            "type": [ "number", "null" ],
+            "maximum": 2147483647,
+            "minimum": -2147483647,
+            "description": "A DOMHighResTimeStamp representing the time immediately after the browser finishes the domain name lookup for the resource in milliseconds."
+        },
+        "connectStart": {
+            "type": [ "number", "null" ],
+            "maximum": 2147483647,
+            "minimum": -2147483647,
+            "description": "A DOMHighResTimeStamp immediately before the browser starts to establish the connection to the server to retrieve the resource in milliseconds."
+        },
+        "secureConnectionStart": {
+            "type": [ "number", "null" ],
+            "maximum": 2147483647,
+            "minimum": -2147483647,
+            "description": "A DOMHighResTimeStamp immediately before the browser starts the handshake process to secure the current connection in milliseconds."
+        },
+        "connectEnd": {
+            "type": [ "number", "null" ],
+            "maximum": 2147483647,
+            "minimum": -2147483647,
+            "description": "A DOMHighResTimeStamp immediately after the browser finishes establishing the connection to the server to retrieve the resource in milliseconds."
+        },
+        "requestStart": {
+            "type": [ "number", "null" ],
+            "maximum": 2147483647,
+            "minimum": -2147483647,
+            "description": "A DOMHighResTimeStamp immediately before the browser starts requesting the resource from the server in milliseconds."
+        },
+        "responseStart": {
+            "type": [ "number", "null" ],
+            "maximum": 2147483647,
+            "minimum": -2147483647,
+            "description": "A DOMHighResTimeStamp immediately after the browser receives the first byte of the response from the server in milliseconds."
+        },
+        "responseEnd": {
+            "type": [ "number", "null" ],
+            "maximum": 2147483647,
+            "minimum": -2147483647,
+            "description": "A DOMHighResTimeStamp immediately after the browser receives the last byte of the resource or immediately before the transport connection is closed in milliseconds, whichever comes first."
+        },
+        "unloadEventStart": {
+            "type": [ "number", "null" ],
+            "maximum": 2147483647,
+            "minimum": 0,
+            "description": "A DOMHighResTimeStamp representing the time immediately after the current document's unload event handler starts in milliseconds."
+        },
+        "unloadEventEnd": {
+            "type": [ "number", "null" ],
+            "maximum": 2147483647,
+            "minimum": 0,
+            "description": "A DOMHighResTimeStamp representing the time immediately after the current document's unload event handler completes in milliseconds."
+        },
+        "domInteractive": {
+            "type": [ "number", "null" ],
+            "maximum": 2147483647,
+            "minimum": 0,
+            "description": "A DOMHighResTimeStamp representing the time immediately before the user agent sets the document's readyState to 'interactive' in milliseconds."
+        },
+        "domContentLoadedEventStart": {
+            "type": [ "number", "null" ],
+            "maximum": 2147483647,
+            "minimum": 0,
+            "description": "A DOMHighResTimeStamp representing the time immediately before the current document's DOMContentLoaded event handler starts in milliseconds."
+        },
+        "domContentLoadedEventEnd": {
+            "type": [ "number", "null" ],
+            "maximum": 2147483647,
+            "minimum": 0,
+            "description": "A DOMHighResTimeStamp representing the time immediately after the current document's DOMContentLoaded event handler completes in milliseconds."
+        },
+        "domComplete": {
+            "type": [ "number", "null" ],
+            "maximum": 2147483647,
+            "minimum": 0,
+            "description": "A DOMHighResTimeStamp representing the time immediately before the user agent sets the document's readyState to 'complete' in milliseconds."
+        },
+        "loadEventStart": {
+            "type": [ "number", "null" ],
+            "maximum": 2147483647,
+            "minimum": 0,
+            "description": "A DOMHighResTimeStamp representing the time immediately after the current document's load event handler starts in milliseconds."
+        },
+        "loadEventEnd": {
+            "type": [ "number", "null" ],
+            "maximum": 2147483647,
+            "minimum": 0,
+            "description": "A DOMHighResTimeStamp representing the time immediately after the current document's load event handler completes in milliseconds."
+        },
+        "entryType": {
+            "type": [ "string", "null" ],
+            "maxLength": 128,
+            "description": "The string 'navigation'."
+        },
+        "redirectCount": {
+            "type": [ "integer", "null" ],
+            "minimum": 0,
+            "maximum": 64,
+            "description": "A number representing the number of redirects since the last non-redirect navigation in the current browsing context."
+        },
+        "type": {
+            "type": [ "string", "null" ],
+            "maxLength": 32,
+            "description": "A string representing the navigation type. Either 'navigate', 'reload', 'back_forward' or 'prerender'."
+        },
+        "workerStart": {
+            "type": [ "number", "null" ],
+            "maximum": 2147483647,
+            "minimum": -2147483647,
+            "description": "Returns a DOMHighResTimeStamp immediately before dispatching the FetchEvent if a Service Worker thread is already running, or immediately before starting the Service Worker thread if it is not already running. If the resource is not intercepted by a Service Worker the property will always return 0."
+        },
+        "nextHopProtocol": {
+            "type": [ "string", "null" ],
+            "maxLength": 16,
+            "description": "A string representing the network protocol used to fetch the resource, as identified by the ALPN Protocol ID (RFC7301)"
+        },
+        "transferSize": {
+            "type": ["integer", "null"],
+            "maximum": 2147483647,
+            "minimum": 0,
+            "description": "A number representing the size (in octets) of the fetched resource. The size includes the response header fields plus the response payload body."
+        },
+        "duration": {
+            "type": [ "number", "null" ],
+            "maximum": 2147483647,
+            "minimum": 0,
+            "description": "Returns a timestamp that is the difference between the loadEventEnd and startTime properties."
+        },
+        "activationStart": {
+            "type": [ "number", "null" ],
+            "maximum": 2147483647,
+            "minimum": 0,
+            "description": "If the document is prerendered, activationStart represents the time between when the prerender was started and the document was actually activated."
+        },
+        "deliveryType": {
+            "type": [ "string", "null" ],
+            "maxLength": 128,
+            "description": "Expose information about how a resource was delivered e.g. resources which were delivered from the cache."
+        },
+        "serverTiming": {
+            "type": [ "array", "null"],
+            "items": {
+                "$ref": "#/definitions/serverTiming",
+                "description": "PerformanceServerTiming entry"
+            },
+            "description": "Array of PerformanceServerTiming entries."
+        }
+    },
+    "definitions": {
+        "serverTiming": {
+            "type": "object",
+            "properties": {
+                "duration": {
+                    "description": "Duration of the measurement.",
+                    "type": [ "number" , "null" ],
+                    "maximum": 2147483647,
+                    "minimum": 0
+                },
+                "name": {
+                    "description": "The name of the measurement.",
+                    "type": "string",
+                    "maxLength": 4096
+                },
+                "description": {
+                    "description": "A short description of the measurement.",
+                    "type": [ "string" , "null" ],
+                    "maxLength": 4096
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "additionalProperties": false
+}
