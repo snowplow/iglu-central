@@ -1,0 +1,131 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a context entity for media events that describes the media player and playback state",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow.media",
+    "name": "player",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "currentTime": {
+      "type": "number",
+      "description": "The current playback time position within the media in seconds.",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "duration": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "A floating-point value indicating the duration of the media in seconds.",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "ended": {
+      "type": "boolean",
+      "description": "Whether playback of the media has ended."
+    },
+    "fullscreen": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Whether the video element is fullscreen."
+    },
+    "livestream": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Whether the media is a live stream."
+    },
+    "label": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Human readable name given to tracked media content.",
+      "maxLength": 4096
+    },
+    "loop": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Whether the video should restart after ending."
+    },
+    "mediaType": {
+      "description": "Type of media content.",
+      "enum": [
+        "video",
+        "audio",
+        null
+      ],
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "muted": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Whether the media element is muted."
+    },
+    "paused": {
+      "type": "boolean",
+      "description": "Whether the media element is paused"
+    },
+    "pictureInPicture": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Whether the video element is showing picture-in-picture."
+    },
+    "playbackRate": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Playback rate (1 is normal).",
+      "minimum": 0,
+      "maximum": 16
+    },
+    "playerType": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Type of the media player (e.g., com.youtube-youtube, com.vimeo-vimeo, org.whatwg-media_element).",
+      "maxLength": 4096
+    },
+    "quality": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Quality level of the playback (e.g., 1080p).",
+      "maxLength": 4096
+    },
+    "volume": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "Volume percentage at which the media will be played.",
+      "minimum": 0,
+      "maximum": 100
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "currentTime",
+    "ended",
+    "paused"
+  ]
+}
