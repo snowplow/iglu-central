@@ -1,0 +1,58 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for a transaction error or rejection entity in ecommerce.",
+    "self": {
+        "vendor": "com.snowplowanalytics.snowplow.ecommerce",
+        "name": "transaction_error",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "error_code": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Error-identifying code for the transaction issue. E.g. E522",
+            "maxLength": 256
+        },
+        "error_shortcode" : {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Shortcode for the error occurred in the transaction. E.g. declined_by_stock_api, declined_by_payment_method, card_declined, pm_card_radarBlock",
+            "maxLength": 4096
+        },
+        "error_description": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Longer description for the error occurred in the transaction.",
+            "maxLength": 4096
+        },
+        "error_type": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "enum": [
+                "hard",
+                "soft",
+                null
+            ],
+            "description": "Hard error types mean the customer must provide another form of payment e.g. an expired card. Soft errors can be the result of temporary issues where retrying might be successful e.g. processor declined the transaction."
+        },
+        "resolution": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "The resolution selected for the error scenario. E.g. retry_allowed, user_blacklisted, block_gateway, contact_user, default",
+            "maxLength": 4096  
+        }
+    },
+    "additionalProperties": false
+}
