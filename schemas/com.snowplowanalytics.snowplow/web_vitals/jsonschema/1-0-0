@@ -1,0 +1,61 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for a web vitals tracking event. For more information on web vitals you can visit https://web.dev/vitals/.",
+    "self": {
+        "vendor": "com.snowplowanalytics.snowplow",
+        "name": "web_vitals",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "cls": {
+            "title": "Cumulative Layout Shift",
+            "type": [ "number", "null" ],
+            "maximum": 2147483647,
+            "minimum": 0,
+            "description": "A unitless metric for measuring visual stability because it helps quantify how often users experience unexpected layout shifts. For more information https://web.dev/cls/."
+        },
+        "fid": {
+            "title": "First Input Delay",
+            "type": [ "number", "null" ],
+            "maximum": 2147483647,
+            "minimum": 0,
+            "description": "A metric for measuring load responsiveness because it quantifies the experience users feel when trying to interact with unresponsive pages. Measured in milliseconds. For more information https://web.dev/fid/."
+        },
+        "lcp": {
+            "title": "Largest Contentful Paint",
+            "type": [ "number", "null" ],
+            "maximum": 2147483647,
+            "minimum": 0,
+            "description": "A metric for measuring perceived load speed because it marks the point in the page load timeline when the page's main content has likely loaded. Measured in milliseconds. For more information https://web.dev/lcp/."
+        },
+        "fcp": {
+            "title": "First Contentful Paint",
+            "type": ["number", "null"],
+            "maximum": 2147483647,
+            "minimum": 0,
+            "description": "A metric for measuring perceived load speed because it marks the first point in the page load timeline where the user can see anything on the screen. Measured in milliseconds. For more information https://web.dev/fcp/."
+        },
+        "inp": {
+            "title": "Interaction to Next Paint",
+            "type": [ "number", "null" ],
+            "maximum": 2147483647,
+            "minimum": 0,
+            "description": "A metric that assesses responsiveness. INP observes the latency of all interactions a user has made with the page, and reports a single value which all (or nearly all) interactions were below that value. For more information https://web.dev/inp/."
+        },
+        "ttfb": {
+            "title": "Time To First Byte",
+            "type": [ "number", "null" ],
+            "maximum": 2147483647,
+            "minimum": 0,
+            "description": "A DOMHighResTimeStamp referring to the time in milliseconds between the browser requesting a page and when it receives the first byte of information from the server. For more information https://web.dev/ttfb/."
+        },
+        "navigationType": {
+            "type": [ "string", "null" ],
+            "maxLength": 128,
+            "description": "The navigation type recognised from the Navigation Timing API https://www.w3.org/TR/navigation-timing-2/. E.g. 'navigate', 'reload', 'back-forward', 'back-forward-cache', 'prerender', 'restore'."
+        }
+    },
+    "additionalProperties": false
+}
