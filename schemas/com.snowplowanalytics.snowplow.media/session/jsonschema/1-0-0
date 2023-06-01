@@ -1,0 +1,138 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a context entity for media player events that tracks a session of a single media player usage",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow.media",
+    "name": "session",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "mediaSessionId": {
+      "type": "string",
+      "maxLength": 256,
+      "description": "An identifier for the media session that is kept while the media content is played in the media player."
+    },
+    "startedAt": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "description": "Local date-time timestamp of when the session started.",
+      "format": "date-time"
+    },
+    "pingInterval": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "Interval (seconds) in which the ping events will be sent. Default (specified in the tracker media docs) is assumed if not specified.",
+      "minimum": 0,
+      "maximum": 65535
+    },
+    "timePlayed": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Total seconds user spent playing content (excluding linear ads).",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "timePlayedMuted": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Total seconds user spent playing content on mute (excluding linear ads).",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "timePaused": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Total seconds user spent with paused content (excluding linear ads).",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "contentWatched": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Total seconds of the content played. Each part of the content played is counted once (i.e., counts rewinding or rewatching the same content only once). Playback rate does not affect this value.",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "timeBuffering": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Total seconds that playback was buffering during the session.",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "timeSpentAds": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Total seconds that ads played during the session.",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "ads": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "Number of ads played.",
+      "minimum": 0,
+      "maximum": 65535
+    },
+    "adsClicked": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "Number of ads that the user clicked on.",
+      "minimum": 0,
+      "maximum": 65535
+    },
+    "adsSkipped": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "Number of ads that the user skipped.",
+      "minimum": 0,
+      "maximum": 65535
+    },
+    "adBreaks": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "Number of ad breaks played.",
+      "minimum": 0,
+      "maximum": 65535
+    },
+    "avgPlaybackRate": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Average playback rate (1 is normal speed).",
+      "minimum": 0,
+      "maximum": 16
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "mediaSessionId"
+  ]
+}

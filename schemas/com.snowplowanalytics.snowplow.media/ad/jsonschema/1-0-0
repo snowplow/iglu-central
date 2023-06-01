@@ -1,0 +1,63 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a context entity with information about the currently played ad",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow.media",
+    "name": "ad",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "Friendly name of the ad.",
+      "type": [
+        "null",
+        "string"
+      ],
+      "maxLength": 4096
+    },
+    "adId": {
+      "type": "string",
+      "maxLength": 256,
+      "description": "Unique identifier for the ad."
+    },
+    "creativeId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 4096,
+      "description": "The ID of the ad creative."
+    },
+    "podPosition": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The position of the ad within the ad break, starting with 1.",
+      "minimum": 1,
+      "maximum": 65535
+    },
+    "duration": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Length of the video ad in seconds.",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "skippable": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Indicating whether skip controls are made available to the end user."
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "adId"
+  ]
+}
