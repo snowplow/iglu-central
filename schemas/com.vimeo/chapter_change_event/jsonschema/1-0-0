@@ -1,0 +1,40 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a Vimeo chapter change event fired when the current chapter changes.",
+  "self": {
+    "vendor": "com.vimeo",
+    "name": "chapter_change_event",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "index": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The chapter number.",
+      "maximum": 100,
+      "minimum": 1
+    },
+    "startTime": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The time in seconds when the chapter begins.",
+      "maximum": 2147483647,
+      "minimum": 0
+    },
+    "title": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The chapter title.",
+      "maxLength": 4096
+    }
+  },
+  "additionalProperties": false
+}
