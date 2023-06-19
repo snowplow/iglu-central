@@ -1,3 +1,9 @@
+Release 143 (2023-06-05)
+------------------------
+Add com.snowplowanalytics.snowplow/web_vitals/jsonschema/1-0-0 (close #1303)
+Add com.snowplowanalytics.snowplow.ecommerce/transaction_error/jsonschema/1-0-0 (close #1296)
+Add com.snowplowanalytics.snowplow.ecommerce/snowplow_ecommerce_action/jsonschema/1-0-2 (close #1298)
+
 Release 142 (2023-06-01)
 ------------------------
 Add com.snowplowanalytics.snowplow.media/volume_change_event/jsonschema/1-0-0 (close #1276)
