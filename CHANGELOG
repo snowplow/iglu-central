@@ -1,3 +1,13 @@
+Release 162 (2021-06-22)
+------------------------
+Add com.vimeo/meta/jsonschema/1-0-0 (close #1265)
+Add com.vimeo/interactive_overlay_panel_click_event/jsonschema/1-0-0 (close #1307)
+Add com.vimeo/interactive_hotspot_click_event/jsonschema/1-0-0 (close #1306)
+Add com.vimeo/interaction/jsonschema/1-0-0 (close #1297)
+Add com.vimeo/chapter_change_event/jsonschema/1-0-0 (close #1280)
+Add com.vimeo/cue_point_event/jsonschema/1-0-0 (close #1281)
+Add com.vimeo/text_track_change_event/jsonschema/1-0-0 (close #1277)
+
 Release 143 (2023-06-05)
 ------------------------
 Add com.snowplowanalytics.snowplow/web_vitals/jsonschema/1-0-0 (close #1303)

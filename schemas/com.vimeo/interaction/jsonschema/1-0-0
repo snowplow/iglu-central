@@ -1,0 +1,114 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Context Schema attached to interactive_hotspot_click_event and interactive_overlay_panel_click_event.",
+  "self": {
+    "vendor": "com.vimeo",
+    "name": "interaction",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "action": {
+      "type": "string",
+      "description": "The action type of the hotspot.",
+      "maxLength": 4096
+    },
+    "actionPreference": {
+      "type": "object",
+      "description": "The user's preferred action type for the hotspot.",
+      "properties": {
+        "pauseOnAction": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Whether to pause when the action type is overlay, url, seek, event, or none."
+        },
+        "overlayId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "When action is overlay, the displayed unique ID for the overlay when the hotspot is clicked.",
+          "maxLength": 4096
+        },
+        "seekTo": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "When action is seek, the time in seconds that the video should jump to when the hotspot is clicked.",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "seekToFrame": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "When action is seek, the frame that the video should jump to when the hotspot is clicked.",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "url": {
+          "format": "uri",
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "When action is clickthrough, the target URL when the overlay panel is clicked.",
+          "maxLength": 4096
+        }
+      },
+      "additionalProperties": false
+    },
+    "customPayloadData": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "The custom payload data of the interactive hotspot",
+      "additionalProperties": true
+    },
+    "currentTime": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "The current time of the video when the interaction occurs is clicked.",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "hotspotId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The unique ID for the hotspot.",
+      "maxLength": 4096
+    },
+    "panelId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The unique ID for a panel within the overlay.",
+      "maxLength": 36,
+      "minLength": 1
+    },
+    "overlayId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "When action is overlay, the displayed unique ID for the overlay when the hotspot is clicked.",
+      "maxLength": 4096
+    }
+  },
+  "required": [
+    "action",
+    "actionPreference"
+  ],
+  "additionalProperties": false
+}

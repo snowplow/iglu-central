@@ -1,0 +1,37 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a Vimeo cue point event, fired when a cue point is reached in a video.",
+  "self": {
+    "vendor": "com.vimeo",
+    "name": "cue_point_event",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "The ID of the cue point."
+    },
+    "cuePointTime": {
+      "type": "number",
+      "description": "The location of the cue point in seconds.",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "data": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "The custom data from the addCuePoint() call, or an empty object.",
+      "additionalProperties": true
+    }
+  },
+  "required": [
+    "id",
+    "cuePointTime"
+  ],
+  "additionalProperties": false
+}

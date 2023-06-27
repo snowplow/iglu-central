@@ -1,0 +1,52 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a Vimeo video metadata.",
+  "self": {
+    "vendor": "com.vimeo",
+    "name": "meta",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "videoId": {
+      "type": "number",
+      "description": "The Vimeo ID of the video.",
+      "minimum": 0,
+      "maximum": 9223372036854776000
+    },
+    "videoTitle": {
+      "type": "string",
+      "description": "The title of the video.",
+      "maxLength": 4096
+    },
+    "videoUrl": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri",
+      "description": "The URL of the video on vimeo.com.",
+      "maxLength": 4096
+    },
+    "videoWidth": {
+      "type": "number",
+      "description": "The native width of the video as the width of the video's highest available resolution.",
+      "minimum": 0,
+      "maximum": 9223372036854776000
+    },
+    "videoHeight": {
+      "type": "number",
+      "description": "The native height of the video as the height of the video's highest available resolution.",
+      "minimum": 0,
+      "maximum": 9223372036854776000
+    }
+  },
+  "required": [
+    "videoId",
+    "videoTitle",
+    "videoWidth",
+    "videoHeight"
+  ],
+  "additionalProperties": false
+}
