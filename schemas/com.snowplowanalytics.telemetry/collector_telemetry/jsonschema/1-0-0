@@ -1,0 +1,60 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for collector telemetry",
+  "self": {
+    "vendor": "com.snowplowanalytics.telemetry",
+    "name": "collector_telemetry",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "collectorHost": {
+      "type": "string",
+      "description": "Host URL of the collector, e.g. https://collector.acme.com",
+      "format": "uri"
+    },
+    "collectorPath": {
+      "type": "string",
+      "description": "Path of the collector, e.g. /com.snowplowanalytics.snowplow/tp2"
+    },
+    "appId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The Application Identifier of the tracker",
+      "maxLength": 255
+    },
+    "pageUrl": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Full URL of the page that sent the event",
+      "format": "uri"
+    },
+    "statusCode": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "HTTP status code of the response",
+      "minimum": 0,
+      "maximum": 999
+    },
+    "method": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "HTTP method of the request e.g. GET, POST",
+      "maxLength": 20
+    }
+  },
+  "required": [
+    "collectorHost",
+    "collectorPath"
+  ],
+  "additionalProperties": false
+}
