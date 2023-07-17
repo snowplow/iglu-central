@@ -1,0 +1,44 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for telemetry of an Iglu repository",
+  "self": {
+    "vendor": "com.snowplowanalytics.telemetry",
+    "name": "iglu_repo_telemetry",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "maxLength": 128,
+      "description": "The name of the repository"
+    },
+    "uri": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri",
+      "description": "The URI of the repository"
+    },
+    "kind": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "local",
+        "ds",
+        "iglu",
+        "static"
+      ],
+      "description": "The kind of registry; Local, Data Structures API, Iglu Server, or Static HTTP"
+    }
+  },
+  "required": [
+    "name",
+    "kind"
+  ],
+  "additionalProperties": false
+}
