@@ -25,14 +25,6 @@
       "description": "The Application Identifier of the tracker",
       "maxLength": 255
     },
-    "pageUrl": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "Full URL of the page that sent the event",
-      "format": "uri"
-    },
     "statusCode": {
       "type": [
         "integer",
