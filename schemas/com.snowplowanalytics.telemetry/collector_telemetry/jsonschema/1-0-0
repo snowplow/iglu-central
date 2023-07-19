@@ -11,8 +11,7 @@
   "properties": {
     "collectorHost": {
       "type": "string",
-      "description": "Host URL of the collector, e.g. https://collector.acme.com",
-      "format": "uri"
+      "description": "Host URL of the collector, e.g. https://collector.acme.com"
     },
     "collectorPath": {
       "type": "string",
