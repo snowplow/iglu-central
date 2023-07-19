@@ -40,14 +40,6 @@
       ],
       "description": "The tracker version",
       "maxLength": 100
-    },
-    "pageUrl": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "Full URL of the page that the tracker is running on",
-      "format": "uri"
     }
   },
   "required": [
