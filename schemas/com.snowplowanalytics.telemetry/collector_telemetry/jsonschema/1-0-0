@@ -25,6 +25,13 @@
       "description": "The Application Identifier of the tracker",
       "maxLength": 255
     },
+    "pageHost": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Hostname of the page that the tracker is on"
+    },
     "statusCode": {
       "type": [
         "integer",
