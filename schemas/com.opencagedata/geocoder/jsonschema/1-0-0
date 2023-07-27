@@ -1,0 +1,340 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self": {
+    "vendor": "com.opencagedata",
+    "name": "geocoder",
+    "version": "1-0-0",
+    "format": "jsonschema"
+  },
+  "type": "object",
+  "properties": {
+    "annotations": {
+      "type": "object",
+      "properties": {
+        "DMS": {
+          "type": "object",
+          "properties": {
+            "lat": {
+              "type": "string"
+            },
+            "lng": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "lat",
+            "lng"
+          ]
+        },
+        "MGRS": {
+          "type": "string"
+        },
+        "Maidenhead": {
+          "type": "string"
+        },
+        "Mercator": {
+          "type": "object",
+          "properties": {
+            "x": {
+              "type": "number"
+            },
+            "y": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "x",
+            "y"
+          ]
+        },
+        "OSM": {
+          "type": "object",
+          "properties": {
+            "edit_url": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "edit_url",
+            "url"
+          ]
+        },
+        "callingcode": {
+          "type": "integer"
+        },
+        "currency": {
+          "type": "object",
+          "properties": {
+            "alternate_symbols": {
+              "type": "array",
+              "items": {
+                  "type": "string",
+                  "maxLength": 5
+              }
+            },
+            "decimal_mark": {
+              "type": "string",
+              "maxLength": 1
+            },
+            "html_entity": {
+              "type": "string",
+              "maxLength": 128
+            },
+            "iso_code": {
+              "type": "string",
+              "maxLength": 2
+
+            },
+            "iso_numeric": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string",
+              "maxLength": 128 
+            },
+            "smallest_denomination": {
+              "type": "integer"
+            },
+            "subunit": {
+              "type": "string"
+            },
+            "subunit_to_unit": {
+              "type": "integer"
+            },
+            "symbol": {
+              "type": "string"
+            },
+            "symbol_first": {
+              "type": "integer"
+            },
+            "thousands_separator": {
+              "type": "string",
+              "maxLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "flag": {
+          "type": "string"
+        },
+        "geohash": {
+          "type": "string"
+        },
+        "qibla": {
+          "type": "number"
+        },
+        "sun": {
+          "type": "object",
+          "properties": {
+            "rise": {
+              "type": "object",
+              "properties": {
+                "apparent": {
+                  "type": "integer"
+                },
+                "astronomical": {
+                  "type": "integer"
+                },
+                "civil": {
+                  "type": "integer"
+                },
+                "nautical": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "apparent",
+                "astronomical",
+                "civil",
+                "nautical"
+              ]
+            },
+            "set": {
+              "type": "object",
+              "properties": {
+                "apparent": {
+                  "type": "integer"
+                },
+                "astronomical": {
+                  "type": "integer"
+                },
+                "civil": {
+                  "type": "integer"
+                },
+                "nautical": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "apparent",
+                "astronomical",
+                "civil",
+                "nautical"
+              ]
+            }
+          },
+          "required": [
+            "rise",
+            "set"
+          ]
+        },
+        "timezone": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "now_in_dst": {
+              "type": "integer"
+            },
+            "offset_sec": {
+              "type": "integer"
+            },
+            "offset_string": {
+              "type": "integer"
+            },
+            "short_name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "now_in_dst",
+            "offset_sec",
+            "offset_string",
+            "short_name"
+          ]
+        },
+        "what3words": {
+          "type": "object",
+          "properties": {
+            "words": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "words"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "bounds": {
+      "type": "object",
+      "properties": {
+        "northeast": {
+          "type": "object",
+          "properties": {
+            "lat": {
+              "type": "number"
+            },
+            "lng": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "lat",
+            "lng"
+          ]
+        },
+        "southwest": {
+          "type": "object",
+          "properties": {
+            "lat": {
+              "type": "number"
+            },
+            "lng": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "lat",
+            "lng"
+          ]
+        }
+      },
+      "required": [
+        "northeast",
+        "southwest"
+      ]
+    },
+    "components": {
+      "type": "object",
+      "properties": {
+        "ISO_3166-1_alpha-2": {
+          "type": "string"
+        },
+        "ISO_3166-1_alpha-3": {
+          "type": "string"
+        },
+        "_type": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "city_district": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "country_code": {
+          "type": "string"
+        },
+        "county": {
+          "type": "string"
+        },
+        "house_number": {
+          "type": "string"
+        },
+        "political_union": {
+          "type": "string"
+        },
+        "postcode": {
+          "type": "string"
+        },
+        "road": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "state_code": {
+          "type": "string"
+        },
+        "suburb": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "_type"
+      ]
+    },
+    "confidence": {
+      "type": "integer"
+    },
+    "formatted": {
+      "type": "string"
+    },
+    "geometry": {
+      "type": "object",
+      "properties": {
+        "lat": {
+          "type": "number"
+        },
+        "lng": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "lat",
+        "lng"
+      ]
+    }
+  },
+  "additionalProperties": false
+}
