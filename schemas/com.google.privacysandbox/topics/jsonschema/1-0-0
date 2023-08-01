@@ -1,0 +1,36 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "self": {
+        "vendor": "com.google.privacysandbox",
+        "name": "topics",
+        "version": "1-0-0",
+        "format": "jsonschema"
+    },
+    "description": "Privacy Sandbox Topics. You can learn more at https://developer.chrome.com/docs/privacy-sandbox/topics/",
+    "type": "object",
+    "properties": {
+        "topics": {
+            "type": [ "array", "null"],
+            "items": {
+                "type": "object",
+                "description": "Topic entry",
+                "properties": {
+                    "topic": {
+                        "description": "Number identifying the topic in the taxonomy list. See more at https://github.com/patcg-individual-drafts/topics/blob/main/taxonomy_v1.md",
+                        "type": ["number", "null"],
+                        "maximum": 9999999,
+                        "minimum": 0
+                    },
+                    "version": {
+                        "description": "A version identifier combining information about the model, taxonomy version and configuration used to calculate the topics concatenated with ':'. E.g. chrome.1:1:1",
+                        "type": ["string", "null"],
+                        "maxLength": 36
+                    }
+                },
+                "additionalProperties": false
+            },
+            "description": "Array of Topics"
+        }
+    },
+    "additionalProperties": false
+}
