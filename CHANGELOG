@@ -1,4 +1,10 @@
-Release 162 (2021-06-22)
+Release 145 (2023-08-04)
+------------------------
+Add com.google.privacysandbox/topics/jsonschema/1-0-0 (close #1318)
+Remove com.snowplowanalytics.snowplow.media/player/jsonschema/1-0-0 (close #1321)
+Add com.snowplowanalytics.snowplow/media_player/jsonschema/2-0-0 (close #1322)
+
+Release 144 (2023-06-22)
 ------------------------
 Add com.vimeo/meta/jsonschema/1-0-0 (close #1265)
 Add com.vimeo/interactive_overlay_panel_click_event/jsonschema/1-0-0 (close #1307)
