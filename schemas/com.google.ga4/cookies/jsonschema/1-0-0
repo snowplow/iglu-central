@@ -1,0 +1,45 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for a context of Google Analytics 4 cookie values. See more at https://support.google.com/analytics/answer/11397207",
+    "self": {
+        "vendor": "com.google.ga4",
+        "name": "cookies",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "cookie_prefix": {
+            "type": ["string", "null"],
+            "description": "Cookie prefix set on the Google Analytics 4 cookies using the cookie_prefix option of the gtag.js tracker.",
+            "maxLength": 100
+        },
+        "_ga": {
+            "type": ["string", "null"],
+            "description": "Google Analytics 4 user identification cookie.",
+            "maxLength": 100
+        },
+        "session_cookies": {
+            "description": "Google Analytics 4 session cookie entries.",
+            "type": [ "array", "null"],
+            "items": {
+                "type": "object",
+                "description": "GA4 session cookie entry.",
+                "properties": {
+                    "measurement_id": {
+                        "description": "Identifier for the Google Analytics 4 container to which the session cookie belongs to",
+                        "type": ["string", "null"],
+                        "maxLength": 100
+                    },
+                    "session_cookie": {
+                        "description": "Google Analytics 4 session cookie. Created in the form of _ga_<container-id> where <container-id> is the data stream container id.",
+                        "type": ["string", "null"],
+                        "maxLength": 100
+                    }
+                },
+                "additionalProperties": false
+            }
+        }
+    },
+    "additionalProperties": false
+}
