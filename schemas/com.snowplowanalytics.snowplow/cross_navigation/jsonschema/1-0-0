@@ -1,0 +1,68 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for a user and session identifiers entity included in cross platform or cross domain navigation.",
+    "self": {
+        "vendor": "com.snowplowanalytics.snowplow",
+        "name": "cross_navigation",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "user_id": {
+            "description": "The business user ID, the user was identified in the source app.",
+            "type": [
+                "null",
+                "string"
+            ],
+            "maxLength": 4096
+        },
+        "domain_user_id": {
+            "type": "string",
+            "maxLength": 128,
+            "description": "Domain user ID of the source app from which a link was followed. The corresponding atomic property is named refr_domain_userid."
+        },
+        "session_id": {
+            "type": [
+                "null",
+                "string"
+            ],
+            "format": "uuid",
+            "description": "Session ID of the source app from which a link was followed."
+        },
+        "timestamp": {
+            "description": "Timestamp of the link click in the source app which triggered this navigation. The corresponding atomic property is named refr_dvce_tstamp.",
+            "type": "string",
+            "format": "date-time"
+        },
+        "source_id": {
+            "type": [
+                "null",
+                "string"
+            ],
+            "maxLength": 4096,
+            "description": "ID of the source app where the link that started this navigation originated from."
+        },
+        "source_platform": {
+            "type": [
+                "null",
+                "string"
+            ],
+            "enum": ["web", "mob", "pc", "srv", "app", "tv", "cnsl", "iot", "headset", null],
+            "description": "Platform of the source app (e.g., mob, web, tv)."
+        },
+        "reason": {
+            "description": "Cross navigation linking information/identifier.",
+            "type": [
+                "null",
+                "string"
+            ],
+            "maxLength": 4096
+        }
+    },
+    "required": [
+        "domain_user_id",
+        "timestamp"
+    ],
+    "additionalProperties": false
+}
