@@ -1,0 +1,32 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "self": {
+        "vendor": "dev.amp.snowplow",
+        "name": "amp_consent",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "description": "Schema for AMP consent data.",
+    "properties": {
+        "consentState": {
+            "type": ["string", "null"],
+            "description": "The consent state at the time for the <amp-consent> E.g. sufficient, insufficient, not_required, unknown",
+            "maxLength": 128
+        },
+        "gdprApplies": {
+            "type": ["boolean", "null"],
+            "description": "If GDPR applies on the current consent policy. Part of the consent metadata."
+        },
+        "consentType": {
+            "type": ["string", "null"],
+            "description": "Type of consent given as an enum. At the time 1: TCF_V1, 2: TCF_V2, US_PRIVACY_STRING: 3 Part of the consent metadata.",
+            "maxLength": 64
+        },
+        "purposeOne": {
+            "type": ["boolean", "null"],
+            "description": "If Purpose One (IAB TCF v2) applies on the current consent policy. Part of the consent metadata."
+        }
+    },
+    "additionalProperties": false
+}
