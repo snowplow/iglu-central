@@ -1,3 +1,17 @@
+Release 146 (2023-09-06)
+------------------------
+Add com.sendgrid/bounce/jsonschema/3-0-0 (#1309)
+Add com.sendgrid/click/jsonschema/3-0-0 (#1309)
+Add com.sendgrid/deferred/jsonschema/3-0-0 (#1309)
+Add com.sendgrid/delivered/jsonschema/3-0-0 (#1309)
+Add com.sendgrid/dropped/jsonschema/3-0-0 (#1309)
+Add com.sendgrid/group_resubscribe/jsonschema/3-0-0 (#1309)
+Add com.sendgrid/group_unsubscribe/jsonschema/3-0-0 (#1309)
+Add com.sendgrid/open/jsonschema/3-0-0 (#1309)
+Add com.sendgrid/processed/jsonschema/3-0-0 (#1309)
+Add com.sendgrid/spamreport/jsonschema/3-0-0 (#1309)
+Add com.sendgrid/unsubscribe/jsonschema/3-0-0 (#1309)
+
 Release 145 (2023-08-04)
 ------------------------
 Add com.google.privacysandbox/topics/jsonschema/1-0-0 (close #1318)
