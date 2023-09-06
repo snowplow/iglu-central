@@ -1,0 +1,89 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a SendGrid processed event. Property descriptions derived from the SendGrid documentation: https://sendgrid.com/docs/for-developers/tracking-events/event/",
+  "self": {
+    "vendor": "com.sendgrid",
+    "name": "processed",
+    "version": "3-0-0",
+    "format": "jsonschema"
+  },
+  "type": "object",
+  "properties": {
+    "timestamp": {
+      "description": "The timestamp of when the message was sent",
+      "type": "string",
+      "format": "date-time"
+    },
+    "email": {
+      "description": "The email address of the recipient",
+      "type": "string",
+      "maxLength": 320
+    },
+    "newsletter": {
+      "description": "Legacy Marketing Email tool fields",
+      "type": "object",
+      "properties": {
+        "newsletter_user_list_id": {
+          "type": "string"
+        },
+        "newsletter_id": {
+          "type": "string"
+        },
+        "newsletter_send_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "sg_event_id": {
+      "description": "A unique ID to this event that you can use for deduplication purposes. These IDs are up to 100 characters long and are URL safe.",
+      "type": "string",
+      "minLength": 22,
+      "maxLength": 4096
+    },
+    "smtp-id": {
+      "description": "A unique ID attached to the message by the originating system",
+      "type": "string"
+    },
+    "category": {
+      "description": "Categories are custom tags that you set for the purpose of organizing your emails. Categories can be set as an array or string, and they will be returned as such when posted in your event endpoint.",
+      "type": ["array", "string"],
+      "items": {
+        "type": "string"
+      }
+    },
+    "asm_group_id": {
+      "description": "The ID of the unsubscribe group the recipient’s email address is included in. ASM IDs correspond to the ID that is returned when you create an unsubscribe group.",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9223372036854775807
+    },
+    "sg_message_id": {
+      "description": "A unique, internal SendGrid ID for the message. The first half of this is pulled from the smtp-id.",
+      "type": "string"
+    },
+    "send_at": {
+      "description": "To schedule a send request for a large batch of emails, use the send_at parameter which will send all emails at approximately the same time. send_at is a UNIX timestamp.",
+      "type": "integer",
+      "maximum": 2147483647,
+      "minimum": 0
+    },
+    "marketing_campaign_id": {
+      "description": "For emails sent through our Marketing Campaigns feature, we add Marketing Campaigns specific parameters to the Event Webhook. Both marketing_campaign_name and marketing_campaign_id are displayed as unique arguments in the event data.",
+      "type": "integer"
+    },
+    "marketing_campaign_name": {
+      "description": "For emails sent through our Marketing Campaigns feature, we add Marketing Campaigns specific parameters to the Event Webhook. Both marketing_campaign_name and marketing_campaign_id are displayed as unique arguments in the event data.",
+      "type": "string"
+    },
+    "marketing_campaign_version": {
+      "description": "Displayed in the event data for emails sent as part of an A/B Test. The value for marketing_campaign_version are returned as A, B, C, etc.",
+      "type": "string"
+    },
+    "marketing_campaign_split_id": {
+      "description": "Marketing campaign split id",
+      "type": "integer"
+    }
+  },
+  "additionalProperties": true
+}
