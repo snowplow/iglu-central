@@ -1,0 +1,133 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a Mandrill message sent event",
+	"self": {
+		"vendor": "com.mandrill",
+		"name": "message_sent",
+		"format": "jsonschema",
+		"version": "1-0-1"
+	},
+
+	"type": "object",
+	"properties": {
+		"_id": {
+			"type": "string",
+			"description": "The unique identifier of the message that generated the event. This is not an event identifier, but rather a reference to the message ID for the email that was sent, opened, clicked, etc."
+		},
+		"msg": {
+			"type": "object",
+			"description": "Details about the message for which the event occurred. May be empty if the message that generated an open or click is older than 30 days, or when the message was not yet indexed when the event occurred.",
+			"properties": {
+				"_id": {
+					"type": "string",
+					"description": "The unique identifier assigned to each email sent via Mailchimp Transactional"
+				},
+				"_version": {
+					"type": "string"
+				},
+				"clicks": {
+					"type": "array",
+					"description": "An array of objects containing an item for each click recorded for the message."
+				},
+				"email": {
+					"type": "string",
+					"description": "The recipient's email address"
+				},
+				"metadata": {
+					"type": "object",
+					"description": "An array of the metadata key-value pairs that were applied to the message, if any",
+					"properties": {
+						"user_id": {
+							"type": "number"
+						}
+					},
+					"additionalProperties": true
+				},
+				"opens": {
+					"type": "array",
+					"description": "An array of objects containing an item for each time the message was opened. Each open includes the following keys"
+				},
+				"sender": {
+					"type": "string",
+					"description": "The sender's email address"
+				},
+				"state": {
+					"type": "string",
+					"description": "The state of the message (sent, rejected, spam, unsub, bounced, or soft-bounced)"
+				},
+				"subject": {
+					"type": "string",
+					"description": "The subject line of the message"
+				},
+				"tags": {
+					"type": "array",
+					"description": "An array of the tag names that were applied to the message, if any",
+					"items": {
+						"type": "string"
+					}
+				},
+				"ts": {
+					"type": "string",
+					"description": "The timestamp when the message was sent",
+					"format": "date-time"
+				},
+				"reject": {
+					"type": ["string", "null"]
+				},
+				"resends": {
+					"type": "array"
+				},
+				"smtp_events": {
+					"type": "array",
+					"description": "Array of JSON objects, each of which is an SMTP response received for the message.",
+					"items": {
+						"type": "object",
+						"properties": {
+							"ts": {
+								"type": "string",
+								"description": "The timestamp of the SMTP event",
+								"format": "date-time"
+							},
+							"type": {
+								"type": "string",
+								"description": "The type of SMTP event, such as sent or deferred"
+							},
+							"diag": {
+								"type": "string",
+								"description": "The SMTP diagnostic or response message returned by the receiving server"
+							},
+							"source_ip": {
+								"type": "string",
+								"description": "The Mailchimp Transactional IP address that attempted to send the message"
+							},
+							"destination_ip": {
+								"type": "string",
+								"description": "The remote IP address of the server Mailchimp Transactional connected to for message relay"
+							},
+							"size": {
+								"type": "integer",
+								"description": "The size of the message being relayed"
+							}
+						},
+						"additionalProperties": true
+					}
+				},
+				"subaccount": {
+					"type": ["string", "null"],
+					"description": "The subaccount from which the message originated; if no subaccount was used, the value will be null"
+				},
+				"template": {
+					"type": ["string", "null"],
+					"description": "The slug of the template used, if any. If no template was used, the value will be null"
+				}
+			},
+			"additionalProperties": true
+		},
+		"ts": {
+			"type": "string",
+			"description": "Timestamp when the event occurred",
+			"format": "date-time"
+		}
+	},
+	"additionalProperties": true
+}
