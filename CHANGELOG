@@ -1,3 +1,7 @@
+Release 147 (2023-10-16)
+------------------------
+Add com.snowplowanalytics.oss/oss_context/jsonschema/1-0-2 (#1344)
+
 Release 146 (2023-09-06)
 ------------------------
 Add com.sendgrid/bounce/jsonschema/3-0-0 (#1309)
