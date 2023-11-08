@@ -1,3 +1,7 @@
+Release 148 (2023-11-08)
+------------------------
+Add com.snowplowanalytics.monitoring.batch/load_succeeded/jsonschema/3-0-1 (#1349)
+
 Release 147 (2023-10-16)
 ------------------------
 Add com.snowplowanalytics.oss/oss_context/jsonschema/1-0-2 (#1344)
