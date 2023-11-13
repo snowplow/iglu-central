@@ -1,3 +1,19 @@
+Release 149 (2023-11-10)
+------------------------
+Add com.google.ga4/cookies/jsonschema/1-0-0 (#1324)
+Add schemas/dev.amp.snowplow/amp_consent/jsonschema/1-0-0 (#1328)
+Add com.snowplowanalytics.snowplow/browser_context/jsonschema/2-0-0 (#1330)
+Add com.mandrill/recipient_unsubscribed/jsonschema/1-0-2 (#1341)
+Add com.mandrill/message_soft_bounced/jsonschema/1-0-2 (#1340)
+Add com.mandrill/message_sent/jsonschema/1-0-1 (#1339)
+Add com.mandrill/message_rejected/jsonschema/1-0-1 (#1338)
+Add com.mandrill/message_opened/jsonschema/1-0-2 (#1337)
+Add com.mandrill/message_marked_as_spam/jsonschema/1-0-2 (#1336)
+Add com.mandrill/message_delivered/jsonschema/1-0-0 (#1335)
+Add com.mandrill/message_delayed/jsonschema/1-0-2 (#1334)
+Add com.mandrill/message_clicked/jsonschema/1-0-2 (#1333)
+Add com.mandrill/message_bounced/jsonschema/1-0-2 (#1332)
+
 Release 148 (2023-11-08)
 ------------------------
 Add com.snowplowanalytics.monitoring.batch/load_succeeded/jsonschema/3-0-1 (#1349)

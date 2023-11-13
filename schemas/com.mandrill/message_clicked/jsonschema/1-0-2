@@ -1,0 +1,290 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for a Mandrill message clicked event",
+	"self": {
+		"vendor": "com.mandrill",
+		"name": "message_clicked",
+		"format": "jsonschema",
+		"version": "1-0-2"
+	},
+
+	"type": "object",
+	"properties": {
+		"_id": {
+			"type": "string",
+			"description": "The unique identifier of the message that generated the event. This is not an event identifier, but rather a reference to the message ID for the email that was sent, opened, clicked, etc."
+		},
+		"ip": {
+			"type": "string",
+			"description": "IP address where the event originated"
+		},
+		"location": {
+			"type": ["object", "null"],
+			"description": "The geolocation where the event occurred. Value will be null if no location can be determined from the IP address of the event.",
+			"properties": {
+				"city": {
+					"type": "string"
+				},
+				"country_short": {
+					"type": "string",
+					"description": "Abbreviated country"
+				},
+				"country": {
+					"type": "string"
+				},
+				"country_long": {
+					"type": ["string", "null"],
+					"description": "Full country name"
+				},
+				"latitude": {
+					"type": "number"
+				},
+				"longitude": {
+					"type": "number"
+				},
+				"postal_code": {
+					"type": "string"
+				},
+				"region": {
+					"type": "string"
+				},
+				"timezone": {
+					"type": "string"
+				}
+			},
+			"additionalProperties": true
+		},
+		"msg": {
+			"type": "object",
+			"description": "Details about the message for which the event occurred. May be empty if the message that generated an open or click is older than 30 days, or when the message was not yet indexed when the event occurred.",
+			"properties": {
+				"_id": {
+					"type": "string",
+					"description": "The unique identifier assigned to each email sent via Mailchimp Transactional"
+				},
+				"_version": {
+					"type": "string"
+				},
+				"clicks": {
+					"type": "array",
+					"description": "An array of objects containing an item for each click recorded for the message.",
+					"items": {
+						"type": "object",
+						"properties": {
+							"ts": {
+								"type": "string",
+								"description": "Timestamp of the click",
+								"format": "date-time"
+							},
+							"url": {
+								"type": "string",
+								"description": "The URL that was clicked"
+							},
+							"ip": {
+								"type": "string"
+							},
+							"location": {
+								"type": ["string", "null"]
+							},
+							"ua": {
+								"type": ["string", "null"]
+							}
+						},
+						"additionalProperties": true
+					}
+				},
+				"email": {
+					"type": "string",
+					"description": "The recipient's email address"
+				},
+				"metadata": {
+					"type": "object",
+					"description": "An array of the metadata key-value pairs that were applied to the message, if any",
+					"properties": {
+						"user_id": {
+							"type": "number"
+						}
+					},
+					"additionalProperties": true
+				},
+				"opens": {
+					"type": "array",
+					"description": "An array of objects containing an item for each time the message was opened. Each open includes the following keys",
+					"items": {
+						"type": "object",
+						"properties": {
+							"ts": {
+								"type": "string",
+								"description": "The timestamp for the open",
+								"format": "date-time"
+							},
+							"ip": {
+								"description": "The IP address where the open occurred",
+								"type": "string"
+							},
+							"location": {
+								"description": "The approximate geolocation of the IP where the open occurred",
+								"type": ["string", "null"]
+							},
+							"ua": {
+								"description": "A string representation of the user agent for the open",
+								"type": ["string", "null"]
+							}
+						},
+						"additionalProperties": true
+					}
+				},
+				"sender": {
+					"type": "string",
+					"description": "The sender's email address"
+				},
+				"state": {
+					"type": "string",
+					"description": "The state of the message (sent, rejected, spam, unsub, bounced, or soft-bounced)"
+				},
+				"subaccount": {
+					"type": ["string", "null"],
+					"description": "The subaccount from which the message originated; if no subaccount was used, the value will be null"
+				},
+				"subject": {
+					"type": "string",
+					"description": "The subject line of the message"
+				},
+				"tags": {
+					"type": "array",
+					"description": "An array of the tag names that were applied to the message, if any",
+					"items": {
+						"type": "string"
+					}
+				},
+				"ts": {
+					"type": "string",
+					"description": "The timestamp when the message was sent",
+					"format": "date-time"
+				},
+				"resends": {
+					"type": "array"
+				},
+				"smtp_events": {
+					"type": "array",
+					"description": "Array of JSON objects, each of which is an SMTP response received for the message.",
+					"items": {
+						"type": "object",
+						"properties": {
+							"ts": {
+								"type": "string",
+								"description": "The timestamp of the SMTP event",
+								"format": "date-time"
+							},
+							"type": {
+								"type": "string",
+								"description": "The type of SMTP event, such as sent or deferred"
+							},
+							"diag": {
+								"type": "string",
+								"description": "The SMTP diagnostic or response message returned by the receiving server"
+							},
+							"source_ip": {
+								"type": "string",
+								"description": "The Mailchimp Transactional IP address that attempted to send the message"
+							},
+							"destination_ip": {
+								"type": "string",
+								"description": "The remote IP address of the server Mailchimp Transactional connected to for message relay"
+							},
+							"size": {
+								"type": "integer",
+								"description": "The size of the message being relayed"
+							}
+						},
+						"additionalProperties": true
+					}
+				},
+				"template": {
+					"type": ["string", "null"],
+					"description": "The slug of the template used, if any. If no template was used, the value will be null"
+				}
+			},
+			"additionalProperties": true
+		},
+		"ts": {
+			"type": "string",
+			"description": "Timestamp when the event occurred",
+			"format": "date-time"
+		},
+		"url": {
+			"type": "string",
+			"description": "The url clicked for the event"
+		},
+		"user_agent_parsed": {
+			"type": ["object", "null"],
+			"description": "A parsed version of the user agent detected for the event. Value will be null if the user agent can't be determined.",
+			"properties": {
+				"mobile": {
+					"type": ["boolean", "null"],
+					"description": "Whether the user agent is a mobile agent"
+				},
+				"os_company_url": {
+					"type": ["string", "null"]
+				},
+				"os_company": {
+					"type": ["string", "null"],
+					"description": "The operating system company"
+				},
+				"os_family": {
+					"type": ["string", "null"]
+				},
+				"os_icon": {
+					"type": ["string", "null"],
+					"description": "URL for an icon for the operating system"
+				},
+				"os_name": {
+					"type": ["string", "null"],
+					"description": "The name of the operating system used for the event"
+				},
+				"os_url": {
+					"type": ["string", "null"],
+					"description": "URL for the operating system"
+				},
+				"type": {
+					"type": ["string", "null"],
+					"description": "The type of user agent (e.g., browser, email client, robot); these may be updated, so string values may be added"
+				},
+				"ua_company_url": {
+					"type": ["string", "null"],
+					"description": "URL for the user agent company"
+				},
+				"ua_company": {
+					"type": ["string", "null"],
+					"description": "Company for the user agent (specifically the browser or email client)"
+				},
+				"ua_family": {
+					"type": ["string", "null"],
+					"description": "Family for the user agent (e.g., Firefox, Chrome, Safari)"
+				},
+				"ua_icon": {
+					"type": ["string", "null"],
+					"description": "URL for an icon for the user agent"
+				},
+				"ua_name": {
+					"type": ["string", "null"],
+					"description": "Name of the user agent"
+				},
+				"ua_url": {
+					"type": ["string", "null"],
+					"description": "URL for the user agent"
+				},
+				"ua_version": {
+					"type": ["string", "null"],
+					"description": "Version of the user agent"
+				}
+			},
+			"additionalProperties": true
+		},
+		"user_agent": {
+			"type": "string",
+			"description": "The user agent string for the environment (i.e., browser or email client) where the open or click occurred"
+		}
+	},
+	"additionalProperties": true
+}
