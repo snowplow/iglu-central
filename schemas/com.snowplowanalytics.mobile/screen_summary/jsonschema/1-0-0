@@ -1,0 +1,104 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for an entity tracked with foreground/background/screen_end events with summary statistics about the screen view",
+	"self": {
+		"vendor": "com.snowplowanalytics.mobile",
+		"name": "screen_summary",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+	"type": "object",
+	"properties": {
+		"foreground_sec": {
+			"type": "number",
+			"description": "Time in seconds spent on the current screen while the app was in foreground",
+			"minimum": 0,
+			"maximum": 2147483647
+		},
+		"background_sec": {
+			"type": [
+				"number",
+				"null"
+			],
+			"description": "Time in seconds spent on the current screen while the app was in background",
+			"minimum": 0,
+			"maximum": 2147483647
+		},
+		"last_item_index": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"description": "Index of the last viewed item in the list on the screen",
+			"minimum": 0,
+			"maximum": 65535
+		},
+		"items_count": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"description": "Total number of items in the list on the screen",
+			"minimum": 0,
+			"maximum": 65535
+		},
+		"min_x_offset": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"description": "Minimum horizontal scroll offset on the scroll view in pixels",
+			"minimum": -2147483647,
+			"maximum": 2147483647
+		},
+		"max_x_offset": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"description": "Maximum horizontal scroll offset on the scroll view in pixels",
+			"minimum": -2147483647,
+			"maximum": 2147483647
+		},
+		"min_y_offset": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"description": "Minimum vertical scroll offset on the scroll view in pixels",
+			"minimum": -2147483647,
+			"maximum": 2147483647
+		},
+		"max_y_offset": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"description": "Maximum vertical scroll offset on the scroll view in pixels",
+			"minimum": -2147483647,
+			"maximum": 2147483647
+		},
+		"content_width": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"description": "Width of the scroll view in pixels",
+			"minimum": 0,
+			"maximum": 2147483647
+		},
+		"content_height": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"description": "Height of the scroll view in pixels",
+			"minimum": 0,
+			"maximum": 2147483647
+		}
+	},
+	"required": [
+		"foreground_sec"
+	],
+	"additionalProperties": false
+}
