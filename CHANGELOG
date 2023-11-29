@@ -1,3 +1,7 @@
+Release 150 (2023-11-29)
+------------------------
+Add com.snowplowanalytics.snowplow/button_click/jsonschema/1-0-0 (#1351)
+
 Release 149 (2023-11-10)
 ------------------------
 Add com.google.ga4/cookies/jsonschema/1-0-0 (#1324)
