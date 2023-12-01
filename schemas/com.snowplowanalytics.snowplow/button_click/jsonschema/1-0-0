@@ -1,0 +1,50 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a button click event",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow",
+    "name": "button_click",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string",
+      "description": "The text on the button clicked, or a user-provided override",
+      "minLength": 1,
+      "maxLength": 4096
+    },
+    "id": {
+      "description": "The ID of the button clicked, if present",
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 4096
+    },
+    "classes": {
+      "description": "An array of class names from the button clicked",
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string",
+        "maxLength": 4096
+      }
+    },
+    "name": {
+      "description": "The name of the button, if present",
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 4096
+    }
+  },
+  "required": [
+    "label"
+  ],
+  "additionalProperties": false
+}
