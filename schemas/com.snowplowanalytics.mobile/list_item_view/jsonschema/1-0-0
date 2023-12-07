@@ -1,0 +1,32 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for an event tracked when an item is displayed in a list",
+	"self": {
+		"vendor": "com.snowplowanalytics.mobile",
+		"name": "list_item_view",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+	"type": "object",
+	"properties": {
+		"index": {
+			"type": "integer",
+			"description": "Index of the item in a list on the screen",
+			"minimum": 0,
+			"maximum": 65535
+		},
+		"items_count": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"description": "Total number of items in a list on the screen",
+			"minimum": 0,
+			"maximum": 65535
+		}
+	},
+	"required": [
+		"index"
+	],
+	"additionalProperties": false
+}
