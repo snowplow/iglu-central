@@ -1,0 +1,68 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for an event tracked when a scroll view's scroll position changes",
+	"self": {
+		"vendor": "com.snowplowanalytics.mobile",
+		"name": "scroll_changed",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+	"type": "object",
+	"properties": {
+		"x_offset": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"description": "Horizontal scroll offset in pixels",
+			"minimum": -2147483647,
+			"maximum": 2147483647
+		},
+		"y_offset": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"description": "Vertical scroll offset in pixels",
+			"minimum": -2147483647,
+			"maximum": 2147483647
+		},
+		"view_width": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"description": "The width of the scroll view in pixels",
+			"minimum": 0,
+			"maximum": 2147483647
+		},
+		"view_height": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"description": "The height of the scroll view in pixels",
+			"minimum": 0,
+			"maximum": 2147483647
+		},
+		"content_width": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"description": "The width of the content in the scroll view in pixels",
+			"minimum": 0,
+			"maximum": 2147483647
+		},
+		"content_height": {
+			"type": [
+				"integer",
+				"null"
+			],
+			"description": "The height of the content in the scroll view in pixels",
+			"minimum": 0,
+			"maximum": 2147483647
+		}
+	},
+	"additionalProperties": false
+}
