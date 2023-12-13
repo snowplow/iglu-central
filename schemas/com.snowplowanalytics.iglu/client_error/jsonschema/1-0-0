@@ -1,0 +1,101 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Possible unsuccessful result produced by Iglu Client",
+    "self": {
+        "vendor": "com.snowplowanalytics.iglu",
+        "name": "client_error",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "required": ["error"],
+    "anyOf": [
+        {
+            "description": "Problem during schema resolution, missing schema or internal error",
+            "properties": {
+                "error": {
+                    "enum": ["ResolutionError"]
+                },
+                "lookupHistory": {
+                    "description": "Set of all traversed repositories with their failures",
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "repository": {
+                                "description": "Repository name from resolver config",
+                                "type": "string"
+                            },
+                            "errors": {
+                                "type": "array",
+                                "items": {
+                                    "properties": {
+                                        "error": {
+                                            "enum": ["ClientFailure", "RepoFailure", "NotFound"]
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": ["error"]
+                                }
+                            },
+                            "attempts": {
+                                "description": "Number of attempts this repository has been queried",
+                                "type": "integer",
+                                "minimum": 0
+                            },
+                            "fatal": {
+                                "type": "boolean"
+                            }
+                        },
+                        "required": ["repository", "errors", "attempts"],
+                        "additionalProperties": false
+                    }
+                }
+            },
+            "required": ["error", "lookupHistory"],
+            "additionalProperties": false
+        },
+        {
+            "description": "Data is invalid against its schema",
+            "properties": {
+                "error": {
+                    "enum": ["ValidationError"]
+                },
+                "dataReports": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "type": "object",
+                        "description": "List of reports",
+                        "properties": {
+                            "message": {
+                                "description": "Human-readable error message",
+                                "type": "string"
+                            },
+                            "path": {
+                                "description": "JSON Path to problematic property in instance",
+                                "type": ["string", "null"]
+                            },
+                            "keyword": {
+                                "description": "JSON Schema keyword caused this report",
+                                "type": ["string", "null"]
+                            },
+                            "targets": {
+                                "description": "List of properties affected in instance",
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "required": ["message", "path", "keyword", "targets"],
+                        "additionalProperties": false
+                    }
+                }
+            }
+        }
+    ]
+}
