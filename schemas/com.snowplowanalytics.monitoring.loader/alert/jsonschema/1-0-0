@@ -1,0 +1,35 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Webhook payload describing an alert coming from loader",
+  "self": {
+    "vendor": "com.snowplowanalytics.monitoring.loader",
+    "name": "alert",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "appName": {
+      "type": "string",
+      "maxLength": 64,
+      "description": "Application's name"
+    },
+    "appVersion": {
+      "type": "string",
+      "maxLength": 64,
+      "description": "Application's version"
+    },
+    "message": {
+      "description": "Free-form message describing the problem",
+      "maxLength": 4096,
+      "type": "string"
+    },
+    "tags": {
+      "description": "Set of key value pairs providing additional information",
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    }
+  },
+  "required": ["appName", "appVersion", "message", "tags"],
+  "additionalProperties": false
+}
