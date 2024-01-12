@@ -13,7 +13,7 @@ jobs:
 
       - name: Extract tag version from ref
         id: get_version
-        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+        run: echo "VERSION=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_OUTPUT
 
       - name: is_release_tag check
         id: tag_check
@@ -21,7 +21,7 @@ jobs:
           RELEASE_TAG: ${{ steps.get_version.outputs.VERSION }}
         run: |
           ./.github/scripts/is_release_tag.bash $RELEASE_TAG
-          echo ::set-output name=exit_code::$?
+          echo "exit_code=$?" >> $GITHUB_OUTPUT
 
       - name: Debug is_release_tag check
         env:
