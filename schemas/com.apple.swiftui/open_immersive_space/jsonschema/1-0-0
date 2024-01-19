@@ -1,0 +1,13 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self": {
+    "vendor": "com.apple.swiftui",
+    "name": "open_immersive_space",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "description": "Schema for an event for opening a visionOS immersive space.",
+  "type": "object",
+  "properties": {},
+  "additionalProperties": false
+}
