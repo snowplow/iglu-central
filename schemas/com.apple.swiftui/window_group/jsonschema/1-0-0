@@ -1,0 +1,47 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self": {
+    "vendor": "com.apple.swiftui",
+    "name": "window_group",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "description": "Schema for a window group entity, representing the SwiftUI window group that the event occurs in.",
+  "type": "object",
+  "properties": {
+    "window_id": {
+      "type": ["string", "null"],
+      "format": "uuid",
+      "description": "UUID for the current window within the group."
+    },
+    "id": {
+      "type": "string",
+      "description": "A string that uniquely identifies the window group. Identifiers must be unique among the window groups in your app.",
+      "maxLength": 255
+    },
+    "title_key": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "A localized string key to use for the window's title in system menus and in the window's title bar. Provide a title that describes the purpose of the window.",
+      "maxLength": 4096
+    },
+    "window_style": {
+      "type": ["string", "null"],
+      "enum": [
+        "automatic",
+        "hiddenTitleBar",
+        "plain",
+        "titleBar",
+        "volumetric",
+        null
+      ],
+      "description": "A specification for the appearance and interaction of a window."
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "additionalProperties": false
+}

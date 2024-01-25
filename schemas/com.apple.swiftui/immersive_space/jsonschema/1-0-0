@@ -1,0 +1,48 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self": {
+    "vendor": "com.apple.swiftui",
+    "name": "immersive_space",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "description": "Schema for an immersive space entity, representing the VisionOS immersive space that the event occurs in.",
+  "type": "object",
+  "properties": {
+    "view_id": {
+      "type": ["string", "null"],
+      "format": "uuid",
+      "description": "UUID for the view of the immersive space."
+    },
+    "id": {
+      "type": "string",
+      "description": "The identifier of the immersive space to present.",
+      "maxLength": 255
+    },
+    "immersion_style": {
+      "type": ["string", "null"],
+      "enum": [
+        "automatic",
+        "full",
+        "mixed",
+        "progressive",
+        null
+      ],
+      "description": "The style of an immersive space."
+    },
+    "upper_limb_visibility": {
+      "type": ["string", "null"],
+      "enum": [
+        "automatic",
+        "visible",
+        "hidden",
+        null
+      ],
+      "description": "Preferred visibility of the user's upper limbs, while an immersive space scene is presented."
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "additionalProperties": false
+}

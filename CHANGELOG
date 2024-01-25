@@ -1,3 +1,18 @@
+Release 152 (2024-01-22)
+------------------------
+Add com.apple.swiftui/dismiss_immersive_space/jsonschema/1-0-0 (#1367)
+Add com.apple.swiftui/open_immersive_space/jsonschema/1-0-0 (#1367)
+Add com.apple.swiftui/dismiss_window/jsonschema/1-0-0 (#1367)
+Add com.apple.swiftui/open_window/jsonschema/1-0-0 (#1367)
+Add com.apple.swiftui/immersive_space/jsonschema/1-0-0 (#1367)
+Add com.apple.swiftui/window_group/jsonschema/1-0-0 (#1367)
+Add com.snowplowanalytics.mobile/scroll_changed/jsonschema/1-0-0 (#1361)
+Add com.snowplowanalytics.mobile/list_item_view/jsonschema/1-0-0 (#1360)
+Add com.snowplowanalytics.mobile/screen_end/jsonschema/1-0-0 (#1357)
+Add com.snowplowanalytics.mobile/screen_summary/jsonschema/1-0-0 (#1356)
+Add com.snowplowanalytics.snowplow.enrichments/cross_navigation_config/jsonschema/1-0-0
+Add com.snowplowanalytics.snowplow/cross_navigation/jsonschema/1-0-0 (#1326)
+
 Release 151 (2023-12-21)
 ------------------------
 Add com.snowplowanalytics.monitoring.loader/alert/jsonschema/1-0-0 (#1364)
