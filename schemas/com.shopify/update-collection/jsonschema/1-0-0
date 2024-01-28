@@ -1,0 +1,65 @@
+{
+  "$schema" : "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self" : {
+    "vendor" : "com.shopify",
+    "name" : "update-collection",
+    "version" : "1-0-0",
+    "format" : "jsonschema"
+  },
+  "type" : "object",
+  "properties" : {
+    "body_html" : {
+      "type" : "string"
+    },
+    "published_scope" : {
+      "type" : "string"
+    },
+    "id" : {
+      "type" : "integer",
+      "maximum" : 2147483647,
+      "minimum" : 0
+    },
+    "disjunctive" : {
+      "type" : "boolean"
+    },
+    "rules" : {
+      "type" : "array",
+      "items" : {
+        "type" : "object",
+        "properties" : {
+          "column" : {
+            "type" : "string"
+          },
+          "relation" : {
+            "type" : "string"
+          },
+          "condition" : {
+            "type" : "string"
+          }
+        },
+        "additionalProperties" : false
+      }
+    },
+    "title" : {
+      "type" : "string"
+    },
+    "template_suffix" : {
+      "type" : "string"
+    },
+    "updated_at" : {
+      "type" : "string",
+      "format" : "date-time"
+    },
+    "sort_order" : {
+      "type" : "string"
+    },
+    "published_at" : {
+      "type" : "string",
+      "format" : "date-time"
+    },
+    "handle" : {
+      "type" : "string"
+    }
+  },
+  "additionalProperties" : false
+}
