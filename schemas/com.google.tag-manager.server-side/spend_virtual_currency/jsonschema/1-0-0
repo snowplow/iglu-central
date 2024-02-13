@@ -1,0 +1,30 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "self": {
+                "vendor": "com.google.tag-manager.server-side",
+                "name": "spend_virtual_currency",
+                "version": "1-0-0",
+                "format": "jsonschema"
+        },
+        "description": "This event measures the sale of virtual goods in your app and helps you identify which virtual goods are the most popular.",
+        "type": "object",
+        "properties": {
+                "virtual_currency_name": {
+                        "description": "The name of the virtual currency.",
+                        "type": ["string", "null"],
+                        "maxLength": 4096
+                },
+                "value": {
+                        "description": "The value of the virtual currency.",
+                        "type": ["number", "null"],
+                        "minimum": 0
+                },
+                "item_name": {
+                        "description": "The name of the item the virtual currency is being used for.",
+                        "type": ["string", "null"],
+                        "maxLength": 500
+                }
+        },
+        "required": ["virtual_currency_name", "value"],
+        "additionalProperties": false
+}
