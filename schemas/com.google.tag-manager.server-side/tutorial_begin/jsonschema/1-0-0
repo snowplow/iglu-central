@@ -1,0 +1,13 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "self": {
+                "vendor": "com.google.tag-manager.server-side",
+                "name": "tutorial_begin",
+                "version": "1-0-0",
+                "format": "jsonschema"
+        },
+        "description": "This event signifies the start of the on-boarding process. Use this in a funnel with tutorial_complete to understand how many users complete the tutorial.",
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+}
