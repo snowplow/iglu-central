@@ -8,9 +8,9 @@
     },
     "type": "object",
     "properties": {
-        "enrichedField": {
+        "source": {
             "type": ["string", "null"],
-            "description": "The enriched field which encountered the error. For example `user_ipaddress`, `unstruct` or `contexts`"
+            "description": "Source of the error. If the failure happened during enrichment, it'll be the enriched field - for example `user_ipaddress`, `unstruct` or `contexts`"
         },
         "failureType": {
             "type": "string"
