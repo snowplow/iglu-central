@@ -1,0 +1,56 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "self": {
+      "vendor": "com.snowplowanalytics.snowplow",
+      "name": "failure",
+      "format": "jsonschema",
+      "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "enrichedField": {
+            "type": ["string", "null"],
+            "description": "The enriched field which encountered the error. For example `user_ipaddress`, `unstruct` or `contexts`"
+        },
+        "failureType": {
+            "type": "string"
+        },
+        "errors": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    }
+                },
+                "additionalProperties": true,
+                "required": ["message"]
+            },
+            "description": "A list of errors encountered, and supporting information about the error."
+        },
+        "schema": {
+					"type": ["string", "null"],
+					"description": "The schema for the object which caused the failure, if it was self-descrbing."
+				},
+        "data": {
+            "type": ["object", "null"],
+            "additionalProperties": true,
+            "description": "The original data object which caused the failure."
+        },
+        "timestamp": {
+            "type": "string",
+            "description": "Timestamp at which the failure occurred",
+            "format": "date-time"
+        },
+        "producingAppName": {
+            "type": "string",
+            "description": "Name of the app which produced the failure"
+        },
+        "producingAppVersion": {
+            "type": "string",
+            "description": "Version of the app which produced the failure"
+        }
+    },
+    "required": ["errors", "timestamp", "producingAppName", "producingAppVersion"]
+  }
