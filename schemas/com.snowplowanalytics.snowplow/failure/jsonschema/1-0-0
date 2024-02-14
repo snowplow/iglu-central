@@ -18,14 +18,7 @@
         "errors": {
             "type": "array",
             "items": {
-                "type": "object",
-                "properties": {
-                    "message": {
-                        "type": "string"
-                    }
-                },
-                "additionalProperties": true,
-                "required": ["message"]
+                "type": "object"
             },
             "description": "A list of errors encountered, and supporting information about the error."
         },
