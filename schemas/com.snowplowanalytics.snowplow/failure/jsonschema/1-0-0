@@ -33,14 +33,14 @@
             "description": "Timestamp at which the failure occurred",
             "format": "date-time"
         },
-        "producingAppName": {
+        "componentName": {
             "type": "string",
-            "description": "Name of the app which produced the failure"
+            "description": "Name of the component which produced the failure"
         },
-        "producingAppVersion": {
+        "componentVersion": {
             "type": "string",
-            "description": "Version of the app which produced the failure"
+            "description": "Version of the component which produced the failure"
         }
     },
-    "required": ["errors", "timestamp", "producingAppName", "producingAppVersion"]
+    "required": ["errors", "timestamp", "componentName", "componentVersion"]
   }
