@@ -42,5 +42,5 @@
             "description": "Version of the component which produced the failure"
         }
     },
-    "required": ["errors", "timestamp", "componentName", "componentVersion"]
+    "required": ["failureType", "errors", "timestamp", "componentName", "componentVersion"]
   }
