@@ -13,7 +13,8 @@
             "description": "Source of the error. If the failure happened during enrichment, it'll be the enriched field - for example `user_ipaddress`, `unstruct` or `contexts`"
         },
         "failureType": {
-            "type": "string"
+            "type": "string",
+            "description": "Classification of the failure. For example, validation error."
         },
         "errors": {
             "type": "array",
