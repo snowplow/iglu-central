@@ -1,0 +1,22 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "self": {
+                "vendor": "com.google.tag-manager.server-side",
+                "name": "preview_mode",
+                "format": "jsonschema",
+                "version": "1-0-0"
+        },
+        "description": "The Preview mode environment for your server container.",
+        "type": "object",
+        "properties": {
+                "x-gtm-server-preview": {
+                        "type": "string",
+                        "description": "The X-Gtm-Server-Preview HTTP header value",
+                        "maxLength": 256
+                }
+        },
+        "required": [
+                "x-gtm-server-preview"
+        ],
+        "additionalProperties": false
+}
