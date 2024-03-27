@@ -1,3 +1,8 @@
+Release 156 (2024-03-28)
+------------------------
+Add com.snowplowanalytics.snowplow/event_specification/jsonschema/1-0-1 (#1396)
+Add com.mandrill/message_opened/jsonschema/1-0-3 (#1394)
+
 Release 155 (2024-03-11)
 ------------------------
 Add com.google.tag-manager.server-side/preview_mode/jsonschema/1-0-0 (#1393)
