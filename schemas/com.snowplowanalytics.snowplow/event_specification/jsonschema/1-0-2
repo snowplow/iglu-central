@@ -1,0 +1,41 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow",
+    "name": "event_specification",
+    "format": "jsonschema",
+    "version": "1-0-2"
+  },
+  "description": "Entity schema for referencing an event specification",
+  "properties": {
+    "id": {
+      "description": "Identifier for the event specification that the event adheres to",
+      "type": "string",
+      "maxLength": 254,
+      "minLength": 1
+    },
+    "name": {
+      "description": "Name for the event specification that the event adheres to",
+      "type": ["string", "null"],
+      "maxLength": 256,
+      "minLength": 1
+    },
+    "data_product_id": {
+      "description": "Identifier for the data product that the event specification belongs to",
+      "type": ["string", "null"],
+      "maxLength": 256,
+      "minLength": 1
+    },
+    "data_product_name": {
+      "description": "Name for the data product that the event specification belongs to",
+      "type": ["string", "null"],
+      "maxLength": 256,
+      "minLength": 1
+    }
+  },
+  "additionalProperties": false,
+  "type": "object",
+  "required": [
+    "id"
+  ]
+}
