@@ -1,3 +1,7 @@
+Release 157 (2024-04-02)
+------------------------
+Add com.snowplowanalytics.snowplow/event_specification/jsonschema/1-0-2 (#1398)
+
 Release 156 (2024-03-28)
 ------------------------
 Add com.snowplowanalytics.snowplow/event_specification/jsonschema/1-0-1 (#1396)
