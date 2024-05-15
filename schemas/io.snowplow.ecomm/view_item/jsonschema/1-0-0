@@ -1,0 +1,22 @@
+{
+    "description": "Event occurs when an item (product or bundle) is viewed.",
+    "properties": {
+        "item_id": {
+            "type": "string",
+            "description": "ID reference to the item (as listed in item) that was viewed. This could be a product or bundle entity.",
+            "maxLength": 255
+        }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "self": {
+        "vendor": "io.snowplow.ecomm",
+        "name": "view_item",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "required": [
+        "item_id"
+    ]
+}

@@ -1,0 +1,114 @@
+{
+    "description": "This entity describes an individual payment which can be made up of multiple payment types.",
+    "properties": {
+        "payment_id": {
+            "type": "string",
+            "maxLength": 255
+        },
+        "order_id": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "The ID for the order this payment is made for.",
+            "maxLength": 255
+        },
+        "customer_id": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "maxLength": 255
+        },
+        "payment_methods": {
+            "type": "array",
+            "description": "Type of payments with their subtotals.",
+            "items": {
+                "type": "object",
+                "description": "Array of objects of payment types.",
+                "properties": {
+                    "payment_method_type": {
+                        "type": "string",
+                        "description": "Examples: \"credit cart\", \"bank transfer\"",
+                        "maxLength": 255
+                    },
+                    "amount": {
+                        "type": "number",
+                        "description": "The amount attributed to that payment method.",
+                        "minimum": 0,
+                        "maximum": 9999999
+                    },
+                    "currency": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "The ISO 4217 alphabetic currency code for which the absolute_value and possibly value units represent.",
+                        "maxLength": 3
+                    }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "payment_method_type",
+                    "amount"
+                ]
+            }
+        },
+        "transaction_id": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "maxLength": 255
+        },
+        "status": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "The current status of this payment.",
+            "maxLength": 255
+        },
+        "gateway": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "maxLength": 255
+        },
+        "gateway_response": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "maxLength": 255
+        },
+        "campaign_id": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "maxLength": 255
+        },
+        "total": {
+            "type": "number",
+            "description": "The total amount this payment is processing for.",
+            "minimum": 0,
+            "maximum": 9999999
+        }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "self": {
+        "vendor": "io.snowplow.ecomm",
+        "name": "payment",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "required": [
+        "payment_id",
+        "payment_methods",
+        "total"
+    ]
+}

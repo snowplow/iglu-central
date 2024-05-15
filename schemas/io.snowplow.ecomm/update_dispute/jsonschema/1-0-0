@@ -1,0 +1,62 @@
+{
+    "description": "This event fires when a dispute is updated.",
+    "properties": {
+        "dispute_id": {
+            "type": "string",
+            "maxLength": 255
+        },
+        "change_trigger": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "What triggered the dispute information update.",
+            "maxLength": 512
+        },
+        "updated_properties": {
+            "type": "array",
+            "description": "List of old values that have been updated in the update to reach the new state represented in the dispute entity.",
+            "items": {
+                "type": "object",
+                "description": "The property that the update was made",
+                "properties": {
+                    "property": {
+                        "type": "string",
+                        "description": "The property name.",
+                        "maxLength": 255
+                    },
+                    "value": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "The new/current value of the property.",
+                        "maxLength": 255
+                    },
+                    "previous_value": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "The previous value of the updated property",
+                        "maxLength": 255
+                    }
+                },
+                "additionalProperties": false
+            }
+        }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "self": {
+        "vendor": "io.snowplow.ecomm",
+        "name": "update_dispute",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "required": [
+        "dispute_id",
+        "updated_properties"
+    ]
+}

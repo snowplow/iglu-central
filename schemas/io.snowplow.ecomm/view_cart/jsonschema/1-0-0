@@ -1,0 +1,21 @@
+{
+    "description": "Event occurs when a customer views their cart.",
+    "properties": {
+        "cart_id": {
+            "type": "string",
+            "maxLength": 255
+        }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "self": {
+        "vendor": "io.snowplow.ecomm",
+        "name": "view_cart",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "required": [
+        "cart_id"
+    ]
+}

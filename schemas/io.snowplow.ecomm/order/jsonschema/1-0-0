@@ -1,0 +1,131 @@
+{
+    "description": "This entity describes an individual order.",
+    "properties": {
+        "order_id": {
+            "type": "string",
+            "maxLength": 255
+        },
+        "status": {
+            "type": "string",
+            "description": "The status of the order.",
+            "maxLength": 255
+        },
+        "order_date": {
+            "type": "string",
+            "description": "The timestamp at which the order was made.",
+            "format": "date-time"
+        },
+        "billing_address_id": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "This field points to the identifier for the location entity corresponding to the billing address.",
+            "maxLength": 255
+        },
+        "shipping_address_id": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "This field points to the identifier for the location entity corresponding to the shipping address.",
+            "maxLength": 255
+        },
+        "total_items": {
+            "type": [
+                "integer",
+                "null"
+            ],
+            "description": "Total number of items in the order.",
+            "minimum": 0,
+            "maximum": 2147483647
+        },
+        "subtotal": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "description": "The amount total for the items/products in the order.",
+            "minimum": 0,
+            "maximum": 9999999
+        },
+        "total": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "description": "The total amount that is due, this includes the tax, shipping and other fees.",
+            "minimum": 0,
+            "maximum": 9999999
+        },
+        "discount": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "description": "Total discount amount.",
+            "minimum": 0,
+            "maximum": 9999999
+        },
+        "tax": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "description": "Total tax amount for the order.",
+            "minimum": 0,
+            "maximum": 9999999
+        },
+        "shipping_amount": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "description": "Total shipping cost for the order.",
+            "minimum": 0,
+            "maximum": 9999999
+        },
+        "currency": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "The currency used to make the payment (ISO 4217).",
+            "maxLength": 3
+        },
+        "payment_ids": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "description": "The payment methods used",
+            "items": {
+                "type": "string",
+                "description": "The payment IDs.",
+                "maxLength": 255
+            }
+        },
+        "cart_id": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "This field points to the identifier for the cart entity.",
+            "maxLength": 255
+        }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "self": {
+        "vendor": "io.snowplow.ecomm",
+        "name": "order",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "required": [
+        "order_id",
+        "status",
+        "order_date"
+    ]
+}

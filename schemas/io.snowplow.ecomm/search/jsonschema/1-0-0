@@ -1,0 +1,96 @@
+{
+    "description": "This entity describes the search action.",
+    "properties": {
+        "search_id": {
+            "type": "string",
+            "maxLength": 255
+        },
+        "search_index": {
+            "type": "integer",
+            "description": "The ID encapsulates the unique collection of the search parameters.",
+            "minimum": 0,
+            "maximum": 2147483647
+        },
+        "search_term": {
+            "type": "string",
+            "description": "The term that was searched.",
+            "maxLength": 512
+        },
+        "autocomplete": {
+            "type": [
+                "boolean",
+                "null"
+            ],
+            "description": "Indicates if autocomplete was used in completing the search term."
+        },
+        "search_time": {
+            "type": [
+                "integer",
+                "null"
+            ],
+            "description": "Time taken in milliseconds for the search to be completed.",
+            "minimum": 0,
+            "maximum": 2147483647
+        },
+        "search_engine": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "The engine used to perform search.",
+            "maxLength": 255
+        },
+        "total_items": {
+            "type": [
+                "integer",
+                "null"
+            ],
+            "description": "This field indicates the total number of items returned in the search results.",
+            "minimum": 0,
+            "maximum": 2147483647
+        },
+        "filters": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "description": "Array of filters applied on the search.",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "attribute": {
+                        "type": "string",
+                        "description": "Advanced search option name.",
+                        "maxLength": 255
+                    },
+                    "value": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "Advanced search option value.",
+                        "maxLength": 255
+                    }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "attribute"
+                ]
+            }
+        }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "self": {
+        "vendor": "io.snowplow.ecomm",
+        "name": "search",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "required": [
+        "search_id",
+        "search_index",
+        "search_term"
+    ]
+}

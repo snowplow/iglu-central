@@ -1,0 +1,28 @@
+{
+    "description": "When the submit_search is completed, this event will be triggered along with the contexts view_collection (the viewing of the search results) and search (the search event parameters).",
+    "properties": {
+        "search_id": {
+            "type": "string",
+            "description": "This returned search's initial search information is found in this search entity's ID.",
+            "maxLength": 255
+        },
+        "collection_id": {
+            "type": "string",
+            "description": "The collection entity that contains the items this search returned with.",
+            "maxLength": 255
+        }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "self": {
+        "vendor": "io.snowplow.ecomm",
+        "name": "return_search",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "required": [
+        "search_id",
+        "collection_id"
+    ]
+}

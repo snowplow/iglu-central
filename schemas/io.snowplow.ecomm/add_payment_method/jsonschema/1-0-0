@@ -1,0 +1,28 @@
+{
+    "description": "Event occurs when a payment method is added during checkout.",
+    "properties": {
+        "payment_id": {
+            "type": "string",
+            "maxLength": 255
+        },
+        "new_payment": {
+            "type": [
+                "boolean",
+                "null"
+            ],
+            "description": "If this payment ID is new or from a saved payment on the customer's account."
+        }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "self": {
+        "vendor": "io.snowplow.ecomm",
+        "name": "add_payment_method",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "required": [
+        "payment_id"
+    ]
+}

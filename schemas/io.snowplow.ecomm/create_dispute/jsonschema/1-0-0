@@ -1,0 +1,21 @@
+{
+    "description": "This event fires when a dispute is created.",
+    "properties": {
+        "dispute_id": {
+            "type": "string",
+            "maxLength": 255
+        }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "self": {
+        "vendor": "io.snowplow.ecomm",
+        "name": "create_dispute",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "required": [
+        "dispute_id"
+    ]
+}

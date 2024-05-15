@@ -1,0 +1,75 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "This entity details a replacement, which differs from a refund in that it replaces a single element of a product rather than the entire product.",
+    "self": {
+      "vendor": "io.snowplow.ecomm",
+      "name": "replacement",
+      "format": "jsonschema",
+      "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+      "replacement_id": {
+        "type": "string",
+        "maxLength": 255
+      },
+      "order_id": {
+        "type": "string",
+        "description": "ID of the original order containing an item(s) needing replacement.",
+        "maxLength": 255
+      },
+      "status": {
+        "type": ["string", "null"],
+        "description": "Examples: \"requested\", \"approved\"",
+        "maxLength": 255
+      },
+      "replacement_initiation_date": {
+        "type": ["string", "null"],
+        "format": "date",
+        "description": "Date replacement process initiated."
+      },
+      "completion_date": {
+        "type": ["string", "null"],
+        "format": "date",
+        "description": "Date replacement process completed."
+      },
+      "product_id": {
+        "type": ["string", "null"],
+        "description": "ID of the product being replaced.",
+        "maxLength": 255
+      },
+      "replacement_part": {
+        "type": ["object", "null"],
+        "description": "Information about the part replacing a faulty part.",
+        "properties": {
+          "part_id": {
+            "type": ["string", "null"],
+            "description": "ID of the part replacing the original.",
+            "maxLength": 255
+          },
+          "part_name": {
+            "type": ["string", "null"],
+            "description": "Name of the part replacing the original.",
+            "maxLength": 255
+          },
+          "quantity": {
+            "type": ["integer", "null"],
+            "description": "Number of product parts of this type.",
+            "minimum": 1,
+            "maximum": 2147483647
+          },
+          "replaces_original": {
+            "type": ["boolean", "null"],
+            "description": "Whether this replaces the original part or not"
+          }
+        }
+      },
+      "cost_incurred_by": {
+        "type": ["string", "null"],
+        "description": "Was the cost incurred by the vendor, or the customer.",
+        "maxLength": 255
+      }
+    },
+    "required": ["replacement_id", "order_id"],
+    "additionalProperties": false
+}

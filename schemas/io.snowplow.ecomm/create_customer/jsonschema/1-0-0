@@ -1,0 +1,29 @@
+{
+    "description": "This event fires when a customer record or account is created or registered for the first time.",
+    "properties": {
+        "component_id": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Where on the page the customer registration was clicked.",
+            "maxLength": 255
+        },
+        "customer_id": {
+            "type": "string",
+            "maxLength": 255
+        }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "self": {
+        "vendor": "io.snowplow.ecomm",
+        "name": "create_customer",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "required": [
+        "customer_id"
+    ]
+}

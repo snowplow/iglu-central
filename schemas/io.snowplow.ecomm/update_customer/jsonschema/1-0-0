@@ -1,0 +1,66 @@
+{
+    "description": "The event fires when a customer record or account is updated to have different information.",
+    "properties": {
+        "customer_id": {
+            "type": "string",
+            "maxLength": 255
+        },
+        "change_trigger": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "What triggered the Customer information update.",
+            "maxLength": 255
+        },
+        "updated_properties": {
+            "type": "array",
+            "description": "List of old values that have been updated in the update to reach the new state represented in the customer entity. Each value is a JSON string.",
+            "items": {
+                "type": "object",
+                "description": "The property that the update was made",
+                "properties": {
+                    "property": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "The property name.",
+                        "maxLength": 255
+                    },
+                    "value": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "The new/current value of the property.",
+                        "maxLength": 255
+                    },
+                    "previous_value": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "The previous value of the updated property",
+                        "maxLength": 255
+                    }
+                },
+                "additionalProperties": false
+            }
+        }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "self": {
+        "vendor": "io.snowplow.ecomm",
+        "name": "update_customer",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "required": [
+        "customer_id",
+        "change_trigger",
+        "updated_properties"
+    ]
+}

@@ -1,0 +1,274 @@
+{
+    "description": "A product entity describes a purchasable good or service.",
+    "properties": {
+        "product_id": {
+            "type": "string",
+            "maxLength": 255
+        },
+        "common_id": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "A common ID that may be seperate from the product_id or sku but can be used to identify the product across multiple vendors; e.g. UPC, ISBN",
+            "maxLength": 255
+        },
+        "sku": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Vendor-specific identifier for the product; may not neccessarily match the product_id or common_id due to technical or organizational reasons. May or may not be variant-specific.",
+            "maxLength": 255
+        },
+        "name": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Name or title of the product.",
+            "maxLength": 255
+        },
+        "price": {
+            "type": "number",
+            "description": "The price of the product in units described by currency.",
+            "minimum": 0,
+            "maximum": 9999999
+        },
+        "currency": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "The ISO 4217 alphabetic currency code for the units in price.",
+            "maxLength": 3
+        },
+        "brand": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Brand / vendor / manufacturer of the product.",
+            "maxLength": 255
+        },
+        "variant_name": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "The name of the variant.",
+            "maxLength": 255
+        },
+        "variant_id": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "The ID of this product's variant.",
+            "maxLength": 255
+        },
+        "category_hierarchy": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "description": "Hierarchicial listing of category and subcategories this product belongs to, if available. For \"flat\" inventories, use categories instead.",
+            "items": {
+                "type": "string",
+                "description": "A category label for the nth level of the hierarchy.",
+                "maxLength": 255,
+                "minLength": 1
+            }
+        },
+        "categories": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "description": "A list of non-hierarchical (tag-like) category labels the product belongs to. For hierarchical categories, use category_hierarchy.",
+            "items": {
+                "type": "string",
+                "description": "An individual category label.",
+                "maxLength": 255,
+                "minLength": 1
+            }
+        },
+        "product_type": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "The type of product, typically the abstract category, such as being a physical item, a digital product, or a service.",
+            "maxLength": 255
+        },
+        "is_recurring": {
+            "type": [
+                "boolean",
+                "null"
+            ],
+            "description": "Whether the product is a once-off purchase, or a recurring purchase (e.g. subscription, plan, installments)."
+        },
+        "dimensions": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "description": "A list of named, numeric physical attributes that describe the product. Can be spatial (length, width, height) or more abstract (weight, filesize).",
+            "items": {
+                "type": "object",
+                "description": "A single dimension measurement.",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the dimension measured in value.",
+                        "maxLength": 255
+                    },
+                    "unit": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "The unit type described in value.",
+                        "maxLength": 255
+                    },
+                    "value": {
+                        "type": "number",
+                        "description": "The dimension value.",
+                        "minimum": 0,
+                        "maximum": 9999999
+                    }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "name",
+                    "value"
+                ]
+            }
+        },
+        "attributes": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "description": "A list of common custom attributes applicable to the product. Several items with the same name can be used for non-scalar items.",
+            "items": {
+                "type": "object",
+                "description": "A single attribute.",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The attribute name.",
+                        "maxLength": 255
+                    },
+                    "value": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "The attribute value.",
+                        "maxLength": 255
+                    }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "name"
+                ]
+            }
+        },
+        "variant_attributes": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "description": "A list of specific custom attributes applicable to this product variant. Several items with the same name can be used for non-scalar items.",
+            "items": {
+                "type": "object",
+                "description": "A single variant attribute.",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The attribute name.",
+                        "maxLength": 255
+                    },
+                    "value": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "The attribute value.",
+                        "maxLength": 255
+                    }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "name"
+                ]
+            }
+        },
+        "available": {
+            "type": [
+                "boolean",
+                "null"
+            ],
+            "description": "Whether the product is available or not; reasons for not include: no stock, embargos, etc."
+        },
+        "stock_status": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "The stock status of the product at the time of the event.",
+            "maxLength": 255
+        },
+        "stock_remaining": {
+            "type": [
+                "integer",
+                "null"
+            ],
+            "description": "The exact number of the product in stock at the time of the event.",
+            "minimum": 0,
+            "maximum": 2147483647
+        },
+        "shippable": {
+            "type": [
+                "boolean",
+                "null"
+            ],
+            "description": "Whether the item can be shipped or only picked up from a physical location."
+        },
+        "other_stock_locations": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "description": "A list of Location entity IDs that may have stock of the product.",
+            "items": {
+                "type": "string",
+                "description": "A specific Location ID referencing a Location entity attached to this or related events.",
+                "maxLength": 255
+            }
+        },
+        "unit_number": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "description": "The number of units associated with the product; e.g. multi-packs.",
+            "minimum": 0,
+            "maximum": 9999999
+        }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "self": {
+        "vendor": "io.snowplow.ecomm",
+        "name": "product",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "required": [
+        "product_id",
+        "price"
+    ]
+}

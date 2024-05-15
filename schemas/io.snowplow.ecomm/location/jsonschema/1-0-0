@@ -1,0 +1,105 @@
+{
+    "description": "The location entity contains the address of the store, shipping etc. These location with its IDs will be referenced in other events/entities.",
+    "properties": {
+        "location_id": {
+            "type": "string",
+            "maxLength": 255
+        },
+        "latitude": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "description": "Latitude (decimal).",
+            "minimum": -90,
+            "maximum": 90
+        },
+        "longitude": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "description": "Longitude (decimal).",
+            "minimum": -180,
+            "maximum": 180
+        },
+        "location_type": {
+            "type": "string",
+            "description": "Examples: \"store\", \"billing address\"",
+            "maxLength": 255
+        },
+        "address": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "Associated individual name.",
+                    "maxLength": 255
+                },
+                "company_name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "Associated company name.",
+                    "maxLength": 255
+                },
+                "street_address": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "maxLength": 255
+                },
+                "city": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "maxLength": 255
+                },
+                "state": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "maxLength": 255
+                },
+                "zipcode": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "maxLength": 32
+                },
+                "country": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "maxLength": 255
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "self": {
+        "vendor": "io.snowplow.ecomm",
+        "name": "location",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "required": [
+        "location_id",
+        "location_type"
+    ]
+}

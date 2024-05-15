@@ -1,0 +1,78 @@
+{
+    "description": "This entity describes an individual store (or storefront).",
+    "properties": {
+        "store_id": {
+            "type": "string",
+            "maxLength": 255
+        },
+        "name": {
+            "type": "string",
+            "description": "The name of the store.",
+            "maxLength": 255
+        },
+        "location_id": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "ID of the location entity for this store.",
+            "maxLength": 255
+        },
+        "store_url": {
+            "type": "string",
+            "maxLength": 1024
+        },
+        "contact_phone": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "maxLength": 255
+        },
+        "store_type": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "description": "Array of the types of the store (e.g. electronics, furnitures, fashion)",
+            "items": {
+                "type": [
+                    "string",
+                    "null"
+                ],
+                "description": "A single store type.",
+                "maxLength": 255
+            }
+        },
+        "powered_by": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Exampels: \"Shopify\", \"Wix\"",
+            "maxLength": 255
+        },
+        "parent_company": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "The name of the parent company.",
+            "maxLength": 255
+        }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "self": {
+        "vendor": "io.snowplow.ecomm",
+        "name": "store",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "required": [
+        "store_id",
+        "name",
+        "store_url"
+    ]
+}
