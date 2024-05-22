@@ -10,10 +10,9 @@
             "maxLength": 255
         },
         "item_type": {
-            "type": [
-                "string",
-                "null"
-            ],
+            "type": "string",
+            "enum": ["product", "bundle"],
+            "description": "The general type of the item, currently supports the two types of a singular product and a bundle of products.",
             "maxLength": 255
         },
         "previous_quantity": {
@@ -43,6 +42,7 @@
     "required": [
         "cart_id",
         "item_id",
+        "item_type",
         "quantity"
     ]
 }

@@ -93,17 +93,10 @@
             "description": "The currency used to make the payment (ISO 4217).",
             "maxLength": 3
         },
-        "payment_ids": {
-            "type": [
-                "array",
-                "null"
-            ],
-            "description": "The payment methods used",
-            "items": {
-                "type": "string",
-                "description": "The payment IDs.",
-                "maxLength": 255
-            }
+        "payment_id": {
+            "type": "string",
+            "description": "The payment ID.",
+            "maxLength": 255
         },
         "cart_id": {
             "type": [

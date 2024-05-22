@@ -14,17 +14,15 @@
             "description": "A unique identifier for the list the product was added to, if not a generic common list.",
             "maxLength": 255
         },
-        "entity_id": {
+        "item_id": {
             "type": "string",
             "description": "ID reference to the entity (as listed in entity) that was added to the list.",
             "maxLength": 255
         },
-        "entity_type": {
-            "type": [
-                "string",
-                "null"
-            ],
-            "description": "The type of entity referenced by entity_id.",
+        "item_type": {
+            "type": "string",
+            "enum": ["product", "bundle"],
+            "description": "The general type of the item, currently supports the two types of a singular product and a bundle of products.",
             "maxLength": 255
         }
     },
@@ -39,6 +37,7 @@
     "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
     "required": [
         "list_id",
-        "entity_id"
+        "item_id",
+        "item_type"
     ]
 }

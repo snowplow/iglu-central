@@ -6,11 +6,9 @@
             "maxLength": 255
         },
         "item_type": {
-            "type": [
-                "string",
-                "null"
-            ],
-            "description": "Examples: \"product\", \"bundle\", \"gift_card\"",
+            "type": "string",
+            "enum": ["product", "bundle"],
+            "description": "The general type of the item, currently supports the two types of a singular product and a bundle of products.",
             "maxLength": 255
         },
         "quantity": {
@@ -42,6 +40,7 @@
     "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
     "required": [
         "item_id",
+        "item_type",
         "quantity",
         "cart_id"
     ]
