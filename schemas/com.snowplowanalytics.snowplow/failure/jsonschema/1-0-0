@@ -1,0 +1,46 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "self": {
+      "vendor": "com.snowplowanalytics.snowplow",
+      "name": "failure",
+      "format": "jsonschema",
+      "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "failureType": {
+            "type": "string",
+            "description": "Classification of the failure. For example, validation error."
+        },
+        "errors": {
+            "type": "array",
+            "items": {
+                "type": "object"
+            },
+            "description": "A list of errors encountered, and supporting information about the error. Each entry should always have at least a message field and a source field."
+        },
+        "schema": {
+					"type": ["string", "null"],
+					"description": "The schema for the object which caused the failure, if it was self-descrbing."
+				},
+        "data": {
+            "type": ["object", "null"],
+            "additionalProperties": true,
+            "description": "The original data object which caused the failure."
+        },
+        "timestamp": {
+            "type": "string",
+            "description": "Timestamp at which the failure occurred",
+            "format": "date-time"
+        },
+        "componentName": {
+            "type": "string",
+            "description": "Name of the component which produced the failure"
+        },
+        "componentVersion": {
+            "type": "string",
+            "description": "Version of the component which produced the failure"
+        }
+    },
+    "required": ["failureType", "errors", "timestamp", "componentName", "componentVersion"]
+  }
