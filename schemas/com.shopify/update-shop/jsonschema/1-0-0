@@ -1,0 +1,166 @@
+{
+  "$schema" : "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self" : {
+    "vendor" : "com.shopify",
+    "name" : "update-shop",
+    "version" : "1-0-0",
+    "format" : "jsonschema"
+  },
+  "type" : "object",
+  "properties" : {
+    "has_discounts" : {
+      "type" : "boolean"
+    },
+    "city" : {
+      "type" : "string"
+    },
+    "name" : {
+      "type" : "string"
+    },
+    "setup_required" : {
+      "type" : "boolean"
+    },
+    "password_enabled" : {
+      "type" : "boolean"
+    },
+    "source" : {
+      "type" : "null"
+    },
+    "customer_email" : {
+      "type" : "null"
+    },
+    "force_ssl" : {
+      "type" : "boolean"
+    },
+    "latitude" : {
+      "type" : "number",
+      "minimum" : 0
+    },
+    "money_with_currency_in_emails_format" : {
+      "type" : "string"
+    },
+    "zip" : {
+      "type" : "string"
+    },
+    "email" : {
+      "type" : "string"
+    },
+    "myshopify_domain" : {
+      "type" : "string"
+    },
+    "has_gift_cards" : {
+      "type" : "boolean"
+    },
+    "domain" : {
+      "type" : "string"
+    },
+    "timezone" : {
+      "type" : "string"
+    },
+    "plan_name" : {
+      "type" : "string",
+      "pattern" : "^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{4}|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)$"
+    },
+    "has_storefront" : {
+      "type" : "boolean"
+    },
+    "tax_shipping" : {
+      "type" : "null"
+    },
+    "shop_owner" : {
+      "type" : "string"
+    },
+    "country" : {
+      "type" : "string",
+      "enum" : [ "AZ", "NF", "PW", "HN", "CY", "GI", "AI", "LC", "UG", "LS", "FM", "LI", "MA", "KI", "TM", "MO", "MM", "TZ", "CR", "LV", "MX", "ME", "PY", "TF", "ID", "IR", "SY", "BF", "BM", "VU", "GH", "JP", "TH", "CX", "GU", "GP", "NI", "NP", "CN", "BG", "MR", "AR", "PG", "IE", "EE", "ZW", "UY", "RU", "CG", "TR", "BO", "QA", "MP", "GM", "BB", "AW", "AN", "GQ", "ST", "LA", "DJ", "AO", "KN", "BT", "GT", "TN", "AS", "TL", "CF", "SD", "BS", "LR", "TO", "IM", "PH", "BY", "AX", "MC", "SR", "UM", "PF", "AQ", "LB", "EG", "TJ", "MU", "SO", "VC", "NU", "SC", "AC", "GD", "AL", "HR", "GG", "ML", "SN", "PK", "SJ", "BJ", "KY", "EC", "BN", "MV", "BA", "CK", "FI", "IO", "MH", "TK", "NZ", "NE", "KZ", "ES", "KW", "BI", "HM", "FK", "GF", "BD", "PR", "UZ", "TC", "MS", "IS", "GW", "TG", "KG", "MG", "WS", "NL", "CD", "BV", "GR", "PA", "SZ", "FO", "VI", "TW", "MW", "JO", "PL", "GA", "TT", "DE", "KP", "CV", "KR", "GS", "DO", "WF", "TD", "SG", "CH", "HK", "BZ", "RO", "AD", "ZM", "IL", "DK", "PN", "GB", "VA", "TV", "SL", "BE", "HT", "MN", "VE", "CC", "GN", "IT", "CU", "VG", "TA", "HU", "FR", "CO", "SA", "CZ", "UA", "US", "DZ", "ZA", "JM", "SI", "DM", "PT", "NA", "GE", "NR", "RE", "PM", "KE", "NC", "GL", "MQ", "AE", "PE", "MZ", "NG", "LY", "CA", "MY", "SB", "KM", "MT", "ET", "AM", "FJ", "VN", "SM", "JE", "NO", "OM", "KH", "SV", "AU", "SH", "YT", "ER", "RS", "BR", "LK", "RW", "YE", "BH", "GY", "SE", "LU", "SK", "IQ", "AG", "MD", "CM", "MK", "IN", "CL", "CI", "LT", "BW", "AT" ]
+    },
+    "address2" : {
+      "type" : "string"
+    },
+    "eligible_for_payments" : {
+      "type" : "boolean"
+    },
+    "longitude" : {
+      "type" : "number",
+      "minimum" : 0
+    },
+    "taxes_included" : {
+      "type" : "boolean"
+    },
+    "country_code" : {
+      "type" : "string",
+      "enum" : [ "AZ", "NF", "PW", "HN", "CY", "GI", "AI", "LC", "UG", "LS", "FM", "LI", "MA", "KI", "TM", "MO", "MM", "TZ", "CR", "LV", "MX", "ME", "PY", "TF", "ID", "IR", "SY", "BF", "BM", "VU", "GH", "JP", "TH", "CX", "GU", "GP", "NI", "NP", "CN", "BG", "MR", "AR", "PG", "IE", "EE", "ZW", "UY", "RU", "CG", "TR", "BO", "QA", "MP", "GM", "BB", "AW", "AN", "GQ", "ST", "LA", "DJ", "AO", "KN", "BT", "GT", "TN", "AS", "TL", "CF", "SD", "BS", "LR", "TO", "IM", "PH", "BY", "AX", "MC", "SR", "UM", "PF", "AQ", "LB", "EG", "TJ", "MU", "SO", "VC", "NU", "SC", "AC", "GD", "AL", "HR", "GG", "ML", "SN", "PK", "SJ", "BJ", "KY", "EC", "BN", "MV", "BA", "CK", "FI", "IO", "MH", "TK", "NZ", "NE", "KZ", "ES", "KW", "BI", "HM", "FK", "GF", "BD", "PR", "UZ", "TC", "MS", "IS", "GW", "TG", "KG", "MG", "WS", "NL", "CD", "BV", "GR", "PA", "SZ", "FO", "VI", "TW", "MW", "JO", "PL", "GA", "TT", "DE", "KP", "CV", "KR", "GS", "DO", "WF", "TD", "SG", "CH", "HK", "BZ", "RO", "AD", "ZM", "IL", "DK", "PN", "GB", "VA", "TV", "SL", "BE", "HT", "MN", "VE", "CC", "GN", "IT", "CU", "VG", "TA", "HU", "FR", "CO", "SA", "CZ", "UA", "US", "DZ", "ZA", "JM", "SI", "DM", "PT", "NA", "GE", "NR", "RE", "PM", "KE", "NC", "GL", "MQ", "AE", "PE", "MZ", "NG", "LY", "CA", "MY", "SB", "KM", "MT", "ET", "AM", "FJ", "VN", "SM", "JE", "NO", "OM", "KH", "SV", "AU", "SH", "YT", "ER", "RS", "BR", "LK", "RW", "YE", "BH", "GY", "SE", "LU", "SK", "IQ", "AG", "MD", "CM", "MK", "IN", "CL", "CI", "LT", "BW", "AT" ]
+    },
+    "money_with_currency_format" : {
+      "type" : "string"
+    },
+    "money_in_emails_format" : {
+      "type" : "string"
+    },
+    "id" : {
+      "type" : "integer",
+      "maximum" : 2147483647,
+      "minimum" : 0
+    },
+    "google_apps_login_enabled" : {
+      "type" : "boolean"
+    },
+    "primary_location_id" : {
+      "type" : "integer",
+      "maximum" : 2147483647,
+      "minimum" : 0
+    },
+    "county_taxes" : {
+      "type" : "boolean"
+    },
+    "address1" : {
+      "type" : "string"
+    },
+    "primary_locale" : {
+      "type" : "string"
+    },
+    "province" : {
+      "type" : "string"
+    },
+    "currency" : {
+      "type" : "string",
+      "enum" : [ "COU", "HRK", "USD", "CHF", "FKP", "CUP", "ANG", "AED", "MUR", "EGP", "MXN", "MRO", "RUB", "TMT", "UYU", "RON", "XDR", "KGS", "CUC", "CVE", "XPT", "LTL", "PLN", "CDF", "XAU", "TJS", "COP", "XXX", "MZN", "BAM", "ERN", "UGX", "BND", "TWD", "SYP", "VUV", "PAB", "LSL", "XBC", "LKR", "QAR", "NZD", "VEF", "LBP", "BZD", "GMD", "LYD", "GYD", "DZD", "IDR", "NGN", "SGD", "LAK", "KZT", "SZL", "GIP", "SBD", "BWP", "CAD", "RWF", "HUF", "TND", "ISK", "UAH", "MYR", "MKD", "XTS", "LVL", "BGN", "XPD", "XAF", "BTN", "SSP", "SDG", "BOB", "BRL", "AZN", "XBB", "MWK", "CNY", "BYR", "EUR", "GTQ", "PEN", "NOK", "SLL", "JPY", "KHR", "XBD", "KRW", "XOF", "AFN", "YER", "ETB", "DJF", "PHP", "ZMW", "XFU", "LRD", "TOP", "NIO", "HKD", "KPW", "SRD", "TTD", "PYG", "ARS", "HTG", "MDL", "JOD", "ZAR", "GNF", "NAD", "AWG", "MOP", "KES", "SAR", "FJD", "UZS", "SHP", "IQD", "ALL", "MNT", "MMK", "MVR", "CRC", "DOP", "PKR", "MAD", "JMD", "CLF", "XPF", "PGK", "MGA", "AOA", "CHE", "BOV", "WST", "VND", "THB", "SCR", "XBA", "IRR", "HNL", "AUD", "BDT", "STD", "GBP", "SEK", "BIF", "ILS", "BSD", "CZK", "XAG", "GEL", "INR", "MXV", "CLP", "RSD", "BHD", "TZS", "XCD", "BMD", "SOS", "OMR", "AMD", "DKK", "KYD", "UYI", "TRY", "KWD", "KMF", "BBD", "USN", "GHS", "NPR", "CHW", "USS" ]
+    },
+    "plan_display_name" : {
+      "type" : "string"
+    },
+    "requires_extra_payments_agreement" : {
+      "type" : "boolean"
+    },
+    "created_at" : {
+      "type" : "string",
+      "format" : "date-time"
+    },
+    "eligible_for_card_reader_giveaway" : {
+      "type" : "boolean"
+    },
+    "google_apps_domain" : {
+      "type" : "string"
+    },
+    "province_code" : {
+      "type" : "null"
+    },
+    "updated_at" : {
+      "type" : "string",
+      "format" : "date-time"
+    },
+    "money_format" : {
+      "type" : "string"
+    },
+    "country_name" : {
+      "type" : "string"
+    },
+    "phone" : {
+      "type" : "string"
+    },
+    "iana_timezone" : {
+      "type" : "string"
+    }
+  },
+  "additionalProperties" : false
+}
