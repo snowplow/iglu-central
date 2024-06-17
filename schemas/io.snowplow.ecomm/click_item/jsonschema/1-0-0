@@ -12,12 +12,17 @@
             "description": "The general type of the item, currently supports the two types of a singular product and a bundle of products.",
             "maxLength": 255
         },
-        "click_position": {
+        "collection_id": {
+            "type": "string",
+            "description": "The ID of the collection entity from which the item that was clicked is located in.",
+            "maxLength": 255
+        },
+        "position": {
             "type": [
                 "integer",
                 "null"
             ],
-            "description": "The numerical position of the item on the page, if the item appears first, click_position would be 1",
+            "description": "The numerical position of the item on the page, if the item appears first, position would be 1",
             "minimum": 1,
             "maximum": 2147483647
         }

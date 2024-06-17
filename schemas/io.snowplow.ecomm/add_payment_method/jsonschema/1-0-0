@@ -3,6 +3,7 @@
     "properties": {
         "payment_id": {
             "type": "string",
+            "description": "The `payment` entity ID for which this event is attached with.",
             "maxLength": 255
         },
         "new_payment": {

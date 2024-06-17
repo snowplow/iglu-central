@@ -1,5 +1,5 @@
 {
-    "description": "Event occurs when a customer cancels for a subscription",
+    "description": "Event occurs when a customer cancels a subscription",
     "properties": {
         "subscription_id": {
             "type": "string",
@@ -10,7 +10,7 @@
                 "string",
                 "null"
             ],
-            "description": "The reason if given in notes for why the subscription was cancelled.",
+            "description": "Reason why the subscription was cancelled.",
             "maxLength": 512
         }
     },

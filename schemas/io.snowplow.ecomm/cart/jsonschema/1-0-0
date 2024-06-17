@@ -1,5 +1,76 @@
 {
     "description": "The cart entity contains the products and bundles that have been added to cart, as well as information about discounts and total costs",
+    "definitions": {
+        "discovery": {
+            "type": "object",
+            "properties": {
+                "discovery_type": {
+                    "type": "string",
+                    "description": "The type of discovery.",
+                    "maxLength": 255
+                },
+                "discovery_id": {
+                    "type": "string",
+                    "description": "The identifier for the specific discovery. As an example if from a search then a `search_id` will be used.",
+                    "maxLength": 255
+                },
+                "discovery_index": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "description": "Any index associated with the discovery, as an example, if the discovery was from a search then the search_index will be used.",
+                    "minimum": 0,
+                    "maximum": 2147483647
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "discovery_type",
+                "discovery_id"
+            ]
+        },
+        "items_in_cart": {
+            "type": "object",
+            "properties": {
+                "item_type": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "Examples: \"product\", \"bundle\".",
+                    "maxLength": 255
+                },
+                "quantity": {
+                    "type": "number",
+                    "description": "The number of items of this item ID.",
+                    "minimum": 0,
+                    "maximum": 9999999
+                },
+                "item_id": {
+                    "type": "string",
+                    "description": "The item's ID.",
+                    "maxLength": 255
+                },
+                "discovery": {
+                    "type": [
+                        "array",
+                        "null"
+                    ],
+                    "description": "An array of objects which indicates how the user had interacted with the item.",
+                    "items": {
+                        "$ref": "#/definitions/discovery"
+                    }
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "quantity",
+                "item_id"
+            ]
+        }
+    },
+    
     "properties": {
         "cart_id": {
             "type": "string",
@@ -83,69 +154,7 @@
             ],
             "description": "The list of items in the cart.",
             "items": {
-                "type": "object",
-                "properties": {
-                    "item_type": {
-                        "type": [
-                            "string",
-                            "null"
-                        ],
-                        "description": "Examples: \"product\", \"bundle\".",
-                        "maxLength": 255
-                    },
-                    "quantity": {
-                        "type": "number",
-                        "description": "The number of items of this item ID.",
-                        "minimum": 0,
-                        "maximum": 9999999
-                    },
-                    "item_id": {
-                        "type": "string",
-                        "description": "The item's ID.",
-                        "maxLength": 255
-                    },
-                    "discovery": {
-                        "type": [
-                            "array",
-                            "null"
-                        ],
-                        "description": "An array of objects which indicates how the user had interacted with the item.",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "discovery_type": {
-                                    "type": "string",
-                                    "description": "The type of discovery.",
-                                    "maxLength": 255
-                                },
-                                "discovery_id": {
-                                    "type": "string",
-                                    "description": "The identifier for the specific discovery. As an example if from a search then a `search_id` will be used.",
-                                    "maxLength": 255
-                                },
-                                "discovery_index": {
-                                    "type": [
-                                        "integer",
-                                        "null"
-                                    ],
-                                    "description": "Any index associated with the discovery, as an example, if the discovery was from a search then the search_index will be used.",
-                                    "minimum": 0,
-                                    "maximum": 2147483647
-                                }
-                            },
-                            "additionalProperties": false,
-                            "required": [
-                                "discovery_type",
-                                "discovery_id"
-                            ]
-                        }
-                    }
-                },
-                "additionalProperties": false,
-                "required": [
-                    "quantity",
-                    "item_id"
-                ]
+                "$ref": "#/definitions/items_in_cart"
             }
         }
     },
