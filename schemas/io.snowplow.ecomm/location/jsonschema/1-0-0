@@ -3,6 +3,7 @@
     "properties": {
         "location_id": {
             "type": "string",
+            "description": "The ID of the location entity.",
             "maxLength": 255
         },
         "latitude": {
@@ -76,6 +77,7 @@
                         "string",
                         "null"
                     ],
+                    "description": "The zipcode or the post code.",
                     "maxLength": 32
                 },
                 "country": {

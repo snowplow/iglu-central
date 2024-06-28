@@ -3,10 +3,12 @@
     "properties": {
         "cart_id": {
             "type": "string",
+            "description": "The ID of the cart entity for which the shipping address is added to during a checkout process.",
             "maxLength": 255
         },
         "location_id": {
             "type": "string",
+            "description": "The ID of the location ID which contains the shipping address information.",
             "maxLength": 255
         }
     },

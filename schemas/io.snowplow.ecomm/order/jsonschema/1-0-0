@@ -3,6 +3,7 @@
     "properties": {
         "order_id": {
             "type": "string",
+            "description": "The ID of the order entity.",
             "maxLength": 255
         },
         "status": {
@@ -119,6 +120,7 @@
     "required": [
         "order_id",
         "status",
-        "order_date"
+        "order_date",
+        "payment_id"
     ]
 }

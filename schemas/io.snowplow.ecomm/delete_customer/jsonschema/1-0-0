@@ -1,6 +1,11 @@
 {
     "description": "This event fires when a customer record or account is deleted, merged or removed/hidden from the system.",
     "properties": {
+        "customer_id": {
+            "type": "string",
+            "description": "The ID of the customer entity.",
+            "maxLength": 255
+        },
         "reason": {
             "type": [
                 "string",
@@ -8,10 +13,6 @@
             ],
             "description": "What triggered the customer account removal.",
             "maxLength": 512
-        },
-        "customer_id": {
-            "type": "string",
-            "maxLength": 255
         }
     },
     "additionalProperties": false,

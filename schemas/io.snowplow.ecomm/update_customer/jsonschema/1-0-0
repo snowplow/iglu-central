@@ -3,13 +3,11 @@
     "properties": {
         "customer_id": {
             "type": "string",
+            "description": "The ID of the customer entity that the update applies to.",
             "maxLength": 255
         },
         "change_trigger": {
-            "type": [
-                "string",
-                "null"
-            ],
+            "type": "string",
             "description": "What triggered the Customer information update.",
             "maxLength": 255
         },

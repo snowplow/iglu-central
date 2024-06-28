@@ -3,6 +3,7 @@
     "properties": {
         "cart_id": {
             "type": "string",
+            "description": "The ID of the cart entity that is being checked out.",
             "maxLength": 255
         }
     },

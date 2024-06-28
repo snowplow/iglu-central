@@ -3,6 +3,7 @@
     "properties": {
         "discount_id": {
             "type": "string",
+            "description": "The ID of the discount entity.",
             "maxLength": 255
         },
         "name": {

@@ -1,16 +1,17 @@
 {
     "description": "This event fires when a customer record or account is created or registered for the first time.",
     "properties": {
+        "customer_id": {
+            "type": "string",
+            "description": "The ID of the customer entity that is being created.",
+            "maxLength": 255
+        },
         "component_id": {
             "type": [
                 "string",
                 "null"
             ],
             "description": "Where on the page the customer registration was clicked.",
-            "maxLength": 255
-        },
-        "customer_id": {
-            "type": "string",
             "maxLength": 255
         }
     },

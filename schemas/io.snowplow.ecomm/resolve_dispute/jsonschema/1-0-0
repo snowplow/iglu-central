@@ -3,6 +3,7 @@
     "properties": {
         "dispute_id": {
             "type": "string",
+            "description": "The ID of the dispute entity that was resolved.",
             "maxLength": 255
         },
         "resolution": {

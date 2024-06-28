@@ -3,10 +3,12 @@
     "properties": {
         "cart_id": {
             "type": "string",
+            "description": "The ID of the cart entity.",
             "maxLength": 255
         },
         "order_id": {
             "type": "string",
+            "description": "The ID of the order entity that is created for the completion of the checkout.",
             "maxLength": 255
         }
     },

@@ -3,10 +3,12 @@
     "properties": {
         "cart_id": {
             "type": "string",
+            "description": "The ID of the cart entity.",
             "maxLength": 255
         },
         "item_id": {
             "type": "string",
+            "description": "The ID of the item entity.",
             "maxLength": 255
         },
         "item_type": {
@@ -20,6 +22,7 @@
                 "integer",
                 "null"
             ],
+            "description": "The previous quantity that was ascribed to the item in the cart.",
             "minimum": 1,
             "maximum": 2147483647
         },

@@ -3,6 +3,7 @@
     "properties": {
         "store_id": {
             "type": "string",
+            "description": "The ID of the store entity.",
             "maxLength": 255
         },
         "name": {
@@ -27,6 +28,7 @@
                 "string",
                 "null"
             ],
+            "description": "The contact phone number of the store if it exists.",
             "maxLength": 255
         },
         "store_type": {

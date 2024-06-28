@@ -13,11 +13,13 @@
         },
         "quantity": {
             "type": "integer",
+            "description": "The number of the item that is being added to the cart.",
             "minimum": 1,
             "maximum": 2147483647
         },
         "cart_id": {
             "type": "string",
+            "description": "The ID of the cart entity that the item it being added to.",
             "maxLength": 255
         },
         "source": {

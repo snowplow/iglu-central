@@ -16,6 +16,7 @@
                 "string",
                 "null"
             ],
+            "description": "The reason, if given, for why the item was removed from the cart.",
             "maxLength": 512
         }
     },

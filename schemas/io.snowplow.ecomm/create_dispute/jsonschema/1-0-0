@@ -3,6 +3,7 @@
     "properties": {
         "dispute_id": {
             "type": "string",
+            "description": "The ID of the dispute entity that is being created.",
             "maxLength": 255
         }
     },

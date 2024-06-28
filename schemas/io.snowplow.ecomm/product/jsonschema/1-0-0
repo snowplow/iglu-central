@@ -3,6 +3,7 @@
     "properties": {
         "product_id": {
             "type": "string",
+            "description": "The ID of the product entity.",
             "maxLength": 255
         },
         "common_id": {

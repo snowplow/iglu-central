@@ -1,21 +1,24 @@
 {
     "description": "This event fires when a customer adds a discount to their order.",
     "properties": {
+        "discount_id": {
+            "type": "string",
+            "description": "The ID of the discount entity that was applied.",
+            "maxLength": 255
+        },
         "success": {
             "type": [
                 "boolean",
                 "null"
-            ]
+            ],
+            "description": "Whether the discount was successfully added."
         },
         "error_code": {
             "type": [
                 "string",
                 "null"
             ],
-            "maxLength": 255
-        },
-        "discount_id": {
-            "type": "string",
+            "description": "If the discount was unsuccessful in been applied then any error code generated can be populated here.",
             "maxLength": 255
         }
     },

@@ -38,6 +38,7 @@
     "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
     "required": [
         "item_id",
-        "item_type"
+        "item_type",
+        "collection_id"
     ]
 }

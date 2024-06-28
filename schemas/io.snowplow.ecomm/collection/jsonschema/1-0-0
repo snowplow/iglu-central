@@ -20,11 +20,9 @@
                         "maxLength": 255
                     },
                     "item_type": {
-                        "type": [
-                            "string",
-                            "null"
-                        ],
-                        "description": "The type of the item. Examples: \"product\", \"bundle\"",
+                        "type": "string",
+                        "enum": ["product", "bundle"],
+                        "description": "The general type of the item, currently supports the two types of a singular product and a bundle of products.",
                         "maxLength": 255
                     },
                     "position": {
@@ -37,7 +35,8 @@
                 "additionalProperties": false,
                 "required": [
                     "item_id",
-                    "position"
+                    "position",
+                    "item_type"
                 ]
             }
         },

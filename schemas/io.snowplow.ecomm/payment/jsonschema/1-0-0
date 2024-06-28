@@ -3,6 +3,7 @@
     "properties": {
         "payment_id": {
             "type": "string",
+            "description": "The ID of the payment entity.",
             "maxLength": 255
         },
         "order_id": {
@@ -18,6 +19,7 @@
                 "string",
                 "null"
             ],
+            "description": "The ID of the customer entity if the user is a registered customer.",
             "maxLength": 255
         },
         "payment_methods": {
@@ -59,6 +61,7 @@
                 "string",
                 "null"
             ],
+            "description": "The primary identifier of the transaction.",
             "maxLength": 255
         },
         "status": {
@@ -88,6 +91,7 @@
                 "string",
                 "null"
             ],
+            "description": "The ID of the campaign entity if a campaign is associated with this payment.",
             "maxLength": 255
         },
         "total": {

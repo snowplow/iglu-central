@@ -1,6 +1,11 @@
 {
     "description": "This event is generated when an order is updated/modified such as adding new shipping information or discounts are applied after the order was created.",
     "properties": {
+        "order_id": {
+            "type": "string",
+            "description": "The ID of the order entity.",
+            "maxLength": 255
+        },
         "change_trigger": {
             "type": [
                 "string",
@@ -40,10 +45,6 @@
                 },
                 "additionalProperties": false
             }
-        },
-        "order_id": {
-            "type": "string",
-            "maxLength": 255
         }
     },
     "additionalProperties": false,

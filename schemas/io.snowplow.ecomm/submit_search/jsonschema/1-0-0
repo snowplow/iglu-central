@@ -3,7 +3,7 @@
     "properties": {
         "search_id": {
             "type": "string",
-            "description": "A unique identifier for this search.",
+            "description": "The ID of the search entity for this search.",
             "maxLength": 255
         }
     },

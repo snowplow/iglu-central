@@ -3,6 +3,7 @@
     "properties": {
         "subscription_id": {
             "type": "string",
+            "description": "The primary identifier of the subscription in the system.",
             "maxLength": 255
         },
         "reason": {

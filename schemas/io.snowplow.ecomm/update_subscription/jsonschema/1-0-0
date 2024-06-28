@@ -3,6 +3,7 @@
     "properties": {
         "subscription_id": {
             "type": "string",
+            "description": "The primary identifier of the subscription in the system.",
             "maxLength": 255
         },
         "change_trigger": {
@@ -10,6 +11,7 @@
                 "string",
                 "null"
             ],
+            "description": "The type of trigger that initiated this update.",
             "maxLength": 255
         },
         "updated_properties": {

@@ -3,6 +3,7 @@
     "properties": {
         "order_id": {
             "type": "string",
+            "description": "The ID of the order entity.",
             "maxLength": 255
         }
     },
