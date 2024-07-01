@@ -1,0 +1,37 @@
+{
+    "description": "This event fires when a customer adds a discount to their order.",
+    "properties": {
+        "discount_id": {
+            "type": "string",
+            "description": "The ID of the discount entity that was applied.",
+            "maxLength": 255
+        },
+        "success": {
+            "type": [
+                "boolean",
+                "null"
+            ],
+            "description": "Whether the discount was successfully added."
+        },
+        "error_code": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "If the discount was unsuccessful in been applied then any error code generated can be populated here.",
+            "maxLength": 255
+        }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "self": {
+        "vendor": "io.snowplow.ecomm",
+        "name": "add_discount",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "required": [
+        "discount_id"
+    ]
+}
