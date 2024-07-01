@@ -1,0 +1,77 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "This entity describes a dispute report/ticket.",
+    "self": {
+      "vendor": "io.snowplow.ecomm",
+      "name": "dispute",
+      "format": "jsonschema",
+      "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+      "dispute_id": {
+        "type": "string",
+        "description": "The ID of the dispute entity.",
+        "maxLength": 255
+      },
+      "description": {
+        "type": ["string", "null"],
+        "description": "Description of the dispute.",
+        "maxLength": 1024
+      },
+      "reason": {
+        "type": ["string", "null"],
+        "description": "Reason for the dispute.",
+        "maxLength": 255
+      },
+      "open_date": {
+        "type": ["string", "null"],
+        "format": "date",
+        "description": "Date that dispute was opened."
+      },
+      "payment_details": {
+        "type": ["object", "null"],
+        "description": "Details of the disputed transation.",
+        "properties": {
+            "payment_id": {
+                "type": ["string", "null"],
+                "description": "ID of the payment being disputed.",
+                "maxLength": 255
+            },
+            "created_on": {
+                "type": ["string", "null"],
+                "format": "date",
+                "description": "Date the payment was created."
+            },
+            "payment_status": {
+                "type": ["string", "null"],
+                "description": "Status of the payment.",
+                "maxLength": 255
+            }
+        }
+      },
+      "status": {
+        "type": ["string", "null"],
+        "description": "Status of the dispute.",
+        "maxLength": 255
+      },
+      "store_ids": {
+        "type": ["array", "null"],
+        "items": {
+            "type": ["string", "null"],
+            "description": "IDs of stores associated with the dispute.",
+            "maxLength": 255
+        }
+      },
+      "order_ids": {
+        "type": ["array", "null"],
+        "items": {
+            "type": "string",
+            "description": "IDs of orders associated with the dispute.",
+            "maxLength": 255
+        }
+      }
+    },
+    "required": ["dispute_id"],
+    "additionalProperties": false
+}
