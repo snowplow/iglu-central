@@ -1,0 +1,51 @@
+{
+    "description": "Event fires when the user changes the quantity of an product/item in an cart.",
+    "properties": {
+        "cart_id": {
+            "type": "string",
+            "description": "The ID of the cart entity.",
+            "maxLength": 255
+        },
+        "item_id": {
+            "type": "string",
+            "description": "The ID of the item entity.",
+            "maxLength": 255
+        },
+        "item_type": {
+            "type": "string",
+            "enum": ["product", "bundle"],
+            "description": "The general type of the item, currently supports the two types of a singular product and a bundle of products.",
+            "maxLength": 255
+        },
+        "previous_quantity": {
+            "type": [
+                "integer",
+                "null"
+            ],
+            "description": "The previous quantity that was ascribed to the item in the cart.",
+            "minimum": 1,
+            "maximum": 2147483647
+        },
+        "quantity": {
+            "type": "integer",
+            "description": "The new/current quantity value.",
+            "minimum": 1,
+            "maximum": 2147483647
+        }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "self": {
+        "vendor": "io.snowplow.ecomm",
+        "name": "update_quantity",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "required": [
+        "cart_id",
+        "item_id",
+        "item_type",
+        "quantity"
+    ]
+}
