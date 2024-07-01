@@ -1,0 +1,63 @@
+{
+    "description": "This event is generated when an order is updated/modified such as adding new shipping information or discounts are applied after the order was created.",
+    "properties": {
+        "order_id": {
+            "type": "string",
+            "description": "The ID of the order entity.",
+            "maxLength": 255
+        },
+        "change_trigger": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "What triggered the order information update.",
+            "maxLength": 512
+        },
+        "updated_properties": {
+            "type": "array",
+            "description": "List of old values that have been updated in the update to reach the new state represented in the order entity. Each value is a JSON string.",
+            "items": {
+                "type": "object",
+                "description": "The property that the update was made",
+                "properties": {
+                    "property": {
+                        "type": "string",
+                        "description": "The property name.",
+                        "maxLength": 255
+                    },
+                    "value": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "The new/current value of the property.",
+                        "maxLength": 255
+                    },
+                    "previous_value": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "The previous value of the updated property",
+                        "maxLength": 255
+                    }
+                },
+                "additionalProperties": false
+            }
+        }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "self": {
+        "vendor": "io.snowplow.ecomm",
+        "name": "update_order",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "required": [
+        "order_id",
+        "updated_properties"
+    ]
+}
