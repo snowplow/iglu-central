@@ -1,0 +1,28 @@
+{
+    "description": "Event occurs when a product is removed from a list by a customer; such as a comparison list, wish list, bookmarks/favorites list, or gift registry.",
+    "properties": {
+        "list_id": {
+            "type": "string",
+            "description": "A unique identifier for the list the product was removed from, if not a generic common list.",
+            "maxLength": 255
+        },
+        "item_id": {
+            "type": "string",
+            "description": "ID reference to the item (as listed in item) that was removed from the list.",
+            "maxLength": 255
+        }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "self": {
+        "vendor": "io.snowplow.ecomm",
+        "name": "remove_from_list",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "required": [
+        "list_id",
+        "item_id"
+    ]
+}
