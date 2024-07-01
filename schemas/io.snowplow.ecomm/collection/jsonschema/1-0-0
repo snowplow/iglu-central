@@ -1,0 +1,153 @@
+{
+    "description": "The collection entity details the group of products on the page.",
+    "properties": {
+        "collection_id": {
+            "type": "string",
+            "maxLength": 255
+        },
+        "items": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "description": "Array of items that are being shown.",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "item_id": {
+                        "type": "string",
+                        "description": "The item's ID.",
+                        "maxLength": 255
+                    },
+                    "item_type": {
+                        "type": "string",
+                        "enum": ["product", "bundle"],
+                        "description": "The general type of the item, currently supports the two types of a singular product and a bundle of products.",
+                        "maxLength": 255
+                    },
+                    "position": {
+                        "type": "integer",
+                        "description": "The position of the item in the list/collection.",
+                        "minimum": 1,
+                        "maximum": 2147483647
+                    }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "item_id",
+                    "position",
+                    "item_type"
+                ]
+            }
+        },
+        "layout": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "The type of the current layout.",
+            "maxLength": 255
+        },
+        "sort_order": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "How the items are sorted.",
+            "maxLength": 255
+        },
+        "sort_field": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "The field that is being sorted on.",
+            "maxLength": 255
+        },
+        "items_per_page": {
+            "type": [
+                "integer",
+                "null"
+            ],
+            "description": "The total number of items to be displayed on each page.",
+            "minimum": 1,
+            "maximum": 2147483647
+        },
+        "page_number": {
+            "type": [
+                "integer",
+                "null"
+            ],
+            "description": "The current page number.",
+            "minimum": 1,
+            "maximum": 2147483647
+        },
+        "total_pages": {
+            "type": [
+                "integer",
+                "null"
+            ],
+            "description": "The total number of pages on this collection.",
+            "minimum": 1,
+            "maximum": 2147483647
+        },
+        "filters": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "description": "Array of filters applied on this collection view.",
+            "items": {
+                "type": "object",
+                "description": "An object describing a filter that is applied",
+                "properties": {
+                    "attribute": {
+                        "type": "string",
+                        "description": "Filter field name.",
+                        "maxLength": 255
+                    },
+                    "value": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "The filter value if applicable.",
+                        "maxLength": 255
+                    }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "attribute"
+                ]
+            }
+        },
+        "collection_type": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "The type of the collection of items on the page. Examples: \"search results\", \"wishlist\"",
+            "maxLength": 255
+        },
+        "collection_name": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "The name of the collection of products.",
+            "maxLength": 255
+        }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "self": {
+        "vendor": "io.snowplow.ecomm",
+        "name": "collection",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "required": [
+        "collection_id"
+    ]
+}
