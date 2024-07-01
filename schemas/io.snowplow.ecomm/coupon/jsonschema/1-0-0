@@ -1,0 +1,78 @@
+{
+    "description": "This entity describes a coupon/voucher applied at the checkout stage to lower the total price of an order or a particular product.",
+    "properties": {
+        "coupon_id": {
+            "type": "string",
+            "description": "The ID of the coupon entity.",
+            "maxLength": 255
+        },
+        "conditions": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Criteria regarding the discount applied (minimum order amount/ max discount limit/ usage limit/ exclusions).",
+            "maxLength": 255
+        },
+        "value": {
+            "type": [
+                "number",
+                "null"
+            ],
+            "description": "The monetary value or percentage amount of the coupon.",
+            "minimum": 0,
+            "maximum": 9999999
+        },
+        "value_type": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Type of discount the coupon provides (fixed, percentage, buy one get one).",
+            "maxLength": 255
+        },
+        "expiration": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "The date when the coupon will no longer be valid.",
+            "format": "date"
+        },
+        "recurring": {
+            "type": [
+                "boolean",
+                "null"
+            ],
+            "description": "Whether this coupon's benefits are recurring."
+        },
+        "currency": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Currency code for the coupon.",
+            "maxLength": 255
+        },
+        "promotion_id": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Whether this coupon was begotten from a promotion.",
+            "maxLength": 255
+        }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "self": {
+        "vendor": "io.snowplow.ecomm",
+        "name": "coupon",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "required": [
+        "coupon_id"
+    ]
+}
