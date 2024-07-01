@@ -1,3 +1,48 @@
+Release 159 (2024-07-01)
+------------------------
+Add io.snowplow.ecomm/add_discount/jsonschema/1-0-0
+Add io.snowplow.ecomm/add_payment_method/jsonschema/1-0-0
+Add io.snowplow.ecomm/add_shipping/jsonschema/1-0-0
+Add io.snowplow.ecomm/add_to_cart/jsonschema/1-0-0
+Add io.snowplow.ecomm/add_to_list/jsonschema/1-0-0
+Add io.snowplow.ecomm/begin_checkout/jsonschema/1-0-0
+Add io.snowplow.ecomm/cancel_subscription/jsonschema/1-0-0
+Add io.snowplow.ecomm/cart/jsonschema/1-0-0
+Add io.snowplow.ecomm/click_item/jsonschema/1-0-0
+Add io.snowplow.ecomm/close_dispute/jsonschema/1-0-0
+Add io.snowplow.ecomm/collection/jsonschema/1-0-0
+Add io.snowplow.ecomm/complete_checkout/jsonschema/1-0-0
+Add io.snowplow.ecomm/coupon/jsonschema/1-0-0
+Add io.snowplow.ecomm/create_customer/jsonschema/1-0-0
+Add io.snowplow.ecomm/create_dispute/jsonschema/1-0-0
+Add io.snowplow.ecomm/create_order/jsonschema/1-0-0
+Add io.snowplow.ecomm/customer/jsonschema/1-0-0
+Add io.snowplow.ecomm/delete_customer/jsonschema/1-0-0
+Add io.snowplow.ecomm/discount/jsonschema/1-0-0
+Add io.snowplow.ecomm/dispute/jsonschema/1-0-0
+Add io.snowplow.ecomm/location/jsonschema/1-0-0
+Add io.snowplow.ecomm/order/jsonschema/1-0-0
+Add io.snowplow.ecomm/pause_subscription/jsonschema/1-0-0
+Add io.snowplow.ecomm/payment/jsonschema/1-0-0
+Add io.snowplow.ecomm/product/jsonschema/1-0-0
+Add io.snowplow.ecomm/remove_from_cart/jsonschema/1-0-0
+Add io.snowplow.ecomm/remove_from_list/jsonschema/1-0-0
+Add io.snowplow.ecomm/replacement/jsonschema/1-0-0
+Add io.snowplow.ecomm/resolve_dispute/jsonschema/1-0-0
+Add io.snowplow.ecomm/return/jsonschema/1-0-0
+Add io.snowplow.ecomm/return_search/jsonschema/1-0-0
+Add io.snowplow.ecomm/search/jsonschema/1-0-0
+Add io.snowplow.ecomm/store/jsonschema/1-0-0
+Add io.snowplow.ecomm/submit_search/jsonschema/1-0-0
+Add io.snowplow.ecomm/update_customer/jsonschema/1-0-0
+Add io.snowplow.ecomm/update_dispute/jsonschema/1-0-0
+Add io.snowplow.ecomm/update_order/jsonschema/1-0-0
+Add io.snowplow.ecomm/update_quantity/jsonschema/1-0-0
+Add io.snowplow.ecomm/update_subscription/jsonschema/1-0-0
+Add io.snowplow.ecomm/view_cart/jsonschema/1-0-0
+Add io.snowplow.ecomm/view_collection/jsonschema/1-0-0
+Add io.snowplow.ecomm/view_item/jsonschema/1-0-0
+
 Release 158 (2024-06-11)
 ------------------------
 Add com.snowplowanalytics.snowplow/failure/jsonschema/1-0-0 (#1402)
