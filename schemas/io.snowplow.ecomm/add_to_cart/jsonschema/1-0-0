@@ -1,0 +1,49 @@
+{
+    "description": "Event occurs when a product or bundle is added to a cart.",
+    "properties": {
+        "item_id": {
+            "type": "string",
+            "maxLength": 255
+        },
+        "item_type": {
+            "type": "string",
+            "enum": ["product", "bundle"],
+            "description": "The general type of the item, currently supports the two types of a singular product and a bundle of products.",
+            "maxLength": 255
+        },
+        "quantity": {
+            "type": "integer",
+            "description": "The number of the item that is being added to the cart.",
+            "minimum": 1,
+            "maximum": 2147483647
+        },
+        "cart_id": {
+            "type": "string",
+            "description": "The ID of the cart entity that the item it being added to.",
+            "maxLength": 255
+        },
+        "source": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Examples: \"catalog\", \"wishlist\"",
+            "maxLength": 255
+        }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "self": {
+        "vendor": "io.snowplow.ecomm",
+        "name": "add_to_cart",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "required": [
+        "item_id",
+        "item_type",
+        "quantity",
+        "cart_id"
+    ]
+}
