@@ -1,0 +1,85 @@
+{
+    "description": "A Customer entity summarises the customer or guest user.",
+    "properties": {
+        "customer_id": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Unique identifier for the user if they're logged in.",
+            "maxLength": 255
+        },
+        "guest_id": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Unique identifier for this guest user if available.",
+            "maxLength": 255
+        },
+        "created_time": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Time the Customer's record was created, which shows the age of their account.",
+            "format": "date-time"
+        },
+        "last_login_time": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Time the Customer logged in previous to the current session; shows how recently they last engaged with the store.",
+            "format": "date-time"
+        },
+        "customer_type": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "The type of account the Customer represents; free form, but could be used for differentiating wholesale/retail or business/consumer accounts, etc.",
+            "maxLength": 255
+        },
+        "primary_shipping_location": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "The ID of the location entity that contains the primary shipping address for this user.",
+            "maxLength": 255
+        },
+        "primary_billing_location": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "The ID of the location entity that contains the primary billing address for this user.",
+            "maxLength": 255
+        },
+        "authentication_method": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "How the user authenticated and became identified, or signal that the customer has not been identified.",
+            "maxLength": 255
+        },
+        "is_guest": {
+            "type": "boolean",
+            "description": "Whether this user has an account and is logged in or a guest."
+        }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "self": {
+        "vendor": "io.snowplow.ecomm",
+        "name": "customer",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "required": [
+        "is_guest"
+    ]
+}
