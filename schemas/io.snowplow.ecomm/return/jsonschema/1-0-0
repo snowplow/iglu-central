@@ -1,0 +1,68 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "A return entity is created when a customer returns one or more products.",
+    "self": {
+      "vendor": "io.snowplow.ecomm",
+      "name": "return",
+      "format": "jsonschema",
+      "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+      "return_id": {
+        "type": "string",
+        "description": "The primary identifier of the return order.",
+        "maxLength": 255
+      },
+      "order_id": {
+        "type": "string",
+        "description": "The order ID associated with the return.",
+        "maxLength": 255
+      },
+      "product_ids": {
+        "type": ["array", "null"],
+        "description": "An array of products IDs that make up the return.",
+        "items": {
+          "type": "string",
+          "maxLength": 255
+        }
+      },
+      "discount": {
+        "type": ["boolean", "null"],
+        "description": "Whether the return resulted in a discount."
+      },
+      "coupon": {
+        "type": ["boolean", "null"],
+        "description": "Whether the return resulted in a coupon."
+      },
+      "amount": {
+        "type": ["number", "null"],
+        "description": "The value of the coupon / discount.",
+        "minimum": 0,
+        "maximum": 2147483647
+      },
+      "reason": {
+        "type": ["string", "null"],
+        "description": "The user reason for the return.",
+        "maxLength": 512
+      },
+      "status": {
+        "type": ["string", "null"],
+        "description": "The status for the return.",
+        "maxLength": 255
+      },
+      "replacement_product_ids": {
+        "type": ["array", "null"],
+        "description": "Any replacement product IDs that were offered.",
+        "items": {
+          "type": "string",
+          "maxLength": 255
+        }
+      }
+    },
+    "required": [
+      "return_id", 
+      "order_id"
+    ],
+    "additionalProperties": false
+}
