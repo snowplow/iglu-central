@@ -1,0 +1,30 @@
+{
+    "description": "This event is fired when a dispute is closed rather than resolved (e.g. it was not a legitimate dispute)",
+    "properties": {
+        "dispute_id": {
+            "type": "string",
+            "description": "The ID of the dispute entity.",
+            "maxLength": 255
+        },
+        "reason": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Reason that the dispute was closed",
+            "maxLength": 512
+        }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "self": {
+        "vendor": "io.snowplow.ecomm",
+        "name": "close_dispute",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "required": [
+        "dispute_id"
+    ]
+}
