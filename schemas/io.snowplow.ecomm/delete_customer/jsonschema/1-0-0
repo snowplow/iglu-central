@@ -1,0 +1,30 @@
+{
+    "description": "This event fires when a customer record or account is deleted, merged or removed/hidden from the system.",
+    "properties": {
+        "customer_id": {
+            "type": "string",
+            "description": "The ID of the customer entity.",
+            "maxLength": 255
+        },
+        "reason": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "What triggered the customer account removal.",
+            "maxLength": 512
+        }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "self": {
+        "vendor": "io.snowplow.ecomm",
+        "name": "delete_customer",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "required": [
+        "customer_id"
+    ]
+}
