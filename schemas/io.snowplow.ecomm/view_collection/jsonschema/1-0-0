@@ -1,0 +1,30 @@
+{
+    "description": "This event is generated when the user views a collection.",
+    "properties": {
+        "collection_id": {
+            "type": "string",
+            "description": "Unique identifier for the collection entity.",
+            "maxLength": 255
+        },
+        "search_id": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "A unique identifier for the search which resulted in this collection.",
+            "maxLength": 255
+        }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "self": {
+        "vendor": "io.snowplow.ecomm",
+        "name": "view_collection",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "required": [
+        "collection_id"
+    ]
+}
