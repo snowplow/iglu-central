@@ -1,0 +1,28 @@
+{
+    "description": "Event occurrs when shipping information is added during checkout.",
+    "properties": {
+        "cart_id": {
+            "type": "string",
+            "description": "The ID of the cart entity for which the shipping address is added to during a checkout process.",
+            "maxLength": 255
+        },
+        "location_id": {
+            "type": "string",
+            "description": "The ID of the location ID which contains the shipping address information.",
+            "maxLength": 255
+        }
+    },
+    "additionalProperties": false,
+    "type": "object",
+    "self": {
+        "vendor": "io.snowplow.ecomm",
+        "name": "add_shipping",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "required": [
+        "cart_id",
+        "location_id"
+    ]
+}
