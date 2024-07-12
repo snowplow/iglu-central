@@ -1,0 +1,35 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for a custom event with generic properties",
+    "self": {
+        "vendor": "com.snowplowanalytics.snowplow",
+        "name": "custom_event",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "category": {
+            "type": ["string", "null"],
+            "maxLength": 4096,
+            "description": "Category of the event"
+        },
+        "action": {
+            "type": ["string", "null"],
+            "maxLength": 4096,
+            "description": "Action taken on the event"
+        },
+        "label": {
+            "type": ["string", "null"],
+            "maxLength": 4096,
+            "description": "Label describing the event"
+        },
+        "value": {
+            "type": ["number", "null"],
+            "description": "Value assigned to the event",
+            "minimum": 0,
+            "maximum": 9999999
+        }
+    },
+    "additionalProperties": false
+}
