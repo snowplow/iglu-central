@@ -1,3 +1,7 @@
+Release 160 (2024-07-17)
+------------------------
+Add com.snowplowanalytics.snowplow/custom_event/jsonschema/1-0-0 (close #1407)
+
 Release 159 (2024-07-01)
 ------------------------
 Add io.snowplow.ecomm/add_discount/jsonschema/1-0-0
