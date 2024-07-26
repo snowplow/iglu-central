@@ -75,7 +75,6 @@
 		"userId",
 		"sessionId",
 		"sessionIndex",
-		"previousSessionId",
 		"storageMechanism"
 	],
 	"additionalProperties": false
