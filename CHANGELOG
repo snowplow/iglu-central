@@ -1,3 +1,7 @@
+Release 161 (2024-07-29)
+------------------------
+Patch com.snowplowanalytics.snowplow/client_session/jsonschema/1-0-2 (#1410)
+
 Release 160 (2024-07-17)
 ------------------------
 Add com.snowplowanalytics.snowplow/custom_event/jsonschema/1-0-0 (close #1407)
