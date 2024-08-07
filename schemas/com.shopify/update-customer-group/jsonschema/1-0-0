@@ -1,0 +1,32 @@
+{
+  "$schema" : "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self" : {
+    "vendor" : "com.shopify",
+    "name" : "update-customer-group",
+    "version" : "1-0-0",
+    "format" : "jsonschema"
+  },
+  "type" : "object",
+  "properties" : {
+    "name" : {
+      "type" : "string"
+    },
+    "query" : {
+      "type" : "string"
+    },
+    "id" : {
+      "type" : "integer",
+      "maximum" : 2147483647,
+      "minimum" : 0
+    },
+    "created_at" : {
+      "type" : "string",
+      "format" : "date-time"
+    },
+    "updated_at" : {
+      "type" : "string",
+      "format" : "date-time"
+    }
+  },
+  "additionalProperties" : false
+}

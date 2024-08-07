@@ -1,0 +1,189 @@
+{
+  "$schema" : "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self" : {
+    "vendor" : "com.shopify",
+    "name" : "create-customer",
+    "version" : "1-0-0",
+    "format" : "jsonschema"
+  },
+  "type" : "object",
+  "properties" : {
+    "first_name" : {
+      "type" : "string"
+    },
+    "tax_exempt" : {
+      "type" : "boolean"
+    },
+    "email" : {
+      "type" : "string"
+    },
+    "state" : {
+      "type" : "string"
+    },
+    "tags" : {
+      "type" : "string"
+    },
+    "last_order_name" : {
+      "type" : [ "string", "null" ]
+    },
+    "default_address" : {
+      "type" : "object",
+      "properties" : {
+        "first_name" : {
+          "type" : "string"
+        },
+        "city" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "zip" : {
+          "type" : "string"
+        },
+        "country" : {
+          "type" : "string"
+        },
+        "address2" : {
+          "type" : [ "string", "null" ]
+        },
+        "company" : {
+          "type" : "string"
+        },
+        "country_code" : {
+          "type" : "string",
+          "enum" : [ "AZ", "NF", "PW", "HN", "CY", "GI", "AI", "LC", "UG", "LS", "FM", "LI", "MA", "KI", "TM", "MO", "MM", "TZ", "CR", "LV", "MX", "ME", "PY", "TF", "ID", "IR", "SY", "BF", "BM", "VU", "GH", "JP", "TH", "CX", "GU", "GP", "NI", "NP", "CN", "BG", "MR", "AR", "PG", "IE", "EE", "ZW", "UY", "RU", "CG", "TR", "BO", "QA", "MP", "GM", "BB", "AW", "AN", "GQ", "ST", "LA", "DJ", "AO", "KN", "BT", "GT", "TN", "AS", "TL", "CF", "SD", "BS", "LR", "TO", "IM", "PH", "BY", "AX", "MC", "SR", "UM", "PF", "AQ", "LB", "EG", "TJ", "MU", "SO", "VC", "NU", "SC", "AC", "GD", "AL", "HR", "GG", "ML", "SN", "PK", "SJ", "BJ", "KY", "EC", "BN", "MV", "BA", "CK", "FI", "IO", "MH", "TK", "NZ", "NE", "KZ", "ES", "KW", "BI", "HM", "FK", "GF", "BD", "PR", "UZ", "TC", "MS", "IS", "GW", "TG", "KG", "MG", "WS", "NL", "CD", "BV", "GR", "PA", "SZ", "FO", "VI", "TW", "MW", "JO", "PL", "GA", "TT", "DE", "KP", "CV", "KR", "GS", "DO", "WF", "TD", "SG", "CH", "HK", "BZ", "RO", "AD", "ZM", "IL", "DK", "PN", "GB", "VA", "TV", "SL", "BE", "HT", "MN", "VE", "CC", "GN", "IT", "CU", "VG", "TA", "HU", "FR", "CO", "SA", "CZ", "UA", "US", "DZ", "ZA", "JM", "SI", "DM", "PT", "NA", "GE", "NR", "RE", "PM", "KE", "NC", "GL", "MQ", "AE", "PE", "MZ", "NG", "LY", "CA", "MY", "SB", "KM", "MT", "ET", "AM", "FJ", "VN", "SM", "JE", "NO", "OM", "KH", "SV", "AU", "SH", "YT", "ER", "RS", "BR", "LK", "RW", "YE", "BH", "GY", "SE", "LU", "SK", "IQ", "AG", "MD", "CM", "MK", "IN", "CL", "CI", "LT", "BW", "AT" ]
+        },
+        "id" : {
+          "type" : "integer",
+          "maximum" : 9223372036854775807,
+          "minimum" : 0
+        },
+        "last_name" : {
+          "type" : "string"
+        },
+        "address1" : {
+          "type" : "string"
+        },
+        "default" : {
+          "type" : "boolean"
+        },
+        "province" : {
+          "type" : "null"
+        },
+        "province_code" : {
+          "type" : "null"
+        },
+        "country_name" : {
+          "type" : "string"
+        },
+        "phone" : {
+          "type" : [ "string", "null" ]
+        }
+      },
+      "additionalProperties" : false
+    },
+    "last_order_id" : {
+      "type" : [ "integer", "null" ],
+      "maximum" : 9223372036854775807,
+      "minimum" : 0
+    },
+    "total_spent" : {
+      "type" : "string"
+    },
+    "orders_count" : {
+      "type" : "integer",
+      "maximum" : 32767,
+      "minimum" : 0
+    },
+    "id" : {
+      "type" : "integer",
+      "maximum" : 9223372036854775807,
+      "minimum" : 0
+    },
+    "last_name" : {
+      "type" : "string"
+    },
+    "note" : {
+      "type" : "null"
+    },
+    "multipass_identifier" : {
+      "type" : "null"
+    },
+    "created_at" : {
+      "type" : "string",
+      "format" : "date-time"
+    },
+    "updated_at" : {
+      "type" : "string",
+      "format" : "date-time"
+    },
+    "verified_email" : {
+      "type" : "boolean"
+    },
+    "accepts_marketing" : {
+      "type" : "boolean"
+    },
+    "addresses" : {
+      "type" : "array",
+      "items" : {
+        "type" : "object",
+        "properties" : {
+          "first_name" : {
+            "type" : "string"
+          },
+          "city" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "zip" : {
+            "type" : "string"
+          },
+          "country" : {
+            "type" : "string"
+          },
+          "address2" : {
+            "type" : [ "string", "null" ]
+          },
+          "company" : {
+            "type" : "string"
+          },
+          "country_code" : {
+            "type" : "string",
+            "enum" : [ "AZ", "NF", "PW", "HN", "CY", "GI", "AI", "LC", "UG", "LS", "FM", "LI", "MA", "KI", "TM", "MO", "MM", "TZ", "CR", "LV", "MX", "ME", "PY", "TF", "ID", "IR", "SY", "BF", "BM", "VU", "GH", "JP", "TH", "CX", "GU", "GP", "NI", "NP", "CN", "BG", "MR", "AR", "PG", "IE", "EE", "ZW", "UY", "RU", "CG", "TR", "BO", "QA", "MP", "GM", "BB", "AW", "AN", "GQ", "ST", "LA", "DJ", "AO", "KN", "BT", "GT", "TN", "AS", "TL", "CF", "SD", "BS", "LR", "TO", "IM", "PH", "BY", "AX", "MC", "SR", "UM", "PF", "AQ", "LB", "EG", "TJ", "MU", "SO", "VC", "NU", "SC", "AC", "GD", "AL", "HR", "GG", "ML", "SN", "PK", "SJ", "BJ", "KY", "EC", "BN", "MV", "BA", "CK", "FI", "IO", "MH", "TK", "NZ", "NE", "KZ", "ES", "KW", "BI", "HM", "FK", "GF", "BD", "PR", "UZ", "TC", "MS", "IS", "GW", "TG", "KG", "MG", "WS", "NL", "CD", "BV", "GR", "PA", "SZ", "FO", "VI", "TW", "MW", "JO", "PL", "GA", "TT", "DE", "KP", "CV", "KR", "GS", "DO", "WF", "TD", "SG", "CH", "HK", "BZ", "RO", "AD", "ZM", "IL", "DK", "PN", "GB", "VA", "TV", "SL", "BE", "HT", "MN", "VE", "CC", "GN", "IT", "CU", "VG", "TA", "HU", "FR", "CO", "SA", "CZ", "UA", "US", "DZ", "ZA", "JM", "SI", "DM", "PT", "NA", "GE", "NR", "RE", "PM", "KE", "NC", "GL", "MQ", "AE", "PE", "MZ", "NG", "LY", "CA", "MY", "SB", "KM", "MT", "ET", "AM", "FJ", "VN", "SM", "JE", "NO", "OM", "KH", "SV", "AU", "SH", "YT", "ER", "RS", "BR", "LK", "RW", "YE", "BH", "GY", "SE", "LU", "SK", "IQ", "AG", "MD", "CM", "MK", "IN", "CL", "CI", "LT", "BW", "AT" ]
+          },
+          "id" : {
+            "type" : "integer",
+            "maximum" : 9223372036854775807,
+            "minimum" : 0
+          },
+          "last_name" : {
+            "type" : "string"
+          },
+          "address1" : {
+            "type" : "string"
+          },
+          "default" : {
+            "type" : "boolean"
+          },
+          "province" : {
+            "type" : "null"
+          },
+          "province_code" : {
+            "type" : "null"
+          },
+          "country_name" : {
+            "type" : "string"
+          },
+          "phone" : {
+            "type" : [ "string", "null" ]
+          }
+        },
+        "additionalProperties" : false
+      }
+    }
+  },
+  "additionalProperties" : false
+}
