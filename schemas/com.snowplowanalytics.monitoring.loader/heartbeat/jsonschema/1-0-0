@@ -1,0 +1,30 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Webhook payload describing a heartbeat coming from a snowplow loader",
+  "self": {
+    "vendor": "com.snowplowanalytics.monitoring.loader",
+    "name": "heartbeat",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "appName": {
+      "type": "string",
+      "maxLength": 64,
+      "description": "Application's name"
+    },
+    "appVersion": {
+      "type": "string",
+      "maxLength": 64,
+      "description": "Application's version"
+    },
+    "tags": {
+      "description": "Set of key value pairs providing additional information",
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    }
+  },
+  "required": ["appName", "appVersion", "tags"],
+  "additionalProperties": false
+}
