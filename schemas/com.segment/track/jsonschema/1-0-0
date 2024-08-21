@@ -3,9 +3,9 @@
         "description": "Schema for Segment's Track API call, https://segment.com/docs/connections/spec/track/#example",
         "self": {
                 "vendor": "com.segment",
-                "name": "event",
+                "name": "track",
                 "format": "jsonschema",
-                "version": "2-0-0"
+                "version": "1-0-0"
         },
         "type": "object",
         "properties": {

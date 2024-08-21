@@ -3,9 +3,9 @@
 	"description": "Schema for Segment's Identify API call, https://segment.com/docs/connections/spec/identify/#example",
 	"self": {
 		"vendor": "com.segment",
-		"name": "traits",
+		"name": "identify",
 		"format": "jsonschema",
-		"version": "2-0-0"
+		"version": "1-0-0"
 	},
 	"type": "object",
 	"properties": {
