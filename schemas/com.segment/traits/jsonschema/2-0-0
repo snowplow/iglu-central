@@ -1,0 +1,93 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for Segment's Identify API call, https://segment.com/docs/connections/spec/identify/#example",
+	"self": {
+		"vendor": "com.segment",
+		"name": "traits",
+		"format": "jsonschema",
+		"version": "2-0-0"
+	},
+	"type": "object",
+	"properties": {
+        "anonymousId": {
+            "type": "string",
+            "maxLength": 255
+        },
+        "channel": {
+            "enum": [ "server", "browser", "mobile" ]
+        }, 
+        "integrations": {
+            "type": "object",
+            "additionalProperties": true
+        },  
+        "messageId": {
+            "type": "string",
+            "maxLength": 100
+        },   
+        "receivedAt": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "sentAt": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "timestamp": {
+            "type": "string",
+            "format": "date-time"
+        }, 
+        "traits": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "maxLength": 255
+                },
+                "email": {
+                    "type": "string",
+                    "maxLength": 512
+                },
+                "address": {
+                    "type": "object",
+                        "properties": {
+                            "city": {
+                                "type": "string",
+                                "maxLength": 512
+                            },
+                            "country": {
+                                "type": "string",
+                                "maxLength": 512
+                            },
+                            "postalCode": {
+                                "type": "string",
+                                "maxLength": 512
+                            },
+                            "state": {
+                                "type": "string",
+                                "maxLength": 512
+                            },
+                            "street": {
+                                "type": "string",
+                                "maxLength": 512
+                            }
+                        },
+                         "additionalProperties": true
+                }   
+          },
+          "additionalProperties": true
+        },
+        "type": {
+            "type": "string",
+            "maxLength": 255
+        }, 
+        "userId": {
+            "type": ["string","null"],
+            "maxLength": 255
+        },  
+        "version": {
+            "type": ["string"],
+            "maxLength": 20
+        }                            
+	},
+	"additionalProperties": true
+}
