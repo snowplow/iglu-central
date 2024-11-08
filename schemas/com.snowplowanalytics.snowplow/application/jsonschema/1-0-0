@@ -1,0 +1,20 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for an application context which tracks the app version.",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow",
+		"name": "application",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+	"type": "object",
+	"properties": {
+		"version": {
+			"type": "string",
+			"description": "Version of the application. Can be a semver-like structure (e.g 1.1.0) or a Git commit SHA hash.",
+			"maxLength": 255
+		}
+	},
+	"required": ["version"],
+	"additionalProperties": false
+}
