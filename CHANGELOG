@@ -1,3 +1,7 @@
+Release 163 (2024-11-15)
+------------------------
+Add com.snowplowanalytics.snowplow/application/jsonschema/1-0-0 (#1418)
+
 Release 162 (2024-09-23)
 ------------------------
 Add com.snowplowanalytics.monitoring.loader/heartbeat/jsonschema/1-0-0 (#1415)
