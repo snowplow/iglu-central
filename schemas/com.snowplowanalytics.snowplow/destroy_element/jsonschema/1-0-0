@@ -1,0 +1,20 @@
+{
+  "description": "Event that fires when an element matching a named configuration is detected as being removed from a document.",
+  "properties": {
+    "element_name": {
+      "description": "The name of the element that was destroyed. Should match the element name field in entities that describe this particular element.",
+      "type": "string",
+      "maxLength": 255
+    }
+  },
+  "additionalProperties": false,
+  "type": "object",
+  "required": ["element_name"],
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow",
+    "name": "destroy_element",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#"
+}
