@@ -1,0 +1,61 @@
+{
+  "description": "Entity describing the content of an element matching a named configuration.",
+  "properties": {
+    "parent_name": {
+      "description": "The name of the configuration for the element/component that contains the element described by this entity.",
+      "type": "string",
+      "maxLength": 255
+    },
+    "parent_index": {
+      "description": "The index of this element's parent element/component's within it's parent's other matches for it's element configuration.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "element_name": {
+      "description": "The name of the configuration for the element/component that contains this data. This will usually match the corresponding element_name in an event payload or other entity.",
+      "type": "string",
+      "maxLength": 255
+    },
+    "element_index": {
+      "description": "The position of this element's within it's parent's other matches for the element's configuration.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "attributes": {
+      "description": "Results of configured contents descriptions found on this element.",
+      "type": ["array", "null"],
+      "items": {
+        "description": "An individual contents description found on this element.",
+        "type": "object",
+        "required": ["source", "attribute", "value"],
+        "properties": {
+          "source": {
+            "description": "The type of content description that produced this result.",
+            "enum": ["callback", "content", "selector", "dataset", "attributes", "properties", "child_text"],
+            "maxLength": 40
+          },
+          "attribute": {
+            "description": "The name of the discovered content attribute found.",
+            "type": "string",
+            "maxLength": 255
+          },
+          "value": {
+            "description": "The value of the discovered content attribute found.",
+            "type": "string",
+            "maxLength": 2048
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false,
+  "type": "object",
+  "required": ["parent_name", "parent_index", "element_name", "element_index"],
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow",
+    "name": "element_content",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#"
+}
