@@ -1,0 +1,30 @@
+{
+  "description": "Entity describing the list of components that were found to contain the element with the named configuration.",
+  "properties": {
+    "element_name": {
+      "description": "Name of the element that this entity relates to, if any. If not provided, may apply to a subject of some other event, such as Link, Button, or Form Tracking events.",
+      "type": ["string", "null"],
+      "maxLength": 255
+    },
+    "component_list": {
+      "description": "List of component names that were detected as containing the element that is the subject of this event.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "description": "Component name found to contain this element. This should match a component configuration name.",
+        "type": "string",
+        "maxLength": 255
+      }
+    }
+  },
+  "additionalProperties": false,
+  "type": "object",
+  "required": ["component_list"],
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow",
+    "name": "component_parents",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#"
+}
