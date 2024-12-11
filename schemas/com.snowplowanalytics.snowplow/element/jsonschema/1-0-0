@@ -1,0 +1,80 @@
+{
+  "description": "Entity detailing a specific element matched using the Element Tracking plugin.",
+  "properties": {
+    "element_name": {
+      "description": "The name of the element configuration that this entity is detailing.",
+      "type": "string",
+      "maxLength": 255
+    },
+    "height": {
+      "description": "The height of the named element at time of event, in virtual pixels.",
+      "type": "number"
+    },
+    "width": {
+      "description": "The width of the named element at time of event, in virtual pixels.",
+      "type": "number"
+    },
+    "position_x": {
+      "description": "The offset position of the named element at time of event, in virtual pixels from the left side of the viewport.",
+      "type": "number"
+    },
+    "position_y": {
+      "description": "The offset position of the named element at time of event, in virtual pixels from the top side of the viewport.",
+      "type": "number"
+    },
+    "doc_position_x": {
+      "description": "The offset position of the named element at time of event, in virtual pixels from the left side of the document.",
+      "type": "number"
+    },
+    "doc_position_y": {
+      "description": "The offset position of the named element at time of event, in virtual pixels from the top side of the document.",
+      "type": "number"
+    },
+    "element_index": {
+      "description": "The index of the named element among other elements that match it's selector within the document. (one-based, out of `element_matches` in document)",
+      "type": "integer",
+      "minimum": 1
+    },
+    "element_matches": {
+      "description": "The number of elements that match the named element's configured selector within the document. (one-based)",
+      "type": "integer",
+      "minimum": 1
+    },
+    "attributes": {
+      "description": "List of attributes captured about the named element from its configuration.",
+      "type": ["array", "null"],
+      "items": {
+        "description": "Individual attribute information about the named element, derived from its configuration.",
+        "type": "object",
+        "required": ["source", "attribute", "value"],
+        "properties": {
+          "source": {
+            "description": "The type of configuration, and source of its value.",
+            "enum": ["callback", "content", "selector", "dataset", "attributes", "properties", "child_text"],
+            "maxLength": 40
+          },
+          "attribute": {
+            "description": "The name of an attribute captured by the configuration.",
+            "type": "string",
+            "maxLength": 255
+          },
+          "value": {
+            "description": "The value for the attribute captured by this configuration.",
+            "type": "string",
+            "maxLength": 2048
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false,
+  "type": "object",
+  "required": ["element_name", "height", "width", "position_x", "position_y"],
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow",
+    "name": "element",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#"
+}

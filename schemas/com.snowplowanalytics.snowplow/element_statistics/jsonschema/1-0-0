@@ -1,0 +1,86 @@
+{
+  "description": "Entity detailing aggregate statistics for a named matched using the Element Tracking plugin.",
+  "properties": {
+    "element_name": {
+      "description": "The name of the element configuration that this entity is detailing.",
+      "type": "string",
+      "maxLength": 255
+    },
+    "element_index": {
+      "description": "The (1-based) index of the element amongst the `element_matches` elements that match its same configuration.",
+      "type": "number",
+      "minimum": 1
+    },
+    "element_matches": {
+      "description": "The count of the elements that matched the configuration named `element_name`.",
+      "type": "number",
+      "minimum": 0
+    },
+    "current_state": {
+      "description": "The visibility state of the element at the time of this event.",
+      "type": "string",
+      "maxLength": 40
+    },
+    "min_size": {
+      "description": "The smallest dimensions observed of the named element, in virtual pixels. (width x height)",
+      "type": "string",
+      "pattern": "^[0-9.]+x[0-9.]+$",
+      "maxLength": 40
+    },
+    "current_size": {
+      "description": "The current dimensions observed of the named element, in virtual pixels. (width x height)",
+      "type": "string",
+      "pattern": "^[0-9.]+x[0-9.]+$",
+      "maxLength": 40
+    },
+    "max_size": {
+      "description": "The largest dimensions observed of the named element, in virtual pixels. (width x height)",
+      "type": "string",
+      "pattern": "^[0-9.]+x[0-9.]+$",
+      "maxLength": 40
+    },
+    "y_depth_percentage": {
+      "description": "The maximum vertical position seen of the element at the time of the event, expressed as a percentage of its height; from 0.0 - 1.0 (0% - 100%).",
+      "type": ["number", "null"],
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
+    "max_y_depth_percentage": {
+      "description": "The maximum vertical position seen of the element so far, expressed as a percentage of its height at the time; from 0.0 - 1.0 (0% - 100%).",
+      "type": ["number", "null"],
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
+    "max_y_depth": {
+      "description": "The maximum vertical position seen of the element so far, as a fraction.",
+      "type": "string",
+      "pattern": "^[0-9.]+/[0-9.]+$",
+      "maxLength": 40
+    },
+    "element_age_ms": {
+      "description": "The amount of time (in milliseconds) this element has existed on page since it was first observed.",
+      "type": "number",
+      "minimum": 0
+    },
+    "times_in_view": {
+      "description": "The amount of times this element has appeared in view.",
+      "type": "integer",
+      "minimum": 0
+    },
+    "total_time_visible_ms": {
+      "description": "The cumulative amount of time (in milliseconds) this element has been in view so far.",
+      "type": "number",
+      "minimum": 0
+    }
+  },
+  "additionalProperties": false,
+  "type": "object",
+  "required": ["element_name", "min_size", "max_size", "max_y_depth_percentage", "max_y_depth", "element_age_ms", "times_in_view", "total_time_visible_ms"],
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow",
+    "name": "element_statistics",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#"
+}
