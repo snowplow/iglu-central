@@ -1,0 +1,49 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a GrowthBook experiment viewed event. See https://docs.growthbook.io/",
+  "self": {
+    "vendor": "io.growthbook",
+    "name": "experiment_viewed",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "experimentId": {
+      "type": "string",
+      "maxLength": 160,
+      "description": "The experiment tracking key or experiment id that uniquely identifies this experiment"
+    },
+    "variationId": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "The experiment variation id that the user was exposed to"
+    },
+    "hashAttribute": {
+      "type": "string",
+      "maxLength": 100
+      "description": "The attribute that was used to assign the experiment variant"
+    },
+    "hashValue": {
+      "type": "string",
+      "maxLength": 160,
+      "description": "The value of the hash attribute that was used for assignment"
+    },
+    "custom": {
+      "type": "array",
+      "description": "Other parameters that you might want to record about the user or exposure. Useful for dimensional analysis or debugging."
+      "items": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "value": {
+            "type": ["string", "null"]
+          }
+        }
+      }
+    }
+  },
+  "required": ["experimentId", "variationId"]
+}
