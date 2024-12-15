@@ -1,0 +1,31 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for an GrowthBook experiment viewed event",
+  "self": {
+    "vendor": "com.growthbook",
+    "name": "experiment_viewed",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "experimentId": {
+      "type": "string",
+      "maxLength": 160
+    },
+    "variationId": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "hashAttribute": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "hashValue": {
+      "type": "string",
+      "maxLength": 160
+    }
+  },
+  "required": ["experimentId", "variationId"],
+  "additionalProperties": true
+}
