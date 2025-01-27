@@ -22,7 +22,6 @@
         "$.data.event.name",
         "$.data.event.triggered_at",
         "$.data.message_id",
-        "$.data.type",
         "$.data.user.email",
         "$.data.user.id",
         "$.data.user_agent"
