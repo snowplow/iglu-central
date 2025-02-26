@@ -12,7 +12,7 @@
         "deviceClass": {
             "description": "See https://yauaa.basjes.nl/README-Output.html",
             "type": "string",
-            "maxLength": 32
+            "maxLength": 128
         },
         "deviceName": {
             "description": "Example: Google Nexus 6",
@@ -43,7 +43,7 @@
         "operatingSystemClass": {
             "description": "See https://yauaa.basjes.nl/README-Output.html",
             "type": "string",
-            "maxLength": 32
+            "maxLength": 128
         },
         "operatingSystemName": {
             "description": "Examples: Linux, Android.",
@@ -65,7 +65,7 @@
         "layoutEngineClass": {
             "description": "See https://yauaa.basjes.nl/README-Output.html",
             "type": "string",
-            "maxLength": 32
+            "maxLength": 128
         },
         "layoutEngineName": {
             "type": "string",
@@ -94,7 +94,7 @@
         "agentClass": {
             "description": "See https://yauaa.basjes.nl/README-Output.html",
             "type": "string",
-            "maxLength": 32
+            "maxLength": 128
         },
         "agentName": {
             "description": "Example: Chrome.",
@@ -137,7 +137,7 @@
         },
         "agentSecurity": {
             "type": "string",
-            "maxLength": 32
+            "maxLength": 128
         },
         "agentUuid": {
             "type": "string"
