@@ -23,7 +23,7 @@
       "type": [
 		"null",
 		"string"
-	],
+	  ],
       "maxLength": 100
       "description": "The attribute that was used to assign the experiment variant"
     },
