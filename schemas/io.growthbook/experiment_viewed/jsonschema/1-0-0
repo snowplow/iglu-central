@@ -34,7 +34,7 @@
     },
     "custom": {
       "type": "array",
-      "description": "Other parameters that you might want to record about the user or exposure. Useful for dimensional analysis or debugging."
+      "description": "Other parameters that you might want to record about the user or exposure. Useful for dimensional analysis or debugging.",
       "items": {
         "type": "object",
         "properties": {
