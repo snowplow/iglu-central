@@ -1,0 +1,168 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for PII pseudonymization enrichment",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow.enrichments",
+    "name": "pii_enrichment_config",
+    "format": "jsonschema",
+    "version": "2-0-1"
+  },
+  "type": "object",
+  "properties": {
+    "vendor": {
+      "type": "string",
+      "description": "The name of the vendor for this config (the only valid value for scala-common enrich is com.snowplowanalytics.snowplow.enrichments)"
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the config (the only valid value for scala-common enrich is pii_enrichment_config)"
+    },
+    "enabled": {
+      "type": "boolean",
+      "description": "Whether to enable this enrichment"
+    },
+    "emitEvent": {
+      "type": "boolean",
+      "description": "Whether to emit identification events from this enrichment"
+    },
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "pii": {
+          "description": "List of all the fields for which pdeudonymization will be performed",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "pojo": {
+                "description": "Scalar field which contains a single string value, on which pseudonymization will be performed in the enire field (e.g. `user-123`)",
+                "type": "object",
+                "properties": {
+                  "field": {
+                    "enum": [
+                      "user_id",
+                      "user_ipaddress",
+                      "user_fingerprint",
+                      "domain_userid",
+                      "network_userid",
+                      "ip_organization",
+                      "ip_domain",
+                      "tr_orderid",
+                      "ti_orderid",
+                      "mkt_term",
+                      "mkt_content",
+                      "se_category",
+                      "se_action",
+                      "se_label",
+                      "se_property",
+                      "mkt_clickid",
+                      "refr_domain_userid",
+                      "domain_sessionid"
+                    ]
+                  }
+                },
+                "required": [
+                  "field"
+                ],
+                "additionalProperties": false
+              },
+              "json": {
+                "description": "JSON field which contains a JSON string value, on which pseudonymization will be performed on a specific JSON path",
+                "type": "object",
+                "properties": {
+                  "field": {
+                    "enum": [
+                      "contexts",
+                      "derived_contexts",
+                      "unstruct_event"
+                    ]
+                  },
+                  "schemaCriterion": {
+                    "type": "string",
+                    "pattern": "^iglu:([a-zA-Z0-9-_.]+)/([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)/([1-9][0-9]*|\\*)-((?:0|[1-9][0-9]*)|\\*)-((?:0|[1-9][0-9]*)|\\*)$"
+                  },
+                  "jsonPath": {
+                    "type": "string",
+                    "pattern": "^\\$.*$"
+                  }
+                },
+                "required": [
+                  "field",
+                  "schemaCriterion",
+                  "jsonPath"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "oneOf": [
+              {
+                "required": [
+                  "pojo"
+                ]
+              },
+              {
+                "required": [
+                  "json"
+                ]
+              }
+            ],
+            "additionalProperties": false
+          }
+        },
+        "strategy": {
+          "description": "The pseudonymization strategy which will be applied to all the fields specified in the `pii` section",
+          "type": "object",
+          "properties": {
+            "pseudonymize": {
+              "description": "Pseudonymization strategy that hashes using a specified algorithm",
+              "type": "object",
+              "properties": {
+                "hashFunction": {
+                  "description": "The hash function that will be used by this strategy",
+                  "enum": [
+                    "MD2",
+                    "MD5",
+                    "SHA-1",
+                    "SHA-256",
+                    "SHA-384",
+                    "SHA-512"
+                  ]
+                },
+                "salt": {
+                  "description": "A salt that will be added to the field durring hashing",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "hashFunction",
+                "salt"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "pseudonymize"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "pii",
+        "strategy"
+      ],
+      "additionalProperties": false
+    },
+    "anonymousOnly": {
+      "type": "boolean",
+      "description": "Whether to enable anonymous mode. If enabled, the enrichment masks PII only when the SP-Anonymous header is present"
+    }
+  },
+  "required": [
+    "vendor",
+    "name",
+    "enabled",
+    "emitEvent",
+    "parameters"
+  ],
+  "additionalProperties": false
+}
