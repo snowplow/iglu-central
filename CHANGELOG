@@ -1,3 +1,8 @@
+Release 165 (2025-03-11)
+------------------------
+Add nl.basjes/yauaa_context/jsonschema/1-0-5 (#1431)
+Add com.snowplowanalytics.snowplow.enrichments/pii_enrichment_config/jsonschema/2-0-1 (#1430)
+
 Release 164 (2025-02-14)
 ------------------------
 Add com.snowplowanalytics.snowplow/event_specification/jsonschema/1-0-3 (#1424)
