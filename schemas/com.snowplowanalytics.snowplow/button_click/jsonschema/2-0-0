@@ -5,7 +5,7 @@
     "vendor": "com.snowplowanalytics.snowplow",
     "name": "button_click",
     "format": "jsonschema",
-    "version": "1-0-1"
+    "version": "2-0-0"
   },
   "type": "object",
   "properties": {
