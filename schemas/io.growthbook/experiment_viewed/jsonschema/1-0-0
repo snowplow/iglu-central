@@ -20,11 +20,8 @@
       "description": "The experiment variation id that the user was exposed to"
     },
     "hashAttribute": {
-      "type": [
-		"null",
-		"string"
-	  ],
-      "maxLength": 100
+      "type": "string",
+      "maxLength": 100,
       "description": "The attribute that was used to assign the experiment variant"
     },
     "hashValue": {
