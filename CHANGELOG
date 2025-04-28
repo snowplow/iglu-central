@@ -1,3 +1,15 @@
+Release 166 (2025-04-28)
+------------------------
+Add com.snowplowanalytics.snowplow/obscure_element/jsonschema/1-0-0
+Add com.snowplowanalytics.snowplow/expose_element/jsonschema/1-0-0
+Add com.snowplowanalytics.snowplow/destroy_element/jsonschema/1-0-0
+Add com.snowplowanalytics.snowplow/create_element/jsonschema/1-0-0
+Add com.snowplowanalytics.snowplow/element/jsonschema/1-0-0
+Add com.snowplowanalytics.snowplow/element_content/jsonschema/1-0-0
+Add com.snowplowanalytics.snowplow/element_statistics/jsonschema/1-0-0
+Add com.snowplowanalytics.snowplow/component_parents/jsonschema/1-0-0
+Add io.growthbook/experiment_viewed/jsonschema/1-0-0 (#1422)
+
 Release 165 (2025-03-11)
 ------------------------
 Add nl.basjes/yauaa_context/jsonschema/1-0-5 (#1431)
