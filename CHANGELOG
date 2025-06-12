@@ -1,3 +1,21 @@
+Release 167 (2025-06-12)
+------------------------
+Add com.google.tag-manager.server-side/view_promotion/jsonschema/1-0-0 (#1386)
+Add com.google.tag-manager.server-side/view_cart/jsonschema/1-0-0 (#1385)
+Add com.google.tag-manager.server-side/unlock_achievement/jsonschema/1-0-0 (#1384)
+Add com.google.tag-manager.server-side/tutorial_complete/jsonschema/1-0-0 (#1383)
+Add com.google.tag-manager.server-side/tutorial_begin/jsonschema/1-0-0 (#1382)
+Add com.google.tag-manager.server-side/spend_virtual_currency/jsonschema/1-0-0 (#1381)
+Add com.google.tag-manager.server-side/select_promotion/jsonschema/1-0-0 (#1380)
+Add com.google.tag-manager.server-side/select_item/jsonschema/1-0-0 (#1379)
+Add com.google.tag-manager.server-side/remove_from_cart/jsonschema/1-0-0 (#1378)
+Add com.google.tag-manager.server-side/post_score/jsonschema/1-0-0 (#1377)
+Add com.google.tag-manager.server-side/level_up/jsonschema/1-0-0 (#1376)
+Add com.google.tag-manager.server-side/level_start/jsonschema/1-0-0 (#1375)
+Add com.google.tag-manager.server-side/level_end/jsonschema/1-0-0 (#1374)
+Add com.google.tag-manager.server-side/earn_virtual_currency/jsonschema/1-0-0 (#1373)
+Add com.google.tag-manager.server-side/add_shipping_info/jsonschema/1-0-0 (#1372)
+
 Release 166 (2025-04-28)
 ------------------------
 Add com.snowplowanalytics.snowplow/obscure_element/jsonschema/1-0-0
