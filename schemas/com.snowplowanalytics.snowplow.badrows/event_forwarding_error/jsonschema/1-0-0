@@ -1,0 +1,61 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Generic, very unstructured bad row that can be emitted by any Snowplow component",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow.badrows",
+    "name": "event_forwarding_error",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "processor": {
+      "type": "object",
+      "description": "Information about the piece of software responsible for the creation of the bad row",
+      "properties": {
+        "artifact": {
+          "type": "string",
+          "description": "Artifact responsible for the creation of the bad row",
+          "maxLength": 512
+        },
+        "version": {
+          "type": "string",
+          "description": "Version of the artifact responsible for the creation of the bad row",
+          "pattern": "^(\\d+\\.\\d+\\.\\d+.*)$",
+          "maxLength": 32
+        }
+      },
+      "required": [
+        "artifact",
+        "version"
+      ],
+      "additionalProperties": false
+    },
+    "errorType": {
+      "type": "string",
+      "description": "Type of failure - eg api error or transformation error"
+    },
+    "originalTSV": {
+      "type": "string",
+      "description": "The original TSV snowplow event, pre-transformation"
+    },
+    "latestState": {
+      "type": "string",
+      "description": "The stringified latest transformed state of the data before the error occurred"
+    },
+    "errorMessage": {
+      "type": "string",
+      "description": "The error message, if we have one"
+    },
+    "errorCode": {
+      "type": "string",
+      "description": "The error code, if we have one"
+    },
+    "timestamp": {
+      "type": "string",
+      "description": "Timestamp at which the failure occurred",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false
+}
