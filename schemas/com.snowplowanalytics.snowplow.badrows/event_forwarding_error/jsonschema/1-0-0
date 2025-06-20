@@ -1,6 +1,6 @@
 {
   "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
-  "description": "Generic, very unstructured bad row that can be emitted by any Snowplow component",
+  "description": "Errors coming from the event forwarding product. Either invalid data or unretryable API errors.",
   "self": {
     "vendor": "com.snowplowanalytics.snowplow.badrows",
     "name": "event_forwarding_error",
