@@ -1,0 +1,102 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Describing metric event reported by Snowbridge",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow",
+    "name": "event_forwarding_metrics",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "properties": {
+    "appName": {
+      "type": "string"
+    },
+    "appVersion": {
+      "type": "string"
+    },
+    "periodStart": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "periodEnd": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "successCount": {
+      "type": "integer"
+    },
+    "filteredCount": {
+      "type": "integer"
+    },
+    "invalidCount": {
+      "type": "integer"
+    },
+    "failedCount": {
+      "type": "integer"
+    },
+    "invalidErrors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "code",
+          "description",
+          "count"
+        ]
+      }
+    },
+    "failedErrors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "code",
+          "description",
+          "count"
+        ]
+      }
+    },
+    "tags": {
+      "description": "Set of key value pairs providing additional information",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "type": "object",
+  "required": [
+    "appName",
+    "appVersion",
+    "periodStart",
+    "periodEnd",
+    "successCount",
+    "filteredCount",
+    "invalidCount",
+    "failedCount",
+    "tags"
+  ]
+}
