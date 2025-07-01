@@ -1,0 +1,120 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Describing metric event reported by Snowbridge",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow",
+    "name": "event_forwarding_metrics",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "properties": {
+    "appName": {
+      "type": "string",
+      "maxLength": 64,
+      "description": "Application's name"
+    },
+    "appVersion": {
+      "type": "string",
+      "maxLength": 64,
+      "description": "Application's version"
+    },
+    "periodStart": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Start of the period for which metrics are reported"
+    },
+    "periodEnd": {
+      "type": "string",
+      "format": "date-time",
+      "description": "End of the period for which metrics are reported"
+    },
+    "successCount": {
+      "type": "integer",
+      "description": "Number of successfully forwarded events to target in a given period"
+    },
+    "filteredCount": {
+      "type": "integer",
+      "description": "Number of events filtered out in a given period"
+    },
+    "invalidCount": {
+      "type": "integer",
+      "description": "Number of invalid events (badrows sent to failure target) in a given period"
+    },
+    "failedCount": {
+      "type": "integer",
+      "description": "Number of transient failures when forwarding events to target in a given period"
+    },
+    "invalidErrors": {
+      "type": "array",
+      "description": "List of aggregated invalid errors with their counts",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "The error code, if we have one"
+          },
+          "description": {
+            "type": "string",
+            "description": "Detailed error description, if we have one"
+          },
+          "count": {
+            "type": "integer",
+            "description": "Number of errors with a given code and description"
+          }
+        },
+        "required": [
+          "code",
+          "description",
+          "count"
+        ]
+      }
+    },
+    "failedErrors": {
+      "type": "array",
+      "description": "List of aggregated transient errors with their counts",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "The error code, if we have one"
+          },
+          "description": {
+            "type": "string",
+            "description": "Detailed error description, if we have one"
+          },
+          "count": {
+            "type": "integer",
+            "description": "Number of transient errors with a given code and description"
+          }
+        },
+        "required": [
+          "code",
+          "description",
+          "count"
+        ]
+      }
+    },
+    "tags": {
+      "description": "Set of key value pairs providing additional information",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "type": "object",
+  "required": [
+    "appName",
+    "appVersion",
+    "periodStart",
+    "periodEnd",
+    "successCount",
+    "filteredCount",
+    "invalidCount",
+    "failedCount",
+    "tags"
+  ]
+}
