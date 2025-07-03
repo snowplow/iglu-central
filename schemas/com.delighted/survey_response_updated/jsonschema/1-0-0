@@ -1,0 +1,159 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for a Delighted survey response updated",
+    "self": {
+        "vendor": "com.delighted",
+        "name": "survey_response_updated",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties": {
+        "event_type": {
+            "type": "string",
+            "enum": ["survey_response.updated"],
+            "description": "This describes what kind of event triggered this webhook. It is composed of an object type and an action, separated by a period"
+        },
+        "event_id": {
+            "type": "string",
+            "maxLength": 64,
+            "description": "The event_id can be used to deduplicate notifications that may be delivered more than once"
+        },
+        "event_data": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "maxLength": 20,
+                    "description": "Response id"
+                },
+                "person": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "description": "Responder id",
+                            "maxLength": 25
+                        },
+                        "email": {
+                            "type": ["string", "null"],
+                            "maxLength": 255,
+                            "description": "Responder email address"
+                        },
+                        "name": {
+                            "type": ["string", "null"],
+                            "maxLength": 255,
+                            "description": "Responder name"
+                        },
+                        "created_at": {
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 2147483647,
+                            "description": "Responder created at (in epoch seconds)"
+                        },
+                        "phone_number": {
+                            "type": ["string", "null"],
+                            "description": "Responser mobile phone number",
+                            "maxLength": 25
+                        }
+                    }
+                },
+                "survey_type": {
+                    "type": "string",
+                    "enum": ["nps"]
+                },
+                "score": {
+                    "type": ["integer", "null"],
+                    "description": "NPS score",
+                    "minimum": 0,
+                    "maximum": 100
+                },
+                "comment": {
+                    "type": ["string", "null"],
+                    "maxLength": 512,
+                    "description": "Survey comment"
+                },
+                "permalink": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "description": "Permalink to the response"
+                },
+                "created_at": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 2147483647,
+                    "description": "Response created at (in epoch seconds)"
+                },
+                "updated_at": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 2147483647,
+                    "description": "Response updated at (in epoch seconds)"
+                },
+                "person_properties": {
+                    "type": ["object", "null"],
+                    "description": "Custom user properites",
+                    "properties": {
+                        "delighted_source": {
+                            "type": ["string", "null"],
+                            "description": "Visitor source e.g., Web",
+                            "maxLength": 50
+                        },
+                        "Page": {
+                            "type": ["string", "null"],
+                            "maxLength": 255
+                        },
+                        "Page URL": {
+                            "type": ["string", "null"],
+                            "maxLength": 512
+                        },
+                        "Referrer URL": {
+                            "type": ["string", "null"],
+                            "maxLength": 512
+                        },
+                        "User Agent": {
+                            "type": ["string", "null"],
+                            "maxLength": 256
+                        },
+                        "IP Address": {
+                            "type": ["string", "null"],
+                            "maxLength": 45
+                        },
+                        "Device Type": {
+                            "type": ["string", "null"]
+                        },
+                        "Operating System": {
+                            "type": ["string", "null"]
+                        },
+                        "Browser": {
+                            "type": ["string", "null"]
+                        },
+                        "Country": {
+                            "type": ["string", "null"]
+                        },
+                        "user_id": {
+                            "type": ["string", "null"],
+                            "maxLength": 100,
+                            "description": "Snowplow user id"
+                        }
+                    }
+                },
+                "notes": {
+                    "type": ["array", "null"],
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Notes defined against a responder in the Delighted UI"
+                },
+                "tags": {
+                    "type": ["array", "null"],
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Tags defined against a responder in the Delighted UI"
+                }
+            }
+        }
+    },
+    "additionalProperties": false
+}
