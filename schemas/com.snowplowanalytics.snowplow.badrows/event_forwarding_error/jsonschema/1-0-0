@@ -31,32 +31,48 @@
       ],
       "additionalProperties": false
     },
-    "errorType": {
-      "type": "string",
-      "description": "Type of failure - eg api error or transformation error"
+    "payload": {
+      "type": "object",
+      "description": "The original data payload that caused the error",
+      "properties": {
+        "originalTSV": {
+          "type": "string",
+          "description": "The original TSV snowplow event, pre-transformation"
+        },
+        "latestState": {
+          "type": "string",
+          "description": "The stringified latest transformed state of the data before the error occurred"
+        }
+      },
+      "required": ["originalTSV"],
+      "additionalProperties": false
     },
-    "originalTSV": {
-      "type": "string",
-      "description": "The original TSV snowplow event, pre-transformation"
-    },
-    "latestState": {
-      "type": "string",
-      "description": "The stringified latest transformed state of the data before the error occurred"
-    },
-    "errorMessage": {
-      "type": "string",
-      "description": "The error message, if we have one"
-    },
-    "errorCode": {
-      "type": "string",
-      "description": "The error code, if we have one"
-    },
-    "timestamp": {
-      "type": "string",
-      "description": "Timestamp at which the failure occurred",
-      "format": "date-time"
+    "failure": {
+      "type": "object",
+      "description": "Information about the failure that occurred",
+      "properties": {
+        "timestamp": {
+          "type": "string",
+          "description": "Timestamp at which the failure occurred",
+          "format": "date-time"
+        },
+        "errorType": {
+          "type": "string",
+          "description": "Type of failure - eg api error or transformation error"
+        },
+        "errorMessage": {
+          "type": "string",
+          "description": "The error message, if we have one"
+        },
+        "errorCode": {
+          "type": "string",
+          "description": "The error code, if we have one"
+        }
+      },
+      "required": ["timestamp", "errorType", "errorMessage"],
+      "additionalProperties": false
     }
   },
   "additionalProperties": false,
-  "required": ["errorType", "originalTSV", "errorMessage", "timestamp"]
+  "required": ["payload", "failure", "processor"]
 }
