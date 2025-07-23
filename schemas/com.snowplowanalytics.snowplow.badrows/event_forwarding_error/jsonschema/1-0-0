@@ -32,25 +32,17 @@
       "additionalProperties": false
     },
     "payload": {
-      "type": "object",
-      "description": "The original data payload that caused the error",
-      "properties": {
-        "originalTSV": {
-          "type": "string",
-          "description": "The original TSV snowplow event, pre-transformation"
-        },
-        "latestState": {
-          "type": "string",
-          "description": "The stringified latest transformed state of the data before the error occurred"
-        }
-      },
-      "required": ["originalTSV"],
-      "additionalProperties": false
+      "type": "string",
+      "description": "The original TSV snowplow event, pre-transformation"
     },
     "failure": {
       "type": "object",
       "description": "Information about the failure that occurred",
       "properties": {
+        "latestState": {
+          "type": "string",
+          "description": "The stringified latest transformed state of the data before the error occurred"
+        },
         "timestamp": {
           "type": "string",
           "description": "Timestamp at which the failure occurred",
