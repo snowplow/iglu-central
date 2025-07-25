@@ -1,0 +1,70 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Errors coming from the event forwarding product. Either invalid data or unretryable API errors.",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow.badrows",
+    "name": "event_forwarding_error",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "processor": {
+      "type": "object",
+      "description": "Information about the piece of software responsible for the creation of the bad row",
+      "properties": {
+        "artifact": {
+          "type": "string",
+          "description": "Artifact responsible for the creation of the bad row",
+          "maxLength": 512
+        },
+        "version": {
+          "type": "string",
+          "description": "Version of the artifact responsible for the creation of the bad row",
+          "pattern": "^(\\d+\\.\\d+\\.\\d+.*)$",
+          "maxLength": 32
+        }
+      },
+      "required": [
+        "artifact",
+        "version"
+      ],
+      "additionalProperties": false
+    },
+    "payload": {
+      "type": "string",
+      "description": "The original TSV snowplow event, pre-transformation"
+    },
+    "failure": {
+      "type": "object",
+      "description": "Information about the failure that occurred",
+      "properties": {
+        "latestState": {
+          "type": ["string", "null"],
+          "description": "The stringified latest transformed state of the data before the error occurred"
+        },
+        "timestamp": {
+          "type": "string",
+          "description": "Timestamp at which the failure occurred",
+          "format": "date-time"
+        },
+        "errorType": {
+          "type": "string",
+          "description": "Type of failure - eg api error or transformation error"
+        },
+        "errorMessage": {
+          "type": "string",
+          "description": "The error message, if we have one"
+        },
+        "errorCode": {
+          "type": ["string", "null"],
+          "description": "The error code, if we have one"
+        }
+      },
+      "required": ["timestamp", "errorType", "errorMessage"],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "required": ["payload", "failure", "processor"]
+}
