@@ -1,3 +1,7 @@
+Release 168 (2025-07-25)
+------------------------
+Add com.snowplowanalytics.snowplow.badrows/event_forwarding_error/jsonschema/1-0-0
+
 Release 167 (2025-06-12)
 ------------------------
 Add com.google.tag-manager.server-side/view_promotion/jsonschema/1-0-0 (#1386)
