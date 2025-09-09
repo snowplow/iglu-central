@@ -1,0 +1,20 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for event when a handler function successfully processes a received intervention.",
+	"self": {
+		"vendor": "com.snowplowanalytics.signals",
+		"name": "intervention_handle",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+	"type": "object",
+	"properties": {
+		"handler": {
+			"description": "The name of the handler that processed the intervention successfully.",
+			"type": "string",
+			"maxLength": 255
+		}
+	},
+	"required": ["handler"],
+	"additionalProperties": false
+}
