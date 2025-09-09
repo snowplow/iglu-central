@@ -1,0 +1,24 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for event when an intervention is received and is dispatched to a group of handler functions.",
+	"self": {
+		"vendor": "com.snowplowanalytics.signals",
+		"name": "intervention_receive",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+	"type": "object",
+	"properties": {
+		"handlers": {
+			"description": "A list of registered handler function names at the time the intervention is received, if any.",
+			"type": "array",
+			"items": {
+				"description": "A single handler function's name or label",
+				"type": "string",
+				"maxLength": 255
+			}
+		}
+	},
+	"required": ["handlers"],
+	"additionalProperties": false
+}
