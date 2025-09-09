@@ -1,0 +1,69 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Schema for entity describing an intervention that was received, handled, or acted upon in some other way.",
+	"self": {
+		"vendor": "com.snowplowanalytics.signals",
+		"name": "intervention_instance",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+	"type": "object",
+	"properties": {
+		"intervention_id": {
+			"description": "Identifier for the intervention instance.",
+			"type": "string",
+			"format": "uuid"
+		},
+		"name": {
+			"description": "The name of the intervention.",
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 128
+		},
+		"version": {
+			"description": "The version number of the intervention.",
+			"type": "integer",
+			"minimum": 0
+		},
+		"attributeKey": {
+			"description": "Information about the attribute key that was the target for the intervention.",
+			"type": ["object", "null"],
+			"properties": {
+				"name": {
+					"description": "The name that defines which attribute key was targeted.",
+					"type": "string",
+					"minLength": 1,
+					"maxLength": 128
+				},
+				"id": {
+					"description": "The actual identifier value of the attribute key that was targeted.",
+					"type": "string"
+				}
+			},
+			"required": ["id", "name"]
+		},
+		"attributes": {
+			"description": "Snapshot of the targeted attribute keys' attributes at the time of the intervention.",
+			"type": ["array", "null"],
+			"items": {
+				"description": "A specific attribute of the targeted attribute key at the time of the intervention's delivery.",
+				"type": "object",
+				"properties": {
+					"attribute": {
+						"description": "The name of the attribute group and attribute that had a value.",
+						"type": "string",
+						"minLength": 3,
+						"maxLength": 257
+					},
+					"value": {
+						"description": "The JSON-stringified version of the attribute's value.",
+						"type": "string"
+					}
+				},
+				"required": ["attribute", "value"]
+			}
+		}
+	},
+	"required": ["intervention_id", "name", "version"],
+	"additionalProperties": false
+}
