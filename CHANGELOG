@@ -1,3 +1,11 @@
+Release 169 (2025-09-11)
+------------------------
+Add com.snowplowanalytics.snowplow/event_forwarding_metrics/jsonschema/1-0-0
+Add com.snowplowanalytics.signals/intervention_instance/jsonschema/1-0-0
+Add com.snowplowanalytics.signals/intervention_receive/jsonschema/1-0-0
+Add com.snowplowanalytics.signals/intervention_handle/jsonschema/1-0-0
+Add com.snowplowanalytics.signals/intervention_handle_error/jsonschema/1-0-0
+
 Release 168 (2025-07-25)
 ------------------------
 Add com.snowplowanalytics.snowplow.badrows/event_forwarding_error/jsonschema/1-0-0
