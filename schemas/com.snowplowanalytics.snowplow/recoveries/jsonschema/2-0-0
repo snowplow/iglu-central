@@ -17,7 +17,7 @@
         "properties": {
           "name": {
             "type": "string",
-            "pattern": "^(([a-zA-Z0-9]+)(-?))+$",
+            "pattern": "^[a-zA-Z0-9-]+$",
             "minLength": 1,
             "description": "A slug name for recovery flow"
           },
@@ -38,7 +38,7 @@
                 },
                 "path": {
                   "type": "string",
-                  "pattern": "^(([a-zA-Z0-9]+)(\\.?))+$",
+                  "pattern": "^[a-zA-Z0-9\\.]+$",
                   "description": "JSON Path to object"
                 },
                 "match": {
@@ -148,7 +148,7 @@
                 },
                 "path": {
                   "type": "string",
-                  "pattern": "^(([a-zA-Z0-9]+)(\\.?))+$",
+                  "pattern": "^[a-zA-Z0-9\\.]+$",
                   "description": "JSON Path to object"
                 },
                 "match": {
