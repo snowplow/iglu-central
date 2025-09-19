@@ -1,3 +1,7 @@
+Release 170 (2025-09-19)
+------------------------
+Patch com.snowplowanalytics.snowplow.recoveries schemas
+
 Release 169 (2025-09-11)
 ------------------------
 Add com.snowplowanalytics.snowplow/event_forwarding_metrics/jsonschema/1-0-0
