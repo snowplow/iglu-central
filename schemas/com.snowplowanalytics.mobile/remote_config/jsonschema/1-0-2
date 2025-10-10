@@ -3,7 +3,7 @@
   "self" : {
     "vendor" : "com.snowplowanalytics.mobile",
     "name" : "remote_config",
-    "version" : "1-0-1",
+    "version" : "1-0-2",
     "format" : "jsonschema"
   },
   "description": "The configuration file for the Snowplow mobile trackers.",
