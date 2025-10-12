@@ -28,7 +28,7 @@
     },
     "price": {
       "type": "number",
-      "description": "Total price of the booking (optional)"
+      "description": "Total price of the booking"
     },
     "booking_start_date": {
         "type": "string",
@@ -54,10 +54,6 @@
     "has_insurance": {
         "type": "boolean",
         "description": "Whether booking includes insurance"
-    },
-    "total_price": {
-        "type": "number",
-        "description": "Total price for the booking details"
     },
     "duration_days": {
         "type": "integer",
