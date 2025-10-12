@@ -1,0 +1,34 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "type": "object",
+  "self": {
+    "vendor": "com.snowplowanalytics.travel",
+    "name": "destination_filter",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "description": "Event for filtering destination specific information",
+  "properties": {
+    "page_type": {
+      "type": "string",
+      "description": "Page type"
+    },
+    "action_type": {
+      "type": "string",
+      "description": "Filter action performed"
+    },
+    "filter_type": {
+      "type": "string",
+      "description": "Filter type selected"
+    },
+    "filter_value": {
+      "type": "string",
+      "description": "Filter value selected"
+    },
+    "previous_value": {
+      "type": "string",
+      "description": "Previous filter value"
+    }
+  },
+  "additionalProperties": false
+}

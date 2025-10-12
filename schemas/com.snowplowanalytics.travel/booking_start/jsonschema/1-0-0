@@ -1,0 +1,43 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "type": "object",
+  "self": {
+    "vendor": "com.snowplowanalytics.travel",
+    "name": "booking_start",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "description": "Event for when a booking process has been started",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "ID of the booking"
+    },
+    "type": {
+        "type": "string",
+        "description": "Type of booking (e.g. hotel, experience, flight)"
+    },
+    "title": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Title of the booking"
+    },
+    "location": {
+        "type": [
+            "string",
+            "null"
+        ],
+        "description": "Location (physical) of the booking"
+    },
+    "price": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Total price of the booking"
+    }
+  },
+  "additionalProperties": false
+}

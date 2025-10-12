@@ -1,0 +1,35 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "type": "object",
+  "self": {
+    "vendor": "com.snowplowanalytics.travel",
+    "name": "filter_tag_applied",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "description": "Event for when a filter tag has been applied",
+  "properties": {
+    "location": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Filter location"
+    },
+    "tag_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Filter tag name / value"
+    },
+    "action_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Type of action taken on the filter"
+    }
+  },
+  "additionalProperties": false
+}

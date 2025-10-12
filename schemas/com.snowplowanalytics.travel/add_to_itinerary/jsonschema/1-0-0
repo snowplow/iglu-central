@@ -1,0 +1,43 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "type": "object",
+  "self": {
+    "vendor": "com.snowplowanalytics.travel",
+    "name": "add_to_itinerary",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "description": "Event for when an item has been added to the trip itinerary",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Type of item added (e.g. hotel, experience, flight)"
+    },
+    "price": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Value of item added"
+    },
+    "title": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Title of item added"
+    },
+    "item_id": {
+      "type": "string",
+      "description": "ID of item added"
+    },
+    "location": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Location (physical) of item added"
+    }
+  },
+  "additionalProperties": false
+}
