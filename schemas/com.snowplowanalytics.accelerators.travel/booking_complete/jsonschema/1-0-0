@@ -1,0 +1,81 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "type": "object",
+  "self": {
+    "vendor": "com.snowplowanalytics.accelerators.travel",
+    "name": "booking_complete",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "description": "Event for when a booking process has been completed",
+  "properties": {
+    "booking_id": {
+      "type": "string",
+      "description": "ID of the booking",
+      "maxLength": 64
+    },
+    "type": {
+      "type": "string",
+      "enum": ["experience", "destination"],
+      "description": "Type of booking"
+    },
+    "title": {
+      "type": "string",
+      "description": "Title of the booking",
+      "maxLength": 256
+    },
+    "location": {
+      "type": "string",
+      "description": "Location (physical) of the booking",
+      "maxLength": 256
+    },
+    "price": {
+      "type": "number",
+      "description": "Total price of the booking (optional)",
+      "multipleOf": 0.01
+    },
+    "booking_start_date": {
+        "type": "string",
+        "format": "date",
+        "description": "Start date of the booking"
+    },
+    "booking_end_date": {
+        "type": ["string", "null"],
+        "format": "date",
+        "description": "End date of the booking (optional)"
+    },
+    "booking_start_time": {
+        "type": ["string", "null"],
+        "description": "Start time of the booking (optional)",
+        "maxLength": 64
+    },
+    "booking_end_time": {
+        "type": ["string", "null"],
+        "description": "End time of the booking (optional)",
+        "maxLength": 64
+    },
+    "participants": {
+        "type": "integer",
+        "minimum": 1,
+        "description": "Number of participants",
+        "maximum": 128
+    },
+    "has_insurance": {
+        "type": "boolean",
+        "description": "Whether booking includes insurance"
+    },
+    "total_price": {
+        "type": "number",
+        "description": "Total price for the booking details",
+        "multipleOf": 0.01
+    },
+    "duration_days": {
+        "type": ["integer", "null"],
+        "description": "Number of days (optional)",
+        "minimum": 1,
+        "maximum": 128
+    }
+  },
+  "required": ["booking_id", "type", "title", "location", "price", "booking_start_date", "participants", "has_insurance", "total_price"],
+  "additionalProperties": false
+}
