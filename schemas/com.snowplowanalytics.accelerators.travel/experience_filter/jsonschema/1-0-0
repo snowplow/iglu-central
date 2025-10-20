@@ -1,0 +1,46 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "type": "object",
+  "self": {
+    "vendor": "com.snowplowanalytics.accelerators.travel",
+    "name": "experience_filter",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "description": "Event for filtering on experiences",
+  "properties": {
+    "page_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Page type",
+      "maxLength": 128
+    },
+    "filter_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Filter type selected",
+      "maxLength": 64
+    },
+    "filter_value": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Filter value selected",
+      "maxLength": 128
+    },
+    "previous_value": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Previous filter value",
+      "maxLength": 128
+    }
+  },
+  "additionalProperties": false
+}
