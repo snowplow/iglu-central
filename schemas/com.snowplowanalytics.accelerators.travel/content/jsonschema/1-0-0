@@ -1,0 +1,41 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "type": "object",
+  "self": {
+    "vendor": "com.snowplowanalytics.accelerators.travel",
+    "name": "content",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "description": "Entity to describe a piece of content",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the content item",
+      "maxLength": 256
+    },
+    "location": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Location of the content item",
+      "maxLength": 256
+    },
+    "page_type": {
+      "type": "string",
+      "description": "Type of site page",
+      "maxLength": 128
+    },
+    "primary_tag": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Primary tag descriptor for the content",
+      "maxLength": 128
+    }
+  },
+  "required": ["name", "page_type"],
+  "additionalProperties": false
+}
