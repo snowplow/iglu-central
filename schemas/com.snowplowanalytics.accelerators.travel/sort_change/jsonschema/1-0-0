@@ -1,0 +1,46 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "type": "object",
+  "self": {
+    "vendor": "com.snowplowanalytics.accelerators.travel",
+    "name": "sort_change",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "description": "Event when the sorting criteria has been modified",
+  "properties": {
+    "page_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Type of page",
+      "maxLength": 128
+    },
+    "action_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Sorting action type",
+      "maxLength": 64
+    },
+    "sort_option": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Sorting option selection",
+      "maxLength": 64
+    },
+    "previous_sort": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Previous sorting option selection",
+      "maxLength": 64
+    }
+  },
+  "additionalProperties": false
+}
