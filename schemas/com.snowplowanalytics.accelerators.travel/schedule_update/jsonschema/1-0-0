@@ -1,0 +1,22 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "type": "object",
+  "self": {
+    "vendor": "com.snowplowanalytics.accelerators.travel",
+    "name": "schedule_update",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "description": "Event for when a user updates their itinerary schedule",
+  "properties": {
+    "schedule": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Updated itinerary schedule (JSON formatted)",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": false
+}
