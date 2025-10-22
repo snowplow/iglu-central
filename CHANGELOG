@@ -1,3 +1,15 @@
+Release 171 (2025-10-22)
+------------------------
+Add com.snowplowanalytics.accelerators.travel/sort_change/jsonschema/1-0-0
+Add com.snowplowanalytics.accelerators.travel/schedule_update/jsonschema/1-0-0
+Add com.snowplowanalytics.accelerators.travel/filter_tag_applied/jsonschema/1-0-0
+Add com.snowplowanalytics.accelerators.travel/experience_filter/jsonschema/1-0-0
+Add com.snowplowanalytics.accelerators.travel/destination_filter/jsonschema/1-0-0
+Add com.snowplowanalytics.accelerators.travel/content/jsonschema/1-0-0
+Add com.snowplowanalytics.accelerators.travel/booking_start/jsonschema/1-0-0
+Add com.snowplowanalytics.accelerators.travel/booking_complete/jsonschema/1-0-0
+Add com.snowplowanalytics.accelerators.travel/add_to_itinerary/jsonschema/1-0-0
+
 Release 170 (2025-09-19)
 ------------------------
 Patch com.snowplowanalytics.snowplow.recoveries schemas
