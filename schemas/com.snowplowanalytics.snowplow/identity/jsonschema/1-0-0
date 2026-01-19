@@ -1,0 +1,24 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "type": "object",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow",
+    "name": "identity",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "description": "Identity context that is enriched onto events by Snowplow Identities",
+  "properties": {
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "snowplowId": {
+      "type": "string",
+      "maxLength": 29,
+      "pattern": "^sp_[A-Za-z2-7]{26}$"
+    }
+  },
+  "required": ["snowplowId", "createdAt"],
+  "additionalProperties": false
+}
