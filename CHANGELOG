@@ -1,3 +1,8 @@
+Release 172 (2026-01-19)
+------------------------
+Add com.snowplowanalytics.snowplow/identity_merge/jsonschema/1-0-0
+Add com.snowplowanalytics.snowplow/identity/jsonschema/1-0-0
+
 Release 171 (2025-10-22)
 ------------------------
 Add com.snowplowanalytics.accelerators.travel/sort_change/jsonschema/1-0-0
