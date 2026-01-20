@@ -9,7 +9,6 @@
         "$.hierarchy.refRoot",
         "$.hierarchy.refTree",
         "$.hierarchy.refParent",
-        "$.data.type",
         "$.data.unsubscribed_at",
         "$.data.user.email",
         "$.data.user.id"

@@ -30,10 +30,6 @@
 			"type": ["string", "null"],
 			"maxLength": 255
 		},
-		"type": {
-			"type": "string",
-			"maxLength": 255
-		},
 		"event": {
 			"type": "object",
 			"properties": {
@@ -68,8 +64,8 @@
 			"type": "object",
 			"properties": {
 				"id": {
-					"type": ["string", "null"],
-					"maxLength": 255
+					"type": ["integer", "null"],
+					"maximum": 2147483647
 				},
 				"type": {
 					"type": ["string", "null"],
@@ -89,7 +85,7 @@
 				},
 				"permalink": {
 					"type": ["string", "null"],
-					"maxLength": 255
+					"format": "uri"
 				},
 				"variation": {
 					"type": ["string", "null"],
