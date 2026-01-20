@@ -1,0 +1,17 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.ciscofinessegadgets/jsonschema/1-0-0",
+	"self": {
+		"vendor": "com.ciscofinessegadgets",
+		"name": "search",
+		"format": "jsonschema",
+		"version": "1-0-0"
+    },
+	"type": "object",
+	"properties": {
+		"searched_words": {
+			"type": "string"
+		}
+	},
+	"required": ["searched_words"],
+	"additionalProperties": false
+}
