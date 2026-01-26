@@ -18,7 +18,7 @@
     "userId": {
       "type": "string",
       "description": "The user ID associated with the event",
-      "maxLength": 254
+      "maxLength": 52
     },
     "eventName": {
       "type": "string",
