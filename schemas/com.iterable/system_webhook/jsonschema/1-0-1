@@ -16,7 +16,7 @@
       "format": "email"
     },
     "userId": {
-      "type": "string",
+      "type": ["string", "null"],
       "description": "The user ID associated with the event",
       "maxLength": 52
     },
