@@ -664,7 +664,7 @@
             "null"
           ],
           "minimum": 0,
-          "maximum": 9223372036854776000,
+          "maximum": 9223372036854775807,
           "description": "Reference to the workflow which the event originated (e.g., 53505)"
         },
         "workflowName": {
