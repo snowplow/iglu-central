@@ -1,3 +1,7 @@
+Release 173 (2026-01-27)
+------------------------
+Add com.iterable/system_webhook/jsonschema/1-0-1 (#1453)
+
 Release 172 (2026-01-19)
 ------------------------
 Add com.snowplowanalytics.snowplow/identity_merge/jsonschema/1-0-0
