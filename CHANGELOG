@@ -1,3 +1,7 @@
+Release 174 (2026-02-02)
+------------------------
+Add com.snowplowanalytics.snowplow/asn/jsonschema/1-0-0 (#1455)
+
 Release 173 (2026-01-27)
 ------------------------
 Add com.iterable/system_webhook/jsonschema/1-0-1 (#1453)
