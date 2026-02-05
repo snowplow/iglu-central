@@ -1,0 +1,70 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for referer-parser customization enrichment",
+    "self": {
+      "vendor": "com.snowplowanalytics.snowplow",
+      "name": "referer_parser",
+      "format": "jsonschema",
+      "version": "2-0-1"
+    },
+    "type": "object",
+    "properties": {
+      "vendor": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "enabled": {
+        "type": "boolean"
+      },
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "internalDomains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "database": {
+            "type": "string"
+          },
+          "uri": {
+            "type": "string",
+            "format": "uri"
+          },
+          "referrers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "domains": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "parameters": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": ["domains"],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "required": ["internalDomains", "database", "uri"],
+        "additionalProperties": false
+      }
+    },
+    "required": ["name", "vendor", "enabled", "parameters"],
+    "additionalProperties": false
+}
