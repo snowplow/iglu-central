@@ -7,7 +7,7 @@
     "format": "jsonschema",
     "version": "1-0-1"
   },
-  "description": "",
+  "description": "Event for when a user updates their itinerary schedule",
   "properties": {
     "gaps": {
       "type": [
@@ -21,7 +21,8 @@
         "string",
         "null"
       ],
-      "description": ""
+      "description": "Updated itinerary schedule (JSON formatted)",
+      "minLength": 1
     },
     "total_gap_hours": {
       "type": [
