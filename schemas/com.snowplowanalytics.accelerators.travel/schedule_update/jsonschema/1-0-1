@@ -1,0 +1,37 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "type": "object",
+  "self": {
+    "vendor": "com.snowplowanalytics.accelerators.travel",
+    "name": "schedule_update",
+    "format": "jsonschema",
+    "version": "1-0-1"
+  },
+  "description": "Event for when a user updates their itinerary schedule",
+  "properties": {
+    "gaps": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Stringified JSON array of gaps",
+      "maxLength": 65535
+    },
+    "schedule": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Updated itinerary schedule (JSON formatted)",
+      "maxLength": 65535
+    },
+    "total_gap_hours": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Number of hours in the itinerary containing gaps."
+    }
+  },
+  "additionalProperties": false
+}
