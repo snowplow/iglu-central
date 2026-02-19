@@ -14,7 +14,7 @@
         "string",
         "null"
       ],
-      "description": "Array of gaps"
+      "description": "Stingified JSON array of gaps"
     },
     "schedule": {
       "type": [
