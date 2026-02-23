@@ -14,7 +14,8 @@
         "string",
         "null"
       ],
-      "description": "Stingified JSON array of gaps"
+      "description": "Stringified JSON array of gaps",
+      "maxLength": 65535
     },
     "schedule": {
       "type": [
@@ -22,7 +23,7 @@
         "null"
       ],
       "description": "Updated itinerary schedule (JSON formatted)",
-      "minLength": 1
+      "maxLength": 65535
     },
     "total_gap_hours": {
       "type": [
