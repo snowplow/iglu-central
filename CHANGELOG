@@ -1,3 +1,11 @@
+Release 176 (2026-02-25)
+------------------------
+Add com.snowplowanalytics.snowplow/bot_detection/jsonschema/1-0-0 (#1460)
+Add com.snowplowanalytics.snowplow.enrichments/bot_detection_enrichment_config/jsonschema/1-0-0 (#1460)
+Add com.snowplowanalytics.snowplow/referer_parser/jsonschema/2-0-1 (#1458)
+Add com.snowplowanalytics.snowplow.enrichments/asn_lookups/jsonschema/1-0-0 (#1461)
+Add com.snowplowanalytics.snowplow/asn/jsonschema/1-0-1 (#1461)
+
 Release 175 (2026-02-05)
 ------------------------
 Add com.snowplowanalytics.snowplow/ip_lookups/jsonschema/2-0-1 (#1457)
