@@ -10,12 +10,12 @@
     "description": "Track travel site search events",
     "properties": {
         "query": {
-            "type": "string",
+            "type": ["string", "null"],
             "description": "Search term",
             "maxLength": 2048
         },
         "results_count": {
-            "type": "integer",
+            "type": ["integer", "null"],
             "minimum": 0,
             "maximum": 2147483647
         }
