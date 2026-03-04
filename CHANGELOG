@@ -1,3 +1,8 @@
+Release 177 (2026-03-05)
+------------------------
+Add com.snowplowanalytics.accelerators.travel/search/jsonschema/1-0-0 (#1464)
+Add com.snowplowanalytics.accelerators.travel/schedule_update/jsonschema/1-0-1 (#1462)
+
 Release 176 (2026-02-25)
 ------------------------
 Add com.snowplowanalytics.snowplow/bot_detection/jsonschema/1-0-0 (#1460)
