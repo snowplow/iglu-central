@@ -35,12 +35,38 @@
           ],
           "description": "Whether or not the app was already running when the push notification arrived."
         },
+        "attachmentUrlAndroid": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "URL of the Android push notification attachment image",
+          "format": "uri",
+          "maxLength": 4096
+        },
+        "attachmentUrlIos": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "URL of the iOS push notification attachment image",
+          "format": "uri",
+          "maxLength": 4096
+        },
         "badge": {
           "type": [
             "string",
             "null"
           ],
           "description": "Badge to set for push notification",
+          "maxLength": 4096
+        },
+        "billingParty": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Billing party for the message",
           "maxLength": 4096
         },
         "bounceMessage": {
@@ -131,6 +157,14 @@
           "description": "City (e.g., 'San Jose')",
           "maxLength": 4096
         },
+        "clickedUrl": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "URL that was clicked in the SMS message",
+          "maxLength": 4096
+        },
         "contentAvailable": {
           "type": [
             "boolean",
@@ -195,6 +229,14 @@
           "additionalProperties": true,
           "description": "Deep Link. A mapping that accepts two optional properties: 'ios' & 'android' and their respective deep link values."
         },
+        "deleteAction": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Action that triggered the in-app message deletion",
+          "maxLength": 4096
+        },
         "device": {
           "type": [
             "string",
@@ -202,6 +244,40 @@
           ],
           "description": "Device application name (e.g., 'Gmail')",
           "maxLength": 4096
+        },
+        "deviceInfo": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "deviceId": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Device identifier or user agent string",
+              "maxLength": 4096
+            },
+            "platform": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Platform of the device",
+              "maxLength": 4096
+            },
+            "appPackageName": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Application package name",
+              "maxLength": 4096
+            }
+          },
+          "description": "Device information associated with the event",
+          "additionalProperties": true
         },
         "email": {
           "type": [
@@ -243,12 +319,103 @@
           },
           "description": "Lists that a user is subscribed to"
         },
+        "emailSubject": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Subject of the email associated with the event",
+          "maxLength": 998
+        },
+        "embeddedBodyField": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Body field of the embedded message",
+          "maxLength": 4096
+        },
+        "embeddedButtonId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Button ID of the embedded message that was clicked",
+          "maxLength": 4096
+        },
+        "embeddedImpressionDisplayCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2147483647,
+          "description": "Number of times the embedded message was displayed"
+        },
+        "embeddedImpressionDisplayDuration": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2147483647,
+          "description": "Duration in seconds the embedded message was displayed"
+        },
+        "embeddedImpressionPlacementId": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 9223372036854775807,
+          "description": "Placement ID of the embedded impression"
+        },
+        "embeddedSessionId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Session ID for the embedded message interaction",
+          "maxLength": 4096
+        },
+        "embeddedTargetUrl": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Target URL of the embedded message click",
+          "maxLength": 4096
+        },
+        "entranceTime": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Time when the user entered the journey",
+          "maxLength": 255
+        },
+        "errorCode": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Error code from the messaging provider",
+          "maxLength": 4096
+        },
         "esDocumentId": {
           "type": [
             "string",
             "null"
           ],
           "description": "Elasticsearch document ID associated with the event",
+          "maxLength": 4096
+        },
+        "espAccountId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Account ID of the email/messaging service provider",
           "maxLength": 4096
         },
         "espName": {
@@ -259,13 +426,38 @@
           "description": "Email service provider name",
           "maxLength": 4096
         },
-        "emailSubject": {
+        "exitNodeId": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 9223372036854775807,
+          "description": "Node ID where the user exited the journey"
+        },
+        "exitReason": {
           "type": [
             "string",
             "null"
           ],
-          "description": "Subject of the email associated with the event",
-          "maxLength": 998
+          "description": "Reason for exiting the journey",
+          "maxLength": 4096
+        },
+        "exitRuleId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Rule ID that triggered the journey exit",
+          "maxLength": 4096
+        },
+        "exitTime": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Time when the user exited the journey",
+          "maxLength": 255
         },
         "experimentId": {
           "type": [
@@ -318,6 +510,24 @@
           "maximum": 9223372036854775807,
           "description": "Reference to the SMS sender which the event is from (e.g., 258)"
         },
+        "fromWhatsAppSenderId": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 9223372036854775807,
+          "description": "Reference to the WhatsApp sender"
+        },
+        "hrefIndex": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2147483647,
+          "description": "Index of the clicked link in the email"
+        },
         "imageUrl": {
           "type": [
             "string",
@@ -325,6 +535,22 @@
           ],
           "description": "Image URL of the event.",
           "format": "uri",
+          "maxLength": 4096
+        },
+        "inAppBody": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "HTML body of the in-app message",
+          "maxLength": 65536
+        },
+        "inboxSessionId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Session ID for the inbox interaction",
           "maxLength": 4096
         },
         "ip": {
@@ -348,6 +574,13 @@
             "null"
           ],
           "description": "Boolean indicating if the event is a result of a ghost push"
+        },
+        "isSMSEstimation": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Whether the SMS send count is an estimation"
         },
         "labels": {
           "type": [
@@ -435,6 +668,14 @@
           "description": "Reference to the message the event is associated with (e.g., 'vA16d48VVi4LQ5hMuZuquKzL0BXTdQJJUMJRjKnL1')",
           "maxLength": 4096
         },
+        "messageStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Delivery status of the message",
+          "maxLength": 4096
+        },
         "messageTypeId": {
           "type": [
             "integer",
@@ -455,6 +696,58 @@
             "maximum": 2147483647
           },
           "description": "Message type IDs"
+        },
+        "mmsReceiveCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2147483647,
+          "description": "Number of MMS messages received"
+        },
+        "mmsSendCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2147483647,
+          "description": "Number of MMS messages sent"
+        },
+        "nodeCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2147483647,
+          "description": "Number of nodes traversed in the journey"
+        },
+        "nodePath": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Comma-separated list of node IDs traversed in the journey",
+          "maxLength": 4096
+        },
+        "orgId": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 9223372036854775807,
+          "description": "Organization ID"
+        },
+        "payload": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "description": "Custom payload data for push notifications",
+          "additionalProperties": true
         },
         "platformEndpoint": {
           "type": [
@@ -481,6 +774,15 @@
           "description": "2020-03-20 23:11:58 +00:00",
           "maxLength": 255
         },
+        "projectId": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 9223372036854775807,
+          "description": "Project ID"
+        },
         "proxySource": {
           "type": [
             "string",
@@ -505,6 +807,22 @@
           "description": "Reason (e.g., 'DuplicateMarketingMessage')",
           "maxLength": 4096
         },
+        "recipientCountryCallingCode": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Calling code of the recipient's country",
+          "maxLength": 255
+        },
+        "recipientCountryName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Name of the recipient's country",
+          "maxLength": 4096
+        },
         "recipientState": {
           "type": [
             "string",
@@ -521,12 +839,36 @@
           "description": "Region of the event (e.g., 'CA')",
           "maxLength": 4096
         },
+        "renderedSmsMessage": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Rendered SMS message with processed Handlebars and shortened links",
+          "maxLength": 4096
+        },
+        "renderedWhatsAppMessage": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Rendered WhatsApp message content",
+          "maxLength": 4096
+        },
         "sendingDomain": {
           "type": [
             "string",
             "null"
           ],
           "description": "The domain from which the email was sent",
+          "maxLength": 4096
+        },
+        "senderPhoneNumberType": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Type of the sender phone number",
           "maxLength": 4096
         },
         "signupSource": {
@@ -589,6 +931,24 @@
           "description": "SMS provider response",
           "additionalProperties": true
         },
+        "smsReceiveCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2147483647,
+          "description": "Number of SMS messages received"
+        },
+        "smsSendCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2147483647,
+          "description": "Number of SMS messages sent"
+        },
         "sound": {
           "type": [
             "string",
@@ -621,6 +981,39 @@
           ],
           "description": "Template name",
           "maxLength": 4096
+        },
+        "timeZone": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Time zone of the event",
+          "maxLength": 4096
+        },
+        "toPhoneNumber": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "To phone number associated with the event (e.g., '+16503926753')",
+          "maxLength": 255
+        },
+        "toWhatsAppPhoneNumber": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Recipient WhatsApp phone number",
+          "maxLength": 255
+        },
+        "total": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2147483647,
+          "description": "Total count of recalled in-app messages"
         },
         "trackedLink": {
           "type": [
@@ -664,14 +1057,6 @@
           "description": "JSON-encoded transactional data associated with the event",
           "maxLength": 4096
         },
-        "toPhoneNumber": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "To phone number associated with the event (e.g., '+16503926753')",
-          "maxLength": 255
-        },
         "unsubSource": {
           "type": [
             "string",
@@ -689,18 +1074,6 @@
           "format": "uri",
           "maxLength": 4096
         },
-        "userListIds": {
-          "type": [
-            "array",
-            "null"
-          ],
-          "items": {
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 9223372036854775807
-          },
-          "description": "List IDs that a user is subscribed to"
-        },
         "userAgent": {
           "type": [
             "string",
@@ -716,6 +1089,18 @@
           ],
           "description": "The device of the user agent (e.g., 'Mac')",
           "maxLength": 4096
+        },
+        "userListIds": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9223372036854775807
+          },
+          "description": "List IDs that a user is subscribed to"
         },
         "webPushBody": {
           "type": [
@@ -747,6 +1132,14 @@
             "null"
           ],
           "description": "Web push notification message",
+          "maxLength": 4096
+        },
+        "whatsAppBodyField": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Body field of the WhatsApp message",
           "maxLength": 4096
         },
         "workflowId": {
