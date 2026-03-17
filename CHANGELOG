@@ -1,3 +1,7 @@
+Release 178 (2026-03-17)
+------------------------
+Add com.snowplowanalytics.snowplow/event_specification/jsonschema/1-0-4 (#1467)
+
 Release 177 (2026-03-05)
 ------------------------
 Add com.snowplowanalytics.accelerators.travel/search/jsonschema/1-0-0 (#1464)
