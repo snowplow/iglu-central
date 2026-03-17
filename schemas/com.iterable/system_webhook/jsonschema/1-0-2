@@ -12,8 +12,7 @@
     "email": {
       "type": ["string", "null"],
       "description": "The email address associated with the event",
-      "maxLength": 254,
-      "format": "email"
+      "maxLength": 254
     },
     "userId": {
       "type": ["string", "null"],
@@ -788,7 +787,7 @@
             "string",
             "null"
           ],
-          "description": "2020-03-20 23:11:58 +00:00",
+          "description": "Profile update timestamp (e.g., '2020-03-20 23:11:58 +00:00')",
           "maxLength": 255
         },
         "projectId": {
@@ -932,7 +931,7 @@
                 "string",
                 "null"
               ],
-              "description": "SMS provider response message from the event (e.g., 'The requested resource was not found'",
+              "description": "SMS provider response message from the event (e.g., 'The requested resource was not found')",
               "maxLength": 4096
             },
             "code": {
@@ -949,7 +948,7 @@
                 "string",
                 "null"
               ],
-              "description": "SMS provider response addition info from the event (e.g, a URL)",
+              "description": "SMS provider response additional info from the event (e.g., a URL)",
               "maxLength": 4096
             }
           },
