@@ -157,6 +157,14 @@
           "description": "City (e.g., 'San Jose')",
           "maxLength": 4096
         },
+        "closeAction": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Action that triggered the in-app message close",
+          "maxLength": 4096
+        },
         "clickedUrl": {
           "type": [
             "string",
@@ -757,6 +765,15 @@
           "description": "The specific platform endpoint of the event",
           "maxLength": 4096
         },
+        "priorityLevel": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2147483647,
+          "description": "Priority level of the in-app message"
+        },
         "productRecommendationCount": {
           "type": [
             "integer",
@@ -854,6 +871,14 @@
           ],
           "description": "Rendered WhatsApp message content",
           "maxLength": 4096
+        },
+        "sentAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Timestamp when the message was sent",
+          "maxLength": 255
         },
         "sendingDomain": {
           "type": [
