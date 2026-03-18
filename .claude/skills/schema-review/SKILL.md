@@ -14,6 +14,7 @@ When invoked, reviews schema files for:
 - Type definitions (nullable fields, integer vs number)
 - Warehouse compatibility (column types, query performance)
 - Required field validation
+- Schema evolution breaking changes (required → optional across patch versions)
 - Documentation completeness
 - Consistency with related schemas
 
@@ -199,6 +200,44 @@ Fixed:
 
 ### Required Field Validation
 
+**Check: Field becoming nullable in a non-first schema version**
+
+When a schema shares a MODEL number with a previous version (e.g. `1-0-2` when `1-0-1` exists, or `1-1-0` when `1-0-0` exists), compare each field's effective nullability against the previous version. A field is nullable if **either** of these is true:
+- It is absent from the `required` array
+- Its `type` allows null (e.g. `["string", "null"]`)
+
+Any field that was non-nullable in the previous version and is nullable in the new version is a **breaking change for Snowplow's Redshift integration**. This covers two distinct cases:
+
+Case 1 — removed from `required`:
+```json
+// 1-0-1
+"required": ["email", "eventName", "dataFields"]
+
+// 1-0-2 — removes email from required (BREAKING)
+"required": ["eventName", "dataFields"]
+```
+
+Case 2 — type changed to allow null:
+```json
+// 1-0-1
+"email": { "type": "string", "maxLength": 254 }
+
+// 1-0-2 — type now allows null (BREAKING)
+"email": { "type": ["string", "null"], "maxLength": 254 }
+```
+
+Both cases mean that a `NOT NULL` column in Redshift would need to become nullable — a migration that Snowplow's RDB Loader does not support.
+
+**Why:** Snowplow's RDB Loader treats this as a breaking schema evolution. Rather than attempting the unsupported DDL migration, the loader routes events validated against the new version into a recovery table (named `<base_table>_<revision>_<addition>_recovered_<hash>`) instead of the main table. This is not immediately visible — events pass validation and appear to load successfully, but land in the wrong table where consumers won't find them.
+
+**What to do:** Any change that makes a previously non-nullable field nullable requires a new major version (e.g. `2-0-0`). Options if a major bump is undesirable:
+- Keep the field required/non-nullable and accept that events omitting it will fail validation
+- Discuss with a maintainer — silently routing events to a recovery table is almost always worse than validation failures
+
+**Severity:** Critical
+
+---
+
 **Check: Required fields that accept null**
 
 Fields in the required array that also accept null is unusual - it means the property must exist but can be null.
@@ -344,6 +383,7 @@ When this skill is invoked:
 2. **Parse each schema file**
    - Read the JSON schema
    - Extract properties, types, constraints, required fields
+   - If the schema is not a first version (i.e. not `*-0-0`), also read the immediately preceding version to enable evolution checks. This applies to both revision bumps (e.g. `1-0-0` → `1-1-0`) and addition bumps (e.g. `1-0-1` → `1-0-2`)
 
 3. **Apply validation checklist**
    - Check each rule above against the schema
@@ -415,8 +455,9 @@ For each warning:
 
 ## Severity Guidelines
 
-**Critical** - Causes data precision loss or breaks financial calculations:
+**Critical** - Causes data precision loss or silently misroutes events:
 - Money fields without multipleOf (precision loss)
+- Field becoming nullable in a non-first schema version — either by removal from `required` or by adding `null` to the type (Snowplow's RDB Loader silently routes events to a recovery table rather than the main table)
 
 **Warning** - Requires submitter consideration and explanation:
 - String fields without maxLength (should comment on reasoning)
