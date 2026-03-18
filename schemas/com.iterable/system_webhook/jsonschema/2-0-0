@@ -1,0 +1,1197 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for an event from Iterable system webhooks",
+  "self": {
+    "vendor": "com.iterable",
+    "name": "system_webhook",
+    "format": "jsonschema",
+    "version": "2-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": ["string", "null"],
+      "description": "The email address associated with the event",
+      "maxLength": 254
+    },
+    "userId": {
+      "type": ["string", "null"],
+      "description": "The user ID associated with the event",
+      "maxLength": 52
+    },
+    "eventName": {
+      "type": "string",
+      "description": "The name of the event for which a webhook has been triggered",
+      "maxLength": 4096
+    },
+    "dataFields": {
+      "type": "object",
+      "properties": {
+        "appAlreadyRunning": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Whether or not the app was already running when the push notification arrived."
+        },
+        "attachmentUrlAndroid": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "URL of the Android push notification attachment image",
+          "format": "uri",
+          "maxLength": 4096
+        },
+        "attachmentUrlIos": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "URL of the iOS push notification attachment image",
+          "format": "uri",
+          "maxLength": 4096
+        },
+        "badge": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Badge to set for push notification",
+          "maxLength": 4096
+        },
+        "billingParty": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Billing party for the message",
+          "maxLength": 4096
+        },
+        "bounceMessage": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "E-mail bounce message.",
+          "maxLength": 4096
+        },
+        "browserToken": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Token provided by Firebase Messaging javascript API.",
+          "maxLength": 4096
+        },
+        "campaignId": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 9223372036854775807,
+          "description": "Reference to the campaign from which the event originated (e.g., 74768)"
+        },
+        "campaignName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Campaign name",
+          "maxLength": 4096
+        },
+        "canonicalUrlId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Reference to the URL associated with the event (e.g., '3145668988')",
+          "maxLength": 4096
+        },
+        "catalogCollectionCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2147483647,
+          "description": "The number of times a catalog collection was referenced in the message."
+        },
+        "catalogLookupCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2147483647,
+          "description": "The number of times a catalog was referenced in the message."
+        },
+        "channelId": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 9223372036854775807,
+          "description": "Unique identifier of the channel (e.g., 2203)"
+        },
+        "channelIds": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9223372036854775807
+          },
+          "description": "Channel IDs"
+        },
+        "city": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "City (e.g., 'San Jose')",
+          "maxLength": 4096
+        },
+        "closeAction": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Action that triggered the in-app message close",
+          "maxLength": 4096
+        },
+        "clickedUrl": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "URL that was clicked in the SMS message",
+          "maxLength": 4096
+        },
+        "contentAvailable": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Is content available"
+        },
+        "contentId": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 9223372036854775807,
+          "description": "Reference to the content the event is associated with (e.g., 3681)"
+        },
+        "country": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Country (e.g., 'United States')",
+          "maxLength": 4096
+        },
+        "createdAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Creation timestamp (e.g., '2017-05-15 23:59:47 +00:00')",
+          "maxLength": 255
+        },
+        "dataFeed": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "description": "Data feed information associated with the event",
+          "additionalProperties": true
+        },
+        "deeplink": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "android": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 4096
+            },
+            "ios": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 4096
+            }
+          },
+          "additionalProperties": true,
+          "description": "Deep Link. A mapping that accepts two optional properties: 'ios' & 'android' and their respective deep link values."
+        },
+        "deleteAction": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Action that triggered the in-app message deletion",
+          "maxLength": 4096
+        },
+        "device": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Device application name (e.g., 'Gmail')",
+          "maxLength": 4096
+        },
+        "deviceInfo": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "deviceId": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Device identifier or user agent string",
+              "maxLength": 4096
+            },
+            "platform": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Platform of the device",
+              "maxLength": 4096
+            },
+            "appPackageName": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Application package name",
+              "maxLength": 4096
+            }
+          },
+          "description": "Device information associated with the event",
+          "additionalProperties": true
+        },
+        "email": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Reference to the unique user the event was applied to.",
+          "maxLength": 254
+        },
+        "emailId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Reference to the email associated with the event (e.g., 'c59667:t93849:docs@iterable.com')",
+          "maxLength": 4096
+        },
+        "emailIds": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "maxLength": 4096,
+            "description": "Reference to email"
+          },
+          "description": "References to emails associated with the event"
+        },
+        "emailListIds": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9223372036854775807
+          },
+          "description": "Lists that a user is subscribed to"
+        },
+        "emailSubject": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Subject of the email associated with the event",
+          "maxLength": 998
+        },
+        "embeddedBodyField": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Body field of the embedded message",
+          "maxLength": 4096
+        },
+        "embeddedButtonId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Button ID of the embedded message that was clicked",
+          "maxLength": 4096
+        },
+        "embeddedImpressionDisplayCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2147483647,
+          "description": "Number of times the embedded message was displayed"
+        },
+        "embeddedImpressionDisplayDuration": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2147483647,
+          "description": "Duration in seconds the embedded message was displayed"
+        },
+        "embeddedImpressionPlacementId": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 9223372036854775807,
+          "description": "Placement ID of the embedded impression"
+        },
+        "embeddedSessionId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Session ID for the embedded message interaction",
+          "maxLength": 4096
+        },
+        "embeddedTargetUrl": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Target URL of the embedded message click",
+          "maxLength": 4096
+        },
+        "entranceTime": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Time when the user entered the journey",
+          "maxLength": 255
+        },
+        "errorCode": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Error code from the messaging provider",
+          "maxLength": 4096
+        },
+        "esDocumentId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Elasticsearch document ID associated with the event",
+          "maxLength": 4096
+        },
+        "espAccountId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Account ID of the email/messaging service provider",
+          "maxLength": 4096
+        },
+        "espName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Email service provider name",
+          "maxLength": 4096
+        },
+        "exitNodeId": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 9223372036854775807,
+          "description": "Node ID where the user exited the journey"
+        },
+        "exitReason": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Reason for exiting the journey",
+          "maxLength": 4096
+        },
+        "exitRuleId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Rule ID that triggered the journey exit",
+          "maxLength": 4096
+        },
+        "exitTime": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Time when the user exited the journey",
+          "maxLength": 255
+        },
+        "experimentId": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 9223372036854775807,
+          "description": "Reference to the experiment used if the event is an experiment"
+        },
+        "expiresAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Expires at (e.g., '2019-08-08 22:37:40 +00:00')",
+          "maxLength": 255
+        },
+        "firstName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "First name",
+          "maxLength": 4096
+        },
+        "fromPhoneNumber": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Phone number which the event is from (e.g., '+16503926753')",
+          "maxLength": 255
+        },
+        "fromPhoneNumberId": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 9223372036854775807,
+          "description": "Reference to the phone number which the event is from (e.g., 258)"
+        },
+        "fromSMSSenderId": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 9223372036854775807,
+          "description": "Reference to the SMS sender which the event is from (e.g., 258)"
+        },
+        "fromWhatsAppSenderId": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 9223372036854775807,
+          "description": "Reference to the WhatsApp sender"
+        },
+        "hrefIndex": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2147483647,
+          "description": "Index of the clicked link in the email"
+        },
+        "imageUrl": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Image URL of the event.",
+          "format": "uri",
+          "maxLength": 4096
+        },
+        "inAppBody": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "HTML body of the in-app message",
+          "maxLength": 65536
+        },
+        "inboxSessionId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Session ID for the inbox interaction",
+          "maxLength": 4096
+        },
+        "ip": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "IP address (e.g., '192.168.0.1' or '2a04:4e41:5372:7ed5::32f2:7ed5')",
+          "maxLength": 128
+        },
+        "isBot": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Whether the event was triggered by a bot"
+        },
+        "isGhostPush": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Boolean indicating if the event is a result of a ghost push"
+        },
+        "isSMSEstimation": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Whether the SMS send count is an estimation"
+        },
+        "labels": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "description": "Labels",
+          "items": {
+            "type": "string",
+            "description": "Label",
+            "maxLength": 4096
+          }
+        },
+        "lastName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Last name",
+          "maxLength": 4096
+        },
+        "linkId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Reference to the link associated with the event (e.g., '3145668988')",
+          "maxLength": 4096
+        },
+        "linkUrl": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "URL of the link associated with the event",
+          "format": "uri",
+          "maxLength": 4096
+        },
+        "locale": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Locale associated with the event",
+          "maxLength": 4096
+        },
+        "messageBusId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Message bus ID",
+          "maxLength": 4096
+        },
+        "messageContext": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "saveToInbox": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "description": "Save to inbox"
+            },
+            "trigger": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Trigger (e.g., 'immediate')",
+              "maxLength": 4096
+            }
+          },
+          "description": "An object containing various fields that describe the message associated with the event",
+          "additionalProperties": true
+        },
+        "messageId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Reference to the message the event is associated with (e.g., 'vA16d48VVi4LQ5hMuZuquKzL0BXTdQJJUMJRjKnL1')",
+          "maxLength": 4096
+        },
+        "messageStatus": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Delivery status of the message",
+          "maxLength": 4096
+        },
+        "messageTypeId": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2147483647,
+          "description": "Reference to the type of message the event is associated with (e.g., 14381)"
+        },
+        "messageTypeIds": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2147483647
+          },
+          "description": "Message type IDs"
+        },
+        "mmsReceiveCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2147483647,
+          "description": "Number of MMS messages received"
+        },
+        "mmsSendCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2147483647,
+          "description": "Number of MMS messages sent"
+        },
+        "nodeCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2147483647,
+          "description": "Number of nodes traversed in the journey"
+        },
+        "nodePath": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Comma-separated list of node IDs traversed in the journey",
+          "maxLength": 4096
+        },
+        "orgId": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 9223372036854775807,
+          "description": "Organization ID"
+        },
+        "payload": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "description": "Custom payload data for push notifications",
+          "additionalProperties": true
+        },
+        "platformEndpoint": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The specific platform endpoint of the event",
+          "maxLength": 4096
+        },
+        "priorityLevel": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2147483647,
+          "description": "Priority level of the in-app message"
+        },
+        "productRecommendationCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2147483647,
+          "description": "Product recommendation count."
+        },
+        "profileUpdatedAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Profile update timestamp (e.g., '2020-03-20 23:11:58 +00:00')",
+          "maxLength": 255
+        },
+        "projectId": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 9223372036854775807,
+          "description": "Project ID"
+        },
+        "proxySource": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Proxy source (e.g., 'Apple')",
+          "maxLength": 4096
+        },
+        "pushMessage": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Push message text",
+          "maxLength": 4096
+        },
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Reason (e.g., 'DuplicateMarketingMessage')",
+          "maxLength": 4096
+        },
+        "recipientCountryCallingCode": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Calling code of the recipient's country",
+          "maxLength": 255
+        },
+        "recipientCountryName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Name of the recipient's country",
+          "maxLength": 4096
+        },
+        "recipientState": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The state of the recipient upon receiving the event (e.g., 'HardBounce')",
+          "maxLength": 4096
+        },
+        "region": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Region of the event (e.g., 'CA')",
+          "maxLength": 4096
+        },
+        "renderedSmsMessage": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Rendered SMS message with processed Handlebars and shortened links",
+          "maxLength": 4096
+        },
+        "renderedWhatsAppMessage": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Rendered WhatsApp message content",
+          "maxLength": 4096
+        },
+        "sentAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Timestamp when the message was sent",
+          "maxLength": 255
+        },
+        "sendingDomain": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The domain from which the email was sent",
+          "maxLength": 4096
+        },
+        "senderPhoneNumberType": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Type of the sender phone number",
+          "maxLength": 4096
+        },
+        "signupSource": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Sign-up source (e.g., 'UpdateSubscriptionsAPI')",
+          "maxLength": 4096
+        },
+        "smsMessage": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "SMS message text",
+          "maxLength": 4096
+        },
+        "smsProviderResponse": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "status": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "maximum": 2147483647,
+              "minimum": -2147483648,
+              "description": "Status of the SMS provider response from the event (e.g., 404)"
+            },
+            "message": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "SMS provider response message from the event (e.g., 'The requested resource was not found')",
+              "maxLength": 4096
+            },
+            "code": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "maximum": 2147483647,
+              "minimum": -2147483648,
+              "description": "SMS provider response code from the event (e.g., 20404)"
+            },
+            "more_info": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "SMS provider response additional info from the event (e.g., a URL)",
+              "maxLength": 4096
+            }
+          },
+          "description": "SMS provider response",
+          "additionalProperties": true
+        },
+        "smsReceiveCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2147483647,
+          "description": "Number of SMS messages received"
+        },
+        "smsSendCount": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2147483647,
+          "description": "Number of SMS messages sent"
+        },
+        "sound": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Sound",
+          "maxLength": 4096
+        },
+        "status": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Status (e.g., '5.1.2')",
+          "maxLength": 4096
+        },
+        "templateId": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 9223372036854775807,
+          "description": "The ID of the Iterable template (e.g., 167484)"
+        },
+        "templateName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Template name",
+          "maxLength": 4096
+        },
+        "timeZone": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Time zone of the event",
+          "maxLength": 4096
+        },
+        "toPhoneNumber": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "To phone number associated with the event (e.g., '+16503926753')",
+          "maxLength": 255
+        },
+        "toWhatsAppPhoneNumber": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Recipient WhatsApp phone number",
+          "maxLength": 255
+        },
+        "total": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 2147483647,
+          "description": "Total count of recalled in-app messages"
+        },
+        "trackedLink": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "trackingId": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Tracking ID of the link",
+              "maxLength": 4096
+            },
+            "snippetPathBreakdown": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "description": "Snippet path breakdown",
+              "additionalProperties": true
+            },
+            "templateUrl": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Template URL with placeholders",
+              "maxLength": 4096
+            }
+          },
+          "description": "Tracked link information associated with the event",
+          "additionalProperties": true
+        },
+        "transactionalData": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "JSON-encoded transactional data associated with the event",
+          "maxLength": 4096
+        },
+        "unsubSource": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Source of the unsubscribe event (e.g., 'EmailLink')",
+          "maxLength": 4096
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "URL associated with the event",
+          "format": "uri",
+          "maxLength": 4096
+        },
+        "userAgent": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "User agent associated with the event",
+          "maxLength": 4096
+        },
+        "userAgentDevice": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The device of the user agent (e.g., 'Mac')",
+          "maxLength": 4096
+        },
+        "userListIds": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9223372036854775807
+          },
+          "description": "List IDs that a user is subscribed to"
+        },
+        "webPushBody": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Web push notification body",
+          "maxLength": 4096
+        },
+        "webPushClickAction": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Web push notification click action",
+          "maxLength": 4096
+        },
+        "webPushIcon": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Web push notification icon",
+          "maxLength": 4096
+        },
+        "webPushMessage": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Web push notification message",
+          "maxLength": 4096
+        },
+        "whatsAppBodyField": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Body field of the WhatsApp message",
+          "maxLength": 4096
+        },
+        "workflowId": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 9223372036854775807,
+          "description": "Reference to the workflow which the event originated (e.g., 53505)"
+        },
+        "workflowName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Name of the workflow which the event originated",
+          "maxLength": 4096
+        }
+      },
+      "description": "Information stored with the event.",
+      "additionalProperties": true
+    }
+  },
+  "minProperties": 2,
+  "required": [
+    "eventName",
+    "dataFields"
+  ],
+  "additionalProperties": true
+}
