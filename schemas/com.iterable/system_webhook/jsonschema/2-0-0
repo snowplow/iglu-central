@@ -5,7 +5,7 @@
     "vendor": "com.iterable",
     "name": "system_webhook",
     "format": "jsonschema",
-    "version": "1-0-2"
+    "version": "2-0-0"
   },
   "type": "object",
   "properties": {
