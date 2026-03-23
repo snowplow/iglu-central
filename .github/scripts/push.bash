@@ -34,16 +34,3 @@ do
         aws s3 sync jsonpaths/ s3://${master}-${region}${jsonpath_upload_dir} --include "*.*" --region=${region}
     fi
 done
-
-echo "================================"
-echo "INSTALLING JSON SCHEMA VALIDATOR"
-echo "--------------------------------"
-
-install_igluctl
-
-echo "==========================================="
-echo "SYNCHRONIZING SCHEMAS TO Iglu Server mirror"
-echo "-------------------------------------------"
-
-java -jar ${IGLUCTL} static push --public $GITHUB_WORKSPACE/schemas/ ${IGLU_SERVER_EU1_MIRROR} ${IGLU_SERVER_EU1_APIKEY} 
-java -jar ${IGLUCTL} static push --public $GITHUB_WORKSPACE/schemas/ ${IGLU_SERVER_EU2_MIRROR} ${IGLU_SERVER_EU2_APIKEY} 
