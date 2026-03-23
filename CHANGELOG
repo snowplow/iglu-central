@@ -1,3 +1,10 @@
+Release 179 (2026-03-23)
+------------------------
+Add com.snowplowanalytics.snowplow.enrichments/bot_detection_enrichment_config/jsonschema/1-0-1 (#1472)
+Add com.snowplowanalytics.snowplow/bot_detection/jsonschema/1-0-1 (#1472)
+Add com.snowplowanalytics.snowplow/client_side_bot_detection/jsonschema/1-0-0 (#1470)
+Add com.iterable/system_webhook/jsonschema/2-0-0 (#1469)
+
 Release 178 (2026-03-17)
 ------------------------
 Add com.snowplowanalytics.snowplow/event_specification/jsonschema/1-0-4 (#1467)
