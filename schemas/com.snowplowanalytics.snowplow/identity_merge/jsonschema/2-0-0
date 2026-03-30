@@ -1,0 +1,66 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "type": "object",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow",
+    "name": "identity_merge",
+    "format": "jsonschema",
+    "version": "2-0-0"
+  },
+  "description": "Event emitted when Snowplow Identities merges user identities",
+  "properties": {
+    "merged": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "snowplow_id",
+          "created_at",
+          "merged_at",
+          "triggering_event_id"
+        ],
+        "properties": {
+          "merged_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "snowplow_id": {
+            "type": "string",
+            "maxLength": 29,
+            "pattern": "^sp_[A-Za-z2-7]{26}$"
+          },
+          "triggering_event_id": {
+            "type": "string",
+            "maxLength": 36
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "Detailed info about merged identities"
+    },
+    "merges": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of merged identity IDs"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the parent identity was created"
+    },
+    "snowplow_id": {
+      "description": "The parent/surviving identity ID",
+      "type": "string",
+      "maxLength": 29,
+      "pattern": "^sp_[A-Za-z2-7]{26}$"
+    }
+  },
+  "required": ["snowplow_id", "created_at", "merges", "merged"],
+  "additionalProperties": false
+}
