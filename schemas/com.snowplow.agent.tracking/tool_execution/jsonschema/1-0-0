@@ -1,0 +1,56 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Records execution of an agent tool. Tool details are in the attached tool_context entity. Agent state is in agent_context entity.",
+  "self": {
+    "vendor": "com.snowplow.agent.tracking",
+    "name": "tool_execution",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "invocation_id": {
+      "type": "string",
+      "description": "Parent invocation identifier",
+      "maxLength": 36
+    },
+    "step_number": {
+      "type": ["integer", "null"],
+      "description": "Step number within invocation",
+      "minimum": 1,
+      "maximum": 1000
+    },
+    "execution_duration_ms": {
+      "type": "integer",
+      "description": "Time taken to execute the tool",
+      "minimum": 0,
+      "maximum": 300000
+    },
+    "success": {
+      "type": "boolean",
+      "description": "Whether tool execution succeeded"
+    },
+    "error_type": {
+      "type": ["string", "null"],
+      "description": "Type of error if execution failed",
+      "maxLength": 100
+    },
+    "error_message": {
+      "type": ["string", "null"],
+      "description": "Error message if execution failed",
+      "maxLength": 500
+    },
+    "result_summary": {
+      "type": ["object", "null"],
+      "description": "Summarized tool output (structure varies by tool)",
+      "additionalProperties": true
+    },
+    "executed_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when tool execution completed"
+    }
+  },
+  "required": ["invocation_id", "execution_duration_ms", "success", "executed_at"],
+  "additionalProperties": false
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Marks the start of an agent invocation. Agent details and state are in the attached agent_context entity.",
+  "self": {
+    "vendor": "com.snowplow.agent.tracking",
+    "name": "agent_invocation",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "invocation_id": {
+      "type": "string",
+      "description": "Unique identifier for this agent invocation",
+      "maxLength": 36
+    },
+    "session_id": {
+      "type": "string",
+      "description": "User session identifier",
+      "maxLength": 36
+    },
+    "user_message_preview": {
+      "type": ["string", "null"],
+      "description": "Truncated/sanitized user message that triggered invocation",
+      "maxLength": 500
+    },
+    "invoked_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when invocation started"
+    }
+  },
+  "required": ["invocation_id", "session_id", "invoked_at"],
+  "additionalProperties": false
+}

@@ -1,0 +1,76 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Records completion of an agent invocation with summary metrics. Agent context provides invocation details.",
+  "self": {
+    "vendor": "com.snowplow.agent.tracking",
+    "name": "agent_completion",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "invocation_id": {
+      "type": "string",
+      "description": "Invocation identifier",
+      "maxLength": 36
+    },
+    "total_steps": {
+      "type": "integer",
+      "description": "Total number of reasoning steps",
+      "minimum": 1,
+      "maximum": 1000
+    },
+    "total_duration_ms": {
+      "type": "integer",
+      "description": "Total time from invocation to completion",
+      "minimum": 0,
+      "maximum": 600000
+    },
+    "total_tokens": {
+      "type": "integer",
+      "description": "Total tokens used (prompt + completion)",
+      "minimum": 0,
+      "maximum": 2000000
+    },
+    "tools_called": {
+      "type": "integer",
+      "description": "Total number of tool calls made",
+      "minimum": 0,
+      "maximum": 1000
+    },
+    "business_tools_called": {
+      "type": ["integer", "null"],
+      "description": "Number of business tools called",
+      "minimum": 0,
+      "maximum": 1000
+    },
+    "self_tracking_tools_called": {
+      "type": ["integer", "null"],
+      "description": "Number of self-tracking tools called",
+      "minimum": 0,
+      "maximum": 1000
+    },
+    "finish_reason": {
+      "type": "string",
+      "enum": ["stop", "length", "error", "max_steps"],
+      "description": "Why the agent stopped"
+    },
+    "success": {
+      "type": "boolean",
+      "description": "Whether invocation completed successfully"
+    },
+    "final_response_length": {
+      "type": ["integer", "null"],
+      "description": "Length of final response to user",
+      "minimum": 0,
+      "maximum": 100000
+    },
+    "completed_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when invocation completed"
+    }
+  },
+  "required": ["invocation_id", "total_steps", "total_duration_ms", "total_tokens", "tools_called", "finish_reason", "success", "completed_at"],
+  "additionalProperties": false
+}

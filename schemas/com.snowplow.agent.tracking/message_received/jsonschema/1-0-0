@@ -1,0 +1,48 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "User receives a response from the agent. Message details are in the attached message_context entity. Agent details are in the attached agent_context entity.",
+  "self": {
+    "vendor": "com.snowplow.agent.tracking",
+    "name": "message_received",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "session_id": {
+      "type": "string",
+      "description": "Chat session identifier",
+      "maxLength": 36
+    },
+    "invocation_id": {
+      "type": "string",
+      "description": "Agent invocation that generated this response",
+      "maxLength": 36
+    },
+    "tokens_used": {
+      "type": ["integer", "null"],
+      "description": "Total tokens used in generation",
+      "minimum": 0,
+      "maximum": 1000000
+    },
+    "response_time_ms": {
+      "type": "integer",
+      "description": "Time taken to generate response",
+      "minimum": 0,
+      "maximum": 300000
+    },
+    "tool_calls_count": {
+      "type": "integer",
+      "description": "Number of tool calls made during this response",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "received_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when response was received"
+    }
+  },
+  "required": ["session_id", "invocation_id", "response_time_ms", "tool_calls_count", "received_at"],
+  "additionalProperties": false
+}

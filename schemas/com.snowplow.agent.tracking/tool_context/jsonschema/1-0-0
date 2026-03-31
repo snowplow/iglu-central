@@ -1,0 +1,41 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Context entity describing a tool (function) being invoked by the agent, including its purpose, category, and parameters.",
+  "self": {
+    "vendor": "com.snowplow.agent.tracking",
+    "name": "tool_context",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "tool_name": {
+      "type": "string",
+      "description": "Name of the tool being executed",
+      "maxLength": 100
+    },
+    "tool_category": {
+      "type": "string",
+      "examples": ["business", "self_tracking", "retrieval", "orchestration"],
+      "description": "Category of tool (application-defined)",
+      "maxLength": 100
+    },
+    "tool_call_id": {
+      "type": "string",
+      "description": "Unique identifier for this specific tool invocation",
+      "maxLength": 100
+    },
+    "tool_description": {
+      "type": ["string", "null"],
+      "description": "Brief description of what this tool does",
+      "maxLength": 500
+    },
+    "parameters_summary": {
+      "type": ["object", "null"],
+      "description": "Summary of key parameters passed to the tool (structure varies by tool)",
+      "additionalProperties": true
+    }
+  },
+  "required": ["tool_name", "tool_category", "tool_call_id"],
+  "additionalProperties": false
+}

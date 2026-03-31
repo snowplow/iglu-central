@@ -1,0 +1,62 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Context entity describing the agent, its configuration, and current state when performing actions.",
+  "self": {
+    "vendor": "com.snowplow.agent.tracking",
+    "name": "agent_context",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "invocation_id": {
+      "type": "string",
+      "description": "Unique identifier for current agent invocation",
+      "maxLength": 36
+    },
+    "session_id": {
+      "type": "string",
+      "description": "User session identifier",
+      "maxLength": 36
+    },
+    "user_id": {
+      "type": ["string", "null"],
+      "description": "User identifier if authenticated",
+      "maxLength": 255
+    },
+    "agent_type": {
+      "type": "string",
+      "description": "Type/name of agent",
+      "maxLength": 100
+    },
+    "model_name": {
+      "type": "string",
+      "description": "LLM model identifier (e.g., claude-sonnet-4-20250514)",
+      "maxLength": 100
+    },
+    "model_provider": {
+      "type": "string",
+      "description": "LLM provider (e.g., anthropic, openai)",
+      "maxLength": 50
+    },
+    "application_version": {
+      "type": ["string", "null"],
+      "description": "Application version",
+      "maxLength": 20
+    },
+    "conversation_messages_count": {
+      "type": ["integer", "null"],
+      "description": "Number of messages in conversation history at this point",
+      "minimum": 0,
+      "maximum": 10000
+    },
+    "current_step_number": {
+      "type": ["integer", "null"],
+      "description": "Current step number within the invocation",
+      "minimum": 1,
+      "maximum": 1000
+    }
+  },
+  "required": ["invocation_id", "session_id", "agent_type", "model_name", "model_provider"],
+  "additionalProperties": false
+}

@@ -1,0 +1,71 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Records a single iteration step in the agent reasoning loop. Agent context provides invocation details.",
+  "self": {
+    "vendor": "com.snowplow.agent.tracking",
+    "name": "agent_step",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "invocation_id": {
+      "type": "string",
+      "description": "Parent invocation identifier",
+      "maxLength": 36
+    },
+    "step_number": {
+      "type": "integer",
+      "description": "Sequential step number in this invocation",
+      "minimum": 1,
+      "maximum": 1000
+    },
+    "step_type": {
+      "type": "string",
+      "enum": ["initial", "continue", "tool-result"],
+      "description": "Type of step in the agent loop"
+    },
+    "prompt_tokens": {
+      "type": "integer",
+      "description": "Input tokens for this step",
+      "minimum": 0,
+      "maximum": 1000000
+    },
+    "completion_tokens": {
+      "type": "integer",
+      "description": "Output tokens for this step",
+      "minimum": 0,
+      "maximum": 1000000
+    },
+    "finish_reason": {
+      "type": ["string", "null"],
+      "enum": ["stop", "length", "tool_calls", "content_filter", null],
+      "description": "Why the model stopped generating"
+    },
+    "tool_calls_count": {
+      "type": "integer",
+      "description": "Number of tool calls made in this step",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "text_length": {
+      "type": ["integer", "null"],
+      "description": "Length of text generated in this step",
+      "minimum": 0,
+      "maximum": 100000
+    },
+    "step_duration_ms": {
+      "type": ["integer", "null"],
+      "description": "Duration of this step",
+      "minimum": 0,
+      "maximum": 300000
+    },
+    "stepped_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when step completed"
+    }
+  },
+  "required": ["invocation_id", "step_number", "step_type", "prompt_tokens", "completion_tokens", "tool_calls_count", "stepped_at"],
+  "additionalProperties": false
+}

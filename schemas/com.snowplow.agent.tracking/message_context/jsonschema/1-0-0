@@ -1,0 +1,48 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Context entity describing a chat message, its content, and metadata. Attached to message_sent and message_received events.",
+  "self": {
+    "vendor": "com.snowplow.agent.tracking",
+    "name": "message_context",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "message_id": {
+      "type": "string",
+      "description": "Unique identifier for this message",
+      "maxLength": 36
+    },
+    "message_role": {
+      "type": "string",
+      "enum": ["user", "assistant"],
+      "description": "Who sent the message (user or AI assistant)"
+    },
+    "message_length": {
+      "type": "integer",
+      "description": "Length of message in characters",
+      "minimum": 0,
+      "maximum": 100000
+    },
+    "message_preview": {
+      "type": ["string", "null"],
+      "description": "Truncated message content for privacy (first 100 chars)",
+      "maxLength": 100
+    },
+    "message_index": {
+      "type": "integer",
+      "description": "Position of this message in the conversation",
+      "minimum": 0,
+      "maximum": 10000
+    },
+    "conversation_turn": {
+      "type": ["integer", "null"],
+      "description": "Turn number in the conversation (pair of user + assistant messages)",
+      "minimum": 0,
+      "maximum": 5000
+    }
+  },
+  "required": ["message_id", "message_role", "message_length", "message_index"],
+  "additionalProperties": false
+}

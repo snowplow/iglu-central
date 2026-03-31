@@ -1,0 +1,59 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Agent self-tracking: logs when a user requirement cannot be met due to a constraint.",
+  "self": {
+    "vendor": "com.snowplow.agent.tracking",
+    "name": "constraint_violation",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "invocation_id": {
+      "type": "string",
+      "description": "Unique identifier for the agent invocation",
+      "maxLength": 36
+    },
+    "violation_id": {
+      "type": "string",
+      "description": "Unique identifier for this violation",
+      "maxLength": 36
+    },
+    "constraint_type": {
+      "type": "string",
+      "examples": ["budget", "dates", "availability", "permissions", "rate_limit"],
+      "description": "Type of constraint that was violated (application-defined)",
+      "maxLength": 255
+    },
+    "user_requirement": {
+      "type": "string",
+      "description": "What the user requested",
+      "maxLength": 1000
+    },
+    "reason_not_met": {
+      "type": "string",
+      "description": "Why it cannot be fulfilled",
+      "maxLength": 2000
+    },
+    "alternatives_considered": {
+      "type": ["array", "null"],
+      "items": {
+        "type": "string",
+        "maxLength": 1000
+      },
+      "description": "Alternative options considered"
+    },
+    "recommendation": {
+      "type": ["string", "null"],
+      "description": "Recommended alternative",
+      "maxLength": 1000
+    },
+    "violated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when violation was detected"
+    }
+  },
+  "required": ["invocation_id", "violation_id", "constraint_type", "user_requirement", "reason_not_met", "violated_at"],
+  "additionalProperties": false
+}
