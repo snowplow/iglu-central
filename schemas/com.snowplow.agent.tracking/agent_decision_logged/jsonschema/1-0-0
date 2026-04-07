@@ -12,12 +12,12 @@
     "invocation_id": {
       "type": "string",
       "description": "Unique identifier for the agent invocation",
-      "maxLength": 36
+      "format": "uuid"
     },
     "decision_id": {
       "type": "string",
       "description": "Unique identifier for this decision",
-      "maxLength": 36
+      "format": "uuid"
     },
     "decision_type": {
       "type": "string",
@@ -30,9 +30,13 @@
       "description": "Natural language explanation of the decision",
       "maxLength": 2000
     },
-    "context": {
-      "type": ["object", "null"],
-      "description": "Additional context about the decision"
+    "considerations": {
+      "type": ["array", "null"],
+      "description": "Factors the agent considered when making this decision",
+      "items": {
+        "type": "string",
+        "maxLength": 2000
+      }
     },
     "logged_at": {
       "type": "string",

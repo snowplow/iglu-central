@@ -12,7 +12,7 @@
     "invocation_id": {
       "type": "string",
       "description": "Parent invocation identifier",
-      "maxLength": 36
+      "format": "uuid"
     },
     "step_number": {
       "type": "integer",
@@ -29,13 +29,13 @@
       "type": "integer",
       "description": "Input tokens for this step",
       "minimum": 0,
-      "maximum": 1000000
+      "maximum": 2147483647
     },
     "completion_tokens": {
       "type": "integer",
       "description": "Output tokens for this step",
       "minimum": 0,
-      "maximum": 1000000
+      "maximum": 2147483647
     },
     "finish_reason": {
       "type": ["string", "null"],

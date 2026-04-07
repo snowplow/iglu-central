@@ -12,12 +12,12 @@
     "invocation_id": {
       "type": "string",
       "description": "Unique identifier for current agent invocation",
-      "maxLength": 36
+      "format": "uuid"
     },
     "session_id": {
       "type": "string",
       "description": "User session identifier",
-      "maxLength": 36
+      "format": "uuid"
     },
     "user_id": {
       "type": ["string", "null"],

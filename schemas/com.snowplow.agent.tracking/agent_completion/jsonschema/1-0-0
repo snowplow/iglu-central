@@ -12,7 +12,7 @@
     "invocation_id": {
       "type": "string",
       "description": "Invocation identifier",
-      "maxLength": 36
+      "format": "uuid"
     },
     "total_steps": {
       "type": "integer",
@@ -30,7 +30,7 @@
       "type": "integer",
       "description": "Total tokens used (prompt + completion)",
       "minimum": 0,
-      "maximum": 2000000
+      "maximum": 2147483647
     },
     "tools_called": {
       "type": "integer",

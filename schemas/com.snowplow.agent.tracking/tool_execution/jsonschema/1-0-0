@@ -12,7 +12,7 @@
     "invocation_id": {
       "type": "string",
       "description": "Parent invocation identifier",
-      "maxLength": 36
+      "format": "uuid"
     },
     "step_number": {
       "type": ["integer", "null"],
@@ -39,11 +39,6 @@
       "type": ["string", "null"],
       "description": "Error message if execution failed",
       "maxLength": 500
-    },
-    "result_summary": {
-      "type": ["object", "null"],
-      "description": "Summarized tool output (structure varies by tool)",
-      "additionalProperties": true
     },
     "executed_at": {
       "type": "string",

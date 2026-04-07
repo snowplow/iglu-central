@@ -12,18 +12,18 @@
     "session_id": {
       "type": "string",
       "description": "Chat session identifier",
-      "maxLength": 36
+      "format": "uuid"
     },
     "invocation_id": {
       "type": "string",
       "description": "Agent invocation that generated this response",
-      "maxLength": 36
+      "format": "uuid"
     },
     "tokens_used": {
       "type": ["integer", "null"],
       "description": "Total tokens used in generation",
       "minimum": 0,
-      "maximum": 1000000
+      "maximum": 2147483647
     },
     "response_time_ms": {
       "type": "integer",

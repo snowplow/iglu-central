@@ -12,12 +12,12 @@
     "invocation_id": {
       "type": "string",
       "description": "Unique identifier for the agent invocation",
-      "maxLength": 36
+      "format": "uuid"
     },
     "violation_id": {
       "type": "string",
       "description": "Unique identifier for this violation",
-      "maxLength": 36
+      "format": "uuid"
     },
     "constraint_type": {
       "type": "string",

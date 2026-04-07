@@ -23,17 +23,12 @@
     "tool_call_id": {
       "type": "string",
       "description": "Unique identifier for this specific tool invocation",
-      "maxLength": 100
+      "format": "uuid"
     },
     "tool_description": {
       "type": ["string", "null"],
       "description": "Brief description of what this tool does",
       "maxLength": 500
-    },
-    "parameters_summary": {
-      "type": ["object", "null"],
-      "description": "Summary of key parameters passed to the tool (structure varies by tool)",
-      "additionalProperties": true
     }
   },
   "required": ["tool_name", "tool_category", "tool_call_id"],

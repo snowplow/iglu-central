@@ -12,7 +12,7 @@
     "session_id": {
       "type": "string",
       "description": "Chat session identifier",
-      "maxLength": 36
+      "format": "uuid"
     },
     "sent_at": {
       "type": "string",

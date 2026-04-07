@@ -1,6 +1,6 @@
 {
   "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
-  "description": "Agent self-tracking: logs the detected user intent with extracted entities and confidence.",
+  "description": "Agent self-tracking: logs the detected user intent category and confidence.",
   "self": {
     "vendor": "com.snowplow.agent.tracking",
     "name": "user_intent_detected",
@@ -12,12 +12,12 @@
     "invocation_id": {
       "type": "string",
       "description": "Unique identifier for the agent invocation",
-      "maxLength": 36
+      "format": "uuid"
     },
     "intent_id": {
       "type": "string",
       "description": "Unique identifier for this detected intent",
-      "maxLength": 36
+      "format": "uuid"
     },
     "intent_category": {
       "type": "string",
@@ -31,10 +31,6 @@
       "maximum": 1,
       "description": "Confidence level (0-1)"
     },
-    "extracted_entities": {
-      "type": "object",
-      "description": "Extracted entities from user message"
-    },
     "reasoning": {
       "type": ["string", "null"],
       "description": "Reasoning for this interpretation",
@@ -46,6 +42,6 @@
       "description": "Timestamp when intent was detected"
     }
   },
-  "required": ["invocation_id", "intent_id", "intent_category", "confidence", "extracted_entities", "detected_at"],
+  "required": ["invocation_id", "intent_id", "intent_category", "confidence", "detected_at"],
   "additionalProperties": false
 }

@@ -12,7 +12,7 @@
     "message_id": {
       "type": "string",
       "description": "Unique identifier for this message",
-      "maxLength": 36
+      "format": "uuid"
     },
     "message_role": {
       "type": "string",
