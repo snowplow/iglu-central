@@ -1,0 +1,40 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow",
+    "name": "event_specification_validation",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "description": "Validation result for an event against its declared event specification version.",
+  "type": "object",
+  "properties": {
+    "isValid": {
+      "type": "boolean",
+      "description": "Whether the event passed validation against its event specification."
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "Human-readable error description."
+          },
+          "schema": {
+            "type": ["string", "null"],
+            "description": "Iglu schema URI of the entity or event that caused the error."
+          },
+          "path": {
+            "type": ["string", "null"],
+            "description": "JSON path to the property that failed validation."
+          }
+        },
+        "required": ["message"]
+      },
+      "description": "A list of validation errors."
+    }
+  },
+  "required": ["isValid"]
+}
