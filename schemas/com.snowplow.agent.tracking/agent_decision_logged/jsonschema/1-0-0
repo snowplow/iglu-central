@@ -1,0 +1,49 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Agent self-tracking: logs a decision the agent is about to make, including reasoning and context.",
+  "self": {
+    "vendor": "com.snowplow.agent.tracking",
+    "name": "agent_decision_logged",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "invocation_id": {
+      "type": "string",
+      "description": "Unique identifier for the agent invocation",
+      "format": "uuid"
+    },
+    "decision_id": {
+      "type": "string",
+      "description": "Unique identifier for this decision",
+      "format": "uuid"
+    },
+    "decision_type": {
+      "type": "string",
+      "examples": ["tool_selection", "parameter_reasoning", "result_interpretation", "clarification_needed", "constraint_handling"],
+      "description": "Type of decision (application-defined)",
+      "maxLength": 255
+    },
+    "reasoning": {
+      "type": "string",
+      "description": "Natural language explanation of the decision",
+      "maxLength": 2000
+    },
+    "considerations": {
+      "type": ["array", "null"],
+      "description": "Factors the agent considered when making this decision",
+      "items": {
+        "type": "string",
+        "maxLength": 2000
+      }
+    },
+    "logged_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when decision was logged"
+    }
+  },
+  "required": ["invocation_id", "decision_id", "decision_type", "reasoning", "logged_at"],
+  "additionalProperties": false
+}

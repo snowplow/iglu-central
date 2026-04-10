@@ -1,0 +1,47 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Agent self-tracking: logs the detected user intent category and confidence.",
+  "self": {
+    "vendor": "com.snowplow.agent.tracking",
+    "name": "user_intent_detected",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "invocation_id": {
+      "type": "string",
+      "description": "Unique identifier for the agent invocation",
+      "format": "uuid"
+    },
+    "intent_id": {
+      "type": "string",
+      "description": "Unique identifier for this detected intent",
+      "format": "uuid"
+    },
+    "intent_category": {
+      "type": "string",
+      "examples": ["search_flights", "submit_order", "ask_question", "cancel_booking", "get_recommendations"],
+      "description": "Category of user intent (application-defined)",
+      "maxLength": 255
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Confidence level (0-1)"
+    },
+    "reasoning": {
+      "type": ["string", "null"],
+      "description": "Reasoning for this interpretation",
+      "maxLength": 2000
+    },
+    "detected_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when intent was detected"
+    }
+  },
+  "required": ["invocation_id", "intent_id", "intent_category", "confidence", "detected_at"],
+  "additionalProperties": false
+}
