@@ -1,0 +1,46 @@
+{
+	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+	"description": "Quantitative activity metrics attached to page_ping events when extended activity tracking is enabled",
+	"self": {
+		"vendor": "com.snowplowanalytics.snowplow",
+		"name": "activity_metrics",
+		"format": "jsonschema",
+		"version": "1-0-0"
+	},
+
+	"type": "object",
+	"properties": {
+		"mouseDistance": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": "Cumulative mouse movement distance in pixels since the last page ping"
+		},
+		"scrollDistance": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": "Cumulative scroll distance in pixels since the last page ping"
+		},
+		"keyPresses": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": "Number of key presses since the last page ping"
+		},
+		"clicks": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": "Number of mouse clicks since the last page ping"
+		},
+		"touches": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 2147483647,
+			"description": "Number of touch events since the last page ping"
+		}
+	},
+	"required": ["mouseDistance", "scrollDistance", "keyPresses", "clicks", "touches"],
+	"additionalProperties": false
+}
