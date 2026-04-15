@@ -1,3 +1,9 @@
+Release 181 (2026-04-15)
+------------------------
+Add com.iterable/system_webhook/jsonschema/2-0-1 (#1480)
+Add com.snowplowanalytics.snowplow/activity_metrics/jsonschema/1-0-0 (#1478)
+Add 12 com.snowplow.agent.tracking schemas (#1477)
+
 Release 180 (2026-03-30)
 ------------------------
 Add com.snowplowanalytics.snowplow/identity_merge/jsonschema/2-0-0 (#1476)
