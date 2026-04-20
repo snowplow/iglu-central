@@ -1,0 +1,42 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Context for an active Optimizely X campaign on the page. One entry per active campaign; covers both Web Experimentation and Personalization.",
+  "self": {
+    "vendor": "com.optimizely.optimizelyx",
+    "name": "summary",
+    "format": "jsonschema",
+    "version": "1-1-0"
+  },
+  "type": "object",
+  "properties": {
+    "campaignId": {
+      "description": "Optimizely campaign (layer) ID. For Personalization, the parent campaign containing the experience.",
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "maximum": 9223372036854775807
+    },
+    "experimentId": {
+      "description": "Active experiment ID, or experience ID for Personalization campaigns.",
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "maximum": 9223372036854775807
+    },
+    "variationName": {
+      "description": "Name of the assigned variation as configured in Optimizely.",
+      "type": ["string", "null"],
+      "maxLength": 255
+    },
+    "variation": {
+      "description": "ID of the assigned variation.",
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "maximum": 9223372036854775807
+    },
+    "visitorId": {
+      "description": "Optimizely visitor ID used for bucketing.",
+      "type": ["string", "null"],
+      "maxLength": 100
+    }
+  },
+  "additionalProperties": true
+}
