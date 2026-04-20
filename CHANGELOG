@@ -1,3 +1,7 @@
+Release 182 (2026-04-20)
+------------------------
+Add com.optimizely.optimizelyx/summary/jsonschema/1-1-0 (#1483)
+
 Release 181 (2026-04-15)
 ------------------------
 Add com.iterable/system_webhook/jsonschema/2-0-1 (#1480)
