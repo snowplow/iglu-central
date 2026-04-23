@@ -1,3 +1,7 @@
+Release 183 (2026-04-23)
+------------------------
+Add com.snowplowanalytics.snowplow/event_specification_validation/jsonschema/1-0-0 (#1481)
+
 Release 182 (2026-04-20)
 ------------------------
 Add com.optimizely.optimizelyx/summary/jsonschema/1-1-0 (#1483)
