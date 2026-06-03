@@ -1,0 +1,72 @@
+{
+    "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+    "description": "Schema for the Agent Classification enrichment config",
+    "self": {
+        "vendor": "com.snowplowanalytics.snowplow.enrichments",
+        "name": "agent_classification_enrichment_config",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+
+    "type": "object",
+    "properties": {
+        "vendor": {
+            "type": "string",
+            "maxLength": 256
+        },
+        "name": {
+            "type": "string",
+            "maxLength": 256
+        },
+        "enabled": {
+            "type": "boolean"
+        },
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "classificationFile": {
+                    "type": "object",
+                    "description": "Location of the JSON file mapping a YAUAA agentName to its operator and (optionally) purpose",
+                    "properties": {
+                        "uri": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "database": {
+                            "type": "string"
+                        }
+                    },
+                    "required": ["uri", "database"],
+                    "additionalProperties": false
+                },
+                "classification": {
+                    "type": "object",
+                    "description": "User overrides, keyed by YAUAA agentName. For a given agent, the supplied operator and/or purpose override the value from classificationFile, e.g. {\"ChatGPT-User\": {\"operator\": \"OpenAI\", \"purpose\": \"AI data retrieval\"}}",
+                    "additionalProperties": {
+                        "type": "object",
+                        "properties": {
+                            "operator": {
+                                "type": "string",
+                                "description": "The vendor operating the agent"
+                            },
+                            "purpose": {
+                                "type": ["string", "null"],
+                                "description": "The purpose of the agent, if known"
+                            }
+                        },
+                        "required": ["operator"],
+                        "additionalProperties": false
+                    }
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "required": [
+        "vendor",
+        "name",
+        "enabled",
+        "parameters"
+    ],
+    "additionalProperties": false
+}
