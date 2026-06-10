@@ -1,3 +1,8 @@
+Release 184 (2026-06-10)
+------------------------
+Add com.snowplowanalytics.snowplow.enrichments/agent_classification_enrichment_config/jsonschema/1-0-0 (#1485)
+Add com.snowplowanalytics.snowplow/agent_classification/jsonschema/1-0-0 (#1485)
+
 Release 183 (2026-04-23)
 ------------------------
 Add com.snowplowanalytics.snowplow/event_specification_validation/jsonschema/1-0-0 (#1481)
