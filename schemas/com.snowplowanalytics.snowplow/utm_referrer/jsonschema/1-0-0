@@ -1,0 +1,30 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Referer identified from an injected utm_source query parameter, classified by the referer parser enrichment against its utm_sources database entries",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow",
+    "name": "utm_referrer",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "source": {
+      "type": "string",
+      "description": "The name of the referer source (e.g. ChatGPT), equivalent to refr_source",
+      "maxLength": 128
+    },
+    "medium": {
+      "type": "string",
+      "description": "The medium of the referer (e.g. chatbot), equivalent to refr_medium",
+      "maxLength": 64
+    },
+    "term": {
+      "type": ["string", "null"],
+      "description": "The search term extracted from the referer, equivalent to refr_term",
+      "maxLength": 512
+    }
+  },
+  "required": ["source", "medium"],
+  "additionalProperties": false
+}
