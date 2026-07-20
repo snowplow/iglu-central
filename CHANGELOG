@@ -1,3 +1,8 @@
+Release 185 (2026-07-22)
+------------------------
+Add com.snowplowanalytics.snowplow/referer_parser/jsonschema/2-0-2 (#1486)
+Add com.snowplowanalytics.snowplow/utm_referrer/jsonschema/1-0-0 (#1486)
+
 Release 184 (2026-06-10)
 ------------------------
 Add com.snowplowanalytics.snowplow.enrichments/agent_classification_enrichment_config/jsonschema/1-0-0 (#1485)
