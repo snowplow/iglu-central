@@ -56,5 +56,6 @@
 			"minLength": 3
 		}
 	},
+	"required":["id"],
 	"additionalProperties": false
 }
