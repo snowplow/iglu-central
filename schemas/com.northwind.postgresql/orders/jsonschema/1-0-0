@@ -1,0 +1,73 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for the Northwind PostgreSQL orders table, see https://code.google.com/archive/p/northwindextended/downloads",
+  "self": {
+    "vendor": "com.northwind.postgresql",
+    "name": "orders",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+
+  "type": "object",
+  "properties": {
+    "OrderID": {
+      "type": "integer",
+      "maximum": 32767,
+      "minimum": -32768
+    },
+    "CustomerID": {
+      "type": ["string", "null"]
+    },
+    "EmployeeID": {
+      "type": ["number", "null"],
+      "maximum": 32767,
+      "minimum": -32768
+    },
+    "OrderDate": {
+      "type": ["string", "null"],
+      "format": "date"
+    },
+    "RequiredDate": {
+      "type": ["string", "null"],
+      "format": "date"
+    },
+    "ShippedDate": {
+      "type": ["string", "null"],
+      "format": "date"
+    },
+    "ShipVia": {
+      "type": ["number", "null"],
+      "maximum": 32767,
+      "minimum": -32768
+    },
+    "Freight": {
+      "type": ["number", "null"]
+    },
+    "ShipName": {
+      "type": ["string", "null"],
+      "maxLength": 40
+    },
+    "ShipAddress": {
+      "type": ["string", "null"],
+      "maxLength": 60
+    },
+    "ShipCity": {
+      "type": ["string", "null"],
+      "maxLength": 15
+    },
+    "ShipRegion": {
+      "type": ["string", "null"],
+      "maxLength": 15
+    },
+    "ShipPostalCode": {
+      "type": ["string", "null"],
+      "maxLength": 10
+    },
+    "ShipCountry": {
+      "type": ["string", "null"],
+      "maxLength": 15
+    }
+  },
+  "required": ["OrderID"],
+  "additionalProperties": false
+}
