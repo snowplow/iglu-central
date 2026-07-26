@@ -24,6 +24,7 @@
     "$.data.msg.state",
     "$.data.msg.subject",
     "$.data.msg.tags",
-    "$.data.msg.ts"
+    "$.data.msg.ts",
+    "$.data.msg.subaccount"
     ]
 }

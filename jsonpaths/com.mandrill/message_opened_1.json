@@ -52,6 +52,7 @@
     "$.data.user_agent_parsed.ua_name",
     "$.data.user_agent_parsed.ua_url",
     "$.data.user_agent_parsed.ua_version",
-    "$.data.user_agent" 
+    "$.data.user_agent",
+    "$.data.msg.subaccount"
     ]
 }

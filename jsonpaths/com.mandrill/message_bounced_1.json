@@ -28,6 +28,7 @@
     "$.data.msg.ts",
     "$.data.msg.smpt_events",
     "$.data.msg.resends",
-    "$.data.msg.template"
+    "$.data.msg.template",
+    "$.data.msg.subaccount"
     ]
 }
