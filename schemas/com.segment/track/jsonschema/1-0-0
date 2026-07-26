@@ -1,0 +1,62 @@
+{
+        "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+        "description": "Schema for Segment's Track API call, https://segment.com/docs/connections/spec/track/#example",
+        "self": {
+                "vendor": "com.segment",
+                "name": "track",
+                "format": "jsonschema",
+                "version": "1-0-0"
+        },
+        "type": "object",
+        "properties": {
+                "anonymousId": {
+                    "type": "string",
+                    "maxLength": 255
+                },
+                "context": {
+                    "type": "object",
+                    "additionalProperties": true
+                },
+                "event": {
+                    "type": "string",
+                    "maxLength": 255
+                },   
+                "integrations": {
+                    "type": "object",
+                    "additionalProperties": true
+                },                
+                "messageId": {
+                    "type": "string",
+                    "maxLength": 100
+                },              
+                "properties": {
+                    "type": "object",
+                    "additionalProperties": true
+                },   
+                "receivedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "sentAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "timestamp": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "type": {
+                    "type": "string",
+                    "maxLength": 512
+                },
+                "userId": {
+                        "type": ["string","null"],
+                        "maxLength": 255
+                },
+                "originalTimestamp": {
+                        "type": "string",
+                        "format": "date-time"
+                }
+        },
+        "additionalProperties": true
+}
