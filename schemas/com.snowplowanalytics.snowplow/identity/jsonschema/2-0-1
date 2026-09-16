@@ -22,7 +22,8 @@
       "description": "Why the service made this decision. Absent when there is nothing to report.",
       "type": "array",
       "items": {
-        "type": "string"
+        "type": "string",
+        "maxLength": 128
       }
     }
   },
