@@ -1,3 +1,9 @@
+Release 186 (2026-09-24)
+------------------------
+Add com.snowplowanalytics.monitoring.batch/load_succeeded/jsonschema/3-0-2 (#1490)
+Add com.snowplowanalytics.snowplow.storage/shredding_complete/jsonschema/2-0-2 (#1490)
+Add com.snowplowanalytics.snowplow/identity/jsonschema/2-0-1 (#1489)
+
 Release 185 (2026-07-22)
 ------------------------
 Add com.snowplowanalytics.snowplow/referer_parser/jsonschema/2-0-2 (#1486)
