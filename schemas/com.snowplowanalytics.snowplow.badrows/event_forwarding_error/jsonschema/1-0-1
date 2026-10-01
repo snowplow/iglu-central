@@ -65,19 +65,20 @@
       "additionalProperties": false
     },
     "forwarder": {
-      "type": "object",
+      "type": ["object", "null"],
       "description": "Information about the forwarder that produced the bad row",
       "properties": {
         "id": {
-          "type": "string",
-          "description": "Unique identifier of the forwarder. Empty if not configured"
+          "type": ["string", "null"],
+          "description": "Unique identifier of the forwarder, if configured",
+          "format": "uuid",
+          "maxLength": 36
         },
         "name": {
-          "type": "string",
-          "description": "Human readable name of the forwarder. Empty if not configured"
+          "type": ["string", "null"],
+          "description": "Human readable name of the forwarder, if configured"
         }
       },
-      "required": ["id", "name"],
       "additionalProperties": false
     }
   },
