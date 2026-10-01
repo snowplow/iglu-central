@@ -23,6 +23,16 @@
           "description": "Version of the artifact responsible for the creation of the bad row",
           "pattern": "^(\\d+\\.\\d+\\.\\d+.*)$",
           "maxLength": 32
+        },
+        "forwarderId": {
+          "type": ["string", "null"],
+          "description": "Unique identifier of the forwarder that produced the bad row, if configured",
+          "format": "uuid",
+          "maxLength": 36
+        },
+        "forwarderName": {
+          "type": ["string", "null"],
+          "description": "Human readable name of the forwarder that produced the bad row, if configured"
         }
       },
       "required": [
@@ -62,23 +72,6 @@
         }
       },
       "required": ["timestamp", "errorType", "errorMessage"],
-      "additionalProperties": false
-    },
-    "forwarder": {
-      "type": ["object", "null"],
-      "description": "Information about the forwarder that produced the bad row",
-      "properties": {
-        "id": {
-          "type": ["string", "null"],
-          "description": "Unique identifier of the forwarder, if configured",
-          "format": "uuid",
-          "maxLength": 36
-        },
-        "name": {
-          "type": ["string", "null"],
-          "description": "Human readable name of the forwarder, if configured"
-        }
-      },
       "additionalProperties": false
     }
   },
