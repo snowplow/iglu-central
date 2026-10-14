@@ -1,3 +1,7 @@
+Release 187 (2026-10-14)
+------------------------
+Add com.snowplowanalytics.snowplow.badrows/event_forwarding_error/jsonschema/1-0-1 (#1492)
+
 Release 186 (2026-09-24)
 ------------------------
 Add com.snowplowanalytics.monitoring.batch/load_succeeded/jsonschema/3-0-2 (#1490)
