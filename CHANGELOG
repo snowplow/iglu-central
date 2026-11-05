@@ -1,3 +1,7 @@
+Release 188 (2026-11-05)
+------------------------
+Add com.snowplowanalytics.snowplow/identity_correction/jsonschema/1-0-0 (#1493)
+
 Release 187 (2026-10-14)
 ------------------------
 Add com.snowplowanalytics.snowplow.badrows/event_forwarding_error/jsonschema/1-0-1 (#1492)
