@@ -62,4 +62,4 @@
   },
   "required": ["isMobile", "brands"],
   "additionalProperties" : false
-}
+}@gitsdk.oi
