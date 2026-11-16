@@ -1,0 +1,53 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Identifiers that another analytics tool assigned to the user, session and event, so Snowplow events can be joined to that tool's data",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow",
+    "name": "external_identity",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "tool": {
+      "description": "The tool that assigned the identifiers, in lower case",
+      "type": "string",
+      "pattern": "^[a-z0-9_.-]+$",
+      "maxLength": 64
+    },
+    "anonymous_id": {
+      "description": "The tool's anonymous or device identifier",
+      "type": ["string", "null"],
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "user_id": {
+      "description": "The tool's user identifier",
+      "type": ["string", "null"],
+      "maxLength": 255
+    },
+    "session_id": {
+      "description": "The tool's session identifier",
+      "type": ["string", "null"],
+      "maxLength": 255
+    },
+    "session_number": {
+      "description": "The tool's session counter",
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "event_id": {
+      "description": "The event's identifier in the tool",
+      "type": ["string", "null"],
+      "maxLength": 255
+    },
+    "event_name": {
+      "description": "The event name in the tool",
+      "type": ["string", "null"],
+      "maxLength": 255
+    }
+  },
+  "required": ["tool"],
+  "additionalProperties": false
+}
