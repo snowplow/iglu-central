@@ -1,0 +1,70 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "An event first tracked by another analytics tool and sent to Snowplow, for events that no more specific Snowplow schema describes",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow",
+    "name": "external_event",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The event name in the source tool",
+      "type": "string",
+      "maxLength": 255
+    },
+    "tool": {
+      "description": "The tool that first tracked the event, in lower case",
+      "type": "string",
+      "pattern": "^[a-z0-9_.-]+$",
+      "maxLength": 64
+    },
+    "kind": {
+      "description": "The type of call in the source tool",
+      "type": "string",
+      "enum": ["track", "identify", "group", "alias", "screen", "page"]
+    },
+    "value": {
+      "description": "A monetary or numeric value carried by the event",
+      "type": ["number", "null"]
+    },
+    "currency": {
+      "description": "ISO 4217 currency code for value",
+      "type": ["string", "null"],
+      "pattern": "^[A-Z]{3}$"
+    },
+    "item_id": {
+      "description": "Identifier of the item the event refers to",
+      "type": ["string", "null"],
+      "maxLength": 255
+    },
+    "item_category": {
+      "description": "Category of the item the event refers to",
+      "type": ["string", "null"],
+      "maxLength": 255
+    },
+    "search_term": {
+      "description": "Search term carried by the event",
+      "type": ["string", "null"],
+      "maxLength": 255
+    },
+    "plan": {
+      "description": "Plan or tier carried by the event",
+      "type": ["string", "null"],
+      "maxLength": 255
+    },
+    "group_id": {
+      "description": "Identifier of the group or account the event refers to",
+      "type": ["string", "null"],
+      "maxLength": 255
+    },
+    "previous_id": {
+      "description": "Previous user identifier, for alias calls",
+      "type": ["string", "null"],
+      "maxLength": 255
+    }
+  },
+  "required": ["name", "tool", "kind"],
+  "additionalProperties": false
+}
