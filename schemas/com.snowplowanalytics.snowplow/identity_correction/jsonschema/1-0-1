@@ -75,8 +75,7 @@
       "type": "array",
       "items": {
         "type": "string",
-        "maxLength": 36,
-        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+        "maxLength": 36
       },
       "description": "The events whose identity context announced the merge this correction concerns, the group's first event first. For a withdrawal, the events whose announced merge the database refused for the merge cap or a unique conflict; the first one is the triggering_event_id the merge row would have carried, and the withdrawal id derives from it. For a late merge, the events whose announced merges the database refused because another write moved a root first, and that this correction later joined. Absent on a late merge that detection or backfill found and that no refused announcement joined"
     }
