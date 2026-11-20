@@ -77,7 +77,7 @@
         "type": "string",
         "maxLength": 36
       },
-      "description": "The events whose identity context listed the merge this correction concerns, the group's first event first. For a failed-merge correction, the events whose listed merge the database refused for the merge cap or a unique conflict; the first one is the triggering_event_id the merge row would have carried, and the failed-merge correction id derives from it. For a late merge, the events whose listed merges the database refused because another write moved a root first, and that this correction later joined. Absent on a late merge that detection or backfill found and that no refused listed merge joined"
+      "description": "The events whose identity context listed the merge this correction concerns, the group's first event first. For a failed-merge correction, the events whose listed merge the database refused for a unique conflict across trees; the first one is the triggering_event_id the merge row would have carried, and the failed-merge correction id derives from it. For a late merge, the events whose listed merges the database refused because another write moved a root first, and that this correction later joined. Absent on a late merge that detection or backfill found and that no refused listed merge joined"
     }
   },
   "required": ["correction_id", "type", "source", "applied_at",
