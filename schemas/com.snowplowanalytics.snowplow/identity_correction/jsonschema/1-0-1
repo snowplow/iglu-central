@@ -1,0 +1,86 @@
+{
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "type": "object",
+  "self": {
+    "vendor": "com.snowplowanalytics.snowplow",
+    "name": "identity_correction",
+    "format": "jsonschema",
+    "version": "1-0-1"
+  },
+  "description": "Event emitted when Snowplow Identities applies a correction to the identity graph",
+  "properties": {
+    "correction_id": {
+      "type": "string",
+      "maxLength": 36,
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "description": "The correction this event reports. Equal to this event's event_id and to the triggering_event_id of the merge rows the correction wrote"
+    },
+    "type": {
+      "type": "string",
+      "maxLength": 64,
+      "description": "The class of correction, as the identity service names it. late_merge or failed_merge today; new classes need no schema change"
+    },
+    "source": {
+      "type": "string",
+      "maxLength": 64,
+      "description": "Who filed the correction, as the identity service names it. automatic today; new sources need no schema change"
+    },
+    "applied_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the correction changed the graph"
+    },
+    "snowplow_id": {
+      "type": "string",
+      "maxLength": 29,
+      "pattern": "^sp_[A-Za-z2-7]{26}$",
+      "description": "The parent/surviving identity ID"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the parent identity was created"
+    },
+    "merges": {
+      "type": "array",
+      "items": { "type": "string", "maxLength": 29, "pattern": "^sp_[A-Za-z2-7]{26}$" },
+      "description": "List of merged identity IDs"
+    },
+    "merged": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["snowplow_id", "created_at", "merged_at", "triggering_event_id"],
+        "properties": {
+          "merged_at": { "type": "string", "format": "date-time", "description": "When this identity was merged into snowplow_id" },
+          "created_at": { "type": "string", "format": "date-time", "description": "When this identity was created" },
+          "snowplow_id": { "type": "string", "maxLength": 29, "pattern": "^sp_[A-Za-z2-7]{26}$", "description": "The merged identity ID" },
+          "triggering_event_id": { "type": "string", "maxLength": 36, "description": "The event that caused this merge. Equal to correction_id for merges this correction wrote" }
+        },
+        "additionalProperties": false
+      },
+      "description": "Detailed info about merged identities"
+    },
+    "affected_snowplow_ids": {
+      "type": "array",
+      "items": { "type": "string", "maxLength": 29, "pattern": "^sp_[A-Za-z2-7]{26}$" },
+      "description": "The roots this correction merged into snowplow_id. Their subtrees now resolve to snowplow_id; each appears in merged with triggering_event_id equal to correction_id unless it was pruned since"
+    },
+    "refused_snowplow_ids": {
+      "type": ["array", "null"],
+      "items": { "type": "string", "maxLength": 29, "pattern": "^sp_[A-Za-z2-7]{26}$" },
+      "description": "Roots the merge guard refused to merge. Absent or null when the guard accepted every root. For a failed-merge correction, the child the database refused to merge into snowplow_id"
+    },
+    "triggering_event_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 36
+      },
+      "description": "The events whose identity context listed the merge this correction concerns, the group's first event first. For a failed-merge correction, the events whose listed merge the database refused for a unique conflict across trees; the first one is the triggering_event_id the merge row would have carried, and the failed-merge correction id derives from it. For a late merge, the events whose listed merges the database refused because another write moved a root first, and that this correction later joined. Absent on a late merge that detection or backfill found and that no refused listed merge joined"
+    }
+  },
+  "required": ["correction_id", "type", "source", "applied_at",
+               "snowplow_id", "created_at", "merges", "merged", "affected_snowplow_ids"],
+  "additionalProperties": false
+}
