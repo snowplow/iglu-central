@@ -27,7 +27,7 @@
       }
     },
     "merged": {
-      "description": "Roots the service merges into snowplow_id on this event. Provisional: an identity_correction of type failed_merge retracts a merge the database later refuses. Absent when the event merges nothing.",
+      "description": "Roots the service merges into snowplow_id on this event. Absent when the event merges nothing.",
       "type": "array",
       "items": {
         "type": "object",
