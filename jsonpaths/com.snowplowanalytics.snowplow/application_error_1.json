@@ -17,6 +17,8 @@
         "$.data.lineNumber",
         "$.data.stackTrace",
         "$.data.threadId",
-        "$.data.threadName"
+        "$.data.threadName",
+        "$.data.fileName",
+        "$.data.lineColumn"
     ]
 }
