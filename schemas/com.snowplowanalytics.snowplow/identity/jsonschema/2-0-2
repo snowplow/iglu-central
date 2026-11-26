@@ -19,15 +19,15 @@
       "pattern": "^sp_[A-Za-z2-7]{26}$"
     },
     "decision_reasons": {
-      "description": "Why the service made this decision. Absent when there is nothing to report.",
-      "type": "array",
+      "description": "Why the service made this decision. Absent or null when there is nothing to report.",
+      "type": ["array", "null"],
       "items": {
         "type": "string",
         "maxLength": 128
       }
     },
     "merged": {
-      "description": "Roots the service merges into snowplow_id on this event. Absent or null when the event merges nothing.",
+      "description": "The identities this event merges into snowplow_id. Each was the root of its own tree, so every event that carried it now resolves to snowplow_id. Absent or null when the event merges nothing.",
       "type": ["array", "null"],
       "items": {
         "type": "object",
