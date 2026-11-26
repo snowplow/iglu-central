@@ -21,17 +21,25 @@
 			"minimum": 1,
 			"maximum": 32767
 		},
-		"attribute_key_name": {
-			"description": "Name of the attribute key identifying the profile the attribute was made for, e.g. domain_userid.",
-			"type": "string",
-			"minLength": 1,
-			"maxLength": 255
-		},
-		"attribute_key_value": {
-			"description": "Value of the attribute key identifying the profile the attribute was made for.",
-			"type": "string",
-			"minLength": 1,
-			"maxLength": 1024
+		"attribute_key": {
+			"description": "The attribute key identifying the profile the attribute was made for.",
+			"type": "object",
+			"properties": {
+				"name": {
+					"description": "Name of the attribute key, e.g. domain_sessionid.",
+					"type": "string",
+					"minLength": 1,
+					"maxLength": 255
+				},
+				"id": {
+					"description": "Value of the attribute key for this profile.",
+					"type": "string",
+					"minLength": 1,
+					"maxLength": 1024
+				}
+			},
+			"required": ["name", "id"],
+			"additionalProperties": false
 		},
 		"output_type": {
 			"description": "Type of the attribute's output contract, which tells the consumer how to interpret value.",
@@ -71,13 +79,54 @@
 			},
 			"maxItems": 64
 		},
-		"context": {
-			"description": "The context supplied to the model, as a JSON document: {\"attributes\": {name: value}, \"event_logs\": {context_name: [event, ...]}}. When truncation occurred context_truncated is true.",
-			"type": ["string", "null"],
-			"maxLength": 65535
+		"attributes": {
+			"description": "Snapshot of the profile's attributes the model was given. Null when the context was not recorded.",
+			"type": ["array", "null"],
+			"items": {
+				"description": "One attribute the model was given.",
+				"type": "object",
+				"properties": {
+					"attribute": {
+						"description": "Name of the attribute.",
+						"type": "string",
+						"minLength": 1,
+						"maxLength": 255
+					},
+					"value": {
+						"description": "The JSON-stringified version of the attribute's value.",
+						"type": "string",
+						"maxLength": 65535
+					}
+				},
+				"required": ["attribute", "value"],
+				"additionalProperties": false
+			}
+		},
+		"event_logs": {
+			"description": "The agentic context (event log) entries the model was given, oldest first within each event log. Null when the context was not recorded.",
+			"type": ["array", "null"],
+			"items": {
+				"description": "One event-log entry the model was given.",
+				"type": "object",
+				"properties": {
+					"event_log": {
+						"description": "Name of the event log the entry came from. agentic_contexts carries its version.",
+						"type": "string",
+						"minLength": 1,
+						"maxLength": 255
+					},
+					"value": {
+						"description": "The JSON-stringified event-log entry.",
+						"type": "string",
+						"maxLength": 65535
+					}
+				},
+				"required": ["event_log", "value"],
+				"additionalProperties": false
+			}
 		},
 		"context_truncated": {
-			"description": "Whether entries were dropped from context to fit its length cap. False means context is the complete set of values the model was given.",
+			"description": "Whether anything was dropped from attributes and event_logs to fit their combined size cap. The oldest event-log entries are dropped first; attributes and event_logs are both null when the attributes alone exceed it. False means they hold everything the model was given.",
 			"type": "boolean"
 		},
 		"model_identifier": {
@@ -95,9 +144,8 @@
 	"required": [
 		"attribute_name",
 		"attribute_version",
+		"attribute_key",
 		"context_truncated",
-		"attribute_key_name",
-		"attribute_key_value",
 		"output_type",
 		"value",
 		"available_options",
