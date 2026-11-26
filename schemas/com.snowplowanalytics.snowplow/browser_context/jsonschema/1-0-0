@@ -59,7 +59,7 @@
       "description": "Indicates whether the user agent is controlled by automation."
     },
     "deviceMemory": {
-      "type": ["integer", "null"],
+      "type": ["number", "null"],
       "minimum": 0,
       "maximum": 1000,
       "description": "Approximate amount of device memory in gigabytes."
