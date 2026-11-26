@@ -1,5 +1,6 @@
 {
   "$schema" : "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for an Optimizely summary context",
   "self" : {
     "vendor" : "com.optimizely.snowplow",
     "name" : "optimizely_summary",
