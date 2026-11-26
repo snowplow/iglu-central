@@ -430,7 +430,7 @@
 		},
 		"mkt_clickid": {
 			"type": ["string", "null"],
-			"maxLength": 128
+			"maxLength": 255
 		},
 		"mkt_network": {
 			"type": ["string", "null"],
