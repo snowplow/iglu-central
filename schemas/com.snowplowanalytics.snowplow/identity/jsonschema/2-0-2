@@ -27,8 +27,8 @@
       }
     },
     "merged": {
-      "description": "Roots the service merges into snowplow_id on this event. Absent when the event merges nothing.",
-      "type": "array",
+      "description": "Roots the service merges into snowplow_id on this event. Absent or null when the event merges nothing.",
+      "type": ["array", "null"],
       "items": {
         "type": "object",
         "properties": {
