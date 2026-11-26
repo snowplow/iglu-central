@@ -1,29 +1,31 @@
 {
-	"$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
-	"description": "Schema for a Google Analytics Enhanced Ecommerce action",
-	"self": {
-		"vendor": "com.google.analytics.enhanced-ecommerce",
-		"name": "action",
-		"format": "jsonschema",
-		"version": "1-0-0"
-	},
-
-	"type": "object",
-	"properties": {
-		"action": {
-			"enum": [
-				"click",
-				"detail",
-				"add",
-				"remove",
-				"checkout",
-				"checkout_option",
-				"purchase",
-				"refund",
-				"promo_click",
-				"view"
-			]
-		}
-	},
-	"additionalProperties": false
+  "$schema": "http://iglucentral.com/schemas/com.snowplowanalytics.self-desc/schema/jsonschema/1-0-0#",
+  "description": "Schema for a Google Analytics Enhanced Ecommerce action",
+  "self": {
+    "vendor": "com.google.analytics.enhanced-ecommerce",
+    "name": "action",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "object",
+  "properties": {
+    "action": {
+      "enum": [
+        "click",
+        "detail",
+        "add",
+        "remove",
+        "checkout",
+        "checkout_option",
+        "purchase",
+        "refund",
+        "promo_click",
+        "view"
+      ]
+    }
+  },
+  "required": [
+    "action"
+  ],
+  "additionalProperties": false
 }
