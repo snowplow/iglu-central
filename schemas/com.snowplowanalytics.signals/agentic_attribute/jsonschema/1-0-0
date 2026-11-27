@@ -124,7 +124,7 @@
 			}
 		},
 		"context_truncated": {
-			"description": "Whether anything was dropped from attributes and event_logs to fit their combined size cap. The oldest event-log entries are dropped first; attributes and event_logs are both null when the attributes alone exceed it. False means they hold everything the model was given.",
+			"description": "Whether anything was dropped from attributes and event_logs to fit their combined size cap. Event-log entries are dropped from whichever event log holds the most, oldest first; attributes and event_logs are both null when the attributes alone exceed it. False means they hold everything the model was given.",
 			"type": "boolean"
 		},
 		"model_identifier": {
