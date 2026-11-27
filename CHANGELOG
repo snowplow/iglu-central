@@ -1,3 +1,9 @@
+Release 189 (2026-12-27)
+------------------------
+Add com.snowplowanalytics.signals/agentic_attribute/1-0-0 (#1488)
+Add com.snowplowanalytics.snowplow/identity/jsonschema/2-0-2 (#1497)
+Add com.snowplowanalytics.snowplow/identity_correction/jsonschema/1-0-1 (#1498)
+
 Release 188 (2026-11-05)
 ------------------------
 Add com.snowplowanalytics.snowplow/identity_correction/jsonschema/1-0-0 (#1493)
