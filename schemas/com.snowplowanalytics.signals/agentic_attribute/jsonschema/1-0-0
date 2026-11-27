@@ -94,8 +94,7 @@
 					},
 					"value": {
 						"description": "The JSON-stringified version of the attribute's value.",
-						"type": "string",
-						"maxLength": 65535
+						"type": "string"
 					}
 				},
 				"required": ["attribute", "value"],
@@ -117,8 +116,7 @@
 					},
 					"value": {
 						"description": "The JSON-stringified event-log entry.",
-						"type": "string",
-						"maxLength": 65535
+						"type": "string"
 					}
 				},
 				"required": ["event_log", "value"],
